@@ -1,0 +1,48 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="markdown"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <group
+                android:name="group"
+                android:pivotX="12"
+                android:pivotY="12">
+                <path
+                    android:name="reader"
+                    android:pathData="M 21 4 L 3 4 C 1.9 4 1 4.9 1 6 L 1 19 C 1 20.1 1.9 21 3 21 L 21 21 C 22.1 21 23 20.1 23 19 L 23 6 C 23 4.9 22.1 4 21 4 Z M 11 19 L 3 19 L 3 6 L 11 6 L 11 19 Z M 21 19 L 13 19 L 13 6 L 21 6 L 21 19 Z M 14 9.5 L 20 9.5 L 20 11 L 14 11 Z M 14 12 L 20 12 L 20 13.5 L 14 13.5 Z M 14 14.5 L 20 14.5 L 20 16 L 14 16 Z"
+                    android:fillColor="#FFFFFF"/>
+                <path
+                    android:name="reader_frame"
+                    android:pathData="M 3 6 L 11 6 L 11 19 L 3 19 Z"
+                    android:fillColor="#FFFFFF"
+                    android:fillAlpha="0.3"
+                    android:strokeAlpha="0.3"/>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="group">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:duration="300"
+                    android:valueFrom="0"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/anticipate_overshoot_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:duration="300"
+                    android:valueFrom="0"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/anticipate_overshoot_interpolator"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

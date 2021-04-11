@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_font_size_sm">9sp</dimen>
+    <dimen name="button_font_size">16sp</dimen>
+    <dimen name="button_min_width">48sp</dimen>
+    <dimen name="button_inset_left">4sp</dimen>
+    <dimen name="button_corner_radius">4sp</dimen>
+    <dimen name="dialog_corner_radius">12dp</dimen>
+    <dimen name="dialog_inset_size">16dp</dimen>
+    <dimen name="dialog_padding">16dp</dimen>
+    <dimen name="text_drawable_dimen">32dp</dimen>
+    <dimen name="symbol_font_size">18sp</dimen>
+    <dimen name="star_font_size">18sp</dimen>
+    <dimen name="canvas_button_font_size">24sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="search_view_width">10000dp</dimen>
+    <dimen name="chip_min_width">48sp</dimen>
+    <dimen name="chip_border_width">1dp</dimen>
+    <dimen name="snackbar_corner_radius">4dp</dimen>
+</resources>

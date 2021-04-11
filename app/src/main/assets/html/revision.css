@@ -1,0 +1,57 @@
+body {
+    padding: 8px;
+    background-color: #424242;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.inserted {
+    margin: 4px;
+    padding: 8px 16px 8px;
+    border-radius: 24px;
+    color: #FFFFFF;
+    background: #4CAF50;
+}
+
+.deleted {
+    margin: 4px;
+    padding: 8px 16px 8px;
+    border-radius: 24px;
+    color: #FFFFFF;
+    background: #E91E63;
+}
+
+.modified {
+    margin: 4px;
+    padding: 8px 16px 8px;
+    border-radius: 24px;
+    color: #FFFFFF;
+    background: #2196F3;
+}
+
+.inserted-sign {
+    padding-right: 8px;
+    float: right;
+    color: #FFFFFF;
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.deleted-sign {
+    padding-right: 8px;
+    float: right;
+    color: #FFFFFF;
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.modified-sign {
+    padding-right: 8px;
+    float: right;
+    color: #FFFFFF;
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+}

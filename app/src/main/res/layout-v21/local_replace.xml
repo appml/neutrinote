@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:paddingTop="0.5dp"
+    android:orientation="horizontal"
+    android:background="?attr/colorPrimaryDark" >
+
+    <Button android:id="@+id/button_close"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:text="@string/button_close"
+        android:textColor="@color/symbol_color"
+        android:textSize="@dimen/button_font_size"
+        android:background="@drawable/ripple"
+        android:contentDescription="@string/button_close_description"
+        style="@style/AppTextButtonStyle" />
+
+    <AutoCompleteTextView
+        android:id="@+id/edit_local_replace"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="70"
+        android:paddingStart="2dp"
+        android:hint="@string/hint_replace"
+        android:textCursorDrawable="@drawable/custom_fragment_cursor"
+        android:textColorHighlight="@color/highlight_color"
+        android:textColor="@color/fragment_foreground"
+        android:background="?attr/colorPrimaryDark"
+        android:imeOptions="actionDone|flagNoExtractUi" />
+
+    <Button android:id="@+id/button_replace"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:text="@string/button_replace"
+        android:textColor="@color/symbol_color"
+        android:textSize="@dimen/button_font_size"
+        android:background="@drawable/ripple"
+        android:contentDescription="@string/button_replace_description"
+        style="@style/AppTextButtonStyle" />
+
+    <Button android:id="@+id/button_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:text="@string/button_next"
+        android:textColor="@color/symbol_color"
+        android:textSize="@dimen/button_font_size"
+        android:background="@drawable/ripple"
+        android:contentDescription="@string/button_next_description"
+        style="@style/AppTextButtonStyle" />
+
+</LinearLayout>

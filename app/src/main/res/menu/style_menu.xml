@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_style_font_family"
+        android:title="@string/menu_style_font_family"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_style_font_size"
+        android:title="@string/menu_style_font_size"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_style_margin"
+        android:title="@string/menu_style_margin"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_style_theme"
+        android:title="@string/menu_style_theme"
+        app:showAsAction="always" />
+</menu>

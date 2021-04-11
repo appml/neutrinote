@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.appmindlab.nano.MainActivity">
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/general">
+        <item
+            android:id="@+id/menu_custom_filters"
+            android:title="@string/drawer_menu_custom_filters" />
+        <item
+            android:id="@+id/menu_modified_after"
+            android:title="@string/drawer_menu_modified_after" />
+        <item
+            android:id="@+id/menu_accessed_recently"
+            android:title="@string/drawer_menu_accessed_recently" />
+        <item
+            android:id="@+id/menu_modified_nearby"
+            android:title="@string/drawer_menu_modified_nearby" />
+        <item
+            android:id="@+id/menu_metadata"
+            android:title="@string/drawer_menu_metadata" />
+    </group>
+    <group android:id="@+id/system">
+        <item
+            android:id="@+id/menu_backup_app_data"
+            android:icon="@drawable/ic_backup_vector"
+            android:title="@string/drawer_menu_backup_app_data" />
+        <item
+            android:id="@+id/menu_restore_app_data"
+            android:icon="@drawable/ic_restore_vector"
+            android:title="@string/drawer_menu_restore_app_data" />
+    </group>
+    <group android:id="@+id/special">
+        <item
+            android:id="@+id/menu_about"
+            android:icon="@drawable/ic_adb_vector"
+            android:title="@string/drawer_menu_about" />
+        <item
+            android:id="@+id/menu_help"
+            android:icon="@drawable/ic_help_vector"
+            android:title="@string/drawer_menu_help" />
+        <item
+            android:id="@+id/menu_settings"
+            android:icon="@drawable/ic_settings_vector"
+            android:title="@string/drawer_menu_settings" />
+    </group>
+</menu>

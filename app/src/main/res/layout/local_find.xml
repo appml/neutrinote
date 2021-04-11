@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:paddingTop="0.5dp"
+    android:orientation="horizontal"
+    android:background="?attr/colorPrimaryDark">
+
+    <Button android:id="@+id/button_close"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:text="@string/button_close"
+        android:textColor="@color/symbol_color"
+        android:textSize="@dimen/button_font_size"
+        android:background="?attr/colorPrimaryDark"
+        android:contentDescription="@string/button_close_description"
+        style="@style/AppTextButtonStyle" />
+
+    <AutoCompleteTextView
+        android:id="@+id/edit_local_find"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="70"
+        android:paddingLeft="2dp"
+        android:hint="@string/hint_search"
+        android:textCursorDrawable="@drawable/custom_fragment_cursor"
+        android:textColorHighlight="@color/highlight_color"
+        android:textColor="@color/fragment_foreground"
+        android:background="?attr/colorPrimaryDark"
+        android:imeOptions="actionSearch|flagNoExtractUi" />
+
+    <Button android:id="@+id/button_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:text="@string/button_search"
+        android:textColor="@color/symbol_color"
+        android:textSize="@dimen/button_font_size"
+        android:background="?attr/colorPrimaryDark"
+        android:contentDescription="@string/button_search_description"
+        style="@style/AppTextButtonStyle" />
+
+    <Button android:id="@+id/button_clear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:text="@string/button_clear"
+        android:textColor="@color/symbol_color"
+        android:textSize="@dimen/button_font_size"
+        android:background="?attr/colorPrimaryDark"
+        android:contentDescription="@string/button_clear_description"
+        style="@style/AppTextButtonStyle" />
+
+</LinearLayout>

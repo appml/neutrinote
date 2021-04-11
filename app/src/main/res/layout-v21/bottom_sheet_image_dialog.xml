@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/bottom_sheet_background"
+    >
+
+    <TextView
+        android:id="@+id/camera"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minWidth="@dimen/button_min_width"
+        android:gravity="center"
+        android:clickable="true"
+        android:text="@string/button_camera"
+        android:textColor="@color/bottom_sheet_foreground"
+        android:textSize="18sp"
+        android:background="@drawable/ripple"
+        android:contentDescription="@string/button_camera_description"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <TextView
+        android:id="@+id/gallery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minWidth="@dimen/button_min_width"
+        android:gravity="center"
+        android:clickable="true"
+        android:text="@string/button_gallery"
+        android:textColor="@color/bottom_sheet_foreground"
+        android:textSize="18sp"
+        android:background="@drawable/ripple"
+        android:contentDescription="@string/button_gallery_description"
+        style="?android:attr/borderlessButtonStyle"
+        />
+</LinearLayout>

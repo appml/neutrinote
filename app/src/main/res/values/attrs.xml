@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="drawerBackgroundColor" format="reference" />
+    <attr name="drawerTextColor" format="reference" />
+    <attr name="fabBackgroundColor" format="reference" />
+</resources>

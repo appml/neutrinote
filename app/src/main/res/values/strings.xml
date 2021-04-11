@@ -1,0 +1,652 @@
+<resources>
+    <string name="app_name">neutriNote CE</string>
+    <string name="browser_widget_name">neutriNote Browser</string>
+    <string name="add_note_widget_name">neutriNote: New Note</string>
+    <string name="backup_service_name">neutriNote Backup Service</string>
+
+    <string name="in_app_search">neutriNote &#128269;</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="intro_getting_started">Getting Started</string>
+    <string name="intro_getting_started_desc">Before first use, take a moment to set up Local Repository for neutriNote.</string>
+
+    <string name="intro_local_repo">Local Storage</string>
+    <string name="intro_local_repo_desc">Local Repository is the component for storing your notes on device.  Follow the guide in the next screen to assign a folder to the repository.</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="drawer_header_default">neutriNote</string>
+
+    <string name="drawer_menu_custom_filters">Custom Filters</string>
+    <string name="drawer_menu_modified_after">Modified since...</string>
+    <string name="drawer_menu_accessed_recently">Accessed since...</string>
+    <string name="drawer_menu_modified_nearby">Modified Nearby</string>
+    <string name="drawer_menu_metadata">Metadata</string>
+
+    <string name="drawer_menu_account_short">Account</string>
+    <string name="drawer_menu_account_long">Your account</string>
+
+    <string name="drawer_menu_about">About</string>
+    <string name="drawer_menu_help">Help</string>
+    <string name="drawer_menu_settings">Settings</string>
+
+    <string name="drawer_menu_backup_app_data">Backup App Data</string>
+    <string name="drawer_menu_restore_app_data">Restore App Data</string>
+
+    <string name="menu_add">Add New</string>
+    <string name="menu_sort">Sort</string>
+    <string name="menu_style">Style</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_advanced_search">Advanced Search</string>
+    <string name="menu_clear_search_history">Clear Search History</string>
+    <string name="menu_clear_location_data">Clear Location Data</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_metadata">Metadata</string>
+    <string name="menu_show_map">Show in Map</string>
+    <string name="menu_append_clipboard">Append Clipboard</string>
+    <string name="menu_import_files">Import Files</string>
+    <string name="menu_export_files">Export Files</string>
+    <string name="menu_mirror_files">Mirror Files</string>
+
+    <string name="menu_sort_by_title">Sort by Title</string>
+    <string name="menu_sort_by_date">Sort by Date</string>
+
+    <string name="menu_toggle_title">Toggle Title</string>
+    <string name="menu_markdown_view">Markdown View</string>
+    <string name="menu_paste_calendar">Paste to Calendar</string>
+    <string name="menu_full_screen">Full Screen</string>
+    <string name="menu_clear_cache">Clear Cache</string>
+    <string name="menu_export">Export</string>
+    <string name="menu_print">Print</string>
+
+    <string name="menu_encrypt_decrypt">Encode/Decode</string>
+
+    <string name="menu_save_exit">Save and Exit</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_revert">Revert</string>
+    <string name="menu_share">Share</string>
+
+    <string name="menu_edit_tools">Toolbox</string>
+    <string name="menu_markdown_symbols">Markdown Symbols</string>
+
+    <string name="menu_style_font_family">Typeface</string>
+    <string name="menu_style_font_size">Font Size</string>
+    <string name="menu_style_margin">Margin</string>
+    <string name="menu_style_theme">Theme</string>
+
+    <string name="label_title">Title</string>
+    <string name="label_content">Content</string>
+    <string name="label_share">Share To</string>
+
+    <string name="status_manager_created">Manager created</string>
+    <string name="status_initializing">Initializing...</string>
+    <string name="status_opening">Opening\u0020</string>
+    <string name="status_rescanning">Rescanning...</string>
+    <string name="status_searching">Searching...</string>
+    <string name="status_sync_completed">Sync completed</string>
+    <string name="status_import_completed">Import completed</string>
+    <string name="status_synchronized">Synchronized</string>
+    <string name="status_canceled">Canceled</string>
+
+    <string name="status_app_data_restoring">Restoring app data.  Please wait...</string>
+    <string name="status_app_data_restored">App data restored.  Please restart app.</string>
+    <string name="status_app_data_backing_up">Backing up app data.  Please wait...</string>
+    <string name="status_app_data_backup">App data backup finished.</string>
+
+    <string name="status_system_busy">System is busy.</string>
+
+    <string name="status_no_data">No data.</string>
+    <string name="status_no_ocr_data">No OCR data.  Hint: keep text centered in view.</string>
+    <string name="status_no_location_data">No location data.</string>
+    <string name="status_no_status">No status.</string>
+    <string name="status_no_change">No change.</string>
+    <string name="status_no_note">No note found.</string>
+    <string name="status_empty">¯\\_(ツ)_/¯\u000ANo data.</string>
+
+    <string name="status_more_items">and more...</string>
+    <string name="status_imported_count">\u0020item(s) imported from\u0020</string>
+    <string name="status_count">\u0020item(s)\u0020</string>
+    <string name="status_word_count">\u0020word(s)</string>
+
+    <string name="status_modified_after">Modified after\u0020</string>
+    <string name="status_accessed_after">Accessed after\u0020</string>
+    <string name="status_modified_nearby">Modified nearby\u0020</string>
+
+    <string name="status_hit_count">count:\u0020</string>
+    <string name="status_hit_in_title">in the title</string>
+    <string name="status_no_hit_found">not found</string>
+    <string name="status_no_search_conducted">No search conducted</string>
+    <string name="status_no_go_back">Cannot go back any further</string>
+    <string name="status_no_go_forward">Cannot go forward any further</string>
+    <string name="status_all_replaced">All replaced.</string>
+
+    <string name="status_deleted_remotely">\u0020deleted.</string>
+    <string name="status_added_remotely">\u0020added.</string>
+    <string name="status_updated_remotely">\u0020updated.</string>
+    <string name="status_locked">\u0020🔒</string>
+
+    <string name="status_items_deleted">\u0020item(s) deleted.</string>
+    <string name="status_items_updated">\u0020item(s) updated.</string>
+
+    <string name="status_exported">Exported to\u0020</string>
+
+    <string name="status_back_to">Back to\u0020</string>
+    <string name="status_changes_left">\u0020change(s) left</string>
+
+    <string name="status_encrypted">Encoding completed.</string>
+    <string name="status_decrypted">Decoding completed.</string>
+    <string name="status_encrypting">Encoding in progress...</string>
+    <string name="status_decrypting">Decoding in progress...</string>
+    <string name="status_encrypting_detailed">Encoding in progress, please wait...</string>
+    <string name="status_decrypting_detailed">Decoding in progress, please wait...</string>
+
+    <string name="status_reverted">\u0020reverted.</string>
+
+    <string name="status_notes_exported">\u0020notes exported.</string>
+
+    <string name="status_auto_backup">Automatic backup</string>
+    <string name="status_auto_backup_in_progress">Backup in progress now</string>
+    <string name="status_auto_backup_completed">Backup completed at</string>
+    <string name="status_auto_backup_disabled">Automatic backup disabled.</string>
+
+    <string name="status_search_history_cleared">Search history cleared.</string>
+    <string name="status_location_data_cleared">Location data cleared.</string>
+
+    <string name="status_storage_permission_granted">Permissions to access storage granted.  Please restart app.</string>
+    <string name="status_location_permission_granted">Permission to access location granted.  Please restart app.</string>
+    <string name="status_camera_permission_granted">Permission to access camera granted.</string>
+
+    <string name="status_storage_permission_denied">Permissions to access storage denied.  Please grant storage access from device settings and restart neutriNote to avoid data loss.</string>
+    <string name="status_location_permission_denied">Permission to access location denied.  Location based functions will not work regardless of the in-app Location Awareness setting.</string>
+    <string name="status_camera_permission_denied">Permission to access camera denied.  Functions such as barcode scanning are now disabled.</string>
+
+    <string name="status_shortcut_added">The shortcut is now ready for use.</string>
+
+    <string name="status_restart_app">Please restart neutriNote.</string>
+
+    <string name="widget_empty_view_text">No record</string>
+    <string name="status_empty_clipboard">Clipboard is empty.</string>
+
+    <string name="info_select_one">Tap circles to select.</string>
+
+    <string name="info_cancel_encrypt">Unsafe to encode.  Operation canceled.</string>
+    <string name="info_cancel_decrypt">Unsafe to decode.  Operation canceled.</string>
+
+    <string name="info_drawing_best_viewing_font">Best viewed in monospace fonts (12 pt).</string>
+
+    <string name="info_local_images_only">This button only handles local images (beta).</string>
+
+    <string name="info_cache_cleared">Cache cleared.</string>
+
+    <string name="warn_markdown_cursor_position">Place cursor away from Markdown symbols for proper rendering.</string>
+    <string name="warn_no_selected_word">Please select some words.</string>
+    <string name="warn_no_selected_expression">Please select an expression.</string>
+    <string name="warn_shortcut_disabled">Text expansion disabled in this context.</string>
+
+    <string name="error_database_setup">Database setup error.</string>
+    <string name="error_server">Server error.</string>
+    <string name="error_network">No network.</string>
+    <string name="error_json">JSON error.</string>
+    <string name="error_resource_not_found">Requested resource not found.</string>
+    <string name="error_unexpected">Unexpected error.</string>
+    <string name="error_login">Login did not connect. Status is </string>
+    <string name="error_empty_title">Please enter a title.</string>
+
+    <string name="error_app_data_not_found">App data not found.</string>
+    <string name="error_backup">Backup error.</string>
+
+    <string name="error_invalid_local_storage_path">Invalid local storage path.</string>
+    <string name="error_empty_local_repo_path">Please set local repository path.</string>
+    <string name="error_empty_backup_uri">Please check your backup settings.</string>
+    <string name="error_create_path">\u0020cannot be created.</string>
+
+    <string name="error_invalid_title">Invalid title.</string>
+    <string name="error_invalid_file_size">Invalid file size.</string>
+
+    <string name="error_no_writable_external_storage">No writable external storage.</string>
+    <string name="error_no_readable_external_storage">No readable external storage.</string>
+
+    <string name="error_no_camera">No camera found.</string>
+    <string name="error_no_calendar_app">No calendar app found.</string>
+
+    <string name="error_no_shortcuts">No shortcut setup.  For how-to, please see documentation.</string>
+    <string name="error_undefined_shortcut">Undefined shortcut.</string>
+
+    <string name="error_undo">Cannot undo.</string>
+    <string name="error_redo">Cannot redo.</string>
+
+    <string name="error_invalid_filters">Invalid filters.</string>
+    <string name="error_location_unknown">Location unknown.</string>
+
+    <string name="error_missing_colordict">ColorDict not found.</string>
+    <string name="error_calculation">Calculation error.</string>
+
+    <string name="rationale_storage_read_permission">In the next screen, you will be asked to grant neutriNote access to device storage.  The permission is required for neutriNote to function properly.</string>
+    <string name="rationale_storage_write_permission">\u0020</string>
+    <string name="rationale_location_permission">In the next screen, you will be asked to grant neutriNote access to your location.  The permission overrides neutriNote\u0027s location settings.</string>
+    <string name="rationale_camera_permission">In the next screen, you will be asked to grant neutriNote access to your camera.</string>
+
+    <string name="admin_pref">Administration</string>
+    <string name="pref_local_repo_path_title">Local Repository Path</string>
+    <string name="pref_local_repo_path_summary">Specify local repository path.  Do not modify the repo directly (see User Guide).  Note: Hidden from other apps in Android 11+.</string>
+    <string name="pref_local_repo_path_default">\u0020</string>
+
+    <string name="pref_incremental_backup_title">Auto Backup / Mirror</string>
+    <string name="pref_incremental_backup_summary">Specify backup / mirror storage.  Backup will run daily during idle hours.  Mirror may be used for sync (see User Guide).  Note: Visible to other apps in Android 11+.</string>
+    <string name="pref_incremnental_backup_default">false</string>
+
+    <string name="pref_auto_save_title">Auto Save</string>
+    <string name="pref_auto_save_summary">Enable auto save.</string>
+    <string name="pref_auto_save_default">false</string>
+
+    <string name="pref_location_aware_title">Location Awareness</string>
+    <string name="pref_location_aware_summary">Store note locations.</string>
+    <string name="pref_location_aware_default">false</string>
+
+    <string name="ui_pref">User Interface</string>
+    <string name="pref_custom_filter_title">Custom Filters</string>
+    <string name="pref_custom_filter_summary">Specify filters separated by semicolons.  neutriNote will launch with the first filter.</string>
+    <string name="pref_custom_filter_default">all;starred;A;B;C;D;E;F;G;H;I;J;K;L;M;N;O;P;Q;R;S;T;U;V;W;X;Y;Z</string>
+
+    <string name="style_pref">Styling</string>
+    <string name="pref_theme_title">Theme</string>
+    <string name="pref_theme_summary">Specify a theme.</string>
+    <string name="pref_theme_default">day</string>
+    <string-array name="pref_theme_names">
+        <item>Day</item>
+        <item>Dark</item>
+        <item>Night</item>
+    </string-array>
+    <string-array name="pref_theme_values">
+        <item>day</item>
+        <item>dark</item>
+        <item>night</item>
+    </string-array>
+
+    <string name="pref_lux_title">Ambient Glow (Experimental)</string>
+    <string name="pref_lux_summary">Adapt color temperature to ambient light (colors in Markdown unaffected).</string>
+    <string name="pref_lux_default">false</string>
+
+    <string name="advanced_pref">Advanced</string>
+    <string name="pref_lazy_update_title">Lazy Update</string>
+    <string name="pref_lazy_update_summary">Merge changes before commits to conserve battery.</string>
+    <string name="pref_lazy_update_default">false</string>
+
+    <string name="pref_math_url_title">Mathematics</string>
+    <string name="pref_math_url_summary">Use your own parser by providing server\u0027s url (HTTPS).  Leave blank to use MathJax (default).</string>
+    <string name="pref_math_url_default">https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</string>
+
+    <string name="pref_copy_attachments_to_repo_title">Add Images</string>
+    <string name="pref_copy_attachments_to_repo_summary">Always add inserted images to local repository.</string>
+    <string name="pref_copy_attachments_to_repo_default">false</string>
+
+    <string name="pref_show_hidden_title">Show Hidden</string>
+    <string name="pref_show_hidden_summary">Show hidden notes (any note with \u223c as prefix in its title).</string>
+    <string name="pref_show_hidden_default">false</string>
+
+    <string name="support_pref">Support</string>
+    <string name="pref_support_title">Having a problem?</string>
+    <string name="pref_support_summary">Contact the developer.</string>
+    <string name="pref_support_extensions">Extensions</string>
+
+    <string name="support_email_subject">neutriNote Bug Report</string>
+    <string name="support_email_body">Details of the problem:</string>
+
+    <string name="pref_play_store_link_title">Recommend neutriNote</string>
+    <string name="pref_play_store_link_summary">Share with those who might find the app useful.</string>
+    <string name="pref_play_store_link_url">market://details?id=com.appmindlab.nano</string>
+
+    <string name="pref_connector_title">Dropbox Connector</string>
+    <string name="pref_connector_summary">An extension for 2-way Dropbox sync.</string>
+    <string name="pref_connector_url">market://details?id=com.appmindlab.connector</string>
+
+    <string name="pref_play_store_catalog_title">Add-ons</string>
+    <string name="pref_play_store_catalog_summary">Get add-ons for Tasker, 2-way sync with Dropbox, etc.</string>
+    <string name="pref_play_store_catalog_url">market://search?q=pub:AppML</string>
+
+    <string name="pref_product_news_link_title">Product News</string>
+    <string name="pref_product_news_link_summary">Announcements and updates.</string>
+    <string name="pref_product_news_link_url">https://mastodon.social/@neutrinote</string>
+
+    <string name="dialog_home_title">Unsaved changes</string>
+    <string name="dialog_home_message">Save now?</string>
+    <string name="dialog_home_ok">Save</string>
+    <string name="dialog_home_cancel">Discard</string>
+
+    <string name="dialog_save_title">Save</string>
+    <string name="dialog_save_message">How would you like to save?</string>
+    <string name="dialog_save_quit">Save\u0020\u002d\u003e\u0020Exit</string>
+    <string name="dialog_save_edit">Save\u0020\u002d\u003e\u0020Edit</string>
+
+    <string name="dialog_revert_title">Revert Changes</string>
+    <string name="dialog_revert_message">Revert to the last version?</string>
+    <string name="dialog_revert_ok">Revert</string>
+    <string name="dialog_revert_cancel">Do not revert</string>
+
+    <string name="dialog_reload_title">Remote Change Detected</string>
+    <string name="dialog_reload_message">Would you like to reload?</string>
+    <string name="dialog_reload_ok">Yes</string>
+    <string name="dialog_reload_cancel">No</string>
+
+    <string name="dialog_font_family_title">Select a typeface</string>
+    <string name="dialog_font_family_message">Select one</string>
+    <string name="dialog_font_family_ok">Ok</string>
+    <string name="dialog_font_family_cancel">Cancel</string>
+
+    <string name="dialog_font_size_title">Select a font size</string>
+    <string name="dialog_font_size_message">Select one</string>
+    <string name="dialog_font_size_ok">Ok</string>
+    <string name="dialog_font_size_cancel">Cancel</string>
+
+    <string name="dialog_margin_title">Select a margin size</string>
+    <string name="dialog_margin_message">Select one</string>
+    <string name="dialog_margin_ok">Ok</string>
+    <string name="dialog_margin_cancel">Cancel</string>
+
+    <string name="hint_search">Search for...</string>
+    <string name="hint_replace">Replace with...</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_content">Content</string>
+    <string name="hint_folder_name">Enter a folder name here</string>
+    <string name="hint_file_name">Enter a file name here</string>
+    <string name="hint_share_to">Pick a note</string>
+    <string name="hint_funnel">🚀 Pick a note</string>
+
+    <string name="chip_funnel">🚀 Pick a note</string>
+    <string name="chip_local_find">🔍 Search</string>
+    <string name="hint_chip_local_find">🔍 Search for...</string>
+
+    <string name="dialog_sort_title">Sort By</string>
+    <string name="dialog_sort_message">Choose a method to sort the list.</string>
+    <string name="dialog_sort_ok">Sort</string>
+    <string name="dialog_sort_cancel">Cancel</string>
+
+    <string name="dialog_hits_navigation_title">List of Matches</string>
+    <string name="dialog_hits_naviagtion_message">Select a location:</string>
+    <string name="dialog_hits_navigation_ok">Go To</string>
+    <string name="dialog_hits_navigation_cancel">Cancel</string>
+    <string name="dialog_hits_navigation_neutral">Clear Search</string>
+
+    <string name="dialog_replace_all_title">Replace all?</string>
+    <string name="dialog_replace_all_ok">Yes</string>
+    <string name="dialog_replace_all_cancel">No</string>
+
+    <string name="dialog_duplicates_title">Found at least one record with the same title</string>
+    <string name="dialog_duplicates_message">Overwrite?</string>
+    <string name="dialog_duplicates_ok">Overwrite</string>
+    <string name="dialog_duplicates_neutral">Discard</string>
+    <string name="dialog_duplicates_cancel">Cancel</string>
+
+    <string name="dialog_boolean_search_title">Advanced Search</string>
+    <string name="dialog_boolean_search_message">Separate each term by a comma</string>
+    <string name="dialog_boolean_search_ok">All Words</string>
+    <string name="dialog_boolean_search_neutral">Any Word</string>
+    <string name="dialog_boolean_search_cancel">Cancel</string>
+
+    <string-array name="sort_methods">
+        <item>Title</item>
+        <item>Date</item>
+    </string-array>
+
+    <string name="dialog_directory_chooser_new_directory_title">New Folder Name</string>
+    <string name="dialog_directory_chooser_new_directory_button">Add New Folder</string>
+    <string name="dialog_directory_chooser_ok">Confirm</string>
+    <string name="dialog_directory_chooser_cancel">Cancel</string>
+    <string name="dialog_directory_chooser_selected_folder">Selected:\u0020</string>
+
+    <string name="dialog_encrypt_decrypt_title">Encode/Decode</string>
+    <string name="dialog_encrypt_decrypt_message">Scramble note content (this is not encryption and should not be used to protect sensitive data).</string>
+    <string name="dialog_encrypt_decrypt_ok">Encode</string>
+    <string name="dialog_encrypt_decrypt_cancel">Cancel</string>
+    <string name="dialog_encrypt_decrypt_neutral">Decode</string>
+
+    <string name="dialog_share_to_title">Share To</string>
+    <string name="dialog_share_to_message"></string>
+    <string name="dialog_share_to_ok">Continue</string>
+    <string name="dialog_share_to_cancel">Cancel</string>
+
+    <string name="dialog_funnel_title">🚀</string>
+    <string name="dialog_funnel_ok">Continue</string>
+    <string name="dialog_funnel_cancel">Cancel</string>
+
+    <string name="dialog_metadata_title">Edit Metadata</string>
+    <string name="dialog_metadata_message">Specify metadata (\u0022:\u0022 or newline characters will be omitted).</string>
+    <string name="dialog_metadata_ok">Set</string>
+    <string name="dialog_metadata_cancel">Cancel</string>
+
+    <string name="dialog_metadata_search_title">Filter by Metadata</string>
+    <string name="dialog_metadata_search_message">Filter notes by metadata</string>
+    <string name="dialog_metadata_search_ok">Filter</string>
+    <string name="dialog_metadata_search_neutral">Browse</string>
+    <string name="dialog_metadata_search_cancel">Cancel</string>
+
+    <string name="dialog_custom_filters_title">Custom Filters</string>
+    <string name="dialog_custom_filters_message">Filter notes by custom filters</string>
+    <string name="dialog_custom_filters_ok">Filter</string>
+    <string name="dialog_custom_filters_cancel">Cancel</string>
+
+    <string name="dialog_export_title">Export As</string>
+    <string name="dialog_export_message">Pick a file type.</string>
+    <string name="dialog_export_ok">Export</string>
+    <string name="dialog_export_cancel">Cancel</string>
+
+    <string name="dialog_sd_backup_title">Export Notes</string>
+    <string name="dialog_sd_backup_message">Export to here?</string>
+    <string name="dialog_sd_backup_ok">Export</string>
+    <string name="dialog_sd_backup_cancel">Cancel</string>
+
+    <string name="dialog_mirror_title">Mirror Notes</string>
+    <string name="dialog_mirror_message">Pick a mirroring action.</string>
+    <string name="dialog_mirror_ok">Push to mirror</string>
+    <string name="dialog_mirror_neutral">Force sync</string>
+    <string name="dialog_mirror_cancel">Pull from mirror</string>
+
+    <string name="dialog_about_title">About</string>
+    <string name="dialog_about_ok">Ok</string>
+    <string name="dialog_usage_title">Usage</string>
+    <string name="dialog_usage_ok">Ok</string>
+
+    <string name="dialog_empty_local_repo_title">Local Repository Setup</string>
+    <string name="dialog_empty_local_repo_message">By creating a local repository, your notes will automatically be mirrored as files.  The repository would also make syncing with P2P or cloud providers easier.</string>
+    <string name="dialog_empty_local_repo_ok">Configure</string>
+    <string name="dialog_empty_local_repo_cancel">Use Default</string>
+    <string name="dialog_empty_local_repo_neutral">Quit</string>
+
+    <string name="dialog_show_map_title">Find My Notes</string>
+    <string name="dialog_show_map_message">Last modified locations</string>
+    <string name="dialog_show_map_ok">Done</string>
+
+    <string name="dialog_show_clipboard_ok">Done</string>
+    <string name="dialog_show_clipboard_paste">Paste</string>
+
+    <string name="dialog_draw_title">Sketch</string>
+    <string name="dialog_draw_message">\u0020</string>
+    <string name="dialog_draw_ok">Paste</string>
+    <string name="dialog_draw_cancel">Discard</string>
+
+    <string name="dialog_canvas_stroke_ok">Set</string>
+    <string name="dialog_canvas_stroke_cancel">Cancel</string>
+
+    <string name="dialog_add_shortcut_title">Add Shortcut</string>
+    <string name="dialog_add_shortcut_hint">\u0020as the shortcut for</string>
+    <string name="dialog_add_shortcut_ok">Set</string>
+    <string name="dialog_add_shortcut_cancel">Cancel</string>
+
+    <string name="dialog_show_shortcuts_title">Shortcuts</string>
+    <string name="dialog_show_shortcuts_not_found">Not found</string>
+    <string name="dialog_show_shortcuts_ok">Ok</string>
+
+    <string name="dialog_revision_summary_ok">Ok</string>
+
+    <string name="snack_bar_button_ok">Ok</string>
+    <string name="snack_bar_button_undo">Undo</string>
+    <string name="snack_bar_button_done">Done</string>
+    <string name="snack_bar_button_paste">Paste</string>
+
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
+
+    <string name="button_indent">\u2192</string>
+    <string name="button_indent_description">Indent</string>
+    <string name="button_unindent">\u2190</string>
+    <string name="button_unindent_description">Unindent</string>
+    <string name="button_hash">\u0023</string>
+    <string name="button_asterisk">\u002A</string>
+    <string name="button_grave_accent">\u0060</string>
+    <string name="button_quotation">\u0022</string>
+    <string name="button_quotation_description">Quotation</string>
+    <string name="button_plus">\u002B</string>
+    <string name="button_dash">\u002D</string>
+    <string name="button_dash_description">Minus</string>
+    <string name="button_equal">\u003D</string>
+    <string name="button_colon">\u003A</string>
+    <string name="button_colon_description">Colon</string>
+    <string name="button_semicolon">\u003B</string>
+    <string name="button_semicolon_description">Semi Colon</string>
+    <string name="button_vertical">\u007C</string>
+    <string name="button_vertical_description">Vertical Bar</string>
+    <string name="button_backslash">\u005C</string>
+    <string name="button_backslash_description">Backslash</string>
+    <string name="button_slash">\u002F</string>
+    <string name="button_slash_description">Slash</string>
+    <string name="button_bracket_left">\u0028</string>
+    <string name="button_bracket_left_description">Left Bracket</string>
+    <string name="button_bracket_right">\u0029</string>
+    <string name="button_bracket_right_description">Right Bracket</string>
+    <string name="button_square_bracket_left">\u005B</string>
+    <string name="button_square_bracket_left_description">Square Left Bracket</string>
+    <string name="button_square_bracket_right">\u005D</string>
+    <string name="button_square_bracket_right_description">Square Right Bracket</string>
+    <string name="button_curly_bracket_left">\u007B</string>
+    <string name="button_curly_bracket_left_description">Curly Left Bracket</string>
+    <string name="button_curly_bracket_right">\u007D</string>
+    <string name="button_curly_bracket_right_description">Curly Right Bracket</string>
+    <string name="button_bracket_less">\u003C</string>
+    <string name="button_bracket_greater">\u003E</string>
+    <string name="button_underscore">\u005F</string>
+    <string name="button_dollar">\u0024</string>
+    <string name="button_dollar_description">Dollar</string>
+    <string name="button_bang">\u0021</string>
+    <string name="button_bang_description">Exclamation</string>
+    <string name="button_question">\u003F</string>
+    <string name="button_question_description">Question Mark</string>
+    <string name="button_close">\uF057</string>
+    <string name="button_close_description">Close</string>
+
+    <string name="button_save">\uF0C7</string>
+    <string name="button_save_description">Save</string>
+    <string name="button_undo">\uF0E2</string>
+    <string name="button_undo_description">Undo</string>
+    <string name="button_redo">\uF01E</string>
+    <string name="button_redo_description">Redo</string>
+
+    <string name="button_markdown">\uF121</string>
+    <string name="button_markdown_description">Markdown Symbols</string>
+
+    <string name="button_timestamp">\uF017</string>
+    <string name="button_timestamp_description">Insert Time Stamp</string>
+    <string name="button_datestamp">\uF073</string>
+    <string name="button_datestamp_description">Insert Date Stamp</string>
+
+    <string name="button_locationstamp">\uF041</string>
+    <string name="button_locationstamp_description">Insert Location Stamp</string>
+
+    <string name="button_draw">\uF1FC</string>
+    <string name="button_draw_description">Sketch</string>
+
+    <string name="button_settings">\uF55D</string>
+    <string name="button_settings_description">Settings</string>
+
+    <string name="button_search">\uF002</string>
+    <string name="button_search_description">Search</string>
+    <string name="button_replace">\uF074</string>
+    <string name="button_replace_description">Replace</string>
+    <string name="button_text_expand">\uF035</string>
+    <string name="button_text_expand_description">Text Expand</string>
+    <string name="button_next">\uF063</string>
+    <string name="button_next_description">Find Next</string>
+
+    <string name="button_barcode">\uF02A</string>
+    <string name="button_barcode_description">Get Barcode</string>
+    <string name="button_image">\uF03E</string>
+    <string name="button_image_description">Insert Image</string>
+    <string name="button_ocr">\uF140</string>
+    <string name="button_ocr_description">OCR</string>
+
+    <string name="button_define">\uF02D</string>
+    <string name="button_define_description">Define</string>
+    <string name="button_calculate">\uF1EC</string>
+    <string name="button_calculate_description">Calculate</string>
+    <string name="button_web_search">\uF0AC</string>
+    <string name="button_web_search_description">Web Search</string>
+
+    <string name="button_top">\uF062</string>
+    <string name="button_top_description">Top</string>
+    <string name="button_bottom">\uF063</string>
+    <string name="button_bottom_description">Bottom</string>
+
+    <string name="button_clear">\uF1F8</string>
+    <string name="button_clear_description">Clear</string>
+
+    <string name="button_gallery">\uF87C</string>
+    <string name="button_gallery_description">Gallery</string>
+
+    <string name="button_camera">\uF083</string>
+    <string name="button_camera_description">Camera</string>
+
+    <string name="button_encrypt">\uF023</string>
+    <string name="button_encrypt_description">Encrypt</string>
+
+    <string name="button_decrypt">\uF09C</string>
+    <string name="button_decrypt_description">Decrypt</string>
+
+    <string name="message_undobar">Deleted.</string>
+
+    <string name="message_ignore_case">Ignore case?</string>
+    <string name="message_glob">UNIX pattern (case sensitive)</string>
+
+    <string name="message_export_notes_folder">Export to\u0020</string>
+    <string name="message_import_notes_folder">Import notes (.txt) from the following folder:\n\n(note: existing note data will be overwritten)</string>
+
+    <string name="message_auto_backup_log">Last auto backup:\u0020</string>
+    <string name="message_auto_backup_log_empty">- - -</string>
+
+    <string name="message_sync_log">Last sync:\u0020</string>
+    <string name="message_sync_log_empty">- - -</string>
+
+    <string name="message_auto_mirror_log">Last auto mirror:\u0020</string>
+    <string name="message_auto_mirror_log_empty">- - -</string>
+
+    <string name="message_storage_usage">Storage usage on device (data only):\u0020</string>
+
+    <string name="tile_sync">Scan repository</string>
+    <string name="tile_add_note">New note</string>
+
+    <string name="word_count">W</string>
+    <string name="file_size">S</string>
+    <string name="line_number">L</string>
+
+    <string-array name="font_family_values">
+        <item>Monospace</item>
+        <item>Sans Serif</item>
+        <item>Serif</item>
+        <item>Roboto Light</item>
+        <item>Roboto Medium</item>
+        <item>Roboto Condensed Light</item>
+        <item>Roboto Condensed Regular</item>
+        <item>Roboto Mono Light</item>
+        <item>Roboto Mono Regular</item>
+        <item>Roboto Slab Light</item>
+        <item>Roboto Slab Regular</item>
+        <item>Roboto Slab Bold</item>
+    </string-array>
+
+    <string-array name="margin_values">
+        <item>8</item>
+        <item>16</item>
+        <item>24</item>
+    </string-array>
+</resources>

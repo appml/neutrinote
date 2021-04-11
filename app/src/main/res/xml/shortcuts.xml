@@ -1,0 +1,21 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="add_new"
+        android:enabled="true"
+        android:icon="@drawable/shortcut_add_note"
+        android:shortcutShortLabel="@string/menu_add"
+        android:shortcutLongLabel="@string/menu_add"
+        android:shortcutDisabledMessage="@string/menu_add">
+        <intent
+            android:action="com.appmindlab.nano.ACTION_VIEW_ENTRY"
+            android:targetPackage="com.appmindlab.nano"
+            android:targetClass="com.appmindlab.nano.MainActivity">
+            <extra android:name="com.appmindlab.nano.ID" android:value="-1" />
+        </intent>
+        <!-- If your shortcut is associated with multiple intents, include them
+             here. The last intent in the list is what the user sees when they
+             launch this shortcut. -->
+        <category android:name="android.intent.category.LAUNCHER" />
+    </shortcut>
+    <!-- Specify more shortcuts here. -->
+</shortcuts>

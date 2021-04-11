@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/editor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/entry_appbar"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/edit_title_bar_day"
+        android:animateLayoutChanges="true"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/entry_toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:minHeight="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat"
+            app:layout_scrollFlags="scroll|enterAlways">
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/entry_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_title"
+                android:hint="@string/hint_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="120dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="0dp"
+                android:scrollbars="horizontal"
+                android:scrollbarSize="1dp"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@android:color/black"
+                android:importantForAutofill="no"
+                android:imeOptions="actionDone|flagNoExtractUi" />
+
+            <TextView
+                android:id="@+id/status_bar"
+                android:paddingRight="4dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:layout_below="@id/edit_title"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:textSize="12dp"
+                android:ellipsize="end"
+                android:singleLine="false"
+                android:maxLines="2"
+                android:fontFamily="sans-serif-condensed"
+                android:background="@android:color/transparent"
+                android:textColor="@color/edit_status_bar" />
+
+            <ProgressBar
+                android:id="@+id/io_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/edit_title"
+                android:indeterminateOnly="true"
+                android:indeterminateTintMode="src_in"
+                android:indeterminateTint="@color/io_progress_bar_background"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="90"
+            android:padding="0dp"
+            android:fillViewport="true"
+            >
+
+            <ScrollView
+                android:id="@+id/edit_scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="90"
+                android:layout_below="@id/title_bar"
+                android:padding="0dp"
+                android:fillViewport="true"
+                android:scrollbars="vertical"
+                android:scrollbarSize="5dp"
+                android:background="@color/scroll_view_background"
+                android:scrollbarThumbVertical="@drawable/custom_scrollbar">
+
+                <EditText
+                    android:id="@+id/edit_content"
+                    android:hint="@string/hint_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:gravity="top"
+                    android:cursorVisible="true"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:fontFamily="sans-serif"
+                    android:textSize="12sp"
+                    android:importantForAutofill="no"
+                    android:imeOptions="actionDone|flagNoExtractUi" />
+
+            </ScrollView>
+        </androidx.core.widget.NestedScrollView>
+
+        <WebView
+            android:id="@+id/markdown_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:scrollbars="vertical"
+            android:scrollbarThumbVertical="@drawable/custom_scrollbar"
+            android:scrollbarSize="5dp"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@+id/fragment_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryDark"  />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="0.7dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0.5dp"
+        android:layout_marginRight="0.5dp"
+        card_view:cardElevation="1dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardUseCompatPadding="false"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/text_drawable_dimen"
+                android:layout_height="@dimen/text_drawable_dimen"
+                android:layout_marginRight="12dp"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_alignParentTop="true"
+                android:paddingRight="80dp"
+                android:textColor="@color/list_item_title_day"
+                android:maxLines="3"
+                android:textSize="16dp"
+                android:ellipsize="end"
+                />
+
+            <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:textColor="@color/list_item_size_day"
+                android:textSize="12dp"
+                />
+
+            <TextView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                android:paddingRight="8dp"
+                android:gravity="right"
+                android:textSize="@dimen/star_font_size"
+                />
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_below="@+id/title"
+                android:paddingRight="12dp"
+                android:textSize="12dp"
+                android:textColor="@color/list_item_content_day"
+                android:singleLine="false"
+                android:maxLines="4"
+                android:ellipsize="end"
+                />
+
+            <TextView
+                android:id="@+id/metadata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/list_item_metadata_day"
+                android:background="@drawable/blue_frame"
+                android:textSize="12dp"
+                android:singleLine="false"
+                android:maxLines="3"
+                android:ellipsize="end"
+                />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/metadata"
+                android:paddingTop="4dp"
+                android:textColor="@color/list_item_date_day"
+                android:textSize="11dp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

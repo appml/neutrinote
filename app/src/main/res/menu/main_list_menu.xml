@@ -1,0 +1,56 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/menu_search"
+        android:title="@string/menu_search"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_search_vector"
+        android:actionLayout="@layout/search_view"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_sort"
+        android:title="@string/menu_sort"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_sort_anim_vector"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_advanced_search"
+        android:title="@string/menu_advanced_search"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/menu_import_files"
+        android:title="@string/menu_import_files"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/menu_export_files"
+        android:title="@string/menu_export_files"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/menu_mirror_files"
+        android:title="@string/menu_mirror_files"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/menu_clear_search_history"
+        android:title="@string/menu_clear_search_history"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/menu_clear_location_data"
+        android:title="@string/menu_clear_location_data"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView" />
+</menu>

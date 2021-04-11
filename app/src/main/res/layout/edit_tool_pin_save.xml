@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <Button android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/button_min_width"
+        android:text="@string/button_save"
+        android:textColor="@color/symbol_color"
+        android:textSize="@dimen/button_font_size"
+        android:contentDescription="@string/button_save_description"
+        style="@style/AppTextButtonStyle" />
+
+    <HorizontalScrollView
+        android:id="@+id/edit_tool_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimaryDark"
+        android:scrollbarThumbHorizontal="@drawable/custom_button_scrollbar"
+        android:scrollbarSize="1dp"
+        android:requiresFadingEdge="horizontal"
+        android:fadingEdgeLength="60dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="0.5dp"
+            android:orientation="horizontal" >
+
+            <Button android:id="@+id/button_undo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_undo"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_undo_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_redo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_redo"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_redo_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_markdown"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_markdown"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_markdown_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_timestamp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_timestamp"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_timestamp_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_datestamp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_datestamp"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_datestamp_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_locationstamp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_locationstamp"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_locationstamp_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_text_expand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_text_expand"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_text_expand_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_draw"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_draw"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_draw_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_top"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_top"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_top_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_bottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_bottom"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_bottom_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_local_find"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_search"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_search_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_local_replace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_replace"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_replace_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_barcode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_barcode"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_barcode_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_image"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_image_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_define"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_define"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_define_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_calculate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_calculate"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_calculate_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_web_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_web_search"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_web_search_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_encrypt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_encrypt"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_encrypt_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_decrypt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_decrypt"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_decrypt_description"
+                style="@style/AppTextButtonStyle" />
+
+            <Button android:id="@+id/button_close"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_close"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_close_description"
+                style="@style/AppTextButtonStyle" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

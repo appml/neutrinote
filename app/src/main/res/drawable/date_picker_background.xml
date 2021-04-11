@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="@dimen/dialog_inset_size"
+    android:insetTop="@dimen/dialog_inset_size"
+    android:insetRight="@dimen/dialog_inset_size"
+    android:insetBottom="@dimen/dialog_inset_size">
+    <shape android:shape="rectangle">
+        <corners android:radius="@dimen/dialog_corner_radius" />
+        <solid android:color="@color/dialog_datepicker_background" />
+    </shape>
+</inset>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.appmindlab.nano"
+    android:versionCode="1190"
+    android:versionName="3.6.9">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  />
+    <uses-permission android:name="com.sonymobile.permission.SYSTEM_UI_VISIBILITY_EXTENSIONS" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" tools:node="remove" />
+
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
+    <queries>
+        <package android:name="com.socialnmobile.colordict" />
+        <package android:name="itkach.aard2" />
+        <package android:name="org.sufficientlysecure.keychain" />
+        <package android:name="com.google.android.calendar" />
+        <package android:name="com.google.android.apps.translate" />
+        <intent>
+            <action android:name="colordict.intent.action.SEARCH" />
+            <data android:mimeType="text/plain" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".DBApplication"
+        android:allowBackup="true"
+        android:backupAgent=".BackupAgent"
+        android:fullBackupContent="@xml/full_backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:resizeableActivity="true"
+        android:hasFragileUserData="true"
+        android:theme="@style/AppThemeOled">
+
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIR9YLFoUY3GZYlZhTZiQ0_0tJAIzr1lUzQicx9g" />
+
+        <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+
+        <meta-data android:name="android.max_aspect"
+            android:value="2.1"/>
+
+        <meta-data
+            android:name="android.allow_multiple_resumed_activities"
+            android:value="false" />
+
+        <provider android:name=".SuggestionProvider"
+            android:authorities="com.appmindlab.nano.SuggestionProvider" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <activity
+            android:name=".IntroActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.appmindlab.nano.ACTION_VIEW_ENTRY" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/*" />
+                <data android:host="*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="neutrinote.io" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.google.android.voicesearch.SELF_NOTE" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.gm.action.AUTO_SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
+        <activity-alias
+            android:name=".MainActivityAlias"
+            android:enabled="@bool/support_file_scheme"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="file" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".MainActivityProcessTextAlias"
+            android:enabled="false"
+            android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:name=".DisplayDBEntry"
+            android:label=""
+            android:configChanges="orientation"
+            android:hardwareAccelerated="false"
+            android:windowSoftInputMode="stateHidden"
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".SetPreferenceActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppSettingsThemeDay" >
+        </activity>
+
+        <activity android:name=".CaptureActivityAnyOrientation"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
+
+        <receiver android:name="BackupScheduleReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.appmindlab.nano.ACTION_SCHEDULE_BACKUP" />
+            </intent-filter>
+        </receiver>
+
+
+        <receiver android:name="BackupServiceReceiver">
+            <intent-filter>
+                <action android:name="com.appmindlab.nano.ACTION_INCREMENTAL_BACKUP" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.appmindlab.nano.ACTION_FULL_BACKUP" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.appmindlab.nano.WidgetProvider"
+            android:label="@string/browser_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.appmindlab.nano.ACTION_UPDATE_WIDGET" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+        <receiver android:name="com.appmindlab.nano.AddNoteWidgetProvider"
+            android:label="@string/add_note_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/add_note_widget_info" />
+        </receiver>
+
+        <receiver android:name="DisplaySettingsReceiver" >
+            <intent-filter>
+                <action android:name="com.appmindlab.nano.ACTION_CHANGE_DISPLAY_SETTINGS" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".ModuleStatReceiver" >
+            <intent-filter>
+                <action android:name="com.appmindlab.nano.ACTION_UPDATE_SYNC_LOG" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.appmindlab.nano.BackupService"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/backup_service_name" >
+        </service>
+
+        <service android:name="com.appmindlab.nano.BackupJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true" />
+
+        <service android:name="com.appmindlab.nano.WidgetService"
+            android:exported="true" android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <service
+            android:name="com.appmindlab.nano.CustomAddNoteTileService"
+            android:icon="@drawable/ic_note_add_vector"
+            android:label="@string/tile_add_note"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.appmindlab.nano.CustomSyncTileService"
+            android:icon="@drawable/ic_sync_vector"
+            android:label="@string/tile_sync"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <uses-library android:required="false" android:name="com.sec.android.app.multiwindow" />
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
+        <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:value="632.0dip" />
+        <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598.0dip" />
+        <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632.0dip" />
+        <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598.0dip" />
+    </application>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+</manifest>

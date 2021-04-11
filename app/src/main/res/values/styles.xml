@@ -1,0 +1,176 @@
+<resources>
+    <style name="AppTheme.ColdStart">
+        <item name="android:windowBackground">@drawable/cold_start</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorControlNormal">@color/theme_control_normal</item>
+        <item name="colorControlActivated">@color/theme_control_activated</item>
+        <item name="colorControlHighlight">@color/theme_control_highlight</item>
+        <item name="actionModeBackground">@color/colorPrimary</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_back_vector</item>
+        <item name="drawerBackgroundColor">@color/drawer_background</item>
+        <item name="drawerTextColor">@color/drawer_text</item>
+        <item name="fabBackgroundColor">@color/fab_background</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownTheme</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="AppThemeDay" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorControlNormal">@color/theme_control_normal</item>
+        <item name="colorControlActivated">@color/theme_control_activated</item>
+        <item name="colorControlHighlight">@color/theme_control_highlight</item>
+        <item name="actionModeBackground">@color/colorPrimary</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_back_vector</item>
+        <item name="android:textColorPrimary">@color/text_color_primary_day</item>
+        <item name="drawerBackgroundColor">@color/drawer_background</item>
+        <item name="drawerTextColor">@color/drawer_text</item>
+        <item name="fabBackgroundColor">@color/fab_background</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownTheme</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogThemeDay</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="AppThemeLux" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimaryLux</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkLux</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorControlNormal">@color/theme_control_normal</item>
+        <item name="colorControlActivated">@color/theme_control_activated</item>
+        <item name="colorControlHighlight">@color/theme_control_highlight</item>
+        <item name="actionModeBackground">@color/colorPrimaryLux</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_back_vector</item>
+        <item name="android:textColorPrimary">@color/text_color_primary_lux</item>
+        <item name="actionMenuTextColor">@color/theme_control_normal</item>
+        <item name="drawerBackgroundColor">@color/drawer_background_lux</item>
+        <item name="drawerTextColor">@color/drawer_text_lux</item>
+        <item name="fabBackgroundColor">@color/fab_background_lux</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownThemeLux</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="AppThemeOled" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="windowActionModeOverlay">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimaryOled</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkOled</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorControlNormal">@color/theme_control_normal</item>
+        <item name="colorControlActivated">@color/theme_control_activated</item>
+        <item name="colorControlHighlight">@color/theme_control_highlight</item>
+        <item name="actionModeBackground">@color/colorPrimaryOled</item>
+        <item name="actionModeCloseDrawable">@drawable/ic_back_vector</item>
+        <item name="android:textColorPrimary">@color/text_color_primary_oled</item>
+        <item name="drawerBackgroundColor">@color/drawer_background_oled</item>
+        <item name="drawerTextColor">@color/drawer_text_oled</item>
+        <item name="fabBackgroundColor">@color/fab_background_oled</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownThemeOled</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="AppSettingsTheme" parent="Theme.MaterialComponents">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorControlNormal">@color/theme_control_normal</item>
+        <item name="colorControlActivated">@color/theme_control_activated</item>
+        <item name="colorControlHighlight">@color/theme_control_highlight_settings</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="AppSettingsThemeDay" parent="Theme.MaterialComponents.Light">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorControlNormal">@color/theme_control_normal</item>
+        <item name="colorControlActivated">@color/theme_control_activated</item>
+        <item name="colorControlHighlight">@color/theme_control_highlight_settings</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogThemeDay</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+    </style>
+
+    <style name="DropDownTheme" parent="Widget.AppCompat.ListView.DropDown">
+    </style>
+
+    <style name="DropDownThemeLux" parent="Widget.AppCompat.ListView.DropDown">
+        <!-- item name="android:background">@color/colorPrimaryLux</item -->
+    </style>
+
+    <style name="DropDownThemeOled" parent="Widget.AppCompat.ListView.DropDown">
+        <!-- item name="android:background">@color/colorPrimaryOled</item -->
+    </style>
+
+    <style name="DatePickerDialogThemeLux" parent="Theme.MaterialComponents.Dialog">
+        <item name="colorAccent">@color/dialog_datepicker_color_accent</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowBackground">@drawable/date_picker_background</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+
+    <style name="DatePickerDialogThemeDay" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="colorAccent">@color/dialog_datepicker_color_accent</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowBackground">@drawable/date_picker_background_day</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowBackground">@drawable/dialog_background</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+
+    <style name="AlertDialogThemeDay" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="materialButtonStyle">@style/AppButtonStyle</item>
+        <item name="android:windowBackground">@drawable/dialog_background_day</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fast_zoom_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="AppButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:insetLeft">@dimen/button_inset_left</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="AppTextButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="rippleColor">@color/button_ripple</item>
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="AppTextInputStyle" parent="Base.Widget.MaterialComponents.TextInputLayout">
+        <item name="hintTextColor">@color/text_input_hint</item>
+    </style>
+</resources>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="appTitleColor">#FFFFFF</color>
+
+    <color name="colorPrimary">#0277BD</color>
+    <color name="colorPrimaryDark">#0277BD</color>
+    <!-- color name="colorPrimaryDark">#01579B</color -->
+
+    <color name="colorPrimaryLux">#424242</color>
+    <!--color name="colorPrimaryDarkLux">#212121</color-->
+    <color name="colorPrimaryDarkLux">#424242</color>
+
+    <color name="colorPrimaryOled">#000000</color>
+    <color name="colorPrimaryDarkOled">#000000</color>
+
+    <!-- Reference: https://en.m.wikipedia.org/wiki/Color_temperature#Categorizing_different_lighting -->
+    <color name="white_daylight">#FFFFFF</color>
+    <color name="white_office">#CCFFE5CE</color>
+    <color name="white_living_room">#E6FFD3A7</color>
+    <color name="white_starlight">#E6FFB569</color>
+
+    <color name="list_item_title_day">#000000</color>
+    <color name="list_item_content_day">#546E7A</color>
+    <color name="list_item_title_night">#FFFFFF</color>
+    <color name="list_item_content_night">#CCFFFFFF</color>
+    <color name="list_item_title_dark">#FFFFFF</color>
+    <color name="list_item_content_dark">#CCFFFFFF</color>
+    <color name="list_item_metadata_day">#1976D2</color>
+    <color name="list_item_metadata_night">#2196F3</color>
+    <color name="list_item_metadata_dark">#2196F3</color>
+    <color name="list_item_date_day">#009688</color>
+    <color name="list_item_date_night">#009688</color>
+    <color name="list_item_date_dark">#009688</color>
+    <color name="list_item_size_day">#1976D2</color>
+    <color name="list_item_size_night">#2196F3</color>
+    <color name="list_item_size_dark">#2196F3</color>
+    <color name="list_item_size_warn">#FDD835</color>
+    <color name="list_item_size_critical">#FF9800</color>
+    <color name="list_item_size_severe">#F44336</color>
+    <color name="list_item_size_">#FF9800</color>
+    <color name="list_item_background_day">#FFFFFF</color>
+    <color name="list_item_background_night">#000000</color>
+    <color name="list_item_background_dark">#303030</color>
+
+    <color name="cardview_background_day">#FFFFFF</color>
+    <color name="cardview_background_night">#000000</color>
+    <color name="cardview_background_dark">#303030</color>
+
+    <color name="edit_content_day">#000000</color>
+    <color name="edit_content_night">#CCFFFFFF</color>
+    <color name="edit_content_dark">#CCFFFFFF</color>
+    <color name="edit_content_background_day">#F9F9F9</color>
+    <color name="edit_content_background_night">#000000</color>
+    <color name="edit_content_background_dark">#303030</color>
+    <color name="edit_button_bar_background">#000000</color>
+
+    <color name="progress_bar_foreground">#4CAF50</color>
+    <color name="progress_bar_background">#FF8A65</color>
+    <color name="io_progress_bar_background">#F44336</color>
+
+    <color name="drawer_background">@color/colorPrimaryDark</color>
+    <color name="drawer_background_lux">@color/colorPrimaryLux</color>
+    <color name="drawer_background_oled">@color/colorPrimaryOled</color>
+
+    <color name="drawer_text">#F9A825</color>
+    <color name="drawer_text_lux">#FF9800</color>
+    <color name="drawer_text_oled">#9E9E9E</color>
+
+    <color name="drawer_icon_color">@color/color_accent</color>
+
+    <color name="cursor">#AA0091EA</color>
+    <color name="fragment_cursor">#F44336</color>
+
+    <color name="scroll_bar">#AA0091EA</color>
+    <color name="button_scroll_bar">#FF7043</color>
+
+    <color name="fastscroll_popup_fg">#FF7043</color>
+    <color name="fastscroll_popup_bg">#AA0091EA</color>
+
+    <color name="status_bar_day">#E0E0E0</color>
+    <color name="status_bar_text_day">#616161</color>
+
+    <color name="status_bar_night">#212121</color>
+    <color name="status_bar_text_night">#FFFFFF</color>
+
+    <color name="status_bar_dark">#424242</color>
+    <color name="status_bar_text_dark">#FFFFFF</color>
+
+    <color name="edit_title_bar_day">#E0E0E0</color>
+    <color name="edit_title_bar_text_day">#616161</color>
+
+    <color name="edit_title_bar_night">#212121</color>
+    <color name="edit_title_bar_text_night">#FFFFFF</color>
+
+    <color name="edit_title_bar_dark">#424242</color>
+    <color name="edit_title_bar_text_dark">#FFFFFF</color>
+
+    <color name="edit_status_bar">#0288D1</color>
+
+    <color name="scroll_view_background">#FF5722</color>
+
+    <color name="dropdown_list_item_foreground">#FFFFFF</color>
+    <color name="dropdown_list_item_background">#BBAA00FF</color>
+
+    <color name="dialog_background">#212121</color>
+    <color name="dialog_background_day">#FFFFFF</color>
+
+    <color name="dialog_datepicker_background">#212121</color>
+    <color name="dialog_datepicker_background_day">#FFFFFF</color>
+    <color name="dialog_datepicker_color_accent">#DDFF5722</color>
+
+    <color name="metadata_browser_background">#DDEA80FC</color>
+
+    <color name="fragment_foreground">#FFFFFF</color>
+    <color name="fragment_background">@color/colorPrimaryDark</color>
+    <color name="symbol_color">#FFFFFF</color>
+
+    <color name="checkmark_icon_background">#EEEEEE</color>
+    <color name="no_metadata_icon_background">@color/colorPrimary</color>
+
+    <color name="widget_background">#263238</color>
+    <color name="widget_title_text_color">#42A5F5</color>
+    <color name="widget_content_text_color">#FFFFFF</color>
+
+    <color name="star_on">#FF9800</color>
+    <color name="star_off">#EEEEEE</color>
+
+    <color name="swipe_refresh_day">#EEEEEE</color>
+    <color name="swipe_refresh_night">#000000</color>
+    <color name="swipe_refresh_dark">#424242</color>
+
+    <color name="swipe_refresh_background_day">#EEEEEE</color>
+    <color name="swipe_refresh_background_night">#212121</color>
+    <color name="swipe_refresh_background_dark">#212121</color>
+
+    <color name="swipe_refresh_color_1">#4CAF50</color>
+    <color name="swipe_refresh_color_2">#F44336</color>
+    <color name="swipe_refresh_color_3">#2196F3</color>
+
+    <color name="sunday_color">#B71C1C</color>
+    <color name="saturday_color">#3F51B5</color>
+
+    <color name="highlight_color">#77FFEB3B</color>
+    <color name="unsaved_color">#009900</color>
+    <color name="fresh_color">#1B5E20</color>
+
+    <color name="canvas_frame_day">#EC407A</color>
+    <color name="canvas_frame_night">#EC407A</color>
+    <color name="canvas_frame_dark">#EC407A</color>
+    <color name="canvas_foreground_day">#64B5F6</color>
+    <color name="canvas_foreground_night">#64B5F6</color>
+    <color name="canvas_foreground_dark">#64B5F6</color>
+    <color name="canvas_background_day">#009E9E9E</color>
+    <color name="canvas_background_night">#009E9E9E</color>
+    <color name="canvas_background_dark">#009E9E9E</color>
+
+    <color name="intro_background">#FFEB3B</color>
+
+    <color name="color_accent">@color/colorPrimary</color>
+    <color name="color_accent_lux">@color/colorPrimaryLux</color>
+    <color name="color_accent_night">@color/colorPrimaryOled</color>
+
+    <color name="theme_control_activated">#EA80FC</color>
+    <color name="theme_control_highlight">#FF8F00</color>
+    <color name="theme_control_highlight_settings">#00FFF9C4</color>
+    <color name="theme_control_normal">#FFFFFF</color>
+
+    <color name="snackbar_background">#212121</color>
+
+    <color name="high_contrast_snackbar_foreground">#76ff03</color>
+    <color name="high_contrast_snackbar_background">#212121</color>
+
+    <color name="bottom_sheet_foreground">#212121</color>
+    <color name="bottom_sheet_background">#BF360C</color>
+
+    <color name="shortcut_color">#EC407A</color>
+
+    <color name="linkify_color">#0091EA</color>
+    <color name="snackbar_linkify_color">#FFFFFF</color>
+
+    <color name="fab_foreground">@android:color/white</color>
+    <color name="fab_background">@color/colorPrimary</color>
+    <color name="fab_background_lux">@color/colorPrimaryLux</color>
+    <color name="fab_background_oled">@color/colorPrimaryOled</color>
+
+    <color name="button_ripple">#FF8F00</color>
+
+    <color name="text_input_hint">#EA80FC</color>
+
+    <color name="text_color_primary_day">#42A5F5</color>
+    <color name="text_color_primary_lux">#FFFFFF</color>
+    <color name="text_color_primary_oled">#FFFFFF</color>
+</resources>

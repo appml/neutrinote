@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/admin_pref">
+        <Preference
+            android:key="com.appmindlab.nano.pref_local_repo_path"
+            android:title="@string/pref_local_repo_path_title"
+            android:summary="@string/pref_local_repo_path_summary" />
+
+        <SwitchPreference
+            android:key="com.appmindlab.nano.pref_incremental_backup"
+            android:title="@string/pref_incremental_backup_title"
+            android:summary="@string/pref_incremental_backup_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="com.appmindlab.nano.pref_auto_save"
+            android:title="@string/pref_auto_save_title"
+            android:summary="@string/pref_auto_save_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="com.appmindlab.nano.pref_location_aware"
+            android:title="@string/pref_location_aware_title"
+            android:summary="@string/pref_location_aware_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/ui_pref">
+        <EditTextPreference
+            android:key="com.appmindlab.nano.pref_custom_filters"
+            android:title="@string/pref_custom_filter_title"
+            android:summary="@string/pref_custom_filter_summary"
+            android:defaultValue="@string/pref_custom_filter_default"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:imeOptions="actionDone|flagNoExtractUi" />
+
+        <ListPreference
+            android:key="com.appmindlab.nano.pref_theme"
+            android:entryValues="@array/pref_theme_values"
+            android:entries="@array/pref_theme_names"
+            android:title="@string/pref_theme_title"
+            android:summary="@string/pref_theme_summary"
+            android:defaultValue="@string/pref_theme_default"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null" />
+
+        <SwitchPreference
+            android:key="com.appmindlab.nano.pref_lux"
+            android:title="@string/pref_lux_title"
+            android:summary="@string/pref_lux_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/advanced_pref">
+        <SwitchPreference
+            android:key="com.appmindlab.nano.pref_lazy_update"
+            android:title="@string/pref_lazy_update_title"
+            android:summary="@string/pref_lazy_update_summary"
+            android:defaultValue="false" />
+
+        <EditTextPreference
+            android:key="com.appmindlab.nano.pref_math_url"
+            android:title="@string/pref_math_url_title"
+            android:summary="@string/pref_math_url_summary"
+            android:defaultValue="@string/pref_math_url_default"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:imeOptions="actionDone|flagNoExtractUi" />
+
+        <SwitchPreference
+            android:key="com.appmindlab.nano.pref_copy_attachments_to_repo"
+            android:title="@string/pref_copy_attachments_to_repo_title"
+            android:summary="@string/pref_copy_attachments_to_repo_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="com.appmindlab.nano.pref_show_hidden"
+            android:title="@string/pref_show_hidden_title"
+            android:summary="@string/pref_show_hidden_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/support_pref">
+        <Preference
+            android:title="@string/pref_support_title"
+            android:summary="@string/pref_support_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="mailto:lightandshadowscamera@gmail.com">
+                <extra android:name="android.intent.extra.SUBJECT" android:value="@string/support_email_subject" />
+                <extra android:name="android.intent.extra.TEXT" android:value="@string/support_email_body" />
+            </intent>
+        </Preference>
+
+        <Preference
+            android:key="com.appmindlab.nano.pref_play_store_catalog_link"
+            android:title="@string/pref_play_store_catalog_title"
+            android:summary="@string/pref_play_store_catalog_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/pref_play_store_catalog_url">
+            </intent>
+        </Preference>
+
+        <Preference
+            android:key="com.appmindlab.nano.pref_play_store_link"
+            android:title="@string/pref_play_store_link_title"
+            android:summary="@string/pref_play_store_link_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/pref_play_store_link_url">
+            </intent>
+        </Preference>
+
+        <Preference
+            android:key="com.appmindlab.nano.pref_product_news_link"
+            android:title="@string/pref_product_news_link_title"
+            android:summary="@string/pref_product_news_link_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://mastodon.social/@neutrinote">
+            </intent>
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

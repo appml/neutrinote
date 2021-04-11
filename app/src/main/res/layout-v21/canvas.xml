@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarStyle="outsideInset">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="@dimen/dialog_padding"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button android:id="@+id/button_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_settings"
+                android:textColor="@color/theme_control_activated"
+                android:textSize="@dimen/canvas_button_font_size"
+                android:background="@drawable/ripple"
+                android:contentDescription="@string/button_settings_description"
+                style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+            <EditText
+                android:id="@+id/edit_canvas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:cursorVisible="false"
+                android:isScrollContainer="false"
+                android:fontFamily="sans-serif-condensed"
+                android:imeOptions="actionDone|flagNoExtractUi" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/canvas_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:checked="true"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

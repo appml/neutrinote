@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/circular_icon_shape" android:id="@+id/checkmark_icon_background"/>
+    <item>
+        <inset
+            android:drawable="@drawable/ic_done_vector"
+            android:inset="10dip"
+            android:id="@+id/checkmark_icon_foreground" />
+    </item>
+</layer-list>

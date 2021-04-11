@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+    
+    <item
+        android:id="@+id/menu_markdown_view"
+        android:title="@string/menu_markdown_view"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_chrome_reader_mode_anim_vector"
+        yourapp:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_style"
+        android:title="@string/menu_style"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_tune_vector"
+        yourapp:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_toggle_title"
+        android:title="@string/menu_toggle_title"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_keyboard_arrow_up_anim_vector"
+        yourapp:showAsAction="always" />
+
+    <item android:id="@+id/menu_save"
+        android:title="@string/menu_save"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_revert"
+        android:title="@string/menu_revert"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_metadata"
+        android:title="@string/menu_metadata"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_edit_tools"
+        android:title="@string/menu_edit_tools"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_encrypt_decrypt"
+        android:title="@string/menu_encrypt_decrypt"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_paste_calendar"
+        android:title="@string/menu_paste_calendar"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_full_screen"
+        android:title="@string/menu_full_screen"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_clear_cache"
+        android:title="@string/menu_clear_cache"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_share"
+        android:title="@string/menu_share"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_export"
+        android:title="@string/menu_export"
+        yourapp:showAsAction="collapseActionView" />
+
+    <item android:id="@+id/menu_print"
+        android:title="@string/menu_print"
+        yourapp:showAsAction="collapseActionView" />
+</menu>
