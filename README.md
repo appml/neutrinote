@@ -29,7 +29,7 @@ A small subset of features that make use of Google related dependencies are not 
 How to build
 ------------
 
-Simply import into Android Studio and build.  That's it!
+Simply fork and import into Android Studio.  That's it!
 
 
 TODO
