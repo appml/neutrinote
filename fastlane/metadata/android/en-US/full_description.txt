@@ -8,13 +8,12 @@
 <b>App Permissions Explained:</b>
 
 * Location access for location based search, location stamps, etc.
-* Camera access for built-in barcode scanner
-* Storage access for core functions
+* Camera access for built-in barcode scanner.
+* Storage access for core functions.
 * Permission required by Sony devices to avoid crashes on certain models
+* Permission to access network as MathJax is used for math rendering.  MathJax will be cached for offline rendering later.
 * Permission to receive boot completion for Tasker to schedule backup requests on legacy devices (pre-Android 8.0).  It has no effect on devices running later versions of Android.
 
 1. and 2. can be denied/revoked as needed either from Settings or via Marshmallow's runtime permissions.
-
-Also note that by default, neutriNote uses MathJax.js for math rendering.  Alternative math rendering engine can be specified via Settings.
 
 GitHub: https://github.com/appml/neutrinote
