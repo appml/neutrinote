@@ -32,12 +32,6 @@ How to build
 Simply fork and import into Android Studio.  That's it!
 
 
-TODO
-----
-
-Help wanted to publish the app to F-droid.
-
-
 Licensing
 ---------
 
