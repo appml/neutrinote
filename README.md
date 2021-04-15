@@ -23,7 +23,7 @@ neutriNote is designed to be ultra compact so as to operate smoothly in as many 
 What is Community Edition?
 --------------------------
 
-A small subset of features that make use of Google related dependencies are not included.
+Pretty much identical to **Play Store Edition** except a small set of features that make use of Google related dependencies. 
 
 
 How to build
@@ -35,7 +35,11 @@ Simply fork and import into Android Studio.  That's it!
 TODO
 ----
 
-Seeking translation help.
+Looking for help in the following areas:
+
+* More modern UI
+* Performance tweaks
+* More translations
 
 
 Licensing
