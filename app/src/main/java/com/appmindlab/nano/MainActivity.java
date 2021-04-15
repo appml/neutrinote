@@ -3904,6 +3904,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_empty_backup_uri), Toast.LENGTH_LONG).show();
     }
 
+    // Check math url
+    private void checkMathUrl() {
+        if (mMathUrl.equals(Const.UNSET_URL))
+            handleUnsetMathUrl();
+    }
+
     // Verify storage permission
     private void verifyStoragePermission() {
         if (Build.VERSION.SDK_INT >= 23) {
@@ -3955,6 +3961,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Utils.releaseWriteLock();
 
                 finish();
+            }
+        });
+
+        // Get the AlertDialog from create()
+        AlertDialog dialog = builder.create();
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            public void onDismiss(DialogInterface dialog) {
+            }
+        });
+
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            public void onCancel(DialogInterface dialog) {
+            }
+        });
+
+        // Show the dialog
+        dialog.show();
+
+        // Show keyboard
+        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+    }
+
+    // Handle unset math url
+    private void handleUnsetMathUrl() {
+        // Instantiate an AlertDialog.Builder with its constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        // Chain together various setter methods to set the dialog characteristics
+        builder.setMessage(R.string.dialog_unset_math_url_message).setTitle(R.string.dialog_unset_math_url_title);
+
+        builder.setPositiveButton(R.string.dialog_unset_math_url_ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                mMathUrl = getResources().getString(R.string.pref_math_url_default);
+
+                mSharedPreferencesEditor.putString(Const.PREF_MATH_URL, mMathUrl);
+                mSharedPreferencesEditor.commit();
+            }
+        });
+        builder.setNegativeButton(R.string.dialog_unset_math_url_cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                mMathUrl = Const.HTTPS_SYM;
+
+                mSharedPreferencesEditor.putString(Const.PREF_MATH_URL, mMathUrl);
+                mSharedPreferencesEditor.commit();
             }
         });
 
@@ -4662,7 +4712,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mLocationAware = mSharedPreferences.getBoolean(Const.PREF_LOCATION_AWARE, false);
             mCustomFilters = mSharedPreferences.getString(Const.PREF_CUSTOM_FILTERS, getResources().getString(R.string.pref_custom_filter_default));
             mLazyUpdate = mSharedPreferences.getBoolean(Const.PREF_LAZY_UPDATE, false);
-            mMathUrl = mSharedPreferences.getString(Const.PREF_MATH_URL, getResources().getString(R.string.pref_math_url_default));
+            mMathUrl = mSharedPreferences.getString(Const.PREF_MATH_URL, Const.UNSET_URL);
             mOrderBy = mSharedPreferences.getString(Const.PREF_ORDER_BY, Const.SORT_BY_TITLE);
             mOrderDirection = mSharedPreferences.getString(Const.PREF_ORDER_BY_DIRECTION, Const.SORT_ASC);
             mStarAtTop = mSharedPreferences.getBoolean(Const.PREF_STAR_AT_TOP, false);
@@ -4692,6 +4742,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Sanity check
         checkLocalRepoPath();
         checkBackupUri();
+        checkMathUrl();
 
         mListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {

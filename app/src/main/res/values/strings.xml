@@ -455,6 +455,11 @@
     <string name="dialog_empty_local_repo_cancel">Use Default</string>
     <string name="dialog_empty_local_repo_neutral">Quit</string>
 
+    <string name="dialog_unset_math_url_title">Math Formulas</string>
+    <string name="dialog_unset_math_url_message">Network access required when processing math formulas for the first time.  Proceed?</string>
+    <string name="dialog_unset_math_url_ok">Accept</string>
+    <string name="dialog_unset_math_url_cancel">Deny</string>
+
     <string name="dialog_show_map_title">Find My Notes</string>
     <string name="dialog_show_map_message">Last modified locations</string>
     <string name="dialog_show_map_ok">Done</string>

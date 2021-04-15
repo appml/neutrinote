@@ -455,6 +455,11 @@
     <string name="dialog_empty_local_repo_cancel">使用默认值</string>
     <string name="dialog_empty_local_repo_neutral">退出</string>
 
+    <string name="dialog_unset_math_url_title">数学公式</string>
+    <string name="dialog_unset_math_url_message">第一次处理数学公式需要使用网络。继续吗？ </string>
+    <string name="dialog_unset_math_url_ok">接受</string>
+    <string name="dialog_unset_math_url_cancel">拒绝</string>
+
     <string name="dialog_show_map_title">查找我的笔记</string>
     <string name="dialog_show_map_message">上一次修改的位置</string>
     <string name="dialog_show_map_ok">确认</string>

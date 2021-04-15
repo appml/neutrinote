@@ -192,6 +192,7 @@ public class Const {
     protected final static String MATHJS_URL = "https://mathjs.herokuapp.com/v4/?expr=";
     protected final static String MATHJS_EXPR_PARAM = "expr=";
     protected final static String MATHJS_PRECISION_PARAM = "precision=100";
+    protected final static String UNSET_URL = "https://foo";
     protected final static String HELP_URL = "https://appml.github.io/nano/";
     protected final static String OFFICIAL_URL = "https://neutrinote.wordpress.com";
     protected final static String CUSTOM_SCHEME = "https://neutrinote.io/";
