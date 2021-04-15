@@ -32,6 +32,12 @@ How to build
 Simply fork and import into Android Studio.  That's it!
 
 
+TODO
+----
+
+Seeking translation help.
+
+
 Licensing
 ---------
 
