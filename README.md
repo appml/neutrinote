@@ -38,6 +38,7 @@ TODO
 Looking for help in the following areas:
 
 * More modern UI
+* Modern programming paradigm
 * Performance tweaks
 * More translations
 
