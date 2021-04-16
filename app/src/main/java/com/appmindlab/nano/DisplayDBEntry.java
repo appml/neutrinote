@@ -180,7 +180,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private ScrollView mScrollView;
     private WebView mMarkdownView;
     private boolean mMarkdownMode = false;
-    private String mMarkdownFontFamily = "";
+    private String mMarkdownFontStyle = "";
     private String mMarkdownMargin = "";
     private int mMarkdownCacheMode = WebSettings.LOAD_DEFAULT;
     private String mSharedContent = "";
@@ -2736,35 +2736,35 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         if (mFontFamily.equals("Roboto Condensed Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoCondensed-Light.ttf"));
-            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Condensed Light'; src: url('file:///android_asset/RobotoCondensed-Light.ttf') } div#content{font-family: 'Roboto Condensed Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontStyle = "<style>@font-face { font-family: 'Roboto Condensed Light'; src: url('file:///android_asset/RobotoCondensed-Light.ttf') } div#content{font-family: 'Roboto Condensed Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Mono Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoMono-Light.ttf"));
-            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Mono Light'; src: url('file:///android_asset/RobotoMono-Light.ttf') } div#content{font-family: 'Roboto Mono Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontStyle = "<style>@font-face { font-family: 'Roboto Mono Light'; src: url('file:///android_asset/RobotoMono-Light.ttf') } div#content{font-family: 'Roboto Mono Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Mono Regular")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoMono-Regular.ttf"));
-            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Mono'; src: url('file:///android_asset/RobotoMono-Regular.ttf') } div#content{font-family: 'Roboto Mono'; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontStyle = "<style>@font-face { font-family: 'Roboto Mono'; src: url('file:///android_asset/RobotoMono-Regular.ttf') } div#content{font-family: 'Roboto Mono'; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Slab Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoSlab-Light.ttf"));
-            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Slab Light'; src: url('file:///android_asset/RobotoSlab-Light.ttf') } div#content{font-family: 'Roboto Slab Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontStyle = "<style>@font-face { font-family: 'Roboto Slab Light'; src: url('file:///android_asset/RobotoSlab-Light.ttf') } div#content{font-family: 'Roboto Slab Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Slab Regular")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoSlab-Regular.ttf"));
-            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Slab Regular'; src: url('file:///android_asset/RobotoSlab-Regular.ttf') } div#content{font-family: 'Roboto Slab'; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontStyle = "<style>@font-face { font-family: 'Roboto Slab Regular'; src: url('file:///android_asset/RobotoSlab-Regular.ttf') } div#content{font-family: 'Roboto Slab'; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Slab Bold")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoSlab-Bold.ttf"));
-            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Slab Bold'; src: url('file:///android_asset/RobotoSlab-Bold.ttf') } div#content{font-family: 'Roboto Slab Bold'; font-weight: 700; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontStyle = "<style>@font-face { font-family: 'Roboto Slab Bold'; src: url('file:///android_asset/RobotoSlab-Bold.ttf') } div#content{font-family: 'Roboto Slab Bold'; font-weight: 700; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mCustomFonts != null) {
             CustomFont font = (CustomFont) mCustomFonts.get(mFontFamily);
             if (font != null) {
                 String path = mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH + "/" + font.getPath();
                 mContent.setTypeface(FontCache.getFromFile(path));
-                mMarkdownFontFamily = font.getUrl();
-                mMarkdownFontFamily += "<style>div#content{" + font.getCSS() + " font-size: " + mFontSize + "px}</style>";
+                mMarkdownFontStyle = font.getUrl();
+                mMarkdownFontStyle += "<style>div#content{" + font.getCSS() + " font-size: " + mFontSize + "px}</style>";
                 found = true;
             }
         }
@@ -2772,7 +2772,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Default
         if (!found) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoMono-Regular.ttf"));
-            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Mono'; src: url('file:///android_asset/RobotoMono-Regular.ttf') } div#content{font-family: 'Roboto Mono'; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontStyle = "<style>@font-face { font-family: 'Roboto Mono'; src: url('file:///android_asset/RobotoMono-Regular.ttf') } div#content{font-family: 'Roboto Mono'; font-size: " + mFontSize + "px}</style>";
         }
 
         // Reset markdown render state
@@ -5992,7 +5992,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         else
             css = Const.GFM_DARK_CSS;
 
-        css = mMarkdownFontFamily + mMarkdownMargin + css;
+        css = mMarkdownFontStyle + mMarkdownMargin + css;
 
         // Load user defined style sheet
         if (results.size() == 1) {
@@ -6026,7 +6026,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             css = Const.GFM_DARK_CSS;
 
         // Apply clipboard style
-        css = Const.CLIPBOARD_FONT_FAMILY + mMarkdownMargin + css;
+        css = Const.CLIPBOARD_FONT_STYLE + mMarkdownMargin + css;
 
         return css;
     }
