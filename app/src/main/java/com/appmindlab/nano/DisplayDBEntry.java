@@ -2734,41 +2734,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     protected void applyFontFamily() {
         boolean found = false;
 
-        if (mFontFamily.equals("Monospace")) {
-            mContent.setTypeface(Typeface.MONOSPACE);
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Droid Sans Mono'; font-size: " + mFontSize + "px}</style>";
-            found = true;
-        } else if (mFontFamily.equals("Sans Serif")) {
-            if (mContent.getTypeface() != Typeface.SANS_SERIF)    // Avoid setting typeface again for default font
-                mContent.setTypeface(Typeface.SANS_SERIF);
-
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'sans-serif'; font-size: " + mFontSize + "px}</style>";
-            found = true;
-        } else if (mFontFamily.equals("Serif")) {
-            mContent.setTypeface(Typeface.SERIF);
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Noto Serif', serif;font-size: " + mFontSize + "px}</style>";
-            found = true;
-        } else if (mFontFamily.equals("Roboto Light")) {
-            mContent.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto', sans-serif; font-weight: 300; font-size: " + mFontSize + "px}</style>";
-            found = true;
-        } else if (mFontFamily.equals("Roboto Medium")) {
-            mContent.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:500' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto Mono'; font-weight: 500;font-size: " + mFontSize + "px}</style>";
-            found = true;
-        } else if (mFontFamily.equals("Roboto Condensed Light")) {
+        if (mFontFamily.equals("Roboto Condensed Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoCondensed-Light.ttf"));
             mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Condensed Light'; src: url('file:///android_asset/RobotoCondensed-Light.ttf') } div#content{font-family: 'Roboto Condensed Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
-            found = true;
-        } else if (mFontFamily.equals("Roboto Condensed Regular")) {
-            mContent.setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto Condensed', sans-serif; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Mono Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoMono-Light.ttf"));
@@ -5766,8 +5734,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             return;
         }
 
-        // Fall back to local evaluator when network is unavailable
-        if (!Utils.isConnected(getApplicationContext())) {
+        // Fall back to local evaluator when network is unavailable or network access denied by the user
+        if ((!Utils.isConnected(getApplicationContext())) || (mMathUrl.equals(Const.HTTP_SYM)) || (mMathUrl.equals(Const.HTTPS_SYM))) {
             String result = Double.toString(Utils.eval(expr.toLowerCase()));
             Snackbar snackbar = Utils.makePasteSnackbar(this, mContent, Const.EQUAL_SYM + result);
             Utils.anchorSnackbar(snackbar, R.id.fragment_content);
