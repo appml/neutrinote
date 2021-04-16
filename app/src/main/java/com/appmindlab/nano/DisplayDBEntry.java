@@ -2771,9 +2771,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Default
         if (!found) {
-            mContent.setTypeface(Typeface.SANS_SERIF);
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'sans-serif'; font-size: " + mFontSize + "px}</style>";
+            mContent.setTypeface(FontCache.getFromAsset(this, "RobotoMono-Regular.ttf"));
+            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Mono'; src: url('file:///android_asset/RobotoMono-Regular.ttf') } div#content{font-family: 'Roboto Mono'; font-size: " + mFontSize + "px}</style>";
         }
 
         // Reset markdown render state
@@ -6027,7 +6026,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             css = Const.GFM_DARK_CSS;
 
         // Apply clipboard style
-        css = Const.CLIPBOARD_FONT_FAMILY + Const.CLIPBOARD_FONT_SIZE + mMarkdownMargin + css;
+        css = Const.CLIPBOARD_FONT_FAMILY + mMarkdownMargin + css;
 
         return css;
     }
