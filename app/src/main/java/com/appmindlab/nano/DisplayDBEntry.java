@@ -2763,8 +2763,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             found = true;
         } else if (mFontFamily.equals("Roboto Condensed Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoCondensed-Light.ttf"));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto Condensed', sans-serif; font-weight: 300; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Condensed Light'; src: url('file:///android_asset/RobotoCondensed-Light.ttf') } div#content{font-family: 'Roboto Condensed Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Condensed Regular")) {
             mContent.setTypeface(Typeface.create("sans-serif-condensed", Typeface.NORMAL));
@@ -2773,28 +2772,23 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             found = true;
         } else if (mFontFamily.equals("Roboto Mono Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoMono-Light.ttf"));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:300' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto Mono'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Mono Light'; src: url('file:///android_asset/RobotoMono-Light.ttf') } div#content{font-family: 'Roboto Mono Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Mono Regular")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoMono-Regular.ttf"));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto Mono'; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Mono'; src: url('file:///android_asset/RobotoMono-Regular.ttf') } div#content{font-family: 'Roboto Mono'; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Slab Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoSlab-Light.ttf"));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto Slab', serif; font-weight: 300; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Slab Light'; src: url('file:///android_asset/RobotoSlab-Light.ttf') } div#content{font-family: 'Roboto Slab Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Slab Regular")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoSlab-Regular.ttf"));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto Slab', serif; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Slab Regular'; src: url('file:///android_asset/RobotoSlab-Regular.ttf') } div#content{font-family: 'Roboto Slab'; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Slab Bold")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoSlab-Bold.ttf"));
-            mMarkdownFontFamily = "<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>";
-            mMarkdownFontFamily += "<style>div#content{font-family: 'Roboto Slab', serif; font-weight: 700; font-size: " + mFontSize + "px}</style>";
+            mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Slab Bold'; src: url('file:///android_asset/RobotoSlab-Bold.ttf') } div#content{font-family: 'Roboto Slab Bold'; font-weight: 700; font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mCustomFonts != null) {
             CustomFont font = (CustomFont) mCustomFonts.get(mFontFamily);
