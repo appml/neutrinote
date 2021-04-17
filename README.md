@@ -17,13 +17,13 @@ What is neutriNote?
 
 In a nutshell, all-in-one preservation of written thoughts, be those text, math (LaTeX), rich markdown, drawings, etc.,  in fully searchable plain text (universal UTF-8).  
 
-neutriNote is designed to be ultra compact so as to operate smoothly in as many aging hardwares as possible.
+neutriNote is designed to be ultra compact so as to operate smoothly on as many aging hardwares as possible.
 
 
 What is Community Edition?
 --------------------------
 
-Pretty much identical to **Play Store Edition** except a small set of features that make use of Google related dependencies. 
+Pretty much identical to **Play Store Edition** except a small set of features that make use of Google related dependencies.
 
 
 How to build
