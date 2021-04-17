@@ -23,7 +23,7 @@ neutriNote is designed to be ultra compact so as to operate smoothly on as many 
 What is Community Edition?
 --------------------------
 
-Pretty much identical to **Play Store Edition** except a small set of features that make use of Google related dependencies.
+Pretty much identical to [**Play Store Edition**](https://play.google.com/store/apps/details?id=com.appmindlab.nano) except a small set of features that make use of Google related dependencies.
 
 
 How to build
