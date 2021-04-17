@@ -37,7 +37,7 @@ public class EditToolFragment extends Fragment implements View.OnClickListener, 
         Button button_markdown, button_timestamp, button_datestamp, button_locationstamp, button_text_expand, button_draw;
         Button button_top, button_bottom;
         Button button_local_find, button_local_replace;
-        Button button_barcode, button_image;
+        Button button_barcode, button_image, button_ocr;
         Button button_define, button_calculate, button_web_search;
         Button button_encrypt, button_decrypt;
         Button button_close;
@@ -168,6 +168,14 @@ public class EditToolFragment extends Fragment implements View.OnClickListener, 
 
         if (Arrays.asList(excluded).contains(Const.BUTTON_IMAGE))
             button_image.setVisibility(View.GONE);
+
+        button_ocr = (Button) v.findViewById(R.id.button_ocr);
+        button_ocr.setOnClickListener(this);
+        button_ocr.setOnLongClickListener(this);
+        button_ocr.setTypeface(font_awesome);
+
+        if ((Arrays.asList(excluded).contains(Const.BUTTON_OCR)) || (!Utils.hasPackage(getActivity(), Const.OCR_PACKAGE_NAME)))
+            button_ocr.setVisibility(View.GONE);
 
         button_define = (Button) v.findViewById(R.id.button_define);
         button_define.setOnClickListener(this);

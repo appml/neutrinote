@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.appmindlab.nano"
-    android:versionCode="1196"
-    android:versionName="3.7.0.3">
+    android:versionCode="1197"
+    android:versionName="3.7.0.4">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -23,6 +23,7 @@
         <package android:name="org.sufficientlysecure.keychain" />
         <package android:name="com.google.android.calendar" />
         <package android:name="com.google.android.apps.translate" />
+        <package android:name="io.github.subhamtyagi.ocr" />
         <intent>
             <action android:name="colordict.intent.action.SEARCH" />
             <data android:mimeType="text/plain" />

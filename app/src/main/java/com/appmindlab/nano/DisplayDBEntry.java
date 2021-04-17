@@ -4093,6 +4093,15 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
     }
 
+    // Do OCR
+    private void doOCR() {
+        if (!Utils.launchPackage(getApplicationContext(), Const.OCR_PACKAGE_NAME)) {
+            Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+            Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+            snackbar.show();
+        }
+    }
+
     // Insert location stamp
     private void doInsertLocationStamp() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -4699,6 +4708,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             handleInsertBarcode();
         } else if (id == R.id.button_image) {
             handleInsertImage();
+        } else if (id == R.id.button_ocr) {
+            doOCR();
         } else if (id == R.id.button_define) {
             doDefine();
         } else if (id == R.id.button_calculate) {
