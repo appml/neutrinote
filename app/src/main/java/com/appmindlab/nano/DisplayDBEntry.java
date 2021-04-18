@@ -5747,7 +5747,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Fall back to local evaluator when network is unavailable or network access denied by the user
         if ((!Utils.isConnected(getApplicationContext())) || (mMathUrl.equals(Const.HTTP_SYM)) || (mMathUrl.equals(Const.HTTPS_SYM))) {
             String result = Double.toString(Utils.eval(expr.toLowerCase()));
-            Snackbar snackbar = Utils.makePasteSnackbar(this, mContent, Const.EQUAL_SYM + result);
+            Snackbar snackbar = Utils.makePasteSnackbar(this, getCoordinatorLayout(), mContent, Const.EQUAL_SYM + result);
             Utils.anchorSnackbar(snackbar, R.id.fragment_content);
             snackbar.show();
             return;
@@ -5763,7 +5763,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     @Override
                     public void onResponse(String response) {
                         String result = response;
-                        Snackbar snackbar = Utils.makePasteSnackbar(display_dbentry, mContent, Const.EQUAL_SYM + result);
+                        Snackbar snackbar = Utils.makePasteSnackbar(display_dbentry, getCoordinatorLayout(), mContent, Const.EQUAL_SYM + result);
                         Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                         snackbar.show();
                     }
@@ -6200,7 +6200,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         @JavascriptInterface
         public void paste(String text) {
-            Snackbar snackbar = Utils.makePasteSnackbar(display_dbentry, mContent, text);
+            Snackbar snackbar = Utils.makePasteSnackbar(display_dbentry, getCoordinatorLayout(), mContent, text);
             Utils.anchorSnackbar(snackbar, R.id.fragment_content);
             snackbar.show();
         }

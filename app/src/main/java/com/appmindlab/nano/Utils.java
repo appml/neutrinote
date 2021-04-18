@@ -3153,10 +3153,10 @@ public class Utils {
     }
 
     // Make a paste snackbar
-    protected static Snackbar makePasteSnackbar(AppCompatActivity activity, final EditText content, final String result) {
+    protected static Snackbar makePasteSnackbar(AppCompatActivity activity, View view, final EditText content, final String result) {
         Snackbar snackbar;
 
-        snackbar = Snackbar.make(activity.findViewById(R.id.coordinator), result, Snackbar.LENGTH_LONG);
+        snackbar = Snackbar.make(view, result, Snackbar.LENGTH_LONG);
         snackbar.setAction(activity.getResources().getString(R.string.snack_bar_button_paste), new View.OnClickListener() {
             @Override
             public void onClick(View v) {
