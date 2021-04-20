@@ -10,10 +10,9 @@
 </div><br/>
 
 # neutriNote (Community Edition)
---------------------------------
+
 
 ## What is neutriNote?
------------------------
 
 In a nutshell, all-in-one preservation of written thoughts, be those text, math (LaTeX), rich markdown, drawings, etc.,  in fully searchable plain text (universal UTF-8).  
 
@@ -25,25 +24,21 @@ neutriNote is designed to be ultra compact so as to operate smoothly on as many 
 
 
 ## Uncluttered UI
------------------
 
 Fine-tuned user interface elements to reduce app switching. Accessible search filters for precise navigation to your note contents with minimum taps.
 
 
 ## Customization
-----------------
 
 Your workflow can be further automated by Tasker, Barcode Scanner, ColorDict, and other add-ons, or by connecting neutriNote's repository to web-based services. Options available to deep configure your note taking process.  
 
 
 ## Backup
----------
 
 Multiple ways to backup your notes.  Freedom to pick a cloud backend that works for you: open source P2P <a href="https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid">Syncthing</a>, <a href="https://play.google.com/store/apps/details?id=com.appmindlab.connector">Dropbox</a>, or third party Google Drive, Box, OneDrive components.
 
 
 ## Cost
--------
 
 Totally free.  No hidden permission (see below).  Optional add-ons can be purchased to support its development.
 
@@ -64,13 +59,11 @@ App Permissions Explained:
 
 
 ## How to build
----------------
 
 Simply fork and import into Android Studio.  That's it!
 
 
 ## Licensing
-------------
 
 The project is licensed under the [GNU General Public License version 3 or later](https://github.com/appml/neutrinote/blob/master/LICENSE).  Please attribute to [this repo](https://github.com/appml/neutrinote).
 
