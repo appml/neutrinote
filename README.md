@@ -74,7 +74,7 @@ Simply fork and import into Android Studio.  That's it!
 ## Licensing
 ------------
 
-The project is licensed under the [GNU General Public License version 3 or later](https://choosealicense.com/licenses/gpl-3.0/).  Please attribute to [this repo](https://github.com/appml/neutrinote).
+The project is licensed under the [GNU General Public License version 3 or later](https://github.com/appml/neutrinote/blob/master/LICENSE).  Please attribute to [this repo](https://github.com/appml/neutrinote).
 
     neutriNote - Markdown + Math in Just 3 MB!
     Copyright (C) 2021 App Mind Lab
