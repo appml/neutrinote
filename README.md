@@ -21,7 +21,7 @@ neutriNote is designed to be ultra compact so as to operate smoothly on as many 
 
 > **Community Edition**: Pretty much identical to [**Play Store Edition**](https://play.google.com/store/apps/details?id=com.appmindlab.nano) except a small set of features that make use of Google related dependencies.  
 >
-> While almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition should permit the ultimate customization at source code level which would fulfill highly specific needs such as custom ROM bundling, personal productivity builds, etc.
+> While almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition opens up the possibility to customize at source code level, which would appeal to highly specific needs such as custom ROM bundling, personal productivity builds, etc.
 
 
 ## Uncluttered UI
