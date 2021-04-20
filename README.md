@@ -35,7 +35,7 @@ Your workflow can be further automated by Tasker, Barcode Scanner, ColorDict, an
 
 ## Backup
 
-Multiple ways to backup your notes.  Freedom to pick a cloud backend that works for you: open source P2P <a href="https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid">Syncthing</a>, <a href="https://play.google.com/store/apps/details?id=com.appmindlab.connector">Dropbox</a>, or third party Google Drive, Box, OneDrive components.
+Multiple ways to backup your notes.  Freedom to pick a cloud backend that works for you: open source P2P <a href="https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid">Syncthing</a> or third party Google Drive, Box, OneDrive components.
 
 
 ## Cost
