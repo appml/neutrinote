@@ -1,15 +1,10 @@
-[Official Site](https://neutrinote.wordpress.com/) | [FAQ](https://neutrinote.wordpress.com/how-do-i/) | [Documentation](https://appml.github.io/nano/) | [Play Store Edition](https://github.com/appml/nano)
+[Official Site](https://neutrinote.wordpress.com/) | [FAQ](https://neutrinote.wordpress.com/how-do-i/) | [Documentation](https://appml.github.io/nano/)
 
 <div style="display:flex" >
 <a href="https://play.google.com/store/apps/details?id=com.appmindlab.nano">
     <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
          alt="Get it on Google Play" 
          height="64" />
-</a>
-<a href="https://apt.izzysoft.de/fdroid/index/apk/com.appmindlab.nano">
-    <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" 
-         alt="Get it on IzzyOnDroid" 
-         height="64">
 </a>
 <a href="https://f-droid.org/packages/com.appmindlab.nano">
     <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
