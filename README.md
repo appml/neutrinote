@@ -1,3 +1,5 @@
+[![Github All Releases](https://img.shields.io/github/downloads/appml/neutrinote/total.svg)]()
+
 [Official Site](https://neutrinote.wordpress.com/) | [FAQ](https://neutrinote.wordpress.com/how-do-i/) | [Documentation](https://appml.github.io/nano/)
 
 <div style="display:flex" >
@@ -27,22 +29,22 @@ neutriNote is designed to be ultra compact so as to operate smoothly on as many 
 > While already the case that almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition opens up the possibility to customize at source code level, which would appeal to highly specific needs such as custom ROM bundling, personal productivity builds, etc.
 
 
-## Uncluttered UI
+### Uncluttered UI
 
 Fine-tuned user interface elements to reduce app switching. Accessible search filters for precise navigation to your note contents with minimum taps.
 
 
-## Customization
+### Customization
 
 Your workflow can be further automated by Tasker, Barcode Scanner, ColorDict, and other add-ons, or by connecting neutriNote's repository to web-based services. Options available to deep configure your note taking process.  
 
 
-## Backup
+### Backup
 
 Multiple ways to backup your notes.  Freedom to pick a cloud backend that works for you: open source P2P <a href="https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid">Syncthing</a> or third party Google Drive, Box, OneDrive components.
 
 
-## Cost
+### Cost
 
 Totally free.  No hidden permission (see below).  Optional add-ons can be purchased to support its development.
 
