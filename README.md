@@ -61,6 +61,8 @@ App Permissions Explained:
 
 /X\('-')/X\
 
+Test drive the latest features [here](https://play.google.com/apps/testing/com.appmindlab.nano).
+
 
 ## How to build
 
