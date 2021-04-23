@@ -46,6 +46,11 @@ neutriNote is designed to be ultra compact so as to operate smoothly on as many 
 - PDF/HTML export
 
 
+## Screenshots
+![Rich Markdown](https://neutrinote.files.wordpress.com/2019/02/unnamed2.jpg)
+![ASCII Drawing](https://neutrinote.files.wordpress.com/2019/02/unnamed5.png)
+
+
 ## How to build
 
 Simply fork and import into Android Studio.  That's it!
