@@ -297,7 +297,7 @@
 
     <string name="pref_play_store_link_title">Recommend neutriNote</string>
     <string name="pref_play_store_link_summary">Share with those who might find the app useful.</string>
-    <string name="pref_play_store_link_url">market://details?id=com.appmindlab.nano</string>
+    <string name="pref_play_store_link_url">https://f-droid.org/packages/com.appmindlab.nano/</string>
 
     <string name="pref_connector_title">Dropbox Connector</string>
     <string name="pref_connector_summary">An extension for 2-way Dropbox sync.</string>
