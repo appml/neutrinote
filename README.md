@@ -29,41 +29,21 @@ neutriNote is designed to be ultra compact so as to operate smoothly on as many 
 > While already the case that almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition opens up the possibility to customize at source code level, which would appeal to highly specific needs such as custom ROM bundling, personal productivity builds, etc.
 
 
-### Uncluttered UI
+## Features
 
-Fine-tuned user interface elements to reduce app switching. Accessible search filters for precise navigation to your note contents with minimum taps.
-
-
-### Customization
-
-Your workflow can be further automated by Tasker, Barcode Scanner, ColorDict, and other add-ons, or by connecting neutriNote's repository to web-based services. Options available to deep configure your note taking process.  
-
-
-### Backup
-
-Multiple ways to backup your notes.  Freedom to pick a cloud backend that works for you: open source P2P <a href="https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid">Syncthing</a> or third party Google Drive, Box, OneDrive components.
-
-
-### Cost
-
-Totally free.  No hidden permission (see below).  Optional add-ons can be purchased to support its development.
-
-
-( ͠° ͟ʖ ͡°)﻿
-
-App Permissions Explained:
-
-1. Location access for location based search
-2. Camera access for built-in barcode scanner
-3. Storage access for core functions
-4. Permission required by Sony devices
-
-1. and 2. can be denied/revoked as needed either from Settings or via Marshmallow's runtime permissions.
-
-
-/X\('-')/X\
-
-Test drive the latest features [here](https://play.google.com/apps/testing/com.appmindlab.nano).
+- Everything stored in UTF8 plain text
+- Support rich markdown with math support (LaTeX)
+- Text reflow Markdown view
+- Python support
+- Basic Vue.js support
+- Edit notes stored in cloud
+- Inter-note linking
+- Theme with color temperature and OLED support
+- Built-in text expansion/shortcut support
+- Offline, near instant search & replace
+- Integrated tools: popup dictionary, clipboard viewer, barcode scanner, ASCII art, and more
+- Local storage for privacy, yet easy to add sync
+- PDF/HTML export
 
 
 ## How to build
