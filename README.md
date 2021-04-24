@@ -1,5 +1,3 @@
-[![Github All Releases](https://img.shields.io/github/downloads/appml/neutrinote/total.svg)]()
-
 [Official Site](https://neutrinote.wordpress.com/) | [FAQ](https://neutrinote.wordpress.com/how-do-i/) | [Documentation](https://appml.github.io/nano/)
 
 <div style="display:flex" >
