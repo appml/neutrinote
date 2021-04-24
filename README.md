@@ -42,6 +42,7 @@ neutriNote is designed to be ultra compact so as to operate smoothly on as many 
 - Integrated tools: popup dictionary, clipboard viewer, barcode scanner, ASCII art, and more
 - Local storage for privacy, yet easy to add sync
 - PDF/HTML export
+- ZERO anti-features
 
 
 ## Screenshots
