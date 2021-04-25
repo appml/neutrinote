@@ -1,6 +1,7 @@
 package com.appmindlab.nano;
 
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -32,21 +33,25 @@ public class PrefFragment extends PreferenceFragment {
             @Override
             public boolean onPreferenceClick(Preference preference) {
 
-                DirectoryChooserDialog directory_chooser =
-                        new DirectoryChooserDialog(getActivity(),
-                                new DirectoryChooserDialog.ChosenDirectoryListener() {
-                                    @Override
-                                    public void onChosenDir(String path) {
-                                        updateLocalRepoPath(path);
-                                    }
-                                });
+                if (Build.VERSION.SDK_INT < 28) {
+                    DirectoryChooserDialog directory_chooser =
+                            new DirectoryChooserDialog(getActivity(),
+                                    new DirectoryChooserDialog.ChosenDirectoryListener() {
+                                        @Override
+                                        public void onChosenDir(String path) {
+                                            updateLocalRepoPath(path);
+                                        }
+                                    });
 
-                // Enable new folder button
-                directory_chooser.setNewFolderEnabled(true);
+                    // Enable new folder button
+                    directory_chooser.setNewFolderEnabled(true);
 
-                // Load directory chooser dialog for initial 'm_chosenDir' directory.
-                // The registered callback will be called upon final directory selection.
-                directory_chooser.chooseDirectory(mLocalRepoPath);
+                    // Load directory chooser dialog for initial 'm_chosenDir' directory.
+                    // The registered callback will be called upon final directory selection.
+                    directory_chooser.chooseDirectory(mLocalRepoPath);
+                }
+                else
+                    Toast.makeText(MainActivity.main_activity, mLocalRepoPath, Toast.LENGTH_SHORT).show();
 
                 return true;
             }

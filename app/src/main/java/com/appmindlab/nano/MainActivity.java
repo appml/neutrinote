@@ -3956,6 +3956,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // User clicked OK button
                     setDefaultLocalRepoPath();
                 }
+
+                // Reset status
+                updateStatus(null, null);
             }
         });
         builder.setNeutralButton(R.string.dialog_empty_local_repo_neutral, new DialogInterface.OnClickListener() {
