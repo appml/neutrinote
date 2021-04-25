@@ -3894,7 +3894,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Utils.acquireWriteLock();
 
             // Send to settings
-            handleEmptyLocalRepoPath();
+            if (Build.VERSION.SDK_INT < 28)
+                handleEmptyLocalRepoPath();
+            else
+                handleEmptyLocalRepoPathSimplified();
         }
     }
 
@@ -3956,6 +3959,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         builder.setNeutralButton(R.string.dialog_empty_local_repo_neutral, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // Unlock settings
+                Utils.releaseWriteLock();
+
+                finish();
+            }
+        });
+
+        // Get the AlertDialog from create()
+        AlertDialog dialog = builder.create();
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            public void onDismiss(DialogInterface dialog) {
+            }
+        });
+
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            public void onCancel(DialogInterface dialog) {
+            }
+        });
+
+        // Show the dialog
+        dialog.show();
+
+        // Show keyboard
+        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+    }
+
+    // Handle empty local repo path simplified version (default to app-specific folder)
+    private void handleEmptyLocalRepoPathSimplified() {
+        // Instantiate an AlertDialog.Builder with its constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        // Chain together various setter methods to set the dialog characteristics
+        builder.setMessage(R.string.dialog_empty_local_repo_message).setTitle(R.string.dialog_empty_local_repo_title);
+
+        builder.setPositiveButton(R.string.dialog_empty_local_repo_cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                if (Build.VERSION.SDK_INT >= 23) {
+                    // Handle runtime permissions
+                    if ((ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) && (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED))
+                        setDefaultLocalRepoPath();
+                    else
+                        getStoragePermission(getApplicationContext());
+                } else {
+                    // User clicked OK button
+                    setDefaultLocalRepoPath();
+                }
+
+                // Reset status
+                updateStatus(null, null);
+            }
+        });
+        builder.setNegativeButton(R.string.dialog_empty_local_repo_neutral, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // Unlock settings
                 Utils.releaseWriteLock();
