@@ -5744,41 +5744,45 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             return;
         }
 
-        // Fall back to local evaluator when network is unavailable or network access denied by the user
-        if ((!Utils.isConnected(getApplicationContext())) || (mMathUrl.equals(Const.HTTP_SYM)) || (mMathUrl.equals(Const.HTTPS_SYM))) {
-            String result = Double.toString(Utils.eval(expr.toLowerCase()));
+        String result = Double.toString(Utils.eval(expr.toLowerCase()));
+
+        // In error, fall back to remote math if user permitted
+        if (result.equals(Const.NON_NUMBER_SYM)) {
+            boolean remote_math_allowed = (mMathUrl.equals(Const.HTTP_SYM)) || (mMathUrl.equals(Const.HTTPS_SYM));    // Permission to conduct remote math
+            if ((Utils.isConnected(getApplicationContext())) && (remote_math_allowed)) {
+                // Setup request
+                RequestQueue queue = Volley.newRequestQueue(this);
+                String url = Const.MATHJS_URL + Uri.encode(expr) + "&" + Const.MATHJS_PRECISION_PARAM;
+
+                // Request a string response from the provided URL.
+                StringRequest request = new StringRequest(Request.Method.GET, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                String result = response;
+                                Snackbar snackbar = Utils.makePasteSnackbar(display_dbentry, getCoordinatorLayout(), mContent, Const.EQUAL_SYM + result);
+                                Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                                snackbar.show();
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_calculation), Snackbar.LENGTH_SHORT);
+                                Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                                snackbar.show();
+                            }
+                        });
+
+                // Add the request to the RequestQueue.
+                queue.add(request);
+            }
+        }
+        else {
             Snackbar snackbar = Utils.makePasteSnackbar(this, getCoordinatorLayout(), mContent, Const.EQUAL_SYM + result);
             Utils.anchorSnackbar(snackbar, R.id.fragment_content);
             snackbar.show();
-            return;
         }
-
-        // Setup request
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = Const.MATHJS_URL + Uri.encode(expr) + "&" + Const.MATHJS_PRECISION_PARAM;
-
-        // Request a string response from the provided URL.
-        StringRequest request = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        String result = response;
-                        Snackbar snackbar = Utils.makePasteSnackbar(display_dbentry, getCoordinatorLayout(), mContent, Const.EQUAL_SYM + result);
-                        Utils.anchorSnackbar(snackbar, R.id.fragment_content);
-                        snackbar.show();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_calculation), Snackbar.LENGTH_SHORT);
-                        Utils.anchorSnackbar(snackbar, R.id.fragment_content);
-                        snackbar.show();
-                    }
-                });
-
-        // Add the request to the RequestQueue.
-        queue.add(request);
     }
 
 
