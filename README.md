@@ -1,4 +1,4 @@
-[Official Site](https://neutrinote.wordpress.com/) | [FAQ](https://neutrinote.wordpress.com/how-do-i/) | [Documentation](https://appml.github.io/nano/)
+[Official Site](https://neutrinote.wordpress.com/) | [FAQ](https://neutrinote.wordpress.com/how-do-i/) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
 
 <div style="display:flex" >
 <a href="https://play.google.com/store/apps/details?id=com.appmindlab.nano">
