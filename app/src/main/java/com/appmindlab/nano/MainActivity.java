@@ -1194,10 +1194,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Cancel backup
     protected void cancelBackup() {
-        if (mBackupWorkManager != null)
+        if (mBackupWorkManager != null) {
             mBackupWorkManager.cancelUniqueWork(Const.BACKUP_WORK_NAME);
-
-        Log.d(Const.TAG, "nano - Backup job cancelled");
+            Log.d(Const.TAG, "nano - Backup job cancelled");
+        }
     }
 
     // Schedule mirror
