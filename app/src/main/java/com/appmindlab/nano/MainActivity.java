@@ -1235,10 +1235,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Cancel mirror
     protected void cancelMirror() {
-        if (mMirrorWorkManager != null)
+        if (mMirrorWorkManager != null) {
             mMirrorWorkManager.cancelUniqueWork(Const.MIRROR_WORK_NAME);
-
-        Log.d(Const.TAG, "nano - Mirror job cancelled");
+            Log.d(Const.TAG, "nano - Mirror job cancelled");
+        }
     }
 
     // Scroll to top
