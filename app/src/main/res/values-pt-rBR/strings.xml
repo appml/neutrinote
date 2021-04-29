@@ -238,7 +238,7 @@
 
     <string name="pref_auto_save_title">Salvamento Automático</string>
     <string name="pref_auto_save_summary">Ativar salvamento automático.</string>
-    <string name="pref_auto_save_default">false</string>
+    <string name="pref_auto_save_default">true</string>
 
     <string name="pref_location_aware_title">Detecção de Local</string>
     <string name="pref_location_aware_summary">Localizações de loja de nota.</string>

@@ -240,7 +240,7 @@
 
     <string name="pref_auto_save_title">Auto Save</string>
     <string name="pref_auto_save_summary">Enable auto save.</string>
-    <string name="pref_auto_save_default">false</string>
+    <string name="pref_auto_save_default">true</string>
 
     <string name="pref_location_aware_title">Location Awareness</string>
     <string name="pref_location_aware_summary">Store note locations.</string>

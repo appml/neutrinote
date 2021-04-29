@@ -6669,7 +6669,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
             mLocalRepoPath = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
             mBackupUri = Uri.parse(mSharedPreferences.getString(Const.PREF_BACKUP_URI, ""));
-            mAutoSave = mSharedPreferences.getBoolean(Const.PREF_AUTO_SAVE, false);
+            mAutoSave = mSharedPreferences.getBoolean(Const.PREF_AUTO_SAVE, true);
             mLocationAware = mSharedPreferences.getBoolean(Const.PREF_LOCATION_AWARE, false);
             mTheme = mSharedPreferences.getString(Const.PREF_THEME, Const.DEFAULT_THEME);
             mLux = mSharedPreferences.getBoolean(Const.PREF_LUX, false);

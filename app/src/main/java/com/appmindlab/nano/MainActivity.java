@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String mCurrentStoragePath = null;
 
     // Auto save
-    private boolean mAutoSave = false;
+    private boolean mAutoSave = true;
 
     // Location aware
     private boolean mLocationAware = false;
@@ -4767,7 +4767,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mLocalRepoPath = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
             mBackupUri = Uri.parse(mSharedPreferences.getString(Const.PREF_BACKUP_URI, ""));
             mIncrementalBackup = mSharedPreferences.getBoolean(Const.PREF_INCREMENTAL_BACKUP, false);
-            mAutoSave = mSharedPreferences.getBoolean(Const.PREF_AUTO_SAVE, false);
+            mAutoSave = mSharedPreferences.getBoolean(Const.PREF_AUTO_SAVE, true);
             mLocationAware = mSharedPreferences.getBoolean(Const.PREF_LOCATION_AWARE, false);
             mCustomFilters = mSharedPreferences.getString(Const.PREF_CUSTOM_FILTERS, getResources().getString(R.string.pref_custom_filter_default));
             mLazyUpdate = mSharedPreferences.getBoolean(Const.PREF_LAZY_UPDATE, false);
@@ -4826,7 +4826,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         mSharedPreferencesEditor.commit();
                     }
                 } else if (key.equals(Const.PREF_AUTO_SAVE)) {
-                    mAutoSave = prefs.getBoolean(key, false);
+                    mAutoSave = prefs.getBoolean(key, true);
 
                     mSharedPreferencesEditor.putBoolean(key, mAutoSave);
                     mSharedPreferencesEditor.commit();

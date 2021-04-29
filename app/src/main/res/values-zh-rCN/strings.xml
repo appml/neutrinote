@@ -240,7 +240,7 @@
 
     <string name="pref_auto_save_title">自动保存</string>
     <string name="pref_auto_save_summary">启用自动保存。</string>
-    <string name="pref_auto_save_default">false</string>
+    <string name="pref_auto_save_default">true</string>
 
     <string name="pref_location_aware_title">位置感知</string>
     <string name="pref_location_aware_summary">储存笔记位置。</string>
