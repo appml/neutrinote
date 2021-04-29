@@ -3366,6 +3366,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 entry = mDatasource.createRecord(title, content, 0, null, true);
                 mId = entry.getId();
+
+                // Update that intent that started this activity
+                Intent intent = getIntent();
+                intent.putExtra(Const.EXTRA_ID, mId);
             }
         }
 
