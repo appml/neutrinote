@@ -17,7 +17,7 @@
             android:key="com.appmindlab.nano.pref_auto_save"
             android:title="@string/pref_auto_save_title"
             android:summary="@string/pref_auto_save_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <SwitchPreference
             android:key="com.appmindlab.nano.pref_location_aware"
