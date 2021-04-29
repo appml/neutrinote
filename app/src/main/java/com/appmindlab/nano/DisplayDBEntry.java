@@ -324,6 +324,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(Const.TAG, "nano - onCreate");
+
         /////////////////////
         // Setup preferences
         /////////////////////
@@ -506,12 +508,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
+        Log.d(Const.TAG, "nano - onSaveInstanceState");
+
         // If content length is within limit, preserve instance state
         if (mContent.getText().toString().length() <= Const.INSTANCE_SAFE_CONTENT_LEN) {
             super.onSaveInstanceState(savedInstanceState);
 
-            // Auto save if so needed
-            if ((mChanged) && (mAutoSave) && (mAutoSaveSafe))
+            // Auto save when going background
+            if (mChanged)
                 doSave(false, false);
         }
         else if (mChanged) {    // Otherwise save any changes (the state that we most care)
@@ -543,6 +547,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.d(Const.TAG, "nano - onRestoreInstanceState");
+
         // If content length is within limit
         if (mContent.getText().toString().length() <= Const.INSTANCE_SAFE_CONTENT_LEN) {
             try {
