@@ -1,7 +1,7 @@
 [![GPL Licensed](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/github/downloads/appml/neutrinote/total.svg)]()
 
-[Official Site](https://neutrinote.wordpress.com/) | [FAQ](https://neutrinote.wordpress.com/how-do-i/) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
+[Official](https://neutrinote.wordpress.com/) | [FAQ](https://neutrinote.wordpress.com/how-do-i/) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
 
 <div style="display:flex" >
 <a href="https://play.google.com/store/apps/details?id=com.appmindlab.nano">
@@ -27,7 +27,7 @@ neutriNote is designed to be ultra compact so as to operate smoothly on as many 
 
 > **Community Edition**: Pretty much identical to [**Play Store Edition**](https://play.google.com/store/apps/details?id=com.appmindlab.nano) except a small set of features that make use of Google related dependencies.  
 >
-> While already the case that almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition opens up the possibility to customize at source code level, which would appeal to highly specific needs such as custom ROM bundling, self-sustainable productivity builds, etc.
+> While already the case that almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition opens up the possibility to customize and sustain at source code level.
 
 
 ## Features
