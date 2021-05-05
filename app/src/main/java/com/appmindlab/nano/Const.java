@@ -644,6 +644,7 @@ public class Const {
 
     // File type
     protected final static String MULTI_TYPE = "~neutrinote_multitype.txt";
+    protected final static String MULTI_TYPE_TITLE = "~neutrinote_multitype";
 
     // Request codes
     protected final static int REQUEST_CODE_LOCATION_PERMISSION = 123;

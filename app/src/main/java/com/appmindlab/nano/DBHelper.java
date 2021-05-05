@@ -69,6 +69,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
+        Log.d(Const.TAG, "nano - Initialize database");
+
         database.execSQL(DATABASE_CREATE);
     }
 
@@ -77,7 +79,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Log.w(DBHelper.class.getName(),
                 "Upgrading database from version " + oldVersion + " to " + newVersion);
 
-        // db.execSQL("DROP TABLE IF EXISTS " + TABLE_ACRONYMS);
+        // db.execSQL("DROP TABLE IF EXISTS " + TABLE);
         // onCreate(db);
     }
 }

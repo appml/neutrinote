@@ -1247,6 +1247,32 @@ public class Utils {
         }
     }
 
+    // Write to local repo file without changing title
+    protected static void writeLocalRepoFileAndTitle(Context context, String title, String content) {
+        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        // Retrieve preference values
+        String local_repo_path = shared_preferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
+        boolean file_name_as_title = fileNameAsTitle(context);
+
+        // Update the monitored path
+        if (local_repo_path.length() > 0) {
+            try {
+                File temp;
+                temp = new File(local_repo_path + "/" + title);
+
+                FileOutputStream file = new FileOutputStream(temp);
+                file.write(content.getBytes());
+
+                file.flush();
+                file.close();
+            } catch (Exception e) {
+                Log.i(Const.TAG, "writeLocalRepoFile: failed");
+                e.printStackTrace();
+            }
+        }
+    }
+
     // Write to local repo file
     protected static void writeLocalRepoFile(Context context, String path, String title, String content) {
         final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);

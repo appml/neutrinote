@@ -1779,13 +1779,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             long id;
 
             try {
-                // Log.d(Const.TAG, "nano - RescanLocalRepoTask in progress...");
+                Log.d(Const.TAG, "nano - RescanLocalRepoTask in progress...");
 
                 // Make sure the database is open
                 resumeDatabase();
 
                 // Remove files that are missing remotely
                 results = mDatasource.getAllSimpleRecords(DBHelper.COLUMN_TITLE, Const.SORT_ASC);
+
                 for (int i = 0; i < results.size(); i++) {
                     entry = results.get(i);
                     title = entry.getTitle();
@@ -4749,6 +4750,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             mSharedPreferencesEditor.putString(Const.PREF_LOCAL_REPO_PATH, path);
             mSharedPreferencesEditor.commit();
+
+            // Enable multi-file types by default
+            Utils.writeLocalRepoFileAndTitle(getApplicationContext(), Const.MULTI_TYPE, Const.NULL_SYM);
 
             Toast.makeText(getApplicationContext(), path, Toast.LENGTH_LONG).show();
         }

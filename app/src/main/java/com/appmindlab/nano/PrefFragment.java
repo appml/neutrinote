@@ -76,6 +76,9 @@ public class PrefFragment extends PreferenceFragment {
                 MainActivity.main_activity.setLocalRepoPath(path);
             }
 
+            // Enable multi-file types by default
+            Utils.writeLocalRepoFileAndTitle(getActivity(), Const.MULTI_TYPE, Const.NULL_SYM);
+
             // Unlock settings
             Utils.releaseWriteLock();
 
