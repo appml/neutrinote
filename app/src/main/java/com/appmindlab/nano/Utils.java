@@ -1247,7 +1247,7 @@ public class Utils {
         }
     }
 
-    // Write to local repo file without changing title
+    // Write to local repo file without adjusting title
     protected static void writeLocalRepoFileAndTitle(Context context, String title, String content) {
         final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
