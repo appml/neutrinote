@@ -30,7 +30,7 @@ Pretty much identical to [**Play Store Edition**](https://play.google.com/store/
 
 ## Design Philosophy
 
-neutriNote is designed to be ultra compact so as to operate smoothly on as many aging hardwares as possible.  Features and dependencies are carefully vetted to minimize impacts on search performance, highly performant long note editing, etc., with enough customization [options](https://appml.github.io/nano/) for users to build their own sustainable tools within the app.  Its versatile search mechanism built upon a simple, non-hierarchical data structure provides near instant access O(1) to any piece of text stored by the app.  Think of these as cognitive shortcuts to recall anything from your writings with minimal lags.
+neutriNote is designed to be ultra compact so as to operate smoothly on as many aging hardwares as possible.  Features and dependencies are carefully vetted to minimize impacts on search performance, highly performant long note editing, etc., with enough customization [options](https://appml.github.io/nano/) for users to build their own sustainable tools within the app.  Its versatile search mechanism built upon a simple, non-hierarchical data structure provides near instant access O(1) to any piece of text stored by the app.  Think of these as cognitive shortcuts to recall anything from your writings anytime with minimal lags.
 
 
 ## Features
