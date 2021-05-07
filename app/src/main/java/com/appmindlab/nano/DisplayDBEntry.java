@@ -514,8 +514,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (mContent.getText().toString().length() <= Const.INSTANCE_SAFE_CONTENT_LEN) {
             super.onSaveInstanceState(savedInstanceState);
 
-            // Auto save when going background
-            if (mChanged)
+            // Auto save if so needed
+            if ((mChanged) && (mAutoSave) && (mAutoSaveSafe))
                 doSave(false, false);
         }
         else if (mChanged) {    // Otherwise save any changes (the state that we most care)

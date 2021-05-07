@@ -10,8 +10,8 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 1204,
-      "versionName": "3.7.5",
+      "versionCode": 1205,
+      "versionName": "3.7.5.1",
       "outputFile": "app-release.apk"
     }
   ]
