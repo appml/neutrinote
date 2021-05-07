@@ -23,7 +23,7 @@
 
 In a nutshell, all-in-one preservation of written thoughts, be those text, math (LaTeX), rich markdown, drawings, etc., in fully searchable plain text (universal UTF-8).  
 
-_Philosophy_: neutriNote is designed to be ultra compact so as to operate smoothly on as many aging hardwares as possible.  Features and dependencies are carefully vetted to minimize impacts on search performance, long note editing, etc., with enough customization [options](https://appml.github.io/nano/) for users to build their own sustainable tools within the app.  Its versatile search mechanism built upon a simple, non-hierarchical data structure provides near instant access to any piece of text stored by the app.
+_Philosophy_: neutriNote is designed to be ultra compact so as to operate smoothly on as many aging hardwares as possible.  Features and dependencies are carefully vetted to minimize impacts on search performance, highly performant long note editing, etc., with enough customization [options](https://appml.github.io/nano/) for users to build their own sustainable tools within the app.  Its versatile search mechanism built upon a simple, non-hierarchical data structure provides near instant access O(1) to any piece of text stored by the app.
 
 #### Community Edition
 Pretty much identical to [**Play Store Edition**](https://play.google.com/store/apps/details?id=com.appmindlab.nano) except a small set of features that make use of Google related dependencies.  While already the case that almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition opens up the possibility to customize and sustain at source code level.
