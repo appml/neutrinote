@@ -3148,6 +3148,7 @@ public class Utils {
         text_view = (snackbar.getView()).findViewById(com.google.android.material.R.id.snackbar_text);
         text_view.setTypeface(Typeface.SANS_SERIF);
         text_view.setTextSize(TypedValue.COMPLEX_UNIT_DIP, fontSize);
+        text_view.setTextColor(ContextCompat.getColor(activity, R.color.snackbar_foreground));
 
         // Linkify if applicable
         text_view.setLinksClickable(true);

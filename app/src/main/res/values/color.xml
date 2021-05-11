@@ -165,6 +165,7 @@
     <color name="theme_control_highlight_settings">#00FFF9C4</color>
     <color name="theme_control_normal">#FFFFFF</color>
 
+    <color name="snackbar_foreground">#EC407A</color>
     <color name="snackbar_background">#212121</color>
 
     <color name="high_contrast_snackbar_foreground">#76ff03</color>
