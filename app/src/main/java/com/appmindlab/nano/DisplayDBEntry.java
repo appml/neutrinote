@@ -149,6 +149,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private View mDecorView;
     private boolean mImmersiveMode = false;
     private boolean mStopped = false;
+    private Handler mImmersiveModeHandler = null;
+    private Runnable mImmersiveModeRunnable = null;
 
     // Markdown view
     protected boolean mMarkdownAnchorActive = false;
@@ -968,16 +970,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == View.VISIBLE) {
                     Log.d(Const.TAG, "nano - Exiting full screen");
 
-                    // Show action bar
-                    getSupportActionBar().show();
-
                     // Exit immersive mode
                     exitImmersiveMode();
                 } else {
                     Log.d(Const.TAG, "nano - Entering full screen");
-
-                    // Hide action bar
-                    getSupportActionBar().hide();
                 }
             }
         });
@@ -986,8 +982,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Exit immersive mode
     private void exitImmersiveMode() {
         // Handle system UI
-        mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+            mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
+        else {
+            mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
 
         // Show title
         showHideTitle(true);
@@ -1005,6 +1007,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
         }
 
+        // Show action bar
+        getSupportActionBar().show();
+
         // Reset the state
         mImmersiveMode = false;
     }
@@ -1012,12 +1017,16 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Enter immersive mode
     private void enterImmersiveMode() {
         // Handle system UI
-        mDecorView.setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN      // hide status bar
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
+        int config = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                | View.SYSTEM_UI_FLAG_IMMERSIVE;
+
+        // Note: for older Android versions
+        if ((Build.VERSION.SDK_INT < Build.VERSION_CODES.R) || (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE))
+            config = config | View.SYSTEM_UI_FLAG_FULLSCREEN;
+
+        mDecorView.setSystemUiVisibility(config);
 
         // Hide title
         showHideTitle(false);
@@ -1037,8 +1046,23 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
         }
 
+        // Hide action bar
+        getSupportActionBar().hide();
+
         // Remember the state
-        mImmersiveMode = true;
+        // Note: for older Android versions
+        if ((Build.VERSION.SDK_INT < Build.VERSION_CODES.R) || (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)) {
+            mImmersiveMode = true;
+        }
+        else {
+            mImmersiveModeHandler = new Handler();
+            mImmersiveModeRunnable = new Runnable() {
+                public void run() {
+                    mImmersiveMode = true;
+                }
+            };
+            mImmersiveModeHandler.postDelayed(mImmersiveModeRunnable, Const.IMMERSIVE_MODE_DELAY);
+        }
     }
 
     // Setup editor

@@ -3,16 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/editor"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:background="@color/edit_title_bar_day"
-        android:animateLayoutChanges="true"
-        android:fitsSystemWindows="true">
+        android:background="@color/edit_title_bar_day">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/entry_toolbar"

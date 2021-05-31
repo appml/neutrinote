@@ -472,6 +472,7 @@ public class Const {
     protected final static int MIN_RELAUNCH_INTERVAL = 1;    // Minimum buffer between launch (in minute)
     protected final static int SCROLL_DELAY = ONE_SECOND;
     protected final static int REFRESH_DELAY = 300 * MILISECOND;
+    protected final static int IMMERSIVE_MODE_DELAY = 3000 * MILISECOND;
     protected final static String DATE_STATUS_FORMAT = "EEE, MMM d, yyyy";
     protected final static String DATE_FORMAT = "EEE, MMM d, yyyy";
     protected final static String DATE_TIME_FORMAT = "EEEE, MMM dd, yyyy h:mm a";
