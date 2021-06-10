@@ -5673,6 +5673,45 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         handleHome();
     }
 
+    // Append clipboard
+    private void doAppendClipboard(String title) {
+        // Check if the record already exists
+        ArrayList<DBEntry> results = mDatasource.getRecordByTitle(title);
+        if (results.size() == 1) {
+            // Get clipboard content
+            String clipboard_text = Utils.getClipboardText(DBApplication.getAppContext(), (ClipboardManager) DBApplication.getAppContext().getSystemService(mActivity.CLIPBOARD_SERVICE), -1, true);
+
+            // Sanity check
+            if (clipboard_text.length() == 0) {
+                Snackbar.make(mActivity.findViewById(android.R.id.content), DBApplication.getAppContext().getResources().getString(R.string.status_empty_clipboard), Snackbar.LENGTH_SHORT).show();
+                return;
+            }
+
+            DBEntry entry = results.get(0);
+
+            StringBuilder sb = new StringBuilder();
+            sb.append(entry.getContent());
+            sb.append("\r\n\r\n");
+            sb.append(clipboard_text);
+
+            // Sanity check
+            if (sb.length() < entry.getSize()) {
+                Toast.makeText(DBApplication.getAppContext(), DBApplication.getAppContext().getResources().getString(R.string.error_unexpected), Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Update record
+            mDatasource.updateRecord(entry.getId(), entry.getTitle(), sb.toString(), entry.getStar(), null, true, entry.getTitle());
+            if (mLocationAware) {
+                Location location = Utils.getLocation(getApplicationContext());
+                if (location != null)
+                    mDatasource.updateRecordCoordinates(entry.getId(), location.getLatitude(), location.getLongitude());
+            }
+
+            Toast.makeText(DBApplication.getAppContext(), title + Const.SPACE_CHAR + DBApplication.getAppContext().getResources().getString(R.string.status_updated_remotely), Toast.LENGTH_SHORT).show();
+        }
+    }
+
     ///////////////
     // Other tools
     ///////////////
@@ -6955,6 +6994,23 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                     // Launch note
                     doLaunchNote(title, (long) temp_id);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                return;
+            }
+        });
+
+        builder.setNeutralButton(R.string.dialog_funnel_neutral, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                try {
+                    // User clicked button
+                    String title = search_str.getText().toString().trim();
+
+                    // Append clipboard
+                    doAppendClipboard(title);
                 }
                 catch (Exception e) {
                     e.printStackTrace();

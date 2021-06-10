@@ -410,6 +410,7 @@
 
     <string name="dialog_funnel_title">🚀</string>
     <string name="dialog_funnel_ok">Continue</string>
+    <string name="dialog_funnel_neutral">Paste</string>
     <string name="dialog_funnel_cancel">Cancel</string>
 
     <string name="dialog_metadata_title">Edit Metadata</string>

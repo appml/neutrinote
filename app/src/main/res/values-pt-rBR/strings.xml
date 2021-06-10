@@ -408,6 +408,7 @@
 
     <string name="dialog_funnel_title">🚀</string>
     <string name="dialog_funnel_ok">Continuar</string>
+    <string name="dialog_funnel_neutral">Colar</string>
     <string name="dialog_funnel_cancel">Cancelar</string>
 
     <string name="dialog_metadata_title">Editar Metadados</string>
