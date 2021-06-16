@@ -1,0 +1,652 @@
+<resources>
+    <string name="app_name">neutriNote CE</string>
+    <string name="browser_widget_name">neutriNote ノートの表示</string>
+    <string name="add_note_widget_name">neutriNote: 新規ノート</string>
+    <string name="backup_service_name">neutriNote バックアップサービス</string>
+
+    <string name="in_app_search">neutriNote &#128269;</string>
+
+    <string name="hello_world">こんにちは世界!</string>
+    <string name="action_settings">設定</string>
+
+    <string name="intro_getting_started">さあ始めましょう</string>
+    <string name="intro_getting_started_desc">開始するする前に、neutriNoteのローカルリポジトリの設定を行います。</string>
+
+    <string name="intro_local_repo">ローカルストレージ</string>
+    <string name="intro_local_repo_desc">ローカルリポジトリは、端末にノートを保存するための場所です。 次の画面に従って、リポジトリにフォルダを割り当ててください。</string>
+
+    <string name="drawer_open">ナビゲーションドロワーを開く</string>
+    <string name="drawer_close">ナビゲーションドロワーを閉じる</string>
+
+    <string name="drawer_header_default">neutriNote</string>
+
+    <string name="drawer_menu_custom_filters">カスタムフィルタ</string>
+    <string name="drawer_menu_modified_after">変更日時で絞り込み</string>
+    <string name="drawer_menu_accessed_recently">アクセス日時で絞り込み</string>
+    <string name="drawer_menu_modified_nearby">この近くで編集されたファイル</string>
+    <string name="drawer_menu_metadata">メタデータ</string>
+
+    <string name="drawer_menu_account_short">アカウント</string>
+    <string name="drawer_menu_account_long">あなたのアカウント</string>
+
+    <string name="drawer_menu_about">このアプリについて</string>
+    <string name="drawer_menu_help">ヘルプ</string>
+    <string name="drawer_menu_settings">設定</string>
+
+    <string name="drawer_menu_backup_app_data">アプリのデータをバックアップ</string>
+    <string name="drawer_menu_restore_app_data">アプリのデータを復元</string>
+
+    <string name="menu_add">新規作成</string>
+    <string name="menu_sort">並び替え</string>
+    <string name="menu_style">スタイル</string>
+    <string name="menu_search">検索</string>
+    <string name="menu_advanced_search">高度な検索</string>
+    <string name="menu_clear_search_history">検索履歴を消去</string>
+    <string name="menu_clear_location_data">位置情報データを消去</string>
+    <string name="menu_delete">削除</string>
+    <string name="menu_metadata">メタデータ</string>
+    <string name="menu_show_map">マップに表示</string>
+    <string name="menu_append_clipboard">クリップボードから貼り付け</string>
+    <string name="menu_import_files">ファイルをインポート</string>
+    <string name="menu_export_files">ファイルをエクスポート</string>
+    <string name="menu_mirror_files">ミラーファイル</string>
+
+    <string name="menu_sort_by_title">タイトルで並び替え</string>
+    <string name="menu_sort_by_date">日時で並び替え</string>
+
+    <string name="menu_toggle_title">タイトルの表示を切り替え</string>
+    <string name="menu_markdown_view">マークダウン表示</string>
+    <string name="menu_paste_calendar">カレンダーに貼り付け</string>
+    <string name="menu_full_screen">フルスクリーン</string>
+    <string name="menu_clear_cache">キャッシュを消去</string>
+    <string name="menu_export">エクスポート</string>
+    <string name="menu_print">印刷</string>
+
+    <string name="menu_encrypt_decrypt">エンコード/デコード</string>
+
+    <string name="menu_save_exit">保存して終了</string>
+    <string name="menu_save">保存</string>
+    <string name="menu_revert">変更を破棄</string>
+    <string name="menu_share">共有</string>
+
+    <string name="menu_edit_tools">ツールボックス</string>
+    <string name="menu_markdown_symbols">マークダウンの記号</string>
+
+    <string name="menu_style_font_family">書体</string>
+    <string name="menu_style_font_size">フォントサイズ</string>
+    <string name="menu_style_margin">余白</string>
+    <string name="menu_style_theme">テーマ</string>
+
+    <string name="label_title">タイトル</string>
+    <string name="label_content">コンテンツ</string>
+    <string name="label_share">保存先を選択</string>
+
+    <string name="status_manager_created">マネージャが作成されました</string>
+    <string name="status_initializing">準備中...</string>
+    <string name="status_opening">読み込み中:\u0020</string>
+    <string name="status_rescanning">再スキャン中...</string>
+    <string name="status_searching">検索中...</string>
+    <string name="status_sync_completed">同期完了</string>
+    <string name="status_import_completed">インポート完了</string>
+    <string name="status_synchronized">同期済み</string>
+    <string name="status_canceled">キャンセル済み</string>
+
+    <string name="status_app_data_restoring">アプリデータを復元中です。  暫くお待ちください...</string>
+    <string name="status_app_data_restored">アプリデータは復元されました。  アプリを再起動してください</string>
+    <string name="status_app_data_backing_up">アプリデータをバックアップ中です。  暫くお待ちください...</string>
+    <string name="status_app_data_backup">アプリデータはバックアップされました。</string>
+
+    <string name="status_system_busy">システムはビジー状態です</string>
+
+    <string name="status_no_data">データがありません</string>
+    <string name="status_no_ocr_data">OCRデータが見つかりませんでした  ヒント: 文字の位置を中央にしてみてください</string>
+    <string name="status_no_location_data">位置データが見つかりませんでした</string>
+    <string name="status_no_status">ステータスが確認できません</string>
+    <string name="status_no_change">変更なし</string>
+    <string name="status_no_note">ノートが見つかりません</string>
+    <string name="status_empty">¯\\_(ツ)_/¯\u000Aファイルがありません</string>
+
+    <string name="status_more_items">さらに表示...</string>
+    <string name="status_imported_count">\u0020 個のアイテムが\u0020 からインポートされました</string>
+    <string name="status_count">\u0020個のアイテム\u0020</string>
+    <string name="status_word_count">\u0020単語</string>
+
+    <string name="status_modified_after">\u0020 以降に編集</string>
+    <string name="status_accessed_after">\u0020 以降にアクセス</string>
+    <string name="status_modified_nearby">\u0020 の付近で編集</string>
+
+    <string name="status_hit_count">\u0020 個の一致</string>
+    <string name="status_hit_in_title">タイトル内で一致</string>
+    <string name="status_no_hit_found">見つかりません</string>
+    <string name="status_no_search_conducted">検索は行われませんでした</string>
+    <string name="status_no_go_back">これ以前の結果が見つかりませんでした</string>
+    <string name="status_no_go_forward">これ以降の結果が見つかりませんでした</string>
+    <string name="status_all_replaced">すべて置き換えました</string>
+
+    <string name="status_deleted_remotely">\u0020は削除されました</string>
+    <string name="status_added_remotely">\u0020は追加されました</string>
+    <string name="status_updated_remotely">\u0020は更新されました</string>
+    <string name="status_locked">\u0020🔒</string>
+
+    <string name="status_items_deleted">\u0020個のアイテムは削除されました</string>
+    <string name="status_items_updated">\u0020個のアイテムは更新されました</string>
+
+    <string name="status_exported">\u0020 にエクスポートしました</string>
+
+    <string name="status_back_to">\u0020 まで戻る</string>
+    <string name="status_changes_left">\u0020個の変更残り</string>
+
+    <string name="status_encrypted">エンコード完了</string>
+    <string name="status_decrypted">デコード中</string>
+    <string name="status_encrypting">エンコード中...</string>
+    <string name="status_decrypting">デコード中...</string>
+    <string name="status_encrypting_detailed">エンコード中です。暫くお待ちください...</string>
+    <string name="status_decrypting_detailed">デコード中です。暫くお待ちください...</string>
+
+    <string name="status_reverted">\u0020の変更は取り消されました</string>
+
+    <string name="status_notes_exported">\u0020個のノートはエクスポートされました</string>
+
+    <string name="status_auto_backup">自動バックアップ</string>
+    <string name="status_auto_backup_in_progress">バックアップ中です</string>
+    <string name="status_auto_backup_completed">次の場所にバックアップされました:</string>
+    <string name="status_auto_backup_disabled">自動バックアップは無効です</string>
+
+    <string name="status_search_history_cleared">検索履歴は消去されました</string>
+    <string name="status_location_data_cleared">位置データは消去されました</string>
+
+    <string name="status_storage_permission_granted">ストレージへのアクセス権限は許可されました。  アプリを再起動してください</string>
+    <string name="status_location_permission_granted">位置情報へのアクセス権限は許可されました。  アプリを再起動してください</string>
+    <string name="status_camera_permission_granted">カメラへのアクセス権限は許可されました。</string>
+
+    <string name="status_storage_permission_denied">ストレージへのアクセス権限が拒否されました。  データの消失を防ぐため、システム設定からストレージへのアクセス権限を許可してアプリを再起動してください。</string>
+    <string name="status_location_permission_denied">位置情報へのアクセス権限が拒否されました。  アプリ内の「位置情報認識」の設定に関わらず、位置情報を利用した機能は動作しなくなります。</string>
+    <string name="status_camera_permission_denied">カメラへのアクセス権限が拒否されました。  カメラ機能を利用するバーコードスキャンなどの機能は動作しなくなります。</string>
+
+    <string name="status_shortcut_added">ショートカットを使用する準備が整いました</string>
+
+    <string name="status_restart_app">neutriNoteを再起動してください</string>
+
+    <string name="widget_empty_view_text">記録がありません</string>
+    <string name="status_empty_clipboard">クリップボードは空です</string>
+
+    <string name="info_select_one">円をタップして選択します</string>
+
+    <string name="info_cancel_encrypt">エンコードするのに安全ではありません。 操作を中止します</string>
+    <string name="info_cancel_decrypt">デコードするのに安全ではありません。 操作を中止します</string>
+
+    <string name="info_drawing_best_viewing_font">monospaceフォント(12pt)での表示が最適です</string>
+
+    <string name="info_local_images_only">このボタンではローカル画像のみ扱います (ベータ).</string>
+
+    <string name="info_cache_cleared">キャッシュは消去されました.</string>
+
+    <string name="warn_markdown_cursor_position">適切なレンダリングのために、カーソルをMarkdownシンボルから離してください</string>
+    <string name="warn_no_selected_word">いくつか単語を選択してください</string>
+    <string name="warn_no_selected_expression">正規表現を選択してください</string>
+    <string name="warn_shortcut_disabled">このコンテキストではテキストの拡張は無効です</string>
+
+    <string name="error_database_setup">データベースのセットアップエラー</string>
+    <string name="error_server">サーバーエラー</string>
+    <string name="error_network">ネットワークエラー</string>
+    <string name="error_json">JSONパースエラー</string>
+    <string name="error_resource_not_found">要求されたリソースが見つかりません</string>
+    <string name="error_unexpected">予期せぬエラー</string>
+    <string name="error_login">ログインに失敗しました。 ステータス: </string>
+    <string name="error_empty_title">タイトルを指定してください</string>
+
+    <string name="error_app_data_not_found">アプリデータが見つかりませんでした</string>
+    <string name="error_backup">バックアップデータ</string>
+
+    <string name="error_invalid_local_storage_path">内部ストレージのパスが不正です</string>
+    <string name="error_empty_local_repo_path">ローカルリポジトリのパスを指定してください</string>
+    <string name="error_empty_backup_uri">バックアップ設定を再度お確かめください</string>
+    <string name="error_create_path">\u0020を作成できません</string>
+
+    <string name="error_invalid_title">無効なタイトルです</string>
+    <string name="error_invalid_file_size">無効なファイルサイズです</string>
+
+    <string name="error_no_writable_external_storage">書き込み可能な外部ストレージがありません</string>
+    <string name="error_no_readable_external_storage">読み込み可能な外部ストレージがありません</string>
+
+    <string name="error_no_camera">カメラに接続できませんでした</string>
+    <string name="error_no_calendar_app">カレンダーアプリが見つかりません</string>
+
+    <string name="error_no_shortcuts">ショートカットが設定されていません。  セットアップするにはヘルプを参照してください。</string>
+    <string name="error_undefined_shortcut">Undefined shortcut.</string>
+
+    <string name="error_undo">もとに戻せません</string>
+    <string name="error_redo">やり直せません</string>
+
+    <string name="error_invalid_filters">無効なフィルタ</string>
+    <string name="error_location_unknown">位置情報が不明です</string>
+
+    <string name="error_missing_colordict">色の定義が見つかりませんでした</string>
+    <string name="error_calculation">計算に失敗しました</string>
+
+    <string name="rationale_storage_read_permission">次の画面では、ストレージへのアクセス権限をneutriNoteに許可するかどうかを尋ねられます。  この権限は、neutriNoteが正しく機能するために必要です。</string>
+    <string name="rationale_storage_write_permission">\u0020</string>
+    <string name="rationale_location_permission">次の画面では、位置情報へのアクセス権限をneutriNoteに許可するかどうかを尋ねられます。  この権限を許可することにより、neutriNoteの位置情報設定を上書きします。</string>
+    <string name="rationale_camera_permission">次の画面では、カメラへのアクセス権限をneutriNoteに許可するかどうかを尋ねられます。</string>
+
+    <string name="admin_pref">管理</string>
+    <string name="pref_local_repo_path_title">ローカルリポジトリのパス</string>
+    <string name="pref_local_repo_path_summary">ローカルリポジトリのパスを指定してください。リポジトリを直接編集しないでください。 (ユーザーガイドを参照) 注: Android 11以降では他のアプリからリポジトリにアクセスできません</string>
+    <string name="pref_local_repo_path_default">\u0020</string>
+
+    <string name="pref_incremental_backup_title">自動バックアップ/ミラー</string>
+    <string name="pref_incremental_backup_summary">バックアップ・ミラーの保存先を指定してください。バックアップは毎日、アイドル時に実行されます。同期にはミラーを使用することができます。（ユーザーガイドを参照）注：Android 11以降でも、他のアプリからアクセスできます。</string>
+    <string name="pref_incremnental_backup_default">false</string>
+
+    <string name="pref_auto_save_title">自動保存</string>
+    <string name="pref_auto_save_summary">自動保存を有効化します</string>
+    <string name="pref_auto_save_default">true</string>
+
+    <string name="pref_location_aware_title">位置情報の認識</string>
+    <string name="pref_location_aware_summary">ノートに位置情報を記録します</string>
+    <string name="pref_location_aware_default">false</string>
+
+    <string name="ui_pref">ユーザーインターフェイス</string>
+    <string name="pref_custom_filter_title">カスタムフィルタ</string>
+    <string name="pref_custom_filter_summary">セミコロンで区切ったフィルタを指定してください。 neutriNoteはこの中の最初のフィルタを起動時に使用します。</string>
+    <string name="pref_custom_filter_default">all;starred;A;B;C;D;E;F;G;H;I;J;K;L;M;N;O;P;Q;R;S;T;U;V;W;X;Y;Z</string>
+
+    <string name="style_pref">スタイル</string>
+    <string name="pref_theme_title">テーマ</string>
+    <string name="pref_theme_summary">テーマを選択します</string>
+    <string name="pref_theme_default">day</string>
+    <string-array name="pref_theme_names">
+        <item>ライトモード</item>
+        <item>ダークモード</item>
+        <item>ナイトモード</item>
+    </string-array>
+    <string-array name="pref_theme_values">
+        <item>day</item>
+        <item>dark</item>
+        <item>night</item>
+    </string-array>
+
+    <string name="pref_lux_title">アンビエントグロー (実験的)</string>
+    <string name="pref_lux_summary">色温度を周囲の明るさに応じて調節します。 (マークダウン内の色は影響を受けません).</string>
+    <string name="pref_lux_default">false</string>
+
+    <string name="advanced_pref">高度な設定</string>
+    <string name="pref_lazy_update_title">怠惰なアップデート</string>
+    <string name="pref_lazy_update_summary">バッテリーを節約するために、コミット前に変更をマージします</string>
+    <string name="pref_lazy_update_default">false</string>
+
+    <string name="pref_math_url_title">数式の計算</string>
+    <string name="pref_math_url_summary">サーバーのURL（HTTPS）を指定すれば、独自のパーサーを使用することができます。この項目を空にするとMathjaxが標準で使用されます</string>
+    <string name="pref_math_url_default">https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</string>
+
+    <string name="pref_copy_attachments_to_repo_title">画像を追加</string>
+    <string name="pref_copy_attachments_to_repo_summary">常に挿入した画像をローカルリポジトリに追加する</string>
+    <string name="pref_copy_attachments_to_repo_default">false</string>
+
+    <string name="pref_show_hidden_title">隠しノートを表示</string>
+    <string name="pref_show_hidden_summary">非表示にしたノートを表示するようにします (「\u223c」をタイトル冒頭に追加したすべてのノート).</string>
+    <string name="pref_show_hidden_default">false</string>
+
+    <string name="support_pref">サポート</string>
+    <string name="pref_support_title">問題を報告しますか？</string>
+    <string name="pref_support_summary">開発者に連絡</string>
+    <string name="pref_support_extensions">拡張機能</string>
+
+    <string name="support_email_subject">neutriNote Bug Report</string>
+    <string name="support_email_body">Details of the problem:</string>
+
+    <string name="pref_play_store_link_title">neutriNoteを紹介する</string>
+    <string name="pref_play_store_link_summary">このアプリが役に立ちそうな人に共有してください。</string>
+    <string name="pref_play_store_link_url">https://f-droid.org/packages/com.appmindlab.nano/</string>
+
+    <string name="pref_connector_title">Dropbox Connector</string>
+    <string name="pref_connector_summary">Dropboxとの双方向同期を行うための拡張機能です。</string>
+    <string name="pref_connector_url">market://details?id=com.appmindlab.connector</string>
+
+    <string name="pref_play_store_catalog_title">アドオン</string>
+    <string name="pref_play_store_catalog_summary">Taskerでの使用、Dropboxとの双方向同期などのための拡張機能を入手します</string>
+    <string name="pref_play_store_catalog_url">market://search?q=pub:AppML</string>
+
+    <string name="pref_product_news_link_title">ニュース</string>
+    <string name="pref_product_news_link_summary">このアプリに関する通知や更新情報を確認できます</string>
+    <string name="pref_product_news_link_url">https://mastodon.social/@neutrinote</string>
+
+    <string name="dialog_home_title">未保存の変更</string>
+    <string name="dialog_home_message">保存しますか?</string>
+    <string name="dialog_home_ok">保存</string>
+    <string name="dialog_home_cancel">変更を破棄</string>
+
+    <string name="dialog_save_title">保存</string>
+    <string name="dialog_save_message">どのように保存しますか？</string>
+    <string name="dialog_save_quit">保存して終了</string>
+    <string name="dialog_save_edit">保存して編集を続行</string>
+
+    <string name="dialog_revert_title">変更を破棄</string>
+    <string name="dialog_revert_message">最後に保存したバージョンまで変更を破棄しますか？</string>
+    <string name="dialog_revert_ok">破棄する</string>
+    <string name="dialog_revert_cancel">破棄を中止</string>
+
+    <string name="dialog_reload_title">リモート変更が検出されました</string>
+    <string name="dialog_reload_message">再読込しますか？</string>
+    <string name="dialog_reload_ok">はい</string>
+    <string name="dialog_reload_cancel">いいえ</string>
+
+    <string name="dialog_font_family_title">書体を選択</string>
+    <string name="dialog_font_family_message">一つ選択してください</string>
+    <string name="dialog_font_family_ok">Ok</string>
+    <string name="dialog_font_family_cancel">キャンセル</string>
+
+    <string name="dialog_font_size_title">フォントサイズを選択</string>
+    <string name="dialog_font_size_message">一つ選択してください</string>
+    <string name="dialog_font_size_ok">Ok</string>
+    <string name="dialog_font_size_cancel">キャンセル</string>
+
+    <string name="dialog_margin_title">余白を選択</string>
+    <string name="dialog_margin_message">一つ選択してください</string>
+    <string name="dialog_margin_ok">Ok</string>
+    <string name="dialog_margin_cancel">キャンセル</string>
+
+    <string name="hint_search">〜を検索...</string>
+    <string name="hint_replace">〜で置き換え...</string>
+    <string name="hint_title">タイトル</string>
+    <string name="hint_content">コンテンツ</string>
+    <string name="hint_folder_name">フォルダ名を入力してください</string>
+    <string name="hint_file_name">ファイル名を入力してください</string>
+    <string name="hint_share_to">ノートを選択</string>
+    <string name="hint_funnel">🚀 ノートを選択</string>
+
+    <string name="chip_funnel">🚀 ノートを選択</string>
+    <string name="chip_local_find">🔍 検索</string>
+    <string name="hint_chip_local_find">🔍 〜を検索...</string>
+
+    <string name="dialog_sort_title">〜で並び替え</string>
+    <string name="dialog_sort_message">リストの並び替え方法を選択してください</string>
+    <string name="dialog_sort_ok">並び替え</string>
+    <string name="dialog_sort_cancel">キャンセル</string>
+
+    <string name="dialog_hits_navigation_title">一致した結果</string>
+    <string name="dialog_hits_naviagtion_message">場所を選択:</string>
+    <string name="dialog_hits_navigation_ok">移動</string>
+    <string name="dialog_hits_navigation_cancel">キャンセル</string>
+    <string name="dialog_hits_navigation_neutral">検索をクリア</string>
+
+    <string name="dialog_replace_all_title">全て置き換えますか?</string>
+    <string name="dialog_replace_all_ok">はい</string>
+    <string name="dialog_replace_all_cancel">いいえ</string>
+
+    <string name="dialog_duplicates_title">重複したタイトルが1個以上あります</string>
+    <string name="dialog_duplicates_message">上書きしますか？</string>
+    <string name="dialog_duplicates_ok">上書き</string>
+    <string name="dialog_duplicates_neutral">変更を破棄</string>
+    <string name="dialog_duplicates_cancel">キャンセル</string>
+
+    <string name="dialog_boolean_search_title">高度な検索</string>
+    <string name="dialog_boolean_search_message">各文字列はコンマ(,)で区切ります</string>
+    <string name="dialog_boolean_search_ok">全ての単語</string>
+    <string name="dialog_boolean_search_neutral">任意の単語</string>
+    <string name="dialog_boolean_search_cancel">キャンセル</string>
+
+    <string-array name="sort_methods">
+        <item>タイトル</item>
+        <item>日時</item>
+    </string-array>
+
+    <string name="dialog_directory_chooser_new_directory_title">新規フォルダ名</string>
+    <string name="dialog_directory_chooser_new_directory_button">新規フォルダを追加</string>
+    <string name="dialog_directory_chooser_ok">確認</string>
+    <string name="dialog_directory_chooser_cancel">キャンセル</string>
+    <string name="dialog_directory_chooser_selected_folder">選択済み:\u0020</string>
+
+    <string name="dialog_encrypt_decrypt_title">エンコード/デコード</string>
+    <string name="dialog_encrypt_decrypt_message">ノートの内容をBase64でエンコードします。(この機能は暗号化ではないため、機密情報の保護には使用しないでください)</string>
+    <string name="dialog_encrypt_decrypt_ok">エンコード</string>
+    <string name="dialog_encrypt_decrypt_cancel">キャンセル</string>
+    <string name="dialog_encrypt_decrypt_neutral">デコード</string>
+
+    <string name="dialog_share_to_title">共有先</string>
+    <string name="dialog_share_to_message"></string>
+    <string name="dialog_share_to_ok">続行</string>
+    <string name="dialog_share_to_cancel">キャンセル</string>
+
+    <string name="dialog_funnel_title">🚀</string>
+    <string name="dialog_funnel_ok">続行</string>
+    <string name="dialog_funnel_neutral">貼り付け</string>
+    <string name="dialog_funnel_cancel">キャンセル</string>
+
+    <string name="dialog_metadata_title">メタデータを編集</string>
+    <string name="dialog_metadata_message">メタデータを指定してください (\u0022:\u0022 または改行文字は省略されます。).</string>
+    <string name="dialog_metadata_ok">確定</string>
+    <string name="dialog_metadata_cancel">キャンセル</string>
+
+    <string name="dialog_metadata_search_title">メタデータで絞り込み</string>
+    <string name="dialog_metadata_search_message">メタデータでノートを絞り込み</string>
+    <string name="dialog_metadata_search_ok">フィルタ</string>
+    <string name="dialog_metadata_search_neutral">参照</string>
+    <string name="dialog_metadata_search_cancel">キャンセル</string>
+
+    <string name="dialog_custom_filters_title">カスタムフィルタ</string>
+    <string name="dialog_custom_filters_message">カスタムフィルタでノートを絞り込み</string>
+    <string name="dialog_custom_filters_ok">フィルタ</string>
+    <string name="dialog_custom_filters_cancel">キャンセル</string>
+
+    <string name="dialog_export_title">エクスポート形式の選択</string>
+    <string name="dialog_export_message">ファイル形式を選択してください</string>
+    <string name="dialog_export_ok">エクスポート</string>
+    <string name="dialog_export_cancel">キャンセル</string>
+
+    <string name="dialog_sd_backup_title">ノートをエクスポート</string>
+    <string name="dialog_sd_backup_message">ここにエクスポートしますか?</string>
+    <string name="dialog_sd_backup_ok">エクスポート</string>
+    <string name="dialog_sd_backup_cancel">キャンセル</string>
+
+    <string name="dialog_mirror_title">ミラーノート</string>
+    <string name="dialog_mirror_message">ミラーアクションを選択してください</string>
+    <string name="dialog_mirror_ok">ミラーに反映</string>
+    <string name="dialog_mirror_neutral">今すぐ同期</string>
+    <string name="dialog_mirror_cancel">ミラーから読み込み</string>
+
+    <string name="dialog_about_title">概要</string>
+    <string name="dialog_about_ok">Ok</string>
+    <string name="dialog_usage_title">使用状況</string>
+    <string name="dialog_usage_ok">Ok</string>
+
+    <string name="dialog_empty_local_repo_title">ローカルリポジトリの設定</string>
+    <string name="dialog_empty_local_repo_message">ローカルリポジトリを作成すれば、ノートは自動的にファイルとしてミラーリングされます。  リポジトリがあれば、P2Pやクラウドプロバイダーとの同期も容易になります。</string>
+    <string name="dialog_empty_local_repo_ok">構成</string>
+    <string name="dialog_empty_local_repo_cancel">標準を使用</string>
+    <string name="dialog_empty_local_repo_neutral">終了</string>
+
+    <string name="dialog_unset_math_url_title">数式</string>
+    <string name="dialog_unset_math_url_message">最初に数式を処理する際には、ネットワークへのアクセスが必要です。続行しますか？</string>
+    <string name="dialog_unset_math_url_ok">許可</string>
+    <string name="dialog_unset_math_url_cancel">拒否</string>
+
+    <string name="dialog_show_map_title">ノートを探す</string>
+    <string name="dialog_show_map_message">最後に編集した場所</string>
+    <string name="dialog_show_map_ok">完了</string>
+
+    <string name="dialog_show_clipboard_ok">完了</string>
+    <string name="dialog_show_clipboard_paste">貼り付け</string>
+
+    <string name="dialog_draw_title">スケッチ</string>
+    <string name="dialog_draw_message">\u0020</string>
+    <string name="dialog_draw_ok">貼り付け</string>
+    <string name="dialog_draw_cancel">破棄</string>
+
+    <string name="dialog_canvas_stroke_ok">確定</string>
+    <string name="dialog_canvas_stroke_cancel">キャンセル</string>
+
+    <string name="dialog_add_shortcut_title">ショートカットを追加</string>
+    <string name="dialog_add_shortcut_hint">\u0020のショートカットとして</string>
+    <string name="dialog_add_shortcut_ok">確定</string>
+    <string name="dialog_add_shortcut_cancel">キャンセル</string>
+
+    <string name="dialog_show_shortcuts_title">ショートカット</string>
+    <string name="dialog_show_shortcuts_not_found">見つかりません</string>
+    <string name="dialog_show_shortcuts_ok">Ok</string>
+
+    <string name="dialog_revision_summary_ok">Ok</string>
+
+    <string name="snack_bar_button_ok">Ok</string>
+    <string name="snack_bar_button_undo">もとに戻す</string>
+    <string name="snack_bar_button_done">確定</string>
+    <string name="snack_bar_button_paste">貼り付け</string>
+
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">キャンセル</string>
+
+    <string name="button_indent">\u2192</string>
+    <string name="button_indent_description">インデント</string>
+    <string name="button_unindent">\u2190</string>
+    <string name="button_unindent_description">インデントを解除</string>
+    <string name="button_hash">\u0023</string>
+    <string name="button_asterisk">\u002A</string>
+    <string name="button_grave_accent">\u0060</string>
+    <string name="button_quotation">\u0022</string>
+    <string name="button_quotation_description">引用</string>
+    <string name="button_plus">\u002B</string>
+    <string name="button_dash">\u002D</string>
+    <string name="button_dash_description">マイナス</string>
+    <string name="button_equal">\u003D</string>
+    <string name="button_colon">\u003A</string>
+    <string name="button_colon_description">コロン</string>
+    <string name="button_semicolon">\u003B</string>
+    <string name="button_semicolon_description">セミコロン</string>
+    <string name="button_vertical">\u007C</string>
+    <string name="button_vertical_description">バーティカルバー</string>
+    <string name="button_backslash">\u005C</string>
+    <string name="button_backslash_description">バックスラッシュ</string>
+    <string name="button_slash">\u002F</string>
+    <string name="button_slash_description">スラッシュ</string>
+    <string name="button_bracket_left">\u0028</string>
+    <string name="button_bracket_left_description">Left Bracket</string>
+    <string name="button_bracket_right">\u0029</string>
+    <string name="button_bracket_right_description">Right Bracket</string>
+    <string name="button_square_bracket_left">\u005B</string>
+    <string name="button_square_bracket_left_description">Square Left Bracket</string>
+    <string name="button_square_bracket_right">\u005D</string>
+    <string name="button_square_bracket_right_description">Square Right Bracket</string>
+    <string name="button_curly_bracket_left">\u007B</string>
+    <string name="button_curly_bracket_left_description">Curly Left Bracket</string>
+    <string name="button_curly_bracket_right">\u007D</string>
+    <string name="button_curly_bracket_right_description">Curly Right Bracket</string>
+    <string name="button_bracket_less">\u003C</string>
+    <string name="button_bracket_greater">\u003E</string>
+    <string name="button_underscore">\u005F</string>
+    <string name="button_dollar">\u0024</string>
+    <string name="button_dollar_description">ドル記号</string>
+    <string name="button_bang">\u0021</string>
+    <string name="button_bang_description">エクスクラメーションマーク</string>
+    <string name="button_question">\u003F</string>
+    <string name="button_question_description">クエスチョンマーク</string>
+    <string name="button_close">\uF057</string>
+    <string name="button_close_description">閉じる</string>
+
+    <string name="button_save">\uF0C7</string>
+    <string name="button_save_description">保存</string>
+    <string name="button_undo">\uF0E2</string>
+    <string name="button_undo_description">もとに戻す</string>
+    <string name="button_redo">\uF01E</string>
+    <string name="button_redo_description">やり直し</string>
+
+    <string name="button_markdown">\uF121</string>
+    <string name="button_markdown_description">マークダウン記号</string>
+
+    <string name="button_timestamp">\uF017</string>
+    <string name="button_timestamp_description">タイムスタンプを挿入</string>
+    <string name="button_datestamp">\uF073</string>
+    <string name="button_datestamp_description">日付スタンプを挿入</string>
+
+    <string name="button_locationstamp">\uF041</string>
+    <string name="button_locationstamp_description">位置情報スタンプを挿入</string>
+
+    <string name="button_draw">\uF1FC</string>
+    <string name="button_draw_description">スケッチ</string>
+
+    <string name="button_settings">\uF55D</string>
+    <string name="button_settings_description">設定</string>
+
+    <string name="button_search">\uF002</string>
+    <string name="button_search_description">検索</string>
+    <string name="button_replace">\uF074</string>
+    <string name="button_replace_description">置き換え</string>
+    <string name="button_text_expand">\uF035</string>
+    <string name="button_text_expand_description">テキスト拡張</string>
+    <string name="button_next">\uF063</string>
+    <string name="button_next_description">次を検索</string>
+
+    <string name="button_barcode">\uF02A</string>
+    <string name="button_barcode_description">バーコードを読み込み</string>
+    <string name="button_image">\uF03E</string>
+    <string name="button_image_description">画像を挿入</string>
+    <string name="button_ocr">\uF140</string>
+    <string name="button_ocr_description">OCR</string>
+
+    <string name="button_define">\uF02D</string>
+    <string name="button_define_description">定義を検索</string>
+    <string name="button_calculate">\uF1EC</string>
+    <string name="button_calculate_description">計算</string>
+    <string name="button_web_search">\uF0AC</string>
+    <string name="button_web_search_description">ウェブ検索</string>
+
+    <string name="button_top">\uF062</string>
+    <string name="button_top_description">一番上まで移動</string>
+    <string name="button_bottom">\uF063</string>
+    <string name="button_bottom_description">一番下まで移動</string>
+
+    <string name="button_clear">\uF1F8</string>
+    <string name="button_clear_description">クリア</string>
+
+    <string name="button_gallery">\uF87C</string>
+    <string name="button_gallery_description">ギャラリー</string>
+
+    <string name="button_camera">\uF083</string>
+    <string name="button_camera_description">カメラ</string>
+
+    <string name="button_encrypt">\uF023</string>
+    <string name="button_encrypt_description">暗号化</string>
+
+    <string name="button_decrypt">\uF09C</string>
+    <string name="button_decrypt_description">復号化</string>
+
+    <string name="message_undobar">削除しました</string>
+
+    <string name="message_ignore_case">大文字小文字を区別しないようにしますか？</string>
+    <string name="message_glob">UNIX pattern (case sensitive)</string>
+
+    <string name="message_export_notes_folder">\u0020 にエクスポート</string>
+    <string name="message_import_notes_folder">ノート(.txt) を次のフォルダからインポートします:\n\n(注: 既存のノートのデータは上書きされます)</string>
+
+    <string name="message_auto_backup_log">最後の自動バックアップ:\u0020</string>
+    <string name="message_auto_backup_log_empty">- - -</string>
+
+    <string name="message_sync_log">最後の同期:\u0020</string>
+    <string name="message_sync_log_empty">- - -</string>
+
+    <string name="message_auto_mirror_log">最後の自動同期:\u0020</string>
+    <string name="message_auto_mirror_log_empty">- - -</string>
+
+    <string name="message_storage_usage">端末ストレージの使用状況 (データのみ):\u0020</string>
+
+    <string name="tile_sync">リポジトリをスキャン</string>
+    <string name="tile_add_note">新規ノート</string>
+
+    <string name="word_count">W</string>
+    <string name="file_size">S</string>
+    <string name="line_number">L</string>
+
+    <string-array name="font_family_values">
+        <item>Roboto Condensed Light</item>
+        <item>Roboto Mono Light</item>
+        <item>Roboto Mono Regular</item>
+        <item>Roboto Slab Light</item>
+        <item>Roboto Slab Regular</item>
+        <item>Roboto Slab Bold</item>
+    </string-array>
+
+    <string-array name="margin_values">
+        <item>8</item>
+        <item>16</item>
+        <item>24</item>
+    </string-array>
+</resources>
