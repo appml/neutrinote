@@ -3748,6 +3748,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         message += "Chinese (Simplified) translation kindly provided by: 王子菠萝油, updated by: TyanBoot";
 
         message += Const.HORIZONTAL_LINE;
+        message += "Japanese translation kindly provided by: gnuhead-chieb";
+
+        message += Const.HORIZONTAL_LINE;
         message += "Japanese manual translation kindly provided by: Hiroyuki Sekihara";
 
         message += Const.HORIZONTAL_LINE;
