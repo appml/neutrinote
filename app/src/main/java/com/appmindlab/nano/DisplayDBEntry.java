@@ -2988,9 +2988,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Log.d(Const.TAG, "nano -- onKeyDown");
+
             // Ignore if in immersive mode
-            if (mImmersiveMode)
+            if (mImmersiveMode) {
+                exitImmersiveMode();
                 return false;
+            }
 
             handleHome();
         }
