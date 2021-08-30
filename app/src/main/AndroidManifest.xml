@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.appmindlab.nano"
-    android:versionCode="1214"
-    android:versionName="3.8.3">
+    android:versionCode="1215"
+    android:versionName="3.8.4">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -151,7 +151,7 @@
             android:name=".DisplayDBEntry"
             android:label=""
             android:configChanges="orientation"
-            android:hardwareAccelerated="false"
+            android:hardwareAccelerated="true"
             android:windowSoftInputMode="stateHidden"
             android:parentActivityName=".MainActivity"
             android:launchMode="singleTop">
