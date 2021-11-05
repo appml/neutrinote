@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Binder;
+import android.os.Build;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import androidx.core.app.NotificationCompat;
@@ -103,8 +104,7 @@ public class BackupService extends Service {
                     ////////////////////
                     // 2. Backup files
                     ////////////////////
-                    if ((action != null) && (action.equals(Const.ACTION_FULL_BACKUP))) {
-                        // Get max backup settings
+                    if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) || ((action != null) && (action.equals(Const.ACTION_FULL_BACKUP)))) {
                         mMaxBackupCount = cur_intent.getIntExtra(Const.EXTRA_MAX_BACKUP_COUNT, Const.MAX_BACKUP_COUNT);
                         mMaxBackupAge = cur_intent.getIntExtra(Const.EXTRA_MAX_BACKUP_AGE, Const.MAX_BACKUP_AGE);
 
