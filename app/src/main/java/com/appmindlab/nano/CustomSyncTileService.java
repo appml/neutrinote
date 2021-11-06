@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
@@ -74,12 +75,13 @@ public class CustomSyncTileService extends TileService {
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String path = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
+        Uri uri = Uri.parse(mSharedPreferences.getString(Const.PREF_BACKUP_URI, ""));
 
         // Update tile UI
         updateTile();
 
         // Send a sync request
-        Utils.sendSyncRequest(getApplicationContext(), path);
+        Utils.sendSyncRequest(getApplicationContext(), path, uri);
 
         // Update tile UI
         updateTile();

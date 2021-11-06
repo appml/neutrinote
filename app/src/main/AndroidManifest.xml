@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.appmindlab.nano"
-    android:versionCode="1216"
-    android:versionName="3.8.5">
+    android:installLocation="auto"
+    android:versionCode="1217"
+    android:versionName="3.8.6">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

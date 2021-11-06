@@ -3360,7 +3360,7 @@ public class Utils {
     }
 
     // Send sync request
-    protected static void sendSyncRequest(Context context, String path) {
+    protected static void sendSyncRequest(Context context, String path, Uri uri) {
         Intent intent;
 
         if (Utils.hasPackage(context, Const.CONNECTORPLUS_PACKAGE)) {
@@ -3372,10 +3372,15 @@ public class Utils {
             context.sendBroadcast(intent);
         }
 
-        // Alert repo monitor(s)
+        // Alert repo monitor(s) via file
         if (Utils.fileExists(context, path, Const.NOOP_FILE)) {
             Utils.writeLocalRepoFile(context, Const.NOOP_FILE, Const.NULL_SYM);
         }
+
+        // Alert repo monitor(s) via scope storage
+        DocumentFile dir = DocumentFile.fromTreeUri(context, uri);
+        if (Utils.getSAFSubDirUri(context, uri, Const.NOOP_FILE) != null)
+            Utils.writeSAFFile(context, dir, Const.NOOP_FILE, Const.NULL_SYM);
     }
 
     ////////////

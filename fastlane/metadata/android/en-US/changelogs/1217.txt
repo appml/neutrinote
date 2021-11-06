@@ -1,0 +1,2 @@
+v3.8.6
+Better scope storage support

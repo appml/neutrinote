@@ -993,7 +993,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onRefresh() {
                 // Send a sync request
-                Utils.sendSyncRequest(getApplicationContext(), mLocalRepoPath);
+                Utils.sendSyncRequest(getApplicationContext(), mLocalRepoPath, mBackupUri);
 
                 // Mirror if applicable
                 doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG);

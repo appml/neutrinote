@@ -2481,7 +2481,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
             else if (expanded.startsWith(Const.SYNC_SYM)) {    // Command to send a sync request
                 // Send a sync request
-                Utils.sendSyncRequest(getApplicationContext(), mLocalRepoPath);
+                Utils.sendSyncRequest(getApplicationContext(), mLocalRepoPath, mBackupUri);
 
                 // "Consume" the command
                 Utils.insert(mContent, Const.NULL_SYM);
