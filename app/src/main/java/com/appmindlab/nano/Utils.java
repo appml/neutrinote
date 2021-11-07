@@ -1675,6 +1675,22 @@ public class Utils {
         }
     }
 
+    // Write SAF file
+    protected static void writeSAFFile(Context context, Uri uri, String content) {
+        try {
+            ParcelFileDescriptor fd = context.getContentResolver().openFileDescriptor(uri, "wt");
+
+            // Write to the file
+            FileOutputStream out = new FileOutputStream(fd.getFileDescriptor());
+            out.write(content.getBytes());
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            Log.i(Const.TAG, "writeSAFFile: failed");
+            e.printStackTrace();
+        }
+    }
+
     // Write SAF file only if outdated
     protected static void writeSAFFile(Context context, DocumentFile dir, String title, String content, Date lastModified) {
         try {
@@ -3378,9 +3394,9 @@ public class Utils {
         }
 
         // Alert repo monitor(s) via scope storage
-        DocumentFile dir = DocumentFile.fromTreeUri(context, uri);
-        if (Utils.getSAFSubDirUri(context, uri, Const.NOOP_FILE) != null)
-            Utils.writeSAFFile(context, dir, Const.NOOP_FILE, Const.NULL_SYM);
+        Uri file_uri = Utils.getSAFSubDirUri(context, uri, Const.NOOP_FILE);
+        if (file_uri != null)
+            Utils.writeSAFFile(context, file_uri, Const.NULL_SYM);
     }
 
     ////////////
