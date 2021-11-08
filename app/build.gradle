@@ -11,6 +11,8 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         multiDexEnabled true
+        versionCode 1220
+        versionName "3.8.8.1"
     }
 
     buildTypes {
