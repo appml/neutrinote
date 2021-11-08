@@ -1659,9 +1659,13 @@ public class Utils {
     protected static void writeSAFFile(Context context, DocumentFile dir, String title, String content) {
         try {
             String file_name = Utils.getFileNameFromTitle(context, title);
+            DocumentFile file = dir.findFile(file_name);
 
             // Create a new file
-            DocumentFile file = dir.createFile(getMimeType(file_name), file_name);
+            if (file == null) {
+                file = dir.createFile(getMimeType(file_name), file_name);
+            }
+
             ParcelFileDescriptor fd = context.getContentResolver().openFileDescriptor(file.getUri(), "wt");
 
             // Write to the file
@@ -1739,8 +1743,13 @@ public class Utils {
     // Write SAF file without extension
     protected static void writeSAFFileNoExtension(Context context, DocumentFile dir, String title, String content) {
         try {
+            DocumentFile file = dir.findFile(title);
+
             // Create a new file
-            DocumentFile file = dir.createFile(null, title);
+            if (file == null) {
+                file = dir.createFile(null, title);
+            }
+
             ParcelFileDescriptor fd = context.getContentResolver().openFileDescriptor(file.getUri(), "wt");
 
             // Write to the file
