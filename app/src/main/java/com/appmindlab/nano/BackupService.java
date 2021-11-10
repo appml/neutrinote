@@ -67,6 +67,9 @@ public class BackupService extends Service {
         if ((DisplayDBEntry.display_dbentry != null) && (mSharedPreferences.getString(Const.AUTO_BACKUP_LOG, "").length() > 0))
             return Service.START_NOT_STICKY;
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)  // Handled by BackupWorker instead
+            return Service.START_NOT_STICKY;
+
         // Run outside of the UI thread
         Thread t = new Thread(){
             public void run(){
