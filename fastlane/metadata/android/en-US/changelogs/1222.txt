@@ -1,0 +1,2 @@
+v3.9.0
+Fixed missing backup uri crashes.
