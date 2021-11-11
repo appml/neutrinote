@@ -3403,9 +3403,11 @@ public class Utils {
         }
 
         // Alert repo monitor(s) via scope storage
-        Uri file_uri = Utils.getSAFSubDirUri(context, uri, Const.NOOP_FILE);
-        if (file_uri != null)
-            Utils.writeSAFFile(context, file_uri, Const.NULL_SYM);
+        if (!uri.equals(Uri.EMPTY)) {
+            Uri file_uri = Utils.getSAFSubDirUri(context, uri, Const.NOOP_FILE);
+            if (file_uri != null)
+                Utils.writeSAFFile(context, file_uri, Const.NULL_SYM);
+        }
     }
 
     ////////////

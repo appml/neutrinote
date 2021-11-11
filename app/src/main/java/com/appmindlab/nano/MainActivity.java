@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boolean status;
 
         // Sanity check
-        if ((mLocalRepoPath == null) || (mLocalRepoPath.length() == 0) || (mBackupUri == null))
+        if ((mLocalRepoPath == null) || (mLocalRepoPath.length() == 0) || (mBackupUri == null) || mBackupUri.equals(Uri.EMPTY))
             return false;
 
         // Reset mirror if it's not found
