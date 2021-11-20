@@ -2655,6 +2655,20 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Apply theme
     protected void applyTheme() {
         try {
+            // For devices without light sensor
+            if ((mLux) && (mLightSensor == null)) {
+                int flags = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+                if (flags == Configuration.UI_MODE_NIGHT_YES) {
+                    mTheme = Const.NIGHT_THEME;
+                }
+                else {
+                    mTheme = Const.DAY_THEME;
+                }
+
+                mSharedPreferencesEditor.putString(Const.PREF_THEME, mTheme);
+                mSharedPreferencesEditor.commit();
+            }
+
             if (mTheme.equals(Const.NIGHT_THEME)) {
                 mTitle.setTextColor(ContextCompat.getColor(this, R.color.edit_title_bar_text_night));
                 mTitle.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_night));
