@@ -476,6 +476,7 @@ public class Const {
     protected final static String DATE_STATUS_FORMAT = "EEE, MMM d, yyyy";
     protected final static String DATE_FORMAT = "EEE, MMM d, yyyy";
     protected final static String DATE_TIME_FORMAT = "EEEE, MMM dd, yyyy h:mm a";
+    protected final static String DIRPATH_SIMPLE_DATE_FORMAT = "yyyy-MM-dd";
     protected final static String DIRPATH_DATE_FORMAT = "yyyy-MM-dd_kk_mm_ss";
     protected final static String DIRPATH_FINE_DATE_FORMAT = "yyyy-MM-dd_hh_mm_ss_SSSS_a";
     protected final static String SNOOZE_PATTERN = "[+][0-9]+[mhdwMY]\\b";

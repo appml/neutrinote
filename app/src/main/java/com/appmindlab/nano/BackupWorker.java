@@ -111,7 +111,7 @@ public class BackupWorker extends Worker {
                     Log.d(Const.TAG, "nano - BackupWorker: backing up time-stamped folder... ");
 
                     // Time-stamped folder
-                    SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
+                    SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_SIMPLE_DATE_FORMAT, Locale.getDefault());
                     mSubDirPath = sdf.format(new Date());
                     status = backupFiles(getApplicationContext(), true);
 
