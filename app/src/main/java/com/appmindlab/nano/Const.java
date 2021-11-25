@@ -498,6 +498,10 @@ public class Const {
     protected final static int MAX_BACKUP_AGE = -1;
     protected final static String MAX_DELETED_COPIES_AGE = "-1";
     protected final static String BACKUP_WORK_NAME = "NANO_BACKUP_WORK";
+    protected final static String BACKUP_INSTANT_WORK_NAME = "NANO_INSTANT_BACKUP_WORK";
+    protected final static String BACKUP_INSTANT_WORK_TAG = "NANO_INSTANT_BACKUP_TAG";
+    protected final static String BACKUP_ONETIME_WORK_NAME = "NANO_ONETIME_BACKUP_WORK";
+    protected final static String BACKUP_ONETIME_WORK_TAG = "NANO_ONETIME_BACKUP_TAG";
     protected final static String MIRROR_WORK_NAME = "NANO_MIRROR_WORK";
     protected final static String MIRROR_WORK_TAG = "NANO_MIRROR_TAG";
     protected final static String MIRROR_ONETIME_WORK_NAME = "NANO_ONETIME_MIRROR_WORK";

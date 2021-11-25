@@ -765,6 +765,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             handleSAFImport();
 
         else if (itemId == R.id.menu_export_files)
+            // doSAFBackupRequest(Const.BACKUP_INSTANT_WORK_TAG);
             handleSAFExport();
 
         else if (itemId == R.id.menu_mirror_files)
@@ -2501,6 +2502,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (mBackupUri != null)
             new BackupSAFTask().execute();
+        else
+            updateStatus(getResources().getString(R.string.error_no_writable_external_storage), mBounce);
+    }
+
+    // Do SAF backup request
+    private void doSAFBackupRequest(String tag) {
+        // Sanity check
+        if (!mMirrorSafe) {
+            showSwipeRefresh();
+        }
+
+        // Show progress
+        showIOProgressBar(null);
+
+        mBackupWorkManager = WorkManager.getInstance(getApplicationContext());
+
+        if (mBackupUri != null) {
+            // Build constraints
+            Constraints constraints = new Constraints.Builder()
+                    .setRequiresBatteryNotLow(true)
+                    .setRequiresStorageNotLow(true)
+                    .build();
+
+            OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
+                    (BackupWorker.class)
+                    .setConstraints(constraints)
+                    .addTag(tag)
+                    .build();
+
+            mBackupWorkManager.enqueueUniqueWork(
+                    Const.BACKUP_ONETIME_WORK_NAME,
+                    ExistingWorkPolicy.KEEP,
+                    request);
+
+            Log.d(Const.TAG, "nano - Backup job requested");
+        }
         else
             updateStatus(getResources().getString(R.string.error_no_writable_external_storage), mBounce);
     }
