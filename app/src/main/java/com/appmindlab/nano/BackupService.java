@@ -96,7 +96,7 @@ public class BackupService extends Service {
 
                 newIntent = new Intent(getApplicationContext(), MainActivity.class);
                 newIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, 0);
+                mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
 
                 try {
                     ///////////////////////
