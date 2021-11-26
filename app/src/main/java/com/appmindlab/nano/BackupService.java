@@ -249,7 +249,7 @@ public class BackupService extends Service {
                     dir.mkdir();
 
                 if (dir.isDirectory()) {
-                    ids = mDatasource.getAllActiveRecordsIDs("title", "ASC");
+                    ids = mDatasource.getAllActiveRecordsIDs(DBHelper.COLUMN_MODIFIED, Const.SORT_DESC);
                     count = ids.size();
 
                     if (notifyProgress) {

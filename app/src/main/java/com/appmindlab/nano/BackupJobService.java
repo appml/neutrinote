@@ -237,7 +237,7 @@ public class BackupJobService extends JobService {
             dest_dir = dir.createDirectory(mSubDirPath);
         }
 
-        List<Long> results = mDatasource.getAllActiveRecordsIDs("title", "ASC");
+        List<Long> results = mDatasource.getAllActiveRecordsIDs(DBHelper.COLUMN_MODIFIED, Const.SORT_DESC);
         count = results.size();
 
         if (notifyProgress) {

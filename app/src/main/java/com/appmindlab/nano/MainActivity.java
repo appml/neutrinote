@@ -2770,7 +2770,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
                 }
                 else
-                    results = mDatasource.getAllActiveRecordsIDs(mOrderBy, mOrderDirection);
+                    results = mDatasource.getAllActiveRecordsIDs(DBHelper.COLUMN_MODIFIED, Const.SORT_DESC);
 
                 count = results.size();
 
