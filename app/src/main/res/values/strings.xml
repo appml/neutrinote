@@ -236,7 +236,7 @@
 
     <string name="pref_incremental_backup_title">Auto Backup / Mirror</string>
     <string name="pref_incremental_backup_summary">Specify backup / mirror storage.  Backup will run daily during idle hours.  Mirror may be used for sync (see User Guide).  Note: Visible to other apps in Android 11+.</string>
-    <string name="pref_incremnental_backup_default">false</string>
+    <string name="pref_incremental_backup_default">false</string>
 
     <string name="pref_auto_save_title">Auto Save</string>
     <string name="pref_auto_save_summary">Enable auto save.</string>

@@ -234,7 +234,7 @@
 
     <string name="pref_incremental_backup_title">Backup Automático / Espelhar</string>
     <string name="pref_incremental_backup_summary">Especificar backup / armazenamento de espelho. Backup será executado diariamente durante horas ociosas. O espelhamento pode ser usado para sincronização (veja Guia do Usuário).  Nota: Visível para outros apps no Android 11+.</string>
-    <string name="pref_incremnental_backup_default">false</string>
+    <string name="pref_incremental_backup_default">false</string>
 
     <string name="pref_auto_save_title">Salvamento Automático</string>
     <string name="pref_auto_save_summary">Ativar salvamento automático.</string>

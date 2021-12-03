@@ -236,7 +236,7 @@
 
     <string name="pref_incremental_backup_title">自動バックアップ/ミラー</string>
     <string name="pref_incremental_backup_summary">バックアップ・ミラーの保存先を指定してください。バックアップは毎日、アイドル時に実行されます。同期にはミラーを使用することができます。（ユーザーガイドを参照）注：Android 11以降でも、他のアプリからアクセスできます。</string>
-    <string name="pref_incremnental_backup_default">false</string>
+    <string name="pref_incremental_backup_default">false</string>
 
     <string name="pref_auto_save_title">自動保存</string>
     <string name="pref_auto_save_summary">自動保存を有効化します</string>
