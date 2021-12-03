@@ -1184,7 +1184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Build request
         mBackupWorkRequest = new PeriodicWorkRequest.Builder(
-                BackupDeltaWorker.class,
+                BackupWorker.class,
                 Const.AUTO_BACKUP_FREQ,
                 TimeUnit.HOURS)
                 .setConstraints(mBackupContraints)

@@ -494,7 +494,7 @@ public class Const {
     protected final static String EXPORT_PATH = "neutrinote_export";
     protected final static String INCREMENTAL_BACKUP_PATH = "merged";
     protected final static String MIRROR_PATH = "mirror";
-    protected final static int MAX_BACKUP_COUNT = 30;
+    protected final static int MAX_BACKUP_COUNT = 10;
     protected final static int MAX_BACKUP_AGE = -1;
     protected final static String MAX_DELETED_COPIES_AGE = "-1";
     protected final static String BACKUP_WORK_NAME = "NANO_BACKUP_WORK";
