@@ -494,7 +494,7 @@ public class Const {
     protected final static String EXPORT_PATH = "neutrinote_export";
     protected final static String INCREMENTAL_BACKUP_PATH = "merged";
     protected final static String MIRROR_PATH = "mirror";
-    protected final static int MAX_BACKUP_COUNT = 30;
+    protected final static int MAX_BACKUP_COUNT = 10;
     protected final static int MAX_BACKUP_AGE = -1;
     protected final static String MAX_DELETED_COPIES_AGE = "-1";
     protected final static String BACKUP_WORK_NAME = "NANO_BACKUP_WORK";
@@ -709,6 +709,12 @@ public class Const {
     protected final static String BACKUP_CHANNEL_NAME = "Backup";
     protected final static String BACKUP_CHANNEL_DESC = "Backup Notification";
     protected final static int BACKUP_CHANNEL_LEVEL = NotificationManager.IMPORTANCE_DEFAULT;
+    protected final static int BACKUP_NOTIFICATION_ID = 0;
+    protected final static String MIRROR_CHANNEL_ID = "mirror";
+    protected final static String MIRROR_CHANNEL_NAME = "Mirror";
+    protected final static String MIRROR_CHANNEL_DESC = "Mirror Notification";
+    protected final static int MIRROR_CHANNEL_LEVEL = NotificationManager.IMPORTANCE_DEFAULT;
+    protected final static int MIRROR_NOTIFICATION_ID = 0;
 
     // Error
     protected final static int ERROR_UNEXPECTED = 2;    // Unexpected error code

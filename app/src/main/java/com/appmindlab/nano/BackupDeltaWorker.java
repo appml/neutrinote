@@ -1,18 +1,23 @@
 package com.appmindlab.nano;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.documentfile.provider.DocumentFile;
+import androidx.work.ForegroundInfo;
+import androidx.work.WorkManager;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
@@ -26,6 +31,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
+
+import static android.content.Context.NOTIFICATION_SERVICE;
 
 /**
  * Created by saelim on 11/26/2021.
@@ -54,6 +61,8 @@ public class BackupDeltaWorker extends Worker {
 
     public BackupDeltaWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
+        mNotifyManager = (NotificationManager)
+                context.getSystemService(NOTIFICATION_SERVICE);
     }
 
     @NonNull
@@ -85,10 +94,9 @@ public class BackupDeltaWorker extends Worker {
                 mDatasource.open();
 
                 // Setup notification
-                mNotifyManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-                Utils.makeNotificationChannel(mNotifyManager, Const.BACKUP_CHANNEL_ID, Const.BACKUP_CHANNEL_NAME, Const.BACKUP_CHANNEL_DESC, Const.BACKUP_CHANNEL_LEVEL);
+                setForegroundAsync(createForegroundInfo(Const.BACKUP_CHANNEL_DESC));
+                mNotifyManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
                 mBuilder = new NotificationCompat.Builder(getApplicationContext(), Const.BACKUP_CHANNEL_ID);
-
                 newIntent = new Intent(getApplicationContext(), MainActivity.class);
                 newIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
@@ -134,10 +142,9 @@ public class BackupDeltaWorker extends Worker {
 
                     // Removes the progress bar
                     mNotifyManager.notify(0, mBuilder.build());
-
                 } catch (Exception e) {
                     e.printStackTrace();
-                    mBuilder.setContentText(getApplicationContext().getResources().getString(R.string.error_backup));
+                    // mBuilder.setContentText(getApplicationContext().getResources().getString(R.string.error_backup));
                 }
 
                 // Clean up
@@ -156,6 +163,32 @@ public class BackupDeltaWorker extends Worker {
         // Clean up when stopped unexpectedly
         if (mDatasource != null)
             mDatasource.close();
+    }
+
+    @NonNull
+    private ForegroundInfo createForegroundInfo(@NonNull String progress) {
+        Context context = getApplicationContext();
+        PendingIntent intent = WorkManager.getInstance(context)
+                .createCancelPendingIntent(getId());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            createChannel();
+        }
+
+        Notification notification = new NotificationCompat.Builder(context, Const.BACKUP_CHANNEL_ID)
+                .setContentTitle(Const.BACKUP_CHANNEL_NAME)
+                .setTicker(Const.BACKUP_CHANNEL_NAME)
+                .setSmallIcon(R.drawable.ic_archive_vector)
+                .setOngoing(true)
+                .build();
+
+        return new ForegroundInfo(Const.BACKUP_NOTIFICATION_ID, notification);
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private void createChannel() {
+        // Create a Notification channel
+        Utils.makeNotificationChannel(mNotifyManager, Const.BACKUP_CHANNEL_ID, Const.BACKUP_CHANNEL_NAME, Const.BACKUP_CHANNEL_DESC, Const.BACKUP_CHANNEL_LEVEL);
     }
 
     // Backup app data
@@ -294,6 +327,8 @@ public class BackupDeltaWorker extends Worker {
                 entry = results.get(0);
                 title = entry.getTitle();
 
+                Log.d(Const.TAG, "nano - BackupDeltaWorker:exportSAFFile: " + title);
+
                 // Sanity check
                 if (Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(title)) {
                     // Notes with reserved folder names need to be removed
@@ -373,5 +408,4 @@ public class BackupDeltaWorker extends Worker {
         }
     }
 }
-
 

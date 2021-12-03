@@ -1,13 +1,21 @@
 package com.appmindlab.nano;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
 import androidx.documentfile.provider.DocumentFile;
+import androidx.work.ForegroundInfo;
+import androidx.work.WorkManager;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
@@ -19,6 +27,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import static android.content.Context.NOTIFICATION_SERVICE;
 
 public class MirrorWorker extends Worker {
     // Data source
@@ -41,9 +51,14 @@ public class MirrorWorker extends Worker {
     // Last mirror time
     private long mLastMirrored = 0;
 
+    // Notification
+    protected NotificationManager mNotifyManager;
+
     public MirrorWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mWorkerParameters = workerParams;
+        mNotifyManager = (NotificationManager)
+                context.getSystemService(NOTIFICATION_SERVICE);
     }
 
     @NonNull
@@ -71,6 +86,9 @@ public class MirrorWorker extends Worker {
                 // Open the database
                 mDatasource = new DataSource();
                 mDatasource.open();
+
+                // Setup notification
+                setForegroundAsync(createForegroundInfo(Const.MIRROR_CHANNEL_DESC));
 
                 try {
 
@@ -191,6 +209,32 @@ public class MirrorWorker extends Worker {
         // Clean up when stopped unexpectedly
         if (mDatasource != null)
             mDatasource.close();
+    }
+
+    @NonNull
+    private ForegroundInfo createForegroundInfo(@NonNull String progress) {
+        Context context = getApplicationContext();
+        PendingIntent intent = WorkManager.getInstance(context)
+                .createCancelPendingIntent(getId());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            createChannel();
+        }
+
+        Notification notification = new NotificationCompat.Builder(context, Const.MIRROR_CHANNEL_ID)
+                .setContentTitle(Const.MIRROR_CHANNEL_NAME)
+                .setTicker(Const.MIRROR_CHANNEL_NAME)
+                .setSmallIcon(R.drawable.ic_archive_vector)
+                .setOngoing(true)
+                .build();
+
+        return new ForegroundInfo(Const.MIRROR_NOTIFICATION_ID, notification);
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private void createChannel() {
+        // Create a Notification channel
+        Utils.makeNotificationChannel(mNotifyManager, Const.MIRROR_CHANNEL_ID, Const.MIRROR_CHANNEL_NAME, Const.MIRROR_CHANNEL_DESC, Const.MIRROR_CHANNEL_LEVEL);
     }
 
     // Export a file to SAF
