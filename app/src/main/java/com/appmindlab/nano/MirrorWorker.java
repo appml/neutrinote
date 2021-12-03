@@ -4,6 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
@@ -53,6 +54,9 @@ public class MirrorWorker extends Worker {
 
     // Notification
     protected NotificationManager mNotifyManager;
+    protected NotificationCompat.Builder mBuilder;
+    protected NotificationCompat.BigTextStyle mBigTextStyle = new NotificationCompat.BigTextStyle();
+    protected PendingIntent mIntent;
 
     public MirrorWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
@@ -81,6 +85,9 @@ public class MirrorWorker extends Worker {
                 // Preference editor
                 SharedPreferences.Editor editor = mSharedPreferences.edit();
 
+                // Misc
+                Intent newIntent;
+
                 Log.d(Const.TAG, "nano - Mirror worker started");
 
                 // Open the database
@@ -89,6 +96,11 @@ public class MirrorWorker extends Worker {
 
                 // Setup notification
                 setForegroundAsync(createForegroundInfo(Const.MIRROR_CHANNEL_DESC));
+                mNotifyManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
+                mBuilder = new NotificationCompat.Builder(getApplicationContext(), Const.MIRROR_CHANNEL_ID);
+                newIntent = new Intent(getApplicationContext(), MainActivity.class);
+                newIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
 
                 try {
 
@@ -189,6 +201,14 @@ public class MirrorWorker extends Worker {
                     editor.putString(Const.AUTO_MIRROR_LOG, status);
                     editor.putLong(Const.MIRROR_TIMESTAMP, now.getTime());
                     editor.apply();
+
+                    // Update notification
+                    mBigTextStyle.bigText(getApplicationContext().getResources().getString(R.string.message_auto_mirror_log) + status);
+                    mBuilder.setStyle(mBigTextStyle);
+                    mBuilder.setContentText(status).setProgress(0, 0, false);
+
+                    // Removes the progress bar
+                    mNotifyManager.notify(0, mBuilder.build());
 
                     Log.d(Const.TAG, "nano - Mirror worker finished");
                 } catch (Exception e) {

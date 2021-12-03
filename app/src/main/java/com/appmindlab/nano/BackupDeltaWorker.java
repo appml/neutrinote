@@ -144,7 +144,7 @@ public class BackupDeltaWorker extends Worker {
                     mNotifyManager.notify(0, mBuilder.build());
                 } catch (Exception e) {
                     e.printStackTrace();
-                    // mBuilder.setContentText(getApplicationContext().getResources().getString(R.string.error_backup));
+                    mBuilder.setContentText(getApplicationContext().getResources().getString(R.string.error_backup));
                 }
 
                 // Clean up
