@@ -765,8 +765,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             handleSAFImport();
 
         else if (itemId == R.id.menu_export_files)
-            doSAFBackupRequest(Const.BACKUP_INSTANT_WORK_TAG);
-            // handleSAFExport();
+            handleSAFExport();
 
         else if (itemId == R.id.menu_mirror_files)
             handleSAFMirror();
@@ -2382,22 +2381,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (!Utils.checkMultiWindowMode(this))
             builder.setTitle(R.string.dialog_sd_backup_title);
 
-        // Come up with a directory name
-        final EditText title = new EditText(this);
-        SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
-
-        builder.setView(title);
-        title.setText(sdf.format(new Date()));
-        title.setSingleLine();
-        title.setHint(getResources().getString(R.string.hint_folder_name));
-        title.selectAll();
-        title.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
-        title.requestFocus();
-
         builder.setPositiveButton(R.string.dialog_sd_backup_ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                mSubDirPath = title.getText().toString();
-                doSAFBackup();
+                doSAFBackupRequest(Const.BACKUP_INSTANT_WORK_TAG);
                 return;
             }
         });
@@ -2413,26 +2399,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Show the dialog
         dialog.show();
-
-        // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-
-        title.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    // Dismiss dialog
-                    dialog.dismiss();
-
-                    mSubDirPath = title.getText().toString();
-                    doSAFBackup();
-
-                    return true;
-                }
-
-                return false;
-            }
-        });
     }
 
     // Handle SAF import
