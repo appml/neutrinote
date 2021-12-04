@@ -236,7 +236,7 @@
 
     <string name="pref_incremental_backup_title">自动备份/复制存储</string>
     <string name="pref_incremental_backup_summary">指定备份/复制存储。 备份将在空闲时间每天运行。 复制存储可以用于同步（请参阅《用户指南》）。 注意：在android 11或更高版本中，其他应用可以看到存储空间。</string>
-    <string name="pref_incremnental_backup_default">false</string>
+    <string name="pref_incremental_backup_default">false</string>
 
     <string name="pref_auto_save_title">自动保存</string>
     <string name="pref_auto_save_summary">启用自动保存。</string>
