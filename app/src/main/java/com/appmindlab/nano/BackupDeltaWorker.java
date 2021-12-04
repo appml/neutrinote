@@ -141,7 +141,7 @@ public class BackupDeltaWorker extends Worker {
                     mBuilder.setContentText(status).setProgress(0, 0, false);
 
                     // Removes the progress bar
-                    mNotifyManager.notify(0, mBuilder.build());
+                    mNotifyManager.notify(Const.BACKUP_NOTIFICATION_ID, mBuilder.build());
                 } catch (Exception e) {
                     e.printStackTrace();
                     mBuilder.setContentText(getApplicationContext().getResources().getString(R.string.error_backup));
