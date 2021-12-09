@@ -1655,6 +1655,25 @@ public class Utils {
         return type;
     }
 
+    // Create SAF file
+    protected static void createSAFFile(Context context, DocumentFile dir, String title, String content) {
+        try {
+            String file_name = Utils.getFileNameFromTitle(context, title);
+            DocumentFile file = dir.createFile(getMimeType(file_name), file_name);
+
+            ParcelFileDescriptor fd = context.getContentResolver().openFileDescriptor(file.getUri(), "wt");
+
+            // Write to the file
+            FileOutputStream out = new FileOutputStream(fd.getFileDescriptor());
+            out.write(content.getBytes());
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            Log.i(Const.TAG, "writeSAFFile: failed");
+            e.printStackTrace();
+        }
+    }
+
     // Write SAF file
     protected static void writeSAFFile(Context context, DocumentFile dir, String title, String content) {
         try {
@@ -2194,6 +2213,56 @@ public class Utils {
             e.printStackTrace();
             return;
         }
+    }
+
+    // Dump to SAF folder
+    protected static String dumpToSAFFolder(Context context, File srcDir, DocumentFile destDir) {
+        String status = "";
+        File src;
+        DocumentFile dest;
+
+        try {
+            // Sanity check
+            if ((!srcDir.exists()) || (!destDir.exists()))
+                return status;
+
+            if (srcDir.isDirectory()) {
+                File[] files = srcDir.listFiles();
+
+                for (int i = 0; i < files.length; i++) {
+                    dest = destDir.createFile("application/octet-stream", files[i].getName());
+
+                    // Source file
+                    src = files[i];
+
+                    ParcelFileDescriptor fd = context.getContentResolver().openFileDescriptor(dest.getUri(), "wt");
+
+                    // Write to the file
+                    InputStream in = new BufferedInputStream(new FileInputStream(src));
+                    OutputStream out = new BufferedOutputStream(new FileOutputStream(fd.getFileDescriptor()));
+
+                    byte[] buffer = new byte[Const.BUFFER_SIZE];
+                    int count;
+
+                    while ((count = in.read(buffer)) != -1)
+                        out.write(buffer, 0, count);
+
+                    in.close();
+
+                    // Write the output file
+                    out.flush();
+                    out.close();
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return context.getResources().getString(R.string.error_unexpected);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return context.getResources().getString(R.string.error_unexpected);
+        }
+
+        return status;
     }
 
     // Export to SAF folder

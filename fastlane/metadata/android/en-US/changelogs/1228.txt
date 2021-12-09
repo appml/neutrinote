@@ -1,0 +1,2 @@
+v3.9.6
+- Super fast auto backup / note export.

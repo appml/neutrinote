@@ -296,11 +296,11 @@ public class BackupWorker extends Worker {
 
         // Backup attachments
         attachment_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.ATTACHMENT_PATH);
-        Utils.exportToSAFFolder(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.ATTACHMENT_PATH), attachment_dir, true);
+        Utils.dumpToSAFFolder(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.ATTACHMENT_PATH), attachment_dir);
 
         // Backup fonts
         font_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.CUSTOM_FONTS_PATH);
-        Utils.exportToSAFFolder(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH), font_dir, true);
+        Utils.dumpToSAFFolder(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH), font_dir);
 
         // Backup multitype file
         if (Utils.fileExists(getApplicationContext(), mLocalRepoPath, Const.MULTI_TYPE))
@@ -356,7 +356,7 @@ public class BackupWorker extends Worker {
                 }
 
                 content = entry.getContent();
-                Utils.writeSAFFile(getApplicationContext(), dir, title, content);
+                Utils.createSAFFile(getApplicationContext(), dir, title, content);
             }
         } catch (Exception e) {
             e.printStackTrace();

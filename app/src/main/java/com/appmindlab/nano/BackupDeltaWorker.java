@@ -337,7 +337,7 @@ public class BackupDeltaWorker extends Worker {
                 }
 
                 content = entry.getContent();
-                Utils.writeSAFFile(getApplicationContext(), dir, title, content);
+                Utils.createSAFFile(getApplicationContext(), dir, title, content);
             }
         } catch (Exception e) {
             e.printStackTrace();
