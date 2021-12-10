@@ -2300,6 +2300,7 @@ public class Utils {
                     for (DocumentFile doc : dest_files) {
                         if (files[i].getName().equals(doc.getName())) {
                             dest = doc;
+                            break;
                         }
                     }
 
