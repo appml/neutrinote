@@ -2270,6 +2270,7 @@ public class Utils {
         String status = "";
         File src;
         DocumentFile dest;
+        DocumentFile[] dest_files;
         long src_lastmodified, dest_lastmodified;
         boolean is_new = false;
 
@@ -2291,8 +2292,17 @@ public class Utils {
                     });
                 }
 
+                // Call listFiles() only once and reuse the results, instead of calling listFiles repeatedly for eachs iteration as in findFile() call
+                // Note: https://commonsware.com/blog/2019/11/23/scoped-storage-stories-documentscontract.html
+                dest_files = destDir.listFiles();
                 for (int i = 0; i < files.length; i++) {
-                    dest = destDir.findFile(files[i].getName());
+                    dest = null;
+                    for (DocumentFile doc : dest_files) {
+                        if (files[i].getName().equals(doc.getName())) {
+                            dest = doc;
+                        }
+                    }
+
                     if (dest == null) {
                         // Create a new file
                         dest = destDir.createFile("application/octet-stream", files[i].getName());
