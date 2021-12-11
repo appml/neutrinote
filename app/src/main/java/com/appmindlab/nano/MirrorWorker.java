@@ -322,7 +322,7 @@ public class MirrorWorker extends Worker {
                 entry = records.get(0);
 
                 if (!overwrite) {
-                    // Log.d(Const.TAG, "nano - importSAFFile: checking " + title + " ...");
+                    Log.d(Const.TAG, "nano - importSAFFile: checking " + title + " ...");
 
                     if ((entry.getModified().after(modified)) || (entry.getModified().equals(modified)))  return;
                 }
