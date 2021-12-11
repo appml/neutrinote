@@ -2342,6 +2342,90 @@ public class Utils {
         return status;
     }
 
+    // Export to SAF folder by last modified time
+    protected static String exportToSAFFolderByLastModified(Context context, File srcDir, DocumentFile destDir, long lastModified, boolean overwrite) {
+        String status = "";
+        File src;
+        DocumentFile dest;
+        long src_lastmodified, dest_lastmodified;
+        boolean is_new = false;
+
+        try {
+            // Sanity check
+            if ((!srcDir.exists()) || (!destDir.exists()))
+                return status;
+
+            if (srcDir.isDirectory()) {
+                File[] files = srcDir.listFiles();
+
+                // Sorted files based on last modified dates
+                if (files != null && files.length > 1) {
+                    Arrays.sort(files, new Comparator<File>() {
+                        @Override
+                        public int compare(File object1, File object2) {
+                            return (int) ((object1.lastModified() > object2.lastModified()) ? object1.lastModified(): object2.lastModified());
+                        }
+                    });
+                }
+
+                for (int i = 0; i < files.length; i++) {
+                    Log.d(Const.TAG, "nano - exportToSAFFolderByLastModified: handling " + files[i].getName() + ", file last modified: " + files[i].lastModified() + ", last modified: " + lastModified);
+
+                    // Skip if last modified time is earlier
+                    if (files[i].lastModified() < lastModified) continue;
+
+                    Log.d(Const.TAG, "nano - exportToSAFFolderByLastModified: processing " + files[i].getName());
+
+                    dest = destDir.findFile(files[i].getName());
+                    if (dest == null) {
+                        // Create a new file
+                        dest = destDir.createFile("application/octet-stream", files[i].getName());
+                        is_new = true;
+                    }
+                    else if (!overwrite)
+                        continue;
+
+                    // Source file
+                    src = files[i];
+
+                    // Skip file if no new changes
+                    if (!is_new) {
+                        src_lastmodified = src.lastModified();
+                        dest_lastmodified = dest.lastModified();
+                        if (src_lastmodified < dest_lastmodified)
+                            continue;
+                    }
+
+                    ParcelFileDescriptor fd = context.getContentResolver().openFileDescriptor(dest.getUri(), "wt");
+
+                    // Write to the file
+                    InputStream in = new BufferedInputStream(new FileInputStream(src));
+                    OutputStream out = new BufferedOutputStream(new FileOutputStream(fd.getFileDescriptor()));
+
+                    byte[] buffer = new byte[Const.BUFFER_SIZE];
+                    int count;
+
+                    while ((count = in.read(buffer)) != -1)
+                        out.write(buffer, 0, count);
+
+                    in.close();
+
+                    // Write the output file
+                    out.flush();
+                    out.close();
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return context.getResources().getString(R.string.error_unexpected);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return context.getResources().getString(R.string.error_unexpected);
+        }
+
+        return status;
+    }
+
     // Export to SAF folder
     protected static String exportToSAFNestedFolder(Context context, File src, DocumentFile destDir) {
         String status = "";

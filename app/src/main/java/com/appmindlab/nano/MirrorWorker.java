@@ -110,6 +110,8 @@ public class MirrorWorker extends Worker {
 
                     Log.d(Const.TAG, "nano - MirrorWorker: To Mirror ");
 
+                    Log.d(Const.TAG, "nano - MirrorWorker: mLastMirrored  " + mLastMirrored);
+
                     // Retrieve records modified after last mirror
                     List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
                     count = results.size();
@@ -150,13 +152,13 @@ public class MirrorWorker extends Worker {
 
                         // Backup attachments
                         attachment_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.ATTACHMENT_PATH);
-                        Utils.exportToSAFFolder(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.ATTACHMENT_PATH), attachment_dir, false);
+                        Utils.exportToSAFFolderByLastModified(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.ATTACHMENT_PATH), attachment_dir, mLastMirrored, false);
 
                         Log.d(Const.TAG, "nano - MirrorWorker: 'fonts' to mirror ");
 
                         // Backup fonts
                         font_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.CUSTOM_FONTS_PATH);
-                        Utils.exportToSAFFolder(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH), font_dir, false);
+                        Utils.exportToSAFFolderByLastModified(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH), font_dir, mLastMirrored,false);
 
                         // Backup multitype file
                         if (Utils.fileExists(getApplicationContext(), mLocalRepoPath, Const.MULTI_TYPE))
@@ -174,7 +176,7 @@ public class MirrorWorker extends Worker {
 
                         // Backup import errors by moving import error folder to backup
                         // Note: need to remove source copy as its content will keep growing; destination copy can be manually removed by user
-                        Utils.moveToSAFFolder(getApplicationContext(), mMirrorUri, new File(mLocalRepoPath + "/" + Const.IMPORT_ERROR_PATH), dest_dir, true, false, false);
+                        Utils.moveToSAFFolder(getApplicationContext(), mMirrorUri, new File(mLocalRepoPath + "/" + Const.IMPORT_ERROR_PATH), dest_dir,true, false, false);
 
                         //////////////////////////
                         // FROM MIRROR (OTHERS) //
@@ -193,14 +195,19 @@ public class MirrorWorker extends Worker {
                         Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
                     }
 
+                    Log.d(Const.TAG, "nano - Mirror worker: Updating status...");
+
                     // Update status
                     Date now = new Date();
                     status += Utils.getSystemDateFormat(getApplicationContext(), Locale.getDefault()).format(now) + Utils.getSystemTimeFormat(getApplicationContext(), Locale.getDefault()).format(now);
 
                     // Save the log status
-                    editor.putString(Const.AUTO_MIRROR_LOG, status);
-                    editor.putLong(Const.MIRROR_TIMESTAMP, now.getTime());
-                    editor.apply();
+                    if (!mWorkerParameters.getTags().contains(Const.MIRROR_INSTANT_WORK_TAG)) {
+                        mLastMirrored = now.getTime();
+                        editor.putString(Const.AUTO_MIRROR_LOG, status);
+                        editor.putLong(Const.MIRROR_TIMESTAMP, mLastMirrored);
+                        editor.apply();
+                    }
 
                     // Update notification
                     mBigTextStyle.bigText(getApplicationContext().getResources().getString(R.string.message_auto_mirror_log) + status);
