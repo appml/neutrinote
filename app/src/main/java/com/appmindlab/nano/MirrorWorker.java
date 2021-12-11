@@ -88,7 +88,7 @@ public class MirrorWorker extends Worker {
                 // Misc
                 Intent newIntent;
 
-                Log.d(Const.TAG, "nano - Mirror worker started");
+                Log.d(Const.TAG, "nano - Mirror worker started [ last mirrored time: " + mLastMirrored + " ]");
 
                 // Open the database
                 mDatasource = new DataSource();
@@ -109,8 +109,6 @@ public class MirrorWorker extends Worker {
                     ///////////////////////
 
                     Log.d(Const.TAG, "nano - MirrorWorker: To Mirror ");
-
-                    Log.d(Const.TAG, "nano - MirrorWorker: mLastMirrored  " + mLastMirrored);
 
                     // Retrieve records modified after last mirror
                     List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
@@ -195,7 +193,7 @@ public class MirrorWorker extends Worker {
                         Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
                     }
 
-                    Log.d(Const.TAG, "nano - Mirror worker: Updating status...");
+                    Log.d(Const.TAG, "nano - Mirror worker: Finishing Up");
 
                     // Update status
                     Date now = new Date();
@@ -217,11 +215,11 @@ public class MirrorWorker extends Worker {
                     // Removes the progress bar
                     mNotifyManager.notify(Const.MIRROR_NOTIFICATION_ID, mBuilder.build());
                     mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
-
-                    Log.d(Const.TAG, "nano - Mirror worker finished");
                 } catch (Exception e) {
                     e.printStackTrace();
                     mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
+                } finally {
+                    Log.d(Const.TAG, "nano - Mirror worker finished");
                 }
 
                 // Clean up

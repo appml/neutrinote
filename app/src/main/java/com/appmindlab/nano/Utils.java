@@ -2369,8 +2369,7 @@ public class Utils {
                 }
 
                 for (int i = 0; i < files.length; i++) {
-                    Log.d(Const.TAG, "nano - exportToSAFFolderByLastModified: handling " + files[i].getName() + ", file last modified: " + files[i].lastModified() + ", last modified: " + lastModified);
-
+                    Log.d(Const.TAG, "nano - exportToSAFFolderByLastModified: handling " + files[i].getName() + " [ file last modified: " + files[i].lastModified() + ", threshold last modified: " + lastModified + " ]");
                     // Skip if last modified time is earlier
                     if (files[i].lastModified() < lastModified) continue;
 
