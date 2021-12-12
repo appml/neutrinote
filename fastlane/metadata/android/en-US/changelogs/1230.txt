@@ -1,0 +1,3 @@
+v3.9.7.1
+- Improved efficiency in the auto mirror algorithm.
+- Added more sanity check.

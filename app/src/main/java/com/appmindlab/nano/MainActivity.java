@@ -999,6 +999,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Send a sync request
                 Utils.sendSyncRequest(getApplicationContext(), mLocalRepoPath, mBackupUri);
 
+                if (!Uri.EMPTY.equals(mBackupUri)) {
+                    DocumentFile dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
+                    if (Utils.getSAFSubDirUri(getApplicationContext(), mBackupUri, Const.NOOP_FILE) != null)
+                        Utils.exportToSAFFile(getApplicationContext(), mLocalRepoPath + "/", Const.NOOP_FILE, dir);
+                }
+
                 // Mirror if applicable
                 doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG);
 
