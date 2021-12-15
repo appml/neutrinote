@@ -3390,9 +3390,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
         }
 
-        if (mId > 0)
+        if (mId > 0) {
             mId = mDatasource.updateRecord(mId, title, content, mStar, null, true, mTitleSaved);
-
+            // Purge old title from mirror in the event of a title change, updated title will be added by next mirroring
+            if ((!title.equals(mTitleSaved)) && (hasMirror())) {
+                Utils.deleteSAFSubDirFile(getApplicationContext(), mBackupUri, Const.MIRROR_PATH, mTitleSaved);
+            }
+        }
         else {
             ArrayList<DBEntry> results = mDatasource.getRecordByTitle(title);
             if (results.size() > 0) {
