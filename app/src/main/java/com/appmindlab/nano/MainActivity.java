@@ -1365,7 +1365,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Create notification
             NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            Utils.makeNotificationChannel(manager, Const.SCRAPBOOK_CHANNEL_ID, Const.SCRAPBOOK_CHANNEL_NAME, Const.SCRAPBOOK_CHANNEL_DESC, Const.SCRAPBOOK_CHANNEL_LEVEL);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                Utils.makeNotificationChannel(manager, Const.SCRAPBOOK_CHANNEL_ID, Const.SCRAPBOOK_CHANNEL_NAME, Const.SCRAPBOOK_CHANNEL_DESC, Const.SCRAPBOOK_CHANNEL_LEVEL);
+            }
             manager.notify(Const.SCRAPBOOK_NOTIFICATION_ID, builder.build());
         }
     }
