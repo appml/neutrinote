@@ -170,6 +170,10 @@
     <string name="widget_empty_view_text">没有记录</string>
     <string name="status_empty_clipboard">剪贴板为空。</string>
 
+    <string name="scrapbook_paste">粘贴</string>
+    <string name="scrapbook_cancel">取消</string>
+    <string name="status_scrapbook_updated">\u0020已更新。</string>
+
     <string name="info_select_one">点击圆圈来选择。</string>
 
     <string name="info_cancel_encrypt">编码不安全,操作已取消。</string>

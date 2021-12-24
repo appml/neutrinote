@@ -3,6 +3,8 @@ package com.appmindlab.nano;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.SearchManager;
 import android.app.backup.BackupManager;
 import android.content.ComponentName;
@@ -66,6 +68,8 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.RemoteInput;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.core.view.GravityCompat;
@@ -428,6 +432,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Self reference
         main_activity = this;
+
+        // Setup scrapbook
+        setupScrapbook();
 
         // Hide I/O progress bar
         hideIOProgressBar();
@@ -1316,6 +1323,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                     PackageManager.DONT_KILL_APP);
         }
+    }
+
+    // Setup scrapbook
+    protected void setupScrapbook() {
+        List<DBEntry> results;
+        String scrapbook_file = Utils.makeFileName(getApplicationContext(), Const.SCRAPBOOK_TITLE);
+
+        // Reset scrapbook notification
+        resetScrapbookNotification();
+
+        // If scrapbook exists, setup notification input
+        results = mDatasource.getRecordByTitle(scrapbook_file);
+        if (results.size() == 1) {
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), Const.SCRAPBOOK_CHANNEL_ID)
+                    .setSmallIcon(R.drawable.ic_mode_edit_vector)
+                    .setOngoing(true)
+                    .setContentTitle(Const.SCRAPBOOK_TITLE);
+
+            // Remote input
+            RemoteInput remote_input = new RemoteInput.Builder(Const.SCRAPBOOK_NOTIFICATION_KEY)
+                    .setLabel(getApplicationContext().getResources().getString(R.string.hint_content))
+                    .build();
+
+            // Pending intent
+            Intent paste_intent = new Intent(getApplicationContext(), NotificationReceiver.class);
+            paste_intent.setAction(Const.ACTION_UPDATE_SCRAPBOOK);
+            PendingIntent paste_pending_intent = PendingIntent.getBroadcast(getApplicationContext(),
+                    Const.REQUEST_CODE_SCRAPBOOK_PASTE,
+                    paste_intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT);
+
+            // Paste button
+            NotificationCompat.Action reply_action = new NotificationCompat.Action.Builder(
+                    android.R.drawable.sym_action_chat, getApplicationContext().getResources().getString(R.string.scrapbook_paste), paste_pending_intent)
+                    .addRemoteInput(remote_input)
+                    .setAllowGeneratedReplies(false)
+                    .build();
+
+            builder.addAction(reply_action);
+
+            // Create notification
+            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            Utils.makeNotificationChannel(manager, Const.SCRAPBOOK_CHANNEL_ID, Const.SCRAPBOOK_CHANNEL_NAME, Const.SCRAPBOOK_CHANNEL_DESC, Const.SCRAPBOOK_CHANNEL_LEVEL);
+            manager.notify(Const.SCRAPBOOK_NOTIFICATION_ID, builder.build());
+        }
+    }
+
+    // Reset scrapbook notification
+    private void resetScrapbookNotification() {
+        int notification_id = getIntent().getIntExtra(Const.EXTRA_SCRAPBOOK_NOTIFICATION_ID, 0);
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.cancel(notification_id);
     }
 
     // Handle intent

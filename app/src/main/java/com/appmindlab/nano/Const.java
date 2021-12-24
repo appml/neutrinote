@@ -31,6 +31,8 @@ public class Const {
     protected final static String EXTRA_MAX_BACKUP_COUNT = "com.appmindlab.nano.EXTRA_MAX_BACKUP_COUNT";
     protected final static String EXTRA_MAX_BACKUP_AGE = "com.appmindlab.nano.EXTRA_MAX_BACKUP_AGE";    // Backup max age in days
 
+    protected final static String EXTRA_SCRAPBOOK_NOTIFICATION_ID = "com.appmindlab.nano.EXTRA_SCRAPBOOK_NOTIFICATION_ID";
+
     // Preferences
     protected final static String PREF_LOCAL_REPO_PATH = "com.appmindlab.nano.pref_local_repo_path";
     protected final static String PREF_BACKUP_URI = "com.appmindlab.nano.pref_backup_uri";
@@ -210,6 +212,7 @@ public class Const {
     protected static final String ACTION_CHANGE_DISPLAY_SETTINGS = "com.appmindlab.nano.ACTION_CHANGE_DISPLAY_SETTINGS";
     protected static final String ACTION_UPDATE_SYNC_LOG = "com.appmindlab.nano.ACTION_UPDATE_SYNC_LOG";
     protected static final String ACTION_AUTO_SEND = "com.google.android.gm.action.AUTO_SEND";
+    protected static final String ACTION_UPDATE_SCRAPBOOK = "com.appmindlab.nano.ACTION_UPDATE_SCRAPBOOK";
 
     // States
     protected final static String STATE_ID = "mId";
@@ -547,6 +550,8 @@ public class Const {
     protected final static String SYNC_LOG_FILE = "~neutrinote_sync.log";
     protected final static String SYNC_HISTORY_FILE = "~neutrinote_sync_history.txt";
 
+    protected final static String SCRAPBOOK_TITLE = "neutriNote Scrapbook";
+
     protected final static String[] UNCACHE_FILES = {SYNC_LOG_FILE};    // Files not mirrored in database
 
     // Reserved folder names
@@ -660,6 +665,7 @@ public class Const {
     protected final static int REQUEST_CODE_GET_IMAGE = 10;
     protected final static int REQUEST_CODE_INSERT_GALLERY_IMAGE = 11;
     protected final static int REQUEST_CODE_INSERT_CAMERA_IMAGE = 12;
+    protected final static int REQUEST_CODE_SCRAPBOOK_PASTE = 13;
 
     // Voice memo
     protected final static String VOICE_MEMO_TITLE = "neutriNote memo";
@@ -715,6 +721,12 @@ public class Const {
     protected final static String MIRROR_CHANNEL_DESC = "Mirror Notification";
     protected final static int MIRROR_CHANNEL_LEVEL = NotificationManager.IMPORTANCE_DEFAULT;
     protected final static int MIRROR_NOTIFICATION_ID = 0;
+    protected final static String SCRAPBOOK_CHANNEL_ID = "scrapbook";
+    protected final static String SCRAPBOOK_CHANNEL_NAME = "Scrapbook";
+    protected final static String SCRAPBOOK_CHANNEL_DESC = "Scrapbook Notification";
+    protected final static int SCRAPBOOK_CHANNEL_LEVEL = NotificationManager.IMPORTANCE_LOW;
+    protected final static int SCRAPBOOK_NOTIFICATION_ID = 0;
+    protected final static String SCRAPBOOK_NOTIFICATION_KEY = "scrapbook_key";
 
     // Error
     protected final static int ERROR_UNEXPECTED = 2;    // Unexpected error code

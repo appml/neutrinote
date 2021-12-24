@@ -243,6 +243,15 @@
             </intent-filter>
         </receiver>
 
+        <receiver
+            android:name=".NotificationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.appmindlab.nano.ACTION_UPDATE_SCRAPBOOK" />
+            </intent-filter>
+        </receiver>
+
         <service
             android:name="com.appmindlab.nano.BackupService"
             android:icon="@mipmap/ic_launcher"

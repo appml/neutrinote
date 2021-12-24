@@ -170,6 +170,10 @@
     <string name="widget_empty_view_text">記録がありません</string>
     <string name="status_empty_clipboard">クリップボードは空です</string>
 
+    <string name="scrapbook_paste">貼り付け</string>
+    <string name="scrapbook_cancel">キャンセル</string>
+    <string name="status_scrapbook_updated">\u0020は更新されました</string>
+
     <string name="info_select_one">円をタップして選択します</string>
 
     <string name="info_cancel_encrypt">エンコードするのに安全ではありません。 操作を中止します</string>

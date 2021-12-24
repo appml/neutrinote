@@ -170,6 +170,10 @@
     <string name="widget_empty_view_text">No record</string>
     <string name="status_empty_clipboard">Clipboard is empty.</string>
 
+    <string name="scrapbook_paste">Paste</string>
+    <string name="scrapbook_cancel">Cancel</string>
+    <string name="status_scrapbook_updated">\u0020updated.</string>
+
     <string name="info_select_one">Tap circles to select.</string>
 
     <string name="info_cancel_encrypt">Unsafe to encode.  Operation canceled.</string>

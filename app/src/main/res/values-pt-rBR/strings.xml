@@ -170,6 +170,10 @@
     <string name="widget_empty_view_text">Nenhum registro</string>
     <string name="status_empty_clipboard">A área de transferência está vazia.</string>
 
+    <string name="scrapbook_paste">Colar</string>
+    <string name="scrapbook_cancel">Cancelar</string>
+    <string name="status_scrapbook_updated">\u0020atualizado.</string>
+
     <string name="info_select_one">Toque nos círculos para selecionar.</string>
 
     <string name="info_cancel_encrypt">Inseguro para codificar.  Operação cancelada.</string>
