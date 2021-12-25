@@ -78,31 +78,45 @@ public class NotificationReceiver extends BroadcastReceiver {
             }
 
             // Reset notification
-            resetScrapbookNotification(context, scrapbook_file, results.get(0));
+            resetScrapbookNotification(context, intent, scrapbook_file, results.get(0));
         }
     }
 
     // Reset scrapbook notification
-    private void resetScrapbookNotification(Context context, String title, DBEntry entry) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, Const.SCRAPBOOK_CHANNEL_ID)
+    private void resetScrapbookNotification(Context context, Intent intent, String title, DBEntry entry) {
+        int notification_id = intent.getIntExtra(Const.EXTRA_SCRAPBOOK_NOTIFICATION_ID, 0);
+        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationCompat.Builder builder;
+        NotificationCompat.Action paste_action, goto_action;
+
+        RemoteInput remote_input;
+
+        Intent paste_intent, goto_intent;
+        PendingIntent paste_pending_intent, goto_pending_intent;
+
+        // Clear existing notification
+        manager.cancel(notification_id);
+
+        // Create new notification
+        builder = new NotificationCompat.Builder(context, Const.SCRAPBOOK_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_mode_edit_vector)
                 .setOngoing(true)
                 .setContentTitle(title);
 
         // Remote input
-        RemoteInput remote_input = new RemoteInput.Builder(Const.SCRAPBOOK_NOTIFICATION_KEY)
+        remote_input = new RemoteInput.Builder(Const.SCRAPBOOK_NOTIFICATION_KEY)
                 .setLabel(context.getResources().getString(R.string.hint_content))
                 .build();
 
         // Paste button
-        Intent paste_intent = new Intent(context, NotificationReceiver.class);
+        paste_intent = new Intent(context, NotificationReceiver.class);
         paste_intent.setAction(Const.ACTION_UPDATE_SCRAPBOOK);
-        PendingIntent paste_pending_intent = PendingIntent.getBroadcast(context,
+        paste_pending_intent = PendingIntent.getBroadcast(context,
                 Const.REQUEST_CODE_SCRAPBOOK_PASTE,
                 paste_intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationCompat.Action paste_action = new NotificationCompat.Action.Builder(
+        paste_action = new NotificationCompat.Action.Builder(
                 android.R.drawable.sym_action_chat, context.getResources().getString(R.string.scrapbook_paste), paste_pending_intent)
                 .addRemoteInput(remote_input)
                 .setAllowGeneratedReplies(false)
@@ -111,24 +125,21 @@ public class NotificationReceiver extends BroadcastReceiver {
         builder.addAction(paste_action);
 
         // Goto button
-        Intent goto_intent = new Intent(context, DisplayDBEntry.class);
+        goto_intent = new Intent(context, DisplayDBEntry.class);
         goto_intent.putExtra(Const.EXTRA_ID, entry.getId());
-        PendingIntent goto_pending_intent = PendingIntent.getActivity(context,
+        goto_pending_intent = PendingIntent.getActivity(context,
                 0,
                 goto_intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationCompat.Action goto_action = new NotificationCompat.Action.Builder(
+        goto_action = new NotificationCompat.Action.Builder(
                 android.R.drawable.sym_action_chat, context.getResources().getString(R.string.scrapbook_goto), goto_pending_intent)
                 .build();
 
         builder.addAction(goto_action);
 
-        // Create notification
-        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            Utils.makeNotificationChannel(manager, Const.SCRAPBOOK_CHANNEL_ID, Const.SCRAPBOOK_CHANNEL_NAME, Const.SCRAPBOOK_CHANNEL_DESC, Const.SCRAPBOOK_CHANNEL_LEVEL);
-        }
+        manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        Utils.makeNotificationChannel(manager, Const.SCRAPBOOK_CHANNEL_ID, Const.SCRAPBOOK_CHANNEL_NAME, Const.SCRAPBOOK_CHANNEL_DESC, Const.SCRAPBOOK_CHANNEL_LEVEL);
         manager.notify(Const.SCRAPBOOK_NOTIFICATION_ID, builder.build());
     }
 }
