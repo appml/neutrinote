@@ -75,15 +75,15 @@ public class NotificationReceiver extends BroadcastReceiver {
                     mDatasource.updateRecordCoordinates(entry.getId(), location.getLatitude(), location.getLongitude());
 
                 Toast.makeText(context, scrapbook_file + context.getResources().getString(R.string.status_scrapbook_updated), Toast.LENGTH_LONG).show();
+
+                // Reset notification
+                resetScrapbookNotification(context, scrapbook_file, results.get(0));
             }
         }
-
-        // Reset notification
-        resetScrapbookNotification(context, scrapbook_file);
     }
 
     // Reset scrapbook notification
-    private void resetScrapbookNotification(Context context, String title) {
+    private void resetScrapbookNotification(Context context, String title, DBEntry entry) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, Const.SCRAPBOOK_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_mode_edit_vector)
                 .setOngoing(true)
@@ -94,7 +94,7 @@ public class NotificationReceiver extends BroadcastReceiver {
                 .setLabel(context.getResources().getString(R.string.hint_content))
                 .build();
 
-        // Pending intent
+        // Paste button
         Intent paste_intent = new Intent(context, NotificationReceiver.class);
         paste_intent.setAction(Const.ACTION_UPDATE_SCRAPBOOK);
         PendingIntent paste_pending_intent = PendingIntent.getBroadcast(context,
@@ -102,14 +102,27 @@ public class NotificationReceiver extends BroadcastReceiver {
                 paste_intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
-        // Paste button
-        NotificationCompat.Action reply_action = new NotificationCompat.Action.Builder(
+        NotificationCompat.Action paste_action = new NotificationCompat.Action.Builder(
                 android.R.drawable.sym_action_chat, context.getResources().getString(R.string.scrapbook_paste), paste_pending_intent)
                 .addRemoteInput(remote_input)
                 .setAllowGeneratedReplies(false)
                 .build();
 
-        builder.addAction(reply_action);
+        builder.addAction(paste_action);
+
+        // Goto button
+        Intent goto_intent = new Intent(context, DisplayDBEntry.class);
+        goto_intent.putExtra(Const.EXTRA_ID, entry.getId());
+        PendingIntent goto_pending_intent = PendingIntent.getActivity(context,
+                0,
+                goto_intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Action goto_action = new NotificationCompat.Action.Builder(
+                android.R.drawable.sym_action_chat, context.getResources().getString(R.string.scrapbook_goto), goto_pending_intent)
+                .build();
+
+        builder.addAction(goto_action);
 
         // Create notification
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

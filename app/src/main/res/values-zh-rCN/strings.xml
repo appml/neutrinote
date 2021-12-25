@@ -171,6 +171,7 @@
     <string name="status_empty_clipboard">剪贴板为空。</string>
 
     <string name="scrapbook_paste">粘贴</string>
+    <string name="scrapbook_goto">跳转</string>
     <string name="scrapbook_cancel">取消</string>
     <string name="status_scrapbook_updated">\u0020已更新。</string>
 

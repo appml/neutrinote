@@ -171,6 +171,7 @@
     <string name="status_empty_clipboard">Clipboard is empty.</string>
 
     <string name="scrapbook_paste">Paste</string>
+    <string name="scrapbook_goto">Go To</string>
     <string name="scrapbook_cancel">Cancel</string>
     <string name="status_scrapbook_updated">\u0020updated.</string>
 

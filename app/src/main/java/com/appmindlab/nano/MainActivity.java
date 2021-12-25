@@ -1346,7 +1346,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .setLabel(getApplicationContext().getResources().getString(R.string.hint_content))
                     .build();
 
-            // Pending intent
+            // Paste button
             Intent paste_intent = new Intent(getApplicationContext(), NotificationReceiver.class);
             paste_intent.setAction(Const.ACTION_UPDATE_SCRAPBOOK);
             PendingIntent paste_pending_intent = PendingIntent.getBroadcast(getApplicationContext(),
@@ -1354,14 +1354,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     paste_intent,
                     PendingIntent.FLAG_UPDATE_CURRENT);
 
-            // Paste button
-            NotificationCompat.Action reply_action = new NotificationCompat.Action.Builder(
+            NotificationCompat.Action paste_action = new NotificationCompat.Action.Builder(
                     android.R.drawable.sym_action_chat, getApplicationContext().getResources().getString(R.string.scrapbook_paste), paste_pending_intent)
                     .addRemoteInput(remote_input)
                     .setAllowGeneratedReplies(false)
                     .build();
 
-            builder.addAction(reply_action);
+            builder.addAction(paste_action);
+
+            // Goto button
+            Intent goto_intent = new Intent(getApplicationContext(), DisplayDBEntry.class);
+            goto_intent.putExtra(Const.EXTRA_ID, results.get(0).getId());
+            PendingIntent goto_pending_intent = PendingIntent.getActivity(getApplicationContext(),
+                    0,
+                    goto_intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT);
+
+            NotificationCompat.Action goto_action = new NotificationCompat.Action.Builder(
+                    android.R.drawable.sym_action_chat, getApplicationContext().getResources().getString(R.string.scrapbook_goto), goto_pending_intent)
+                    .build();
+
+            builder.addAction(goto_action);
 
             // Create notification
             NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
