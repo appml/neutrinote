@@ -1327,69 +1327,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Setup scrapbook
     protected void setupScrapbook() {
-        List<DBEntry> results;
-        String scrapbook_file = Utils.makeFileName(getApplicationContext(), Const.SCRAPBOOK_TITLE);
-
-        // Reset scrapbook notification
-        resetScrapbookNotification();
-
-        // If scrapbook exists, setup notification input
-        results = mDatasource.getRecordByTitle(scrapbook_file);
-        if (results.size() == 1) {
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), Const.SCRAPBOOK_CHANNEL_ID)
-                    .setSmallIcon(R.drawable.ic_mode_edit_vector)
-                    .setOngoing(true)
-                    .setContentTitle(Const.SCRAPBOOK_TITLE);
-
-            // Remote input
-            RemoteInput remote_input = new RemoteInput.Builder(Const.SCRAPBOOK_NOTIFICATION_KEY)
-                    .setLabel(getApplicationContext().getResources().getString(R.string.hint_content))
-                    .build();
-
-            // Paste button
-            Intent paste_intent = new Intent(getApplicationContext(), NotificationReceiver.class);
-            paste_intent.setAction(Const.ACTION_UPDATE_SCRAPBOOK);
-            PendingIntent paste_pending_intent = PendingIntent.getBroadcast(getApplicationContext(),
-                    Const.REQUEST_CODE_SCRAPBOOK_PASTE,
-                    paste_intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
-
-            NotificationCompat.Action paste_action = new NotificationCompat.Action.Builder(
-                    android.R.drawable.sym_action_chat, getApplicationContext().getResources().getString(R.string.scrapbook_paste), paste_pending_intent)
-                    .addRemoteInput(remote_input)
-                    .setAllowGeneratedReplies(false)
-                    .build();
-
-            builder.addAction(paste_action);
-
-            // Goto button
-            Intent goto_intent = new Intent(getApplicationContext(), DisplayDBEntry.class);
-            goto_intent.putExtra(Const.EXTRA_ID, results.get(0).getId());
-            PendingIntent goto_pending_intent = PendingIntent.getActivity(getApplicationContext(),
-                    0,
-                    goto_intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
-
-            NotificationCompat.Action goto_action = new NotificationCompat.Action.Builder(
-                    android.R.drawable.sym_action_chat, getApplicationContext().getResources().getString(R.string.scrapbook_goto), goto_pending_intent)
-                    .build();
-
-            builder.addAction(goto_action);
-
-            // Create notification
-            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                Utils.makeNotificationChannel(manager, Const.SCRAPBOOK_CHANNEL_ID, Const.SCRAPBOOK_CHANNEL_NAME, Const.SCRAPBOOK_CHANNEL_DESC, Const.SCRAPBOOK_CHANNEL_LEVEL);
-            }
-            manager.notify(Const.SCRAPBOOK_NOTIFICATION_ID, builder.build());
-        }
-    }
-
-    // Reset scrapbook notification
-    private void resetScrapbookNotification() {
-        int notification_id = getIntent().getIntExtra(Const.EXTRA_SCRAPBOOK_NOTIFICATION_ID, 0);
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.cancel(notification_id);
+        Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
+        intent.setAction(Const.ACTION_UPDATE_SCRAPBOOK);
+        sendBroadcast(intent);
     }
 
     // Handle intent

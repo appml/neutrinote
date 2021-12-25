@@ -43,14 +43,14 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     // Append to scrapbook file
     private void doAppendScrapbook(Context context, Intent intent) {
-        Bundle bundle = RemoteInput.getResultsFromIntent(intent);
         String scrapbook_file = Utils.makeFileName(context, Const.SCRAPBOOK_TITLE);
+        ArrayList<DBEntry> results = mDatasource.getRecordByTitle(scrapbook_file);
 
-        if (bundle != null) {
-            String input = bundle.getCharSequence(Const.SCRAPBOOK_NOTIFICATION_KEY).toString();
+        if (results.size() == 1) {
+            Bundle bundle = RemoteInput.getResultsFromIntent(intent);
+            if (bundle != null) {
+                String input = bundle.getCharSequence(Const.SCRAPBOOK_NOTIFICATION_KEY).toString();
 
-            ArrayList<DBEntry> results = mDatasource.getRecordByTitle(scrapbook_file);
-            if (results.size() == 1) {
                 DBEntry entry = results.get(0);
 
                 StringBuilder sb = new StringBuilder();
@@ -75,10 +75,10 @@ public class NotificationReceiver extends BroadcastReceiver {
                     mDatasource.updateRecordCoordinates(entry.getId(), location.getLatitude(), location.getLongitude());
 
                 Toast.makeText(context, scrapbook_file + context.getResources().getString(R.string.status_scrapbook_updated), Toast.LENGTH_LONG).show();
-
-                // Reset notification
-                resetScrapbookNotification(context, scrapbook_file, results.get(0));
             }
+
+            // Reset notification
+            resetScrapbookNotification(context, scrapbook_file, results.get(0));
         }
     }
 
@@ -132,4 +132,3 @@ public class NotificationReceiver extends BroadcastReceiver {
         manager.notify(Const.SCRAPBOOK_NOTIFICATION_ID, builder.build());
     }
 }
-
