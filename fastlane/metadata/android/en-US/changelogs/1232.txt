@@ -1,0 +1,2 @@
+v3.9.9
+Support "Effortless Read/Write" features (see documentation for details).
