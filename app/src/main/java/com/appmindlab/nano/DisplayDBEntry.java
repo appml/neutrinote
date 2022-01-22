@@ -40,6 +40,7 @@ import android.text.InputType;
 import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.text.style.BackgroundColorSpan;
@@ -2001,6 +2002,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         String expanded = null;
         String shortcut, shortcut_with_space = null, extra = null;
         String[] params;
+        String[] items;
 
         // Determine the word
         if (start < end) {
@@ -2185,6 +2187,28 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     params = Utils.cleanStringArray(params);
                     if (params.length == 2)
                         expanded = extra.replaceAll(params[0], params[1]).trim();
+                    else
+                        expanded = null;
+                }
+                else
+                    expanded = null;
+
+                if ((expanded == null) || (expanded.length() == 0)) {
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                }
+                else
+                    Utils.insert(mContent, expanded);
+            }
+            else if (expanded.startsWith(Const.SPLIT_SYM)) {    // Split command
+                if (extra != null) {
+                    expanded = expanded.substring(Const.SPLIT_SYM.length()).trim();
+
+                    if (expanded.length() > 0) {
+                        items = extra.split(expanded);
+                        expanded = TextUtils.join(Const.NEWLINE, items).trim();
+                    }
                     else
                         expanded = null;
                 }
