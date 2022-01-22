@@ -26,7 +26,7 @@ In a nutshell, all-in-one preservation of written thoughts, be those text, math 
 
 ## Community Edition
 
-This edition is identical to [**Play Store Edition**](https://play.google.com/store/apps/details?id=com.appmindlab.nano) except a small set of features that make use of Google related dependencies.  As such, it is totally free with zero dependency on any proprietary cloud backend.  While already the case that almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition opens up the possibility to customize and sustain at source code level.
+This edition is identical to [**Play Store Edition**](https://play.google.com/store/apps/details?id=com.appmindlab.nano) with zero Google related dependencies.  While already the case that almost every aspect of neutriNote can be [customized](https://appml.github.io/nano/), Community Edition opens up the possibility to customize and sustain at source code level.
 
 
 ## Design Philosophy
