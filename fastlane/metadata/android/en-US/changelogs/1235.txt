@@ -1,0 +1,2 @@
+v4.0.2
+Added snake to camel and vice versa commands.
