@@ -107,6 +107,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.common.base.CaseFormat;
 import com.google.common.base.Strings;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -2363,6 +2364,34 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             else if (expanded.startsWith(Const.DECODE_SYM)) {    // Decode command
                 if (extra != null)
                     expanded = new String(Base64.decode(extra, Base64.DEFAULT));
+                else
+                    expanded = null;
+
+                if ((expanded == null) || (expanded.length() == 0)) {
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                }
+                else
+                    Utils.replaceString(mContent, start, end, expanded);
+            }
+            else if (expanded.startsWith(Const.CAMEL2SNAKE_SYM)) {    // Camel to snake command
+                if (extra != null)
+                    expanded = CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, extra);
+                else
+                    expanded = null;
+
+                if ((expanded == null) || (expanded.length() == 0)) {
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                }
+                else
+                    Utils.replaceString(mContent, start, end, expanded);
+            }
+            else if (expanded.startsWith(Const.SNAKE2CAMEL_SYM)) {    // Snake to camel command
+                if (extra != null)
+                    expanded = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.UPPER_CAMEL, extra);
                 else
                     expanded = null;
 

@@ -406,6 +406,8 @@ public class Const {
     protected final static String REMOVE_ZERO_WIDTH_SPACE_SYM = "neutrNote#nohiddenspace";
     protected final static String ENCODE_SYM = "neutriNote#encode";
     protected final static String DECODE_SYM = "neutriNote#decode";
+    protected final static String SNAKE2CAMEL_SYM = "neutriNote#snake2camel";
+    protected final static String CAMEL2SNAKE_SYM = "neutriNote#camel2snake";
     protected final static String STRIP_HTML_SYM = "neutriNote#stripHTML";
     protected final static String LAUNCH_SYM = "neutriNote#launch";
     protected final static String FUNNEL_SYM = "neutriNote#funnel";

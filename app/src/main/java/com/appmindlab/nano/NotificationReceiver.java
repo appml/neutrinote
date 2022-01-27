@@ -80,6 +80,10 @@ public class NotificationReceiver extends BroadcastReceiver {
             // Reset notification
             resetScrapbookNotification(context, intent, scrapbook_file, results.get(0));
         }
+        else {
+            // Cancel notification
+            cancelScrapbookNotification(context, intent);
+        }
     }
 
     // Reset scrapbook notification
@@ -141,5 +145,14 @@ public class NotificationReceiver extends BroadcastReceiver {
         manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         Utils.makeNotificationChannel(manager, Const.SCRAPBOOK_CHANNEL_ID, Const.SCRAPBOOK_CHANNEL_NAME, Const.SCRAPBOOK_CHANNEL_DESC, Const.SCRAPBOOK_CHANNEL_LEVEL);
         manager.notify(Const.SCRAPBOOK_NOTIFICATION_ID, builder.build());
+    }
+
+    // Cancel scrapbook notification
+    private void cancelScrapbookNotification(Context context, Intent intent) {
+        int notification_id = intent.getIntExtra(Const.EXTRA_SCRAPBOOK_NOTIFICATION_ID, 0);
+        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        // Clear existing notification
+        manager.cancel(notification_id);
     }
 }
