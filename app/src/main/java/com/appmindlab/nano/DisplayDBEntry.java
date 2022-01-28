@@ -1828,6 +1828,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         TextView text = (TextView) dialog.findViewById(android.R.id.message);
         text.setTextSize(11);
         text.setTypeface(font);
+        text.setTextIsSelectable(true);
         text.startAnimation(mFadeIn);
 
         // Show the dialog
