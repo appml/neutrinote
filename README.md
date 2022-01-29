@@ -21,7 +21,7 @@
 
 ## What is neutriNote?
 
-In a nutshell, all-in-one preservation of written thoughts, be those text, math (LaTeX), rich markdown, drawings, etc., in fully searchable plain text (universal UTF-8).  Instead of placing text editing first like most mainline writing apps, the mission of neutriNote is to reduce cognitive load through note-taking.
+In a nutshell, all-in-one preservation of written thoughts, be those text, math (LaTeX), rich markdown, drawings, etc., in fully searchable plain text (universal UTF-8).  Instead of placing text editing first like most mainline writing apps, neutriNote is on one hand on the mission to reduce cognitive load through note-taking, while on the other as a platform that presents an invitation to build tools to capture knowledge in all shapes and forms.
 
 
 ## Community Edition
