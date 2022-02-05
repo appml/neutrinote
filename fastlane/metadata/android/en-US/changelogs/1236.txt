@@ -1,2 +1,3 @@
 v4.0.3
-Shortcut view is now selectable
+- Shortcut view is now selectable
+- Fixed markdown cache bug
