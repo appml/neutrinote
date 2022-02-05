@@ -1374,7 +1374,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
 
                 // Set Markdown render state
-                setMarkdownRendered(true);
+                if (!mChanged)
+                    setMarkdownRendered(true);
 
                 // Hide the progress bar
                 ProgressBar progressBar = findViewById(R.id.io_progress_bar);
@@ -1828,6 +1829,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         TextView text = (TextView) dialog.findViewById(android.R.id.message);
         text.setTextSize(11);
         text.setTypeface(font);
+        text.setTextIsSelectable(true);
         text.startAnimation(mFadeIn);
 
         // Show the dialog
