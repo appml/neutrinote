@@ -196,7 +196,7 @@ public class Const {
     protected final static String MATHJS_PRECISION_PARAM = "precision=100";
     protected final static String UNSET_URL = "https://foo";
     protected final static String HELP_URL = "https://appml.github.io/nano/";
-    protected final static String OFFICIAL_URL = "https://neutrinote.wordpress.com";
+    protected final static String OFFICIAL_URL = "https://github.com/appml/neutrinote";
     protected final static String CUSTOM_SCHEME = "https://neutrinote.io/";
     protected final static String CUSTOM_SCHEME_SEARCH_OP = "search";
     protected final static int CUSTOM_SCHEME_PARAM_MAX_LEN = 32;

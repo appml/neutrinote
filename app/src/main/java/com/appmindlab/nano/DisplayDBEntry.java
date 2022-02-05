@@ -1374,7 +1374,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
 
                 // Set Markdown render state
-                setMarkdownRendered(true);
+                if (!mChanged)
+                    setMarkdownRendered(true);
 
                 // Hide the progress bar
                 ProgressBar progressBar = findViewById(R.id.io_progress_bar);
