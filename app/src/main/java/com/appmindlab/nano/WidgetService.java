@@ -123,7 +123,7 @@ public class WidgetService extends RemoteViewsService {
                     content = entry.getContent();
 
                     // Skip the system files
-                    if (title.equals(Const.APP_DATA_FILE) || title.equals(Const.APP_SETTINGS_FILE))
+                    if (title.equals(Utils.makeFileName(getApplicationContext(), Const.APP_DATA_FILE)) || title.equals(Utils.makeFileName(getApplicationContext(), Const.APP_SETTINGS_FILE)))
                         continue;
 
                     // Extract content
