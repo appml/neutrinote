@@ -215,6 +215,10 @@ public class MirrorWorker extends Worker {
                     // Removes the progress bar
                     mNotifyManager.notify(Const.MIRROR_NOTIFICATION_ID, mBuilder.build());
                     mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
+
+                    // Update widget
+                    Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
+                    getApplicationContext().sendBroadcast(intent);
                 } catch (Exception e) {
                     e.printStackTrace();
                     mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
