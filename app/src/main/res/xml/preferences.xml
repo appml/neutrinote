@@ -102,7 +102,7 @@
             </intent>
         </Preference>
 
-        <Preference
+        <!-- Preference
             android:key="com.appmindlab.nano.pref_play_store_catalog_link"
             android:title="@string/pref_play_store_catalog_title"
             android:summary="@string/pref_play_store_catalog_summary">
@@ -110,7 +110,7 @@
                 android:action="android.intent.action.VIEW"
                 android:data="@string/pref_play_store_catalog_url">
             </intent>
-        </Preference>
+        </Preference -->
 
         <Preference
             android:key="com.appmindlab.nano.pref_play_store_link"
