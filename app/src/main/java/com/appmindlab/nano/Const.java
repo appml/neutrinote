@@ -207,7 +207,7 @@ public class Const {
     protected final static String ACTION_SCHEDULE_BACKUP = "com.appmindlab.nano.ACTION_SCHEDULE_BACKUP";
     protected final static String ACTION_INCREMENTAL_BACKUP = "com.appmindlab.nano.ACTION_INCREMENTAL_BACKUP";
     protected final static String ACTION_FULL_BACKUP = "com.appmindlab.nano.ACTION_FULL_BACKUP";
-    protected final static String ACTION_UPDATE_WIDGET = "com.appmindlab.nano.ACTION_UPDATE_WIDGET";
+    protected final static String ACTION_UPDATE_WIDGET = "android.appwidget.action.APPWIDGET_UPDATE";
     protected final static String ACTION_VIEW_ENTRY = "com.appmindlab.nano.ACTION_VIEW_ENTRY";
     protected static final String ACTION_CHANGE_DISPLAY_SETTINGS = "com.appmindlab.nano.ACTION_CHANGE_DISPLAY_SETTINGS";
     protected static final String ACTION_UPDATE_SYNC_LOG = "com.appmindlab.nano.ACTION_UPDATE_SYNC_LOG";

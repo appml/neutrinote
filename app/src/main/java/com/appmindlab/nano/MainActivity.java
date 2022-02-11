@@ -447,6 +447,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Reset auto theme application state
         mAutoThemeApplied = false;
+
+        // Update widget
+        Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
+        getApplicationContext().sendBroadcast(intent);
     }
 
     @Override
