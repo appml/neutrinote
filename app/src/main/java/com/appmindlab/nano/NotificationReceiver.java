@@ -118,7 +118,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         paste_pending_intent = PendingIntent.getBroadcast(context,
                 Const.REQUEST_CODE_SCRAPBOOK_PASTE,
                 paste_intent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_MUTABLE);
 
         paste_action = new NotificationCompat.Action.Builder(
                 android.R.drawable.sym_action_chat, context.getResources().getString(R.string.scrapbook_paste), paste_pending_intent)
@@ -134,7 +134,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         goto_pending_intent = PendingIntent.getActivity(context,
                 0,
                 goto_intent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_MUTABLE);
 
         goto_action = new NotificationCompat.Action.Builder(
                 android.R.drawable.sym_action_chat, context.getResources().getString(R.string.scrapbook_goto), goto_pending_intent)
