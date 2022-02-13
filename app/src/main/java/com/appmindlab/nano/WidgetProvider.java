@@ -72,7 +72,7 @@ public class WidgetProvider extends AppWidgetProvider {
 
             viewEntryIntent.setData(Uri.parse("widgetid" + appWidgetIds[i]));
             PendingIntent viewEntryPendingIntent = PendingIntent.getActivity(
-                    context, 0, viewEntryIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    context, 0, viewEntryIntent, PendingIntent.FLAG_MUTABLE);
             rv.setPendingIntentTemplate(R.id.stack_view, viewEntryPendingIntent);
 
             appWidgetManager.updateAppWidget(appWidgetIds[i], rv);
