@@ -87,7 +87,6 @@ The project is licensed under the [GNU General Public License version 3 or later
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-<a href='https://ko-fi.com/X8X6AWNQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 
 
