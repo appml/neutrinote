@@ -85,6 +85,7 @@ public class Const {
     protected final static String PREF_PARSE_PYTHON = "com.appmindlab.nano.pref_parse_python";
     protected final static String PREF_PARSE_VUE = "com.appmindlab.nano.pref_parse_vue";
     protected final static String PREF_PARSE_ALPINE = "com.appmindlab.nano.pref_parse_alpine";
+    protected final static String PREF_PARSE_MERMAID = "com.appmindlab.nano.pref_parse_mermaid";
     protected final static String PREF_PROCESS_TEXT_MODE = "com.appmindlab.nano.pref_process_text_mode";
     protected final static String PREF_WORKING_SET_SIZE = "com.appmindlab.nano.pref_working_set_size";
     protected final static String PREF_LAB_MODE = "com.appmindlab.nano.pref_lab_mode";
@@ -140,6 +141,7 @@ public class Const {
             PREF_PARSE_PYTHON,
             PREF_PARSE_VUE,
             PREF_PARSE_ALPINE,
+            PREF_PARSE_MERMAID,
             PREF_PROCESS_TEXT_MODE,
             PREF_WORKING_SET_SIZE,
             PREF_LAB_MODE
@@ -167,6 +169,7 @@ public class Const {
             PREF_PARSE_PYTHON,
             PREF_PARSE_VUE,
             PREF_PARSE_ALPINE,
+            PREF_PARSE_MERMAID,
             PREF_LAB_MODE
     };
 
@@ -329,6 +332,7 @@ public class Const {
     protected final static String PYTHON_JS = "<script type='text/python'></script><head><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.0/brython.min.js'></script><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.0/brython_stdlib.js'></script><script language='javascript'>window.onload = brython()</script></head>";
     protected final static String VUE_JS = "<script src='https://cdn.jsdelivr.net/npm/vue'></script>";
     protected final static String ALPINE_JS = "<script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js' defer></script>";
+    protected final static String MERMAID_JS = "<script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script><script>mermaid.initialize({ startOnLoad: true });</script>";
     protected final static String APP_JS = "<script type='text/javascript' src='file://./app.js'></script>";
     protected final static String NANO_JS = "<script type='text/javascript' src='file:///android_asset/html/nano.js'></script>";
     protected final static String CUSTOM_SCRIPT = "~neutrinote_script";

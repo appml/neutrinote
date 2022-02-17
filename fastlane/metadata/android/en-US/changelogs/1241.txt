@@ -1,4 +1,4 @@
 v4.0.6.2
 - Upgraded build target
 - Fixed widget update bug
-- Revert appcompat upgrade until lag issue can be resolved
+- Reverted appcompat upgrade until lag issue can be resolved
