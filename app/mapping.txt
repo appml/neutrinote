@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 3.1.51
 # min_api: 21
-# pg_map_id: 85c7ea5
+# pg_map_id: ca7bd09
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"1.0"}
 android.support.v4.media.MediaBrowserCompat$MediaBrowserImplApi21$$ExternalSyntheticOutline0 -> android.support.v4.media.a:
@@ -13825,118 +13825,119 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     java.lang.String mTitleAtOpen -> I
     boolean mEditToolFragmentVisible -> P
     android.net.Uri mUri -> e0
+    int mHitIdx -> i1
     android.webkit.WebView mMarkdownView -> W
+    java.lang.String mCriteria -> f1
     android.content.SharedPreferences$Editor mSharedPreferencesEditor -> r0
-    android.hardware.Sensor mLightSensor -> K0
     java.lang.String mFontSizeList -> A0
     boolean mMarkdownMode -> X
     android.content.SharedPreferences mSharedPreferences -> q0
-    boolean mMarkdownLocalCache -> Z0
     android.graphics.drawable.Drawable mCanvasBackground -> m0
     androidx.appcompat.widget.Toolbar mToolBar -> y
     java.lang.String mMarkdownFontStyle -> Y
-    boolean mAppendCustomStyle -> V0
+    boolean mLaTeXSingleDollar -> V0
+    boolean mOpenInMarkdown -> N0
     java.lang.String mCanvasStrokes -> n0
+    boolean mAutoThemeApplied -> J0
     androidx.core.view.GestureDetectorCompat mEditStatusGestureDetector -> g0
     boolean mParseVue -> E0
     java.lang.String mContentSaved -> H
+    boolean mEvalBuiltInVariables -> b1
     java.lang.String mSharedContent -> b0
     int mCanvasForeground -> l0
     int mInNoteLastIdx -> p0
     java.lang.String mFontSize -> y0
-    android.os.Handler mAutoSaveHandler -> j1
+    java.lang.String mCustomTimeFormat -> Z0
+    java.lang.Runnable mAutoSaveRunnable -> l1
     boolean mLux -> v0
-    android.widget.AutoCompleteTextView mLocalFind -> d1
-    java.lang.String mLinkifyTrigger -> R0
-    java.util.LinkedList mUndo -> n1
-    android.view.animation.Animation mZoomIn -> w1
-    java.lang.String mNewNoteFileType -> N0
-    android.view.animation.Animation mSlideDown -> s1
+    java.lang.String mAutoToolBarTag -> R0
+    android.view.animation.Animation mPushLeftIn -> w1
+    android.view.animation.Animation mSlideUp -> s1
     boolean mTitleBarVisible -> N
-    int mHitIdx -> h1
-    java.lang.String mCriteria -> e1
+    android.hardware.Sensor mLightSensor -> L0
     long mId -> B
     boolean mMarkdownRendered -> w
     android.widget.LinearLayout mEditor -> q
+    boolean mAppendCustomStyle -> W0
     java.lang.String mTheme -> u0
-    boolean mShowToolBar -> S0
-    boolean mSnapshotSafe -> p1
-    boolean mAutoSaveSafe -> l1
+    long mNextPos -> j1
     boolean mToolBarVisible -> O
     boolean mParseAlpine -> F0
     java.lang.String mContentAtOpen -> J
-    boolean mLabMode -> c1
     android.widget.RelativeLayout mTitleBar -> M
     java.lang.String mMargin -> z0
-    java.lang.String mCustomTimeFormat -> Y0
+    java.lang.String mCustomDateFormat -> Y0
     java.util.Date mAccessed -> T
     boolean mOled -> w0
+    android.os.Handler mAutoSaveHandler -> k1
     java.lang.String mMarkdownMargin -> Z
+    android.widget.AutoCompleteTextView mLocalFind -> e1
     int mMarkdownAnchorPos -> x
-    java.util.LinkedList mRedo -> o1
-    java.lang.String mAutoToolBarTag -> Q0
-    android.view.animation.Animation mBounce -> x1
+    java.util.LinkedList mUndo -> o1
+    java.lang.String mSafeModeTag -> Q0
+    android.view.animation.Animation mZoomIn -> x1
     androidx.coordinatorlayout.widget.CoordinatorLayout mEditorCompact -> r
     com.appmindlab.nano.MainActivity mActivity -> C
-    android.text.SpannableStringBuilder mSpann -> f1
-    android.view.animation.Animation mPushDownIn -> t1
+    android.view.animation.Animation mSlideDown -> t1
     boolean mChanged -> d0
     android.widget.EditText mTitle -> D
     long mPosAtClear -> L
+    int mWorkingSetSize -> c1
     java.lang.String mMathUrl -> C0
     boolean mStopped -> u
     java.lang.String mMetadata -> U
-    boolean mCompactToolBar -> T0
+    boolean mShowToolBar -> T0
     android.view.View$OnClickListener mSnackbarOnClickListener -> j0
     java.lang.String mFontFamily -> x0
     java.util.Date mModified -> S
     android.content.ClipboardManager mClipboard -> k0
-    boolean mKeepDeletedCopies -> L0
-    boolean mLocationAware -> m1
-    boolean mCopyAttachmentsToRepo -> H0
-    long mNextPos -> i1
+    boolean mSnapshotSafe -> q1
+    boolean mAutoSaveSafe -> m1
+    boolean mAutoSave -> H0
     android.widget.EditText mContent -> E
     long mPosAtOpen -> K
-    boolean mAutoSave -> G0
+    boolean mParseMermaid -> G0
+    boolean mLabMode -> d1
     boolean mMarkdownAnchorActive -> v
     android.view.View mDecorView -> s
-    java.lang.String mCustomDateFormat -> X0
-    java.util.HashMap mCustomFonts -> y1
+    java.lang.String mIndentChar -> X0
     int mToolBarSelectedItemId -> z
     java.util.Date mCreated -> R
     android.net.Uri mBackupUri -> t0
-    android.hardware.SensorManager mSensorManager -> J0
-    android.view.animation.Animation mPushUpIn -> u1
+    android.view.animation.Animation mBounce -> y1
+    java.util.ArrayList mHits -> h1
+    android.text.SpannableStringBuilder mSpann -> g1
+    android.view.animation.Animation mPushDownIn -> u1
+    com.appmindlab.nano.DisplayDBEntry display_dbentry -> B1
     java.util.List mStatusQ -> i0
-    java.lang.String mSafeModeTag -> P0
-    android.view.animation.Animation mFadeIn -> q1
+    java.lang.String mMarkdownTrigger -> P0
+    java.util.LinkedList mRedo -> p1
     int mStar -> Q
     android.widget.EditText mCurrentEditText -> F
     java.lang.String mTitleSaved -> G
-    int mWorkingSetSize -> b1
+    boolean mReloadSafe -> A1
     java.lang.String mMarginList -> B0
-    boolean mReloadSafe -> z1
-    boolean mLaTeXSingleDollar -> U0
+    boolean mCompactToolBar -> U0
     java.lang.String mLocalRepoPath -> s0
-    boolean mOpenInMarkdown -> M0
+    boolean mLocationAware -> n1
+    boolean mKeepDeletedCopies -> M0
     long mAnchorPos -> c0
     androidx.core.view.GestureDetectorCompat mEditContentGestureDetector -> h0
-    boolean mAutoThemeApplied -> I0
+    boolean mCopyAttachmentsToRepo -> I0
     boolean mParsePython -> D0
     int mMarkdownCacheMode -> a0
-    boolean mEvalBuiltInVariables -> a1
+    boolean mMarkdownLocalCache -> a1
     char mCanvasStroke -> o0
     com.appmindlab.nano.DataSource mDatasource -> A
     boolean mImmersiveMode -> t
     android.widget.ScrollView mScrollView -> V
-    java.lang.String mIndentChar -> W0
-    java.util.ArrayList mHits -> g1
-    java.lang.Runnable mAutoSaveRunnable -> k1
-    android.view.animation.Animation mPushLeftIn -> v1
-    com.appmindlab.nano.DisplayDBEntry display_dbentry -> A1
-    java.lang.String mMarkdownTrigger -> O0
+    java.util.HashMap mCustomFonts -> z1
+    android.hardware.SensorManager mSensorManager -> K0
+    java.lang.String mLinkifyTrigger -> S0
+    android.view.animation.Animation mPushUpIn -> v1
+    java.lang.String mNewNoteFileType -> O0
     android.widget.TextView mStatusBar -> f0
-    android.view.animation.Animation mSlideUp -> r1
+    android.view.animation.Animation mFadeIn -> r1
     void handleHome() -> A
     void handleReload() -> B
     void handleSave() -> C
