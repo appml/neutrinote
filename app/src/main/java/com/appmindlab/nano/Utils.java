@@ -1,6 +1,7 @@
 package com.appmindlab.nano;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.NotificationChannel;
@@ -2646,6 +2647,41 @@ public class Utils {
         return str;
     }
 
+    // Get enclosed drawing within start and end symbols
+    protected static synchronized String getEnclosedDrawing(EditText text) {
+        String str;
+        int start, end, current;
+
+        str = text.getText().toString();
+
+        // Extract snippet
+        current = text.getSelectionStart();
+
+        // Determine the boundary
+        start = str.lastIndexOf(Const.DRAWING_SEPARATOR_SYM, current);
+        if (start == -1) {
+            start = str.indexOf(Const.DRAWING_SEPARATOR_SYM, current);
+        }
+
+        end = str.indexOf(Const.DRAWING_SEPARATOR_SYM, current);
+        if (end == -1) {
+            end = str.lastIndexOf(Const.DRAWING_SEPARATOR_SYM, current);
+        }
+
+        if ((start != -1) && (end != -1) && (start < end)) {
+            end += Const.DRAWING_SEPARATOR_SYM.length();
+
+            // Pre-select the snippet to be replaced
+            if (((end - start) > (Const.CANVAS_SIZE_MIN)) && ((end - start) <= (Const.CANVAS_SIZE_MAX + 4)))
+                text.setSelection(start, end);
+
+            // Return snippet
+            return str.substring(start, end);
+        }
+
+        return str;
+    }
+
     // Get text surrounding current position
     protected static synchronized String getCurrentSurroundingText(String str, String focus, int pos, int len, boolean compact, boolean highlight) {
         try {
@@ -2902,7 +2938,7 @@ public class Utils {
         if (start < end)
             drawing = Utils.getCurrentSelection(text);    // Get selected text
         else
-            drawing = getEnclosedSnippet(text, Const.DRAWING_SEPARATOR_SYM, Const.DRAWING_SEPARATOR_SYM);
+            drawing = getEnclosedDrawing(text);
 
         // Remove guiding lines
         if (drawing.startsWith(header))
@@ -2960,6 +2996,7 @@ public class Utils {
     }
 
     // Get title from uri
+    @SuppressLint("Range")
     protected static String getTitleFromUri(Context context, Uri uri) {
         String title = Const.NULL_SYM;
         int i;
