@@ -330,7 +330,7 @@ public class Const {
     protected final static String MDX_TOC_JS = "<script type='text/javascript' src='file:///android_asset/html/mdx-toc.js'></script>";
     protected final static String JQUERY = "<script type='text/javascript' src='file:///android_asset/html/jqry.js'></script>";
     protected final static String PYTHON_JS = "<script type='text/python'></script><head><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.0/brython.min.js'></script><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.0/brython_stdlib.js'></script><script language='javascript'>window.onload = brython()</script></head>";
-    protected final static String VUE_JS = "<script src='https://cdn.jsdelivr.net/npm/vue'></script>";
+    protected final static String VUE_JS = "<script src='https://unpkg.com/vue@3'></script>";
     protected final static String ALPINE_JS = "<script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js' defer></script>";
     protected final static String MERMAID_JS = "<script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script><script>mermaid.initialize({ startOnLoad: true });</script>";
     protected final static String APP_JS = "<script type='text/javascript' src='file://./app.js'></script>";
