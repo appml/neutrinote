@@ -6365,8 +6365,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
 
         @JavascriptInterface
-        public void paste(String text) {
-            Snackbar snackbar = Utils.makePasteSnackbar(display_dbentry, getCoordinatorLayout(), mContent, text);
+        public void log(String text) {
+            Snackbar snackbar = Utils.makeCopySnackbar(display_dbentry, getCoordinatorLayout(), text);
             Utils.anchorSnackbar(snackbar, R.id.fragment_content);
             snackbar.show();
         }

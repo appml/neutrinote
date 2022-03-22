@@ -1,2 +1,2 @@
 v4.0.9
-- Support vue 3
+- Support Vue 3

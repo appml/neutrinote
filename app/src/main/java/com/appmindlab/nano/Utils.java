@@ -3416,6 +3416,29 @@ public class Utils {
         return snackbar;
     }
 
+    // Make a copy snackbar
+    protected static Snackbar makeCopySnackbar(AppCompatActivity activity, View view, final String result) {
+        Snackbar snackbar;
+
+        snackbar = Snackbar.make(view, result, Snackbar.LENGTH_LONG);
+        snackbar.setAction(activity.getResources().getString(R.string.snack_bar_button_copy), new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Add to clipboard
+                ClipboardManager clipboard = (ClipboardManager) activity.getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText(Const.CUSTOM_SCHEME, result);
+                clipboard.setPrimaryClip(clip);
+            }
+        });
+
+        Typeface font_awesome = FontCache.getFromAsset(activity, "iconfonts.ttf");
+        TextView text_view = (TextView) snackbar.getView().findViewById(com.google.android.material.R.id.snackbar_action);
+        text_view.setTextSize(24);
+        text_view.setTypeface(font_awesome);
+
+        return snackbar;
+    }
+
     // Get edit text scroll percentage
     protected static int getEditTextScrollPercent(EditText content) {
         float start = content.getSelectionStart();

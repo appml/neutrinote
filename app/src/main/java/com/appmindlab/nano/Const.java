@@ -321,7 +321,7 @@ public class Const {
     protected final static String WEBVIEW_DENSITY = "<meta name='viewport' content='target-densitydpi=device-dpi' />";
     protected final static String TOC = "<span id='toc' />";
     protected final static String LATEX_SINGLE_DOLLAR_CONFIG = "<script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>";
-    protected final static String JAVASCRIPT_INTERFACE = "appm";
+    protected final static String JAVASCRIPT_INTERFACE = "nano";
 
     // Javascript
     protected final static String PARSER_API_JS = "<script type='text/javascript' src='file:///android_asset/html/parser-api.js'></script>";

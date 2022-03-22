@@ -496,6 +496,7 @@
     <string name="snack_bar_button_undo">もとに戻す</string>
     <string name="snack_bar_button_done">確定</string>
     <string name="snack_bar_button_paste">貼り付け</string>
+    <string name="snack_bar_button_copy">\uF0C5</string>
 
     <string name="button_ok">OK</string>
     <string name="button_cancel">キャンセル</string>
