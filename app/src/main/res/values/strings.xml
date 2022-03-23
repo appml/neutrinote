@@ -496,7 +496,7 @@
     <string name="snack_bar_button_undo">Undo</string>
     <string name="snack_bar_button_done">Done</string>
     <string name="snack_bar_button_paste">Paste</string>
-    <string name="snack_bar_button_copy">\uF0C5</string>
+    <string name="snack_bar_button_copy">Copy</string>
 
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>

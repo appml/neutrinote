@@ -3420,7 +3420,7 @@ public class Utils {
     protected static Snackbar makeCopySnackbar(AppCompatActivity activity, View view, final String result) {
         Snackbar snackbar;
 
-        snackbar = Snackbar.make(view, result, Snackbar.LENGTH_LONG);
+        snackbar = Snackbar.make(view, result, Snackbar.LENGTH_INDEFINITE);
         snackbar.setAction(activity.getResources().getString(R.string.snack_bar_button_copy), new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -3430,11 +3430,6 @@ public class Utils {
                 clipboard.setPrimaryClip(clip);
             }
         });
-
-        Typeface font_awesome = FontCache.getFromAsset(activity, "iconfonts.ttf");
-        TextView text_view = (TextView) snackbar.getView().findViewById(com.google.android.material.R.id.snackbar_action);
-        text_view.setTextSize(24);
-        text_view.setTypeface(font_awesome);
 
         return snackbar;
     }

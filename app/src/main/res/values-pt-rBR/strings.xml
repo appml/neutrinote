@@ -485,7 +485,7 @@
     <string name="snack_bar_button_undo">Desfazer</string>
     <string name="snack_bar_button_done">Concluído</string>
     <string name="snack_bar_button_paste">Colar</string>
-    <string name="snack_bar_button_copy">\uF0C5</string>
+    <string name="snack_bar_button_copy">Copiar</string>
 
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancelar</string>

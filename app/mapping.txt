@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 3.1.51
 # min_api: 21
-# pg_map_id: ca7bd09
+# pg_map_id: e916e3d
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"1.0"}
 android.support.v4.media.MediaBrowserCompat$MediaBrowserImplApi21$$ExternalSyntheticOutline0 -> android.support.v4.media.a:
@@ -14889,9 +14889,6 @@ com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBE
     11:11:void onPreExecute():0:0 -> onPreExecute
 com.appmindlab.nano.DisplayDBEntry$EditViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$v0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    1:1:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> paste
-    1:1:void paste(java.lang.String):0 -> paste
-    2:2:void paste(java.lang.String):0:0 -> paste
 com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBEntry$w0:
     com.appmindlab.nano.DisplayDBEntry activity -> m
     com.appmindlab.nano.DisplayDBEntry this$0 -> o
@@ -16171,7 +16168,7 @@ com.appmindlab.nano.Utils -> com.appmindlab.nano.u3:
     float mLightLevel -> c
     boolean mExternalStorageWriteable -> a
     boolean mWriteLock -> b
-    1:1:double com.appmindlab.nano.Utils$8.parse():0:0 -> eval
+    1:1:double com.appmindlab.nano.Utils$9.parse():0:0 -> eval
     1:1:double eval(java.lang.String):0 -> eval
 com.appmindlab.nano.Utils$1 -> com.appmindlab.nano.u3$a:
 com.appmindlab.nano.Utils$2 -> com.appmindlab.nano.u3$b:
@@ -16184,6 +16181,9 @@ com.appmindlab.nano.Utils$7 -> com.appmindlab.nano.u3$g:
     android.widget.EditText val$content -> b
     java.lang.String val$result -> c
 com.appmindlab.nano.Utils$8 -> com.appmindlab.nano.u3$h:
+    androidx.appcompat.app.AppCompatActivity val$activity -> b
+    java.lang.String val$result -> c
+com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.u3$i:
     int ch -> b
     java.lang.String val$str -> c
     int pos -> a
