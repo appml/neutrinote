@@ -6208,6 +6208,22 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         return css;
     }
 
+    // Build head
+    protected String buildHead() {
+        String custom_head, head = Const.NULL_SYM;
+
+        custom_head = makeFileName(getApplicationContext(), Const.CUSTOM_HEAD);
+        ArrayList<DBEntry> results = mDatasource.getRecordByTitle(custom_head);
+
+        // Load user defined script
+        if (results.size() == 1) {
+            DBEntry entry = results.get(0);
+            head = entry.getContent();
+        }
+
+        return head;
+    }
+
     // Build source
     protected String buildSource(boolean useAnchor) {
         String source = mContent.getText().toString(), js, css, head;
@@ -6225,6 +6241,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Get HTML head section
         head = Utils.extractHeadData(source);
+        head += buildHead();
 
         // Build Javascript section
         js = buildScript(source.contains(Const.TOC));
@@ -6237,7 +6254,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Build clipboard source
     protected String buildClipboardSource() {
-        String source = mContent.getText().toString(), js, css;
+        String source = mContent.getText().toString(), js, css, head;
+
+        // Get HTML head section
+        head = Utils.extractHeadData(source);
+        head += buildHead();
 
         // Build Javascript section
         js = buildClipboardScript(source.contains(Const.TOC));
@@ -6250,7 +6271,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (source.length() == 0)    // Default
             source = "<h1 align='center'>" + Const.CLIPBOARD_SYM + "</h1>";
 
-        return Const.WEBVIEW_DENSITY + css + "<xmp>" + source + "</xmp>" + js;
+        return Const.WEBVIEW_DENSITY + css + "<xmp>" + source + "</xmp>" + js + head;
     }
 
     // Toggle menu related to markdown view
