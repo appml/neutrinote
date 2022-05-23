@@ -22,6 +22,7 @@
         <package android:name="org.sufficientlysecure.keychain" />
         <package android:name="com.google.android.calendar" />
         <package android:name="com.google.android.apps.translate" />
+        <package android:name="com.concept1tech.instalate" />
         <package android:name="com.diotek.sec.lookup.dictionary" />
         <package android:name="io.github.subhamtyagi.ocr" />
         <package android:name="com.android.chrome" />
