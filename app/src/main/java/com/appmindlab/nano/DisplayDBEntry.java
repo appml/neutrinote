@@ -2711,21 +2711,20 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Apply theme
     protected void applyTheme() {
         try {
+            String mode = Const.NULL_SYM;
+
             // For devices without light sensor
-            if ((mLux) && (mLightSensor == null)) {
+            if (((mLux) && (mLightSensor == null)) || (mTheme.equals(Const.SYSTEM_THEME))) {
                 int flags = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
                 if (flags == Configuration.UI_MODE_NIGHT_YES) {
-                    mTheme = Const.NIGHT_THEME;
+                    mode = Const.NIGHT_THEME;
                 }
                 else {
-                    mTheme = Const.DAY_THEME;
+                    mode = Const.DAY_THEME;
                 }
-
-                mSharedPreferencesEditor.putString(Const.PREF_THEME, mTheme);
-                mSharedPreferencesEditor.commit();
             }
 
-            if (mTheme.equals(Const.NIGHT_THEME)) {
+            if ((mTheme.equals(Const.NIGHT_THEME)) || (mode.equals(Const.NIGHT_THEME))) {
                 mTitle.setTextColor(ContextCompat.getColor(this, R.color.edit_title_bar_text_night));
                 mTitle.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_night));
                 mContent.setTextColor(Utils.getWhiteColor(this, R.color.edit_content_night, mLux));
@@ -2738,7 +2737,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 mCanvasForeground = ContextCompat.getColor(this, R.color.canvas_foreground_night);
                 mCanvasBackground = ContextCompat.getDrawable(this, R.drawable.canvas_night);
-            } else if (mTheme.equals(Const.DARK_THEME)) {
+            } else if ((mTheme.equals(Const.DARK_THEME)) || (mode.equals(Const.DARK_THEME))) {
                 mTitle.setTextColor(ContextCompat.getColor(this, R.color.edit_title_bar_text_dark));
                 mTitle.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
                 mContent.setTextColor(Utils.getWhiteColor(this, R.color.edit_content_night, mLux));

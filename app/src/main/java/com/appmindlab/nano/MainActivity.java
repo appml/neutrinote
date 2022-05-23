@@ -602,8 +602,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public boolean onSuggestionClick(int position) {
                 Cursor cursor = (Cursor) mSearchView.getSuggestionsAdapter().getItem(
                         position);
-                String selected = cursor.getString(cursor
-                        .getColumnIndex(SearchManager.SUGGEST_COLUMN_TEXT_1));
+                int idx = cursor.getColumnIndex(SearchManager.SUGGEST_COLUMN_TEXT_1);
+                String selected = cursor.getString(idx);
 
                 mSearchView.setQuery(selected, false);
                 mSearchView.clearFocus();
@@ -1233,7 +1233,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Build constraints
         mMirrorConstraints = new Constraints.Builder()
                 .setRequiresBatteryNotLow(true)
-                .setRequiresDeviceIdle(true)
                 .setRequiresStorageNotLow(true)
                 .build();
 
@@ -1274,26 +1273,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Apply theme
     protected void applyTheme() {
         try {
+            String mode = Const.NULL_SYM;
+
             // For devices without light sensor
-            if ((mLux) && (mLightSensor == null)) {
+            if (((mLux) && (mLightSensor == null)) || (mTheme.equals(Const.SYSTEM_THEME))) {
                 int flags = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
                 if (flags == Configuration.UI_MODE_NIGHT_YES) {
-                    mTheme = Const.NIGHT_THEME;
+                    mode = Const.NIGHT_THEME;
                 }
                 else {
-                    mTheme = Const.DAY_THEME;
+                    mode = Const.DAY_THEME;
                 }
-
-                mSharedPreferencesEditor.putString(Const.PREF_THEME, mTheme);
-                mSharedPreferencesEditor.commit();
             }
 
-            if (mTheme.equals(Const.NIGHT_THEME)) {
+            if ((mTheme.equals(Const.NIGHT_THEME)) || (mode.equals(Const.NIGHT_THEME))) {
                 mStatusMsg.setTextColor(ContextCompat.getColor(this, R.color.status_bar_text_night));
                 mStatusBar.setBackgroundColor(ContextCompat.getColor(this, R.color.status_bar_night));
                 mSwipeRefreshLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.swipe_refresh_background_night));
                 mSwipeRefreshLayout.setProgressBackgroundColorSchemeColor(ContextCompat.getColor(this, R.color.swipe_refresh_night));
-            } else if (mTheme.equals(Const.DARK_THEME)) {
+            } else if ((mTheme.equals(Const.DARK_THEME)) || (mode.equals(Const.DARK_THEME))) {
                 mStatusMsg.setTextColor(ContextCompat.getColor(this, R.color.status_bar_text_dark));
                 mStatusBar.setBackgroundColor(ContextCompat.getColor(this, R.color.status_bar_dark));
                 mSwipeRefreshLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.swipe_refresh_background_dark));

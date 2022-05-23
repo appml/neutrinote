@@ -264,11 +264,13 @@
         <item>Day</item>
         <item>Dark</item>
         <item>Night</item>
+        <item>System</item>
     </string-array>
     <string-array name="pref_theme_values">
         <item>day</item>
         <item>dark</item>
         <item>night</item>
+        <item>system</item>
     </string-array>
 
     <string name="pref_lux_title">Ambient Glow (Experimental)</string>

@@ -1,6 +1,7 @@
 package com.appmindlab.nano;
 
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
@@ -47,7 +48,19 @@ public class SetPreferenceActivity extends AppCompatActivity {
     // Setup theme
     private void setupTheme() {
         // Determine the theme to use
-        if (mTheme.equals(Const.DAY_THEME))
+        String mode = Const.NULL_SYM;
+
+        if (mTheme.equals(Const.SYSTEM_THEME)) {
+            int flags = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            if (flags == Configuration.UI_MODE_NIGHT_YES) {
+                mode = Const.NIGHT_THEME;
+            }
+            else {
+                mode = Const.DAY_THEME;
+            }
+        }
+
+        if ((mTheme.equals(Const.DAY_THEME)) || (mode.equals(Const.DAY_THEME)))
             setTheme(R.style.AppSettingsThemeDay);
         else
             setTheme(R.style.AppSettingsTheme);

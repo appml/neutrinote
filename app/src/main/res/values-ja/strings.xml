@@ -264,11 +264,13 @@
         <item>ライトモード</item>
         <item>ダークモード</item>
         <item>ナイトモード</item>
+        <item>システムで設定</item>
     </string-array>
     <string-array name="pref_theme_values">
         <item>day</item>
         <item>dark</item>
         <item>night</item>
+        <item>system</item>
     </string-array>
 
     <string name="pref_lux_title">アンビエントグロー (実験的)</string>

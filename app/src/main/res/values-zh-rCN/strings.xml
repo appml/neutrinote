@@ -264,11 +264,13 @@
         <item>日间</item>
         <item>黑暗</item>
         <item>夜间</item>
+        <item>由系统设定</item>
     </string-array>
     <string-array name="pref_theme_values">
         <item>day</item>
         <item>dark</item>
         <item>night</item>
+        <item>system</item>
     </string-array>
 
     <string name="pref_lux_title">环境光源(实验性功能)</string>

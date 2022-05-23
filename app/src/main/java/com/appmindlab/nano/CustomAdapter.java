@@ -10,6 +10,7 @@ import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimatedVectorDrawable;
@@ -1000,7 +1001,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         // Retrieve lux preference
         boolean lux = mSharedPreferences.getBoolean(Const.PREF_LUX, false);
 
-        if (theme.equals("night")) {
+        String mode = Const.NULL_SYM;
+
+        // For devices without light sensor
+        if (theme.equals(Const.SYSTEM_THEME)) {
+            int flags = DBApplication.getAppContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            if (flags == Configuration.UI_MODE_NIGHT_YES) {
+                mode = Const.NIGHT_THEME;
+            }
+            else {
+                mode = Const.DAY_THEME;
+            }
+        }
+
+        if ((theme.equals("night")) || (mode.equals(Const.NIGHT_THEME)))  {
             holder.mTitle.setTextColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.list_item_title_night));
             holder.mTitle.setBackgroundColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.list_item_background_night));
 
@@ -1012,7 +1026,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             holder.mMetadata.setTextColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.list_item_metadata_night));
             holder.mCardView.setCardBackgroundColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.cardview_background_night));
         }
-        else if (theme.equals("dark")) {
+        else if ((theme.equals("dark")) || (mode.equals(Const.DARK_THEME)))  {
             holder.mTitle.setTextColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.list_item_title_dark));
             holder.mTitle.setBackgroundColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.list_item_background_dark));
 
