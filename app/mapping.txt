@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 3.1.51
 # min_api: 21
-# pg_map_id: e916e3d
+# pg_map_id: 47e6a25
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"1.0"}
 android.support.v4.media.MediaBrowserCompat$MediaBrowserImplApi21$$ExternalSyntheticOutline0 -> android.support.v4.media.a:
@@ -11534,13 +11534,12 @@ androidx.work.Constraints -> i1.c:
     boolean mRequiresDeviceIdle -> c
     boolean mRequiresBatteryNotLow -> d
 androidx.work.Constraints$Builder -> i1.c$a:
-    long mTriggerContentMaxDelay -> f
-    long mTriggerContentUpdateDelay -> e
-    boolean mRequiresDeviceIdle -> a
-    androidx.work.ContentUriTriggers mContentUriTriggers -> g
-    boolean mRequiresBatteryNotLow -> c
-    androidx.work.NetworkType mRequiredNetworkType -> b
-    boolean mRequiresStorageNotLow -> d
+    androidx.work.ContentUriTriggers mContentUriTriggers -> f
+    long mTriggerContentMaxDelay -> e
+    long mTriggerContentUpdateDelay -> d
+    boolean mRequiresBatteryNotLow -> b
+    androidx.work.NetworkType mRequiredNetworkType -> a
+    boolean mRequiresStorageNotLow -> c
 androidx.work.ContentUriTriggers -> i1.d:
     java.util.Set mTriggers -> a
 androidx.work.ContentUriTriggers$Trigger -> i1.d$a:

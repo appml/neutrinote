@@ -262,7 +262,7 @@
         <item>Dia</item>
         <item>Escuro</item>
         <item>Noite</item>
-        <item>Definido por sistema</item>
+        <item>Seguir Sistema</item>
     </string-array>
     <string-array name="pref_theme_values">
         <item>day</item>
