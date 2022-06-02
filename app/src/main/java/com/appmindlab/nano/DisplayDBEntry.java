@@ -861,14 +861,26 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Setup theme
     private void setupTheme() {
         // Determine the theme to use
-        if (mTheme.equals(Const.NIGHT_THEME))
+        String mode = Const.NULL_SYM;
+
+        if (mTheme.equals(Const.SYSTEM_THEME)) {
+            int flags = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            if (flags == Configuration.UI_MODE_NIGHT_YES) {
+                mode = Const.NIGHT_THEME;
+            }
+            else {
+                mode = Const.DAY_THEME;
+            }
+        }
+
+        if ((mTheme.equals(Const.NIGHT_THEME)) || (mode.equals(Const.NIGHT_THEME)))
             mOled = true;
 
         if (mOled)
             setTheme(R.style.AppThemeOled);
         else if (mLux)
             setTheme(R.style.AppThemeLux);
-        else if (mTheme.equals(Const.DAY_THEME))
+        else if ((mTheme.equals(Const.DAY_THEME)) || (mode.equals(Const.DAY_THEME)))
             setTheme(R.style.AppThemeDay);
         else
             setTheme(R.style.AppTheme);

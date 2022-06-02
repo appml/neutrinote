@@ -1,0 +1,3 @@
+v4.1.6
+- Added InstaLate support
+- Fixed system dark mode

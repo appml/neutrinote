@@ -11,8 +11,8 @@ android {
         minSdkVersion 21
         targetSdkVersion 32
         multiDexEnabled true
-        versionCode 1250
-        versionName "4.1.5"
+        versionCode 1251
+        versionName "4.1.6"
     }
 
     buildTypes {
@@ -26,6 +26,7 @@ android {
     dexOptions {
         jumboMode = true
     }
+    namespace 'com.appmindlab.nano'
 }
 
 dependencies {
