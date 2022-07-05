@@ -1003,7 +1003,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         String mode = Const.NULL_SYM;
 
-        // For devices without light sensor
         if (theme.equals(Const.SYSTEM_THEME)) {
             int flags = DBApplication.getAppContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
             if (flags == Configuration.UI_MODE_NIGHT_YES) {

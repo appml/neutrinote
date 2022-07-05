@@ -2725,8 +2725,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         try {
             String mode = Const.NULL_SYM;
 
-            // For devices without light sensor
-            if (((mLux) && (mLightSensor == null)) || (mTheme.equals(Const.SYSTEM_THEME))) {
+            if (mTheme.equals(Const.SYSTEM_THEME)) {
                 int flags = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
                 if (flags == Configuration.UI_MODE_NIGHT_YES) {
                     mode = Const.NIGHT_THEME;
