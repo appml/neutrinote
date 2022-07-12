@@ -1,2 +1,2 @@
 v4.1.7
-- Fixed system dark mode
+- Fixed ambient mode theme

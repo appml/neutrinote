@@ -344,7 +344,8 @@ public class Const {
     protected final static String GFM_NIGHT_CSS = "<link rel='stylesheet' type='text/css' href='file:///android_asset/html/gfm-night.css'>";
     protected final static String GFM_DARK_CSS = "<link rel='stylesheet' type='text/css' href='file:///android_asset/html/gfm-dark.css'>";
     protected final static String REVISION_CSS = "<link rel='stylesheet' type='text/css' href='file:///android_asset/html/revision.css'>";
-    protected final static String CLIPBOARD_FONT_STYLE = "<style>@font-face { font-family: 'Roboto Mono'; src: url('file:///android_asset/RobotoMono-Regular.ttf') } div#content{font-family: 'Roboto Mono'; font-weight: 500;font-size: 8px}</style>";
+    protected final static String CLIPBOARD_FONT_FAMILY = "<style>@font-face { font-family: 'Roboto Mono'; src: url('file:///android_asset/RobotoMono-Regular.ttf') } div#content{font-family: 'Roboto Mono'; font-weight: 500;font-size: 8px}</style>";
+    protected final static String CLIPBOARD_FONT_SIZE = "<style>div#content{font-family: 'Roboto Mono'; font-weight: 500;font-size: 8px}</style>";
     protected final static String CUSTOM_STYLE_SHEET = "~neutrinote_styles";
 
     // Canvas
