@@ -1,0 +1,2 @@
+v4.1.9
+- Added built-in variable support to scrapbook.

@@ -51,6 +51,15 @@ public class NotificationReceiver extends BroadcastReceiver {
             if (bundle != null) {
                 String input = bundle.getCharSequence(Const.SCRAPBOOK_NOTIFICATION_KEY).toString();
 
+                // Evaluate built-in variables
+                boolean eval_built_in_variables = mSharedPreferences.getBoolean(Const.PREF_EVAL_BUILT_IN_VARIALBES, false);
+                if (eval_built_in_variables) {
+                    String custom_date_format = mSharedPreferences.getString(Const.PREF_CUSTOM_DATE_FORMAT, "");
+                    String custom_time_format = mSharedPreferences.getString(Const.PREF_CUSTOM_TIME_FORMAT, "");
+
+                    input = Utils.evalGlobalVariables(context, input, custom_date_format, custom_time_format, false);
+                }
+
                 DBEntry entry = results.get(0);
 
                 StringBuilder sb = new StringBuilder();
