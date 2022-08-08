@@ -138,7 +138,8 @@ public class NotificationReceiver extends BroadcastReceiver {
         builder.addAction(paste_action);
 
         // Goto button
-        goto_intent = new Intent(context, DisplayDBEntry.class);
+        goto_intent = new Intent(context, MainActivity.class);
+        goto_intent.setAction(Const.ACTION_VIEW_ENTRY);
         goto_intent.putExtra(Const.EXTRA_ID, entry.getId());
         goto_pending_intent = PendingIntent.getActivity(context,
                 0,
