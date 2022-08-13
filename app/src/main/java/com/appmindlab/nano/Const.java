@@ -184,7 +184,7 @@ public class Const {
     protected final static String BACKUP_PREF_KEY = "neutriNote";
 
     // Defaults
-    protected final static String DEFAULT_THEME = "day";
+    protected final static String DEFAULT_THEME = "system";
     protected final static String DEFAULT_FONT_FAMILY = "Roboto Mono Regular";
     protected final static String DEFAULT_FONT_SIZE = "14";
     protected final static String DEFAULT_FONT_SIZE_LIST = "8;10;12;14;16;18;24;32;48";
