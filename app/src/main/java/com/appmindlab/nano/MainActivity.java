@@ -3963,8 +3963,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Send to settings
             if (Build.VERSION.SDK_INT < 28)
                 handleEmptyLocalRepoPath();
-            else
+            else if (Build.VERSION.SDK_INT < 33)
                 handleEmptyLocalRepoPathSimplified();
+            else
+                // Permission no longer required, defaulted to scope storage
+                setDefaultLocalRepoPath();
         }
     }
 
@@ -3982,7 +3985,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Verify storage permission
     private void verifyStoragePermission() {
-        if (Build.VERSION.SDK_INT >= 23) {
+        if ((Build.VERSION.SDK_INT >= 23) && (Build.VERSION.SDK_INT < 29)) {
             // Handle runtime permissions
             if (!((ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) && (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)))
                 getStoragePermission(getApplicationContext());
