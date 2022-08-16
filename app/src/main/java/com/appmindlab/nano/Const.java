@@ -670,8 +670,9 @@ public class Const {
     protected final static int REQUEST_CODE_LOCATION_PERMISSION = 123;
     protected final static int REQUEST_CODE_STORAGE_PERMISSIONS = 124;
     protected final static int REQUEST_CODE_CAMERA_PERMISSION = 125;
-    protected final static int REQUEST_CODE_PICK_BACKUP_URI = 126;
-    protected final static int REQUEST_CODE_PICK_RESTORE_URI = 127;
+    protected final static int REQUEST_CODE_NOTIFICATION_PERMISSION = 126;
+    protected final static int REQUEST_CODE_PICK_BACKUP_URI = 130;
+    protected final static int REQUEST_CODE_PICK_RESTORE_URI = 131;
     protected final static int REQUEST_CODE_GET_IMAGE = 10;
     protected final static int REQUEST_CODE_INSERT_GALLERY_IMAGE = 11;
     protected final static int REQUEST_CODE_INSERT_CAMERA_IMAGE = 12;

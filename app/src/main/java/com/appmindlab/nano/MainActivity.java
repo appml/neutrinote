@@ -292,6 +292,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Verify storage permission
         verifyStoragePermission();
 
+        // Verify notification permission
+        verifyNotificationPermission();
+
         ////////////////
         // Setup theme
         ////////////////
@@ -3986,6 +3989,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // Verify notification permission
+    private void verifyNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            // Handle runtime permissions
+            if (!((ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED)))
+                getNotificationPermission(getApplicationContext());
+        }
+    }
+
     // Handle empty local repo path
     private void handleEmptyLocalRepoPath() {
         // Instantiate an AlertDialog.Builder with its constructor
@@ -5058,6 +5070,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 ActivityCompat.requestPermissions(MainActivity.this, permissions.toArray(new String[permissions.size()]), Const.REQUEST_CODE_LOCATION_PERMISSION);
+                            }
+                        });
+                return;
+            }
+        }
+    }
+
+    // Get notification permission
+    protected void getNotificationPermission(Context context) {
+        final List<String> permissions = new ArrayList<String>();
+        List<String> messages = new ArrayList<String>();
+
+        if (!Utils.addPermission(this, permissions, Manifest.permission.POST_NOTIFICATIONS))
+            messages.add(getResources().getString(R.string.rationale_post_notifications_permission));
+
+        if (permissions.size() > 0) {
+            if (messages.size() > 0) {
+                // Need Rationale
+                String message = "";
+                for (int i = 0; i < messages.size(); i++)
+                    message = message + Const.NEWLINE + messages.get(i);
+
+                Utils.showMessageOKCancel(this, message,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ActivityCompat.requestPermissions(MainActivity.this, permissions.toArray(new String[permissions.size()]), Const.REQUEST_CODE_NOTIFICATION_PERMISSION);
                             }
                         });
                 return;
