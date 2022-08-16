@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 02cb96c
-# pg_map_hash: SHA-256 02cb96c59a4d892edc6531061351632c747f131b2ca33e8201206f38ba0a62a5
+# pg_map_id: 4610c61
+# pg_map_hash: SHA-256 4610c61dbfc447cfe26fc65b23195fff587b90d00c3a65f5b778446b20bcde51
 android.support.v4.media.MediaBrowserCompat$MediaBrowserImplApi21 -> android.support.v4.media.MediaBrowserCompat$MediaBrowserImplApi21:
     1:1:void sendCustomAction(java.lang.String,android.os.Bundle,android.support.v4.media.MediaBrowserCompat$CustomActionCallback):0:0 -> sendCustomAction
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":3,"2":4,"3":5}}
@@ -18687,6 +18687,13 @@ com.appmindlab.nano.MainActivity -> com.appmindlab.nano.MainActivity:
     5:5:void getLocationPermission(android.content.Context):0:0 -> getLocationPermission
     6:6:void getLocationPermission(android.content.Context):0:0 -> getLocationPermission
     2:2:void getLocationPermission(android.content.Context):0:0 -> getLocationPermission
+    1:1:void getNotificationPermission(android.content.Context):0:0 -> getNotificationPermission
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":3,"2":4,"3":5,"4":6}}
+    3:3:void getNotificationPermission(android.content.Context):0:0 -> getNotificationPermission
+    4:4:void getNotificationPermission(android.content.Context):0:0 -> getNotificationPermission
+    5:5:void getNotificationPermission(android.content.Context):0:0 -> getNotificationPermission
+    6:6:void getNotificationPermission(android.content.Context):0:0 -> getNotificationPermission
+    2:2:void getNotificationPermission(android.content.Context):0:0 -> getNotificationPermission
     1:1:void getStoragePermission(android.content.Context):0:0 -> getStoragePermission
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":3,"2":4,"3":5,"4":6}}
     3:3:void getStoragePermission(android.content.Context):0:0 -> getStoragePermission
@@ -18730,26 +18737,28 @@ com.appmindlab.nano.MainActivity -> com.appmindlab.nano.MainActivity:
     6:6:void checkLocalRepoPath():0:0 -> loadPref
     6:6:void loadPref():0 -> loadPref
     void verifyStoragePermission() -> m
-    1:1:void setupTheme():0:0 -> onCreate
+    1:1:void verifyNotificationPermission():0:0 -> onCreate
     1:1:void onCreate(android.os.Bundle):0 -> onCreate
-    2:2:void onCreate(android.os.Bundle):0:0 -> onCreate
-    3:3:void setupApplication():0:0 -> onCreate
-    3:3:void onCreate(android.os.Bundle):0 -> onCreate
-    4:4:void onCreate(android.os.Bundle):0:0 -> onCreate
-    5:5:void setupBackup():0:0 -> onCreate
-    5:5:void onCreate(android.os.Bundle):0 -> onCreate
-    6:6:void setupToolBar():0:0 -> onCreate
+    2:2:void setupTheme():0:0 -> onCreate
+    2:2:void onCreate(android.os.Bundle):0 -> onCreate
+    3:3:void onCreate(android.os.Bundle):0:0 -> onCreate
+    4:4:void setupApplication():0:0 -> onCreate
+    4:4:void onCreate(android.os.Bundle):0 -> onCreate
+    5:5:void onCreate(android.os.Bundle):0:0 -> onCreate
+    6:6:void setupBackup():0:0 -> onCreate
     6:6:void onCreate(android.os.Bundle):0 -> onCreate
-    7:7:void setupStatusBar():0:0 -> onCreate
+    7:7:void setupToolBar():0:0 -> onCreate
     7:7:void onCreate(android.os.Bundle):0 -> onCreate
-    8:8:void onCreate(android.os.Bundle):0:0 -> onCreate
-    9:9:void setupNavigationDrawer(android.os.Bundle):0:0 -> onCreate
-    9:9:void onCreate(android.os.Bundle):0 -> onCreate
-    10:10:void setupRecyclerView():0:0 -> onCreate
+    8:8:void setupStatusBar():0:0 -> onCreate
+    8:8:void onCreate(android.os.Bundle):0 -> onCreate
+    9:9:void onCreate(android.os.Bundle):0:0 -> onCreate
+    10:10:void setupNavigationDrawer(android.os.Bundle):0:0 -> onCreate
     10:10:void onCreate(android.os.Bundle):0 -> onCreate
-    11:11:void setupFAB():0:0 -> onCreate
+    11:11:void setupRecyclerView():0:0 -> onCreate
     11:11:void onCreate(android.os.Bundle):0 -> onCreate
-    12:12:void onCreate(android.os.Bundle):0:0 -> onCreate
+    12:12:void setupFAB():0:0 -> onCreate
+    12:12:void onCreate(android.os.Bundle):0 -> onCreate
+    13:13:void onCreate(android.os.Bundle):0:0 -> onCreate
     1:1:void doSettings():0:0 -> onNavigationItemSelected
     1:1:boolean onNavigationItemSelected(android.view.MenuItem):0 -> onNavigationItemSelected
     2:2:boolean onNavigationItemSelected(android.view.MenuItem):0:0 -> onNavigationItemSelected
@@ -19251,9 +19260,12 @@ com.appmindlab.nano.MainActivity$48 -> com.appmindlab.nano.MainActivity$t:
 com.appmindlab.nano.MainActivity$49 -> com.appmindlab.nano.MainActivity$u:
     java.util.List val$permissions -> b
     com.appmindlab.nano.MainActivity this$0 -> c
-com.appmindlab.nano.MainActivity$5 -> com.appmindlab.nano.MainActivity$x:
+com.appmindlab.nano.MainActivity$5 -> com.appmindlab.nano.MainActivity$y:
     android.widget.AutoCompleteTextView val$text_view -> a
 com.appmindlab.nano.MainActivity$50 -> com.appmindlab.nano.MainActivity$w:
+    java.util.List val$permissions -> b
+    com.appmindlab.nano.MainActivity this$0 -> c
+com.appmindlab.nano.MainActivity$51 -> com.appmindlab.nano.MainActivity$x:
     java.util.List val$permissions -> b
     com.appmindlab.nano.MainActivity this$0 -> c
 com.appmindlab.nano.MainActivity$6 -> com.appmindlab.nano.k3:
@@ -19309,7 +19321,7 @@ com.appmindlab.nano.MainActivity$9 -> com.appmindlab.nano.n3:
     2:2:void com.appmindlab.nano.MainActivity.doAdd():0:0 -> onClick
     2:2:void com.appmindlab.nano.MainActivity.access$900(com.appmindlab.nano.MainActivity):0 -> onClick
     2:2:void onClick(android.view.View):0 -> onClick
-com.appmindlab.nano.MainActivity$BackupAppDataTask -> com.appmindlab.nano.MainActivity$y:
+com.appmindlab.nano.MainActivity$BackupAppDataTask -> com.appmindlab.nano.MainActivity$z:
     android.widget.ProgressBar progressBar -> o
     com.appmindlab.nano.MainActivity this$0 -> p
     0:65535:void <init>(com.appmindlab.nano.MainActivity):0:0 -> <init>
@@ -19364,7 +19376,7 @@ com.appmindlab.nano.MainActivity$BackupAppDataTask -> com.appmindlab.nano.MainAc
     1:1:void com.appmindlab.nano.MainActivity.access$2800(com.appmindlab.nano.MainActivity,java.lang.String,android.view.animation.Animation):0:0 -> onPreExecute
     1:1:void onPreExecute():0 -> onPreExecute
     2:2:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.MainActivity$BackupBasicAppDataTask -> com.appmindlab.nano.MainActivity$z:
+com.appmindlab.nano.MainActivity$BackupBasicAppDataTask -> com.appmindlab.nano.MainActivity$a0:
     android.widget.ProgressBar progressBar -> o
     com.appmindlab.nano.MainActivity this$0 -> p
     0:65535:void <init>(com.appmindlab.nano.MainActivity):0:0 -> <init>
@@ -19398,7 +19410,7 @@ com.appmindlab.nano.MainActivity$BackupBasicAppDataTask -> com.appmindlab.nano.M
     13:13:com.appmindlab.nano.DataSource com.appmindlab.nano.MainActivity.access$2200(com.appmindlab.nano.MainActivity):0:0 -> doInBackground
     13:13:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
     14:14:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-com.appmindlab.nano.MainActivity$BackupSAFTask -> com.appmindlab.nano.MainActivity$a0:
+com.appmindlab.nano.MainActivity$BackupSAFTask -> com.appmindlab.nano.MainActivity$b0:
     android.widget.ProgressBar progressBar -> o
     com.appmindlab.nano.MainActivity this$0 -> u
     androidx.documentfile.provider.DocumentFile dest_dir -> r
@@ -19448,7 +19460,7 @@ com.appmindlab.nano.MainActivity$BackupSAFTask -> com.appmindlab.nano.MainActivi
     1:1:boolean com.appmindlab.nano.MainActivity.access$4302(com.appmindlab.nano.MainActivity,boolean):0:0 -> onPreExecute
     1:1:void onPreExecute():0 -> onPreExecute
     2:2:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.MainActivity$ImportLocalRepoFileTask -> com.appmindlab.nano.MainActivity$b0:
+com.appmindlab.nano.MainActivity$ImportLocalRepoFileTask -> com.appmindlab.nano.MainActivity$c0:
     com.appmindlab.nano.MainActivity this$0 -> p
     java.io.File file -> o
     1:1:java.lang.String com.appmindlab.nano.MainActivity.access$500(com.appmindlab.nano.MainActivity):0:0 -> doInBackground
@@ -19466,7 +19478,7 @@ com.appmindlab.nano.MainActivity$ImportLocalRepoFileTask -> com.appmindlab.nano.
     1:1:java.lang.String com.appmindlab.nano.MainActivity.access$500(com.appmindlab.nano.MainActivity):0:0 -> onPreExecute
     1:1:void onPreExecute():0 -> onPreExecute
     2:2:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.MainActivity$ImportLocalRepoTask -> com.appmindlab.nano.MainActivity$c0:
+com.appmindlab.nano.MainActivity$ImportLocalRepoTask -> com.appmindlab.nano.MainActivity$d0:
     java.io.File[] files -> o
     java.util.ArrayList updated_files -> p
     com.appmindlab.nano.MainActivity this$0 -> q
@@ -19518,7 +19530,7 @@ com.appmindlab.nano.MainActivity$ImportLocalRepoTask -> com.appmindlab.nano.Main
     3:3:java.lang.String com.appmindlab.nano.MainActivity.access$500(com.appmindlab.nano.MainActivity):0:0 -> onPreExecute
     3:3:void onPreExecute():0 -> onPreExecute
     4:4:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.MainActivity$ImportSAFTask -> com.appmindlab.nano.MainActivity$d0:
+com.appmindlab.nano.MainActivity$ImportSAFTask -> com.appmindlab.nano.MainActivity$e0:
     com.appmindlab.nano.MainActivity this$0 -> w
     android.widget.ProgressBar progressBar -> o
     androidx.documentfile.provider.DocumentFile font_dir -> v
@@ -19573,7 +19585,7 @@ com.appmindlab.nano.MainActivity$ImportSAFTask -> com.appmindlab.nano.MainActivi
     1:1:boolean com.appmindlab.nano.MainActivity.access$4302(com.appmindlab.nano.MainActivity,boolean):0:0 -> onPreExecute
     1:1:void onPreExecute():0 -> onPreExecute
     2:2:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.MainActivity$RefreshListTask -> com.appmindlab.nano.MainActivity$e0:
+com.appmindlab.nano.MainActivity$RefreshListTask -> com.appmindlab.nano.MainActivity$f0:
     com.appmindlab.nano.MainActivity this$0 -> o
     0:65535:void <init>(com.appmindlab.nano.MainActivity):0:0 -> <init>
     0:65535:void <init>(com.appmindlab.nano.MainActivity,com.appmindlab.nano.MainActivity$1):0 -> <init>
@@ -19693,7 +19705,7 @@ com.appmindlab.nano.MainActivity$RefreshListTask -> com.appmindlab.nano.MainActi
     2:2:void com.appmindlab.nano.MainActivity.access$2600(com.appmindlab.nano.MainActivity):0:0 -> onPreExecute
     2:2:void onPreExecute():0 -> onPreExecute
     3:3:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.MainActivity$RescanLocalRepoTask -> com.appmindlab.nano.MainActivity$f0:
+com.appmindlab.nano.MainActivity$RescanLocalRepoTask -> com.appmindlab.nano.MainActivity$g0:
     android.widget.ProgressBar progressBar -> o
     boolean updated -> r
     com.appmindlab.nano.MainActivity this$0 -> s
@@ -19810,7 +19822,7 @@ com.appmindlab.nano.MainActivity$RescanLocalRepoTask -> com.appmindlab.nano.Main
     14:14:void com.appmindlab.nano.MainActivity.access$2800(com.appmindlab.nano.MainActivity,java.lang.String,android.view.animation.Animation):0:0 -> onPreExecute
     14:14:void onPreExecute():0 -> onPreExecute
     15:15:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.MainActivity$RestoreAppDataTask -> com.appmindlab.nano.MainActivity$g0:
+com.appmindlab.nano.MainActivity$RestoreAppDataTask -> com.appmindlab.nano.MainActivity$h0:
     android.widget.ProgressBar progressBar -> o
     java.lang.String status -> p
     com.appmindlab.nano.MainActivity this$0 -> q
@@ -19851,7 +19863,7 @@ com.appmindlab.nano.MainActivity$RestoreAppDataTask -> com.appmindlab.nano.MainA
     1:1:void com.appmindlab.nano.MainActivity.access$2800(com.appmindlab.nano.MainActivity,java.lang.String,android.view.animation.Animation):0:0 -> onPreExecute
     1:1:void onPreExecute():0 -> onPreExecute
     2:2:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.MainActivity$SearchNearbyTask -> com.appmindlab.nano.MainActivity$h0:
+com.appmindlab.nano.MainActivity$SearchNearbyTask -> com.appmindlab.nano.MainActivity$i0:
     android.widget.ProgressBar progressBar -> o
     com.appmindlab.nano.MainActivity this$0 -> p
     0:65535:void <init>(com.appmindlab.nano.MainActivity):0:0 -> <init>
