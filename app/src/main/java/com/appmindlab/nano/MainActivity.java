@@ -5043,6 +5043,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (!Utils.addPermission(this, permissions, Manifest.permission.ACCESS_FINE_LOCATION))
             messages.add(getResources().getString(R.string.rationale_location_permission));
 
+        if (!Utils.addPermission(this, permissions, Manifest.permission.ACCESS_COARSE_LOCATION))
+            messages.add(getResources().getString(R.string.rationale_coarse_location_permission));
+
         if (permissions.size() > 0) {
             if (messages.size() > 0) {
                 // Need Rationale

@@ -233,6 +233,8 @@
     <string name="rationale_storage_write_permission">\u0020</string>
     <string name="rationale_location_permission">次の画面では、位置情報へのアクセス権限をneutriNoteに許可するかどうかを尋ねられます。  この権限を許可することにより、neutriNoteの位置情報設定を上書きします。</string>
     <string name="rationale_camera_permission">次の画面では、カメラへのアクセス権限をneutriNoteに許可するかどうかを尋ねられます。</string>
+    <string name="rationale_coarse_location_permission">\u0020</string>
+    <string name="rationale_post_notifications_permission">In the next screen, you will be asked to grant neutriNote permission to post notifications.  The permission is required for neutriNote to function properly.</string>
 
     <string name="admin_pref">管理</string>
     <string name="pref_local_repo_path_title">ローカルリポジトリのパス</string>

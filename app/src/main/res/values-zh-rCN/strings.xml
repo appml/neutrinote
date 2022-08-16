@@ -233,6 +233,8 @@
     <string name="rationale_storage_write_permission">\u0020</string>
     <string name="rationale_location_permission">在下一页中，你会被要求给予neutriNote访问位置信息的权限。该权限覆盖neutriNote的位置设置。</string>
     <string name="rationale_camera_permission">在下一页中，你会被要求给予neutriNote访问相机的权限。</string>
+    <string name="rationale_coarse_location_permission">\u0020</string>
+    <string name="rationale_post_notifications_permission">In the next screen, you will be asked to grant neutriNote permission to post notifications.  The permission is required for neutriNote to function properly.</string>
 
     <string name="admin_pref">管理</string>
     <string name="pref_local_repo_path_title">本地仓库路径</string>
