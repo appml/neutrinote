@@ -105,7 +105,8 @@
                 android:textCursorDrawable="@drawable/custom_cursor"
                 android:fontFamily="sans-serif"
                 android:importantForAutofill="no"
-                android:imeOptions="actionDone|flagNoExtractUi" />
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:inputType="text" />
 
         </ScrollView>
 
