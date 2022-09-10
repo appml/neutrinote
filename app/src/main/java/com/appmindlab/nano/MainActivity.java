@@ -1356,6 +1356,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             launchIntent.putExtra(Const.EXTRA_ID, id);
 
             startActivity(launchIntent);
+        } else if (Const.ACTION_ADD_ENTRY.equals(intent.getAction())) {
+            Intent launchIntent = new Intent(this, DisplayDBEntry.class);
+            launchIntent.putExtra(Const.EXTRA_ID, -1);
+
+            startActivity(launchIntent);
         } else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             setCriteria(intent.getStringExtra(SearchManager.QUERY).trim());
             SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this,

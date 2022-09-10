@@ -25,11 +25,10 @@ public class AddNoteWidgetProvider extends AppWidgetProvider {
 
             // Create a pending intent
             Intent viewEntryIntent = new Intent(context, MainActivity.class);
-            viewEntryIntent.setAction(Const.ACTION_VIEW_ENTRY);
-            viewEntryIntent.putExtra(Const.EXTRA_ID, -1);
+            viewEntryIntent.setAction(Const.ACTION_ADD_ENTRY);
             viewEntryIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-            PendingIntent viewEntryPendingIntent = PendingIntent.getActivity(context, 0, viewEntryIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent viewEntryPendingIntent = PendingIntent.getActivity(context, 0, viewEntryIntent, PendingIntent.FLAG_MUTABLE);
             rv.setOnClickPendingIntent(R.id.add_new_widget_imageview, viewEntryPendingIntent);
             appWidgetManager.updateAppWidget(widgetId, rv);
         }
