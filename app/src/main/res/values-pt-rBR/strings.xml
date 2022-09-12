@@ -259,7 +259,7 @@
     <string name="style_pref">Estilo</string>
     <string name="pref_theme_title">Tema</string>
     <string name="pref_theme_summary">Especificar um tema.</string>
-    <string name="pref_theme_default">dia</string>
+    <string name="pref_theme_default">system</string>
     <string-array name="pref_theme_names">
         <item>Dia</item>
         <item>Escuro</item>

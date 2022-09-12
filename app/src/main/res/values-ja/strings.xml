@@ -261,7 +261,7 @@
     <string name="style_pref">スタイル</string>
     <string name="pref_theme_title">テーマ</string>
     <string name="pref_theme_summary">テーマを選択します</string>
-    <string name="pref_theme_default">day</string>
+    <string name="pref_theme_default">system</string>
     <string-array name="pref_theme_names">
         <item>ライトモード</item>
         <item>ダークモード</item>

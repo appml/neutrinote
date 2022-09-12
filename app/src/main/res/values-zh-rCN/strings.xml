@@ -261,7 +261,7 @@
     <string name="style_pref">样式</string>
     <string name="pref_theme_title">主题</string>
     <string name="pref_theme_summary">指定主题。</string>
-    <string name="pref_theme_default">白天</string>
+    <string name="pref_theme_default">system</string>
     <string-array name="pref_theme_names">
         <item>日间</item>
         <item>黑暗</item>
