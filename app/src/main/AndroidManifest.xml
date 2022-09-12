@@ -101,7 +101,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="content" />
-                <data android:mimeType="text/*" />
+                <data android:scheme="file" />
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="text/plain+md" />
+                <data android:mimeType="text/markdown" />
+                <data android:mimeType="text/x-markdown" />
+                <data android:mimeType="application/octet-stream" />
                 <data android:host="*" />
             </intent-filter>
             <intent-filter>
@@ -136,8 +141,13 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
                 <data android:scheme="file" />
                 <data android:mimeType="text/plain" />
+                <data android:mimeType="text/plain+md" />
+                <data android:mimeType="text/markdown" />
+                <data android:mimeType="text/x-markdown" />
+                <data android:mimeType="application/octet-stream" />
             </intent-filter>
         </activity-alias>
 
