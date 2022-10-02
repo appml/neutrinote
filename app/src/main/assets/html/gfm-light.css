@@ -165,12 +165,12 @@ background-color: #f8f8f8; }
 table tr th {
 font-weight: bold;
 border: 1px solid #cccccc;
-text-align: left;
+/* text-align: left; */
 margin: 0;
 padding: 6px 13px; }
 table tr td {
 border: 1px solid #cccccc;
-text-align: left;
+/* text-align: left; */
 margin: 0;
 padding: 6px 13px; }
 table tr th :first-child, table tr td :first-child {
