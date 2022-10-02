@@ -1862,8 +1862,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             // Keep deleted copies
                             if ((mKeepDeletedCopies) && (title != null) && (title.length() > 0) && (!title.contains(Const.CONFLICT_LABEL))) {
                                 results_temp = mDatasource.getRecordById(id);
-                                if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0) && (mMirrorUri != null)) {
-                                    Utils.writeSpecialSAFFile(getApplicationContext(), mMirrorUri, Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
+                                if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0)) {
+                                    if (mMirrorUri != null)
+                                        Utils.writeSpecialSAFFile(getApplicationContext(), mMirrorUri, Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
+                                    else
+                                        Utils.writeLocalRepoFile(getApplicationContext(), Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
                                 }
                             }
 
@@ -1946,8 +1949,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Keep deleted copies
                     if ((mKeepDeletedCopies) && (!title.contains(Const.CONFLICT_LABEL))) {
                         results_temp = mDatasource.getRecordById(id);
-                        if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0) && (mMirrorUri != null)) {
-                            Utils.writeSpecialSAFFile(getApplicationContext(), mMirrorUri, Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
+                        if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0)) {
+                            if (mMirrorUri != null)
+                                Utils.writeSpecialSAFFile(getApplicationContext(), mMirrorUri, Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
+                            else
+                                Utils.writeLocalRepoFile(getApplicationContext(), Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
                         }
                     }
 
@@ -2078,8 +2084,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         // Keep deleted copies
                         if ((mKeepDeletedCopies) && (!title.contains(Const.CONFLICT_LABEL))) {
                             results_temp = mDatasource.getRecordById(id);
-                            if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0) && (mMirrorUri != null)) {
-                                Utils.writeSpecialSAFFile(getApplicationContext(), mMirrorUri, Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
+                            if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0)) {
+                                if (mMirrorUri != null)
+                                    Utils.writeSpecialSAFFile(getApplicationContext(), mMirrorUri, Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
+                                else
+                                    Utils.writeLocalRepoFile(getApplicationContext(), Const.TRASH_PATH, Utils.makeDeletedTitle(results_temp.get(0).getTitle()), results_temp.get(0).getContent());
                             }
                         }
 
@@ -2353,9 +2362,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         calendar.add(Calendar.MINUTE, Const.SYNC_NOISE_INTERVAL);
 
                         // Also unlikely that a remote new version follows right after local version
-                        if ((file.lastModified() < calendar.getTimeInMillis()) && (mKeepDeletedCopies) && (mMirrorUri != null)) {
+                        if ((file.lastModified() < calendar.getTimeInMillis()) && (mKeepDeletedCopies)) {
                             // Save local copy in trash before updating it
-                            Utils.writeSpecialSAFFile(getApplicationContext(), mMirrorUri, Const.TRASH_PATH, Utils.makeDeletedTitle(entry.getTitle()), entry.getContent());
+                            if (mMirrorUri != null)
+                                Utils.writeSpecialSAFFile(getApplicationContext(), mMirrorUri, Const.TRASH_PATH, Utils.makeDeletedTitle(entry.getTitle()), entry.getContent());
+                            else
+                                Utils.writeLocalRepoFile(getApplicationContext(), Const.TRASH_PATH, Utils.makeDeletedTitle(entry.getTitle()), entry.getContent());
                         }
                     }
 
