@@ -1,0 +1,2 @@
+v4.2.6
+- Fixed auto rotation bug.

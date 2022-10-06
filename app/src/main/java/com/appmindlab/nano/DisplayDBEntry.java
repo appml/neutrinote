@@ -402,10 +402,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Update access time and edit position
         try {
-            if (mId > 0) {
-                doSaveAccessTime();
-                doSavePos();
-            }
+            doSaveAccessTime();
+            doSavePos();
         } catch (Exception e) {
             e.printStackTrace();
         }
