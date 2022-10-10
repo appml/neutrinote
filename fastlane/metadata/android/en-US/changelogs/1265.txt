@@ -1,0 +1,2 @@
+v4.2.7
+- Disable compact toolbar when data corruption is possible

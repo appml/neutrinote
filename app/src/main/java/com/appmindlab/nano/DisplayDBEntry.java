@@ -342,7 +342,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         super.onCreate(savedInstanceState);
 
         // Show hide tool bar
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+        boolean allowCompactToolBar = mAutoSave;
+        if (savedInstanceState != null) {
+            allowCompactToolBar &= savedInstanceState.getBoolean(Const.STATE_AUTOSAVE_SAFE);
+        }
+
+        if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) && (allowCompactToolBar))
             mCompactToolBar = true;
 
         if (mCompactToolBar)
