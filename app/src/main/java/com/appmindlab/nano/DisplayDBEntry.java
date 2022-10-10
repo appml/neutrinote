@@ -1083,18 +1083,18 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // II. If auto save is not or it is not safe to do so, plus already in compact toolbar view, retain compact toolbar view.
         // III. Non-compact toolbar is the default.
         boolean allowToolBarSwitch = mAutoSave;
-        boolean inCompactToolBar = false;
+        boolean fromCompactToolBar = false;
 
         // Peek saved state
         if (savedInstanceState != null) {
             allowToolBarSwitch &= savedInstanceState.getBoolean(Const.STATE_AUTOSAVE_SAFE);  // Read-only
-            inCompactToolBar = savedInstanceState.getBoolean(Const.STATE_COMPACT_TOOLBAR);   // Writable
+            fromCompactToolBar = savedInstanceState.getBoolean(Const.STATE_COMPACT_TOOLBAR);   // Writable
         }
 
         // Alter state
         if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) && (allowToolBarSwitch))
             mCompactToolBar = true;
-        else if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) && (!allowToolBarSwitch) && (inCompactToolBar))
+        else if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) && (!allowToolBarSwitch) && (fromCompactToolBar))
             mCompactToolBar = true;
 
         // Persist state change
@@ -1102,6 +1102,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
         }
 
+        // Render
         if (mCompactToolBar)
             setContentView(R.layout.activity_display_dbentry_compact);
         else
