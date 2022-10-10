@@ -531,6 +531,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         savedInstanceState.putInt(Const.STATE_MARKDOWN_ANCHOR_POS, mMarkdownAnchorPos);
         savedInstanceState.putBoolean(Const.STATE_TITLE_BAR_VISIBLE, mTitleBarVisible);
         savedInstanceState.putBoolean(Const.STATE_TOOL_BAR_VISIBLE, mToolBarVisible);
+        savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
         savedInstanceState.putBoolean(Const.STATE_EDIT_TOOL_FRAGMENT_VISIBLE, mEditToolFragmentVisible);
         savedInstanceState.putBoolean(Const.STATE_MARKDOWN_MODE, mMarkdownMode);
         savedInstanceState.putBoolean(Const.STATE_IMMERSIVE_MODE, mImmersiveMode);
@@ -565,6 +566,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         mMarkdownAnchorPos = savedInstanceState.getInt(Const.STATE_MARKDOWN_ANCHOR_POS);
         mTitleBarVisible = savedInstanceState.getBoolean(Const.STATE_TITLE_BAR_VISIBLE);
         mToolBarVisible = savedInstanceState.getBoolean(Const.STATE_TOOL_BAR_VISIBLE);
+        mCompactToolBar = savedInstanceState.getBoolean(Const.STATE_COMPACT_TOOLBAR);
         mEditToolFragmentVisible = savedInstanceState.getBoolean(Const.STATE_EDIT_TOOL_FRAGMENT_VISIBLE);
         mMarkdownMode = savedInstanceState.getBoolean(Const.STATE_MARKDOWN_MODE);
         mImmersiveMode = savedInstanceState.getBoolean(Const.STATE_IMMERSIVE_MODE);
