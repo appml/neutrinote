@@ -1078,19 +1078,25 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Setup view
     protected void setupView(Bundle savedInstanceState) {
         // Show hide tool bar
+        // Two cases:
+        // I. If auto save is on and it is safe to do so, free to switch toolbar view.
+        // II. If auto save is not or it is not safe to do so, plus already in compact toolbar view, retain compact toolbar view.
         boolean allowToolBarSwitch = mAutoSave;
         boolean inCompactToolBar = false;
 
+        // Peek saved state
         if (savedInstanceState != null) {
             allowToolBarSwitch &= savedInstanceState.getBoolean(Const.STATE_AUTOSAVE_SAFE);
             inCompactToolBar = savedInstanceState.getBoolean(Const.STATE_COMPACT_TOOLBAR);
         }
 
+        // Alter state
         if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) && (allowToolBarSwitch))
             mCompactToolBar = true;
         else if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) && (!allowToolBarSwitch) && (inCompactToolBar))
             mCompactToolBar = true;
 
+        // Persist state change
         if (savedInstanceState != null) {
             savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
         }
