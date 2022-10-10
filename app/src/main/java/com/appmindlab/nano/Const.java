@@ -224,6 +224,7 @@ public class Const {
     protected final static String STATE_ORDER_DIRECTION = "mOrderDirection";
     protected final static String STATE_TITLE_BAR_VISIBLE = "mTitleBarVisible";
     protected final static String STATE_TOOL_BAR_VISIBLE = "mToolBarVisible";
+    protected final static String STATE_COMPACT_TOOLBAR = "mCompactToolBar";
     protected final static String STATE_EDIT_TOOL_FRAGMENT_VISIBLE = "mEditToolFragmentVisible";
     protected final static String STATE_MARKDOWN_MODE = "mMarkdownMode";
     protected final static String STATE_IMMERSIVE_MODE = "mImmersiveMode";

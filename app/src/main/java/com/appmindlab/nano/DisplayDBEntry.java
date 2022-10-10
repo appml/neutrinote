@@ -341,19 +341,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         super.onCreate(savedInstanceState);
 
-        // Show hide tool bar
-        boolean allowCompactToolBar = mAutoSave;
-        if (savedInstanceState != null) {
-            allowCompactToolBar &= savedInstanceState.getBoolean(Const.STATE_AUTOSAVE_SAFE);
-        }
-
-        if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) && (allowCompactToolBar))
-            mCompactToolBar = true;
-
-        if (mCompactToolBar)
-            setContentView(R.layout.activity_display_dbentry_compact);
-        else
-            setContentView(R.layout.activity_display_dbentry);
+        // Setup view
+        setupView(savedInstanceState);
 
         // Self reference
         display_dbentry = this;
@@ -1084,6 +1073,32 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             };
             mImmersiveModeHandler.postDelayed(mImmersiveModeRunnable, Const.IMMERSIVE_MODE_DELAY);
         }
+    }
+
+    // Setup view
+    protected void setupView(Bundle savedInstanceState) {
+        // Show hide tool bar
+        boolean allowToolBarSwitch = mAutoSave;
+        boolean inCompactToolBar = false;
+
+        if (savedInstanceState != null) {
+            allowToolBarSwitch &= savedInstanceState.getBoolean(Const.STATE_AUTOSAVE_SAFE);
+            inCompactToolBar = savedInstanceState.getBoolean(Const.STATE_COMPACT_TOOLBAR);
+        }
+
+        if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) && (allowToolBarSwitch))
+            mCompactToolBar = true;
+        else if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) && (!allowToolBarSwitch) && (inCompactToolBar))
+            mCompactToolBar = true;
+
+        if (savedInstanceState != null) {
+            savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
+        }
+
+        if (mCompactToolBar)
+            setContentView(R.layout.activity_display_dbentry_compact);
+        else
+            setContentView(R.layout.activity_display_dbentry);
     }
 
     // Setup editor
