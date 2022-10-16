@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
@@ -38,6 +39,8 @@ public class WidgetService extends RemoteViewsService {
 
         @Override
         public void onCreate() {
+            Log.d(Const.TAG, "nano - WidgetService: onCreate() ");
+
             setupDatabase();
             mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             update();
@@ -46,7 +49,6 @@ public class WidgetService extends RemoteViewsService {
         @Override
         public void onDestroy() {
             mDatasource.close();
-            mWidgetItems.clear();
         }
 
         @Override
@@ -103,6 +105,8 @@ public class WidgetService extends RemoteViewsService {
                 WidgetItem item;
                 String title, content;
                 String preview_mode = mSharedPreferences.getString(Const.PREF_PREVIEW_MODE, Const.PREVIEW_AT_END);
+
+                Log.d(Const.TAG, "nano - WidgetService: update() ");
 
                 // Make sure the database is open
                 resumeDatabase();

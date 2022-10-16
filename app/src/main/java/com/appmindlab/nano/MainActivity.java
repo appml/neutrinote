@@ -2609,6 +2609,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ExistingWorkPolicy.KEEP,
                 request);
 
+        // Update widget
+        Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
+        getApplicationContext().sendBroadcast(intent);
+
         Log.d(Const.TAG, "nano - Mirror job requested");
     }
 

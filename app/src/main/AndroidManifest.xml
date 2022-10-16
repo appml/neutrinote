@@ -277,7 +277,8 @@
         <service
             android:name="com.appmindlab.nano.WidgetService"
             android:exported="true"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
+            android:permission="android.permission.BIND_REMOTEVIEWS">
+        </service>
 
         <service
             android:name="com.appmindlab.nano.CustomAddNoteTileService"
