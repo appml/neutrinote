@@ -41,7 +41,6 @@ public class WidgetService extends RemoteViewsService {
         public void onCreate() {
             Log.d(Const.TAG, "nano - WidgetService: onCreate() ");
 
-            setupDatabase();
             mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             update();
         }
@@ -151,6 +150,9 @@ public class WidgetService extends RemoteViewsService {
             }
             catch (Exception e) {
                 e.printStackTrace();
+            }
+            finally {
+                mDatasource.close();
             }
         }
 
