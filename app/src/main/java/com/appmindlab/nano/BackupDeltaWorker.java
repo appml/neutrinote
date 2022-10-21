@@ -59,6 +59,9 @@ public class BackupDeltaWorker extends Worker {
     protected NotificationCompat.BigTextStyle mBigTextStyle = new NotificationCompat.BigTextStyle();
     protected PendingIntent mIntent;
 
+    // Settings
+    protected int mMaxBackupCount;
+
     public BackupDeltaWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         mNotifyManager = (NotificationManager)
@@ -259,8 +262,7 @@ public class BackupDeltaWorker extends Worker {
     protected String backupFiles(Context context, boolean notifyProgress) {
         String status;
         int count, incr = 0;
-        DocumentFile dir, dest_dir, attachment_dir, font_dir, log_dir;
-        File trash_dir;
+        DocumentFile dir, dest_dir;
 
         dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
 
@@ -362,7 +364,7 @@ public class BackupDeltaWorker extends Worker {
         for (DocumentFile file : files) {
             if ((file.isDirectory()) && (!Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(file.getName()))) {
                 i++;
-                if (i >= Const.MAX_BACKUP_COUNT)
+                if (i >= mMaxBackupCount)
                     file.delete();
             }
         }
@@ -399,6 +401,7 @@ public class BackupDeltaWorker extends Worker {
             mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             mLocalRepoPath = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
             mBackupUri = Uri.parse(mSharedPreferences.getString(Const.PREF_BACKUP_URI, ""));
+            mMaxBackupCount = Integer.parseInt(mSharedPreferences.getString(Const.PREF_MAX_BACKUP_COUNT, String.valueOf(Const.MAX_BACKUP_COUNT)));
             mLowSpaceMode = mSharedPreferences.getBoolean(Const.PREF_LOW_SPACE_MODE, false);
             mMaxDeletedCopiesAge = Integer.parseInt(mSharedPreferences.getString(Const.PREF_MAX_DELETED_COPIES_AGE, Const.MAX_DELETED_COPIES_AGE));
             mFileNameAsTitle = Utils.fileNameAsTitle(getApplicationContext());

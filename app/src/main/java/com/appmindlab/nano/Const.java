@@ -37,6 +37,7 @@ public class Const {
     protected final static String PREF_LOCAL_REPO_PATH = "com.appmindlab.nano.pref_local_repo_path";
     protected final static String PREF_BACKUP_URI = "com.appmindlab.nano.pref_backup_uri";
     protected final static String PREF_INCREMENTAL_BACKUP = "com.appmindlab.nano.pref_incremental_backup";
+    protected final static String PREF_MAX_BACKUP_COUNT = "com.appmindlab.nano.pref_max_backup_count";
     protected final static String PREF_NEW_NOTE_TITLE_TEMPLATE = "com.appmindlab.nano.pref_new_note_title_template";
     protected final static String PREF_NEW_NOTE_FILE_TYPE = "com.appmindlab.nano.pref_new_note_file_type";
     protected final static String PREF_CUSTOM_FILTERS = "com.appmindlab.nano.pref_custom_filters";
@@ -93,6 +94,7 @@ public class Const {
             PREF_LOCAL_REPO_PATH,
             /* PREF_BACKUP_URI, */    // Excluded from preference backup
             PREF_INCREMENTAL_BACKUP,
+            PREF_MAX_BACKUP_COUNT,
             PREF_NEW_NOTE_TITLE_TEMPLATE,
             PREF_NEW_NOTE_FILE_TYPE,
             PREF_CUSTOM_FILTERS,

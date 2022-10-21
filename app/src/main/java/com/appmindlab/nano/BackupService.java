@@ -54,7 +54,6 @@ public class BackupService extends Service {
 
     // Settings
     protected int mMaxBackupCount;
-    protected int mMaxBackupAge;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -108,9 +107,6 @@ public class BackupService extends Service {
                     // 2. Backup files
                     ////////////////////
                     if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) || ((action != null) && (action.equals(Const.ACTION_FULL_BACKUP)))) {
-                        mMaxBackupCount = cur_intent.getIntExtra(Const.EXTRA_MAX_BACKUP_COUNT, Const.MAX_BACKUP_COUNT);
-                        mMaxBackupAge = cur_intent.getIntExtra(Const.EXTRA_MAX_BACKUP_AGE, Const.MAX_BACKUP_AGE);
-
                         SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
                         mSubDirPath = sdf.format(new Date());
                         status = backupFiles(getApplicationContext(), mSubDirPath, true, true);
@@ -355,13 +351,10 @@ public class BackupService extends Service {
         // Keep only a specified number of copies
         int i = 0;
 
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.HOUR, -24*mMaxBackupAge);
-
         for (File file : files) {
             if ((file.isDirectory()) && (!Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(file.getName()))) {
                 i++;
-                if (((mMaxBackupCount > 0) && (i >= mMaxBackupCount)) || ((mMaxBackupAge > 0) && (cal.getTime().after(new Date(file.lastModified())))))
+                if (i >= mMaxBackupCount)
                     Utils.deleteDirectories(file);
             }
         }
@@ -411,6 +404,7 @@ public class BackupService extends Service {
             mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             mIncrementalBackup = mSharedPreferences.getBoolean(Const.PREF_INCREMENTAL_BACKUP, false);
             mLocalRepoPath = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
+            mMaxBackupCount = Integer.parseInt(mSharedPreferences.getString(Const.PREF_MAX_BACKUP_COUNT, String.valueOf(Const.MAX_BACKUP_COUNT)));
             mLowSpaceMode = mSharedPreferences.getBoolean(Const.PREF_LOW_SPACE_MODE, false);
             mMaxDeletedCopiesAge = Integer.parseInt(mSharedPreferences.getString(Const.PREF_MAX_DELETED_COPIES_AGE, Const.MAX_DELETED_COPIES_AGE));
             mFileNameAsTitle = Utils.fileNameAsTitle(getApplicationContext());

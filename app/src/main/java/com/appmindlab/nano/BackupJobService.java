@@ -52,6 +52,9 @@ public class BackupJobService extends JobService {
     protected NotificationCompat.BigTextStyle mBigTextStyle = new NotificationCompat.BigTextStyle();
     protected PendingIntent mIntent;
 
+    // Settings
+    protected int mMaxBackupCount;
+
     @Override
     public boolean onStartJob(JobParameters params) {
         final JobParameters info = params;
@@ -216,8 +219,7 @@ public class BackupJobService extends JobService {
     protected String backupFiles(Context context, boolean notifyProgress) {
         String status;
         int count, incr = 0;
-        DocumentFile dir, dest_dir, attachment_dir, font_dir, log_dir;
-        File trash_dir;
+        DocumentFile dir, dest_dir, attachment_dir, font_dir;
 
         dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
 
@@ -269,23 +271,6 @@ public class BackupJobService extends JobService {
         if (Utils.fileExists(getApplicationContext(), mLocalRepoPath, Const.MULTI_TYPE))
             Utils.exportToSAFFile(getApplicationContext(), mLocalRepoPath + "/", Const.MULTI_TYPE, dest_dir);
 
-        // Backup sync log
-        // Note: comment out to delegate to mirror to handle
-        /*
-        if (Utils.fileExists(getApplicationContext(), mLocalRepoPath, Const.SYNC_LOG_FILE)) {
-            Utils.exportToSAFFile(getApplicationContext(), mLocalRepoPath + "/", Const.SYNC_LOG_FILE, dest_dir);
-
-            // Move log folder to backup
-            // Note: no need to delete source copy as that's managed by purging; destination copy can be manually removed by user
-            log_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.LOG_PATH);
-            Utils.moveToSAFFolder(getApplicationContext(), mBackupUri, new File(mLocalRepoPath + "/" + Const.LOG_PATH), log_dir, false, false);
-        }
-
-        // Backup import errors by moving import error folder to backup
-        // Note: need to remove source copy as its content will keep growing; destination copy can be manually removed by user
-        Utils.moveToSAFFolder(getApplicationContext(), mBackupUri, new File(mLocalRepoPath + "/" + Const.IMPORT_ERROR_PATH), dest_dir, true, false);
-        */
-
         // When the loop is finished, updates the notification
         Date now = new Date();
         status = context.getResources().getString(R.string.status_auto_backup_completed) + " " + Utils.getSystemDateFormat(context, Locale.getDefault()).format(now) + Utils.getSystemTimeFormat(context, Locale.getDefault()).format(now);
@@ -334,7 +319,7 @@ public class BackupJobService extends JobService {
         for (DocumentFile file : files) {
             if ((file.isDirectory()) && (!Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(file.getName()))) {
                 i++;
-                if (i >= Const.MAX_BACKUP_COUNT)
+                if (i >= mMaxBackupCount)
                     file.delete();
             }
         }
@@ -371,6 +356,7 @@ public class BackupJobService extends JobService {
             mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             mLocalRepoPath = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
             mBackupUri = Uri.parse(mSharedPreferences.getString(Const.PREF_BACKUP_URI, ""));
+            mMaxBackupCount = Integer.parseInt(mSharedPreferences.getString(Const.PREF_MAX_BACKUP_COUNT, String.valueOf(Const.MAX_BACKUP_COUNT)));
             mLowSpaceMode = mSharedPreferences.getBoolean(Const.PREF_LOW_SPACE_MODE, false);
             mMaxDeletedCopiesAge = Integer.parseInt(mSharedPreferences.getString(Const.PREF_MAX_DELETED_COPIES_AGE, Const.MAX_DELETED_COPIES_AGE));
             mFileNameAsTitle = Utils.fileNameAsTitle(getApplicationContext());
