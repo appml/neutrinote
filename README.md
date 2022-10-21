@@ -23,7 +23,7 @@
 
 Let's say plain text is the most basic unit of written information.
 
-Then neutriNote is an all-in-one preservation of written thoughts, be those formatted / unformatted text, math (LaTeX), rich markdown, ASCII drawings, etc., in fully searchable plain text (universal UTF-8).  Instead of placing text editing first like most mainline writing apps, neutriNote focuses on the long-term searchability of information so that cognitive load may be reduced through note-taking.
+Then neutriNote is an all-in-one preservation of written thoughts, be those formatted / unformatted text, math (LaTeX), rich markdown, ASCII drawings, etc., in fully searchable plain text (universal UTF-8).  Instead of placing text editing first like most mainline writing apps, neutriNote focuses on the long-term searchability of information so that cognitive load may be reduced through note-taking.  As there is no boundary imposed upon contents, searching across recorded ideas is no different than an exhaustive text search.
 
 
 ## Community Edition
