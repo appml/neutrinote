@@ -82,7 +82,7 @@ public class BackupDeltaWorker extends Worker {
         Thread t = new Thread() {
             public void run() {
                 // Basics
-                String status;
+                String status = Const.NULL_SYM;
 
                 // Preference editor
                 SharedPreferences.Editor editor = mSharedPreferences.edit();
@@ -116,21 +116,26 @@ public class BackupDeltaWorker extends Worker {
 
                     Log.d(Const.TAG, "nano - BackupWorker: purging old backups... ");
 
-                    // Purge old backups
-                    purgeBackups();
+                    if (mMaxBackupCount > 0) {
+                        // Purge old backups
+                        purgeBackups();
 
-                    Log.d(Const.TAG, "nano - BackupWorker: backing up time-stamped folder... ");
+                        Log.d(Const.TAG, "nano - BackupWorker: backing up time-stamped folder... ");
 
-                    // Time-stamped folder
-                    SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
-                    mSubDirPath = sdf.format(new Date());
-                    status = backupFiles(getApplicationContext(), true);
+                        // Time-stamped folder
+                        SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
+                        mSubDirPath = sdf.format(new Date());
+                        status = backupFiles(getApplicationContext(), true);
 
-                    // Note: uncommon use case and a reduction in backup performance
-                    // Log.d(Const.TAG, "nano - BackupWorker: backing up merged folder... ");
-                    // Merged folder
-                    // mSubDirPath = Const.INCREMENTAL_BACKUP_PATH;
-                    // status = backupFiles(getApplicationContext(), false);    // Hide progress to avoid confusion
+                        // Note: uncommon use case and a reduction in backup performance
+                        // Log.d(Const.TAG, "nano - BackupWorker: backing up merged folder... ");
+                        // Merged folder
+                        // mSubDirPath = Const.INCREMENTAL_BACKUP_PATH;
+                        // status = backupFiles(getApplicationContext(), false);    // Hide progress to avoid confusion
+                    }
+
+                    // Purge deleted copies
+                    purgeDeletedCopies();
 
                     Log.d(Const.TAG, "nano - BackupWorker: updating log status... ");
 
@@ -309,9 +314,6 @@ public class BackupDeltaWorker extends Worker {
         // When the loop is finished, updates the notification
         Date now = new Date();
         status = context.getResources().getString(R.string.status_auto_backup_completed) + " " + Utils.getSystemDateFormat(context, Locale.getDefault()).format(now) + Utils.getSystemTimeFormat(context, Locale.getDefault()).format(now);
-
-        // Purge deleted copies
-        purgeDeletedCopies();
 
         return status;
     }

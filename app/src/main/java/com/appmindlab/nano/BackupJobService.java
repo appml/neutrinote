@@ -70,7 +70,7 @@ public class BackupJobService extends JobService {
         Thread t = new Thread() {
             public void run() {
                 // Basics
-                String status;
+                String status = Const.NULL_SYM;
 
                 // Preference editor
                 SharedPreferences.Editor editor = mSharedPreferences.edit();
@@ -101,17 +101,22 @@ public class BackupJobService extends JobService {
                     // 2. Backup files
                     ////////////////////
 
-                    // Purge old backups
-                    purgeBackups();
+                    if (mMaxBackupCount > 0) {
+                        // Purge old backups
+                        purgeBackups();
 
-                    // Time-stamped folder
-                    SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
-                    mSubDirPath = sdf.format(new Date());
-                    status = backupFiles(getApplicationContext(), true);
+                        // Time-stamped folder
+                        SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
+                        mSubDirPath = sdf.format(new Date());
+                        status = backupFiles(getApplicationContext(), true);
 
-                    // Merged folder
-                    mSubDirPath = Const.INCREMENTAL_BACKUP_PATH;
-                    status = backupFiles(getApplicationContext(), true);
+                        // Merged folder
+                        mSubDirPath = Const.INCREMENTAL_BACKUP_PATH;
+                        status = backupFiles(getApplicationContext(), true);
+                    }
+
+                    // Purge deleted copies
+                    purgeDeletedCopies();
 
                     // Save the log status
                     editor.putString(Const.AUTO_BACKUP_LOG, status);
@@ -274,9 +279,6 @@ public class BackupJobService extends JobService {
         // When the loop is finished, updates the notification
         Date now = new Date();
         status = context.getResources().getString(R.string.status_auto_backup_completed) + " " + Utils.getSystemDateFormat(context, Locale.getDefault()).format(now) + Utils.getSystemTimeFormat(context, Locale.getDefault()).format(now);
-
-        // Purge deleted copies
-        purgeDeletedCopies();
 
         return status;
     }

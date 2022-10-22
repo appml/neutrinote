@@ -73,7 +73,7 @@ public class BackupService extends Service {
         Thread t = new Thread(){
             public void run(){
                 // Basics
-                String status;
+                String status = Const.NULL_SYM;
 
                 // Preference editor
                 SharedPreferences.Editor editor = mSharedPreferences.edit();
@@ -106,14 +106,18 @@ public class BackupService extends Service {
                     ////////////////////
                     // 2. Backup files
                     ////////////////////
-                    if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) || ((action != null) && (action.equals(Const.ACTION_FULL_BACKUP)))) {
-                        SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
-                        mSubDirPath = sdf.format(new Date());
-                        status = backupFiles(getApplicationContext(), mSubDirPath, true, true);
+                    if (mMaxBackupCount > 0) {
+                        if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) || ((action != null) && (action.equals(Const.ACTION_FULL_BACKUP)))) {
+                            SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
+                            mSubDirPath = sdf.format(new Date());
+                            status = backupFiles(getApplicationContext(), mSubDirPath, true, true);
+                        } else {
+                            status = backupFiles(getApplicationContext(), Const.INCREMENTAL_BACKUP_PATH, false, true);
+                        }
                     }
-                    else {
-                        status = backupFiles(getApplicationContext(), Const.INCREMENTAL_BACKUP_PATH, false, true);
-                    }
+
+                    // Purge deleted copies
+                    purgeDeletedCopies();
 
                     // Save the log status
                     editor.putString(Const.AUTO_BACKUP_LOG, status);
@@ -285,13 +289,6 @@ public class BackupService extends Service {
             } else {
                 status = mFullPath + context.getResources().getString(R.string.error_create_path);
             }
-
-            // Purge deleted copies
-            mDirPath = mLocalRepoPath + "/" + Const.TRASH_PATH;
-            dir = new File(mDirPath);
-            if (dir.isDirectory())
-                purgeDeletedCopies(dir);
-
         } else {
             status = context.getResources().getString(R.string.error_no_writable_external_storage);
         }
@@ -361,13 +358,18 @@ public class BackupService extends Service {
     }
 
     // Purge old deleted copies
-    protected void purgeDeletedCopies(File directory) {
+    protected void purgeDeletedCopies() {
+        mDirPath = mLocalRepoPath + "/" + Const.TRASH_PATH;
+        File dir = new File(mDirPath);
+        if (!dir.isDirectory())
+            return;
+
         // Sanity check
         if (mMaxDeletedCopiesAge < 0)
             return;
 
         // Get a list of files
-        File[] files = directory.listFiles();
+        File[] files = dir.listFiles();
 
         // Sort by modified date (descending)
         Arrays.sort(files, new Comparator<File>() {
