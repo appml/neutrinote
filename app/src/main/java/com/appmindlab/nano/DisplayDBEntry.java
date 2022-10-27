@@ -1094,7 +1094,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
 
         // Alter state
-        if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) && (allowToolBarSwitch))
+        if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) && ((allowToolBarSwitch) || (fromCompactToolBar)))
             mCompactToolBar = true;
         else if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) && (!allowToolBarSwitch) && (fromCompactToolBar))
             mCompactToolBar = true;
