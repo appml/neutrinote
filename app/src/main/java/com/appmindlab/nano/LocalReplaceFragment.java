@@ -47,7 +47,8 @@ public class LocalReplaceFragment extends Fragment implements View.OnClickListen
 
         edit_local_replace = (AutoCompleteTextView) v.findViewById(R.id.edit_local_replace);
         edit_local_replace.requestFocus();
-        edit_local_replace.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        edit_local_replace.setImeOptions(EditorInfo.IME_ACTION_DONE|EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        edit_local_replace.setSingleLine(true);
         edit_local_replace.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {

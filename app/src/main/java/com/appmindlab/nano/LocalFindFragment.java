@@ -47,12 +47,12 @@ public class LocalFindFragment extends Fragment implements View.OnClickListener,
 
         edit_local_find = (AutoCompleteTextView) v.findViewById(R.id.edit_local_find);
         edit_local_find.requestFocus();
-        edit_local_find.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
+        edit_local_find.setImeOptions(EditorInfo.IME_ACTION_SEARCH|EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         edit_local_find.setSingleLine(true);
         edit_local_find.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                if ((actionId == EditorInfo.IME_ACTION_SEARCH) || (event.getAction() == KeyEvent.KEYCODE_ENTER)) {
                     mCallback.doLocalFind();
                     return true;
                 }

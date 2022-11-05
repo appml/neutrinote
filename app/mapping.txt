@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 85a9dec
-# pg_map_hash: SHA-256 85a9decdb519ca882643bd1249dcc8447ebc681b3fae3d1055b130fe3de3c549
+# pg_map_id: 7155b44
+# pg_map_hash: SHA-256 7155b44aa8f7bfcefd17798f93cbf18fb805fb2e848b77b637a8f7d150293a0f
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -17716,6 +17716,7 @@ com.appmindlab.nano.BackupDeltaWorker -> com.appmindlab.nano.BackupDeltaWorker:
     android.app.NotificationManager mNotifyManager -> m
     android.app.PendingIntent mIntent -> p
     android.content.SharedPreferences mSharedPreferences -> j
+    int mMaxBackupCount -> q
     42:42:void backupAppData(android.content.Context):0:0 -> backupAppData
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":410,"3":411,"6":412}}
     410:410:void backupAppData(android.content.Context):0:0 -> backupAppData
@@ -17754,19 +17755,20 @@ com.appmindlab.nano.BackupDeltaWorker$1 -> com.appmindlab.nano.BackupDeltaWorker
     67:101:androidx.work.ForegroundInfo com.appmindlab.nano.BackupDeltaWorker.createForegroundInfo(java.lang.String):0:0 -> run
     67:101:androidx.work.ForegroundInfo com.appmindlab.nano.BackupDeltaWorker.access$200(com.appmindlab.nano.BackupDeltaWorker,java.lang.String):0 -> run
     67:101:void run():0 -> run
-    102:211:void run():0:0 -> run
-    212:213:java.lang.String com.appmindlab.nano.BackupDeltaWorker.access$302(com.appmindlab.nano.BackupDeltaWorker,java.lang.String):0:0 -> run
-    212:213:void run():0 -> run
-    214:305:void run():0:0 -> run
-    306:307:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupDeltaWorker.access$100(com.appmindlab.nano.BackupDeltaWorker):0:0 -> run
-    306:307:void run():0 -> run
-    308:316:void run():0:0 -> run
+    102:215:void run():0:0 -> run
+    216:217:java.lang.String com.appmindlab.nano.BackupDeltaWorker.access$302(com.appmindlab.nano.BackupDeltaWorker,java.lang.String):0:0 -> run
+    216:217:void run():0 -> run
+    218:317:void run():0:0 -> run
+    318:319:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupDeltaWorker.access$100(com.appmindlab.nano.BackupDeltaWorker):0:0 -> run
+    318:319:void run():0 -> run
+    320:328:void run():0:0 -> run
 com.appmindlab.nano.BackupDeltaWorker$2 -> com.appmindlab.nano.BackupDeltaWorker$b:
 com.appmindlab.nano.BackupDeltaWorker$3 -> com.appmindlab.nano.BackupDeltaWorker$c:
 com.appmindlab.nano.BackupJobService -> com.appmindlab.nano.BackupJobService:
     android.content.SharedPreferences mSharedPreferences -> d
     android.app.PendingIntent mIntent -> k
     android.net.Uri mBackupUri -> f
+    int mMaxBackupCount -> l
     androidx.core.app.NotificationCompat$BigTextStyle mBigTextStyle -> j
     int mMaxDeletedCopiesAge -> g
     java.lang.String mSubDirPath -> c
@@ -17788,11 +17790,11 @@ com.appmindlab.nano.BackupJobService -> com.appmindlab.nano.BackupJobService:
     413:413:void backupAppData(android.content.Context):0:0 -> backupAppData
     124:409:void backupAppData(android.content.Context):0:0 -> backupAppData
     299:299:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":373,"4":374,"7":375}}
-    373:373:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
-    374:374:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
-    375:375:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
-    300:372:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":370,"4":371,"7":372}}
+    370:370:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
+    371:371:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
+    372:372:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
+    300:369:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
 com.appmindlab.nano.BackupJobService$1 -> com.appmindlab.nano.BackupJobService$a:
     com.appmindlab.nano.BackupJobService this$0 -> c
     android.app.job.JobParameters val$info -> b
@@ -17804,16 +17806,16 @@ com.appmindlab.nano.BackupJobService$1 -> com.appmindlab.nano.BackupJobService$a
     18:19:void run():0:0 -> run
     20:21:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupJobService.access$100(com.appmindlab.nano.BackupJobService):0:0 -> run
     20:21:void run():0 -> run
-    22:132:void run():0:0 -> run
-    133:134:java.lang.String com.appmindlab.nano.BackupJobService.access$202(com.appmindlab.nano.BackupJobService,java.lang.String):0:0 -> run
-    133:134:void run():0 -> run
-    135:148:void run():0:0 -> run
-    149:150:java.lang.String com.appmindlab.nano.BackupJobService.access$202(com.appmindlab.nano.BackupJobService,java.lang.String):0:0 -> run
-    149:150:void run():0 -> run
-    151:235:void run():0:0 -> run
-    236:237:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupJobService.access$100(com.appmindlab.nano.BackupJobService):0:0 -> run
-    236:237:void run():0 -> run
-    238:248:void run():0:0 -> run
+    22:136:void run():0:0 -> run
+    137:138:java.lang.String com.appmindlab.nano.BackupJobService.access$202(com.appmindlab.nano.BackupJobService,java.lang.String):0:0 -> run
+    137:138:void run():0 -> run
+    139:152:void run():0:0 -> run
+    153:154:java.lang.String com.appmindlab.nano.BackupJobService.access$202(com.appmindlab.nano.BackupJobService,java.lang.String):0:0 -> run
+    153:154:void run():0 -> run
+    155:247:void run():0:0 -> run
+    248:249:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupJobService.access$100(com.appmindlab.nano.BackupJobService):0:0 -> run
+    248:249:void run():0 -> run
+    250:260:void run():0:0 -> run
 com.appmindlab.nano.BackupJobService$2 -> com.appmindlab.nano.BackupJobService$b:
 com.appmindlab.nano.BackupJobService$3 -> com.appmindlab.nano.BackupJobService$c:
 com.appmindlab.nano.BackupScheduleReceiver -> com.appmindlab.nano.BackupScheduleReceiver:
@@ -17834,7 +17836,6 @@ com.appmindlab.nano.BackupService -> com.appmindlab.nano.BackupService:
     java.lang.String mSubDirPath -> e
     int mMaxBackupCount -> p
     java.lang.String mDirPath -> d
-    int mMaxBackupAge -> q
     42:42:void backupAppData(android.content.Context):0:0 -> backupAppData
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":410,"3":411,"6":412}}
     410:410:void backupAppData(android.content.Context):0:0 -> backupAppData
@@ -17849,39 +17850,39 @@ com.appmindlab.nano.BackupService -> com.appmindlab.nano.BackupService:
     413:413:void backupAppData(android.content.Context):0:0 -> backupAppData
     124:409:void backupAppData(android.content.Context):0:0 -> backupAppData
     49:49:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":594,"3":595,"6":596,"9":597,"12":598,"15":599}}
-    594:594:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    595:595:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    596:596:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    597:597:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    598:598:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    599:599:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":554,"3":555,"6":556,"9":557,"12":558,"15":559}}
+    554:554:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    555:555:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    556:556:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    557:557:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    558:558:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    559:559:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
     50:385:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
     386:386:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":594,"4":595,"7":596}}
-    594:594:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    595:595:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    596:596:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":554,"4":555,"7":556}}
+    554:554:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    555:555:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    556:556:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
     387:396:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
     397:397:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":594,"4":595,"7":596}}
-    594:594:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    595:595:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    596:596:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":554,"4":555,"7":556}}
+    554:554:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    555:555:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    556:556:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
     398:474:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
     475:475:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":594,"3":595,"6":596,"9":597}}
-    594:594:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    595:595:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    596:596:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    597:597:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":554,"3":555,"6":556,"9":557}}
+    554:554:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    555:555:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    556:556:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    557:557:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
     476:482:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
     483:483:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":594,"4":595,"7":596}}
-    594:594:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    595:595:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    596:596:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
-    484:593:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":554,"4":555,"7":556}}
+    554:554:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    555:555:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    556:556:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
+    484:553:java.lang.String backupFiles(android.content.Context,java.lang.String,boolean,boolean):0:0 -> backupFiles
 com.appmindlab.nano.BackupService$1 -> com.appmindlab.nano.BackupService$a:
     android.content.Intent val$cur_intent -> b
     com.appmindlab.nano.BackupService this$0 -> c
@@ -17893,16 +17894,16 @@ com.appmindlab.nano.BackupService$1 -> com.appmindlab.nano.BackupService$a:
     24:25:void run():0:0 -> run
     26:27:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupService.access$100(com.appmindlab.nano.BackupService):0:0 -> run
     26:27:void run():0 -> run
-    28:191:void run():0:0 -> run
-    192:193:java.lang.String com.appmindlab.nano.BackupService.access$202(com.appmindlab.nano.BackupService,java.lang.String):0:0 -> run
-    192:193:void run():0 -> run
-    194:201:void run():0:0 -> run
-    202:203:java.lang.String com.appmindlab.nano.BackupService.access$200(com.appmindlab.nano.BackupService):0:0 -> run
-    202:203:void run():0 -> run
-    204:284:void run():0:0 -> run
-    285:286:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupService.access$100(com.appmindlab.nano.BackupService):0:0 -> run
-    285:286:void run():0 -> run
-    287:290:void run():0:0 -> run
+    28:170:void run():0:0 -> run
+    171:172:java.lang.String com.appmindlab.nano.BackupService.access$202(com.appmindlab.nano.BackupService,java.lang.String):0:0 -> run
+    171:172:void run():0 -> run
+    173:180:void run():0:0 -> run
+    181:182:java.lang.String com.appmindlab.nano.BackupService.access$200(com.appmindlab.nano.BackupService):0:0 -> run
+    181:182:void run():0 -> run
+    183:271:void run():0:0 -> run
+    272:273:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupService.access$100(com.appmindlab.nano.BackupService):0:0 -> run
+    272:273:void run():0 -> run
+    274:277:void run():0:0 -> run
 com.appmindlab.nano.BackupService$2 -> com.appmindlab.nano.BackupService$b:
 com.appmindlab.nano.BackupService$3 -> com.appmindlab.nano.BackupService$c:
 com.appmindlab.nano.BackupService$BackupServiceBinder -> com.appmindlab.nano.BackupService$d:
@@ -17916,6 +17917,7 @@ com.appmindlab.nano.BackupWorker -> com.appmindlab.nano.BackupWorker:
     android.app.NotificationManager mNotifyManager -> n
     android.app.PendingIntent mIntent -> q
     androidx.core.app.NotificationCompat$BigTextStyle mBigTextStyle -> p
+    int mMaxBackupCount -> r
     android.content.SharedPreferences mSharedPreferences -> j
     42:42:void backupAppData(android.content.Context):0:0 -> backupAppData
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":410,"3":411,"6":412}}
@@ -17931,11 +17933,11 @@ com.appmindlab.nano.BackupWorker -> com.appmindlab.nano.BackupWorker:
     413:413:void backupAppData(android.content.Context):0:0 -> backupAppData
     124:409:void backupAppData(android.content.Context):0:0 -> backupAppData
     298:298:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":372,"4":373,"7":374}}
-    372:372:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
-    373:373:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
-    374:374:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
-    299:371:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":369,"4":370,"7":371}}
+    369:369:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
+    370:370:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
+    371:371:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
+    299:368:java.lang.String backupFiles(android.content.Context,boolean):0:0 -> backupFiles
 com.appmindlab.nano.BackupWorker$1 -> com.appmindlab.nano.BackupWorker$a:
     com.appmindlab.nano.BackupWorker this$0 -> b
     3:4:android.content.SharedPreferences com.appmindlab.nano.BackupWorker.access$000(com.appmindlab.nano.BackupWorker):0:0 -> run
@@ -17961,13 +17963,13 @@ com.appmindlab.nano.BackupWorker$1 -> com.appmindlab.nano.BackupWorker$a:
     67:101:androidx.work.ForegroundInfo com.appmindlab.nano.BackupWorker.createForegroundInfo(java.lang.String):0:0 -> run
     67:101:androidx.work.ForegroundInfo com.appmindlab.nano.BackupWorker.access$200(com.appmindlab.nano.BackupWorker,java.lang.String):0 -> run
     67:101:void run():0 -> run
-    102:211:void run():0:0 -> run
-    212:213:java.lang.String com.appmindlab.nano.BackupWorker.access$302(com.appmindlab.nano.BackupWorker,java.lang.String):0:0 -> run
-    212:213:void run():0 -> run
-    214:305:void run():0:0 -> run
-    306:307:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupWorker.access$100(com.appmindlab.nano.BackupWorker):0:0 -> run
-    306:307:void run():0 -> run
-    308:316:void run():0:0 -> run
+    102:215:void run():0:0 -> run
+    216:217:java.lang.String com.appmindlab.nano.BackupWorker.access$302(com.appmindlab.nano.BackupWorker,java.lang.String):0:0 -> run
+    216:217:void run():0 -> run
+    218:317:void run():0:0 -> run
+    318:319:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupWorker.access$100(com.appmindlab.nano.BackupWorker):0:0 -> run
+    318:319:void run():0 -> run
+    320:328:void run():0:0 -> run
 com.appmindlab.nano.BackupWorker$2 -> com.appmindlab.nano.BackupWorker$b:
 com.appmindlab.nano.BackupWorker$3 -> com.appmindlab.nano.BackupWorker$c:
 com.appmindlab.nano.ContentGestureListener -> com.appmindlab.nano.a:
