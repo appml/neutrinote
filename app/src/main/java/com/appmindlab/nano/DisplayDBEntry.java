@@ -3165,6 +3165,18 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 if (event.isCtrlPressed())
                     Utils.insertMarkdownSymbolAutoIndent(mCurrentEditText, mIndentChar, mIndentChar);
                 return true;
+            case KeyEvent.KEYCODE_DPAD_UP:
+                if (event.isCtrlPressed())
+                    doGoTo(true);
+                return true;
+            case KeyEvent.KEYCODE_DPAD_DOWN:
+                if (event.isCtrlPressed())
+                    doGoTo(false);
+                return true;
+            case KeyEvent.KEYCODE_SPACE:
+                if (event.isCtrlPressed())
+                    doTextExpansion();
+                return true;
             default:
                 return super.onKeyUp(keyCode, event);
         }
