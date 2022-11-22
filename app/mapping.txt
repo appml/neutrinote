@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 7155b44
-# pg_map_hash: SHA-256 7155b44aa8f7bfcefd17798f93cbf18fb805fb2e848b77b637a8f7d150293a0f
+# pg_map_id: 9f33e87
+# pg_map_hash: SHA-256 9f33e87e1343c64f94ee6b483c1dc261638edabc727d9efc068a050d9bbc31ad
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -19284,23 +19284,24 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     java.lang.String mMarkdownTrigger -> O0
     android.widget.TextView mStatusBar -> f0
     android.view.animation.Animation mSlideUp -> r1
-    49:49:void handleShowClipboard():0:0 -> A
+    void handleSave() -> A
+    49:49:void handleShowClipboard():0:0 -> B
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":119,"4":120,"7":121}}
-    119:119:void handleShowClipboard():0:0 -> A
-    120:120:void handleShowClipboard():0:0 -> A
-    121:121:void handleShowClipboard():0:0 -> A
-    50:118:void handleShowClipboard():0:0 -> A
-    void leave() -> B
-    1:10:void resumeDatabase():0:0 -> C
-    1:10:java.lang.String[] loadShortcuts():0 -> C
-    11:20:void setupDatabase():0:0 -> C
-    11:20:void resumeDatabase():0 -> C
-    11:20:java.lang.String[] loadShortcuts():0 -> C
-    21:73:java.lang.String[] loadShortcuts():0:0 -> C
-    void showEditToolFragment() -> D
-    void showLocalFindFragment() -> E
-    void showLocalReplaceFragment() -> F
-    void updateUndo() -> G
+    119:119:void handleShowClipboard():0:0 -> B
+    120:120:void handleShowClipboard():0:0 -> B
+    121:121:void handleShowClipboard():0:0 -> B
+    50:118:void handleShowClipboard():0:0 -> B
+    void leave() -> C
+    1:10:void resumeDatabase():0:0 -> D
+    1:10:java.lang.String[] loadShortcuts():0 -> D
+    11:20:void setupDatabase():0:0 -> D
+    11:20:void resumeDatabase():0 -> D
+    11:20:java.lang.String[] loadShortcuts():0 -> D
+    21:73:java.lang.String[] loadShortcuts():0:0 -> D
+    void showEditToolFragment() -> E
+    void showLocalFindFragment() -> F
+    void showLocalReplaceFragment() -> G
+    void updateUndo() -> H
     187:187:void applyFontFamily():0:0 -> applyFontFamily
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":323,"4":324,"7":325}}
     323:323:void applyFontFamily():0:0 -> applyFontFamily
@@ -19621,153 +19622,58 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     397:399:void onCreate(android.os.Bundle):0 -> onCreate
     400:401:void setupCustomFonts():0:0 -> onCreate
     400:401:void onCreate(android.os.Bundle):0 -> onCreate
-    1:1:void showMarkdownSymbolFragment():0:0 -> onEditToolSelected
-    1:1:void onEditToolSelected(int):0 -> onEditToolSelected
-    2:2:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    3:3:void handleHitsNavigation():0:0 -> onEditToolSelected
-    3:3:void onEditToolSelected(int):0 -> onEditToolSelected
-    4:4:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":37,"3":38,"6":39}}
-    37:37:void handleHitsNavigation():0:0 -> onEditToolSelected
-    37:37:void onEditToolSelected(int):0 -> onEditToolSelected
-    38:38:void handleHitsNavigation():0:0 -> onEditToolSelected
-    38:38:void onEditToolSelected(int):0 -> onEditToolSelected
-    39:39:void handleHitsNavigation():0:0 -> onEditToolSelected
-    39:39:void onEditToolSelected(int):0 -> onEditToolSelected
-    5:5:void handleHitsNavigation():0:0 -> onEditToolSelected
-    5:5:void onEditToolSelected(int):0 -> onEditToolSelected
-    6:6:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    7:7:void doInsertLocationStamp():0:0 -> onEditToolSelected
-    7:7:void onEditToolSelected(int):0 -> onEditToolSelected
-    8:8:void doTextExpansion():0:0 -> onEditToolSelected
-    8:8:void onEditToolSelected(int):0 -> onEditToolSelected
-    9:9:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    9:9:void doTextExpansion():0 -> onEditToolSelected
-    9:9:void onEditToolSelected(int):0 -> onEditToolSelected
-    10:10:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":40,"3":41,"6":42}}
-    40:40:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    40:40:void doTextExpansion():0 -> onEditToolSelected
-    40:40:void onEditToolSelected(int):0 -> onEditToolSelected
-    41:41:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    41:41:void doTextExpansion():0 -> onEditToolSelected
-    41:41:void onEditToolSelected(int):0 -> onEditToolSelected
-    42:42:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    42:42:void doTextExpansion():0 -> onEditToolSelected
-    42:42:void onEditToolSelected(int):0 -> onEditToolSelected
-    11:11:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    11:11:void doTextExpansion():0 -> onEditToolSelected
-    11:11:void onEditToolSelected(int):0 -> onEditToolSelected
-    12:12:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":43,"3":44,"6":45,"9":46,"12":47}}
-    43:43:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    43:43:void doTextExpansion():0 -> onEditToolSelected
-    43:43:void onEditToolSelected(int):0 -> onEditToolSelected
-    44:44:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    44:44:void doTextExpansion():0 -> onEditToolSelected
-    44:44:void onEditToolSelected(int):0 -> onEditToolSelected
-    45:45:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    45:45:void doTextExpansion():0 -> onEditToolSelected
-    45:45:void onEditToolSelected(int):0 -> onEditToolSelected
-    46:46:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    46:46:void doTextExpansion():0 -> onEditToolSelected
-    46:46:void onEditToolSelected(int):0 -> onEditToolSelected
-    47:47:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    47:47:void doTextExpansion():0 -> onEditToolSelected
-    47:47:void onEditToolSelected(int):0 -> onEditToolSelected
-    13:13:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    13:13:void doTextExpansion():0 -> onEditToolSelected
-    13:13:void onEditToolSelected(int):0 -> onEditToolSelected
-    14:14:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":48,"3":49,"6":50,"9":51}}
-    48:48:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    48:48:void doTextExpansion():0 -> onEditToolSelected
-    48:48:void onEditToolSelected(int):0 -> onEditToolSelected
-    49:49:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    49:49:void doTextExpansion():0 -> onEditToolSelected
-    49:49:void onEditToolSelected(int):0 -> onEditToolSelected
-    50:50:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    50:50:void doTextExpansion():0 -> onEditToolSelected
-    50:50:void onEditToolSelected(int):0 -> onEditToolSelected
-    51:51:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    51:51:void doTextExpansion():0 -> onEditToolSelected
-    51:51:void onEditToolSelected(int):0 -> onEditToolSelected
-    15:15:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    15:15:void doTextExpansion():0 -> onEditToolSelected
-    15:15:void onEditToolSelected(int):0 -> onEditToolSelected
-    16:16:void doSearchNote(java.lang.String):0:0 -> onEditToolSelected
-    16:16:void expandShortcut(java.lang.String[]):0 -> onEditToolSelected
-    16:16:void doTextExpansion():0 -> onEditToolSelected
-    16:16:void onEditToolSelected(int):0 -> onEditToolSelected
-    17:17:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    17:17:void doTextExpansion():0 -> onEditToolSelected
-    17:17:void onEditToolSelected(int):0 -> onEditToolSelected
-    18:18:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":52,"3":53,"6":54,"9":55}}
-    52:52:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    52:52:void doTextExpansion():0 -> onEditToolSelected
-    52:52:void onEditToolSelected(int):0 -> onEditToolSelected
-    53:53:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    53:53:void doTextExpansion():0 -> onEditToolSelected
-    53:53:void onEditToolSelected(int):0 -> onEditToolSelected
-    54:54:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    54:54:void doTextExpansion():0 -> onEditToolSelected
-    54:54:void onEditToolSelected(int):0 -> onEditToolSelected
-    55:55:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    55:55:void doTextExpansion():0 -> onEditToolSelected
-    55:55:void onEditToolSelected(int):0 -> onEditToolSelected
-    19:19:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    19:19:void doTextExpansion():0 -> onEditToolSelected
-    19:19:void onEditToolSelected(int):0 -> onEditToolSelected
-    20:20:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":56,"3":57,"6":58}}
-    56:56:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    56:56:void doTextExpansion():0 -> onEditToolSelected
-    56:56:void onEditToolSelected(int):0 -> onEditToolSelected
-    57:57:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    57:57:void doTextExpansion():0 -> onEditToolSelected
-    57:57:void onEditToolSelected(int):0 -> onEditToolSelected
-    58:58:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    58:58:void doTextExpansion():0 -> onEditToolSelected
-    58:58:void onEditToolSelected(int):0 -> onEditToolSelected
-    21:21:void expandShortcut(java.lang.String[]):0:0 -> onEditToolSelected
-    21:21:void doTextExpansion():0 -> onEditToolSelected
-    21:21:void onEditToolSelected(int):0 -> onEditToolSelected
-    22:22:void handleAddShortcut(java.lang.String):0:0 -> onEditToolSelected
-    22:22:void expandShortcut(java.lang.String[]):0 -> onEditToolSelected
-    22:22:void doTextExpansion():0 -> onEditToolSelected
-    22:22:void onEditToolSelected(int):0 -> onEditToolSelected
-    23:23:void handleDraw():0:0 -> onEditToolSelected
-    23:23:void onEditToolSelected(int):0 -> onEditToolSelected
-    24:24:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    25:25:void handleInsertBarcode():0:0 -> onEditToolSelected
-    25:25:void onEditToolSelected(int):0 -> onEditToolSelected
-    26:26:void doInsertBarcode():0:0 -> onEditToolSelected
-    26:26:void handleInsertBarcode():0 -> onEditToolSelected
-    26:26:void onEditToolSelected(int):0 -> onEditToolSelected
-    27:27:void handleInsertBarcode():0:0 -> onEditToolSelected
-    27:27:void onEditToolSelected(int):0 -> onEditToolSelected
-    28:28:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    29:29:void doOCR():0:0 -> onEditToolSelected
-    29:29:void onEditToolSelected(int):0 -> onEditToolSelected
-    30:30:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    31:31:void doCalculate():0:0 -> onEditToolSelected
-    31:31:void onEditToolSelected(int):0 -> onEditToolSelected
-    32:32:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":59,"3":60,"6":61}}
-    59:59:void doCalculate():0:0 -> onEditToolSelected
-    59:59:void onEditToolSelected(int):0 -> onEditToolSelected
-    60:60:void doCalculate():0:0 -> onEditToolSelected
-    60:60:void onEditToolSelected(int):0 -> onEditToolSelected
-    61:61:void doCalculate():0:0 -> onEditToolSelected
-    61:61:void onEditToolSelected(int):0 -> onEditToolSelected
-    33:33:void doCalculate():0:0 -> onEditToolSelected
-    33:33:void onEditToolSelected(int):0 -> onEditToolSelected
-    34:34:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    35:35:void doOKCEncrypt():0:0 -> onEditToolSelected
-    35:35:void onEditToolSelected(int):0 -> onEditToolSelected
-    36:36:void doOKCDecrypt():0:0 -> onEditToolSelected
-    36:36:void onEditToolSelected(int):0 -> onEditToolSelected
+    65:121:void showMarkdownSymbolFragment():0:0 -> onEditToolSelected
+    65:121:void onEditToolSelected(int):0 -> onEditToolSelected
+    122:205:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    206:239:void handleHitsNavigation():0:0 -> onEditToolSelected
+    206:239:void onEditToolSelected(int):0 -> onEditToolSelected
+    240:240:void onEditToolSelected(int):0:0 -> onEditToolSelected
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":1441,"3":1442,"6":1443}}
+    1441:1441:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1441:1441:void onEditToolSelected(int):0 -> onEditToolSelected
+    1442:1442:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1442:1442:void onEditToolSelected(int):0 -> onEditToolSelected
+    1443:1443:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1443:1443:void onEditToolSelected(int):0 -> onEditToolSelected
+    241:243:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    244:466:void handleHitsNavigation():0:0 -> onEditToolSelected
+    244:466:void onEditToolSelected(int):0 -> onEditToolSelected
+    467:476:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    477:495:void doInsertLocationStamp():0:0 -> onEditToolSelected
+    477:495:void onEditToolSelected(int):0 -> onEditToolSelected
+    496:505:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    506:791:void handleDraw():0:0 -> onEditToolSelected
+    506:791:void onEditToolSelected(int):0 -> onEditToolSelected
+    792:824:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    825:836:void handleInsertBarcode():0:0 -> onEditToolSelected
+    825:836:void onEditToolSelected(int):0 -> onEditToolSelected
+    837:907:void doInsertBarcode():0:0 -> onEditToolSelected
+    837:907:void handleInsertBarcode():0 -> onEditToolSelected
+    837:907:void onEditToolSelected(int):0 -> onEditToolSelected
+    908:921:void handleInsertBarcode():0:0 -> onEditToolSelected
+    908:921:void onEditToolSelected(int):0 -> onEditToolSelected
+    922:932:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    933:990:void doOCR():0:0 -> onEditToolSelected
+    933:990:void onEditToolSelected(int):0 -> onEditToolSelected
+    991:1000:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    1001:1126:void doCalculate():0:0 -> onEditToolSelected
+    1001:1126:void onEditToolSelected(int):0 -> onEditToolSelected
+    1127:1127:void onEditToolSelected(int):0:0 -> onEditToolSelected
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":1441,"3":1442,"6":1443}}
+    1441:1441:void doCalculate():0:0 -> onEditToolSelected
+    1441:1441:void onEditToolSelected(int):0 -> onEditToolSelected
+    1442:1442:void doCalculate():0:0 -> onEditToolSelected
+    1442:1442:void onEditToolSelected(int):0 -> onEditToolSelected
+    1443:1443:void doCalculate():0:0 -> onEditToolSelected
+    1443:1443:void onEditToolSelected(int):0 -> onEditToolSelected
+    1128:1130:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    1131:1211:void doCalculate():0:0 -> onEditToolSelected
+    1131:1211:void onEditToolSelected(int):0 -> onEditToolSelected
+    1212:1221:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    1222:1340:void doOKCEncrypt():0:0 -> onEditToolSelected
+    1222:1340:void onEditToolSelected(int):0 -> onEditToolSelected
+    1341:1440:void doOKCDecrypt():0:0 -> onEditToolSelected
+    1341:1440:void onEditToolSelected(int):0 -> onEditToolSelected
     24:38:void doReplaceAllOrNext():0:0 -> onLocalReplaceSelected
     24:38:void onLocalReplaceSelected(int):0 -> onLocalReplaceSelected
     39:92:void handleReplaceAll():0:0 -> onLocalReplaceSelected
@@ -19878,23 +19784,88 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     108:132:void setupAutoSave():0:0 -> onResume
     108:132:void onResume():0 -> onResume
     void doSavePos() -> p
-    44:53:void updateRedo():0:0 -> q
-    44:53:void doUndo():0 -> q
-    54:82:void doUndo():0:0 -> q
-    83:84:void updateRedo():0:0 -> q
-    83:84:void doUndo():0 -> q
-    85:220:void doUndo():0:0 -> q
-    77:77:void doWebSearch(boolean):0:0 -> r
+    1:1:void expandShortcut(java.lang.String[]):0:0 -> q
+    1:1:void doTextExpansion():0 -> q
+    2:2:void doTextExpansion():0:0 -> q
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":15,"3":16,"6":17}}
+    15:15:void expandShortcut(java.lang.String[]):0:0 -> q
+    15:15:void doTextExpansion():0 -> q
+    16:16:void expandShortcut(java.lang.String[]):0:0 -> q
+    16:16:void doTextExpansion():0 -> q
+    17:17:void expandShortcut(java.lang.String[]):0:0 -> q
+    17:17:void doTextExpansion():0 -> q
+    3:3:void expandShortcut(java.lang.String[]):0:0 -> q
+    3:3:void doTextExpansion():0 -> q
+    4:4:void doTextExpansion():0:0 -> q
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":18,"3":19,"6":20,"9":21,"12":22}}
+    18:18:void expandShortcut(java.lang.String[]):0:0 -> q
+    18:18:void doTextExpansion():0 -> q
+    19:19:void expandShortcut(java.lang.String[]):0:0 -> q
+    19:19:void doTextExpansion():0 -> q
+    20:20:void expandShortcut(java.lang.String[]):0:0 -> q
+    20:20:void doTextExpansion():0 -> q
+    21:21:void expandShortcut(java.lang.String[]):0:0 -> q
+    21:21:void doTextExpansion():0 -> q
+    22:22:void expandShortcut(java.lang.String[]):0:0 -> q
+    22:22:void doTextExpansion():0 -> q
+    5:5:void expandShortcut(java.lang.String[]):0:0 -> q
+    5:5:void doTextExpansion():0 -> q
+    6:6:void doTextExpansion():0:0 -> q
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":23,"3":24,"6":25,"9":26}}
+    23:23:void expandShortcut(java.lang.String[]):0:0 -> q
+    23:23:void doTextExpansion():0 -> q
+    24:24:void expandShortcut(java.lang.String[]):0:0 -> q
+    24:24:void doTextExpansion():0 -> q
+    25:25:void expandShortcut(java.lang.String[]):0:0 -> q
+    25:25:void doTextExpansion():0 -> q
+    26:26:void expandShortcut(java.lang.String[]):0:0 -> q
+    26:26:void doTextExpansion():0 -> q
+    7:7:void expandShortcut(java.lang.String[]):0:0 -> q
+    7:7:void doTextExpansion():0 -> q
+    8:8:void doSearchNote(java.lang.String):0:0 -> q
+    8:8:void expandShortcut(java.lang.String[]):0 -> q
+    8:8:void doTextExpansion():0 -> q
+    9:9:void expandShortcut(java.lang.String[]):0:0 -> q
+    9:9:void doTextExpansion():0 -> q
+    10:10:void doTextExpansion():0:0 -> q
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":27,"3":28,"6":29,"9":30}}
+    27:27:void expandShortcut(java.lang.String[]):0:0 -> q
+    27:27:void doTextExpansion():0 -> q
+    28:28:void expandShortcut(java.lang.String[]):0:0 -> q
+    28:28:void doTextExpansion():0 -> q
+    29:29:void expandShortcut(java.lang.String[]):0:0 -> q
+    29:29:void doTextExpansion():0 -> q
+    30:30:void expandShortcut(java.lang.String[]):0:0 -> q
+    30:30:void doTextExpansion():0 -> q
+    11:11:void expandShortcut(java.lang.String[]):0:0 -> q
+    11:11:void doTextExpansion():0 -> q
+    12:12:void doTextExpansion():0:0 -> q
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":31,"3":32,"6":33}}
+    31:31:void expandShortcut(java.lang.String[]):0:0 -> q
+    31:31:void doTextExpansion():0 -> q
+    32:32:void expandShortcut(java.lang.String[]):0:0 -> q
+    32:32:void doTextExpansion():0 -> q
+    33:33:void expandShortcut(java.lang.String[]):0:0 -> q
+    33:33:void doTextExpansion():0 -> q
+    13:13:void expandShortcut(java.lang.String[]):0:0 -> q
+    13:13:void doTextExpansion():0 -> q
+    14:14:void handleAddShortcut(java.lang.String):0:0 -> q
+    14:14:void expandShortcut(java.lang.String[]):0 -> q
+    14:14:void doTextExpansion():0 -> q
+    44:53:void updateRedo():0:0 -> r
+    44:53:void doUndo():0 -> r
+    54:82:void doUndo():0:0 -> r
+    83:84:void updateRedo():0:0 -> r
+    83:84:void doUndo():0 -> r
+    85:220:void doUndo():0:0 -> r
+    77:77:void doWebSearch(boolean):0:0 -> s
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":105,"3":106,"6":107,"9":108,"12":109}}
-    105:105:void doWebSearch(boolean):0:0 -> r
-    106:106:void doWebSearch(boolean):0:0 -> r
-    107:107:void doWebSearch(boolean):0:0 -> r
-    108:108:void doWebSearch(boolean):0:0 -> r
-    109:109:void doWebSearch(boolean):0:0 -> r
-    78:104:void doWebSearch(boolean):0:0 -> r
-    50:65:void closeAllFragments():0:0 -> s
-    50:65:void enterImmersiveMode():0 -> s
-    66:119:void enterImmersiveMode():0:0 -> s
+    105:105:void doWebSearch(boolean):0:0 -> s
+    106:106:void doWebSearch(boolean):0:0 -> s
+    107:107:void doWebSearch(boolean):0:0 -> s
+    108:108:void doWebSearch(boolean):0:0 -> s
+    109:109:void doWebSearch(boolean):0:0 -> s
+    78:104:void doWebSearch(boolean):0:0 -> s
     1:1:void doSaveAccessTime():0:0 -> setupEditor
     1:1:void setupEditor():0 -> setupEditor
     2:2:void setupEditor():0:0 -> setupEditor
@@ -19913,7 +19884,9 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     196:196:void showStat():0:0 -> showStat
     197:197:void showStat():0:0 -> showStat
     122:194:void showStat():0:0 -> showStat
-    java.lang.String evalCustomVariables(java.lang.String[],java.lang.String) -> t
+    50:65:void closeAllFragments():0:0 -> t
+    50:65:void enterImmersiveMode():0 -> t
+    66:119:void enterImmersiveMode():0:0 -> t
     140:140:void toggleMarkdownView():0:0 -> toggleMarkdownView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":238,"3":239,"6":240}}
     238:238:void toggleMarkdownView():0:0 -> toggleMarkdownView
@@ -19941,12 +19914,12 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     199:214:void closeAllFragments():0:0 -> toggleMarkdownView
     199:214:void toggleMarkdownView():0 -> toggleMarkdownView
     215:237:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    java.lang.String evalVariables(java.lang.String,boolean) -> u
-    void exitImmersiveMode() -> v
-    void handleFunnel() -> w
-    void handleHome() -> x
-    void handleReload() -> y
-    void handleSave() -> z
+    java.lang.String evalCustomVariables(java.lang.String[],java.lang.String) -> u
+    java.lang.String evalVariables(java.lang.String,boolean) -> v
+    void exitImmersiveMode() -> w
+    void handleFunnel() -> x
+    void handleHome() -> y
+    void handleReload() -> z
 com.appmindlab.nano.DisplayDBEntry$1 -> com.appmindlab.nano.DisplayDBEntry$p:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:4:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.DisplayDBEntry.access$000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch

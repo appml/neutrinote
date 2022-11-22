@@ -1,0 +1,2 @@
+v4.3.1
+- Added new keyboard shortcuts.
