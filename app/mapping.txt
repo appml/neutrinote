@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 9f33e87
-# pg_map_hash: SHA-256 9f33e87e1343c64f94ee6b483c1dc261638edabc727d9efc068a050d9bbc31ad
+# pg_map_id: b60db3e
+# pg_map_hash: SHA-256 b60db3ec22cf06e22f54abf39f50239b7dbbb75a25791af84a1ceca8ba8623ea
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -19284,24 +19284,25 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     java.lang.String mMarkdownTrigger -> O0
     android.widget.TextView mStatusBar -> f0
     android.view.animation.Animation mSlideUp -> r1
-    void handleSave() -> A
-    49:49:void handleShowClipboard():0:0 -> B
+    void handleReload() -> A
+    void handleSave() -> B
+    49:49:void handleShowClipboard():0:0 -> C
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":119,"4":120,"7":121}}
-    119:119:void handleShowClipboard():0:0 -> B
-    120:120:void handleShowClipboard():0:0 -> B
-    121:121:void handleShowClipboard():0:0 -> B
-    50:118:void handleShowClipboard():0:0 -> B
-    void leave() -> C
-    1:10:void resumeDatabase():0:0 -> D
-    1:10:java.lang.String[] loadShortcuts():0 -> D
-    11:20:void setupDatabase():0:0 -> D
-    11:20:void resumeDatabase():0 -> D
-    11:20:java.lang.String[] loadShortcuts():0 -> D
-    21:73:java.lang.String[] loadShortcuts():0:0 -> D
-    void showEditToolFragment() -> E
-    void showLocalFindFragment() -> F
-    void showLocalReplaceFragment() -> G
-    void updateUndo() -> H
+    119:119:void handleShowClipboard():0:0 -> C
+    120:120:void handleShowClipboard():0:0 -> C
+    121:121:void handleShowClipboard():0:0 -> C
+    50:118:void handleShowClipboard():0:0 -> C
+    void leave() -> D
+    1:10:void resumeDatabase():0:0 -> E
+    1:10:java.lang.String[] loadShortcuts():0 -> E
+    11:20:void setupDatabase():0:0 -> E
+    11:20:void resumeDatabase():0 -> E
+    11:20:java.lang.String[] loadShortcuts():0 -> E
+    21:73:java.lang.String[] loadShortcuts():0:0 -> E
+    void showEditToolFragment() -> F
+    void showLocalFindFragment() -> G
+    void showLocalReplaceFragment() -> H
+    void updateUndo() -> I
     187:187:void applyFontFamily():0:0 -> applyFontFamily
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":323,"4":324,"7":325}}
     323:323:void applyFontFamily():0:0 -> applyFontFamily
@@ -19552,44 +19553,41 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     88:88:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
     57:84:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
     void createWebPrintJob(android.webkit.WebView) -> h
-    void doClearSearch() -> i
-    void doDefine() -> j
-    72:72:void doExportHTML(boolean):0:0 -> k
+    139:139:void doCalculate():0:0 -> i
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":217,"3":218,"6":219}}
+    217:217:void doCalculate():0:0 -> i
+    218:218:void doCalculate():0:0 -> i
+    219:219:void doCalculate():0:0 -> i
+    140:216:void doCalculate():0:0 -> i
+    void doClearSearch() -> j
+    void doDefine() -> k
+    72:72:void doExportHTML(boolean):0:0 -> l
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"3":119,"6":120}}
-    118:118:void doExportHTML(boolean):0:0 -> k
-    119:119:void doExportHTML(boolean):0:0 -> k
-    120:120:void doExportHTML(boolean):0:0 -> k
-    73:77:void doExportHTML(boolean):0:0 -> k
-    78:78:void doExportHTML(boolean):0:0 -> k
+    118:118:void doExportHTML(boolean):0:0 -> l
+    119:119:void doExportHTML(boolean):0:0 -> l
+    120:120:void doExportHTML(boolean):0:0 -> l
+    73:77:void doExportHTML(boolean):0:0 -> l
+    78:78:void doExportHTML(boolean):0:0 -> l
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"4":119,"7":120}}
-    118:118:void doExportHTML(boolean):0:0 -> k
-    119:119:void doExportHTML(boolean):0:0 -> k
-    120:120:void doExportHTML(boolean):0:0 -> k
-    79:92:void doExportHTML(boolean):0:0 -> k
-    93:93:void doExportHTML(boolean):0:0 -> k
+    118:118:void doExportHTML(boolean):0:0 -> l
+    119:119:void doExportHTML(boolean):0:0 -> l
+    120:120:void doExportHTML(boolean):0:0 -> l
+    79:92:void doExportHTML(boolean):0:0 -> l
+    93:93:void doExportHTML(boolean):0:0 -> l
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"3":119,"6":120}}
-    118:118:void doExportHTML(boolean):0:0 -> k
-    119:119:void doExportHTML(boolean):0:0 -> k
-    120:120:void doExportHTML(boolean):0:0 -> k
-    94:98:void doExportHTML(boolean):0:0 -> k
-    99:99:void doExportHTML(boolean):0:0 -> k
+    118:118:void doExportHTML(boolean):0:0 -> l
+    119:119:void doExportHTML(boolean):0:0 -> l
+    120:120:void doExportHTML(boolean):0:0 -> l
+    94:98:void doExportHTML(boolean):0:0 -> l
+    99:99:void doExportHTML(boolean):0:0 -> l
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"4":119,"7":120}}
-    118:118:void doExportHTML(boolean):0:0 -> k
-    119:119:void doExportHTML(boolean):0:0 -> k
-    120:120:void doExportHTML(boolean):0:0 -> k
-    100:117:void doExportHTML(boolean):0:0 -> k
-    void doFind() -> l
-    void doGoTo(boolean) -> m
-    void doRedo() -> n
-    1:1:void handleDuplicates(boolean):0:0 -> o
-    1:1:void doSave(boolean,boolean):0 -> o
-    2:2:void doSave(boolean,boolean):0:0 -> o
-    3:3:void doSave(boolean,boolean):0:0 -> o
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":5,"3":6,"6":7}}
-    5:5:void doSave(boolean,boolean):0:0 -> o
-    6:6:void doSave(boolean,boolean):0:0 -> o
-    7:7:void doSave(boolean,boolean):0:0 -> o
-    4:4:void doSave(boolean,boolean):0:0 -> o
+    118:118:void doExportHTML(boolean):0:0 -> l
+    119:119:void doExportHTML(boolean):0:0 -> l
+    120:120:void doExportHTML(boolean):0:0 -> l
+    100:117:void doExportHTML(boolean):0:0 -> l
+    void doFind() -> m
+    void doGoTo(boolean) -> n
+    void doRedo() -> o
     11:108:void setupTheme():0:0 -> onCreate
     11:108:void onCreate(android.os.Bundle):0 -> onCreate
     109:116:void onCreate(android.os.Bundle):0:0 -> onCreate
@@ -19628,13 +19626,13 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     206:239:void handleHitsNavigation():0:0 -> onEditToolSelected
     206:239:void onEditToolSelected(int):0 -> onEditToolSelected
     240:240:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":1441,"3":1442,"6":1443}}
-    1441:1441:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1441:1441:void onEditToolSelected(int):0 -> onEditToolSelected
-    1442:1442:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1442:1442:void onEditToolSelected(int):0 -> onEditToolSelected
-    1443:1443:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1443:1443:void onEditToolSelected(int):0 -> onEditToolSelected
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":1240,"3":1241,"6":1242}}
+    1240:1240:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1240:1240:void onEditToolSelected(int):0 -> onEditToolSelected
+    1241:1241:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1241:1241:void onEditToolSelected(int):0 -> onEditToolSelected
+    1242:1242:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1242:1242:void onEditToolSelected(int):0 -> onEditToolSelected
     241:243:void onEditToolSelected(int):0:0 -> onEditToolSelected
     244:466:void handleHitsNavigation():0:0 -> onEditToolSelected
     244:466:void onEditToolSelected(int):0 -> onEditToolSelected
@@ -19655,25 +19653,11 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     922:932:void onEditToolSelected(int):0:0 -> onEditToolSelected
     933:990:void doOCR():0:0 -> onEditToolSelected
     933:990:void onEditToolSelected(int):0 -> onEditToolSelected
-    991:1000:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    1001:1126:void doCalculate():0:0 -> onEditToolSelected
-    1001:1126:void onEditToolSelected(int):0 -> onEditToolSelected
-    1127:1127:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":1441,"3":1442,"6":1443}}
-    1441:1441:void doCalculate():0:0 -> onEditToolSelected
-    1441:1441:void onEditToolSelected(int):0 -> onEditToolSelected
-    1442:1442:void doCalculate():0:0 -> onEditToolSelected
-    1442:1442:void onEditToolSelected(int):0 -> onEditToolSelected
-    1443:1443:void doCalculate():0:0 -> onEditToolSelected
-    1443:1443:void onEditToolSelected(int):0 -> onEditToolSelected
-    1128:1130:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    1131:1211:void doCalculate():0:0 -> onEditToolSelected
-    1131:1211:void onEditToolSelected(int):0 -> onEditToolSelected
-    1212:1221:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    1222:1340:void doOKCEncrypt():0:0 -> onEditToolSelected
-    1222:1340:void onEditToolSelected(int):0 -> onEditToolSelected
-    1341:1440:void doOKCDecrypt():0:0 -> onEditToolSelected
-    1341:1440:void onEditToolSelected(int):0 -> onEditToolSelected
+    991:1020:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    1021:1139:void doOKCEncrypt():0:0 -> onEditToolSelected
+    1021:1139:void onEditToolSelected(int):0 -> onEditToolSelected
+    1140:1239:void doOKCDecrypt():0:0 -> onEditToolSelected
+    1140:1239:void onEditToolSelected(int):0 -> onEditToolSelected
     24:38:void doReplaceAllOrNext():0:0 -> onLocalReplaceSelected
     24:38:void onLocalReplaceSelected(int):0 -> onLocalReplaceSelected
     39:92:void handleReplaceAll():0:0 -> onLocalReplaceSelected
@@ -19783,89 +19767,90 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     36:107:void onResume():0:0 -> onResume
     108:132:void setupAutoSave():0:0 -> onResume
     108:132:void onResume():0 -> onResume
-    void doSavePos() -> p
-    1:1:void expandShortcut(java.lang.String[]):0:0 -> q
-    1:1:void doTextExpansion():0 -> q
-    2:2:void doTextExpansion():0:0 -> q
+    1:1:void handleDuplicates(boolean):0:0 -> p
+    1:1:void doSave(boolean,boolean):0 -> p
+    2:2:void doSave(boolean,boolean):0:0 -> p
+    3:3:void doSave(boolean,boolean):0:0 -> p
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":5,"3":6,"6":7}}
+    5:5:void doSave(boolean,boolean):0:0 -> p
+    6:6:void doSave(boolean,boolean):0:0 -> p
+    7:7:void doSave(boolean,boolean):0:0 -> p
+    4:4:void doSave(boolean,boolean):0:0 -> p
+    void doSavePos() -> q
+    1:1:void expandShortcut(java.lang.String[]):0:0 -> r
+    1:1:void doTextExpansion():0 -> r
+    2:2:void doTextExpansion():0:0 -> r
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":15,"3":16,"6":17}}
-    15:15:void expandShortcut(java.lang.String[]):0:0 -> q
-    15:15:void doTextExpansion():0 -> q
-    16:16:void expandShortcut(java.lang.String[]):0:0 -> q
-    16:16:void doTextExpansion():0 -> q
-    17:17:void expandShortcut(java.lang.String[]):0:0 -> q
-    17:17:void doTextExpansion():0 -> q
-    3:3:void expandShortcut(java.lang.String[]):0:0 -> q
-    3:3:void doTextExpansion():0 -> q
-    4:4:void doTextExpansion():0:0 -> q
+    15:15:void expandShortcut(java.lang.String[]):0:0 -> r
+    15:15:void doTextExpansion():0 -> r
+    16:16:void expandShortcut(java.lang.String[]):0:0 -> r
+    16:16:void doTextExpansion():0 -> r
+    17:17:void expandShortcut(java.lang.String[]):0:0 -> r
+    17:17:void doTextExpansion():0 -> r
+    3:3:void expandShortcut(java.lang.String[]):0:0 -> r
+    3:3:void doTextExpansion():0 -> r
+    4:4:void doTextExpansion():0:0 -> r
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":18,"3":19,"6":20,"9":21,"12":22}}
-    18:18:void expandShortcut(java.lang.String[]):0:0 -> q
-    18:18:void doTextExpansion():0 -> q
-    19:19:void expandShortcut(java.lang.String[]):0:0 -> q
-    19:19:void doTextExpansion():0 -> q
-    20:20:void expandShortcut(java.lang.String[]):0:0 -> q
-    20:20:void doTextExpansion():0 -> q
-    21:21:void expandShortcut(java.lang.String[]):0:0 -> q
-    21:21:void doTextExpansion():0 -> q
-    22:22:void expandShortcut(java.lang.String[]):0:0 -> q
-    22:22:void doTextExpansion():0 -> q
-    5:5:void expandShortcut(java.lang.String[]):0:0 -> q
-    5:5:void doTextExpansion():0 -> q
-    6:6:void doTextExpansion():0:0 -> q
+    18:18:void expandShortcut(java.lang.String[]):0:0 -> r
+    18:18:void doTextExpansion():0 -> r
+    19:19:void expandShortcut(java.lang.String[]):0:0 -> r
+    19:19:void doTextExpansion():0 -> r
+    20:20:void expandShortcut(java.lang.String[]):0:0 -> r
+    20:20:void doTextExpansion():0 -> r
+    21:21:void expandShortcut(java.lang.String[]):0:0 -> r
+    21:21:void doTextExpansion():0 -> r
+    22:22:void expandShortcut(java.lang.String[]):0:0 -> r
+    22:22:void doTextExpansion():0 -> r
+    5:5:void expandShortcut(java.lang.String[]):0:0 -> r
+    5:5:void doTextExpansion():0 -> r
+    6:6:void doTextExpansion():0:0 -> r
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":23,"3":24,"6":25,"9":26}}
-    23:23:void expandShortcut(java.lang.String[]):0:0 -> q
-    23:23:void doTextExpansion():0 -> q
-    24:24:void expandShortcut(java.lang.String[]):0:0 -> q
-    24:24:void doTextExpansion():0 -> q
-    25:25:void expandShortcut(java.lang.String[]):0:0 -> q
-    25:25:void doTextExpansion():0 -> q
-    26:26:void expandShortcut(java.lang.String[]):0:0 -> q
-    26:26:void doTextExpansion():0 -> q
-    7:7:void expandShortcut(java.lang.String[]):0:0 -> q
-    7:7:void doTextExpansion():0 -> q
-    8:8:void doSearchNote(java.lang.String):0:0 -> q
-    8:8:void expandShortcut(java.lang.String[]):0 -> q
-    8:8:void doTextExpansion():0 -> q
-    9:9:void expandShortcut(java.lang.String[]):0:0 -> q
-    9:9:void doTextExpansion():0 -> q
-    10:10:void doTextExpansion():0:0 -> q
+    23:23:void expandShortcut(java.lang.String[]):0:0 -> r
+    23:23:void doTextExpansion():0 -> r
+    24:24:void expandShortcut(java.lang.String[]):0:0 -> r
+    24:24:void doTextExpansion():0 -> r
+    25:25:void expandShortcut(java.lang.String[]):0:0 -> r
+    25:25:void doTextExpansion():0 -> r
+    26:26:void expandShortcut(java.lang.String[]):0:0 -> r
+    26:26:void doTextExpansion():0 -> r
+    7:7:void expandShortcut(java.lang.String[]):0:0 -> r
+    7:7:void doTextExpansion():0 -> r
+    8:8:void doSearchNote(java.lang.String):0:0 -> r
+    8:8:void expandShortcut(java.lang.String[]):0 -> r
+    8:8:void doTextExpansion():0 -> r
+    9:9:void expandShortcut(java.lang.String[]):0:0 -> r
+    9:9:void doTextExpansion():0 -> r
+    10:10:void doTextExpansion():0:0 -> r
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":27,"3":28,"6":29,"9":30}}
-    27:27:void expandShortcut(java.lang.String[]):0:0 -> q
-    27:27:void doTextExpansion():0 -> q
-    28:28:void expandShortcut(java.lang.String[]):0:0 -> q
-    28:28:void doTextExpansion():0 -> q
-    29:29:void expandShortcut(java.lang.String[]):0:0 -> q
-    29:29:void doTextExpansion():0 -> q
-    30:30:void expandShortcut(java.lang.String[]):0:0 -> q
-    30:30:void doTextExpansion():0 -> q
-    11:11:void expandShortcut(java.lang.String[]):0:0 -> q
-    11:11:void doTextExpansion():0 -> q
-    12:12:void doTextExpansion():0:0 -> q
+    27:27:void expandShortcut(java.lang.String[]):0:0 -> r
+    27:27:void doTextExpansion():0 -> r
+    28:28:void expandShortcut(java.lang.String[]):0:0 -> r
+    28:28:void doTextExpansion():0 -> r
+    29:29:void expandShortcut(java.lang.String[]):0:0 -> r
+    29:29:void doTextExpansion():0 -> r
+    30:30:void expandShortcut(java.lang.String[]):0:0 -> r
+    30:30:void doTextExpansion():0 -> r
+    11:11:void expandShortcut(java.lang.String[]):0:0 -> r
+    11:11:void doTextExpansion():0 -> r
+    12:12:void doTextExpansion():0:0 -> r
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":31,"3":32,"6":33}}
-    31:31:void expandShortcut(java.lang.String[]):0:0 -> q
-    31:31:void doTextExpansion():0 -> q
-    32:32:void expandShortcut(java.lang.String[]):0:0 -> q
-    32:32:void doTextExpansion():0 -> q
-    33:33:void expandShortcut(java.lang.String[]):0:0 -> q
-    33:33:void doTextExpansion():0 -> q
-    13:13:void expandShortcut(java.lang.String[]):0:0 -> q
-    13:13:void doTextExpansion():0 -> q
-    14:14:void handleAddShortcut(java.lang.String):0:0 -> q
-    14:14:void expandShortcut(java.lang.String[]):0 -> q
-    14:14:void doTextExpansion():0 -> q
-    44:53:void updateRedo():0:0 -> r
-    44:53:void doUndo():0 -> r
-    54:82:void doUndo():0:0 -> r
-    83:84:void updateRedo():0:0 -> r
-    83:84:void doUndo():0 -> r
-    85:220:void doUndo():0:0 -> r
-    77:77:void doWebSearch(boolean):0:0 -> s
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":105,"3":106,"6":107,"9":108,"12":109}}
-    105:105:void doWebSearch(boolean):0:0 -> s
-    106:106:void doWebSearch(boolean):0:0 -> s
-    107:107:void doWebSearch(boolean):0:0 -> s
-    108:108:void doWebSearch(boolean):0:0 -> s
-    109:109:void doWebSearch(boolean):0:0 -> s
-    78:104:void doWebSearch(boolean):0:0 -> s
+    31:31:void expandShortcut(java.lang.String[]):0:0 -> r
+    31:31:void doTextExpansion():0 -> r
+    32:32:void expandShortcut(java.lang.String[]):0:0 -> r
+    32:32:void doTextExpansion():0 -> r
+    33:33:void expandShortcut(java.lang.String[]):0:0 -> r
+    33:33:void doTextExpansion():0 -> r
+    13:13:void expandShortcut(java.lang.String[]):0:0 -> r
+    13:13:void doTextExpansion():0 -> r
+    14:14:void handleAddShortcut(java.lang.String):0:0 -> r
+    14:14:void expandShortcut(java.lang.String[]):0 -> r
+    14:14:void doTextExpansion():0 -> r
+    44:53:void updateRedo():0:0 -> s
+    44:53:void doUndo():0 -> s
+    54:82:void doUndo():0:0 -> s
+    83:84:void updateRedo():0:0 -> s
+    83:84:void doUndo():0 -> s
+    85:220:void doUndo():0:0 -> s
     1:1:void doSaveAccessTime():0:0 -> setupEditor
     1:1:void setupEditor():0 -> setupEditor
     2:2:void setupEditor():0:0 -> setupEditor
@@ -19884,9 +19869,14 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     196:196:void showStat():0:0 -> showStat
     197:197:void showStat():0:0 -> showStat
     122:194:void showStat():0:0 -> showStat
-    50:65:void closeAllFragments():0:0 -> t
-    50:65:void enterImmersiveMode():0 -> t
-    66:119:void enterImmersiveMode():0:0 -> t
+    77:77:void doWebSearch(boolean):0:0 -> t
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":105,"3":106,"6":107,"9":108,"12":109}}
+    105:105:void doWebSearch(boolean):0:0 -> t
+    106:106:void doWebSearch(boolean):0:0 -> t
+    107:107:void doWebSearch(boolean):0:0 -> t
+    108:108:void doWebSearch(boolean):0:0 -> t
+    109:109:void doWebSearch(boolean):0:0 -> t
+    78:104:void doWebSearch(boolean):0:0 -> t
     140:140:void toggleMarkdownView():0:0 -> toggleMarkdownView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":238,"3":239,"6":240}}
     238:238:void toggleMarkdownView():0:0 -> toggleMarkdownView
@@ -19914,12 +19904,14 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     199:214:void closeAllFragments():0:0 -> toggleMarkdownView
     199:214:void toggleMarkdownView():0 -> toggleMarkdownView
     215:237:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    java.lang.String evalCustomVariables(java.lang.String[],java.lang.String) -> u
-    java.lang.String evalVariables(java.lang.String,boolean) -> v
-    void exitImmersiveMode() -> w
-    void handleFunnel() -> x
-    void handleHome() -> y
-    void handleReload() -> z
+    50:65:void closeAllFragments():0:0 -> u
+    50:65:void enterImmersiveMode():0 -> u
+    66:119:void enterImmersiveMode():0:0 -> u
+    java.lang.String evalCustomVariables(java.lang.String[],java.lang.String) -> v
+    java.lang.String evalVariables(java.lang.String,boolean) -> w
+    void exitImmersiveMode() -> x
+    void handleFunnel() -> y
+    void handleHome() -> z
 com.appmindlab.nano.DisplayDBEntry$1 -> com.appmindlab.nano.DisplayDBEntry$p:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:4:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.DisplayDBEntry.access$000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
@@ -20618,7 +20610,7 @@ com.appmindlab.nano.DisplayDBEntry$78 -> com.appmindlab.nano.u1:
     9:10:void onClick(android.content.DialogInterface,int):0 -> onClick
     11:17:void onClick(android.content.DialogInterface,int):0:0 -> onClick
 com.appmindlab.nano.DisplayDBEntry$79 -> com.appmindlab.nano.v1:
-com.appmindlab.nano.DisplayDBEntry$8 -> com.appmindlab.nano.DisplayDBEntry$r0:
+com.appmindlab.nano.DisplayDBEntry$8 -> com.appmindlab.nano.DisplayDBEntry$t0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     5:6:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onFocusChange
     5:6:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
@@ -20695,38 +20687,38 @@ com.appmindlab.nano.DisplayDBEntry$87 -> com.appmindlab.nano.DisplayDBEntry$q0:
     5:9:void com.appmindlab.nano.DisplayDBEntry.access$5600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     5:9:void onClick(android.view.View):0 -> onClick
     10:13:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$88 -> com.appmindlab.nano.x1:
+com.appmindlab.nano.DisplayDBEntry$88 -> com.appmindlab.nano.DisplayDBEntry$r0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     11:12:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onResponse
     11:12:void onResponse(java.lang.String):0 -> onResponse
     13:43:void onResponse(java.lang.String):0:0 -> onResponse
-com.appmindlab.nano.DisplayDBEntry$89 -> com.appmindlab.nano.y1:
+com.appmindlab.nano.DisplayDBEntry$89 -> com.appmindlab.nano.DisplayDBEntry$s0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$9 -> com.appmindlab.nano.DisplayDBEntry$t0:
+com.appmindlab.nano.DisplayDBEntry$9 -> com.appmindlab.nano.DisplayDBEntry$v0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     6:7:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onEditorAction
     6:7:boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent):0 -> onEditorAction
     8:12:boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent):0:0 -> onEditorAction
-com.appmindlab.nano.DisplayDBEntry$90 -> com.appmindlab.nano.z1:
+com.appmindlab.nano.DisplayDBEntry$90 -> com.appmindlab.nano.x1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:6:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
     3:6:void run():0 -> run
     7:10:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$91 -> com.appmindlab.nano.DisplayDBEntry$s0:
+com.appmindlab.nano.DisplayDBEntry$91 -> com.appmindlab.nano.DisplayDBEntry$u0:
     android.webkit.WebView val$webview -> b
     boolean val$use_print -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     16:18:void com.appmindlab.nano.DisplayDBEntry.access$5800(com.appmindlab.nano.DisplayDBEntry,android.webkit.WebView):0:0 -> onPageFinished
     16:18:void onPageFinished(android.webkit.WebView,java.lang.String):0 -> onPageFinished
     19:35:void onPageFinished(android.webkit.WebView,java.lang.String):0:0 -> onPageFinished
-com.appmindlab.nano.DisplayDBEntry$92 -> com.appmindlab.nano.a2:
+com.appmindlab.nano.DisplayDBEntry$92 -> com.appmindlab.nano.y1:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
     0:65535:char com.appmindlab.nano.DisplayDBEntry.access$5902(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$93 -> com.appmindlab.nano.b2:
-com.appmindlab.nano.DisplayDBEntry$94 -> com.appmindlab.nano.c2:
+com.appmindlab.nano.DisplayDBEntry$93 -> com.appmindlab.nano.z1:
+com.appmindlab.nano.DisplayDBEntry$94 -> com.appmindlab.nano.a2:
     androidx.appcompat.widget.SwitchCompat val$canvas_mode -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     13:15:void com.appmindlab.nano.DisplayDBEntry.access$6000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
@@ -20734,7 +20726,7 @@ com.appmindlab.nano.DisplayDBEntry$94 -> com.appmindlab.nano.c2:
     16:135:void com.appmindlab.nano.DisplayDBEntry.handleCanvasStroke():0:0 -> onClick
     16:135:void com.appmindlab.nano.DisplayDBEntry.access$6000(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
     16:135:void onClick(android.view.View):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.d2:
+com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.b2:
     androidx.appcompat.widget.SwitchCompat val$canvas_mode -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     56:59:char com.appmindlab.nano.DisplayDBEntry.access$5900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
@@ -20751,7 +20743,7 @@ com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.d2:
     99:100:char com.appmindlab.nano.DisplayDBEntry.access$5900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     99:100:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
     101:119:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$96 -> com.appmindlab.nano.e2:
+com.appmindlab.nano.DisplayDBEntry$96 -> com.appmindlab.nano.c2:
     android.widget.EditText val$canvas -> b
     java.lang.String val$current_drawing -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> e
@@ -20782,19 +20774,19 @@ com.appmindlab.nano.DisplayDBEntry$96 -> com.appmindlab.nano.e2:
     114:129:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     130:132:boolean com.appmindlab.nano.DisplayDBEntry.access$2902(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     130:132:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$97 -> com.appmindlab.nano.f2:
+com.appmindlab.nano.DisplayDBEntry$97 -> com.appmindlab.nano.d2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$2902(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$98 -> com.appmindlab.nano.g2:
+com.appmindlab.nano.DisplayDBEntry$98 -> com.appmindlab.nano.e2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$2902(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
     0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$99 -> com.appmindlab.nano.h2:
+com.appmindlab.nano.DisplayDBEntry$99 -> com.appmindlab.nano.f2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$2902(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
     0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBEntry$u0:
+com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBEntry$w0:
     byte[] temp -> o
     com.appmindlab.nano.DisplayDBEntry activity -> m
     java.lang.String content -> n
@@ -20816,9 +20808,9 @@ com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBE
     60:61:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$1500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     60:61:void onPreExecute():0 -> onPreExecute
     62:79:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$EditViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$v0:
+com.appmindlab.nano.DisplayDBEntry$EditViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$x0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBEntry$w0:
+com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBEntry$y0:
     com.appmindlab.nano.DisplayDBEntry activity -> m
     com.appmindlab.nano.DisplayDBEntry this$0 -> o
     java.lang.String temp -> n
@@ -20837,7 +20829,7 @@ com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBE
     44:46:void com.appmindlab.nano.DisplayDBEntry.access$3900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     44:46:void onPreExecute():0 -> onPreExecute
     47:79:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$HighlightTask -> com.appmindlab.nano.DisplayDBEntry$x0:
+com.appmindlab.nano.DisplayDBEntry$HighlightTask -> com.appmindlab.nano.DisplayDBEntry$z0:
     com.appmindlab.nano.DisplayDBEntry activity -> m
     com.appmindlab.nano.DisplayDBEntry this$0 -> o
     java.lang.String content -> n
@@ -20870,7 +20862,7 @@ com.appmindlab.nano.DisplayDBEntry$HighlightTask -> com.appmindlab.nano.DisplayD
     38:39:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4302(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onPreExecute
     38:39:void onPreExecute():0 -> onPreExecute
     40:55:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$InsertLocationStampTask -> com.appmindlab.nano.DisplayDBEntry$y0:
+com.appmindlab.nano.DisplayDBEntry$InsertLocationStampTask -> com.appmindlab.nano.DisplayDBEntry$a1:
     int pos -> o
     com.appmindlab.nano.DisplayDBEntry activity -> m
     java.lang.String temp -> n
@@ -20889,8 +20881,8 @@ com.appmindlab.nano.DisplayDBEntry$MarkdownViewJavaScriptInterface -> com.appmin
     143:144:android.net.Uri com.appmindlab.nano.DisplayDBEntry.access$5700(com.appmindlab.nano.DisplayDBEntry):0:0 -> exportHTMLJS
     143:144:void exportHTMLJS(java.lang.String):0 -> exportHTMLJS
     145:273:void exportHTMLJS(java.lang.String):0:0 -> exportHTMLJS
-com.appmindlab.nano.EditStatusGestureListener -> com.appmindlab.nano.i2:
-com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.j2:
+com.appmindlab.nano.EditStatusGestureListener -> com.appmindlab.nano.g2:
+com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.h2:
     com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener mCallback -> U
     93:93:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":655,"4":656,"7":657}}
@@ -21024,8 +21016,8 @@ com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.j2:
     656:656:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     657:657:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     652:654:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
-com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener -> com.appmindlab.nano.j2$a:
-com.appmindlab.nano.FontCache -> com.appmindlab.nano.k2:
+com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener -> com.appmindlab.nano.h2$a:
+com.appmindlab.nano.FontCache -> com.appmindlab.nano.i2:
     java.util.HashMap mCache -> a
 com.appmindlab.nano.HitParcelable -> com.appmindlab.nano.HitParcelable:
     int pos -> b
@@ -21034,22 +21026,22 @@ com.appmindlab.nano.HitParcelable -> com.appmindlab.nano.HitParcelable:
 com.appmindlab.nano.HitParcelable$1 -> com.appmindlab.nano.HitParcelable$a:
 com.appmindlab.nano.IntroActivity -> com.appmindlab.nano.IntroActivity:
     void launchMainActivity() -> g
-com.appmindlab.nano.LocalFindFragment -> com.appmindlab.nano.l2:
+com.appmindlab.nano.LocalFindFragment -> com.appmindlab.nano.j2:
     com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener mCallback -> U
-com.appmindlab.nano.LocalFindFragment$1 -> com.appmindlab.nano.l2$a:
+com.appmindlab.nano.LocalFindFragment$1 -> com.appmindlab.nano.j2$a:
     com.appmindlab.nano.LocalFindFragment this$0 -> a
-com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener -> com.appmindlab.nano.l2$b:
-com.appmindlab.nano.LocalFindHistory -> com.appmindlab.nano.m2:
+com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener -> com.appmindlab.nano.j2$b:
+com.appmindlab.nano.LocalFindHistory -> com.appmindlab.nano.k2:
     androidx.collection.LruCache mCache -> a
-com.appmindlab.nano.LocalFindHistory$1 -> com.appmindlab.nano.m2$a:
-com.appmindlab.nano.LocalReplaceFragment -> com.appmindlab.nano.n2:
+com.appmindlab.nano.LocalFindHistory$1 -> com.appmindlab.nano.k2$a:
+com.appmindlab.nano.LocalReplaceFragment -> com.appmindlab.nano.l2:
     com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener mCallback -> U
-com.appmindlab.nano.LocalReplaceFragment$1 -> com.appmindlab.nano.n2$a:
+com.appmindlab.nano.LocalReplaceFragment$1 -> com.appmindlab.nano.l2$a:
     com.appmindlab.nano.LocalReplaceFragment this$0 -> a
-com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener -> com.appmindlab.nano.n2$b:
-com.appmindlab.nano.LocalReplaceHistory -> com.appmindlab.nano.o2:
+com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener -> com.appmindlab.nano.l2$b:
+com.appmindlab.nano.LocalReplaceHistory -> com.appmindlab.nano.m2:
     androidx.collection.LruCache mCache -> a
-com.appmindlab.nano.LocalReplaceHistory$1 -> com.appmindlab.nano.o2$a:
+com.appmindlab.nano.LocalReplaceHistory$1 -> com.appmindlab.nano.m2$a:
 com.appmindlab.nano.MainActivity -> com.appmindlab.nano.MainActivity:
     long mLastMirrored -> h0
     android.database.Cursor mCursor -> v
@@ -21356,7 +21348,7 @@ com.appmindlab.nano.MainActivity -> com.appmindlab.nano.MainActivity:
     206:221:void updateStatus(java.lang.String,android.view.animation.Animation):0:0 -> updateStatus
 com.appmindlab.nano.MainActivity$1 -> com.appmindlab.nano.MainActivity$d:
     com.appmindlab.nano.MainActivity this$0 -> b
-com.appmindlab.nano.MainActivity$10 -> com.appmindlab.nano.p2:
+com.appmindlab.nano.MainActivity$10 -> com.appmindlab.nano.n2:
     com.appmindlab.nano.MainActivity this$0 -> a
     3:4:com.google.android.material.navigation.NavigationView com.appmindlab.nano.MainActivity.access$1100(com.appmindlab.nano.MainActivity):0:0 -> onDrawerClosed
     3:4:void onDrawerClosed(android.view.View):0 -> onDrawerClosed
@@ -21397,7 +21389,7 @@ com.appmindlab.nano.MainActivity$12 -> com.appmindlab.nano.MainActivity$b:
     9:14:void onClick(android.view.View):0:0 -> onClick
 com.appmindlab.nano.MainActivity$13 -> com.appmindlab.nano.MainActivity$c:
     com.appmindlab.nano.MainActivity this$0 -> b
-com.appmindlab.nano.MainActivity$14 -> com.appmindlab.nano.q2:
+com.appmindlab.nano.MainActivity$14 -> com.appmindlab.nano.o2:
     com.appmindlab.nano.MainActivity this$0 -> b
     3:6:void com.appmindlab.nano.MainActivity.doSAFBackupRequest(java.lang.String):0:0 -> onClick
     3:6:void com.appmindlab.nano.MainActivity.access$3800(com.appmindlab.nano.MainActivity,java.lang.String):0 -> onClick
@@ -21406,16 +21398,16 @@ com.appmindlab.nano.MainActivity$14 -> com.appmindlab.nano.q2:
     7:106:void com.appmindlab.nano.MainActivity.doSAFBackupRequest(java.lang.String):0:0 -> onClick
     7:106:void com.appmindlab.nano.MainActivity.access$3800(com.appmindlab.nano.MainActivity,java.lang.String):0 -> onClick
     7:106:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.MainActivity$15 -> com.appmindlab.nano.r2:
-com.appmindlab.nano.MainActivity$16 -> com.appmindlab.nano.s2:
+com.appmindlab.nano.MainActivity$15 -> com.appmindlab.nano.p2:
+com.appmindlab.nano.MainActivity$16 -> com.appmindlab.nano.q2:
     com.appmindlab.nano.MainActivity this$0 -> b
-com.appmindlab.nano.MainActivity$17 -> com.appmindlab.nano.t2:
+com.appmindlab.nano.MainActivity$17 -> com.appmindlab.nano.r2:
     com.appmindlab.nano.MainActivity this$0 -> b
-com.appmindlab.nano.MainActivity$18 -> com.appmindlab.nano.u2:
+com.appmindlab.nano.MainActivity$18 -> com.appmindlab.nano.s2:
     com.appmindlab.nano.MainActivity this$0 -> b
     0:65535:void com.appmindlab.nano.MainActivity.access$700(com.appmindlab.nano.MainActivity,java.lang.String):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.MainActivity$19 -> com.appmindlab.nano.v2:
+com.appmindlab.nano.MainActivity$19 -> com.appmindlab.nano.t2:
     com.appmindlab.nano.MainActivity this$0 -> d
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
@@ -21428,24 +21420,24 @@ com.appmindlab.nano.MainActivity$2 -> com.appmindlab.nano.MainActivity$h:
     0:65535:boolean onQueryTextChange(java.lang.String):0 -> onQueryTextChange
     0:65535:boolean com.appmindlab.nano.MainActivity.access$102(com.appmindlab.nano.MainActivity,boolean):0:0 -> onQueryTextSubmit
     0:65535:boolean onQueryTextSubmit(java.lang.String):0 -> onQueryTextSubmit
-com.appmindlab.nano.MainActivity$20 -> com.appmindlab.nano.w2:
-com.appmindlab.nano.MainActivity$21 -> com.appmindlab.nano.x2:
+com.appmindlab.nano.MainActivity$20 -> com.appmindlab.nano.u2:
+com.appmindlab.nano.MainActivity$21 -> com.appmindlab.nano.v2:
     android.widget.Spinner val$spinner -> b
     com.appmindlab.nano.MainActivity this$0 -> c
-com.appmindlab.nano.MainActivity$22 -> com.appmindlab.nano.y2:
-com.appmindlab.nano.MainActivity$23 -> com.appmindlab.nano.z2:
+com.appmindlab.nano.MainActivity$22 -> com.appmindlab.nano.w2:
+com.appmindlab.nano.MainActivity$23 -> com.appmindlab.nano.x2:
     com.appmindlab.nano.MainActivity this$0 -> d
     android.widget.AutoCompleteTextView val$search_str -> c
     androidx.appcompat.widget.SwitchCompat val$glob -> b
-com.appmindlab.nano.MainActivity$24 -> com.appmindlab.nano.a3:
-com.appmindlab.nano.MainActivity$25 -> com.appmindlab.nano.b3:
+com.appmindlab.nano.MainActivity$24 -> com.appmindlab.nano.y2:
+com.appmindlab.nano.MainActivity$25 -> com.appmindlab.nano.z2:
     com.appmindlab.nano.MainActivity this$0 -> b
     5:7:void com.appmindlab.nano.MainActivity.access$4700(com.appmindlab.nano.MainActivity):0:0 -> onClick
     5:7:void onClick(android.content.DialogInterface,int):0 -> onClick
     8:117:void com.appmindlab.nano.MainActivity.handleMetadataBrowse():0:0 -> onClick
     8:117:void com.appmindlab.nano.MainActivity.access$4700(com.appmindlab.nano.MainActivity):0 -> onClick
     8:117:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.MainActivity$26 -> com.appmindlab.nano.c3:
+com.appmindlab.nano.MainActivity$26 -> com.appmindlab.nano.a3:
     com.appmindlab.nano.MainActivity this$0 -> d
     android.widget.AutoCompleteTextView val$search_str -> b
     androidx.appcompat.widget.SwitchCompat val$glob -> a
@@ -21476,7 +21468,7 @@ com.appmindlab.nano.MainActivity$3 -> com.appmindlab.nano.MainActivity$o:
     com.appmindlab.nano.MainActivity this$0 -> a
     0:65535:boolean com.appmindlab.nano.MainActivity.access$102(com.appmindlab.nano.MainActivity,boolean):0:0 -> onClose
     0:65535:boolean onClose():0 -> onClose
-com.appmindlab.nano.MainActivity$30 -> com.appmindlab.nano.d3:
+com.appmindlab.nano.MainActivity$30 -> com.appmindlab.nano.b3:
     com.appmindlab.nano.MainActivity this$0 -> d
     android.widget.EditText val$search_str -> c
     androidx.appcompat.widget.SwitchCompat val$glob -> b
@@ -21488,8 +21480,8 @@ com.appmindlab.nano.MainActivity$30 -> com.appmindlab.nano.d3:
     49:49:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     50:50:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     37:45:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.MainActivity$31 -> com.appmindlab.nano.e3:
-com.appmindlab.nano.MainActivity$32 -> com.appmindlab.nano.f3:
+com.appmindlab.nano.MainActivity$31 -> com.appmindlab.nano.c3:
+com.appmindlab.nano.MainActivity$32 -> com.appmindlab.nano.d3:
     com.appmindlab.nano.MainActivity this$0 -> d
     android.widget.EditText val$search_str -> c
     androidx.appcompat.widget.SwitchCompat val$glob -> b
@@ -21501,7 +21493,7 @@ com.appmindlab.nano.MainActivity$32 -> com.appmindlab.nano.f3:
     49:49:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     50:50:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     37:45:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.MainActivity$33 -> com.appmindlab.nano.g3:
+com.appmindlab.nano.MainActivity$33 -> com.appmindlab.nano.e3:
 com.appmindlab.nano.MainActivity$34 -> com.appmindlab.nano.MainActivity$i:
     com.appmindlab.nano.MainActivity this$0 -> b
     39:42:void com.appmindlab.nano.MainActivity.access$5000(com.appmindlab.nano.MainActivity):0:0 -> onClick
@@ -21538,7 +21530,7 @@ com.appmindlab.nano.MainActivity$40 -> com.appmindlab.nano.MainActivity$p:
     com.appmindlab.nano.MainActivity this$0 -> b
 com.appmindlab.nano.MainActivity$41 -> com.appmindlab.nano.MainActivity$q:
 com.appmindlab.nano.MainActivity$42 -> com.appmindlab.nano.MainActivity$r:
-com.appmindlab.nano.MainActivity$43 -> com.appmindlab.nano.h3:
+com.appmindlab.nano.MainActivity$43 -> com.appmindlab.nano.f3:
     com.appmindlab.nano.MainActivity this$0 -> b
     14:15:java.lang.String com.appmindlab.nano.MainActivity.access$5102(com.appmindlab.nano.MainActivity,java.lang.String):0:0 -> onClick
     14:15:void onClick(android.content.DialogInterface,int):0 -> onClick
@@ -21551,7 +21543,7 @@ com.appmindlab.nano.MainActivity$43 -> com.appmindlab.nano.h3:
     29:30:android.content.SharedPreferences$Editor com.appmindlab.nano.MainActivity.access$1400(com.appmindlab.nano.MainActivity):0:0 -> onClick
     29:30:void onClick(android.content.DialogInterface,int):0 -> onClick
     31:34:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.MainActivity$44 -> com.appmindlab.nano.i3:
+com.appmindlab.nano.MainActivity$44 -> com.appmindlab.nano.g3:
     com.appmindlab.nano.MainActivity this$0 -> b
     5:6:java.lang.String com.appmindlab.nano.MainActivity.access$5102(com.appmindlab.nano.MainActivity,java.lang.String):0:0 -> onClick
     5:6:void onClick(android.content.DialogInterface,int):0 -> onClick
@@ -21561,8 +21553,8 @@ com.appmindlab.nano.MainActivity$44 -> com.appmindlab.nano.i3:
     16:17:android.content.SharedPreferences$Editor com.appmindlab.nano.MainActivity.access$1400(com.appmindlab.nano.MainActivity):0:0 -> onClick
     16:17:void onClick(android.content.DialogInterface,int):0 -> onClick
     18:21:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.MainActivity$45 -> com.appmindlab.nano.j3:
-com.appmindlab.nano.MainActivity$46 -> com.appmindlab.nano.k3:
+com.appmindlab.nano.MainActivity$45 -> com.appmindlab.nano.h3:
+com.appmindlab.nano.MainActivity$46 -> com.appmindlab.nano.i3:
 com.appmindlab.nano.MainActivity$47 -> com.appmindlab.nano.MainActivity$s:
     boolean val$append_mode -> b
     com.appmindlab.nano.MainActivity this$0 -> c
@@ -21724,7 +21716,7 @@ com.appmindlab.nano.MainActivity$50 -> com.appmindlab.nano.MainActivity$w:
 com.appmindlab.nano.MainActivity$51 -> com.appmindlab.nano.MainActivity$x:
     java.util.List val$permissions -> b
     com.appmindlab.nano.MainActivity this$0 -> c
-com.appmindlab.nano.MainActivity$6 -> com.appmindlab.nano.l3:
+com.appmindlab.nano.MainActivity$6 -> com.appmindlab.nano.j3:
     com.appmindlab.nano.MainActivity this$0 -> b
     3:4:androidx.appcompat.widget.SearchView com.appmindlab.nano.MainActivity.access$200(com.appmindlab.nano.MainActivity):0:0 -> onClick
     3:4:void onClick(android.view.View):0 -> onClick
@@ -21735,12 +21727,12 @@ com.appmindlab.nano.MainActivity$6 -> com.appmindlab.nano.l3:
     22:24:androidx.drawerlayout.widget.DrawerLayout com.appmindlab.nano.MainActivity.access$300(com.appmindlab.nano.MainActivity):0:0 -> onClick
     22:24:void onClick(android.view.View):0 -> onClick
     25:28:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.MainActivity$7 -> com.appmindlab.nano.m3:
+com.appmindlab.nano.MainActivity$7 -> com.appmindlab.nano.k3:
     com.appmindlab.nano.MainActivity this$0 -> b
     3:4:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.MainActivity.access$400(com.appmindlab.nano.MainActivity):0:0 -> onTouch
     3:4:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
     5:9:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.MainActivity$8 -> com.appmindlab.nano.n3:
+com.appmindlab.nano.MainActivity$8 -> com.appmindlab.nano.l3:
     com.appmindlab.nano.MainActivity this$0 -> a
     9:10:java.lang.String com.appmindlab.nano.MainActivity.access$500(com.appmindlab.nano.MainActivity):0:0 -> onRefresh
     9:10:void onRefresh():0 -> onRefresh
@@ -21770,7 +21762,7 @@ com.appmindlab.nano.MainActivity$8 -> com.appmindlab.nano.n3:
     93:95:androidx.swiperefreshlayout.widget.SwipeRefreshLayout com.appmindlab.nano.MainActivity.access$800(com.appmindlab.nano.MainActivity):0:0 -> onRefresh
     93:95:void onRefresh():0 -> onRefresh
     96:104:void onRefresh():0:0 -> onRefresh
-com.appmindlab.nano.MainActivity$9 -> com.appmindlab.nano.o3:
+com.appmindlab.nano.MainActivity$9 -> com.appmindlab.nano.m3:
     com.appmindlab.nano.MainActivity this$0 -> b
     5:7:void com.appmindlab.nano.MainActivity.access$900(com.appmindlab.nano.MainActivity):0:0 -> onClick
     5:7:void onClick(android.view.View):0 -> onClick
@@ -22344,8 +22336,8 @@ com.appmindlab.nano.MainActivity$SearchNearbyTask -> com.appmindlab.nano.MainAct
     29:32:void onPreExecute():0 -> onPreExecute
     33:35:java.lang.String com.appmindlab.nano.MainActivity.access$2002(com.appmindlab.nano.MainActivity,java.lang.String):0:0 -> onPreExecute
     33:35:void onPreExecute():0 -> onPreExecute
-com.appmindlab.nano.MainStatusGestureListener -> com.appmindlab.nano.p3:
-com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.q3:
+com.appmindlab.nano.MainStatusGestureListener -> com.appmindlab.nano.n3:
+com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.o3:
     com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener mCallback -> U
     77:77:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":300,"4":301,"7":302}}
@@ -22491,7 +22483,7 @@ com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.q3:
     301:301:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     302:302:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     285:299:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
-com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener -> com.appmindlab.nano.q3$a:
+com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener -> com.appmindlab.nano.o3$a:
 com.appmindlab.nano.MirrorWorker -> com.appmindlab.nano.MirrorWorker:
     androidx.documentfile.provider.DocumentFile log_dir -> n
     androidx.documentfile.provider.DocumentFile font_dir -> m
@@ -22570,11 +22562,11 @@ com.appmindlab.nano.NotificationReceiver -> com.appmindlab.nano.NotificationRece
     470:483:void cancelScrapbookNotification(android.content.Context,android.content.Intent):0:0 -> onReceive
     470:483:void doAppendScrapbook(android.content.Context,android.content.Intent):0 -> onReceive
     470:483:void onReceive(android.content.Context,android.content.Intent):0 -> onReceive
-com.appmindlab.nano.PrefFragment -> com.appmindlab.nano.r3:
+com.appmindlab.nano.PrefFragment -> com.appmindlab.nano.p3:
     android.content.SharedPreferences mSharedPreferences -> b
     android.content.SharedPreferences$Editor mSharedPreferencesEditor -> c
     java.lang.String mLocalRepoPath -> d
-com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.r3$a:
+com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.p3$a:
     com.appmindlab.nano.PrefFragment this$0 -> a
     29:30:java.lang.String com.appmindlab.nano.PrefFragment.access$000(com.appmindlab.nano.PrefFragment):0:0 -> onPreferenceClick
     29:30:boolean onPreferenceClick(android.preference.Preference):0 -> onPreferenceClick
@@ -22582,7 +22574,7 @@ com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.r3$a:
     39:41:java.lang.String com.appmindlab.nano.PrefFragment.access$000(com.appmindlab.nano.PrefFragment):0:0 -> onPreferenceClick
     39:41:boolean onPreferenceClick(android.preference.Preference):0 -> onPreferenceClick
     42:49:boolean onPreferenceClick(android.preference.Preference):0:0 -> onPreferenceClick
-com.appmindlab.nano.PrefFragment$1$1 -> com.appmindlab.nano.r3$a$a:
+com.appmindlab.nano.PrefFragment$1$1 -> com.appmindlab.nano.p3$a$a:
     com.appmindlab.nano.PrefFragment$1 this$1 -> a
 com.appmindlab.nano.ScrollAwareFABBehavior$1 -> com.appmindlab.nano.ScrollAwareFABBehavior$a:
     com.appmindlab.nano.ScrollAwareFABBehavior this$0 -> a
@@ -22594,13 +22586,13 @@ com.appmindlab.nano.SetPreferenceActivity -> com.appmindlab.nano.SetPreferenceAc
     36:97:void setupTheme():0:0 -> onCreate
     36:97:void onCreate(android.os.Bundle):0 -> onCreate
     98:138:void onCreate(android.os.Bundle):0:0 -> onCreate
-com.appmindlab.nano.SetPreferenceActivity$1 -> com.appmindlab.nano.s3:
+com.appmindlab.nano.SetPreferenceActivity$1 -> com.appmindlab.nano.q3:
     com.appmindlab.nano.SetPreferenceActivity this$0 -> a
     17:18:java.lang.String com.appmindlab.nano.SetPreferenceActivity.access$002(com.appmindlab.nano.SetPreferenceActivity,java.lang.String):0:0 -> onSharedPreferenceChanged
     17:18:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String):0 -> onSharedPreferenceChanged
     19:24:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String):0:0 -> onSharedPreferenceChanged
-com.appmindlab.nano.ShellExecuter -> com.appmindlab.nano.t3:
-com.appmindlab.nano.Snapshot -> com.appmindlab.nano.u3:
+com.appmindlab.nano.ShellExecuter -> com.appmindlab.nano.r3:
+com.appmindlab.nano.Snapshot -> com.appmindlab.nano.s3:
     long mPos -> b
     java.lang.String mContent -> a
     long mTimestamp -> c
@@ -22612,7 +22604,7 @@ com.appmindlab.nano.SuggestionProvider -> com.appmindlab.nano.SuggestionProvider
     128:128:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
     129:129:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
     8:126:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
-com.appmindlab.nano.Utils -> com.appmindlab.nano.v3:
+com.appmindlab.nano.Utils -> com.appmindlab.nano.t3:
     float mLightLevel -> c
     boolean mExternalStorageWriteable -> a
     boolean mWriteLock -> b
@@ -22774,20 +22766,20 @@ com.appmindlab.nano.Utils -> com.appmindlab.nano.v3:
     41:41:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
     42:42:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
     29:39:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
-com.appmindlab.nano.Utils$1 -> com.appmindlab.nano.v3$a:
-com.appmindlab.nano.Utils$2 -> com.appmindlab.nano.v3$b:
+com.appmindlab.nano.Utils$1 -> com.appmindlab.nano.t3$a:
+com.appmindlab.nano.Utils$2 -> com.appmindlab.nano.t3$b:
     java.lang.String val$temp -> a
-com.appmindlab.nano.Utils$3 -> com.appmindlab.nano.v3$c:
-com.appmindlab.nano.Utils$4 -> com.appmindlab.nano.v3$d:
-com.appmindlab.nano.Utils$5 -> com.appmindlab.nano.v3$e:
-com.appmindlab.nano.Utils$6 -> com.appmindlab.nano.v3$f:
-com.appmindlab.nano.Utils$7 -> com.appmindlab.nano.v3$g:
+com.appmindlab.nano.Utils$3 -> com.appmindlab.nano.t3$c:
+com.appmindlab.nano.Utils$4 -> com.appmindlab.nano.t3$d:
+com.appmindlab.nano.Utils$5 -> com.appmindlab.nano.t3$e:
+com.appmindlab.nano.Utils$6 -> com.appmindlab.nano.t3$f:
+com.appmindlab.nano.Utils$7 -> com.appmindlab.nano.t3$g:
     android.widget.EditText val$content -> b
     java.lang.String val$result -> c
-com.appmindlab.nano.Utils$8 -> com.appmindlab.nano.v3$h:
+com.appmindlab.nano.Utils$8 -> com.appmindlab.nano.t3$h:
     androidx.appcompat.app.AppCompatActivity val$activity -> b
     java.lang.String val$result -> c
-com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.v3$i:
+com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.t3$i:
     int ch -> b
     java.lang.String val$str -> c
     int pos -> a
@@ -22796,7 +22788,7 @@ com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.v3$i:
     double parseExpression() -> c
     double parseFactor() -> d
     double parseTerm() -> e
-com.appmindlab.nano.WidgetItem -> com.appmindlab.nano.w3:
+com.appmindlab.nano.WidgetItem -> com.appmindlab.nano.u3:
     long id -> a
     java.lang.String content -> c
     java.lang.String title -> b
