@@ -3177,10 +3177,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 if (event.isCtrlPressed())
                     doCalculate();
                 return true;
-            case KeyEvent.KEYCODE_SPACE:
+            case KeyEvent.KEYCODE_TAB:
                 if (event.isCtrlPressed())
-                    if (event.isShiftPressed())
-                        doTextExpansion();
+                    doTextExpansion();
                 return true;
             default:
                 return super.onKeyUp(keyCode, event);
