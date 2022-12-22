@@ -1,0 +1,2 @@
+v4.3.2
+- Allow linking directly from editor.
