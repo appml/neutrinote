@@ -6019,10 +6019,19 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             criteria = Const.WEB_DEFINE_PATTERN_PREFIX + criteria;
         }
 
-        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-        Bundle bundle = new Bundle();
-        bundle.putString(SearchManager.QUERY, criteria);
-        intent.putExtras(bundle);
+        Intent intent;
+        if (criteria.startsWith(Const.CUSTOM_SCHEME)) {
+            intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(criteria));
+        }
+        else {
+            intent = new Intent(Intent.ACTION_WEB_SEARCH);
+            Bundle bundle = new Bundle();
+            bundle.putString(SearchManager.QUERY, criteria);
+            intent.putExtras(bundle);
+        }
+
         startActivity(intent);
     }
 
