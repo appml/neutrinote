@@ -2593,8 +2593,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 String link = Const.BLANK_LINE + Utils.createNoteLink(title, criteria);
                 Utils.setClipboardText(getApplicationContext(), mClipboard, Const.CREATE_NOTE_LINK_SYM, link);
 
-                // "Consume" the command and leave only the snippet
-                Utils.insert(mContent, Const.NULL_SYM);
+                // Restore the parameter
+                Utils.insert(mContent, extra.trim());
 
                 // Show confirmation
                 Toast.makeText(getApplicationContext(), Const.CLIPBOARD_SYM + Const.LINK_SYM + Const.SPACE_CHAR + link, Toast.LENGTH_SHORT).show();

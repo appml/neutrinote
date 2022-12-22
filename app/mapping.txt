@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: b60db3e
-# pg_map_hash: SHA-256 b60db3ec22cf06e22f54abf39f50239b7dbbb75a25791af84a1ceca8ba8623ea
+# pg_map_id: 21113e0
+# pg_map_hash: SHA-256 21113e0600f01bbcbc80c65e87d40c7b82239f2a54a6cd014788f5007a12eedf
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -19870,13 +19870,13 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     197:197:void showStat():0:0 -> showStat
     122:194:void showStat():0:0 -> showStat
     77:77:void doWebSearch(boolean):0:0 -> t
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":105,"3":106,"6":107,"9":108,"12":109}}
-    105:105:void doWebSearch(boolean):0:0 -> t
-    106:106:void doWebSearch(boolean):0:0 -> t
-    107:107:void doWebSearch(boolean):0:0 -> t
-    108:108:void doWebSearch(boolean):0:0 -> t
-    109:109:void doWebSearch(boolean):0:0 -> t
-    78:104:void doWebSearch(boolean):0:0 -> t
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":137,"3":138,"6":139,"9":140,"12":141}}
+    137:137:void doWebSearch(boolean):0:0 -> t
+    138:138:void doWebSearch(boolean):0:0 -> t
+    139:139:void doWebSearch(boolean):0:0 -> t
+    140:140:void doWebSearch(boolean):0:0 -> t
+    141:141:void doWebSearch(boolean):0:0 -> t
+    78:136:void doWebSearch(boolean):0:0 -> t
     140:140:void toggleMarkdownView():0:0 -> toggleMarkdownView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":238,"3":239,"6":240}}
     238:238:void toggleMarkdownView():0:0 -> toggleMarkdownView
