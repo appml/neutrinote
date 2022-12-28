@@ -1,7 +1,7 @@
 [![GPL Licensed](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/github/downloads/appml/neutrinote/total.svg)]()
 
-[Official](https://appml.gitbook.io/neutrinote/) | [FAQ](https://appml.gitbook.io/neutrinote/neutrinote/how-do-i...) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
+[Official](https://appml.gitbook.io/neutrinote-official/) | [FAQ](https://appml.gitbook.io/neutrinote-official/neutrinote/how-do-i...) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
 
 <div style="display:flex" >
 <a href="https://play.google.com/store/apps/details?id=com.appmindlab.nano">
