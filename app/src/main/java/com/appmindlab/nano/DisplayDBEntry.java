@@ -1778,9 +1778,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (!mAutoSave)
             return;
 
-        mAutoSaveHandler = new Handler();
-        mAutoSaveRunnable = new Runnable() {
-            public void run() {
+        if (mAutoSaveHandler == null) {
+            mAutoSaveHandler = new Handler();
+            mAutoSaveRunnable = () -> {
                 mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_INTERVAL * Const.ONE_SECOND);
 
                 /* Skip when a new record has not been given a title
@@ -1791,9 +1791,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 if ((mAutoSaveSafe) && (mChanged)) {
                     doSave(false, false);
                 }
-            }
-        };
-        mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_INTERVAL * Const.ONE_SECOND);
+            };
+            mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_INTERVAL * Const.ONE_SECOND);
+        }
     }
 
     // Close top fragment
