@@ -20,6 +20,7 @@
     <queries>
         <package android:name="com.android.chrome" />
         <package android:name="com.concept1tech.instalate" />
+        <package android:name="com.deepl.mobiletranslator" />
         <package android:name="com.diotek.sec.lookup.dictionary" />
         <package android:name="com.google.android.apps.translate" />
         <package android:name="com.google.android.calendar" />

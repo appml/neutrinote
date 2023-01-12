@@ -1,0 +1,3 @@
+v4.3.4a
+- Added QuickDic & DeepL support
+- Fixed frozen screen in Android 13
