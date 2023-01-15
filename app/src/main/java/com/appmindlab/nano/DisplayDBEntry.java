@@ -27,6 +27,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
@@ -1779,7 +1780,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             return;
 
         if (mAutoSaveHandler == null) {
-            mAutoSaveHandler = new Handler();
+            mAutoSaveHandler = new Handler(Looper.getMainLooper());
             mAutoSaveRunnable = () -> {
                 mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_INTERVAL * Const.ONE_SECOND);
 
