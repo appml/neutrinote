@@ -1,0 +1,2 @@
+v4.3.4c
+- Faster screen rotation in low memory devices

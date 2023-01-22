@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 6c24df7
-# pg_map_hash: SHA-256 6c24df7f660d4e97817765512ae819e67592549b962c9fd577186bd41bf7175a
+# pg_map_id: 236853b
+# pg_map_hash: SHA-256 236853b9e2eb35f8e0d0fc12da4c376353c5322eab8b655d02979fa95f8a16d5
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -19765,8 +19765,8 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     26:35:void resumeDatabase():0 -> onResume
     26:35:void onResume():0 -> onResume
     36:107:void onResume():0:0 -> onResume
-    108:136:void setupAutoSave():0:0 -> onResume
-    108:136:void onResume():0 -> onResume
+    108:140:void setupAutoSave():0:0 -> onResume
+    108:140:void onResume():0 -> onResume
     1:1:void handleDuplicates(boolean):0:0 -> p
     1:1:void doSave(boolean,boolean):0 -> p
     2:2:void doSave(boolean,boolean):0:0 -> p

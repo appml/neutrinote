@@ -1100,16 +1100,16 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         else if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) && (!allowToolBarSwitch) && (fromCompactToolBar))
             mCompactToolBar = true;
 
-        // Persist state change
-        if (savedInstanceState != null) {
-            savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
-        }
-
         // Render
         if (mCompactToolBar)
             setContentView(R.layout.activity_display_dbentry_compact);
         else
             setContentView(R.layout.activity_display_dbentry);
+
+        // Persist state change
+        if ((savedInstanceState != null) && (fromCompactToolBar != mCompactToolBar)) {
+            savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
+        }
     }
 
     // Setup editor
