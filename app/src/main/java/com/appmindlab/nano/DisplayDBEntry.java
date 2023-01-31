@@ -269,6 +269,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private long mCurPos = -1, mNextPos = 0;
 
     // Auto save
+    private int mAutoSaveInterval = Const.AUTO_SAVE_INTERVAL;
     private Handler mAutoSaveHandler = null;
     private Runnable mAutoSaveRunnable = null;
     private boolean mAutoSaveSafe = true;
@@ -1783,10 +1784,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (!mAutoSave)
             return;
 
+        if (mAutoSaveInterval < 0)
+            return;
+
         if (mAutoSaveHandler == null) {
             mAutoSaveHandler = new Handler(Looper.getMainLooper());
             mAutoSaveRunnable = () -> {
-                mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_INTERVAL * Const.ONE_SECOND);
+                mAutoSaveHandler.postDelayed(mAutoSaveRunnable, mAutoSaveInterval * Const.ONE_SECOND);
 
                 /* Skip when a new record has not been given a title
                 if ((mId < 0) && (mTitle.getText().toString().length() == 0))
@@ -1797,7 +1801,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     doSave(false, false);
                 }
             };
-            mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_INTERVAL * Const.ONE_SECOND);
+            mAutoSaveHandler.postDelayed(mAutoSaveRunnable, mAutoSaveInterval * Const.AUTO_SAVE_BACKOFF * Const.ONE_SECOND);
         }
     }
 
@@ -6937,6 +6941,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mLocalRepoPath = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
             mBackupUri = Uri.parse(mSharedPreferences.getString(Const.PREF_BACKUP_URI, ""));
             mAutoSave = mSharedPreferences.getBoolean(Const.PREF_AUTO_SAVE, true);
+            mAutoSaveInterval = Integer.parseInt(mSharedPreferences.getString(Const.PREF_AUTO_SAVE_INTERVAL, String.valueOf(Const.AUTO_SAVE_INTERVAL)));
             mLocationAware = mSharedPreferences.getBoolean(Const.PREF_LOCATION_AWARE, false);
             mTheme = mSharedPreferences.getString(Const.PREF_THEME, Const.DEFAULT_THEME);
             mLux = mSharedPreferences.getBoolean(Const.PREF_LUX, false);
@@ -6974,7 +6979,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mMarginList = mSharedPreferences.getString(Const.PREF_MARGIN_LIST, Const.DEFAULT_MARGIN_LIST);
             mEvalBuiltInVariables = mSharedPreferences.getBoolean(Const.PREF_EVAL_BUILT_IN_VARIALBES, false);
             mOled = mSharedPreferences.getBoolean(Const.PREF_OLED, false);
-            mWorkingSetSize= Integer.valueOf(mSharedPreferences.getString(Const.PREF_WORKING_SET_SIZE, String.valueOf(Const.WORKING_SET_SIZE)));
+            mWorkingSetSize= Integer.parseInt(mSharedPreferences.getString(Const.PREF_WORKING_SET_SIZE, String.valueOf(Const.WORKING_SET_SIZE)));
             mLabMode = mSharedPreferences.getBoolean(Const.PREF_LAB_MODE, false);
 
             // Sanity checks

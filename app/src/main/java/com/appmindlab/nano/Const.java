@@ -42,6 +42,7 @@ public class Const {
     protected final static String PREF_NEW_NOTE_FILE_TYPE = "com.appmindlab.nano.pref_new_note_file_type";
     protected final static String PREF_CUSTOM_FILTERS = "com.appmindlab.nano.pref_custom_filters";
     protected final static String PREF_AUTO_SAVE = "com.appmindlab.nano.pref_auto_save";
+    protected final static String PREF_AUTO_SAVE_INTERVAL = "com.appmindlab.nano.pref_auto_save_interval";
     protected final static String PREF_LOCATION_AWARE = "com.appmindlab.nano.pref_location_aware";
     protected final static String PREF_LAZY_UPDATE = "com.appmindlab.nano.pref_lazy_update";
     protected final static String PREF_MATH_URL = "com.appmindlab.nano.pref_math_url";
@@ -99,6 +100,7 @@ public class Const {
             PREF_NEW_NOTE_FILE_TYPE,
             PREF_CUSTOM_FILTERS,
             PREF_AUTO_SAVE,
+            PREF_AUTO_SAVE_INTERVAL,
             PREF_LOCATION_AWARE,
             PREF_LAZY_UPDATE,
             PREF_MATH_URL,
@@ -480,7 +482,7 @@ public class Const {
     protected final static int RECENCY = 3;    // Recency in days
     protected final static int SYNC_NOISE_INTERVAL = 2 * 60 * ONE_SECOND;    // Interval with false sync signals
     protected final static int AUTO_SAVE_INTERVAL = 60;
-    protected final static int AUTO_SAVE_BACKOFF = AUTO_SAVE_INTERVAL * 2;
+    protected final static int AUTO_SAVE_BACKOFF = 2;    // Backoff factor
     protected final static int AUTO_BACKUP_FREQ = 24;    // Daily
     protected final static int AUTO_MIRROR_FREQ = 1;     // Every hour
     protected final static int AUTO_RELAUNCH_DELAY = 2 * ONE_SECOND;
