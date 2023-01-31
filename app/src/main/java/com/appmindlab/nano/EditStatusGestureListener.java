@@ -3,22 +3,24 @@ package com.appmindlab.nano;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
+import androidx.annotation.NonNull;
+
 /**
  * Created by saelim on 9/15/16.
  */
 public class EditStatusGestureListener extends GestureDetector.SimpleOnGestureListener {
     @Override
-    public boolean onDown(MotionEvent event) {
+    public boolean onDown(@NonNull MotionEvent event) {
         return true;
     }
 
     @Override
-    public boolean onSingleTapUp(MotionEvent event) {
+    public boolean onSingleTapUp(@NonNull MotionEvent event) {
         return true;
     }
 
     @Override
-    public boolean onSingleTapConfirmed(MotionEvent event) {
+    public boolean onSingleTapConfirmed(@NonNull MotionEvent event) {
         // Show clipboard and general statistics
         try {
             DisplayDBEntry.display_dbentry.showStat();
@@ -30,7 +32,7 @@ public class EditStatusGestureListener extends GestureDetector.SimpleOnGestureLi
     }
 
     @Override
-    public void onLongPress(MotionEvent event) {
+    public void onLongPress(@NonNull MotionEvent event) {
         // Show contextual details
         try {
             DisplayDBEntry.display_dbentry.showDetails();
@@ -41,12 +43,12 @@ public class EditStatusGestureListener extends GestureDetector.SimpleOnGestureLi
     }
 
     @Override
-    public boolean onDoubleTap(MotionEvent event) {
+    public boolean onDoubleTap(@NonNull MotionEvent event) {
         return true;
     }
 
     @Override
-    public boolean onFling (MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+    public boolean onFling (@NonNull MotionEvent e1, @NonNull MotionEvent e2, float velocityX, float velocityY) {
         try {
             if (Math.abs(e1.getY() - e2.getY()) > Const.EDIT_STATUS_SWIPE_H_MAX_OFF_PATH){
                 return false;
@@ -93,7 +95,7 @@ public class EditStatusGestureListener extends GestureDetector.SimpleOnGestureLi
     }
 
     @Override
-    public boolean onDoubleTapEvent(MotionEvent event)  {
+    public boolean onDoubleTapEvent(@NonNull MotionEvent event)  {
         try {
             // Set up anchor
             DisplayDBEntry.display_dbentry.setupAnchor();

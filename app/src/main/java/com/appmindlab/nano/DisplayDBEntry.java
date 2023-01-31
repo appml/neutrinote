@@ -890,12 +890,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Setup status bar
+    @SuppressLint("ClickableViewAccessibility")
     protected void setupStatusBar() {
         mStatusBar = findViewById(R.id.status_bar);
 
         // Set gesture detector
         mEditStatusGestureDetector = new GestureDetectorCompat(this, new EditStatusGestureListener());
         mStatusBar.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 mEditStatusGestureDetector.onTouchEvent(motionEvent);
@@ -1222,6 +1224,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Set gesture detector
         mEditContentGestureDetector = new GestureDetectorCompat(this, new ContentGestureListener());
         mContent.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 // Reset auto save timer
@@ -1519,6 +1522,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Show/hide toolbar
         mMarkdownView.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 // Show/hide tool bar
