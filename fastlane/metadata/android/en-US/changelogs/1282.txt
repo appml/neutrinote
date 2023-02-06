@@ -1,0 +1,2 @@
+v4.3.5
+- Added custom auto save interval.
