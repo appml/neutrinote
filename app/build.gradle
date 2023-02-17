@@ -12,7 +12,7 @@ android {
         targetSdkVersion 33
         multiDexEnabled true
         versionCode 1282
-        versionName "4.3.5"
+        versionName "4.3.5a"
     }
 
     buildTypes {

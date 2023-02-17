@@ -3510,11 +3510,19 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
 
         if (mId > 0) {
-            mId = mDatasource.updateRecord(mId, title, content, mStar, null, true, mTitleSaved);
-            // Purge old title from mirror in the event of a title change, updated title will be added by next mirroring
-            if ((!title.equals(mTitleSaved)) && (hasMirror())) {
-                Utils.deleteSAFSubDirFile(getApplicationContext(), mBackupUri, Const.MIRROR_PATH, mTitleSaved);
-            }
+            // Note: avoid main UI thread especially when conducting auto save in the background
+            final String title_temp = title;
+            Thread t = new Thread() {
+
+                public void run() {
+                    mId = mDatasource.updateRecord(mId, title_temp, content, mStar, null, true, mTitleSaved);
+                    // Purge old title from mirror in the event of a title change, updated title will be added by next mirroring
+                    if ((!title_temp.equals(mTitleSaved)) && (hasMirror())) {
+                        Utils.deleteSAFSubDirFile(getApplicationContext(), mBackupUri, Const.MIRROR_PATH, mTitleSaved);
+                    }
+                }
+            };
+            t.start();
         }
         else {
             ArrayList<DBEntry> results = mDatasource.getRecordByTitle(title);
