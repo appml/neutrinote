@@ -27,6 +27,7 @@
         <package android:name="com.socialnmobile.colordict" />
         <package android:name="de.reimardoeffinger.quickdic" />
         <package android:name="itkach.aard2" />
+        <package android:name="org.kiwix.kiwixmobile" />
         <package android:name="org.mozilla.firefox" />
         <package android:name="org.sufficientlysecure.keychain" />
         <intent>

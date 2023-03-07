@@ -481,7 +481,7 @@ public class Const {
     protected final static int BACKOFF = 30 * ONE_SECOND;
     protected final static int RECENCY = 3;    // Recency in days
     protected final static int SYNC_NOISE_INTERVAL = 2 * 60 * ONE_SECOND;    // Interval with false sync signals
-    protected final static int AUTO_SAVE_INTERVAL = 60;
+    protected final static int AUTO_SAVE_INTERVAL = -1;
     protected final static int AUTO_SAVE_BACKOFF = 2;    // Backoff factor
     protected final static int AUTO_BACKUP_FREQ = 24;    // Daily
     protected final static int AUTO_MIRROR_FREQ = 1;     // Every hour

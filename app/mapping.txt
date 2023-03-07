@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 236853b
-# pg_map_hash: SHA-256 236853b9e2eb35f8e0d0fc12da4c376353c5322eab8b655d02979fa95f8a16d5
+# pg_map_id: f898e86
+# pg_map_hash: SHA-256 f898e86e466c5e03cdc65cbfe411fcc9aec63307f1f5a9fb90d6a8ea2c723b34
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -19191,14 +19191,13 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     int mCanvasForeground -> l0
     int mInNoteLastIdx -> p0
     java.lang.String mFontSize -> y0
-    android.os.Handler mAutoSaveHandler -> j1
+    java.lang.Runnable mAutoSaveRunnable -> l1
     boolean mLux -> v0
     android.widget.AutoCompleteTextView mLocalFind -> d1
     java.lang.String mLinkifyTrigger -> R0
-    java.util.LinkedList mUndo -> n1
-    android.view.animation.Animation mZoomIn -> w1
+    android.view.animation.Animation mPushLeftIn -> w1
     java.lang.String mNewNoteFileType -> N0
-    android.view.animation.Animation mSlideDown -> s1
+    android.view.animation.Animation mSlideUp -> s1
     boolean mTitleBarVisible -> N
     int mHitIdx -> h1
     java.lang.String mCriteria -> e1
@@ -19207,8 +19206,6 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     android.widget.LinearLayout mEditor -> q
     java.lang.String mTheme -> u0
     boolean mShowToolBar -> S0
-    boolean mSnapshotSafe -> p1
-    boolean mAutoSaveSafe -> l1
     boolean mToolBarVisible -> O
     boolean mParseAlpine -> F0
     java.lang.String mContentAtOpen -> J
@@ -19218,15 +19215,16 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     java.lang.String mCustomTimeFormat -> Y0
     java.util.Date mAccessed -> T
     boolean mOled -> w0
+    android.os.Handler mAutoSaveHandler -> k1
     java.lang.String mMarkdownMargin -> Z
     int mMarkdownAnchorPos -> x
-    java.util.LinkedList mRedo -> o1
+    java.util.LinkedList mUndo -> o1
     java.lang.String mAutoToolBarTag -> Q0
-    android.view.animation.Animation mBounce -> x1
+    android.view.animation.Animation mZoomIn -> x1
     androidx.coordinatorlayout.widget.CoordinatorLayout mEditorCompact -> r
     com.appmindlab.nano.MainActivity mActivity -> C
     android.text.SpannableStringBuilder mSpann -> f1
-    android.view.animation.Animation mPushDownIn -> t1
+    android.view.animation.Animation mSlideDown -> t1
     boolean mChanged -> d0
     android.widget.EditText mTitle -> D
     long mPosAtClear -> L
@@ -19238,8 +19236,9 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     java.lang.String mFontFamily -> x0
     java.util.Date mModified -> S
     android.content.ClipboardManager mClipboard -> k0
+    boolean mSnapshotSafe -> q1
     boolean mKeepDeletedCopies -> L0
-    boolean mLocationAware -> m1
+    boolean mAutoSaveSafe -> m1
     boolean mAutoSave -> H0
     long mNextPos -> i1
     android.widget.EditText mContent -> E
@@ -19248,22 +19247,25 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     boolean mMarkdownAnchorActive -> v
     android.view.View mDecorView -> s
     java.lang.String mCustomDateFormat -> X0
-    java.util.HashMap mCustomFonts -> y1
     int mToolBarSelectedItemId -> z
     java.util.Date mCreated -> R
     android.net.Uri mBackupUri -> t0
-    android.view.animation.Animation mPushUpIn -> u1
+    android.view.animation.Animation mBounce -> y1
+    android.view.animation.Animation mPushDownIn -> u1
+    com.appmindlab.nano.DisplayDBEntry display_dbentry -> B1
     java.util.List mStatusQ -> i0
     java.lang.String mSafeModeTag -> P0
-    android.view.animation.Animation mFadeIn -> q1
+    java.util.LinkedList mRedo -> p1
     int mStar -> Q
     android.widget.EditText mCurrentEditText -> F
     java.lang.String mTitleSaved -> G
     int mWorkingSetSize -> b1
+    boolean mReloadSafe -> A1
     java.lang.String mMarginList -> B0
-    boolean mReloadSafe -> z1
+    int mAutoSaveInterval -> j1
     boolean mLaTeXSingleDollar -> U0
     java.lang.String mLocalRepoPath -> s0
+    boolean mLocationAware -> n1
     boolean mOpenInMarkdown -> M0
     long mAnchorPos -> c0
     androidx.core.view.GestureDetectorCompat mEditContentGestureDetector -> h0
@@ -19275,15 +19277,14 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     com.appmindlab.nano.DataSource mDatasource -> A
     boolean mImmersiveMode -> t
     android.widget.ScrollView mScrollView -> V
+    java.util.HashMap mCustomFonts -> z1
     java.lang.String mIndentChar -> W0
     java.util.ArrayList mHits -> g1
-    java.lang.Runnable mAutoSaveRunnable -> k1
     android.hardware.SensorManager mSensorManager -> K0
-    android.view.animation.Animation mPushLeftIn -> v1
-    com.appmindlab.nano.DisplayDBEntry display_dbentry -> A1
+    android.view.animation.Animation mPushUpIn -> v1
     java.lang.String mMarkdownTrigger -> O0
     android.widget.TextView mStatusBar -> f0
-    android.view.animation.Animation mSlideUp -> r1
+    android.view.animation.Animation mFadeIn -> r1
     void handleReload() -> A
     void handleSave() -> B
     49:49:void handleShowClipboard():0:0 -> C
@@ -19537,12 +19538,12 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     158:158:java.lang.String buildStyle():0:0 -> buildStyle
     148:153:java.lang.String buildStyle():0:0 -> buildStyle
     0:65535:void doLaunchNote(java.lang.String,long):0:0 -> d
-    0:65535:void access$5500(com.appmindlab.nano.DisplayDBEntry,java.lang.String,long):0 -> d
+    0:65535:void access$5800(com.appmindlab.nano.DisplayDBEntry,java.lang.String,long):0 -> d
     1:2:void doAppendClipboard(java.lang.String):0:0 -> e
-    1:2:void access$6500(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0 -> e
+    1:2:void access$6700(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0 -> e
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     3:239:void doAppendClipboard(java.lang.String):0:0 -> e
-    3:239:void access$6500(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0 -> e
+    3:239:void access$6700(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0 -> e
     void applyLinkify() -> f
     void closeTopFragment() -> g
     56:56:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
@@ -19765,17 +19766,17 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     26:35:void resumeDatabase():0 -> onResume
     26:35:void onResume():0 -> onResume
     36:107:void onResume():0:0 -> onResume
-    108:140:void setupAutoSave():0:0 -> onResume
-    108:140:void onResume():0 -> onResume
-    1:1:void handleDuplicates(boolean):0:0 -> p
-    1:1:void doSave(boolean,boolean):0 -> p
-    2:2:void doSave(boolean,boolean):0:0 -> p
-    3:3:void doSave(boolean,boolean):0:0 -> p
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":5,"3":6,"6":7}}
-    5:5:void doSave(boolean,boolean):0:0 -> p
-    6:6:void doSave(boolean,boolean):0:0 -> p
-    7:7:void doSave(boolean,boolean):0:0 -> p
-    4:4:void doSave(boolean,boolean):0:0 -> p
+    108:150:void setupAutoSave():0:0 -> onResume
+    108:150:void onResume():0 -> onResume
+    243:327:void handleDuplicates(boolean):0:0 -> p
+    243:327:void doSave(boolean,boolean):0 -> p
+    328:364:void doSave(boolean,boolean):0:0 -> p
+    365:365:void doSave(boolean,boolean):0:0 -> p
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":495,"3":496,"6":497}}
+    495:495:void doSave(boolean,boolean):0:0 -> p
+    496:496:void doSave(boolean,boolean):0:0 -> p
+    497:497:void doSave(boolean,boolean):0:0 -> p
+    366:494:void doSave(boolean,boolean):0:0 -> p
     void doSavePos() -> q
     1:1:void expandShortcut(java.lang.String[]):0:0 -> r
     1:1:void doTextExpansion():0 -> r
@@ -19921,12 +19922,12 @@ com.appmindlab.nano.DisplayDBEntry$$ExternalSyntheticLambda1 -> com.appmindlab.n
     0:65535:void com.appmindlab.nano.DisplayDBEntry.lambda$setupAutoSave$0():0:0 -> run
     0:65535:void com.appmindlab.nano.DisplayDBEntry$$InternalSyntheticLambda$1$04805033ccb9d0e27b8f68d4fc3283a71ea6486c7663b4e1ce27a7230d150396$0.run():0 -> run
       # {"id":"com.android.tools.r8.synthesized"}
-com.appmindlab.nano.DisplayDBEntry$1 -> com.appmindlab.nano.DisplayDBEntry$o:
+com.appmindlab.nano.DisplayDBEntry$1 -> com.appmindlab.nano.DisplayDBEntry$p:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:4:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.DisplayDBEntry.access$000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     3:4:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
     5:9:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$10 -> com.appmindlab.nano.DisplayDBEntry$j:
+com.appmindlab.nano.DisplayDBEntry$10 -> com.appmindlab.nano.DisplayDBEntry$k:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:7:boolean com.appmindlab.nano.DisplayDBEntry.access$900(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
     3:7:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
@@ -19938,65 +19939,63 @@ com.appmindlab.nano.DisplayDBEntry$10 -> com.appmindlab.nano.DisplayDBEntry$j:
     25:28:void com.appmindlab.nano.DisplayDBEntry.access$1100(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
     25:28:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
 com.appmindlab.nano.DisplayDBEntry$100 -> com.appmindlab.nano.DisplayDBEntry$a:
+    boolean scaleChangedRunnablePending -> a
+com.appmindlab.nano.DisplayDBEntry$100$1 -> com.appmindlab.nano.DisplayDBEntry$a$a:
+    android.webkit.WebView val$view -> b
+com.appmindlab.nano.DisplayDBEntry$100$2 -> com.appmindlab.nano.DisplayDBEntry$a$b:
+    com.appmindlab.nano.DisplayDBEntry$100 this$1 -> e
+    float val$newScale -> d
+    float val$oldScale -> c
+    android.webkit.WebView val$webView -> b
+    5:5:void run():0:0 -> run
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":43,"3":44,"6":45}}
+    43:43:void run():0:0 -> run
+    44:44:void run():0:0 -> run
+    45:45:void run():0:0 -> run
+    6:42:void run():0:0 -> run
+com.appmindlab.nano.DisplayDBEntry$101 -> com.appmindlab.nano.DisplayDBEntry$b:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:4:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     3:4:void onClick(android.content.DialogInterface,int):0 -> onClick
     5:10:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    11:14:android.content.ClipboardManager com.appmindlab.nano.DisplayDBEntry.access$6200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    11:14:android.content.ClipboardManager com.appmindlab.nano.DisplayDBEntry.access$6400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     11:14:void onClick(android.content.DialogInterface,int):0 -> onClick
     15:26:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$101 -> com.appmindlab.nano.DisplayDBEntry$b:
 com.appmindlab.nano.DisplayDBEntry$102 -> com.appmindlab.nano.DisplayDBEntry$c:
-    com.appmindlab.nano.DisplayDBEntry this$0 -> a
 com.appmindlab.nano.DisplayDBEntry$103 -> com.appmindlab.nano.DisplayDBEntry$d:
-    com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> b
-    com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    5:9:void com.appmindlab.nano.DisplayDBEntry.access$6300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    5:9:void onClick(android.view.View):0 -> onClick
-    10:173:void com.appmindlab.nano.DisplayDBEntry.getImageFromCamera():0:0 -> onClick
-    10:173:void com.appmindlab.nano.DisplayDBEntry.access$6300(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    10:173:void onClick(android.view.View):0 -> onClick
-    174:179:void onClick(android.view.View):0:0 -> onClick
+    com.appmindlab.nano.DisplayDBEntry this$0 -> a
 com.appmindlab.nano.DisplayDBEntry$104 -> com.appmindlab.nano.DisplayDBEntry$e:
     com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    5:7:void com.appmindlab.nano.DisplayDBEntry.access$6400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    5:9:void com.appmindlab.nano.DisplayDBEntry.access$6500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    5:9:void onClick(android.view.View):0 -> onClick
+    10:173:void com.appmindlab.nano.DisplayDBEntry.getImageFromCamera():0:0 -> onClick
+    10:173:void com.appmindlab.nano.DisplayDBEntry.access$6500(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
+    10:173:void onClick(android.view.View):0 -> onClick
+    174:179:void onClick(android.view.View):0:0 -> onClick
+com.appmindlab.nano.DisplayDBEntry$105 -> com.appmindlab.nano.DisplayDBEntry$f:
+    com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> b
+    com.appmindlab.nano.DisplayDBEntry this$0 -> c
+    5:7:void com.appmindlab.nano.DisplayDBEntry.access$6600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     5:7:void onClick(android.view.View):0 -> onClick
     8:39:void com.appmindlab.nano.DisplayDBEntry.getImageFromGallary():0:0 -> onClick
-    8:39:void com.appmindlab.nano.DisplayDBEntry.access$6400(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
+    8:39:void com.appmindlab.nano.DisplayDBEntry.access$6600(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
     8:39:void onClick(android.view.View):0 -> onClick
     40:45:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$105 -> com.appmindlab.nano.DisplayDBEntry$f:
+com.appmindlab.nano.DisplayDBEntry$106 -> com.appmindlab.nano.DisplayDBEntry$g:
     java.util.List val$permissions -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-com.appmindlab.nano.DisplayDBEntry$106 -> com.appmindlab.nano.DisplayDBEntry$g:
+com.appmindlab.nano.DisplayDBEntry$107 -> com.appmindlab.nano.DisplayDBEntry$h:
     android.widget.AutoCompleteTextView val$search_str -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     23:24:com.appmindlab.nano.DataSource com.appmindlab.nano.DisplayDBEntry.access$2200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     23:24:void onClick(android.content.DialogInterface,int):0 -> onClick
     25:76:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$107 -> com.appmindlab.nano.DisplayDBEntry$h:
-    android.widget.AutoCompleteTextView val$search_str -> b
-    com.appmindlab.nano.DisplayDBEntry this$0 -> c
 com.appmindlab.nano.DisplayDBEntry$108 -> com.appmindlab.nano.DisplayDBEntry$i:
-com.appmindlab.nano.DisplayDBEntry$109 -> com.appmindlab.nano.x:
     android.widget.AutoCompleteTextView val$search_str -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    17:18:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4302(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
-    17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
-    19:22:boolean com.appmindlab.nano.DisplayDBEntry.access$4700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
-    23:28:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    29:32:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4800(com.appmindlab.nano.DisplayDBEntry,java.lang.String,boolean):0:0 -> onClick
-    29:32:void onClick(android.content.DialogInterface,int):0 -> onClick
-    33:53:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$109$1 -> com.appmindlab.nano.x$a:
-    com.appmindlab.nano.DisplayDBEntry$109 this$1 -> c
-    java.lang.String val$str -> b
-    5:6:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    5:6:void run():0 -> run
-    7:12:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$11 -> com.appmindlab.nano.DisplayDBEntry$k:
+com.appmindlab.nano.DisplayDBEntry$109 -> com.appmindlab.nano.DisplayDBEntry$j:
+com.appmindlab.nano.DisplayDBEntry$11 -> com.appmindlab.nano.DisplayDBEntry$l:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:6:android.os.Handler com.appmindlab.nano.DisplayDBEntry.access$1200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     3:6:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
@@ -20005,11 +20004,28 @@ com.appmindlab.nano.DisplayDBEntry$11 -> com.appmindlab.nano.DisplayDBEntry$k:
     9:13:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
     14:15:android.os.Handler com.appmindlab.nano.DisplayDBEntry.access$1200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     14:15:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    16:20:java.lang.Runnable com.appmindlab.nano.DisplayDBEntry.access$1300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    16:20:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    21:25:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$110 -> com.appmindlab.nano.y:
-com.appmindlab.nano.DisplayDBEntry$12 -> com.appmindlab.nano.DisplayDBEntry$l:
+    16:19:java.lang.Runnable com.appmindlab.nano.DisplayDBEntry.access$1300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
+    16:19:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
+    20:24:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
+com.appmindlab.nano.DisplayDBEntry$110 -> com.appmindlab.nano.x:
+    android.widget.AutoCompleteTextView val$search_str -> b
+    com.appmindlab.nano.DisplayDBEntry this$0 -> c
+    17:18:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4602(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
+    17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
+    19:22:boolean com.appmindlab.nano.DisplayDBEntry.access$5000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
+    23:28:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+    29:32:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$5100(com.appmindlab.nano.DisplayDBEntry,java.lang.String,boolean):0:0 -> onClick
+    29:32:void onClick(android.content.DialogInterface,int):0 -> onClick
+    33:53:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+com.appmindlab.nano.DisplayDBEntry$110$1 -> com.appmindlab.nano.x$a:
+    com.appmindlab.nano.DisplayDBEntry$110 this$1 -> c
+    java.lang.String val$str -> b
+    5:6:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    5:6:void run():0 -> run
+    7:12:void run():0:0 -> run
+com.appmindlab.nano.DisplayDBEntry$111 -> com.appmindlab.nano.y:
+com.appmindlab.nano.DisplayDBEntry$12 -> com.appmindlab.nano.DisplayDBEntry$m:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     5:6:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$1400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onFocusChange
     5:6:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
@@ -20020,7 +20036,7 @@ com.appmindlab.nano.DisplayDBEntry$12 -> com.appmindlab.nano.DisplayDBEntry$l:
     14:15:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
     16:18:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$602(com.appmindlab.nano.DisplayDBEntry,android.widget.EditText):0:0 -> onFocusChange
     16:18:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
-com.appmindlab.nano.DisplayDBEntry$13 -> com.appmindlab.nano.DisplayDBEntry$m:
+com.appmindlab.nano.DisplayDBEntry$13 -> com.appmindlab.nano.DisplayDBEntry$n:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:7:boolean com.appmindlab.nano.DisplayDBEntry.access$900(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
     3:7:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
@@ -20031,7 +20047,7 @@ com.appmindlab.nano.DisplayDBEntry$13 -> com.appmindlab.nano.DisplayDBEntry$m:
     21:24:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
     25:28:void com.appmindlab.nano.DisplayDBEntry.access$1100(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
     25:28:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
-com.appmindlab.nano.DisplayDBEntry$14 -> com.appmindlab.nano.DisplayDBEntry$n:
+com.appmindlab.nano.DisplayDBEntry$14 -> com.appmindlab.nano.DisplayDBEntry$o:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:6:android.os.Handler com.appmindlab.nano.DisplayDBEntry.access$1200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     3:6:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
@@ -20040,16 +20056,16 @@ com.appmindlab.nano.DisplayDBEntry$14 -> com.appmindlab.nano.DisplayDBEntry$n:
     9:13:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
     14:15:android.os.Handler com.appmindlab.nano.DisplayDBEntry.access$1200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     14:15:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    16:20:java.lang.Runnable com.appmindlab.nano.DisplayDBEntry.access$1300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    16:20:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    21:25:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    26:29:boolean com.appmindlab.nano.DisplayDBEntry.access$1600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    26:29:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    30:33:boolean com.appmindlab.nano.DisplayDBEntry.access$300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    30:33:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    34:35:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.DisplayDBEntry.access$1700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    34:35:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    36:40:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
+    16:19:java.lang.Runnable com.appmindlab.nano.DisplayDBEntry.access$1300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
+    16:19:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
+    20:24:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
+    25:28:boolean com.appmindlab.nano.DisplayDBEntry.access$1600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
+    25:28:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
+    29:32:boolean com.appmindlab.nano.DisplayDBEntry.access$300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
+    29:32:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
+    33:34:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.DisplayDBEntry.access$1700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
+    33:34:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
+    35:39:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
 com.appmindlab.nano.DisplayDBEntry$15 -> com.appmindlab.nano.z:
     boolean scaleChangedRunnablePending -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
@@ -20135,12 +20151,12 @@ com.appmindlab.nano.DisplayDBEntry$19 -> com.appmindlab.nano.d0:
     37:38:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
     37:38:void run():0 -> run
     39:55:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$2 -> com.appmindlab.nano.DisplayDBEntry$r:
+com.appmindlab.nano.DisplayDBEntry$2 -> com.appmindlab.nano.DisplayDBEntry$s:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     3:5:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPrimaryClipChanged
     3:5:void onPrimaryClipChanged():0 -> onPrimaryClipChanged
     6:9:void onPrimaryClipChanged():0:0 -> onPrimaryClipChanged
-com.appmindlab.nano.DisplayDBEntry$20 -> com.appmindlab.nano.DisplayDBEntry$p:
+com.appmindlab.nano.DisplayDBEntry$20 -> com.appmindlab.nano.DisplayDBEntry$q:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     3:6:boolean com.appmindlab.nano.DisplayDBEntry.access$2600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSensorChanged
     3:6:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
@@ -20162,7 +20178,7 @@ com.appmindlab.nano.DisplayDBEntry$20 -> com.appmindlab.nano.DisplayDBEntry$p:
     77:82:void onSensorChanged(android.hardware.SensorEvent):0:0 -> onSensorChanged
     83:85:boolean com.appmindlab.nano.DisplayDBEntry.access$2602(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onSensorChanged
     83:85:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
-com.appmindlab.nano.DisplayDBEntry$21 -> com.appmindlab.nano.DisplayDBEntry$q:
+com.appmindlab.nano.DisplayDBEntry$21 -> com.appmindlab.nano.DisplayDBEntry$r:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:6:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2400(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
     3:6:void run():0 -> run
@@ -20240,8 +20256,8 @@ com.appmindlab.nano.DisplayDBEntry$28 -> com.appmindlab.nano.k0:
     7:56:void onResponse(org.json.JSONObject):0:0 -> onResponse
 com.appmindlab.nano.DisplayDBEntry$29 -> com.appmindlab.nano.l0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$3 -> com.appmindlab.nano.DisplayDBEntry$a0:
-com.appmindlab.nano.DisplayDBEntry$30 -> com.appmindlab.nano.DisplayDBEntry$s:
+com.appmindlab.nano.DisplayDBEntry$3 -> com.appmindlab.nano.DisplayDBEntry$b0:
+com.appmindlab.nano.DisplayDBEntry$30 -> com.appmindlab.nano.DisplayDBEntry$t:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:11:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
     3:11:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
@@ -20334,19 +20350,19 @@ com.appmindlab.nano.DisplayDBEntry$30 -> com.appmindlab.nano.DisplayDBEntry$s:
     336:337:void onClick(android.content.DialogInterface,int):0 -> onClick
     338:340:boolean com.appmindlab.nano.DisplayDBEntry.access$3302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     338:340:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$31 -> com.appmindlab.nano.DisplayDBEntry$t:
+com.appmindlab.nano.DisplayDBEntry$31 -> com.appmindlab.nano.DisplayDBEntry$u:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     4:5:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     4:5:void onClick(android.content.DialogInterface,int):0 -> onClick
     6:8:boolean com.appmindlab.nano.DisplayDBEntry.access$3302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     6:8:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$32 -> com.appmindlab.nano.DisplayDBEntry$u:
+com.appmindlab.nano.DisplayDBEntry$32 -> com.appmindlab.nano.DisplayDBEntry$v:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     4:5:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
     4:5:void onDismiss(android.content.DialogInterface):0 -> onDismiss
     6:8:boolean com.appmindlab.nano.DisplayDBEntry.access$3302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
     6:8:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$33 -> com.appmindlab.nano.DisplayDBEntry$v:
+com.appmindlab.nano.DisplayDBEntry$33 -> com.appmindlab.nano.DisplayDBEntry$w:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     4:5:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
     4:5:void onCancel(android.content.DialogInterface):0 -> onCancel
@@ -20354,34 +20370,59 @@ com.appmindlab.nano.DisplayDBEntry$33 -> com.appmindlab.nano.DisplayDBEntry$v:
     6:8:void onCancel(android.content.DialogInterface):0 -> onCancel
 com.appmindlab.nano.DisplayDBEntry$34 -> com.appmindlab.nano.m0:
 com.appmindlab.nano.DisplayDBEntry$35 -> com.appmindlab.nano.n0:
-com.appmindlab.nano.DisplayDBEntry$36 -> com.appmindlab.nano.DisplayDBEntry$w:
+com.appmindlab.nano.DisplayDBEntry$36 -> com.appmindlab.nano.DisplayDBEntry$x:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     7:9:void com.appmindlab.nano.DisplayDBEntry.access$3400(com.appmindlab.nano.DisplayDBEntry,boolean,boolean):0:0 -> onClick
     7:9:void onClick(android.content.DialogInterface,int):0 -> onClick
     10:11:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     12:14:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     12:14:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$37 -> com.appmindlab.nano.DisplayDBEntry$x:
+com.appmindlab.nano.DisplayDBEntry$37 -> com.appmindlab.nano.DisplayDBEntry$y:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     6:8:void com.appmindlab.nano.DisplayDBEntry.access$3400(com.appmindlab.nano.DisplayDBEntry,boolean,boolean):0:0 -> onClick
     6:8:void onClick(android.content.DialogInterface,int):0 -> onClick
     9:11:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     12:14:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     12:14:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$38 -> com.appmindlab.nano.DisplayDBEntry$y:
+com.appmindlab.nano.DisplayDBEntry$38 -> com.appmindlab.nano.DisplayDBEntry$z:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
     0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$39 -> com.appmindlab.nano.DisplayDBEntry$z:
+com.appmindlab.nano.DisplayDBEntry$39 -> com.appmindlab.nano.DisplayDBEntry$a0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
     0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$4 -> com.appmindlab.nano.DisplayDBEntry$b0:
+com.appmindlab.nano.DisplayDBEntry$4 -> com.appmindlab.nano.DisplayDBEntry$d0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     3:6:android.widget.RelativeLayout com.appmindlab.nano.DisplayDBEntry.access$200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onAnimationEnd
     3:6:void onAnimationEnd(android.view.animation.Animation):0 -> onAnimationEnd
     7:10:void onAnimationEnd(android.view.animation.Animation):0:0 -> onAnimationEnd
-com.appmindlab.nano.DisplayDBEntry$40 -> com.appmindlab.nano.o0:
+com.appmindlab.nano.DisplayDBEntry$40 -> com.appmindlab.nano.DisplayDBEntry$c0:
+    java.lang.String val$content -> c
+    java.lang.String val$title_temp -> b
+    com.appmindlab.nano.DisplayDBEntry this$0 -> d
+    3:4:com.appmindlab.nano.DataSource com.appmindlab.nano.DisplayDBEntry.access$2200(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    3:4:void run():0 -> run
+    5:6:long com.appmindlab.nano.DisplayDBEntry.access$3500(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    5:6:void run():0 -> run
+    7:10:void run():0:0 -> run
+    11:14:int com.appmindlab.nano.DisplayDBEntry.access$3600(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    11:14:void run():0 -> run
+    15:16:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$3700(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    15:16:void run():0 -> run
+    17:20:void run():0:0 -> run
+    21:22:long com.appmindlab.nano.DisplayDBEntry.access$3502(com.appmindlab.nano.DisplayDBEntry,long):0:0 -> run
+    21:22:void run():0 -> run
+    23:26:void run():0:0 -> run
+    27:28:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$3700(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    27:28:void run():0 -> run
+    29:50:void run():0:0 -> run
+    51:52:android.net.Uri com.appmindlab.nano.DisplayDBEntry.access$3800(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    51:52:void run():0 -> run
+    53:56:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$3700(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    53:56:void run():0 -> run
+    57:60:void run():0:0 -> run
+com.appmindlab.nano.DisplayDBEntry$41 -> com.appmindlab.nano.o0:
     android.widget.AutoCompleteTextView val$metadata_str -> b
     androidx.appcompat.widget.SwitchCompat val$star -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
@@ -20391,32 +20432,32 @@ com.appmindlab.nano.DisplayDBEntry$40 -> com.appmindlab.nano.o0:
     43:44:long com.appmindlab.nano.DisplayDBEntry.access$3500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     43:44:void onClick(android.content.DialogInterface,int):0 -> onClick
     45:53:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$41 -> com.appmindlab.nano.p0:
-com.appmindlab.nano.DisplayDBEntry$42 -> com.appmindlab.nano.q0:
+com.appmindlab.nano.DisplayDBEntry$42 -> com.appmindlab.nano.p0:
+com.appmindlab.nano.DisplayDBEntry$43 -> com.appmindlab.nano.q0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     3:4:void com.appmindlab.nano.DisplayDBEntry.doRevert():0:0 -> onClick
-    3:4:void com.appmindlab.nano.DisplayDBEntry.access$3600(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
+    3:4:void com.appmindlab.nano.DisplayDBEntry.access$3900(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     3:4:void onClick(android.content.DialogInterface,int):0 -> onClick
     5:72:void com.appmindlab.nano.DisplayDBEntry.doRevert():0:0 -> onClick
-    5:72:void com.appmindlab.nano.DisplayDBEntry.access$3600(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
+    5:72:void com.appmindlab.nano.DisplayDBEntry.access$3900(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
     5:72:void onClick(android.content.DialogInterface,int):0 -> onClick
     73:75:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     76:78:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     76:78:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$43 -> com.appmindlab.nano.r0:
+com.appmindlab.nano.DisplayDBEntry$44 -> com.appmindlab.nano.r0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$44 -> com.appmindlab.nano.s0:
+com.appmindlab.nano.DisplayDBEntry$45 -> com.appmindlab.nano.s0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
     0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$45 -> com.appmindlab.nano.t0:
+com.appmindlab.nano.DisplayDBEntry$46 -> com.appmindlab.nano.t0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
     0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$46 -> com.appmindlab.nano.u0:
+com.appmindlab.nano.DisplayDBEntry$47 -> com.appmindlab.nano.u0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     boolean val$exit_mode -> b
     8:10:void com.appmindlab.nano.DisplayDBEntry.access$3400(com.appmindlab.nano.DisplayDBEntry,boolean,boolean):0:0 -> onClick
@@ -20424,46 +20465,45 @@ com.appmindlab.nano.DisplayDBEntry$46 -> com.appmindlab.nano.u0:
     11:12:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     13:15:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     13:15:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$47 -> com.appmindlab.nano.v0:
+com.appmindlab.nano.DisplayDBEntry$48 -> com.appmindlab.nano.v0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     boolean val$exit_mode -> b
-    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$3700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$4000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$48 -> com.appmindlab.nano.w0:
+com.appmindlab.nano.DisplayDBEntry$49 -> com.appmindlab.nano.w0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$49 -> com.appmindlab.nano.x0:
-    com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
-    0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$5 -> com.appmindlab.nano.DisplayDBEntry$g0:
+com.appmindlab.nano.DisplayDBEntry$5 -> com.appmindlab.nano.DisplayDBEntry$i0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     3:6:android.widget.RelativeLayout com.appmindlab.nano.DisplayDBEntry.access$200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onAnimationEnd
     3:6:void onAnimationEnd(android.view.animation.Animation):0 -> onAnimationEnd
     7:10:void onAnimationEnd(android.view.animation.Animation):0:0 -> onAnimationEnd
-com.appmindlab.nano.DisplayDBEntry$50 -> com.appmindlab.nano.y0:
+com.appmindlab.nano.DisplayDBEntry$50 -> com.appmindlab.nano.x0:
+    com.appmindlab.nano.DisplayDBEntry this$0 -> b
+    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
+    0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
+com.appmindlab.nano.DisplayDBEntry$51 -> com.appmindlab.nano.y0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
     0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$51 -> com.appmindlab.nano.DisplayDBEntry$c0:
+com.appmindlab.nano.DisplayDBEntry$52 -> com.appmindlab.nano.DisplayDBEntry$e0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:void com.appmindlab.nano.DisplayDBEntry.access$3400(com.appmindlab.nano.DisplayDBEntry,boolean,boolean):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$52 -> com.appmindlab.nano.DisplayDBEntry$d0:
+com.appmindlab.nano.DisplayDBEntry$53 -> com.appmindlab.nano.DisplayDBEntry$f0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$3700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$4000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$53 -> com.appmindlab.nano.DisplayDBEntry$e0:
-com.appmindlab.nano.DisplayDBEntry$54 -> com.appmindlab.nano.DisplayDBEntry$f0:
-com.appmindlab.nano.DisplayDBEntry$55 -> com.appmindlab.nano.z0:
+com.appmindlab.nano.DisplayDBEntry$54 -> com.appmindlab.nano.DisplayDBEntry$g0:
+com.appmindlab.nano.DisplayDBEntry$55 -> com.appmindlab.nano.DisplayDBEntry$h0:
+com.appmindlab.nano.DisplayDBEntry$56 -> com.appmindlab.nano.z0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-com.appmindlab.nano.DisplayDBEntry$56 -> com.appmindlab.nano.a1:
+com.appmindlab.nano.DisplayDBEntry$57 -> com.appmindlab.nano.a1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-com.appmindlab.nano.DisplayDBEntry$57 -> com.appmindlab.nano.b1:
-com.appmindlab.nano.DisplayDBEntry$58 -> com.appmindlab.nano.c1:
-com.appmindlab.nano.DisplayDBEntry$59 -> com.appmindlab.nano.d1:
-com.appmindlab.nano.DisplayDBEntry$6 -> com.appmindlab.nano.DisplayDBEntry$h0:
+com.appmindlab.nano.DisplayDBEntry$58 -> com.appmindlab.nano.b1:
+com.appmindlab.nano.DisplayDBEntry$59 -> com.appmindlab.nano.c1:
+com.appmindlab.nano.DisplayDBEntry$6 -> com.appmindlab.nano.DisplayDBEntry$j0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     3:7:boolean com.appmindlab.nano.DisplayDBEntry.access$300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSystemUiVisibilityChange
     3:7:void onSystemUiVisibilityChange(int):0 -> onSystemUiVisibilityChange
@@ -20473,84 +20513,85 @@ com.appmindlab.nano.DisplayDBEntry$6 -> com.appmindlab.nano.DisplayDBEntry$h0:
     26:31:void com.appmindlab.nano.DisplayDBEntry.access$500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSystemUiVisibilityChange
     26:31:void onSystemUiVisibilityChange(int):0 -> onSystemUiVisibilityChange
     32:35:void onSystemUiVisibilityChange(int):0:0 -> onSystemUiVisibilityChange
-com.appmindlab.nano.DisplayDBEntry$60 -> com.appmindlab.nano.e1:
+com.appmindlab.nano.DisplayDBEntry$60 -> com.appmindlab.nano.d1:
+com.appmindlab.nano.DisplayDBEntry$61 -> com.appmindlab.nano.e1:
     android.widget.NumberPicker val$picker -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    24:29:void com.appmindlab.nano.DisplayDBEntry.access$3800(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
+    24:29:void com.appmindlab.nano.DisplayDBEntry.access$4100(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     24:29:void onClick(android.content.DialogInterface,int):0 -> onClick
     30:43:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     44:46:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     44:46:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$61 -> com.appmindlab.nano.f1:
+com.appmindlab.nano.DisplayDBEntry$62 -> com.appmindlab.nano.f1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$62 -> com.appmindlab.nano.g1:
+com.appmindlab.nano.DisplayDBEntry$63 -> com.appmindlab.nano.g1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
     0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$63 -> com.appmindlab.nano.h1:
+com.appmindlab.nano.DisplayDBEntry$64 -> com.appmindlab.nano.h1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
     0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$64 -> com.appmindlab.nano.i1:
-com.appmindlab.nano.DisplayDBEntry$65 -> com.appmindlab.nano.j1:
+com.appmindlab.nano.DisplayDBEntry$65 -> com.appmindlab.nano.i1:
+com.appmindlab.nano.DisplayDBEntry$66 -> com.appmindlab.nano.j1:
     android.widget.TextView val$title -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     java.lang.String[] val$items -> b
-com.appmindlab.nano.DisplayDBEntry$66 -> com.appmindlab.nano.k1:
+com.appmindlab.nano.DisplayDBEntry$67 -> com.appmindlab.nano.k1:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4002(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
+    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4302(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
     13:14:void onClick(android.content.DialogInterface,int):0 -> onClick
     15:16:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     17:18:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
-    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
     23:27:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     28:29:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     28:29:void onClick(android.content.DialogInterface,int):0 -> onClick
     30:38:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$67 -> com.appmindlab.nano.l1:
-com.appmindlab.nano.DisplayDBEntry$68 -> com.appmindlab.nano.m1:
+com.appmindlab.nano.DisplayDBEntry$68 -> com.appmindlab.nano.l1:
+com.appmindlab.nano.DisplayDBEntry$69 -> com.appmindlab.nano.m1:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4102(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
+    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4402(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
     13:14:void onClick(android.content.DialogInterface,int):0 -> onClick
     15:16:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     17:18:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
-    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
     23:27:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     28:29:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     28:29:void onClick(android.content.DialogInterface,int):0 -> onClick
     30:43:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$69 -> com.appmindlab.nano.n1:
-com.appmindlab.nano.DisplayDBEntry$7 -> com.appmindlab.nano.DisplayDBEntry$i0:
+com.appmindlab.nano.DisplayDBEntry$7 -> com.appmindlab.nano.DisplayDBEntry$k0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> run
     0:65535:void run():0 -> run
-com.appmindlab.nano.DisplayDBEntry$70 -> com.appmindlab.nano.o1:
+com.appmindlab.nano.DisplayDBEntry$70 -> com.appmindlab.nano.n1:
+com.appmindlab.nano.DisplayDBEntry$71 -> com.appmindlab.nano.o1:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4202(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
+    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4502(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
     13:14:void onClick(android.content.DialogInterface,int):0 -> onClick
     15:16:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     17:18:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
-    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
     23:27:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     28:29:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     28:29:void onClick(android.content.DialogInterface,int):0 -> onClick
     30:38:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$71 -> com.appmindlab.nano.p1:
-com.appmindlab.nano.DisplayDBEntry$72 -> com.appmindlab.nano.q1:
+com.appmindlab.nano.DisplayDBEntry$72 -> com.appmindlab.nano.p1:
+com.appmindlab.nano.DisplayDBEntry$73 -> com.appmindlab.nano.q1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     java.lang.String[] val$values -> b
     7:8:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$2702(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
@@ -20564,44 +20605,44 @@ com.appmindlab.nano.DisplayDBEntry$72 -> com.appmindlab.nano.q1:
     25:28:boolean com.appmindlab.nano.DisplayDBEntry.access$900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     25:28:void onClick(android.content.DialogInterface,int):0 -> onClick
     29:32:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    33:35:void com.appmindlab.nano.DisplayDBEntry.access$3900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    33:35:void com.appmindlab.nano.DisplayDBEntry.access$4200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     33:35:void onClick(android.content.DialogInterface,int):0 -> onClick
     36:44:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$73 -> com.appmindlab.nano.r1:
+com.appmindlab.nano.DisplayDBEntry$74 -> com.appmindlab.nano.r1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-com.appmindlab.nano.DisplayDBEntry$74 -> com.appmindlab.nano.s1:
+com.appmindlab.nano.DisplayDBEntry$75 -> com.appmindlab.nano.s1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-com.appmindlab.nano.DisplayDBEntry$76 -> com.appmindlab.nano.t1:
+com.appmindlab.nano.DisplayDBEntry$77 -> com.appmindlab.nano.t1:
     android.widget.NumberPicker val$picker -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:8:boolean com.appmindlab.nano.DisplayDBEntry.access$4900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
+    3:8:boolean com.appmindlab.nano.DisplayDBEntry.access$5200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
     3:8:void onScrollStateChange(android.widget.NumberPicker,int):0 -> onScrollStateChange
-    9:10:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
+    9:10:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
     9:10:void onScrollStateChange(android.widget.NumberPicker,int):0 -> onScrollStateChange
     11:28:void onScrollStateChange(android.widget.NumberPicker,int):0:0 -> onScrollStateChange
-    29:30:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$5000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
+    29:30:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$5300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
     29:30:void onScrollStateChange(android.widget.NumberPicker,int):0 -> onScrollStateChange
-    31:37:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
+    31:37:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
     31:37:void onScrollStateChange(android.widget.NumberPicker,int):0 -> onScrollStateChange
     38:101:void onScrollStateChange(android.widget.NumberPicker,int):0:0 -> onScrollStateChange
-com.appmindlab.nano.DisplayDBEntry$77 -> com.appmindlab.nano.u1:
+com.appmindlab.nano.DisplayDBEntry$78 -> com.appmindlab.nano.u1:
     android.widget.NumberPicker val$picker -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    9:10:int com.appmindlab.nano.DisplayDBEntry.access$4602(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onClick
+    9:10:int com.appmindlab.nano.DisplayDBEntry.access$4902(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onClick
     9:10:void onClick(android.content.DialogInterface,int):0 -> onClick
     11:17:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$78 -> com.appmindlab.nano.v1:
-com.appmindlab.nano.DisplayDBEntry$79 -> com.appmindlab.nano.w1:
-    com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$5100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$8 -> com.appmindlab.nano.DisplayDBEntry$s0:
+com.appmindlab.nano.DisplayDBEntry$79 -> com.appmindlab.nano.v1:
+com.appmindlab.nano.DisplayDBEntry$8 -> com.appmindlab.nano.DisplayDBEntry$u0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     5:6:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onFocusChange
     5:6:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
     7:9:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$602(com.appmindlab.nano.DisplayDBEntry,android.widget.EditText):0:0 -> onFocusChange
     7:9:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
-com.appmindlab.nano.DisplayDBEntry$80 -> com.appmindlab.nano.DisplayDBEntry$j0:
+com.appmindlab.nano.DisplayDBEntry$80 -> com.appmindlab.nano.w1:
+    com.appmindlab.nano.DisplayDBEntry this$0 -> b
+    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$5400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
+com.appmindlab.nano.DisplayDBEntry$81 -> com.appmindlab.nano.DisplayDBEntry$l0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     17:18:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onCheckedChanged
     17:18:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0 -> onCheckedChanged
@@ -20609,17 +20650,17 @@ com.appmindlab.nano.DisplayDBEntry$80 -> com.appmindlab.nano.DisplayDBEntry$j0:
     26:27:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onCheckedChanged
     26:27:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0 -> onCheckedChanged
     28:79:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0:0 -> onCheckedChanged
-    80:81:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$5200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onCheckedChanged
+    80:81:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$5500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onCheckedChanged
     80:81:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0 -> onCheckedChanged
     82:90:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0:0 -> onCheckedChanged
-com.appmindlab.nano.DisplayDBEntry$81 -> com.appmindlab.nano.DisplayDBEntry$k0:
+com.appmindlab.nano.DisplayDBEntry$82 -> com.appmindlab.nano.DisplayDBEntry$m0:
     int val$idx -> b
     com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    3:4:int com.appmindlab.nano.DisplayDBEntry.access$5300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    3:4:int com.appmindlab.nano.DisplayDBEntry.access$5600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     3:4:void onClick(android.view.View):0 -> onClick
     5:19:void onClick(android.view.View):0:0 -> onClick
-    20:21:int com.appmindlab.nano.DisplayDBEntry.access$5302(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onClick
+    20:21:int com.appmindlab.nano.DisplayDBEntry.access$5602(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onClick
     20:21:void onClick(android.view.View):0 -> onClick
     22:37:void onClick(android.view.View):0:0 -> onClick
     38:39:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
@@ -20634,97 +20675,97 @@ com.appmindlab.nano.DisplayDBEntry$81 -> com.appmindlab.nano.DisplayDBEntry$k0:
     82:83:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     82:83:void onClick(android.view.View):0 -> onClick
     84:92:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$82 -> com.appmindlab.nano.DisplayDBEntry$l0:
+com.appmindlab.nano.DisplayDBEntry$83 -> com.appmindlab.nano.DisplayDBEntry$n0:
     int val$idx -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     13:14:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onLongClick
     13:14:boolean onLongClick(android.view.View):0 -> onLongClick
     15:35:boolean onLongClick(android.view.View):0:0 -> onLongClick
-    36:39:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$5000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onLongClick
+    36:39:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$5300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onLongClick
     36:39:boolean onLongClick(android.view.View):0 -> onLongClick
     40:103:boolean onLongClick(android.view.View):0:0 -> onLongClick
-com.appmindlab.nano.DisplayDBEntry$83 -> com.appmindlab.nano.DisplayDBEntry$m0:
+com.appmindlab.nano.DisplayDBEntry$84 -> com.appmindlab.nano.DisplayDBEntry$o0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     5:5:void com.appmindlab.nano.DisplayDBEntry.handleMarkdownLocalFind():0:0 -> onClick
-    5:5:void com.appmindlab.nano.DisplayDBEntry.access$5400(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
+    5:5:void com.appmindlab.nano.DisplayDBEntry.access$5700(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     5:5:void onClick(android.view.View):0 -> onClick
     6:127:void com.appmindlab.nano.DisplayDBEntry.handleMarkdownLocalFind():0:0 -> onClick
-    6:127:void com.appmindlab.nano.DisplayDBEntry.access$5400(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
+    6:127:void com.appmindlab.nano.DisplayDBEntry.access$5700(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
     6:127:void onClick(android.view.View):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$84 -> com.appmindlab.nano.DisplayDBEntry$n0:
+com.appmindlab.nano.DisplayDBEntry$85 -> com.appmindlab.nano.DisplayDBEntry$p0:
     com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> b
     int val$id -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> e
     java.lang.String val$title -> d
-com.appmindlab.nano.DisplayDBEntry$85 -> com.appmindlab.nano.DisplayDBEntry$o0:
+com.appmindlab.nano.DisplayDBEntry$86 -> com.appmindlab.nano.DisplayDBEntry$q0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     java.lang.String val$title -> b
     4:5:com.appmindlab.nano.DataSource com.appmindlab.nano.DisplayDBEntry.access$2200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onLongClick
     4:5:boolean onLongClick(android.view.View):0 -> onLongClick
     6:71:boolean onLongClick(android.view.View):0:0 -> onLongClick
-com.appmindlab.nano.DisplayDBEntry$86 -> com.appmindlab.nano.DisplayDBEntry$p0:
+com.appmindlab.nano.DisplayDBEntry$87 -> com.appmindlab.nano.DisplayDBEntry$r0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    5:9:void com.appmindlab.nano.DisplayDBEntry.access$5600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    5:9:void com.appmindlab.nano.DisplayDBEntry.access$5900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     5:9:void onClick(android.view.View):0 -> onClick
     10:13:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$87 -> com.appmindlab.nano.DisplayDBEntry$q0:
+com.appmindlab.nano.DisplayDBEntry$88 -> com.appmindlab.nano.DisplayDBEntry$s0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     11:12:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onResponse
     11:12:void onResponse(java.lang.String):0 -> onResponse
     13:43:void onResponse(java.lang.String):0:0 -> onResponse
-com.appmindlab.nano.DisplayDBEntry$88 -> com.appmindlab.nano.DisplayDBEntry$r0:
+com.appmindlab.nano.DisplayDBEntry$89 -> com.appmindlab.nano.DisplayDBEntry$t0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$89 -> com.appmindlab.nano.x1:
-    com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:6:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    3:6:void run():0 -> run
-    7:10:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$9 -> com.appmindlab.nano.DisplayDBEntry$v0:
+com.appmindlab.nano.DisplayDBEntry$9 -> com.appmindlab.nano.DisplayDBEntry$w0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
     6:7:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onEditorAction
     6:7:boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent):0 -> onEditorAction
     8:12:boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent):0:0 -> onEditorAction
-com.appmindlab.nano.DisplayDBEntry$90 -> com.appmindlab.nano.DisplayDBEntry$t0:
+com.appmindlab.nano.DisplayDBEntry$90 -> com.appmindlab.nano.x1:
+    com.appmindlab.nano.DisplayDBEntry this$0 -> b
+    3:6:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
+    3:6:void run():0 -> run
+    7:10:void run():0:0 -> run
+com.appmindlab.nano.DisplayDBEntry$91 -> com.appmindlab.nano.DisplayDBEntry$v0:
     android.webkit.WebView val$webview -> b
     boolean val$use_print -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    16:18:void com.appmindlab.nano.DisplayDBEntry.access$5800(com.appmindlab.nano.DisplayDBEntry,android.webkit.WebView):0:0 -> onPageFinished
+    16:18:void com.appmindlab.nano.DisplayDBEntry.access$6000(com.appmindlab.nano.DisplayDBEntry,android.webkit.WebView):0:0 -> onPageFinished
     16:18:void onPageFinished(android.webkit.WebView,java.lang.String):0 -> onPageFinished
     19:35:void onPageFinished(android.webkit.WebView,java.lang.String):0:0 -> onPageFinished
-com.appmindlab.nano.DisplayDBEntry$91 -> com.appmindlab.nano.y1:
+com.appmindlab.nano.DisplayDBEntry$92 -> com.appmindlab.nano.y1:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    0:65535:char com.appmindlab.nano.DisplayDBEntry.access$5902(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onClick
+    0:65535:char com.appmindlab.nano.DisplayDBEntry.access$6102(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$92 -> com.appmindlab.nano.z1:
-com.appmindlab.nano.DisplayDBEntry$93 -> com.appmindlab.nano.a2:
+com.appmindlab.nano.DisplayDBEntry$93 -> com.appmindlab.nano.z1:
+com.appmindlab.nano.DisplayDBEntry$94 -> com.appmindlab.nano.a2:
     androidx.appcompat.widget.SwitchCompat val$canvas_mode -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    13:15:void com.appmindlab.nano.DisplayDBEntry.access$6000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    13:15:void com.appmindlab.nano.DisplayDBEntry.access$6200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     13:15:void onClick(android.view.View):0 -> onClick
     16:135:void com.appmindlab.nano.DisplayDBEntry.handleCanvasStroke():0:0 -> onClick
-    16:135:void com.appmindlab.nano.DisplayDBEntry.access$6000(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
+    16:135:void com.appmindlab.nano.DisplayDBEntry.access$6200(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
     16:135:void onClick(android.view.View):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$94 -> com.appmindlab.nano.b2:
+com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.b2:
     androidx.appcompat.widget.SwitchCompat val$canvas_mode -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    56:59:char com.appmindlab.nano.DisplayDBEntry.access$5900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
+    56:59:char com.appmindlab.nano.DisplayDBEntry.access$6100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     56:59:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    60:63:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$6100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
+    60:63:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$6300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     60:63:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
     64:87:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    88:90:char com.appmindlab.nano.DisplayDBEntry.access$5902(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onTouch
+    88:90:char com.appmindlab.nano.DisplayDBEntry.access$6102(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onTouch
     88:90:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
     91:94:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    95:96:char com.appmindlab.nano.DisplayDBEntry.access$5902(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onTouch
+    95:96:char com.appmindlab.nano.DisplayDBEntry.access$6102(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onTouch
     95:96:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
     97:98:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    99:100:char com.appmindlab.nano.DisplayDBEntry.access$5900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
+    99:100:char com.appmindlab.nano.DisplayDBEntry.access$6100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
     99:100:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
     101:119:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.c2:
+com.appmindlab.nano.DisplayDBEntry$96 -> com.appmindlab.nano.c2:
     android.widget.EditText val$canvas -> b
     java.lang.String val$current_drawing -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> e
@@ -20744,10 +20785,10 @@ com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.c2:
     44:45:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     44:45:void onClick(android.content.DialogInterface,int):0 -> onClick
     46:50:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    51:54:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    51:54:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     51:54:void onClick(android.content.DialogInterface,int):0 -> onClick
     55:62:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    63:64:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
+    63:64:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
     63:64:void onClick(android.content.DialogInterface,int):0 -> onClick
     65:111:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     112:113:android.view.View$OnClickListener com.appmindlab.nano.DisplayDBEntry.access$2900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
@@ -20755,34 +20796,19 @@ com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.c2:
     114:129:void onClick(android.content.DialogInterface,int):0:0 -> onClick
     130:132:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     130:132:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$96 -> com.appmindlab.nano.d2:
+com.appmindlab.nano.DisplayDBEntry$97 -> com.appmindlab.nano.d2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
     0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$97 -> com.appmindlab.nano.e2:
+com.appmindlab.nano.DisplayDBEntry$98 -> com.appmindlab.nano.e2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
     0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$98 -> com.appmindlab.nano.f2:
+com.appmindlab.nano.DisplayDBEntry$99 -> com.appmindlab.nano.f2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
     0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$99 -> com.appmindlab.nano.DisplayDBEntry$u0:
-    boolean scaleChangedRunnablePending -> a
-com.appmindlab.nano.DisplayDBEntry$99$1 -> com.appmindlab.nano.DisplayDBEntry$u0$a:
-    android.webkit.WebView val$view -> b
-com.appmindlab.nano.DisplayDBEntry$99$2 -> com.appmindlab.nano.DisplayDBEntry$u0$b:
-    float val$newScale -> d
-    float val$oldScale -> c
-    android.webkit.WebView val$webView -> b
-    com.appmindlab.nano.DisplayDBEntry$99 this$1 -> e
-    5:5:void run():0:0 -> run
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":43,"3":44,"6":45}}
-    43:43:void run():0:0 -> run
-    44:44:void run():0:0 -> run
-    45:45:void run():0:0 -> run
-    6:42:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBEntry$w0:
+com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBEntry$x0:
     byte[] temp -> o
     com.appmindlab.nano.DisplayDBEntry activity -> m
     java.lang.String content -> n
@@ -20804,9 +20830,9 @@ com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBE
     60:61:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$1500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     60:61:void onPreExecute():0 -> onPreExecute
     62:79:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$EditViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$x0:
+com.appmindlab.nano.DisplayDBEntry$EditViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$y0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBEntry$y0:
+com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBEntry$z0:
     com.appmindlab.nano.DisplayDBEntry activity -> m
     com.appmindlab.nano.DisplayDBEntry this$0 -> o
     java.lang.String temp -> n
@@ -20822,43 +20848,43 @@ com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBE
     30:31:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     30:31:void onPreExecute():0 -> onPreExecute
     32:43:void onPreExecute():0:0 -> onPreExecute
-    44:46:void com.appmindlab.nano.DisplayDBEntry.access$3900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
+    44:46:void com.appmindlab.nano.DisplayDBEntry.access$4200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     44:46:void onPreExecute():0 -> onPreExecute
     47:79:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$HighlightTask -> com.appmindlab.nano.DisplayDBEntry$z0:
+com.appmindlab.nano.DisplayDBEntry$HighlightTask -> com.appmindlab.nano.DisplayDBEntry$a1:
     com.appmindlab.nano.DisplayDBEntry activity -> m
     com.appmindlab.nano.DisplayDBEntry this$0 -> o
     java.lang.String content -> n
-    3:4:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4300(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
+    3:4:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4600(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
     3:4:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
     5:28:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-    29:30:android.text.SpannableStringBuilder com.appmindlab.nano.DisplayDBEntry.access$4402(com.appmindlab.nano.DisplayDBEntry,android.text.SpannableStringBuilder):0:0 -> doInBackground
+    29:30:android.text.SpannableStringBuilder com.appmindlab.nano.DisplayDBEntry.access$4702(com.appmindlab.nano.DisplayDBEntry,android.text.SpannableStringBuilder):0:0 -> doInBackground
     29:30:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
     31:46:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-    47:48:android.text.SpannableStringBuilder com.appmindlab.nano.DisplayDBEntry.access$4400(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
+    47:48:android.text.SpannableStringBuilder com.appmindlab.nano.DisplayDBEntry.access$4700(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
     47:48:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
     49:69:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-    70:71:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4500(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
+    70:71:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4800(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
     70:71:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
     72:97:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-    3:4:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
+    3:4:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     3:4:void onPreExecute():0 -> onPreExecute
     5:10:void onPreExecute():0:0 -> onPreExecute
-    11:12:int com.appmindlab.nano.DisplayDBEntry.access$4602(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onPreExecute
+    11:12:int com.appmindlab.nano.DisplayDBEntry.access$4902(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onPreExecute
     11:12:void onPreExecute():0 -> onPreExecute
     13:14:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     13:14:void onPreExecute():0 -> onPreExecute
     15:26:void onPreExecute():0:0 -> onPreExecute
-    27:30:boolean com.appmindlab.nano.DisplayDBEntry.access$4700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
+    27:30:boolean com.appmindlab.nano.DisplayDBEntry.access$5000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     27:30:void onPreExecute():0 -> onPreExecute
-    31:33:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
+    31:33:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
     31:33:void onPreExecute():0 -> onPreExecute
-    34:37:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4800(com.appmindlab.nano.DisplayDBEntry,java.lang.String,boolean):0:0 -> onPreExecute
+    34:37:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$5100(com.appmindlab.nano.DisplayDBEntry,java.lang.String,boolean):0:0 -> onPreExecute
     34:37:void onPreExecute():0 -> onPreExecute
-    38:39:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4302(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onPreExecute
+    38:39:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4602(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onPreExecute
     38:39:void onPreExecute():0 -> onPreExecute
     40:55:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$InsertLocationStampTask -> com.appmindlab.nano.DisplayDBEntry$a1:
+com.appmindlab.nano.DisplayDBEntry$InsertLocationStampTask -> com.appmindlab.nano.DisplayDBEntry$b1:
     int pos -> o
     com.appmindlab.nano.DisplayDBEntry activity -> m
     java.lang.String temp -> n
@@ -20874,7 +20900,7 @@ com.appmindlab.nano.DisplayDBEntry$MarkdownViewJavaScriptInterface -> com.appmin
     56:57:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$700(com.appmindlab.nano.DisplayDBEntry):0:0 -> exportHTMLJS
     56:57:void exportHTMLJS(java.lang.String):0 -> exportHTMLJS
     58:142:void exportHTMLJS(java.lang.String):0:0 -> exportHTMLJS
-    143:144:android.net.Uri com.appmindlab.nano.DisplayDBEntry.access$5700(com.appmindlab.nano.DisplayDBEntry):0:0 -> exportHTMLJS
+    143:144:android.net.Uri com.appmindlab.nano.DisplayDBEntry.access$3800(com.appmindlab.nano.DisplayDBEntry):0:0 -> exportHTMLJS
     143:144:void exportHTMLJS(java.lang.String):0 -> exportHTMLJS
     145:273:void exportHTMLJS(java.lang.String):0:0 -> exportHTMLJS
 com.appmindlab.nano.EditStatusGestureListener -> com.appmindlab.nano.g2:
