@@ -1,0 +1,3 @@
+v4.3.5b
+- Fixed auto save interval bug
+- Support Kiwix

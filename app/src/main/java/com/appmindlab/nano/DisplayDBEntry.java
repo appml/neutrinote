@@ -4704,7 +4704,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             // Reset auto save timer
             if (mAutoSaveHandler != null) {
                 mAutoSaveHandler.removeCallbacks(mAutoSaveRunnable);
-                mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_INTERVAL * Const.ONE_SECOND);
+                mAutoSaveHandler.postDelayed(mAutoSaveRunnable, mAutoSaveInterval * Const.ONE_SECOND);
             }
         } else {
             mStatusBar.setTextColor(ContextCompat.getColor(this, R.color.edit_status_bar));
