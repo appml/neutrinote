@@ -240,7 +240,7 @@
         </receiver>
 
         <receiver
-            android:name="DisplaySettingsReceiver"
+            android:name=".DisplaySettingsReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.appmindlab.nano.ACTION_CHANGE_DISPLAY_SETTINGS" />
@@ -310,14 +310,6 @@
         <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598.0dip" />
         <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632.0dip" />
         <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598.0dip" />
-
-        <activity android:name="com.journeyapps.barcodescanner.CaptureActivity"
-            android:clearTaskOnLaunch="true"
-            android:screenOrientation="sensorLandscape"
-            android:stateNotNeeded="true"
-            android:theme="@style/zxing_CaptureTheme"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:exported="false"/>
     </application>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 </manifest>
