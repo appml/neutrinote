@@ -6710,7 +6710,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Get canvas
         final EditText canvas = (EditText) canvas_view.findViewById(R.id.edit_canvas);
 
-        canvas.setTypeface(Typeface.MONOSPACE);
+        Typeface font = FontCache.getFromAsset(this, "RobotoMono-Light.ttf");
+        canvas.setTypeface(font);
         canvas.setTextColor(mCanvasForeground);
         canvas.setBackground(mCanvasBackground);
 
