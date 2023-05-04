@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: f8162a2
-# pg_map_hash: SHA-256 f8162a27ad619b4ddd45154ab6e6ca5d06fb8aa2b6725abb0b5c31633e2f493b
+# pg_map_id: b3621e2
+# pg_map_hash: SHA-256 b3621e2c744df84d7ae6f984e0a9080960adb6e0dd497abd310dd4040eb5e3f4
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -19627,13 +19627,13 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     206:239:void handleHitsNavigation():0:0 -> onEditToolSelected
     206:239:void onEditToolSelected(int):0 -> onEditToolSelected
     240:240:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":1240,"3":1241,"6":1242}}
-    1240:1240:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1240:1240:void onEditToolSelected(int):0 -> onEditToolSelected
-    1241:1241:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1241:1241:void onEditToolSelected(int):0 -> onEditToolSelected
-    1242:1242:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1242:1242:void onEditToolSelected(int):0 -> onEditToolSelected
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":1244,"3":1245,"6":1246}}
+    1244:1244:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1244:1244:void onEditToolSelected(int):0 -> onEditToolSelected
+    1245:1245:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1245:1245:void onEditToolSelected(int):0 -> onEditToolSelected
+    1246:1246:void handleHitsNavigation():0:0 -> onEditToolSelected
+    1246:1246:void onEditToolSelected(int):0 -> onEditToolSelected
     241:243:void onEditToolSelected(int):0:0 -> onEditToolSelected
     244:466:void handleHitsNavigation():0:0 -> onEditToolSelected
     244:466:void onEditToolSelected(int):0 -> onEditToolSelected
@@ -19641,24 +19641,24 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     477:495:void doInsertLocationStamp():0:0 -> onEditToolSelected
     477:495:void onEditToolSelected(int):0 -> onEditToolSelected
     496:505:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    506:791:void handleDraw():0:0 -> onEditToolSelected
-    506:791:void onEditToolSelected(int):0 -> onEditToolSelected
-    792:824:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    825:836:void handleInsertBarcode():0:0 -> onEditToolSelected
-    825:836:void onEditToolSelected(int):0 -> onEditToolSelected
-    837:907:void doInsertBarcode():0:0 -> onEditToolSelected
-    837:907:void handleInsertBarcode():0 -> onEditToolSelected
-    837:907:void onEditToolSelected(int):0 -> onEditToolSelected
-    908:921:void handleInsertBarcode():0:0 -> onEditToolSelected
-    908:921:void onEditToolSelected(int):0 -> onEditToolSelected
-    922:932:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    933:990:void doOCR():0:0 -> onEditToolSelected
-    933:990:void onEditToolSelected(int):0 -> onEditToolSelected
-    991:1020:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    1021:1139:void doOKCEncrypt():0:0 -> onEditToolSelected
-    1021:1139:void onEditToolSelected(int):0 -> onEditToolSelected
-    1140:1239:void doOKCDecrypt():0:0 -> onEditToolSelected
-    1140:1239:void onEditToolSelected(int):0 -> onEditToolSelected
+    506:795:void handleDraw():0:0 -> onEditToolSelected
+    506:795:void onEditToolSelected(int):0 -> onEditToolSelected
+    796:828:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    829:840:void handleInsertBarcode():0:0 -> onEditToolSelected
+    829:840:void onEditToolSelected(int):0 -> onEditToolSelected
+    841:911:void doInsertBarcode():0:0 -> onEditToolSelected
+    841:911:void handleInsertBarcode():0 -> onEditToolSelected
+    841:911:void onEditToolSelected(int):0 -> onEditToolSelected
+    912:925:void handleInsertBarcode():0:0 -> onEditToolSelected
+    912:925:void onEditToolSelected(int):0 -> onEditToolSelected
+    926:936:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    937:994:void doOCR():0:0 -> onEditToolSelected
+    937:994:void onEditToolSelected(int):0 -> onEditToolSelected
+    995:1024:void onEditToolSelected(int):0:0 -> onEditToolSelected
+    1025:1143:void doOKCEncrypt():0:0 -> onEditToolSelected
+    1025:1143:void onEditToolSelected(int):0 -> onEditToolSelected
+    1144:1243:void doOKCDecrypt():0:0 -> onEditToolSelected
+    1144:1243:void onEditToolSelected(int):0 -> onEditToolSelected
     24:38:void doReplaceAllOrNext():0:0 -> onLocalReplaceSelected
     24:38:void onLocalReplaceSelected(int):0 -> onLocalReplaceSelected
     39:92:void handleReplaceAll():0:0 -> onLocalReplaceSelected
