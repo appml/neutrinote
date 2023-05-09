@@ -132,7 +132,7 @@ public class DataSource {
         return DatabaseUtils.queryNumEntries(mDatabase, DBHelper.TABLE);
     }
 
-    public synchronized boolean isOpen() {
+    public boolean isOpen() {
         return (mDatabase.isOpen());
     }
 
