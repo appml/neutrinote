@@ -5,15 +5,15 @@
     "kind": "Directory"
   },
   "applicationId": "com.appmindlab.nano",
-  "variantName": "release",
+  "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1287,
-      "versionName": "4.3.5e",
-      "outputFile": "app-release.apk"
+      "versionCode": 1286,
+      "versionName": "4.3.5d",
+      "outputFile": "app-debug.apk"
     }
   ],
   "elementType": "File"

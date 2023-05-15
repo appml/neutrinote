@@ -1,0 +1,2 @@
+v4.3.5e
+- Fixed missing backup folder picker

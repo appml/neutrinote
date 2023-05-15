@@ -60,6 +60,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Keep;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
@@ -113,6 +114,7 @@ import static com.appmindlab.nano.R.id.fab;
 import static com.appmindlab.nano.Utils.evalGlobalVariables;
 import static com.appmindlab.nano.Utils.getSystemDateFormat;
 
+@Keep
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     // Main application
