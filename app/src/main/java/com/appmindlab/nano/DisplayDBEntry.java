@@ -83,6 +83,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Keep;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SwitchCompat;
@@ -142,6 +143,7 @@ import static com.appmindlab.nano.Utils.makeFileName;
 /**
  * Created by saelim on 6/24/2015.
  */
+@Keep
 public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener, MarkdownSymbolFragment.OnMarkdownSymbolSelectedListener, EditToolFragment.OnEditToolFragmentSelectedListener, LocalFindFragment.OnLocalFindSelectedListener, LocalReplaceFragment.OnLocalReplaceSelectedListener {
 
     // Linear layout
@@ -1536,7 +1538,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Setup custom fonts
-    private synchronized void setupCustomFonts() {
+    private void setupCustomFonts() {
         Thread t = new Thread() {
             public void run() {
                 String fonts_file;
@@ -1573,7 +1575,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Setup snapshots
-    private synchronized void setupSnapshots() {
+    private void setupSnapshots() {
         Thread t = new Thread() {
             public void run() {
                 try {
@@ -1645,7 +1647,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Update undo
-    private synchronized void updateUndo() {
+    private void updateUndo() {
         Thread t = new Thread() {
             public void run() {
                 try {
@@ -1671,7 +1673,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Update redo
-    private synchronized void updateRedo() {
+    private void updateRedo() {
         Thread t = new Thread() {
             public void run() {
                 try {
@@ -3209,7 +3211,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Notify change
-    protected synchronized void notifyChange(File file) {
+    protected void notifyChange(File file) {
         String title;
 
         if (Utils.fileNameAsTitle(this))
@@ -3225,7 +3227,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Notify change
-    protected synchronized void notifyChange(String title) {
+    protected void notifyChange(String title) {
         try {
             // Reload content if needed
             if ((mReloadSafe) && (title.equals(mTitleSaved))) {
@@ -7144,7 +7146,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Handle funnel
-    private synchronized void handleFunnel() {
+    private void handleFunnel() {
         // Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -7245,7 +7247,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Handle markdown local search
-    private synchronized void handleMarkdownLocalFind() {
+    private void handleMarkdownLocalFind() {
         // Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 

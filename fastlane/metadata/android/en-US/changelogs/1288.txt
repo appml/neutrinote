@@ -1,0 +1,2 @@
+v4.4.0
+- Fixed potential deadlock issues
