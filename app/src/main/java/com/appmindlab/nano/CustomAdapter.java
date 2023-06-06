@@ -630,6 +630,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     // Handle deletion
     private void handleDeletion() {
         int count = 0;
+        String msg = "";
 
         // Reset undo list
         mUndoable = new ArrayList<>();
@@ -644,7 +645,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         }
 
         // Show undo bar
-        Snackbar.make(mActivity.findViewById(R.id.coordinator), count + DBApplication.getAppContext().getResources().getString(R.string.status_items_deleted), Snackbar.LENGTH_SHORT).setCallback(
+        if (count == 0)
+            return;
+        else if (count == 1)
+            msg = getItem(mUndoable.get(0)).getTitle() + DBApplication.getAppContext().getResources().getString(R.string.status_deleted_remotely);
+        else
+            msg = count + DBApplication.getAppContext().getResources().getString(R.string.status_items_deleted);
+
+        // Show undo bar
+        Snackbar.make(mActivity.findViewById(R.id.coordinator), msg, Snackbar.LENGTH_SHORT).setCallback(
                 new Snackbar.Callback() {
                     @Override
                     public void onDismissed(Snackbar snackbar, int event) {

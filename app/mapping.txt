@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 9a8b975
-# pg_map_hash: SHA-256 9a8b9759bfe9f6ef477e618640f98d20de88b4a2b55dc331726a8bce6508b93f
+# pg_map_id: f7d4865
+# pg_map_hash: SHA-256 f7d48653141ba592b7b1ed2959537a82e04acbc48c3b64343bed1f1a6fc21b95
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -12557,47 +12557,47 @@ androidx.recyclerview.widget.RecyclerView -> androidx.recyclerview.widget.Recycl
     42:62:boolean androidx.recyclerview.widget.RecyclerView$Adapter.canRestoreState():0:0 -> dispatchLayoutStep2
     42:62:void dispatchLayoutStep2():0 -> dispatchLayoutStep2
     63:113:void dispatchLayoutStep2():0:0 -> dispatchLayoutStep2
-    1:1:androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.ViewInfoStore.getFromOldChangeHolders(long):0:0 -> dispatchLayoutStep3
-    1:1:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    64:65:androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.ViewInfoStore.getFromOldChangeHolders(long):0:0 -> dispatchLayoutStep3
+    64:65:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    2:2:androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.ViewInfoStore.getFromOldChangeHolders(long):0:0 -> dispatchLayoutStep3
-    2:2:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
-    3:3:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
-    4:4:boolean androidx.recyclerview.widget.ViewInfoStore.isDisappearing(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
-    4:4:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    66:73:androidx.recyclerview.widget.RecyclerView$ViewHolder androidx.recyclerview.widget.ViewInfoStore.getFromOldChangeHolders(long):0:0 -> dispatchLayoutStep3
+    66:73:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    74:81:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
+    82:83:boolean androidx.recyclerview.widget.ViewInfoStore.isDisappearing(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
+    82:83:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    5:5:boolean androidx.recyclerview.widget.ViewInfoStore.isDisappearing(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
-    5:5:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
-    6:6:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
-    7:7:boolean androidx.recyclerview.widget.ViewInfoStore.isDisappearing(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
-    7:7:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    84:99:boolean androidx.recyclerview.widget.ViewInfoStore.isDisappearing(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
+    84:99:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    100:101:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
+    102:103:boolean androidx.recyclerview.widget.ViewInfoStore.isDisappearing(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
+    102:103:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    8:8:boolean androidx.recyclerview.widget.ViewInfoStore.isDisappearing(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
-    8:8:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
-    9:9:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
-    10:10:androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo androidx.recyclerview.widget.ViewInfoStore.popFromPreLayout(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
-    10:10:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    104:124:boolean androidx.recyclerview.widget.ViewInfoStore.isDisappearing(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
+    104:124:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    125:126:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
+    127:130:androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo androidx.recyclerview.widget.ViewInfoStore.popFromPreLayout(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
+    127:130:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    11:11:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
-    12:12:androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo androidx.recyclerview.widget.ViewInfoStore.popFromPostLayout(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
-    12:12:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    131:139:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
+    140:145:androidx.recyclerview.widget.RecyclerView$ItemAnimator$ItemHolderInfo androidx.recyclerview.widget.ViewInfoStore.popFromPostLayout(androidx.recyclerview.widget.RecyclerView$ViewHolder):0:0 -> dispatchLayoutStep3
+    140:145:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    13:13:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
-    14:14:void androidx.recyclerview.widget.ViewInfoStore.process(androidx.recyclerview.widget.ViewInfoStore$ProcessCallback):0:0 -> dispatchLayoutStep3
-    14:14:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    146:170:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
+    171:172:void androidx.recyclerview.widget.ViewInfoStore.process(androidx.recyclerview.widget.ViewInfoStore$ProcessCallback):0:0 -> dispatchLayoutStep3
+    171:172:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    15:15:void androidx.recyclerview.widget.ViewInfoStore.process(androidx.recyclerview.widget.ViewInfoStore$ProcessCallback):0:0 -> dispatchLayoutStep3
-    15:15:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
-    16:16:void androidx.recyclerview.widget.ViewInfoStore$InfoRecord.recycle(androidx.recyclerview.widget.ViewInfoStore$InfoRecord):0:0 -> dispatchLayoutStep3
-    16:16:void androidx.recyclerview.widget.ViewInfoStore.process(androidx.recyclerview.widget.ViewInfoStore$ProcessCallback):0 -> dispatchLayoutStep3
-    16:16:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
-    17:17:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
-    18:18:void androidx.recyclerview.widget.ViewInfoStore.clear():0:0 -> dispatchLayoutStep3
-    18:18:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    173:275:void androidx.recyclerview.widget.ViewInfoStore.process(androidx.recyclerview.widget.ViewInfoStore$ProcessCallback):0:0 -> dispatchLayoutStep3
+    173:275:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    276:287:void androidx.recyclerview.widget.ViewInfoStore$InfoRecord.recycle(androidx.recyclerview.widget.ViewInfoStore$InfoRecord):0:0 -> dispatchLayoutStep3
+    276:287:void androidx.recyclerview.widget.ViewInfoStore.process(androidx.recyclerview.widget.ViewInfoStore$ProcessCallback):0 -> dispatchLayoutStep3
+    276:287:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    288:351:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
+    352:353:void androidx.recyclerview.widget.ViewInfoStore.clear():0:0 -> dispatchLayoutStep3
+    352:353:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    19:19:void androidx.recyclerview.widget.ViewInfoStore.clear():0:0 -> dispatchLayoutStep3
-    19:19:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
-    20:20:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
+    354:361:void androidx.recyclerview.widget.ViewInfoStore.clear():0:0 -> dispatchLayoutStep3
+    354:361:void dispatchLayoutStep3():0 -> dispatchLayoutStep3
+    362:383:void dispatchLayoutStep3():0:0 -> dispatchLayoutStep3
     3:3:java.lang.String exceptionLabel():0:0 -> exceptionLabel
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":51,"3":52,"6":53}}
     51:51:java.lang.String exceptionLabel():0:0 -> exceptionLabel
@@ -19303,135 +19303,8 @@ com.appmindlab.nano.DirectoryChooserDialog$3$1 -> com.appmindlab.nano.u$a:
 com.appmindlab.nano.DirectoryChooserDialog$4 -> com.appmindlab.nano.v:
 com.appmindlab.nano.DirectoryChooserDialog$ChosenDirectoryListener -> com.appmindlab.nano.s$c:
 com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
-    java.lang.String mCustomDateFormat -> I0
-    android.net.Uri mBackupUri -> e0
-    java.lang.String mSafeModeTag -> A0
-    android.widget.EditText mCurrentEditText -> q
-    java.lang.String mTitleSaved -> r
-    java.util.LinkedList mUndo -> Z0
-    java.lang.String mCanvasStrokes -> Y
-    char mCanvasStroke -> Z
-    boolean mTitleBarVisible -> y
-    boolean mLabMode -> N0
-    boolean mMarkdownRendered -> h
-    java.lang.String mMathUrl -> n0
-    android.view.View$OnClickListener mSnackbarOnClickListener -> U
-    java.lang.String mFontSize -> j0
-    java.util.Date mAccessed -> E
-    boolean mCompactToolBar -> E0
-    int mMarkdownCacheMode -> L
-    boolean mMarkdownMode -> I
-    java.lang.String mTheme -> f0
-    java.lang.Runnable mAutoSaveRunnable -> W0
-    boolean mSnapshotSafe -> b1
-    com.appmindlab.nano.MainActivity mActivity -> n
-    android.view.animation.Animation mPushUpIn -> g1
-    androidx.coordinatorlayout.widget.CoordinatorLayout mEditorCompact -> c
-    java.util.HashMap mCustomFonts -> k1
-    java.lang.String mNewNoteFileType -> y0
-    android.view.animation.Animation mFadeIn -> c1
-    android.widget.RelativeLayout mTitleBar -> x
-    com.appmindlab.nano.DisplayDBEntry display_dbentry -> m1
-    boolean mToolBarVisible -> z
-    boolean mParseMermaid -> r0
-    java.util.Date mModified -> D
-    android.hardware.SensorManager mSensorManager -> v0
-    java.lang.String mIndentChar -> H0
-    boolean mLux -> g0
-    java.lang.String mMarkdownMargin -> K
-    java.lang.String mTitleAtOpen -> t
-    android.os.Handler mAutoSaveHandler -> V0
-    int mHitIdx -> S0
-    android.content.SharedPreferences$Editor mSharedPreferencesEditor -> c0
-    android.net.Uri mUri -> P
-    boolean mStopped -> f
-    java.lang.String mMarginList -> m0
-    boolean mReloadSafe -> l1
-    boolean mMarkdownLocalCache -> K0
-    java.lang.String mFontFamily -> i0
-    boolean mChanged -> O
-    boolean mLaTeXSingleDollar -> F0
-    java.util.Date mCreated -> C
-    java.lang.String mMarkdownFontFamily -> J
-    java.util.List mStatusQ -> T
-    android.view.animation.Animation mPushLeftIn -> h1
-    java.lang.String mContentSaved -> s
-    androidx.appcompat.widget.Toolbar mToolBar -> j
-    java.lang.String mMarkdownTrigger -> z0
-    android.view.animation.Animation mSlideUp -> d1
-    boolean mKeepDeletedCopies -> w0
-    android.text.SpannableStringBuilder mSpann -> Q0
-    boolean mAutoSave -> s0
-    int mCanvasForeground -> W
-    boolean mMarkdownAnchorActive -> g
-    boolean mParsePython -> o0
-    android.widget.TextView mStatusBar -> Q
-    java.lang.String mSharedContent -> M
-    java.lang.String mLinkifyTrigger -> C0
-    androidx.core.view.GestureDetectorCompat mEditContentGestureDetector -> S
-    boolean mAutoSaveSafe -> X0
-    androidx.core.view.GestureDetectorCompat mEditStatusGestureDetector -> R
-    long mNextPos -> T0
-    boolean mEvalBuiltInVariables -> L0
-    long mId -> m
-    java.lang.String mFontSizeList -> l0
-    android.widget.LinearLayout mEditor -> b
-    boolean mAppendCustomStyle -> G0
-    android.view.animation.Animation mZoomIn -> i1
-    java.lang.String mLocalRepoPath -> d0
-    int mMarkdownAnchorPos -> i
-    android.view.animation.Animation mSlideDown -> e1
-    boolean mOpenInMarkdown -> x0
-    java.lang.String mContentAtOpen -> u
-    boolean mCopyAttachmentsToRepo -> t0
-    com.appmindlab.nano.DataSource mDatasource -> l
-    android.graphics.drawable.Drawable mCanvasBackground -> X
-    boolean mParseVue -> p0
-    boolean mImmersiveMode -> e
-    java.lang.String mCriteria -> P0
-    android.content.SharedPreferences mSharedPreferences -> b0
-    boolean mOled -> h0
-    java.lang.String mCustomTimeFormat -> J0
-    java.lang.String mAutoToolBarTag -> B0
-    android.widget.AutoCompleteTextView mLocalFind -> O0
-    boolean mLocationAware -> Y0
-    int mWorkingSetSize -> M0
-    android.widget.EditText mTitle -> o
-    android.webkit.WebView mMarkdownView -> H
-    int mAutoSaveInterval -> U0
-    long mPosAtClear -> w
-    boolean mEditToolFragmentVisible -> A
-    long mAnchorPos -> N
-    android.widget.ScrollView mScrollView -> G
-    java.lang.String mMargin -> k0
-    boolean mShowToolBar -> D0
-    java.util.ArrayList mHits -> R0
-    java.lang.String mMetadata -> F
-    int mInNoteLastIdx -> a0
-    android.view.animation.Animation mBounce -> j1
-    int mToolBarSelectedItemId -> k
-    android.content.ClipboardManager mClipboard -> V
-    android.view.animation.Animation mPushDownIn -> f1
-    java.util.LinkedList mRedo -> a1
-    int mStar -> B
-    android.widget.EditText mContent -> p
-    boolean mAutoThemeApplied -> u0
-    long mPosAtOpen -> v
-    boolean mParseAlpine -> q0
-    android.view.View mDecorView -> d
-    void leave() -> A
-    1:10:void resumeDatabase():0:0 -> B
-    1:10:java.lang.String[] loadShortcuts():0 -> B
-    11:20:void setupDatabase():0:0 -> B
-    11:20:void resumeDatabase():0 -> B
-    11:20:java.lang.String[] loadShortcuts():0 -> B
-    21:73:java.lang.String[] loadShortcuts():0:0 -> B
-    void showEditToolFragment() -> C
-    void showLocalFindFragment() -> D
-    void showLocalReplaceFragment() -> E
-    void updateUndo() -> F
-    0:65535:void doLaunchNote(java.lang.String,long):0:0 -> a
-    0:65535:void access$5500(com.appmindlab.nano.DisplayDBEntry,java.lang.String,long):0 -> a
+    void $r8$lambda$UZSPl3-vjGgbaubdxBXlY6-w9zU(com.appmindlab.nano.DisplayDBEntry) -> a
+      # {"id":"com.android.tools.r8.synthesized"}
     187:187:void applyFontFamily():0:0 -> applyFontFamily
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":323,"4":324,"7":325}}
     323:323:void applyFontFamily():0:0 -> applyFontFamily
@@ -19456,11 +19329,6 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     52:52:void applyMargin():0:0 -> applyMargin
     53:53:void applyMargin():0:0 -> applyMargin
     41:50:void applyMargin():0:0 -> applyMargin
-    1:2:void doAppendClipboard(java.lang.String):0:0 -> b
-    1:2:void access$6500(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0 -> b
-      # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    3:239:void doAppendClipboard(java.lang.String):0:0 -> b
-    3:239:void access$6500(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0 -> b
     5:5:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131,"12":132}}
     128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
@@ -19635,27 +19503,24 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
     184:184:java.lang.String buildScript(boolean):0:0 -> buildScript
     170:179:java.lang.String buildScript(boolean):0:0 -> buildScript
-    33:119:java.lang.String injectAnchor(java.lang.String,int):0:0 -> buildSource
-    33:119:java.lang.String buildSource(boolean):0 -> buildSource
-    120:127:java.lang.String buildSource(boolean):0:0 -> buildSource
+    47:47:java.lang.String buildSource(boolean):0:0 -> buildSource
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":126,"3":127,"6":128}}
+    126:126:java.lang.String buildSource(boolean):0:0 -> buildSource
+    127:127:java.lang.String buildSource(boolean):0:0 -> buildSource
     128:128:java.lang.String buildSource(boolean):0:0 -> buildSource
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":207,"3":208,"6":209}}
-    207:207:java.lang.String buildSource(boolean):0:0 -> buildSource
-    208:208:java.lang.String buildSource(boolean):0:0 -> buildSource
-    209:209:java.lang.String buildSource(boolean):0:0 -> buildSource
-    129:148:java.lang.String buildSource(boolean):0:0 -> buildSource
-    149:149:java.lang.String buildSource(boolean):0:0 -> buildSource
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":207,"3":208,"6":209}}
-    207:207:java.lang.String buildSource(boolean):0:0 -> buildSource
-    208:208:java.lang.String buildSource(boolean):0:0 -> buildSource
-    209:209:java.lang.String buildSource(boolean):0:0 -> buildSource
-    150:201:java.lang.String buildSource(boolean):0:0 -> buildSource
-    202:202:java.lang.String buildSource(boolean):0:0 -> buildSource
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":207,"4":208,"7":209}}
-    207:207:java.lang.String buildSource(boolean):0:0 -> buildSource
-    208:208:java.lang.String buildSource(boolean):0:0 -> buildSource
-    209:209:java.lang.String buildSource(boolean):0:0 -> buildSource
-    203:206:java.lang.String buildSource(boolean):0:0 -> buildSource
+    48:67:java.lang.String buildSource(boolean):0:0 -> buildSource
+    68:68:java.lang.String buildSource(boolean):0:0 -> buildSource
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":126,"3":127,"6":128}}
+    126:126:java.lang.String buildSource(boolean):0:0 -> buildSource
+    127:127:java.lang.String buildSource(boolean):0:0 -> buildSource
+    128:128:java.lang.String buildSource(boolean):0:0 -> buildSource
+    69:120:java.lang.String buildSource(boolean):0:0 -> buildSource
+    121:121:java.lang.String buildSource(boolean):0:0 -> buildSource
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":126,"4":127,"7":128}}
+    126:126:java.lang.String buildSource(boolean):0:0 -> buildSource
+    127:127:java.lang.String buildSource(boolean):0:0 -> buildSource
+    128:128:java.lang.String buildSource(boolean):0:0 -> buildSource
+    122:125:java.lang.String buildSource(boolean):0:0 -> buildSource
     109:109:java.lang.String buildStyle():0:0 -> buildStyle
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":154,"4":155,"7":156}}
     154:154:java.lang.String buildStyle():0:0 -> buildStyle
@@ -19670,16 +19535,102 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     157:157:java.lang.String buildStyle():0:0 -> buildStyle
     158:158:java.lang.String buildStyle():0:0 -> buildStyle
     148:153:java.lang.String buildStyle():0:0 -> buildStyle
-    void applyLinkify() -> c
-    void closeTopFragment() -> d
-    void createWebPrintJob(android.webkit.WebView) -> e
-    139:139:void doCalculate():0:0 -> f
+    139:139:void doCalculate():0:0 -> doCalculate
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":217,"3":218,"6":219}}
-    217:217:void doCalculate():0:0 -> f
-    218:218:void doCalculate():0:0 -> f
-    219:219:void doCalculate():0:0 -> f
-    140:216:void doCalculate():0:0 -> f
-    void doClearSearch() -> g
+    217:217:void doCalculate():0:0 -> doCalculate
+    218:218:void doCalculate():0:0 -> doCalculate
+    219:219:void doCalculate():0:0 -> doCalculate
+    140:216:void doCalculate():0:0 -> doCalculate
+    72:72:void doExportHTML(boolean):0:0 -> doExportHTML
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"3":119,"6":120}}
+    118:118:void doExportHTML(boolean):0:0 -> doExportHTML
+    119:119:void doExportHTML(boolean):0:0 -> doExportHTML
+    120:120:void doExportHTML(boolean):0:0 -> doExportHTML
+    73:77:void doExportHTML(boolean):0:0 -> doExportHTML
+    78:78:void doExportHTML(boolean):0:0 -> doExportHTML
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"4":119,"7":120}}
+    118:118:void doExportHTML(boolean):0:0 -> doExportHTML
+    119:119:void doExportHTML(boolean):0:0 -> doExportHTML
+    120:120:void doExportHTML(boolean):0:0 -> doExportHTML
+    79:92:void doExportHTML(boolean):0:0 -> doExportHTML
+    93:93:void doExportHTML(boolean):0:0 -> doExportHTML
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"3":119,"6":120}}
+    118:118:void doExportHTML(boolean):0:0 -> doExportHTML
+    119:119:void doExportHTML(boolean):0:0 -> doExportHTML
+    120:120:void doExportHTML(boolean):0:0 -> doExportHTML
+    94:98:void doExportHTML(boolean):0:0 -> doExportHTML
+    99:99:void doExportHTML(boolean):0:0 -> doExportHTML
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"4":119,"7":120}}
+    118:118:void doExportHTML(boolean):0:0 -> doExportHTML
+    119:119:void doExportHTML(boolean):0:0 -> doExportHTML
+    120:120:void doExportHTML(boolean):0:0 -> doExportHTML
+    100:117:void doExportHTML(boolean):0:0 -> doExportHTML
+    72:72:void doPasteCalendar():0:0 -> doPasteCalendar
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":169,"3":170,"6":171}}
+    169:169:void doPasteCalendar():0:0 -> doPasteCalendar
+    170:170:void doPasteCalendar():0:0 -> doPasteCalendar
+    171:171:void doPasteCalendar():0:0 -> doPasteCalendar
+    73:168:void doPasteCalendar():0:0 -> doPasteCalendar
+    111:111:void doReload():0:0 -> doReload
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":206,"3":207,"6":208}}
+    206:206:void doReload():0:0 -> doReload
+    207:207:void doReload():0:0 -> doReload
+    208:208:void doReload():0:0 -> doReload
+    112:124:void doReload():0:0 -> doReload
+    125:125:void doReload():0:0 -> doReload
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":206,"3":207,"6":208}}
+    206:206:void doReload():0:0 -> doReload
+    207:207:void doReload():0:0 -> doReload
+    208:208:void doReload():0:0 -> doReload
+    126:205:void doReload():0:0 -> doReload
+    318:318:void doSave(boolean,boolean):0:0 -> doSave
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":448,"3":449,"6":450}}
+    448:448:void doSave(boolean,boolean):0:0 -> doSave
+    449:449:void doSave(boolean,boolean):0:0 -> doSave
+    450:450:void doSave(boolean,boolean):0:0 -> doSave
+    319:447:void doSave(boolean,boolean):0:0 -> doSave
+    77:77:void doWebSearch(boolean):0:0 -> doWebSearch
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":137,"3":138,"6":139,"9":140,"12":141}}
+    137:137:void doWebSearch(boolean):0:0 -> doWebSearch
+    138:138:void doWebSearch(boolean):0:0 -> doWebSearch
+    139:139:void doWebSearch(boolean):0:0 -> doWebSearch
+    140:140:void doWebSearch(boolean):0:0 -> doWebSearch
+    141:141:void doWebSearch(boolean):0:0 -> doWebSearch
+    78:136:void doWebSearch(boolean):0:0 -> doWebSearch
+    1:1:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":11,"3":12,"6":13}}
+    11:11:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    12:12:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    13:13:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    2:2:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    3:3:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":14,"3":15,"6":16,"9":17,"12":18}}
+    14:14:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    15:15:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    16:16:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    17:17:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    18:18:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    4:4:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    5:5:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":19,"3":20,"6":21,"9":22}}
+    19:19:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    20:20:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    21:21:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    22:22:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    6:6:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    7:7:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":23,"3":24,"6":25,"9":26}}
+    23:23:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    24:24:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    25:25:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    26:26:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    8:8:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    9:9:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":27,"3":28,"6":29}}
+    27:27:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    28:28:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    29:29:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    10:10:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     56:56:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":85,"3":86,"6":87,"9":88}}
     85:85:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
@@ -19687,315 +19638,70 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     87:87:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
     88:88:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
     57:84:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
-    void doDefine() -> h
-    72:72:void doExportHTML(boolean):0:0 -> i
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"3":119,"6":120}}
-    118:118:void doExportHTML(boolean):0:0 -> i
-    119:119:void doExportHTML(boolean):0:0 -> i
-    120:120:void doExportHTML(boolean):0:0 -> i
-    73:77:void doExportHTML(boolean):0:0 -> i
-    78:78:void doExportHTML(boolean):0:0 -> i
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"4":119,"7":120}}
-    118:118:void doExportHTML(boolean):0:0 -> i
-    119:119:void doExportHTML(boolean):0:0 -> i
-    120:120:void doExportHTML(boolean):0:0 -> i
-    79:92:void doExportHTML(boolean):0:0 -> i
-    93:93:void doExportHTML(boolean):0:0 -> i
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"3":119,"6":120}}
-    118:118:void doExportHTML(boolean):0:0 -> i
-    119:119:void doExportHTML(boolean):0:0 -> i
-    120:120:void doExportHTML(boolean):0:0 -> i
-    94:98:void doExportHTML(boolean):0:0 -> i
-    99:99:void doExportHTML(boolean):0:0 -> i
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":118,"4":119,"7":120}}
-    118:118:void doExportHTML(boolean):0:0 -> i
-    119:119:void doExportHTML(boolean):0:0 -> i
-    120:120:void doExportHTML(boolean):0:0 -> i
-    100:117:void doExportHTML(boolean):0:0 -> i
-    void doFind() -> j
-    void doGoTo(boolean) -> k
-    void doRedo() -> l
-    1:1:void handleDuplicates(boolean):0:0 -> m
-    1:1:void doSave(boolean,boolean):0 -> m
-    2:2:void doSave(boolean,boolean):0:0 -> m
-    3:3:void doSave(boolean,boolean):0:0 -> m
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":5,"3":6,"6":7}}
-    5:5:void doSave(boolean,boolean):0:0 -> m
-    6:6:void doSave(boolean,boolean):0:0 -> m
-    7:7:void doSave(boolean,boolean):0:0 -> m
-    4:4:void doSave(boolean,boolean):0:0 -> m
-    void doSavePos() -> n
-    1:1:void expandShortcut(java.lang.String[]):0:0 -> o
-    1:1:void doTextExpansion():0 -> o
-    2:2:void doTextExpansion():0:0 -> o
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":15,"3":16,"6":17}}
-    15:15:void expandShortcut(java.lang.String[]):0:0 -> o
-    15:15:void doTextExpansion():0 -> o
-    16:16:void expandShortcut(java.lang.String[]):0:0 -> o
-    16:16:void doTextExpansion():0 -> o
-    17:17:void expandShortcut(java.lang.String[]):0:0 -> o
-    17:17:void doTextExpansion():0 -> o
-    3:3:void expandShortcut(java.lang.String[]):0:0 -> o
-    3:3:void doTextExpansion():0 -> o
-    4:4:void doTextExpansion():0:0 -> o
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":18,"3":19,"6":20,"9":21,"12":22}}
-    18:18:void expandShortcut(java.lang.String[]):0:0 -> o
-    18:18:void doTextExpansion():0 -> o
-    19:19:void expandShortcut(java.lang.String[]):0:0 -> o
-    19:19:void doTextExpansion():0 -> o
-    20:20:void expandShortcut(java.lang.String[]):0:0 -> o
-    20:20:void doTextExpansion():0 -> o
-    21:21:void expandShortcut(java.lang.String[]):0:0 -> o
-    21:21:void doTextExpansion():0 -> o
-    22:22:void expandShortcut(java.lang.String[]):0:0 -> o
-    22:22:void doTextExpansion():0 -> o
-    5:5:void expandShortcut(java.lang.String[]):0:0 -> o
-    5:5:void doTextExpansion():0 -> o
-    6:6:void doTextExpansion():0:0 -> o
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":23,"3":24,"6":25,"9":26}}
-    23:23:void expandShortcut(java.lang.String[]):0:0 -> o
-    23:23:void doTextExpansion():0 -> o
-    24:24:void expandShortcut(java.lang.String[]):0:0 -> o
-    24:24:void doTextExpansion():0 -> o
-    25:25:void expandShortcut(java.lang.String[]):0:0 -> o
-    25:25:void doTextExpansion():0 -> o
-    26:26:void expandShortcut(java.lang.String[]):0:0 -> o
-    26:26:void doTextExpansion():0 -> o
-    7:7:void expandShortcut(java.lang.String[]):0:0 -> o
-    7:7:void doTextExpansion():0 -> o
-    8:8:void doSearchNote(java.lang.String):0:0 -> o
-    8:8:void expandShortcut(java.lang.String[]):0 -> o
-    8:8:void doTextExpansion():0 -> o
-    9:9:void expandShortcut(java.lang.String[]):0:0 -> o
-    9:9:void doTextExpansion():0 -> o
-    10:10:void doTextExpansion():0:0 -> o
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":27,"3":28,"6":29,"9":30}}
-    27:27:void expandShortcut(java.lang.String[]):0:0 -> o
-    27:27:void doTextExpansion():0 -> o
-    28:28:void expandShortcut(java.lang.String[]):0:0 -> o
-    28:28:void doTextExpansion():0 -> o
-    29:29:void expandShortcut(java.lang.String[]):0:0 -> o
-    29:29:void doTextExpansion():0 -> o
-    30:30:void expandShortcut(java.lang.String[]):0:0 -> o
-    30:30:void doTextExpansion():0 -> o
-    11:11:void expandShortcut(java.lang.String[]):0:0 -> o
-    11:11:void doTextExpansion():0 -> o
-    12:12:void doTextExpansion():0:0 -> o
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":31,"3":32,"6":33}}
-    31:31:void expandShortcut(java.lang.String[]):0:0 -> o
-    31:31:void doTextExpansion():0 -> o
-    32:32:void expandShortcut(java.lang.String[]):0:0 -> o
-    32:32:void doTextExpansion():0 -> o
-    33:33:void expandShortcut(java.lang.String[]):0:0 -> o
-    33:33:void doTextExpansion():0 -> o
-    13:13:void expandShortcut(java.lang.String[]):0:0 -> o
-    13:13:void doTextExpansion():0 -> o
-    14:14:void handleAddShortcut(java.lang.String):0:0 -> o
-    14:14:void expandShortcut(java.lang.String[]):0 -> o
-    14:14:void doTextExpansion():0 -> o
-    11:108:void setupTheme():0:0 -> onCreate
-    11:108:void onCreate(android.os.Bundle):0 -> onCreate
-    109:116:void onCreate(android.os.Bundle):0:0 -> onCreate
-    117:126:void setupDatabase():0:0 -> onCreate
-    117:126:void onCreate(android.os.Bundle):0 -> onCreate
-    127:142:void onCreate(android.os.Bundle):0:0 -> onCreate
-    143:152:void setupCustomFonts():0:0 -> onCreate
-    143:152:void onCreate(android.os.Bundle):0 -> onCreate
-    153:165:void onCreate(android.os.Bundle):0:0 -> onCreate
-    166:247:void setupMarkdownView():0:0 -> onCreate
-    166:247:void onCreate(android.os.Bundle):0 -> onCreate
-    248:257:void setupSnapshots():0:0 -> onCreate
-    248:257:void onCreate(android.os.Bundle):0 -> onCreate
-    258:325:void setupSharedContent():0:0 -> onCreate
-    258:325:void onCreate(android.os.Bundle):0 -> onCreate
-    326:326:void onCreate(android.os.Bundle):0:0 -> onCreate
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":402,"4":403,"7":404}}
-    402:402:void setupSharedContent():0:0 -> onCreate
-    402:402:void onCreate(android.os.Bundle):0 -> onCreate
-    403:403:void setupSharedContent():0:0 -> onCreate
-    403:403:void onCreate(android.os.Bundle):0 -> onCreate
-    404:404:void setupSharedContent():0:0 -> onCreate
-    404:404:void onCreate(android.os.Bundle):0 -> onCreate
-    327:330:void onCreate(android.os.Bundle):0:0 -> onCreate
-    331:360:void setupSharedContent():0:0 -> onCreate
-    331:360:void onCreate(android.os.Bundle):0 -> onCreate
-    361:396:void applyHacks():0:0 -> onCreate
-    361:396:void onCreate(android.os.Bundle):0 -> onCreate
-    397:399:void setupSnapshots():0:0 -> onCreate
-    397:399:void onCreate(android.os.Bundle):0 -> onCreate
-    400:401:void setupCustomFonts():0:0 -> onCreate
-    400:401:void onCreate(android.os.Bundle):0 -> onCreate
-    65:121:void showMarkdownSymbolFragment():0:0 -> onEditToolSelected
-    65:121:void onEditToolSelected(int):0 -> onEditToolSelected
-    122:205:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    206:239:void handleHitsNavigation():0:0 -> onEditToolSelected
-    206:239:void onEditToolSelected(int):0 -> onEditToolSelected
-    240:240:void onEditToolSelected(int):0:0 -> onEditToolSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":1244,"3":1245,"6":1246}}
-    1244:1244:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1244:1244:void onEditToolSelected(int):0 -> onEditToolSelected
-    1245:1245:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1245:1245:void onEditToolSelected(int):0 -> onEditToolSelected
-    1246:1246:void handleHitsNavigation():0:0 -> onEditToolSelected
-    1246:1246:void onEditToolSelected(int):0 -> onEditToolSelected
-    241:243:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    244:466:void handleHitsNavigation():0:0 -> onEditToolSelected
-    244:466:void onEditToolSelected(int):0 -> onEditToolSelected
-    467:476:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    477:495:void doInsertLocationStamp():0:0 -> onEditToolSelected
-    477:495:void onEditToolSelected(int):0 -> onEditToolSelected
-    496:505:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    506:795:void handleDraw():0:0 -> onEditToolSelected
-    506:795:void onEditToolSelected(int):0 -> onEditToolSelected
-    796:828:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    829:840:void handleInsertBarcode():0:0 -> onEditToolSelected
-    829:840:void onEditToolSelected(int):0 -> onEditToolSelected
-    841:911:void doInsertBarcode():0:0 -> onEditToolSelected
-    841:911:void handleInsertBarcode():0 -> onEditToolSelected
-    841:911:void onEditToolSelected(int):0 -> onEditToolSelected
-    912:925:void handleInsertBarcode():0:0 -> onEditToolSelected
-    912:925:void onEditToolSelected(int):0 -> onEditToolSelected
-    926:936:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    937:994:void doOCR():0:0 -> onEditToolSelected
-    937:994:void onEditToolSelected(int):0 -> onEditToolSelected
-    995:1024:void onEditToolSelected(int):0:0 -> onEditToolSelected
-    1025:1143:void doOKCEncrypt():0:0 -> onEditToolSelected
-    1025:1143:void onEditToolSelected(int):0 -> onEditToolSelected
-    1144:1243:void doOKCDecrypt():0:0 -> onEditToolSelected
-    1144:1243:void onEditToolSelected(int):0 -> onEditToolSelected
-    24:38:void doReplaceAllOrNext():0:0 -> onLocalReplaceSelected
-    24:38:void onLocalReplaceSelected(int):0 -> onLocalReplaceSelected
-    39:92:void handleReplaceAll():0:0 -> onLocalReplaceSelected
-    39:92:void doReplaceAllOrNext():0 -> onLocalReplaceSelected
-    39:92:void onLocalReplaceSelected(int):0 -> onLocalReplaceSelected
-    93:102:void doReplaceAllOrNext():0:0 -> onLocalReplaceSelected
-    93:102:void onLocalReplaceSelected(int):0 -> onLocalReplaceSelected
-    103:106:void onLocalReplaceSelected(int):0:0 -> onLocalReplaceSelected
-    22:74:void handleTheme():0:0 -> onMenuItemClick
-    22:74:boolean onMenuItemClick(android.view.MenuItem):0 -> onMenuItemClick
-    75:177:void handleMargin():0:0 -> onMenuItemClick
-    75:177:boolean onMenuItemClick(android.view.MenuItem):0 -> onMenuItemClick
-    178:280:void handleFontSize():0:0 -> onMenuItemClick
-    178:280:boolean onMenuItemClick(android.view.MenuItem):0 -> onMenuItemClick
-    281:472:void handleFontFamily():0:0 -> onMenuItemClick
-    281:472:boolean onMenuItemClick(android.view.MenuItem):0 -> onMenuItemClick
-    17:50:void showStylePopup(android.view.View):0:0 -> onOptionsItemSelected
-    17:50:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    51:84:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    85:100:void handleRevert():0:0 -> onOptionsItemSelected
-    85:100:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    101:101:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":970,"3":971,"6":972,"9":973,"12":974}}
-    970:970:void handleRevert():0:0 -> onOptionsItemSelected
-    970:970:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    971:971:void handleRevert():0:0 -> onOptionsItemSelected
-    971:971:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    972:972:void handleRevert():0:0 -> onOptionsItemSelected
-    972:972:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    973:973:void handleRevert():0:0 -> onOptionsItemSelected
-    973:973:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    974:974:void handleRevert():0:0 -> onOptionsItemSelected
-    974:974:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    102:104:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    105:105:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":970,"3":971,"6":972}}
-    970:970:void handleRevert():0:0 -> onOptionsItemSelected
-    970:970:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    971:971:void handleRevert():0:0 -> onOptionsItemSelected
-    971:971:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    972:972:void handleRevert():0:0 -> onOptionsItemSelected
-    972:972:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    106:108:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    109:137:void handleRevert():0:0 -> onOptionsItemSelected
-    109:137:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    138:138:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":970,"3":971,"6":972,"9":973,"12":974}}
-    970:970:void handleRevert():0:0 -> onOptionsItemSelected
-    970:970:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    971:971:void handleRevert():0:0 -> onOptionsItemSelected
-    971:971:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    972:972:void handleRevert():0:0 -> onOptionsItemSelected
-    972:972:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    973:973:void handleRevert():0:0 -> onOptionsItemSelected
-    973:973:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    974:974:void handleRevert():0:0 -> onOptionsItemSelected
-    974:974:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    139:141:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    142:142:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":970,"3":971,"6":972}}
-    970:970:void handleRevert():0:0 -> onOptionsItemSelected
-    970:970:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    971:971:void handleRevert():0:0 -> onOptionsItemSelected
-    971:971:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    972:972:void handleRevert():0:0 -> onOptionsItemSelected
-    972:972:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    143:145:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    146:247:void handleRevert():0:0 -> onOptionsItemSelected
-    146:247:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    248:410:void handleMetadata():0:0 -> onOptionsItemSelected
-    248:410:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    411:419:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    420:510:void handleEncryptDecrypt():0:0 -> onOptionsItemSelected
-    420:510:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    511:560:void doPasteCalendar():0:0 -> onOptionsItemSelected
-    511:560:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    561:561:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":970,"3":971,"6":972}}
-    970:970:void doPasteCalendar():0:0 -> onOptionsItemSelected
-    970:970:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    971:971:void doPasteCalendar():0:0 -> onOptionsItemSelected
-    971:971:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    972:972:void doPasteCalendar():0:0 -> onOptionsItemSelected
-    972:972:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    562:564:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    565:662:void doPasteCalendar():0:0 -> onOptionsItemSelected
-    565:662:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    663:671:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    672:721:void doClearCache():0:0 -> onOptionsItemSelected
-    672:721:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    722:835:void handleExport():0:0 -> onOptionsItemSelected
-    722:835:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    836:854:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    855:960:void doShare():0:0 -> onOptionsItemSelected
-    855:960:boolean onOptionsItemSelected(android.view.MenuItem):0 -> onOptionsItemSelected
-    961:969:boolean onOptionsItemSelected(android.view.MenuItem):0:0 -> onOptionsItemSelected
-    11:23:void doSaveAccessTime():0:0 -> onPause
-    11:23:void onPause():0 -> onPause
-    24:45:void onPause():0:0 -> onPause
-    0:65535:void forceShowEditToolFragment():0:0 -> onRestart
-    0:65535:void onRestart():0 -> onRestart
-    16:25:void resumeDatabase():0:0 -> onResume
-    16:25:void onResume():0 -> onResume
-    26:35:void setupDatabase():0:0 -> onResume
-    26:35:void resumeDatabase():0 -> onResume
-    26:35:void onResume():0 -> onResume
-    36:107:void onResume():0:0 -> onResume
-    108:150:void setupAutoSave():0:0 -> onResume
-    108:150:void onResume():0 -> onResume
-    44:53:void updateRedo():0:0 -> p
-    44:53:void doUndo():0 -> p
-    54:82:void doUndo():0:0 -> p
-    83:84:void updateRedo():0:0 -> p
-    83:84:void doUndo():0 -> p
-    85:220:void doUndo():0:0 -> p
-    77:77:void doWebSearch(boolean):0:0 -> q
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":137,"3":138,"6":139,"9":140,"12":141}}
-    137:137:void doWebSearch(boolean):0:0 -> q
-    138:138:void doWebSearch(boolean):0:0 -> q
-    139:139:void doWebSearch(boolean):0:0 -> q
-    140:140:void doWebSearch(boolean):0:0 -> q
-    141:141:void doWebSearch(boolean):0:0 -> q
-    78:136:void doWebSearch(boolean):0:0 -> q
-    50:65:void closeAllFragments():0:0 -> r
-    50:65:void enterImmersiveMode():0 -> r
-    66:119:void enterImmersiveMode():0:0 -> r
-    java.lang.String evalCustomVariables(java.lang.String[],java.lang.String) -> s
-    1:1:void doSaveAccessTime():0:0 -> setupEditor
-    1:1:void setupEditor():0 -> setupEditor
-    2:2:void setupEditor():0:0 -> setupEditor
-    11:150:void handleShowShortcuts():0:0 -> showHelp
-    11:150:void showHelp(android.view.View):0 -> showHelp
-    151:162:void showHelp(android.view.View):0:0 -> showHelp
+    35:35:void handleHitsNavigation():0:0 -> handleHitsNavigation
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":264,"3":265,"6":266}}
+    264:264:void handleHitsNavigation():0:0 -> handleHitsNavigation
+    265:265:void handleHitsNavigation():0:0 -> handleHitsNavigation
+    266:266:void handleHitsNavigation():0:0 -> handleHitsNavigation
+    36:263:void handleHitsNavigation():0:0 -> handleHitsNavigation
+    19:19:void handleRevert():0:0 -> handleRevert
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":163,"3":164,"6":165,"9":166,"12":167}}
+    163:163:void handleRevert():0:0 -> handleRevert
+    164:164:void handleRevert():0:0 -> handleRevert
+    165:165:void handleRevert():0:0 -> handleRevert
+    166:166:void handleRevert():0:0 -> handleRevert
+    167:167:void handleRevert():0:0 -> handleRevert
+    20:22:void handleRevert():0:0 -> handleRevert
+    23:23:void handleRevert():0:0 -> handleRevert
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":163,"3":164,"6":165}}
+    163:163:void handleRevert():0:0 -> handleRevert
+    164:164:void handleRevert():0:0 -> handleRevert
+    165:165:void handleRevert():0:0 -> handleRevert
+    24:55:void handleRevert():0:0 -> handleRevert
+    56:56:void handleRevert():0:0 -> handleRevert
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":163,"3":164,"6":165,"9":166,"12":167}}
+    163:163:void handleRevert():0:0 -> handleRevert
+    164:164:void handleRevert():0:0 -> handleRevert
+    165:165:void handleRevert():0:0 -> handleRevert
+    166:166:void handleRevert():0:0 -> handleRevert
+    167:167:void handleRevert():0:0 -> handleRevert
+    57:59:void handleRevert():0:0 -> handleRevert
+    60:60:void handleRevert():0:0 -> handleRevert
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":163,"3":164,"6":165}}
+    163:163:void handleRevert():0:0 -> handleRevert
+    164:164:void handleRevert():0:0 -> handleRevert
+    165:165:void handleRevert():0:0 -> handleRevert
+    61:162:void handleRevert():0:0 -> handleRevert
+    58:58:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":126,"3":127,"6":128}}
+    126:126:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+    127:127:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+    128:128:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+    59:65:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+    66:66:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":126,"4":127,"7":128}}
+    126:126:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+    127:127:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+    128:128:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+    67:125:void handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> handleRevisionSummary
+    49:49:void handleShowClipboard():0:0 -> handleShowClipboard
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":119,"4":120,"7":121}}
+    119:119:void handleShowClipboard():0:0 -> handleShowClipboard
+    120:120:void handleShowClipboard():0:0 -> handleShowClipboard
+    121:121:void handleShowClipboard():0:0 -> handleShowClipboard
+    50:118:void handleShowClipboard():0:0 -> handleShowClipboard
+    24:24:void notifyChange(java.io.File):0:0 -> notifyChange
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":54,"3":55,"6":56}}
+    54:54:void notifyChange(java.io.File):0:0 -> notifyChange
+    55:55:void notifyChange(java.io.File):0:0 -> notifyChange
+    56:56:void notifyChange(java.io.File):0:0 -> notifyChange
+    25:53:void notifyChange(java.io.File):0:0 -> notifyChange
+    70:70:void setupSharedContent():0:0 -> setupSharedContent
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":106,"4":107,"7":108}}
+    106:106:void setupSharedContent():0:0 -> setupSharedContent
+    107:107:void setupSharedContent():0:0 -> setupSharedContent
+    108:108:void setupSharedContent():0:0 -> setupSharedContent
+    71:105:void setupSharedContent():0:0 -> setupSharedContent
     84:84:void showStat():0:0 -> showStat
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":195,"3":196,"6":197}}
     195:195:void showStat():0:0 -> showStat
@@ -20008,208 +19714,90 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     196:196:void showStat():0:0 -> showStat
     197:197:void showStat():0:0 -> showStat
     122:194:void showStat():0:0 -> showStat
-    java.lang.String evalVariables(java.lang.String,boolean) -> t
     140:140:void toggleMarkdownView():0:0 -> toggleMarkdownView
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":238,"3":239,"6":240}}
-    238:238:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    239:239:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    240:240:void toggleMarkdownView():0:0 -> toggleMarkdownView
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":225,"3":226,"6":227}}
+    225:225:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    226:226:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    227:227:void toggleMarkdownView():0:0 -> toggleMarkdownView
     141:145:void toggleMarkdownView():0:0 -> toggleMarkdownView
     146:146:void toggleMarkdownView():0:0 -> toggleMarkdownView
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":238,"4":239,"7":240}}
-    238:238:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    239:239:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    240:240:void toggleMarkdownView():0:0 -> toggleMarkdownView
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":225,"4":226,"7":227}}
+    225:225:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    226:226:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    227:227:void toggleMarkdownView():0:0 -> toggleMarkdownView
     147:170:void toggleMarkdownView():0:0 -> toggleMarkdownView
     171:171:void toggleMarkdownView():0:0 -> toggleMarkdownView
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":238,"3":239,"6":240}}
-    238:238:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    239:239:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    240:240:void toggleMarkdownView():0:0 -> toggleMarkdownView
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":225,"3":226,"6":227}}
+    225:225:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    226:226:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    227:227:void toggleMarkdownView():0:0 -> toggleMarkdownView
     172:176:void toggleMarkdownView():0:0 -> toggleMarkdownView
     177:177:void toggleMarkdownView():0:0 -> toggleMarkdownView
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":238,"4":239,"7":240}}
-    238:238:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    239:239:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    240:240:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    178:198:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    199:214:void closeAllFragments():0:0 -> toggleMarkdownView
-    199:214:void toggleMarkdownView():0 -> toggleMarkdownView
-    215:237:void toggleMarkdownView():0:0 -> toggleMarkdownView
-    void exitImmersiveMode() -> u
-    void handleFunnel() -> v
-    void handleHome() -> w
-    void handleReload() -> x
-    void handleSave() -> y
-    49:49:void handleShowClipboard():0:0 -> z
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":119,"4":120,"7":121}}
-    119:119:void handleShowClipboard():0:0 -> z
-    120:120:void handleShowClipboard():0:0 -> z
-    121:121:void handleShowClipboard():0:0 -> z
-    50:118:void handleShowClipboard():0:0 -> z
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":225,"4":226,"7":227}}
+    225:225:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    226:226:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    227:227:void toggleMarkdownView():0:0 -> toggleMarkdownView
+    178:224:void toggleMarkdownView():0:0 -> toggleMarkdownView
 com.appmindlab.nano.DisplayDBEntry$$ExternalSyntheticLambda1 -> com.appmindlab.nano.w:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
     com.appmindlab.nano.DisplayDBEntry com.appmindlab.nano.DisplayDBEntry$$InternalSyntheticLambda$1$04805033ccb9d0e27b8f68d4fc3283a71ea6486c7663b4e1ce27a7230d150396$0.f$0 -> b
     void com.appmindlab.nano.DisplayDBEntry$$InternalSyntheticLambda$1$04805033ccb9d0e27b8f68d4fc3283a71ea6486c7663b4e1ce27a7230d150396$0.<init>(com.appmindlab.nano.DisplayDBEntry) -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
-    0:65535:void com.appmindlab.nano.DisplayDBEntry.lambda$setupAutoSave$0():0:0 -> run
-    0:65535:void com.appmindlab.nano.DisplayDBEntry$$InternalSyntheticLambda$1$04805033ccb9d0e27b8f68d4fc3283a71ea6486c7663b4e1ce27a7230d150396$0.run():0 -> run
+    void com.appmindlab.nano.DisplayDBEntry$$InternalSyntheticLambda$1$04805033ccb9d0e27b8f68d4fc3283a71ea6486c7663b4e1ce27a7230d150396$0.run() -> run
       # {"id":"com.android.tools.r8.synthesized"}
-com.appmindlab.nano.DisplayDBEntry$1 -> com.appmindlab.nano.DisplayDBEntry$o:
+com.appmindlab.nano.DisplayDBEntry$1 -> com.appmindlab.nano.DisplayDBEntry$v:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:4:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.DisplayDBEntry.access$000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    3:4:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    5:9:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$10 -> com.appmindlab.nano.DisplayDBEntry$j:
+com.appmindlab.nano.DisplayDBEntry$10 -> com.appmindlab.nano.DisplayDBEntry$k:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:7:boolean com.appmindlab.nano.DisplayDBEntry.access$900(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
-    3:7:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
-    8:9:boolean com.appmindlab.nano.DisplayDBEntry.access$902(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> afterTextChanged
-    8:9:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
-    10:20:void afterTextChanged(android.text.Editable):0:0 -> afterTextChanged
-    21:24:boolean com.appmindlab.nano.DisplayDBEntry.access$1000(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
-    21:24:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
-    25:28:void com.appmindlab.nano.DisplayDBEntry.access$1100(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
-    25:28:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
 com.appmindlab.nano.DisplayDBEntry$100 -> com.appmindlab.nano.DisplayDBEntry$a:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:4:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    3:4:void onClick(android.content.DialogInterface,int):0 -> onClick
-    5:10:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    11:14:android.content.ClipboardManager com.appmindlab.nano.DisplayDBEntry.access$6200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    11:14:void onClick(android.content.DialogInterface,int):0 -> onClick
-    15:26:void onClick(android.content.DialogInterface,int):0:0 -> onClick
 com.appmindlab.nano.DisplayDBEntry$101 -> com.appmindlab.nano.DisplayDBEntry$b:
 com.appmindlab.nano.DisplayDBEntry$102 -> com.appmindlab.nano.DisplayDBEntry$c:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
 com.appmindlab.nano.DisplayDBEntry$103 -> com.appmindlab.nano.DisplayDBEntry$d:
     com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    5:9:void com.appmindlab.nano.DisplayDBEntry.access$6300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    5:9:void onClick(android.view.View):0 -> onClick
-    10:173:void com.appmindlab.nano.DisplayDBEntry.getImageFromCamera():0:0 -> onClick
-    10:173:void com.appmindlab.nano.DisplayDBEntry.access$6300(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    10:173:void onClick(android.view.View):0 -> onClick
-    174:179:void onClick(android.view.View):0:0 -> onClick
 com.appmindlab.nano.DisplayDBEntry$104 -> com.appmindlab.nano.DisplayDBEntry$e:
     com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    5:7:void com.appmindlab.nano.DisplayDBEntry.access$6400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    5:7:void onClick(android.view.View):0 -> onClick
-    8:39:void com.appmindlab.nano.DisplayDBEntry.getImageFromGallary():0:0 -> onClick
-    8:39:void com.appmindlab.nano.DisplayDBEntry.access$6400(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    8:39:void onClick(android.view.View):0 -> onClick
-    40:45:void onClick(android.view.View):0:0 -> onClick
 com.appmindlab.nano.DisplayDBEntry$105 -> com.appmindlab.nano.DisplayDBEntry$f:
     java.util.List val$permissions -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
 com.appmindlab.nano.DisplayDBEntry$106 -> com.appmindlab.nano.DisplayDBEntry$g:
     android.widget.AutoCompleteTextView val$search_str -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    23:24:com.appmindlab.nano.DataSource com.appmindlab.nano.DisplayDBEntry.access$2200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    23:24:void onClick(android.content.DialogInterface,int):0 -> onClick
-    25:76:void onClick(android.content.DialogInterface,int):0:0 -> onClick
 com.appmindlab.nano.DisplayDBEntry$107 -> com.appmindlab.nano.DisplayDBEntry$h:
     android.widget.AutoCompleteTextView val$search_str -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
 com.appmindlab.nano.DisplayDBEntry$108 -> com.appmindlab.nano.DisplayDBEntry$i:
-com.appmindlab.nano.DisplayDBEntry$109 -> com.appmindlab.nano.x:
+com.appmindlab.nano.DisplayDBEntry$109 -> com.appmindlab.nano.DisplayDBEntry$j:
     android.widget.AutoCompleteTextView val$search_str -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    17:18:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4302(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
-    17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
-    19:22:boolean com.appmindlab.nano.DisplayDBEntry.access$4700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
-    23:28:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    29:32:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4800(com.appmindlab.nano.DisplayDBEntry,java.lang.String,boolean):0:0 -> onClick
-    29:32:void onClick(android.content.DialogInterface,int):0 -> onClick
-    33:53:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$109$1 -> com.appmindlab.nano.x$a:
+com.appmindlab.nano.DisplayDBEntry$109$1 -> com.appmindlab.nano.DisplayDBEntry$j$a:
     com.appmindlab.nano.DisplayDBEntry$109 this$1 -> c
     java.lang.String val$str -> b
-    5:6:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    5:6:void run():0 -> run
-    7:12:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$11 -> com.appmindlab.nano.DisplayDBEntry$k:
+com.appmindlab.nano.DisplayDBEntry$11 -> com.appmindlab.nano.DisplayDBEntry$m:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:6:android.os.Handler com.appmindlab.nano.DisplayDBEntry.access$1200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    3:6:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    7:8:java.lang.Runnable com.appmindlab.nano.DisplayDBEntry.access$1300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    7:8:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    9:13:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    14:15:android.os.Handler com.appmindlab.nano.DisplayDBEntry.access$1200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    14:15:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    16:19:java.lang.Runnable com.appmindlab.nano.DisplayDBEntry.access$1300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    16:19:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    20:24:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$110 -> com.appmindlab.nano.y:
-com.appmindlab.nano.DisplayDBEntry$12 -> com.appmindlab.nano.DisplayDBEntry$l:
+com.appmindlab.nano.DisplayDBEntry$110 -> com.appmindlab.nano.DisplayDBEntry$l:
+com.appmindlab.nano.DisplayDBEntry$12 -> com.appmindlab.nano.DisplayDBEntry$n:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    5:6:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$1400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onFocusChange
-    5:6:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
-    7:8:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$1500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onFocusChange
-    7:8:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
-    9:13:void onFocusChange(android.view.View,boolean):0:0 -> onFocusChange
-    14:15:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onFocusChange
-    14:15:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
-    16:18:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$602(com.appmindlab.nano.DisplayDBEntry,android.widget.EditText):0:0 -> onFocusChange
-    16:18:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
-com.appmindlab.nano.DisplayDBEntry$13 -> com.appmindlab.nano.DisplayDBEntry$m:
+com.appmindlab.nano.DisplayDBEntry$13 -> com.appmindlab.nano.DisplayDBEntry$o:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:7:boolean com.appmindlab.nano.DisplayDBEntry.access$900(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
-    3:7:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
-    8:9:boolean com.appmindlab.nano.DisplayDBEntry.access$902(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> afterTextChanged
-    8:9:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
-    10:20:void afterTextChanged(android.text.Editable):0:0 -> afterTextChanged
-    21:24:boolean com.appmindlab.nano.DisplayDBEntry.access$1000(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
-    21:24:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
-    25:28:void com.appmindlab.nano.DisplayDBEntry.access$1100(com.appmindlab.nano.DisplayDBEntry):0:0 -> afterTextChanged
-    25:28:void afterTextChanged(android.text.Editable):0 -> afterTextChanged
-com.appmindlab.nano.DisplayDBEntry$14 -> com.appmindlab.nano.DisplayDBEntry$n:
+com.appmindlab.nano.DisplayDBEntry$14 -> com.appmindlab.nano.DisplayDBEntry$p:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:6:android.os.Handler com.appmindlab.nano.DisplayDBEntry.access$1200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    3:6:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    7:8:java.lang.Runnable com.appmindlab.nano.DisplayDBEntry.access$1300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    7:8:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    9:13:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    14:15:android.os.Handler com.appmindlab.nano.DisplayDBEntry.access$1200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    14:15:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    16:19:java.lang.Runnable com.appmindlab.nano.DisplayDBEntry.access$1300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    16:19:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    20:24:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    25:28:boolean com.appmindlab.nano.DisplayDBEntry.access$1600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    25:28:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    29:32:boolean com.appmindlab.nano.DisplayDBEntry.access$300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    29:32:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    33:34:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.DisplayDBEntry.access$1700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    33:34:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    35:39:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$15 -> com.appmindlab.nano.z:
+com.appmindlab.nano.DisplayDBEntry$15 -> com.appmindlab.nano.DisplayDBEntry$q:
     boolean scaleChangedRunnablePending -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
     27:27:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":120,"3":121,"6":122}}
-    120:120:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
-    121:121:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
-    122:122:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
-    28:32:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
-    33:34:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$1900(com.appmindlab.nano.DisplayDBEntry):0:0 -> handleUrlLoading
-    33:34:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0 -> handleUrlLoading
-    35:58:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
-    59:60:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$1900(com.appmindlab.nano.DisplayDBEntry):0:0 -> handleUrlLoading
-    59:60:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0 -> handleUrlLoading
-    61:119:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
-    10:24:void com.appmindlab.nano.DisplayDBEntry.doMarkdownViewScrollAnchor():0:0 -> onPageFinished
-    10:24:void com.appmindlab.nano.DisplayDBEntry.access$1800(com.appmindlab.nano.DisplayDBEntry):0 -> onPageFinished
-    10:24:void onPageFinished(android.webkit.WebView,java.lang.String):0 -> onPageFinished
-    25:31:void onPageFinished(android.webkit.WebView,java.lang.String):0:0 -> onPageFinished
-    32:36:boolean com.appmindlab.nano.DisplayDBEntry.access$900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPageFinished
-    32:36:void onPageFinished(android.webkit.WebView,java.lang.String):0 -> onPageFinished
-    37:66:void onPageFinished(android.webkit.WebView,java.lang.String):0:0 -> onPageFinished
-com.appmindlab.nano.DisplayDBEntry$15$1 -> com.appmindlab.nano.z$a:
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":124,"3":125,"6":126}}
+    124:124:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
+    125:125:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
+    126:126:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
+    28:123:boolean handleUrlLoading(android.webkit.WebView,java.lang.String):0:0 -> handleUrlLoading
+com.appmindlab.nano.DisplayDBEntry$15$1 -> com.appmindlab.nano.DisplayDBEntry$q$a:
     android.webkit.WebView val$view -> b
-com.appmindlab.nano.DisplayDBEntry$15$2 -> com.appmindlab.nano.z$b:
+com.appmindlab.nano.DisplayDBEntry$15$2 -> com.appmindlab.nano.DisplayDBEntry$q$b:
     float val$newScale -> d
     float val$oldScale -> c
     android.webkit.WebView val$webView -> b
@@ -20220,693 +19808,220 @@ com.appmindlab.nano.DisplayDBEntry$15$2 -> com.appmindlab.nano.z$b:
     44:44:void run():0:0 -> run
     45:45:void run():0:0 -> run
     6:42:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$16 -> com.appmindlab.nano.a0:
+com.appmindlab.nano.DisplayDBEntry$16 -> com.appmindlab.nano.DisplayDBEntry$r:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:6:boolean com.appmindlab.nano.DisplayDBEntry.access$2000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onGlobalLayout
-    3:6:void onGlobalLayout():0 -> onGlobalLayout
-    7:8:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onGlobalLayout
-    7:8:void onGlobalLayout():0 -> onGlobalLayout
-    9:18:void onGlobalLayout():0:0 -> onGlobalLayout
-    19:20:boolean com.appmindlab.nano.DisplayDBEntry.access$2000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onGlobalLayout
-    19:20:void onGlobalLayout():0 -> onGlobalLayout
-    21:24:void onGlobalLayout():0:0 -> onGlobalLayout
-com.appmindlab.nano.DisplayDBEntry$17 -> com.appmindlab.nano.b0:
+com.appmindlab.nano.DisplayDBEntry$17 -> com.appmindlab.nano.DisplayDBEntry$s:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:6:boolean com.appmindlab.nano.DisplayDBEntry.access$1600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    3:6:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    7:10:boolean com.appmindlab.nano.DisplayDBEntry.access$300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    7:10:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    11:12:androidx.core.view.GestureDetectorCompat com.appmindlab.nano.DisplayDBEntry.access$1700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    11:12:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    13:17:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$18 -> com.appmindlab.nano.c0:
+com.appmindlab.nano.DisplayDBEntry$18 -> com.appmindlab.nano.DisplayDBEntry$t:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    15:16:com.appmindlab.nano.DataSource com.appmindlab.nano.DisplayDBEntry.access$2200(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    15:16:void run():0 -> run
-    17:34:void run():0:0 -> run
-    35:37:java.util.HashMap com.appmindlab.nano.DisplayDBEntry.access$2302(com.appmindlab.nano.DisplayDBEntry,java.util.HashMap):0:0 -> run
-    35:37:void run():0 -> run
-    38:79:void run():0:0 -> run
-    80:81:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$1900(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    80:81:void run():0 -> run
-    82:118:void run():0:0 -> run
-    119:120:java.util.HashMap com.appmindlab.nano.DisplayDBEntry.access$2300(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    119:120:void run():0 -> run
-    121:142:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$19 -> com.appmindlab.nano.d0:
+com.appmindlab.nano.DisplayDBEntry$19 -> com.appmindlab.nano.DisplayDBEntry$u:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    8:9:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2402(com.appmindlab.nano.DisplayDBEntry,java.util.LinkedList):0:0 -> run
-    8:9:void run():0 -> run
-    10:16:void run():0:0 -> run
-    17:18:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2502(com.appmindlab.nano.DisplayDBEntry,java.util.LinkedList):0:0 -> run
-    17:18:void run():0 -> run
-    19:20:void run():0:0 -> run
-    21:22:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2400(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    21:22:void run():0 -> run
-    23:24:void run():0:0 -> run
-    25:26:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    25:26:void run():0 -> run
-    27:36:void run():0:0 -> run
-    37:38:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    37:38:void run():0 -> run
-    39:55:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$2 -> com.appmindlab.nano.DisplayDBEntry$r:
+com.appmindlab.nano.DisplayDBEntry$2 -> com.appmindlab.nano.DisplayDBEntry$g0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    3:5:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPrimaryClipChanged
-    3:5:void onPrimaryClipChanged():0 -> onPrimaryClipChanged
-    6:9:void onPrimaryClipChanged():0:0 -> onPrimaryClipChanged
-com.appmindlab.nano.DisplayDBEntry$20 -> com.appmindlab.nano.DisplayDBEntry$p:
+com.appmindlab.nano.DisplayDBEntry$20 -> com.appmindlab.nano.DisplayDBEntry$w:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    3:6:boolean com.appmindlab.nano.DisplayDBEntry.access$2600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSensorChanged
-    3:6:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
-    7:35:void onSensorChanged(android.hardware.SensorEvent):0:0 -> onSensorChanged
-    36:37:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$2700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSensorChanged
-    36:37:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
-    38:45:void onSensorChanged(android.hardware.SensorEvent):0:0 -> onSensorChanged
-    46:47:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSensorChanged
-    46:47:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
-    48:55:void onSensorChanged(android.hardware.SensorEvent):0:0 -> onSensorChanged
-    56:57:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$2700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSensorChanged
-    56:57:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
-    58:65:void onSensorChanged(android.hardware.SensorEvent):0:0 -> onSensorChanged
-    66:69:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSensorChanged
-    66:69:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
-    70:74:void onSensorChanged(android.hardware.SensorEvent):0:0 -> onSensorChanged
-    75:76:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSensorChanged
-    75:76:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
-    77:82:void onSensorChanged(android.hardware.SensorEvent):0:0 -> onSensorChanged
-    83:85:boolean com.appmindlab.nano.DisplayDBEntry.access$2602(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onSensorChanged
-    83:85:void onSensorChanged(android.hardware.SensorEvent):0 -> onSensorChanged
-com.appmindlab.nano.DisplayDBEntry$21 -> com.appmindlab.nano.DisplayDBEntry$q:
+com.appmindlab.nano.DisplayDBEntry$21 -> com.appmindlab.nano.DisplayDBEntry$x:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:6:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2400(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    3:6:void run():0 -> run
-    7:11:void run():0:0 -> run
-    12:13:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2402(com.appmindlab.nano.DisplayDBEntry,java.util.LinkedList):0:0 -> run
-    12:13:void run():0 -> run
-    14:15:void run():0:0 -> run
-    16:17:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2400(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    16:17:void run():0 -> run
-    18:27:void run():0:0 -> run
-    28:29:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2400(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    28:29:void run():0 -> run
-    30:35:void run():0:0 -> run
-    36:37:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2400(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    36:37:void run():0 -> run
-    38:39:void run():0:0 -> run
-    40:41:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    40:41:void run():0 -> run
-    42:51:void run():0:0 -> run
-    52:53:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    52:53:void run():0 -> run
-    54:70:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$22 -> com.appmindlab.nano.e0:
+com.appmindlab.nano.DisplayDBEntry$22 -> com.appmindlab.nano.DisplayDBEntry$y:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:6:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2500(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    3:6:void run():0 -> run
-    7:11:void run():0:0 -> run
-    12:13:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2502(com.appmindlab.nano.DisplayDBEntry,java.util.LinkedList):0:0 -> run
-    12:13:void run():0 -> run
-    14:15:void run():0:0 -> run
-    16:17:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2500(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    16:17:void run():0 -> run
-    18:27:void run():0:0 -> run
-    28:29:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2500(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    28:29:void run():0 -> run
-    30:35:void run():0:0 -> run
-    36:37:java.util.LinkedList com.appmindlab.nano.DisplayDBEntry.access$2500(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    36:37:void run():0 -> run
-    38:39:void run():0:0 -> run
-    40:41:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    40:41:void run():0 -> run
-    42:51:void run():0:0 -> run
-    52:53:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    52:53:void run():0 -> run
-    54:70:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$23 -> com.appmindlab.nano.f0:
-com.appmindlab.nano.DisplayDBEntry$24 -> com.appmindlab.nano.g0:
+com.appmindlab.nano.DisplayDBEntry$23 -> com.appmindlab.nano.DisplayDBEntry$z:
+com.appmindlab.nano.DisplayDBEntry$24 -> com.appmindlab.nano.DisplayDBEntry$a0:
     android.widget.EditText val$expanded_str -> c
     java.lang.String val$shortcuts_file -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> e
     java.lang.String val$shortcut -> d
-    3:4:com.appmindlab.nano.DataSource com.appmindlab.nano.DisplayDBEntry.access$2200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    3:4:void onClick(android.content.DialogInterface,int):0 -> onClick
-    5:99:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    100:101:com.appmindlab.nano.DataSource com.appmindlab.nano.DisplayDBEntry.access$2200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    100:101:void onClick(android.content.DialogInterface,int):0 -> onClick
-    102:190:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    191:192:android.view.View$OnClickListener com.appmindlab.nano.DisplayDBEntry.access$2900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    191:192:void onClick(android.content.DialogInterface,int):0 -> onClick
-    193:206:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$25 -> com.appmindlab.nano.h0:
-com.appmindlab.nano.DisplayDBEntry$26 -> com.appmindlab.nano.i0:
+com.appmindlab.nano.DisplayDBEntry$25 -> com.appmindlab.nano.DisplayDBEntry$b0:
+com.appmindlab.nano.DisplayDBEntry$26 -> com.appmindlab.nano.DisplayDBEntry$c0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    3:4:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onResponse
-    3:4:void onResponse(java.lang.String):0 -> onResponse
-    5:8:void onResponse(java.lang.String):0:0 -> onResponse
-com.appmindlab.nano.DisplayDBEntry$27 -> com.appmindlab.nano.j0:
+com.appmindlab.nano.DisplayDBEntry$27 -> com.appmindlab.nano.DisplayDBEntry$d0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$28 -> com.appmindlab.nano.k0:
+com.appmindlab.nano.DisplayDBEntry$28 -> com.appmindlab.nano.DisplayDBEntry$e0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    3:4:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onResponse
-    3:4:void onResponse(org.json.JSONObject):0 -> onResponse
-    5:6:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$3000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onResponse
-    5:6:void onResponse(org.json.JSONObject):0 -> onResponse
-    7:56:void onResponse(org.json.JSONObject):0:0 -> onResponse
-com.appmindlab.nano.DisplayDBEntry$29 -> com.appmindlab.nano.l0:
+com.appmindlab.nano.DisplayDBEntry$29 -> com.appmindlab.nano.DisplayDBEntry$f0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$3 -> com.appmindlab.nano.DisplayDBEntry$a0:
-com.appmindlab.nano.DisplayDBEntry$30 -> com.appmindlab.nano.DisplayDBEntry$s:
+com.appmindlab.nano.DisplayDBEntry$3 -> com.appmindlab.nano.DisplayDBEntry$r0:
+com.appmindlab.nano.DisplayDBEntry$30 -> com.appmindlab.nano.DisplayDBEntry$h0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:11:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    3:11:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-      # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    3:11:void onClick(android.content.DialogInterface,int):0 -> onClick
-    12:112:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    12:112:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    12:112:void onClick(android.content.DialogInterface,int):0 -> onClick
-    113:113:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":341,"3":342,"6":343}}
-    341:341:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    341:341:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    341:341:void onClick(android.content.DialogInterface,int):0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    342:342:void onClick(android.content.DialogInterface,int):0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    343:343:void onClick(android.content.DialogInterface,int):0 -> onClick
-    114:117:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    118:126:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    118:126:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    118:126:void onClick(android.content.DialogInterface,int):0 -> onClick
-    127:127:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":341,"3":342,"6":343}}
-    341:341:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    341:341:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    341:341:void onClick(android.content.DialogInterface,int):0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    342:342:void onClick(android.content.DialogInterface,int):0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    343:343:void onClick(android.content.DialogInterface,int):0 -> onClick
-    128:131:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    132:179:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    132:179:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    132:179:void onClick(android.content.DialogInterface,int):0 -> onClick
-    180:190:void com.appmindlab.nano.DisplayDBEntry.doSaveAccessTime():0:0 -> onClick
-    180:190:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    180:190:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    180:190:void onClick(android.content.DialogInterface,int):0 -> onClick
-    191:211:void com.appmindlab.nano.DisplayDBEntry.doReload():0:0 -> onClick
-    191:211:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    191:211:void onClick(android.content.DialogInterface,int):0 -> onClick
-    212:266:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    212:266:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    212:266:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    212:266:void onClick(android.content.DialogInterface,int):0 -> onClick
-    267:267:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":341,"3":342,"6":343}}
-    341:341:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    341:341:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    341:341:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    341:341:void onClick(android.content.DialogInterface,int):0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    342:342:void onClick(android.content.DialogInterface,int):0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    343:343:void onClick(android.content.DialogInterface,int):0 -> onClick
-    268:270:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    271:274:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    271:274:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    271:274:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    271:274:void onClick(android.content.DialogInterface,int):0 -> onClick
-    275:275:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":341,"4":342,"7":343}}
-    341:341:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    341:341:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    341:341:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    341:341:void onClick(android.content.DialogInterface,int):0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    342:342:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    342:342:void onClick(android.content.DialogInterface,int):0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    343:343:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    343:343:void onClick(android.content.DialogInterface,int):0 -> onClick
-    276:284:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    285:333:void com.appmindlab.nano.DisplayDBEntry.handleRevisionSummary(java.lang.String,java.lang.String):0:0 -> onClick
-    285:333:void com.appmindlab.nano.DisplayDBEntry.doReload():0 -> onClick
-    285:333:void com.appmindlab.nano.DisplayDBEntry.access$3100(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    285:333:void onClick(android.content.DialogInterface,int):0 -> onClick
-    334:335:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    336:337:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    336:337:void onClick(android.content.DialogInterface,int):0 -> onClick
-    338:340:boolean com.appmindlab.nano.DisplayDBEntry.access$3302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    338:340:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$31 -> com.appmindlab.nano.DisplayDBEntry$t:
+com.appmindlab.nano.DisplayDBEntry$31 -> com.appmindlab.nano.DisplayDBEntry$i0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    4:5:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    4:5:void onClick(android.content.DialogInterface,int):0 -> onClick
-    6:8:boolean com.appmindlab.nano.DisplayDBEntry.access$3302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    6:8:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$32 -> com.appmindlab.nano.DisplayDBEntry$u:
+com.appmindlab.nano.DisplayDBEntry$32 -> com.appmindlab.nano.DisplayDBEntry$j0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    4:5:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
-    4:5:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-    6:8:boolean com.appmindlab.nano.DisplayDBEntry.access$3302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
-    6:8:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$33 -> com.appmindlab.nano.DisplayDBEntry$v:
+com.appmindlab.nano.DisplayDBEntry$33 -> com.appmindlab.nano.DisplayDBEntry$k0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    4:5:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
-    4:5:void onCancel(android.content.DialogInterface):0 -> onCancel
-    6:8:boolean com.appmindlab.nano.DisplayDBEntry.access$3302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
-    6:8:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$34 -> com.appmindlab.nano.m0:
-com.appmindlab.nano.DisplayDBEntry$35 -> com.appmindlab.nano.n0:
-com.appmindlab.nano.DisplayDBEntry$36 -> com.appmindlab.nano.DisplayDBEntry$w:
+com.appmindlab.nano.DisplayDBEntry$34 -> com.appmindlab.nano.DisplayDBEntry$l0:
+com.appmindlab.nano.DisplayDBEntry$35 -> com.appmindlab.nano.DisplayDBEntry$m0:
+com.appmindlab.nano.DisplayDBEntry$36 -> com.appmindlab.nano.DisplayDBEntry$n0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    7:9:void com.appmindlab.nano.DisplayDBEntry.access$3400(com.appmindlab.nano.DisplayDBEntry,boolean,boolean):0:0 -> onClick
-    7:9:void onClick(android.content.DialogInterface,int):0 -> onClick
-    10:11:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    12:14:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    12:14:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$37 -> com.appmindlab.nano.DisplayDBEntry$x:
+com.appmindlab.nano.DisplayDBEntry$37 -> com.appmindlab.nano.DisplayDBEntry$o0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    6:8:void com.appmindlab.nano.DisplayDBEntry.access$3400(com.appmindlab.nano.DisplayDBEntry,boolean,boolean):0:0 -> onClick
-    6:8:void onClick(android.content.DialogInterface,int):0 -> onClick
-    9:11:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    12:14:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    12:14:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$38 -> com.appmindlab.nano.DisplayDBEntry$y:
+com.appmindlab.nano.DisplayDBEntry$38 -> com.appmindlab.nano.DisplayDBEntry$p0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
-    0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$39 -> com.appmindlab.nano.DisplayDBEntry$z:
+com.appmindlab.nano.DisplayDBEntry$39 -> com.appmindlab.nano.DisplayDBEntry$q0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
-    0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$4 -> com.appmindlab.nano.DisplayDBEntry$b0:
+com.appmindlab.nano.DisplayDBEntry$4 -> com.appmindlab.nano.DisplayDBEntry$c1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    3:6:android.widget.RelativeLayout com.appmindlab.nano.DisplayDBEntry.access$200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onAnimationEnd
-    3:6:void onAnimationEnd(android.view.animation.Animation):0 -> onAnimationEnd
-    7:10:void onAnimationEnd(android.view.animation.Animation):0:0 -> onAnimationEnd
-com.appmindlab.nano.DisplayDBEntry$40 -> com.appmindlab.nano.o0:
+com.appmindlab.nano.DisplayDBEntry$40 -> com.appmindlab.nano.DisplayDBEntry$s0:
     android.widget.AutoCompleteTextView val$metadata_str -> b
     androidx.appcompat.widget.SwitchCompat val$star -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    34:36:long com.appmindlab.nano.DisplayDBEntry.access$3500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    34:36:void onClick(android.content.DialogInterface,int):0 -> onClick
-    37:42:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    43:44:long com.appmindlab.nano.DisplayDBEntry.access$3500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    43:44:void onClick(android.content.DialogInterface,int):0 -> onClick
-    45:53:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$41 -> com.appmindlab.nano.p0:
-com.appmindlab.nano.DisplayDBEntry$42 -> com.appmindlab.nano.q0:
+com.appmindlab.nano.DisplayDBEntry$41 -> com.appmindlab.nano.DisplayDBEntry$t0:
+com.appmindlab.nano.DisplayDBEntry$42 -> com.appmindlab.nano.DisplayDBEntry$u0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:4:void com.appmindlab.nano.DisplayDBEntry.doRevert():0:0 -> onClick
-    3:4:void com.appmindlab.nano.DisplayDBEntry.access$3600(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-      # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    3:4:void onClick(android.content.DialogInterface,int):0 -> onClick
-    5:72:void com.appmindlab.nano.DisplayDBEntry.doRevert():0:0 -> onClick
-    5:72:void com.appmindlab.nano.DisplayDBEntry.access$3600(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    5:72:void onClick(android.content.DialogInterface,int):0 -> onClick
-    73:75:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    76:78:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    76:78:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$43 -> com.appmindlab.nano.r0:
+com.appmindlab.nano.DisplayDBEntry$43 -> com.appmindlab.nano.DisplayDBEntry$v0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$44 -> com.appmindlab.nano.s0:
+com.appmindlab.nano.DisplayDBEntry$44 -> com.appmindlab.nano.DisplayDBEntry$w0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
-    0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$45 -> com.appmindlab.nano.t0:
+com.appmindlab.nano.DisplayDBEntry$45 -> com.appmindlab.nano.DisplayDBEntry$x0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
-    0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$46 -> com.appmindlab.nano.u0:
+com.appmindlab.nano.DisplayDBEntry$46 -> com.appmindlab.nano.DisplayDBEntry$y0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     boolean val$exit_mode -> b
-    8:10:void com.appmindlab.nano.DisplayDBEntry.access$3400(com.appmindlab.nano.DisplayDBEntry,boolean,boolean):0:0 -> onClick
-    8:10:void onClick(android.content.DialogInterface,int):0 -> onClick
-    11:12:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    13:15:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    13:15:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$47 -> com.appmindlab.nano.v0:
+com.appmindlab.nano.DisplayDBEntry$47 -> com.appmindlab.nano.DisplayDBEntry$z0:
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     boolean val$exit_mode -> b
-    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$3700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$48 -> com.appmindlab.nano.w0:
+com.appmindlab.nano.DisplayDBEntry$48 -> com.appmindlab.nano.DisplayDBEntry$a1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$49 -> com.appmindlab.nano.x0:
+com.appmindlab.nano.DisplayDBEntry$49 -> com.appmindlab.nano.DisplayDBEntry$b1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
-    0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$5 -> com.appmindlab.nano.DisplayDBEntry$g0:
+com.appmindlab.nano.DisplayDBEntry$5 -> com.appmindlab.nano.DisplayDBEntry$n1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    3:6:android.widget.RelativeLayout com.appmindlab.nano.DisplayDBEntry.access$200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onAnimationEnd
-    3:6:void onAnimationEnd(android.view.animation.Animation):0 -> onAnimationEnd
-    7:10:void onAnimationEnd(android.view.animation.Animation):0:0 -> onAnimationEnd
-com.appmindlab.nano.DisplayDBEntry$50 -> com.appmindlab.nano.y0:
+com.appmindlab.nano.DisplayDBEntry$50 -> com.appmindlab.nano.DisplayDBEntry$d1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
-    0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$51 -> com.appmindlab.nano.DisplayDBEntry$c0:
+com.appmindlab.nano.DisplayDBEntry$51 -> com.appmindlab.nano.DisplayDBEntry$e1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$3400(com.appmindlab.nano.DisplayDBEntry,boolean,boolean):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$52 -> com.appmindlab.nano.DisplayDBEntry$d0:
+com.appmindlab.nano.DisplayDBEntry$52 -> com.appmindlab.nano.DisplayDBEntry$f1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$3700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$53 -> com.appmindlab.nano.DisplayDBEntry$e0:
-com.appmindlab.nano.DisplayDBEntry$54 -> com.appmindlab.nano.DisplayDBEntry$f0:
-com.appmindlab.nano.DisplayDBEntry$55 -> com.appmindlab.nano.z0:
+com.appmindlab.nano.DisplayDBEntry$53 -> com.appmindlab.nano.DisplayDBEntry$g1:
+com.appmindlab.nano.DisplayDBEntry$54 -> com.appmindlab.nano.DisplayDBEntry$h1:
+com.appmindlab.nano.DisplayDBEntry$55 -> com.appmindlab.nano.DisplayDBEntry$i1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-com.appmindlab.nano.DisplayDBEntry$56 -> com.appmindlab.nano.a1:
+com.appmindlab.nano.DisplayDBEntry$56 -> com.appmindlab.nano.DisplayDBEntry$j1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-com.appmindlab.nano.DisplayDBEntry$57 -> com.appmindlab.nano.b1:
-com.appmindlab.nano.DisplayDBEntry$58 -> com.appmindlab.nano.c1:
-com.appmindlab.nano.DisplayDBEntry$59 -> com.appmindlab.nano.d1:
-com.appmindlab.nano.DisplayDBEntry$6 -> com.appmindlab.nano.DisplayDBEntry$h0:
+com.appmindlab.nano.DisplayDBEntry$57 -> com.appmindlab.nano.DisplayDBEntry$k1:
+com.appmindlab.nano.DisplayDBEntry$58 -> com.appmindlab.nano.DisplayDBEntry$l1:
+com.appmindlab.nano.DisplayDBEntry$59 -> com.appmindlab.nano.DisplayDBEntry$m1:
+com.appmindlab.nano.DisplayDBEntry$6 -> com.appmindlab.nano.DisplayDBEntry$y1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    3:7:boolean com.appmindlab.nano.DisplayDBEntry.access$300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSystemUiVisibilityChange
-    3:7:void onSystemUiVisibilityChange(int):0 -> onSystemUiVisibilityChange
-    8:20:boolean com.appmindlab.nano.DisplayDBEntry.access$400(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSystemUiVisibilityChange
-    8:20:void onSystemUiVisibilityChange(int):0 -> onSystemUiVisibilityChange
-    21:25:void onSystemUiVisibilityChange(int):0:0 -> onSystemUiVisibilityChange
-    26:31:void com.appmindlab.nano.DisplayDBEntry.access$500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onSystemUiVisibilityChange
-    26:31:void onSystemUiVisibilityChange(int):0 -> onSystemUiVisibilityChange
-    32:35:void onSystemUiVisibilityChange(int):0:0 -> onSystemUiVisibilityChange
-com.appmindlab.nano.DisplayDBEntry$60 -> com.appmindlab.nano.e1:
+com.appmindlab.nano.DisplayDBEntry$60 -> com.appmindlab.nano.DisplayDBEntry$o1:
     android.widget.NumberPicker val$picker -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    24:29:void com.appmindlab.nano.DisplayDBEntry.access$3800(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    24:29:void onClick(android.content.DialogInterface,int):0 -> onClick
-    30:43:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    44:46:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    44:46:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$61 -> com.appmindlab.nano.f1:
+com.appmindlab.nano.DisplayDBEntry$61 -> com.appmindlab.nano.DisplayDBEntry$p1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$62 -> com.appmindlab.nano.g1:
+com.appmindlab.nano.DisplayDBEntry$62 -> com.appmindlab.nano.DisplayDBEntry$q1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
-    0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$63 -> com.appmindlab.nano.h1:
+com.appmindlab.nano.DisplayDBEntry$63 -> com.appmindlab.nano.DisplayDBEntry$r1:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
-    0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$64 -> com.appmindlab.nano.i1:
-com.appmindlab.nano.DisplayDBEntry$65 -> com.appmindlab.nano.j1:
+com.appmindlab.nano.DisplayDBEntry$64 -> com.appmindlab.nano.DisplayDBEntry$s1:
+com.appmindlab.nano.DisplayDBEntry$65 -> com.appmindlab.nano.DisplayDBEntry$t1:
     android.widget.TextView val$title -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     java.lang.String[] val$items -> b
-com.appmindlab.nano.DisplayDBEntry$66 -> com.appmindlab.nano.k1:
+com.appmindlab.nano.DisplayDBEntry$66 -> com.appmindlab.nano.DisplayDBEntry$u1:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4002(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
-    13:14:void onClick(android.content.DialogInterface,int):0 -> onClick
-    15:16:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    17:18:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
-    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
-    23:27:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    28:29:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    28:29:void onClick(android.content.DialogInterface,int):0 -> onClick
-    30:38:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$67 -> com.appmindlab.nano.l1:
-com.appmindlab.nano.DisplayDBEntry$68 -> com.appmindlab.nano.m1:
+com.appmindlab.nano.DisplayDBEntry$67 -> com.appmindlab.nano.DisplayDBEntry$v1:
+com.appmindlab.nano.DisplayDBEntry$68 -> com.appmindlab.nano.DisplayDBEntry$w1:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4102(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
-    13:14:void onClick(android.content.DialogInterface,int):0 -> onClick
-    15:16:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    17:18:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
-    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
-    23:27:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    28:29:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    28:29:void onClick(android.content.DialogInterface,int):0 -> onClick
-    30:43:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$69 -> com.appmindlab.nano.n1:
-com.appmindlab.nano.DisplayDBEntry$7 -> com.appmindlab.nano.DisplayDBEntry$i0:
+com.appmindlab.nano.DisplayDBEntry$69 -> com.appmindlab.nano.DisplayDBEntry$x1:
+com.appmindlab.nano.DisplayDBEntry$7 -> com.appmindlab.nano.DisplayDBEntry$j2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$302(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> run
-    0:65535:void run():0 -> run
-com.appmindlab.nano.DisplayDBEntry$70 -> com.appmindlab.nano.o1:
+com.appmindlab.nano.DisplayDBEntry$70 -> com.appmindlab.nano.DisplayDBEntry$z1:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    13:14:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4202(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
-    13:14:void onClick(android.content.DialogInterface,int):0 -> onClick
-    15:16:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    17:18:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    17:18:void onClick(android.content.DialogInterface,int):0 -> onClick
-    19:22:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    19:22:void onClick(android.content.DialogInterface,int):0 -> onClick
-    23:27:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    28:29:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    28:29:void onClick(android.content.DialogInterface,int):0 -> onClick
-    30:38:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$71 -> com.appmindlab.nano.p1:
-com.appmindlab.nano.DisplayDBEntry$72 -> com.appmindlab.nano.q1:
+com.appmindlab.nano.DisplayDBEntry$71 -> com.appmindlab.nano.DisplayDBEntry$a2:
+com.appmindlab.nano.DisplayDBEntry$72 -> com.appmindlab.nano.DisplayDBEntry$b2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     java.lang.String[] val$values -> b
-    7:8:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$2702(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onClick
-    7:8:void onClick(android.content.DialogInterface,int):0 -> onClick
-    9:12:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    9:12:void onClick(android.content.DialogInterface,int):0 -> onClick
-    13:17:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    18:19:android.content.SharedPreferences$Editor com.appmindlab.nano.DisplayDBEntry.access$2800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    18:19:void onClick(android.content.DialogInterface,int):0 -> onClick
-    20:24:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    25:28:boolean com.appmindlab.nano.DisplayDBEntry.access$900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    25:28:void onClick(android.content.DialogInterface,int):0 -> onClick
-    29:32:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    33:35:void com.appmindlab.nano.DisplayDBEntry.access$3900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    33:35:void onClick(android.content.DialogInterface,int):0 -> onClick
-    36:44:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$73 -> com.appmindlab.nano.r1:
+com.appmindlab.nano.DisplayDBEntry$73 -> com.appmindlab.nano.DisplayDBEntry$c2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-com.appmindlab.nano.DisplayDBEntry$74 -> com.appmindlab.nano.s1:
+com.appmindlab.nano.DisplayDBEntry$74 -> com.appmindlab.nano.DisplayDBEntry$d2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-com.appmindlab.nano.DisplayDBEntry$76 -> com.appmindlab.nano.t1:
+com.appmindlab.nano.DisplayDBEntry$75 -> com.appmindlab.nano.DisplayDBEntry$e2:
+    com.appmindlab.nano.DisplayDBEntry this$0 -> b
+com.appmindlab.nano.DisplayDBEntry$76 -> com.appmindlab.nano.DisplayDBEntry$f2:
     android.widget.NumberPicker val$picker -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:8:boolean com.appmindlab.nano.DisplayDBEntry.access$4900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
-    3:8:void onScrollStateChange(android.widget.NumberPicker,int):0 -> onScrollStateChange
-    9:10:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
-    9:10:void onScrollStateChange(android.widget.NumberPicker,int):0 -> onScrollStateChange
-    11:28:void onScrollStateChange(android.widget.NumberPicker,int):0:0 -> onScrollStateChange
-    29:30:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$5000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
-    29:30:void onScrollStateChange(android.widget.NumberPicker,int):0 -> onScrollStateChange
-    31:37:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onScrollStateChange
-    31:37:void onScrollStateChange(android.widget.NumberPicker,int):0 -> onScrollStateChange
-    38:101:void onScrollStateChange(android.widget.NumberPicker,int):0:0 -> onScrollStateChange
-com.appmindlab.nano.DisplayDBEntry$77 -> com.appmindlab.nano.u1:
+com.appmindlab.nano.DisplayDBEntry$77 -> com.appmindlab.nano.DisplayDBEntry$g2:
     android.widget.NumberPicker val$picker -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    9:10:int com.appmindlab.nano.DisplayDBEntry.access$4602(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onClick
-    9:10:void onClick(android.content.DialogInterface,int):0 -> onClick
-    11:17:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$78 -> com.appmindlab.nano.v1:
-com.appmindlab.nano.DisplayDBEntry$79 -> com.appmindlab.nano.w1:
+com.appmindlab.nano.DisplayDBEntry$78 -> com.appmindlab.nano.DisplayDBEntry$h2:
+com.appmindlab.nano.DisplayDBEntry$79 -> com.appmindlab.nano.DisplayDBEntry$i2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:void com.appmindlab.nano.DisplayDBEntry.access$5100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$8 -> com.appmindlab.nano.DisplayDBEntry$s0:
+com.appmindlab.nano.DisplayDBEntry$8 -> com.appmindlab.nano.DisplayDBEntry$u2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    5:6:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onFocusChange
-    5:6:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
-    7:9:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$602(com.appmindlab.nano.DisplayDBEntry,android.widget.EditText):0:0 -> onFocusChange
-    7:9:void onFocusChange(android.view.View,boolean):0 -> onFocusChange
-com.appmindlab.nano.DisplayDBEntry$80 -> com.appmindlab.nano.DisplayDBEntry$j0:
+com.appmindlab.nano.DisplayDBEntry$80 -> com.appmindlab.nano.DisplayDBEntry$k2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    17:18:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onCheckedChanged
-    17:18:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0 -> onCheckedChanged
-    19:25:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0:0 -> onCheckedChanged
-    26:27:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onCheckedChanged
-    26:27:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0 -> onCheckedChanged
-    28:79:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0:0 -> onCheckedChanged
-    80:81:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$5200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onCheckedChanged
-    80:81:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0 -> onCheckedChanged
-    82:90:void onCheckedChanged(com.google.android.material.chip.ChipGroup,int):0:0 -> onCheckedChanged
-com.appmindlab.nano.DisplayDBEntry$81 -> com.appmindlab.nano.DisplayDBEntry$k0:
+com.appmindlab.nano.DisplayDBEntry$81 -> com.appmindlab.nano.DisplayDBEntry$l2:
     int val$idx -> b
     com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    3:4:int com.appmindlab.nano.DisplayDBEntry.access$5300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    3:4:void onClick(android.view.View):0 -> onClick
-    5:19:void onClick(android.view.View):0:0 -> onClick
-    20:21:int com.appmindlab.nano.DisplayDBEntry.access$5302(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onClick
-    20:21:void onClick(android.view.View):0 -> onClick
-    22:37:void onClick(android.view.View):0:0 -> onClick
-    38:39:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    38:39:void onClick(android.view.View):0 -> onClick
-    40:51:void onClick(android.view.View):0:0 -> onClick
-    52:53:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    52:53:void onClick(android.view.View):0 -> onClick
-    54:74:void onClick(android.view.View):0:0 -> onClick
-    75:76:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    75:76:void onClick(android.view.View):0 -> onClick
-    77:81:void onClick(android.view.View):0:0 -> onClick
-    82:83:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    82:83:void onClick(android.view.View):0 -> onClick
-    84:92:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$82 -> com.appmindlab.nano.DisplayDBEntry$l0:
+com.appmindlab.nano.DisplayDBEntry$82 -> com.appmindlab.nano.DisplayDBEntry$m2:
     int val$idx -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    13:14:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onLongClick
-    13:14:boolean onLongClick(android.view.View):0 -> onLongClick
-    15:35:boolean onLongClick(android.view.View):0:0 -> onLongClick
-    36:39:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$5000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onLongClick
-    36:39:boolean onLongClick(android.view.View):0 -> onLongClick
-    40:103:boolean onLongClick(android.view.View):0:0 -> onLongClick
-com.appmindlab.nano.DisplayDBEntry$83 -> com.appmindlab.nano.DisplayDBEntry$m0:
+com.appmindlab.nano.DisplayDBEntry$83 -> com.appmindlab.nano.DisplayDBEntry$n2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    5:5:void com.appmindlab.nano.DisplayDBEntry.handleMarkdownLocalFind():0:0 -> onClick
-    5:5:void com.appmindlab.nano.DisplayDBEntry.access$5400(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-      # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    5:5:void onClick(android.view.View):0 -> onClick
-    6:127:void com.appmindlab.nano.DisplayDBEntry.handleMarkdownLocalFind():0:0 -> onClick
-    6:127:void com.appmindlab.nano.DisplayDBEntry.access$5400(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    6:127:void onClick(android.view.View):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$84 -> com.appmindlab.nano.DisplayDBEntry$n0:
+com.appmindlab.nano.DisplayDBEntry$84 -> com.appmindlab.nano.DisplayDBEntry$o2:
     com.google.android.material.bottomsheet.BottomSheetDialog val$dialog -> b
     int val$id -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> e
     java.lang.String val$title -> d
-com.appmindlab.nano.DisplayDBEntry$85 -> com.appmindlab.nano.DisplayDBEntry$o0:
+com.appmindlab.nano.DisplayDBEntry$85 -> com.appmindlab.nano.DisplayDBEntry$p2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
     java.lang.String val$title -> b
-    4:5:com.appmindlab.nano.DataSource com.appmindlab.nano.DisplayDBEntry.access$2200(com.appmindlab.nano.DisplayDBEntry):0:0 -> onLongClick
-    4:5:boolean onLongClick(android.view.View):0 -> onLongClick
-    6:71:boolean onLongClick(android.view.View):0:0 -> onLongClick
-com.appmindlab.nano.DisplayDBEntry$86 -> com.appmindlab.nano.DisplayDBEntry$p0:
+com.appmindlab.nano.DisplayDBEntry$86 -> com.appmindlab.nano.DisplayDBEntry$q2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    5:9:void com.appmindlab.nano.DisplayDBEntry.access$5600(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    5:9:void onClick(android.view.View):0 -> onClick
-    10:13:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$87 -> com.appmindlab.nano.DisplayDBEntry$q0:
+com.appmindlab.nano.DisplayDBEntry$87 -> com.appmindlab.nano.DisplayDBEntry$r2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    11:12:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onResponse
-    11:12:void onResponse(java.lang.String):0 -> onResponse
-    13:43:void onResponse(java.lang.String):0:0 -> onResponse
-com.appmindlab.nano.DisplayDBEntry$88 -> com.appmindlab.nano.DisplayDBEntry$r0:
+com.appmindlab.nano.DisplayDBEntry$88 -> com.appmindlab.nano.DisplayDBEntry$s2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$89 -> com.appmindlab.nano.x1:
+com.appmindlab.nano.DisplayDBEntry$89 -> com.appmindlab.nano.DisplayDBEntry$t2:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    3:6:android.webkit.WebView com.appmindlab.nano.DisplayDBEntry.access$2100(com.appmindlab.nano.DisplayDBEntry):0:0 -> run
-    3:6:void run():0 -> run
-    7:10:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$9 -> com.appmindlab.nano.DisplayDBEntry$v0:
+com.appmindlab.nano.DisplayDBEntry$9 -> com.appmindlab.nano.DisplayDBEntry$f3:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    6:7:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onEditorAction
-    6:7:boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent):0 -> onEditorAction
-    8:12:boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent):0:0 -> onEditorAction
-com.appmindlab.nano.DisplayDBEntry$90 -> com.appmindlab.nano.DisplayDBEntry$t0:
+com.appmindlab.nano.DisplayDBEntry$90 -> com.appmindlab.nano.DisplayDBEntry$v2:
     android.webkit.WebView val$webview -> b
     boolean val$use_print -> a
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    16:18:void com.appmindlab.nano.DisplayDBEntry.access$5800(com.appmindlab.nano.DisplayDBEntry,android.webkit.WebView):0:0 -> onPageFinished
-    16:18:void onPageFinished(android.webkit.WebView,java.lang.String):0 -> onPageFinished
-    19:35:void onPageFinished(android.webkit.WebView,java.lang.String):0:0 -> onPageFinished
-com.appmindlab.nano.DisplayDBEntry$91 -> com.appmindlab.nano.y1:
+com.appmindlab.nano.DisplayDBEntry$91 -> com.appmindlab.nano.DisplayDBEntry$w2:
     android.widget.NumberPicker val$picker -> c
     java.lang.String[] val$items -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> d
-    0:65535:char com.appmindlab.nano.DisplayDBEntry.access$5902(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$92 -> com.appmindlab.nano.z1:
-com.appmindlab.nano.DisplayDBEntry$93 -> com.appmindlab.nano.a2:
+com.appmindlab.nano.DisplayDBEntry$92 -> com.appmindlab.nano.DisplayDBEntry$x2:
+com.appmindlab.nano.DisplayDBEntry$93 -> com.appmindlab.nano.DisplayDBEntry$y2:
     androidx.appcompat.widget.SwitchCompat val$canvas_mode -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    13:15:void com.appmindlab.nano.DisplayDBEntry.access$6000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    13:15:void onClick(android.view.View):0 -> onClick
-    16:135:void com.appmindlab.nano.DisplayDBEntry.handleCanvasStroke():0:0 -> onClick
-    16:135:void com.appmindlab.nano.DisplayDBEntry.access$6000(com.appmindlab.nano.DisplayDBEntry):0 -> onClick
-    16:135:void onClick(android.view.View):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$94 -> com.appmindlab.nano.b2:
+com.appmindlab.nano.DisplayDBEntry$94 -> com.appmindlab.nano.DisplayDBEntry$z2:
     androidx.appcompat.widget.SwitchCompat val$canvas_mode -> b
     com.appmindlab.nano.DisplayDBEntry this$0 -> c
-    56:59:char com.appmindlab.nano.DisplayDBEntry.access$5900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    56:59:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    60:63:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$6100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    60:63:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    64:87:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    88:90:char com.appmindlab.nano.DisplayDBEntry.access$5902(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onTouch
-    88:90:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    91:94:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    95:96:char com.appmindlab.nano.DisplayDBEntry.access$5902(com.appmindlab.nano.DisplayDBEntry,char):0:0 -> onTouch
-    95:96:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    97:98:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-    99:100:char com.appmindlab.nano.DisplayDBEntry.access$5900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onTouch
-    99:100:boolean onTouch(android.view.View,android.view.MotionEvent):0 -> onTouch
-    101:119:boolean onTouch(android.view.View,android.view.MotionEvent):0:0 -> onTouch
-com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.c2:
+com.appmindlab.nano.DisplayDBEntry$95 -> com.appmindlab.nano.DisplayDBEntry$a3:
     android.widget.EditText val$canvas -> b
     java.lang.String val$current_drawing -> c
     com.appmindlab.nano.DisplayDBEntry this$0 -> e
     java.lang.String val$current_selection -> d
-    15:17:void com.appmindlab.nano.DisplayDBEntry.access$1100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    15:17:void onClick(android.content.DialogInterface,int):0 -> onClick
-    18:37:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    38:38:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":133,"3":134,"6":135,"9":136,"12":137,"15":138}}
-    133:133:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    134:134:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    135:135:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    136:136:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    137:137:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    138:138:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    39:43:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    44:45:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    44:45:void onClick(android.content.DialogInterface,int):0 -> onClick
-    46:50:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    51:54:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4000(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    51:54:void onClick(android.content.DialogInterface,int):0 -> onClick
-    55:62:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    63:64:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4100(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    63:64:void onClick(android.content.DialogInterface,int):0 -> onClick
-    65:111:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    112:113:android.view.View$OnClickListener com.appmindlab.nano.DisplayDBEntry.access$2900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onClick
-    112:113:void onClick(android.content.DialogInterface,int):0 -> onClick
-    114:129:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-    130:132:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    130:132:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$96 -> com.appmindlab.nano.d2:
+    36:36:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":140,"3":141,"6":142,"9":143,"12":144,"15":145}}
+    140:140:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+    141:141:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+    142:142:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+    143:143:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+    144:144:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+    145:145:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+    37:139:void onClick(android.content.DialogInterface,int):0:0 -> onClick
+com.appmindlab.nano.DisplayDBEntry$96 -> com.appmindlab.nano.DisplayDBEntry$b3:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onClick
-    0:65535:void onClick(android.content.DialogInterface,int):0 -> onClick
-com.appmindlab.nano.DisplayDBEntry$97 -> com.appmindlab.nano.e2:
+com.appmindlab.nano.DisplayDBEntry$97 -> com.appmindlab.nano.DisplayDBEntry$c3:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onDismiss
-    0:65535:void onDismiss(android.content.DialogInterface):0 -> onDismiss
-com.appmindlab.nano.DisplayDBEntry$98 -> com.appmindlab.nano.f2:
+com.appmindlab.nano.DisplayDBEntry$98 -> com.appmindlab.nano.DisplayDBEntry$d3:
     com.appmindlab.nano.DisplayDBEntry this$0 -> b
-    0:65535:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onCancel
-    0:65535:void onCancel(android.content.DialogInterface):0 -> onCancel
-com.appmindlab.nano.DisplayDBEntry$99 -> com.appmindlab.nano.DisplayDBEntry$u0:
+com.appmindlab.nano.DisplayDBEntry$99 -> com.appmindlab.nano.DisplayDBEntry$e3:
     boolean scaleChangedRunnablePending -> a
-com.appmindlab.nano.DisplayDBEntry$99$1 -> com.appmindlab.nano.DisplayDBEntry$u0$a:
+com.appmindlab.nano.DisplayDBEntry$99$1 -> com.appmindlab.nano.DisplayDBEntry$e3$a:
     android.webkit.WebView val$view -> b
-com.appmindlab.nano.DisplayDBEntry$99$2 -> com.appmindlab.nano.DisplayDBEntry$u0$b:
+com.appmindlab.nano.DisplayDBEntry$99$2 -> com.appmindlab.nano.DisplayDBEntry$e3$b:
     float val$newScale -> d
     float val$oldScale -> c
     android.webkit.WebView val$webView -> b
@@ -20917,103 +20032,30 @@ com.appmindlab.nano.DisplayDBEntry$99$2 -> com.appmindlab.nano.DisplayDBEntry$u0
     44:44:void run():0:0 -> run
     45:45:void run():0:0 -> run
     6:42:void run():0:0 -> run
-com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBEntry$w0:
+com.appmindlab.nano.DisplayDBEntry$DecryptTask -> com.appmindlab.nano.DisplayDBEntry$g3:
     byte[] temp -> o
     com.appmindlab.nano.DisplayDBEntry activity -> m
     java.lang.String content -> n
     com.appmindlab.nano.DisplayDBEntry this$0 -> p
-    4:5:boolean com.appmindlab.nano.DisplayDBEntry.access$3202(com.appmindlab.nano.DisplayDBEntry,boolean):0:0 -> onPreExecute
-    4:5:void onPreExecute():0 -> onPreExecute
-    6:7:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    6:7:void onPreExecute():0 -> onPreExecute
-    8:13:void onPreExecute():0:0 -> onPreExecute
-    14:15:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    14:15:void onPreExecute():0 -> onPreExecute
-    16:23:void onPreExecute():0:0 -> onPreExecute
-    24:25:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    24:25:void onPreExecute():0 -> onPreExecute
-    26:32:void onPreExecute():0:0 -> onPreExecute
-    33:34:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    33:34:void onPreExecute():0 -> onPreExecute
-    35:59:void onPreExecute():0:0 -> onPreExecute
-    60:61:android.view.animation.Animation com.appmindlab.nano.DisplayDBEntry.access$1500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    60:61:void onPreExecute():0 -> onPreExecute
-    62:79:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$EditViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$x0:
+com.appmindlab.nano.DisplayDBEntry$EditViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$h3:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBEntry$y0:
+com.appmindlab.nano.DisplayDBEntry$EncryptTask -> com.appmindlab.nano.DisplayDBEntry$i3:
     com.appmindlab.nano.DisplayDBEntry activity -> m
     com.appmindlab.nano.DisplayDBEntry this$0 -> o
     java.lang.String temp -> n
-    3:4:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    3:4:void onPreExecute():0 -> onPreExecute
-    5:10:void onPreExecute():0:0 -> onPreExecute
-    11:12:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    11:12:void onPreExecute():0 -> onPreExecute
-    13:20:void onPreExecute():0:0 -> onPreExecute
-    21:22:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    21:22:void onPreExecute():0 -> onPreExecute
-    23:29:void onPreExecute():0:0 -> onPreExecute
-    30:31:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    30:31:void onPreExecute():0 -> onPreExecute
-    32:43:void onPreExecute():0:0 -> onPreExecute
-    44:46:void com.appmindlab.nano.DisplayDBEntry.access$3900(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    44:46:void onPreExecute():0 -> onPreExecute
-    47:79:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$HighlightTask -> com.appmindlab.nano.DisplayDBEntry$z0:
+com.appmindlab.nano.DisplayDBEntry$HighlightTask -> com.appmindlab.nano.DisplayDBEntry$j3:
     com.appmindlab.nano.DisplayDBEntry activity -> m
     com.appmindlab.nano.DisplayDBEntry this$0 -> o
     java.lang.String content -> n
-    3:4:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4300(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
-    3:4:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
-    5:28:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-    29:30:android.text.SpannableStringBuilder com.appmindlab.nano.DisplayDBEntry.access$4402(com.appmindlab.nano.DisplayDBEntry,android.text.SpannableStringBuilder):0:0 -> doInBackground
-    29:30:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
-    31:46:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-    47:48:android.text.SpannableStringBuilder com.appmindlab.nano.DisplayDBEntry.access$4400(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
-    47:48:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
-    49:69:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-    70:71:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4500(com.appmindlab.nano.DisplayDBEntry):0:0 -> doInBackground
-    70:71:java.lang.Long doInBackground(java.lang.Void[]):0 -> doInBackground
-    72:97:java.lang.Long doInBackground(java.lang.Void[]):0:0 -> doInBackground
-    3:4:java.util.ArrayList com.appmindlab.nano.DisplayDBEntry.access$4500(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    3:4:void onPreExecute():0 -> onPreExecute
-    5:10:void onPreExecute():0:0 -> onPreExecute
-    11:12:int com.appmindlab.nano.DisplayDBEntry.access$4602(com.appmindlab.nano.DisplayDBEntry,int):0:0 -> onPreExecute
-    11:12:void onPreExecute():0 -> onPreExecute
-    13:14:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    13:14:void onPreExecute():0 -> onPreExecute
-    15:26:void onPreExecute():0:0 -> onPreExecute
-    27:30:boolean com.appmindlab.nano.DisplayDBEntry.access$4700(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    27:30:void onPreExecute():0 -> onPreExecute
-    31:33:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4300(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    31:33:void onPreExecute():0 -> onPreExecute
-    34:37:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4800(com.appmindlab.nano.DisplayDBEntry,java.lang.String,boolean):0:0 -> onPreExecute
-    34:37:void onPreExecute():0 -> onPreExecute
-    38:39:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$4302(com.appmindlab.nano.DisplayDBEntry,java.lang.String):0:0 -> onPreExecute
-    38:39:void onPreExecute():0 -> onPreExecute
-    40:55:void onPreExecute():0:0 -> onPreExecute
-com.appmindlab.nano.DisplayDBEntry$InsertLocationStampTask -> com.appmindlab.nano.DisplayDBEntry$a1:
+com.appmindlab.nano.DisplayDBEntry$InsertLocationStampTask -> com.appmindlab.nano.DisplayDBEntry$k3:
     int pos -> o
     com.appmindlab.nano.DisplayDBEntry activity -> m
     java.lang.String temp -> n
     com.appmindlab.nano.DisplayDBEntry this$0 -> p
-    3:4:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$800(com.appmindlab.nano.DisplayDBEntry):0:0 -> onPreExecute
-    3:4:void onPreExecute():0 -> onPreExecute
-    5:26:void onPreExecute():0:0 -> onPreExecute
 com.appmindlab.nano.DisplayDBEntry$MarkdownViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$MarkdownViewJavaScriptInterface:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-    25:26:java.lang.String com.appmindlab.nano.DisplayDBEntry.access$1900(com.appmindlab.nano.DisplayDBEntry):0:0 -> exportHTMLJS
-    25:26:void exportHTMLJS(java.lang.String):0 -> exportHTMLJS
-    27:55:void exportHTMLJS(java.lang.String):0:0 -> exportHTMLJS
-    56:57:android.widget.EditText com.appmindlab.nano.DisplayDBEntry.access$700(com.appmindlab.nano.DisplayDBEntry):0:0 -> exportHTMLJS
-    56:57:void exportHTMLJS(java.lang.String):0 -> exportHTMLJS
-    58:142:void exportHTMLJS(java.lang.String):0:0 -> exportHTMLJS
-    143:144:android.net.Uri com.appmindlab.nano.DisplayDBEntry.access$5700(com.appmindlab.nano.DisplayDBEntry):0:0 -> exportHTMLJS
-    143:144:void exportHTMLJS(java.lang.String):0 -> exportHTMLJS
-    145:273:void exportHTMLJS(java.lang.String):0:0 -> exportHTMLJS
-com.appmindlab.nano.EditStatusGestureListener -> com.appmindlab.nano.g2:
-com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.h2:
+com.appmindlab.nano.EditStatusGestureListener -> com.appmindlab.nano.x:
+com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.y:
     com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener mCallback -> U
     93:93:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":655,"4":656,"7":657}}
@@ -21147,8 +20189,8 @@ com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.h2:
     656:656:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     657:657:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     652:654:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
-com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener -> com.appmindlab.nano.h2$a:
-com.appmindlab.nano.FontCache -> com.appmindlab.nano.i2:
+com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener -> com.appmindlab.nano.y$a:
+com.appmindlab.nano.FontCache -> com.appmindlab.nano.z:
     java.util.HashMap mCache -> a
 com.appmindlab.nano.HitParcelable -> com.appmindlab.nano.HitParcelable:
     int pos -> b
@@ -21157,22 +20199,22 @@ com.appmindlab.nano.HitParcelable -> com.appmindlab.nano.HitParcelable:
 com.appmindlab.nano.HitParcelable$1 -> com.appmindlab.nano.HitParcelable$a:
 com.appmindlab.nano.IntroActivity -> com.appmindlab.nano.IntroActivity:
     void launchMainActivity() -> d
-com.appmindlab.nano.LocalFindFragment -> com.appmindlab.nano.j2:
+com.appmindlab.nano.LocalFindFragment -> com.appmindlab.nano.a0:
     com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener mCallback -> U
-com.appmindlab.nano.LocalFindFragment$1 -> com.appmindlab.nano.j2$a:
+com.appmindlab.nano.LocalFindFragment$1 -> com.appmindlab.nano.a0$a:
     com.appmindlab.nano.LocalFindFragment this$0 -> a
-com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener -> com.appmindlab.nano.j2$b:
-com.appmindlab.nano.LocalFindHistory -> com.appmindlab.nano.k2:
+com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener -> com.appmindlab.nano.a0$b:
+com.appmindlab.nano.LocalFindHistory -> com.appmindlab.nano.b0:
     androidx.collection.LruCache mCache -> a
-com.appmindlab.nano.LocalFindHistory$1 -> com.appmindlab.nano.k2$a:
-com.appmindlab.nano.LocalReplaceFragment -> com.appmindlab.nano.l2:
+com.appmindlab.nano.LocalFindHistory$1 -> com.appmindlab.nano.b0$a:
+com.appmindlab.nano.LocalReplaceFragment -> com.appmindlab.nano.c0:
     com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener mCallback -> U
-com.appmindlab.nano.LocalReplaceFragment$1 -> com.appmindlab.nano.l2$a:
+com.appmindlab.nano.LocalReplaceFragment$1 -> com.appmindlab.nano.c0$a:
     com.appmindlab.nano.LocalReplaceFragment this$0 -> a
-com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener -> com.appmindlab.nano.l2$b:
-com.appmindlab.nano.LocalReplaceHistory -> com.appmindlab.nano.m2:
+com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener -> com.appmindlab.nano.c0$b:
+com.appmindlab.nano.LocalReplaceHistory -> com.appmindlab.nano.d0:
     androidx.collection.LruCache mCache -> a
-com.appmindlab.nano.LocalReplaceHistory$1 -> com.appmindlab.nano.m2$a:
+com.appmindlab.nano.LocalReplaceHistory$1 -> com.appmindlab.nano.d0$a:
 com.appmindlab.nano.MainActivity -> com.appmindlab.nano.MainActivity:
     330:330:void doVoiceMemo(android.content.Intent):0:0 -> doVoiceMemo
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":360,"3":361,"6":362}}
@@ -21485,8 +20527,8 @@ com.appmindlab.nano.MainActivity$SearchNearbyTask -> com.appmindlab.nano.MainAct
     com.appmindlab.nano.MainActivity this$0 -> n
     0:65535:void <init>(com.appmindlab.nano.MainActivity):0:0 -> <init>
     0:65535:void <init>(com.appmindlab.nano.MainActivity,com.appmindlab.nano.MainActivity$1):0 -> <init>
-com.appmindlab.nano.MainStatusGestureListener -> com.appmindlab.nano.n2:
-com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.o2:
+com.appmindlab.nano.MainStatusGestureListener -> com.appmindlab.nano.e0:
+com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.f0:
     com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener mCallback -> U
     77:77:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":300,"4":301,"7":302}}
@@ -21632,7 +20674,7 @@ com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.o2:
     301:301:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     302:302:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     285:299:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
-com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener -> com.appmindlab.nano.o2$a:
+com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener -> com.appmindlab.nano.f0$a:
 com.appmindlab.nano.MirrorWorker -> com.appmindlab.nano.MirrorWorker:
     androidx.documentfile.provider.DocumentFile log_dir -> n
     androidx.documentfile.provider.DocumentFile font_dir -> m
@@ -21711,11 +20753,11 @@ com.appmindlab.nano.NotificationReceiver -> com.appmindlab.nano.NotificationRece
     470:483:void cancelScrapbookNotification(android.content.Context,android.content.Intent):0:0 -> onReceive
     470:483:void doAppendScrapbook(android.content.Context,android.content.Intent):0 -> onReceive
     470:483:void onReceive(android.content.Context,android.content.Intent):0 -> onReceive
-com.appmindlab.nano.PrefFragment -> com.appmindlab.nano.p2:
+com.appmindlab.nano.PrefFragment -> com.appmindlab.nano.g0:
     android.content.SharedPreferences mSharedPreferences -> b
     android.content.SharedPreferences$Editor mSharedPreferencesEditor -> c
     java.lang.String mLocalRepoPath -> d
-com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.p2$a:
+com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.g0$a:
     com.appmindlab.nano.PrefFragment this$0 -> a
     29:30:java.lang.String com.appmindlab.nano.PrefFragment.access$000(com.appmindlab.nano.PrefFragment):0:0 -> onPreferenceClick
     29:30:boolean onPreferenceClick(android.preference.Preference):0 -> onPreferenceClick
@@ -21723,7 +20765,7 @@ com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.p2$a:
     39:41:java.lang.String com.appmindlab.nano.PrefFragment.access$000(com.appmindlab.nano.PrefFragment):0:0 -> onPreferenceClick
     39:41:boolean onPreferenceClick(android.preference.Preference):0 -> onPreferenceClick
     42:49:boolean onPreferenceClick(android.preference.Preference):0:0 -> onPreferenceClick
-com.appmindlab.nano.PrefFragment$1$1 -> com.appmindlab.nano.p2$a$a:
+com.appmindlab.nano.PrefFragment$1$1 -> com.appmindlab.nano.g0$a$a:
     com.appmindlab.nano.PrefFragment$1 this$1 -> a
 com.appmindlab.nano.ScrollAwareFABBehavior$1 -> com.appmindlab.nano.ScrollAwareFABBehavior$a:
     com.appmindlab.nano.ScrollAwareFABBehavior this$0 -> a
@@ -21735,13 +20777,13 @@ com.appmindlab.nano.SetPreferenceActivity -> com.appmindlab.nano.SetPreferenceAc
     36:97:void setupTheme():0:0 -> onCreate
     36:97:void onCreate(android.os.Bundle):0 -> onCreate
     98:138:void onCreate(android.os.Bundle):0:0 -> onCreate
-com.appmindlab.nano.SetPreferenceActivity$1 -> com.appmindlab.nano.q2:
+com.appmindlab.nano.SetPreferenceActivity$1 -> com.appmindlab.nano.h0:
     com.appmindlab.nano.SetPreferenceActivity this$0 -> a
     17:18:java.lang.String com.appmindlab.nano.SetPreferenceActivity.access$002(com.appmindlab.nano.SetPreferenceActivity,java.lang.String):0:0 -> onSharedPreferenceChanged
     17:18:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String):0 -> onSharedPreferenceChanged
     19:24:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String):0:0 -> onSharedPreferenceChanged
-com.appmindlab.nano.ShellExecuter -> com.appmindlab.nano.r2:
-com.appmindlab.nano.Snapshot -> com.appmindlab.nano.s2:
+com.appmindlab.nano.ShellExecuter -> com.appmindlab.nano.i0:
+com.appmindlab.nano.Snapshot -> com.appmindlab.nano.j0:
     long mPos -> b
     java.lang.String mContent -> a
     long mTimestamp -> c
@@ -21753,7 +20795,7 @@ com.appmindlab.nano.SuggestionProvider -> com.appmindlab.nano.SuggestionProvider
     128:128:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
     129:129:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
     8:126:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
-com.appmindlab.nano.Utils -> com.appmindlab.nano.t2:
+com.appmindlab.nano.Utils -> com.appmindlab.nano.k0:
     float mLightLevel -> c
     boolean mExternalStorageWriteable -> a
     boolean mWriteLock -> b
@@ -21915,20 +20957,20 @@ com.appmindlab.nano.Utils -> com.appmindlab.nano.t2:
     41:41:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
     42:42:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
     29:39:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
-com.appmindlab.nano.Utils$1 -> com.appmindlab.nano.t2$a:
-com.appmindlab.nano.Utils$2 -> com.appmindlab.nano.t2$b:
+com.appmindlab.nano.Utils$1 -> com.appmindlab.nano.k0$a:
+com.appmindlab.nano.Utils$2 -> com.appmindlab.nano.k0$b:
     java.lang.String val$temp -> a
-com.appmindlab.nano.Utils$3 -> com.appmindlab.nano.t2$c:
-com.appmindlab.nano.Utils$4 -> com.appmindlab.nano.t2$d:
-com.appmindlab.nano.Utils$5 -> com.appmindlab.nano.t2$e:
-com.appmindlab.nano.Utils$6 -> com.appmindlab.nano.t2$f:
-com.appmindlab.nano.Utils$7 -> com.appmindlab.nano.t2$g:
+com.appmindlab.nano.Utils$3 -> com.appmindlab.nano.k0$c:
+com.appmindlab.nano.Utils$4 -> com.appmindlab.nano.k0$d:
+com.appmindlab.nano.Utils$5 -> com.appmindlab.nano.k0$e:
+com.appmindlab.nano.Utils$6 -> com.appmindlab.nano.k0$f:
+com.appmindlab.nano.Utils$7 -> com.appmindlab.nano.k0$g:
     android.widget.EditText val$content -> b
     java.lang.String val$result -> c
-com.appmindlab.nano.Utils$8 -> com.appmindlab.nano.t2$h:
+com.appmindlab.nano.Utils$8 -> com.appmindlab.nano.k0$h:
     androidx.appcompat.app.AppCompatActivity val$activity -> b
     java.lang.String val$result -> c
-com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.t2$i:
+com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.k0$i:
     int ch -> b
     java.lang.String val$str -> c
     int pos -> a
@@ -21937,7 +20979,7 @@ com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.t2$i:
     double parseExpression() -> c
     double parseFactor() -> d
     double parseTerm() -> e
-com.appmindlab.nano.WidgetItem -> com.appmindlab.nano.u2:
+com.appmindlab.nano.WidgetItem -> com.appmindlab.nano.l0:
     long id -> a
     java.lang.String content -> c
     java.lang.String title -> b
@@ -29466,129 +28508,129 @@ com.google.zxing.datamatrix.decoder.DataBlock -> o3.b:
     int numDataCodewords -> a
 com.google.zxing.datamatrix.decoder.Decoder -> o3.c:
     com.google.zxing.common.reedsolomon.ReedSolomonDecoder rsDecoder -> a
-    8:9:com.google.zxing.datamatrix.decoder.Version com.google.zxing.datamatrix.decoder.BitMatrixParser.getVersion():0:0 -> decode
-    8:9:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    10:46:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
-    10:46:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    47:128:int com.google.zxing.datamatrix.decoder.BitMatrixParser.readCorner1(int,int):0:0 -> decode
-    47:128:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0 -> decode
-    47:128:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    129:155:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
-    129:155:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    156:237:int com.google.zxing.datamatrix.decoder.BitMatrixParser.readCorner2(int,int):0:0 -> decode
-    156:237:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0 -> decode
-    156:237:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    238:266:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
-    238:266:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    267:355:int com.google.zxing.datamatrix.decoder.BitMatrixParser.readCorner3(int,int):0:0 -> decode
-    267:355:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0 -> decode
-    267:355:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    356:390:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
-    356:390:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    391:468:int com.google.zxing.datamatrix.decoder.BitMatrixParser.readCorner4(int,int):0:0 -> decode
-    391:468:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0 -> decode
-    391:468:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    469:565:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
-    469:565:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    566:567:com.google.zxing.datamatrix.decoder.Version$ECBlocks com.google.zxing.datamatrix.decoder.Version.getECBlocks():0:0 -> decode
-    566:567:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
+    1:1:com.google.zxing.datamatrix.decoder.Version com.google.zxing.datamatrix.decoder.BitMatrixParser.getVersion():0:0 -> decode
+    1:1:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    2:2:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
+    2:2:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    3:3:int com.google.zxing.datamatrix.decoder.BitMatrixParser.readCorner1(int,int):0:0 -> decode
+    3:3:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0 -> decode
+    3:3:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    4:4:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
+    4:4:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    5:5:int com.google.zxing.datamatrix.decoder.BitMatrixParser.readCorner2(int,int):0:0 -> decode
+    5:5:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0 -> decode
+    5:5:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    6:6:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
+    6:6:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    7:7:int com.google.zxing.datamatrix.decoder.BitMatrixParser.readCorner3(int,int):0:0 -> decode
+    7:7:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0 -> decode
+    7:7:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    8:8:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
+    8:8:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    9:9:int com.google.zxing.datamatrix.decoder.BitMatrixParser.readCorner4(int,int):0:0 -> decode
+    9:9:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0 -> decode
+    9:9:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    10:10:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
+    10:10:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    11:11:com.google.zxing.datamatrix.decoder.Version$ECBlocks com.google.zxing.datamatrix.decoder.Version.getECBlocks():0:0 -> decode
+    11:11:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    566:567:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    568:569:com.google.zxing.datamatrix.decoder.Version$ECB[] com.google.zxing.datamatrix.decoder.Version$ECBlocks.getECBlocks():0:0 -> decode
-    568:569:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
+    11:11:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    12:12:com.google.zxing.datamatrix.decoder.Version$ECB[] com.google.zxing.datamatrix.decoder.Version$ECBlocks.getECBlocks():0:0 -> decode
+    12:12:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    568:569:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    570:576:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
-    570:576:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    577:582:int com.google.zxing.datamatrix.decoder.Version$ECB.getCount():0:0 -> decode
-    577:582:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
+    12:12:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    13:13:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
+    13:13:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    14:14:int com.google.zxing.datamatrix.decoder.Version$ECB.getCount():0:0 -> decode
+    14:14:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    577:582:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    583:592:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
-    583:592:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    593:596:int com.google.zxing.datamatrix.decoder.Version$ECB.getCount():0:0 -> decode
-    593:596:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
+    14:14:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    15:15:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
+    15:15:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    16:16:int com.google.zxing.datamatrix.decoder.Version$ECB.getCount():0:0 -> decode
+    16:16:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    593:596:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    597:598:int com.google.zxing.datamatrix.decoder.Version$ECB.getDataCodewords():0:0 -> decode
-    597:598:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
-    597:598:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    599:603:int com.google.zxing.datamatrix.decoder.Version$ECBlocks.getECCodewords():0:0 -> decode
-    599:603:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
-    599:603:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    604:625:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
-    604:625:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    626:637:int com.google.zxing.datamatrix.decoder.Version$ECBlocks.getECCodewords():0:0 -> decode
-    626:637:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
-    626:637:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    638:740:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
-    638:740:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    741:742:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0:0 -> decode
-    743:748:int com.google.zxing.datamatrix.decoder.DataBlock.getNumDataCodewords():0:0 -> decode
-    743:748:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    16:16:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    17:17:int com.google.zxing.datamatrix.decoder.Version$ECB.getDataCodewords():0:0 -> decode
+    17:17:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
+    17:17:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    18:18:int com.google.zxing.datamatrix.decoder.Version$ECBlocks.getECCodewords():0:0 -> decode
+    18:18:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
+    18:18:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    19:19:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
+    19:19:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    20:20:int com.google.zxing.datamatrix.decoder.Version$ECBlocks.getECCodewords():0:0 -> decode
+    20:20:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0 -> decode
+    20:20:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    21:21:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
+    21:21:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    22:22:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0:0 -> decode
+    23:23:int com.google.zxing.datamatrix.decoder.DataBlock.getNumDataCodewords():0:0 -> decode
+    23:23:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    749:755:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0:0 -> decode
-    756:757:byte[] com.google.zxing.datamatrix.decoder.DataBlock.getCodewords():0:0 -> decode
-    756:757:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    24:24:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0:0 -> decode
+    25:25:byte[] com.google.zxing.datamatrix.decoder.DataBlock.getCodewords():0:0 -> decode
+    25:25:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    758:759:int com.google.zxing.datamatrix.decoder.DataBlock.getNumDataCodewords():0:0 -> decode
-    758:759:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    760:800:void com.google.zxing.datamatrix.decoder.Decoder.correctErrors(byte[],int):0:0 -> decode
-    760:800:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    801:810:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0:0 -> decode
-    811:817:void com.google.zxing.datamatrix.decoder.Decoder.correctErrors(byte[],int):0:0 -> decode
-    811:817:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    818:854:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0:0 -> decode
-    818:854:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    855:1023:com.google.zxing.datamatrix.decoder.DecodedBitStreamParser$Mode com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeAsciiSegment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.lang.StringBuilder):0:0 -> decode
-    855:1023:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    855:1023:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1024:1046:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0:0 -> decode
-    1024:1046:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1047:1060:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0:0 -> decode
-    1047:1060:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1047:1060:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1061:1071:int com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.unrandomize255State(int,int):0:0 -> decode
-    1061:1071:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0 -> decode
-    1061:1071:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1061:1071:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1072:1095:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0:0 -> decode
-    1072:1095:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1072:1095:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1096:1109:int com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.unrandomize255State(int,int):0:0 -> decode
-    1096:1109:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0 -> decode
-    1096:1109:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1096:1109:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1110:1128:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0:0 -> decode
-    1110:1128:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1110:1128:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1129:1139:int com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.unrandomize255State(int,int):0:0 -> decode
-    1129:1139:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0 -> decode
-    1129:1139:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1129:1139:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1140:1194:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0:0 -> decode
-    1140:1194:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1140:1194:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1195:1199:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0:0 -> decode
-    1195:1199:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1200:1259:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeEdifactSegment(com.google.zxing.common.BitSource,java.lang.StringBuilder):0:0 -> decode
-    1200:1259:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1200:1259:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1260:1348:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeAnsiX12Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder):0:0 -> decode
-    1260:1348:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1260:1348:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1349:1515:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeTextSegment(com.google.zxing.common.BitSource,java.lang.StringBuilder):0:0 -> decode
-    1349:1515:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1349:1515:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1516:1681:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeC40Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder):0:0 -> decode
-    1516:1681:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
-    1516:1681:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1682:1725:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0:0 -> decode
-    1682:1725:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1726:1733:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
-    1726:1733:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
-    1734:1742:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
-    1734:1742:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    26:26:int com.google.zxing.datamatrix.decoder.DataBlock.getNumDataCodewords():0:0 -> decode
+    26:26:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    27:27:void com.google.zxing.datamatrix.decoder.Decoder.correctErrors(byte[],int):0:0 -> decode
+    27:27:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    28:28:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0:0 -> decode
+    29:29:void com.google.zxing.datamatrix.decoder.Decoder.correctErrors(byte[],int):0:0 -> decode
+    29:29:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    30:30:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0:0 -> decode
+    30:30:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    31:31:com.google.zxing.datamatrix.decoder.DecodedBitStreamParser$Mode com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeAsciiSegment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.lang.StringBuilder):0:0 -> decode
+    31:31:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    31:31:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    32:32:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0:0 -> decode
+    32:32:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    33:33:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0:0 -> decode
+    33:33:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    33:33:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    34:34:int com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.unrandomize255State(int,int):0:0 -> decode
+    34:34:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0 -> decode
+    34:34:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    34:34:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    35:35:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0:0 -> decode
+    35:35:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    35:35:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    36:36:int com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.unrandomize255State(int,int):0:0 -> decode
+    36:36:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0 -> decode
+    36:36:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    36:36:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    37:37:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0:0 -> decode
+    37:37:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    37:37:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    38:38:int com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.unrandomize255State(int,int):0:0 -> decode
+    38:38:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0 -> decode
+    38:38:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    38:38:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    39:39:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeBase256Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder,java.util.Collection):0:0 -> decode
+    39:39:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    39:39:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    40:40:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0:0 -> decode
+    40:40:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    41:41:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeEdifactSegment(com.google.zxing.common.BitSource,java.lang.StringBuilder):0:0 -> decode
+    41:41:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    41:41:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    42:42:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeAnsiX12Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder):0:0 -> decode
+    42:42:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    42:42:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    43:43:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeTextSegment(com.google.zxing.common.BitSource,java.lang.StringBuilder):0:0 -> decode
+    43:43:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    43:43:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    44:44:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decodeC40Segment(com.google.zxing.common.BitSource,java.lang.StringBuilder):0:0 -> decode
+    44:44:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0 -> decode
+    44:44:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    45:45:com.google.zxing.common.DecoderResult com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.decode(byte[]):0:0 -> decode
+    45:45:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    46:46:com.google.zxing.datamatrix.decoder.DataBlock[] com.google.zxing.datamatrix.decoder.DataBlock.getDataBlocks(byte[],com.google.zxing.datamatrix.decoder.Version):0:0 -> decode
+    46:46:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
+    47:47:byte[] com.google.zxing.datamatrix.decoder.BitMatrixParser.readCodewords():0:0 -> decode
+    47:47:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix):0 -> decode
 com.google.zxing.datamatrix.decoder.Version -> o3.d:
     com.google.zxing.datamatrix.decoder.Version$ECBlocks ecBlocks -> f
     int totalCodewords -> g
@@ -29709,36 +28751,36 @@ com.google.zxing.maxicode.decoder.DecodedBitStreamParser -> s3.a:
 com.google.zxing.maxicode.decoder.Decoder -> s3.b:
     com.google.zxing.common.reedsolomon.ReedSolomonDecoder rsDecoder -> a
     void correctErrors(byte[],int,int,int,int) -> a
-    1:1:byte[] com.google.zxing.maxicode.decoder.BitMatrixParser.readCodewords():0:0 -> decode
-    1:1:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    2:2:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0:0 -> decode
-    3:3:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
-    3:3:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    4:4:int com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getPostCode2(byte[]):0:0 -> decode
-    4:4:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
-    4:4:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    5:5:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
-    5:5:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    6:6:int com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getPostCode2Length(byte[]):0:0 -> decode
-    6:6:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
-    6:6:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    7:7:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
-    7:7:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    8:8:java.lang.String com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getPostCode3(byte[]):0:0 -> decode
-    8:8:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
-    8:8:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    9:9:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
-    9:9:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    10:10:int com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getCountry(byte[]):0:0 -> decode
-    10:10:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
-    10:10:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    11:11:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
-    11:11:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    12:12:int com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getServiceClass(byte[]):0:0 -> decode
-    12:12:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
-    12:12:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
-    13:13:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
-    13:13:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    5:69:byte[] com.google.zxing.maxicode.decoder.BitMatrixParser.readCodewords():0:0 -> decode
+    5:69:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    70:168:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0:0 -> decode
+    169:204:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
+    169:204:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    205:211:int com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getPostCode2(byte[]):0:0 -> decode
+    205:211:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
+    205:211:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    212:215:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
+    212:215:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    216:224:int com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getPostCode2Length(byte[]):0:0 -> decode
+    216:224:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
+    216:224:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    225:239:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
+    225:239:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    240:347:java.lang.String com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getPostCode3(byte[]):0:0 -> decode
+    240:347:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
+    240:347:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    348:351:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
+    348:351:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    352:359:int com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getCountry(byte[]):0:0 -> decode
+    352:359:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
+    352:359:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    360:365:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
+    360:365:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    366:373:int com.google.zxing.maxicode.decoder.DecodedBitStreamParser.getServiceClass(byte[]):0:0 -> decode
+    366:373:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0 -> decode
+    366:373:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
+    374:564:com.google.zxing.common.DecoderResult com.google.zxing.maxicode.decoder.DecodedBitStreamParser.decode(byte[],int):0:0 -> decode
+    374:564:com.google.zxing.common.DecoderResult decode(com.google.zxing.common.BitMatrix,java.util.Map):0 -> decode
 com.google.zxing.oned.CodaBarReader -> t3.a:
     char[] ALPHABET -> d
     int[] counters -> b
