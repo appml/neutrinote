@@ -1084,7 +1084,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Setup view
-    protected void setupView(Bundle savedInstanceState) {
+    protected synchronized void setupView(Bundle savedInstanceState) {
         // Show hide tool bar
         // Three cases:
         // I. If auto save is on and it is safe to do so, free to switch toolbar view.
