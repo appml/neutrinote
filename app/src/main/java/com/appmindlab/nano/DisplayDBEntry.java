@@ -2612,7 +2612,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
             else {
                 // Apply newlines
-                expanded = expanded.replaceAll(Const.NEWLINE_ENTITY, System.getProperty("line.separator")).trim();
+                expanded = expanded.trim().replaceAll(Const.NEWLINE_ENTITY, System.getProperty("line.separator"));
 
                 // Handle parameters if available
                 if (extra != null) {

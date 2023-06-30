@@ -468,7 +468,7 @@ public class Utils {
         }
 
         if (str.contains(Const.CLIPBOARD_VAR)) {
-            str = str.replaceAll(Const.CLIPBOARD_VAR, Utils.getClipboardText(context, (ClipboardManager) context.getSystemService(CLIPBOARD_SERVICE), -1, false)).trim();
+            str = str.replaceAll(Const.CLIPBOARD_VAR, Utils.getClipboardText(context, (ClipboardManager) context.getSystemService(CLIPBOARD_SERVICE), -1, false));
             if (escape) str = escapeRegexSym(str);
         }
 
