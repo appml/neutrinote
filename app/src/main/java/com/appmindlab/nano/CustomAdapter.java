@@ -690,8 +690,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             count++;
         }
 
-        if (count > 0)
+        if (count > 1)
             Toast.makeText(DBApplication.getAppContext(), count + DBApplication.getAppContext().getResources().getString(R.string.status_items_deleted), Toast.LENGTH_SHORT).show();
+        else if (count == 1)
+            Toast.makeText(DBApplication.getAppContext(), getItem(mUndoable.get(0)).getTitle() + DBApplication.getAppContext().getResources().getString(R.string.status_deleted_remotely), Toast.LENGTH_SHORT).show();
         else
             Toast.makeText(DBApplication.getAppContext(), DBApplication.getAppContext().getResources().getString(R.string.info_select_one), Toast.LENGTH_SHORT).show();
     }

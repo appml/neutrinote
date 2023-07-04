@@ -2017,7 +2017,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mSwipeRefreshLayout.setRefreshing(false);
 
             // Refresh the list if needed
-            if (isStaleList(updated)) {
+            // Note: mandatory if mirror is used since the update is between mirror and database bypassing local repo
+            if ((isStaleList(updated)) || (hasMirror())) {
                 refreshList();
             } else
                 updateStatus("", null);

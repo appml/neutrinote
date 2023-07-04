@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "com.appmindlab.nano",
-  "variantName": "release",
+  "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 1291,
       "versionName": "4.4.1b",
-      "outputFile": "app-release.apk"
+      "outputFile": "app-debug.apk"
     }
   ],
   "elementType": "File"
