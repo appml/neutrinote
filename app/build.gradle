@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion '33'
+    compileSdkVersion 34
+    buildToolsVersion '34'
 
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.appmindlab.nano"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         multiDexEnabled true
         versionCode 1292
         versionName "4.4.1c"
@@ -52,4 +52,5 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation "androidx.versionedparcelable:versionedparcelable:1.1.1"
     implementation "androidx.work:work-runtime:2.7.1"
+    implementation "androidx.javascriptengine:javascriptengine:1.0.0-alpha05"
 }

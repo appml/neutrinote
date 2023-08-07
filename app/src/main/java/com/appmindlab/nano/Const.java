@@ -428,6 +428,8 @@ public class Const {
     protected final static String OVERRIDE_SYM = "neutriNote#override";
     protected final static String SYNC_SYM = "neutriNote#sync";
     protected final static String CREATE_NOTE_LINK_SYM = "neutriNote#createlink";
+
+    protected final static String EVAL_JS_SYM = "neutriNote#js";
     protected final static String PARAMETER_SYM = "???";
     protected final static String COMMENT_SYM = "#";
     protected final static String EMPTY_SYM = " ";

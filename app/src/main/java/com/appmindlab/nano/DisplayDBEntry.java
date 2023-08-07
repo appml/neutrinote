@@ -229,6 +229,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private String mMarginList = Const.DEFAULT_MARGIN_LIST;
     private String mMathUrl;
     private boolean mParsePython;
+    private boolean mParsePyodide;
     private boolean mParseVue;
     private boolean mParseAlpine;
     private boolean mParseMermaid;
@@ -1404,7 +1405,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         settings.setDomStorageEnabled(true);
         settings.setCacheMode(mMarkdownCacheMode);
 
-        // Register a new JavaScript interface called "appm"
+        // Register a new JavaScript interface
         settings.setJavaScriptEnabled(true);
         mMarkdownView.addJavascriptInterface(new EditViewJavaScriptInterface(this), Const.JAVASCRIPT_INTERFACE);
         mMarkdownView.setWebViewClient(new WebViewClient() {
@@ -6159,6 +6160,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             if (mParsePython)
                 js += Const.PYTHON_JS;
 
+            // Pyodide support
+            if (mParsePyodide)
+                js += Const.PYODIDE_JS;
+
             // Vue support
             if (mParseVue) {
                 js += Const.VUE_JS;
@@ -6207,6 +6212,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Python support
         if (mParsePython)
             js += Const.PYTHON_JS;
+
+        // Pyodide support
+        if (mParsePyodide)
+            js += Const.PYODIDE_JS;
 
         // Vue support
         if (mParseVue) {
@@ -6953,6 +6962,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mMargin = mSharedPreferences.getString(Const.PREF_MARGIN, Const.DEFAULT_MARGIN);
             mMathUrl = mSharedPreferences.getString(Const.PREF_MATH_URL, getResources().getString(R.string.pref_math_url_default));
             mParsePython = mSharedPreferences.getBoolean(Const.PREF_PARSE_PYTHON, false);
+            mParsePyodide = mSharedPreferences.getBoolean(Const.PREF_PARSE_PYODIDE, false);
             mParseVue = mSharedPreferences.getBoolean(Const.PREF_PARSE_VUE, false);
             mParseAlpine = mSharedPreferences.getBoolean(Const.PREF_PARSE_ALPINE, false);
             mParseMermaid = mSharedPreferences.getBoolean(Const.PREF_PARSE_MERMAID, false);
