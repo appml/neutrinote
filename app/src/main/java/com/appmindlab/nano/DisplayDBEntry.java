@@ -96,6 +96,8 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.documentfile.provider.DocumentFile;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.javascriptengine.JavaScriptIsolate;
+import androidx.javascriptengine.JavaScriptSandbox;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -111,6 +113,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.common.base.CaseFormat;
 import com.google.common.base.Strings;
+import com.google.common.util.concurrent.ListenableFuture;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -134,6 +137,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -229,7 +233,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private String mMarginList = Const.DEFAULT_MARGIN_LIST;
     private String mMathUrl;
     private boolean mParsePython;
-    private boolean mParsePyodide;
     private boolean mParseVue;
     private boolean mParseAlpine;
     private boolean mParseMermaid;
@@ -2610,6 +2613,27 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 // Show confirmation
                 Toast.makeText(getApplicationContext(), Const.CLIPBOARD_SYM + Const.LINK_SYM + Const.SPACE_CHAR + link, Toast.LENGTH_SHORT).show();
+            }
+            else if (expanded.startsWith(Const.EVAL_JS_SYM)) {
+                if (extra != null) {
+                    try {
+                        expanded = invokeJSConsole(extra);
+                    }
+                    catch (Exception e) {
+                        expanded = null;
+                        e.printStackTrace();
+                    }
+                }
+                else
+                    expanded = null;
+
+                if ((expanded == null) || (expanded.length() == 0)) {
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                }
+                else
+                    Utils.replaceString(mContent, start, end, expanded);
             }
             else {
                 // Apply newlines
@@ -6160,10 +6184,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             if (mParsePython)
                 js += Const.PYTHON_JS;
 
-            // Pyodide support
-            if (mParsePyodide)
-                js += Const.PYODIDE_JS;
-
             // Vue support
             if (mParseVue) {
                 js += Const.VUE_JS;
@@ -6212,10 +6232,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Python support
         if (mParsePython)
             js += Const.PYTHON_JS;
-
-        // Pyodide support
-        if (mParsePyodide)
-            js += Const.PYODIDE_JS;
 
         // Vue support
         if (mParseVue) {
@@ -6377,6 +6393,27 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             source = "<h1 align='center'>" + Const.CLIPBOARD_SYM + "</h1>";
 
         return Const.WEBVIEW_DENSITY + css + "<xmp>" + source + "</xmp>" + js + head;
+    }
+
+    // Invoke JavaScript console
+    protected String invokeJSConsole(String code) {
+        ListenableFuture<JavaScriptSandbox> sandbox = JavaScriptSandbox.createConnectedInstanceAsync(getApplicationContext());
+        String result = Const.NULL_SYM;
+
+        try {
+            JavaScriptIsolate isolate = sandbox.get().createIsolate();
+            ListenableFuture<String> future = isolate.evaluateJavaScriptAsync(code);
+
+            result = future.get(5, TimeUnit.SECONDS);
+
+            sandbox.get().close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            return result;
+        }
     }
 
     // Toggle menu related to markdown view
@@ -6962,7 +6999,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mMargin = mSharedPreferences.getString(Const.PREF_MARGIN, Const.DEFAULT_MARGIN);
             mMathUrl = mSharedPreferences.getString(Const.PREF_MATH_URL, getResources().getString(R.string.pref_math_url_default));
             mParsePython = mSharedPreferences.getBoolean(Const.PREF_PARSE_PYTHON, false);
-            mParsePyodide = mSharedPreferences.getBoolean(Const.PREF_PARSE_PYODIDE, false);
             mParseVue = mSharedPreferences.getBoolean(Const.PREF_PARSE_VUE, false);
             mParseAlpine = mSharedPreferences.getBoolean(Const.PREF_PARSE_ALPINE, false);
             mParseMermaid = mSharedPreferences.getBoolean(Const.PREF_PARSE_MERMAID, false);
