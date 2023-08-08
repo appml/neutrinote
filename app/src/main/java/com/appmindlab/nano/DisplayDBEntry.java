@@ -232,6 +232,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private boolean mParseVue;
     private boolean mParseAlpine;
     private boolean mParseMermaid;
+
+    private boolean mParseTypogram;
     private boolean mAutoSave;
     private boolean mCopyAttachmentsToRepo;
     private SharedPreferences.OnSharedPreferenceChangeListener mListener;
@@ -6172,6 +6174,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             // Mermaid support
             if (mParseMermaid)
                 js += Const.MERMAID_JS;
+
+            // Typogram support
+            if (mParseTypogram)
+                js += Const.TYPOGRAM_JS;
         }
 
         // Add parser api
@@ -6221,6 +6227,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Mermaid support
         if (mParseMermaid)
             js += Const.MERMAID_JS;
+
+        // Typogram support
+        if (mParseTypogram)
+            js += Const.TYPOGRAM_JS;
 
         // Add parser api
         js = Const.PARSER_API_JS + js;
@@ -6956,6 +6966,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mParseVue = mSharedPreferences.getBoolean(Const.PREF_PARSE_VUE, false);
             mParseAlpine = mSharedPreferences.getBoolean(Const.PREF_PARSE_ALPINE, false);
             mParseMermaid = mSharedPreferences.getBoolean(Const.PREF_PARSE_MERMAID, false);
+            mParseTypogram = mSharedPreferences.getBoolean(Const.PREF_PARSE_TYPOGRAM, false);
             mCopyAttachmentsToRepo = mSharedPreferences.getBoolean(Const.PREF_COPY_ATTACHMENTS_TO_REPO, false);
 
             // Sanity check
