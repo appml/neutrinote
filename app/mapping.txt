@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: f7d4865
-# pg_map_hash: SHA-256 f7d48653141ba592b7b1ed2959537a82e04acbc48c3b64343bed1f1a6fc21b95
+# pg_map_id: c50e4c0
+# pg_map_hash: SHA-256 c50e4c06865c0b1f503054ee9879395753ad026ca893bc590f93551862957d87
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -18373,14 +18373,14 @@ com.appmindlab.nano.CustomAdapter$2 -> com.appmindlab.nano.c:
     com.appmindlab.nano.CustomAdapter this$0 -> b
 com.appmindlab.nano.CustomAdapter$3 -> com.appmindlab.nano.d:
     com.appmindlab.nano.CustomAdapter this$0 -> a
-    10:13:void com.appmindlab.nano.CustomAdapter.doDeletion():0:0 -> onDismissed
-    10:13:void com.appmindlab.nano.CustomAdapter.access$1500(com.appmindlab.nano.CustomAdapter):0 -> onDismissed
+    11:14:void com.appmindlab.nano.CustomAdapter.doDeletion():0:0 -> onDismissed
+    11:14:void com.appmindlab.nano.CustomAdapter.access$1500(com.appmindlab.nano.CustomAdapter):0 -> onDismissed
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    10:13:void onDismissed(com.google.android.material.snackbar.Snackbar,int):0 -> onDismissed
-    14:116:void com.appmindlab.nano.CustomAdapter.doDeletion():0:0 -> onDismissed
-    14:116:void com.appmindlab.nano.CustomAdapter.access$1500(com.appmindlab.nano.CustomAdapter):0 -> onDismissed
-    14:116:void onDismissed(com.google.android.material.snackbar.Snackbar,int):0 -> onDismissed
-    117:122:void onDismissed(com.google.android.material.snackbar.Snackbar,int):0:0 -> onDismissed
+    11:14:void onDismissed(com.google.android.material.snackbar.Snackbar,int):0 -> onDismissed
+    15:159:void com.appmindlab.nano.CustomAdapter.doDeletion():0:0 -> onDismissed
+    15:159:void com.appmindlab.nano.CustomAdapter.access$1500(com.appmindlab.nano.CustomAdapter):0 -> onDismissed
+    15:159:void onDismissed(com.google.android.material.snackbar.Snackbar,int):0 -> onDismissed
+    160:165:void onDismissed(com.google.android.material.snackbar.Snackbar,int):0:0 -> onDismissed
 com.appmindlab.nano.CustomAdapter$4 -> com.appmindlab.nano.e:
 com.appmindlab.nano.CustomAdapter$5 -> com.appmindlab.nano.f:
 com.appmindlab.nano.CustomAdapter$6 -> com.appmindlab.nano.g:
@@ -19330,80 +19330,88 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     53:53:void applyMargin():0:0 -> applyMargin
     41:50:void applyMargin():0:0 -> applyMargin
     5:5:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131,"12":132}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    131:131:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    132:132:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141,"12":142}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    142:142:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     6:14:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     15:15:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131,"12":132}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    131:131:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    132:132:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141,"12":142}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    142:142:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     16:20:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     21:21:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    131:131:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     22:28:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     29:29:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"4":129,"7":130}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"4":139,"7":140}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     30:36:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     37:37:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131,"12":132}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    131:131:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    132:132:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141,"12":142}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    142:142:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     38:52:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     53:53:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131,"12":132}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    131:131:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    132:132:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141,"12":142}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    142:142:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     54:62:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     63:63:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131,"12":132}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    131:131:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    132:132:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141,"12":142}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    142:142:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     64:66:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     67:67:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     68:106:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     107:107:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131,"12":132}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    131:131:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    132:132:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141,"12":142}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    142:142:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     108:116:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     117:117:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":128,"3":129,"6":130,"9":131,"12":132}}
-    128:128:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    129:129:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    130:130:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    131:131:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    132:132:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
-    118:127:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141,"12":142}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    142:142:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    118:126:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    127:127:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":138,"3":139,"6":140,"9":141,"12":142}}
+    138:138:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    139:139:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    140:140:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    141:141:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    142:142:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
+    128:137:java.lang.String buildClipboardScript(boolean):0:0 -> buildClipboardScript
     15:15:java.lang.String buildClipboardSource():0:0 -> buildClipboardSource
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":99,"3":100,"6":101}}
     99:99:java.lang.String buildClipboardSource():0:0 -> buildClipboardSource
@@ -19429,80 +19437,88 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     95:95:java.lang.String buildClipboardStyle():0:0 -> buildClipboardStyle
     89:92:java.lang.String buildClipboardStyle():0:0 -> buildClipboardStyle
     55:55:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182,"9":183,"12":184}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
-    183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
-    184:184:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193,"12":194}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
+    194:194:java.lang.String buildScript(boolean):0:0 -> buildScript
     56:64:java.lang.String buildScript(boolean):0:0 -> buildScript
     65:65:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182,"9":183,"12":184}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
-    183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
-    184:184:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193,"12":194}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
+    194:194:java.lang.String buildScript(boolean):0:0 -> buildScript
     66:70:java.lang.String buildScript(boolean):0:0 -> buildScript
     71:71:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182,"9":183}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
-    183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
     72:78:java.lang.String buildScript(boolean):0:0 -> buildScript
     79:79:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"4":181,"7":182}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"4":191,"7":192}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
     80:86:java.lang.String buildScript(boolean):0:0 -> buildScript
     87:87:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182,"9":183,"12":184}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
-    183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
-    184:184:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193,"12":194}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
+    194:194:java.lang.String buildScript(boolean):0:0 -> buildScript
     88:102:java.lang.String buildScript(boolean):0:0 -> buildScript
     103:103:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182,"9":183,"12":184}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
-    183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
-    184:184:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193,"12":194}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
+    194:194:java.lang.String buildScript(boolean):0:0 -> buildScript
     104:112:java.lang.String buildScript(boolean):0:0 -> buildScript
     113:113:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182,"9":183,"12":184}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
-    183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
-    184:184:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193,"12":194}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
+    194:194:java.lang.String buildScript(boolean):0:0 -> buildScript
     114:116:java.lang.String buildScript(boolean):0:0 -> buildScript
     117:117:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
     118:156:java.lang.String buildScript(boolean):0:0 -> buildScript
     157:157:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182,"9":183,"12":184}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
-    183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
-    184:184:java.lang.String buildScript(boolean):0:0 -> buildScript
-    158:168:java.lang.String buildScript(boolean):0:0 -> buildScript
-    169:169:java.lang.String buildScript(boolean):0:0 -> buildScript
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":180,"3":181,"6":182,"9":183,"12":184}}
-    180:180:java.lang.String buildScript(boolean):0:0 -> buildScript
-    181:181:java.lang.String buildScript(boolean):0:0 -> buildScript
-    182:182:java.lang.String buildScript(boolean):0:0 -> buildScript
-    183:183:java.lang.String buildScript(boolean):0:0 -> buildScript
-    184:184:java.lang.String buildScript(boolean):0:0 -> buildScript
-    170:179:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193,"12":194}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
+    194:194:java.lang.String buildScript(boolean):0:0 -> buildScript
+    158:166:java.lang.String buildScript(boolean):0:0 -> buildScript
+    167:167:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193,"12":194}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
+    194:194:java.lang.String buildScript(boolean):0:0 -> buildScript
+    168:178:java.lang.String buildScript(boolean):0:0 -> buildScript
+    179:179:java.lang.String buildScript(boolean):0:0 -> buildScript
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":190,"3":191,"6":192,"9":193,"12":194}}
+    190:190:java.lang.String buildScript(boolean):0:0 -> buildScript
+    191:191:java.lang.String buildScript(boolean):0:0 -> buildScript
+    192:192:java.lang.String buildScript(boolean):0:0 -> buildScript
+    193:193:java.lang.String buildScript(boolean):0:0 -> buildScript
+    194:194:java.lang.String buildScript(boolean):0:0 -> buildScript
+    180:189:java.lang.String buildScript(boolean):0:0 -> buildScript
     47:47:java.lang.String buildSource(boolean):0:0 -> buildSource
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"1":126,"3":127,"6":128}}
     126:126:java.lang.String buildSource(boolean):0:0 -> buildSource

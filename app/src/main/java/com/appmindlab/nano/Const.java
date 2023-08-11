@@ -89,7 +89,7 @@ public class Const {
     protected final static String PREF_PARSE_ALPINE = "com.appmindlab.nano.pref_parse_alpine";
     protected final static String PREF_PARSE_MERMAID = "com.appmindlab.nano.pref_parse_mermaid";
 
-    protected final static String PREF_PARSE_TYPOGRAM = "com.appmindlab.nano.pref_parse_typogram";
+    protected final static String PREF_PARSE_TYPOGRAMS = "com.appmindlab.nano.pref_parse_typograms";
     protected final static String PREF_PROCESS_TEXT_MODE = "com.appmindlab.nano.pref_process_text_mode";
     protected final static String PREF_WORKING_SET_SIZE = "com.appmindlab.nano.pref_working_set_size";
     protected final static String PREF_LAB_MODE = "com.appmindlab.nano.pref_lab_mode";
@@ -148,7 +148,7 @@ public class Const {
             PREF_PARSE_VUE,
             PREF_PARSE_ALPINE,
             PREF_PARSE_MERMAID,
-            PREF_PARSE_TYPOGRAM,
+            PREF_PARSE_TYPOGRAMS,
             PREF_PROCESS_TEXT_MODE,
             PREF_WORKING_SET_SIZE,
             PREF_LAB_MODE
@@ -177,7 +177,7 @@ public class Const {
             PREF_PARSE_VUE,
             PREF_PARSE_ALPINE,
             PREF_PARSE_MERMAID,
-            PREF_PARSE_TYPOGRAM,
+            PREF_PARSE_TYPOGRAMS,
             PREF_LAB_MODE
     };
 
@@ -198,7 +198,7 @@ public class Const {
     protected final static String DEFAULT_FONT_SIZE_LIST = "8;10;12;14;16;18;24;32;48";
     protected final static String DEFAULT_MARGIN = "16";
     protected final static String DEFAULT_MARGIN_LIST = "8;16;24";
-    protected final static String DEFAULT_CANVAS_STROKES = "|;-;_;\\;/;:;~;>;^;*;o;#;v;<;+;.;-";
+    protected final static String DEFAULT_CANVAS_STROKES = "*;|;-;_;\\;/;:;~;>;^;o;#;v;<;+;.;";
     protected final static String DEFAULT_EXCLUDED_BUTTONS = ";";
 
     // Links
@@ -346,7 +346,7 @@ public class Const {
     protected final static String ALPINE_JS = "<script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js' defer></script>";
     protected final static String MERMAID_JS = "<script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script><script>mermaid.initialize({ startOnLoad: true });</script>";
 
-    protected final static String TYPOGRAM_JS = "<script src='https://google.github.io/typograms/typograms.js'></script>";
+    protected final static String TYPOGRAMS_JS = "<script src='https://google.github.io/typograms/typograms.js'></script>";
     protected final static String APP_JS = "<script type='text/javascript' src='file://./app.js'></script>";
     protected final static String NANO_JS = "<script type='text/javascript' src='file:///android_asset/html/nano.js'></script>";
     protected final static String CUSTOM_SCRIPT = "~neutrinote_script";
@@ -478,10 +478,6 @@ public class Const {
     protected final static String BLANK_LINE = "\n\n";
     protected final static String ANCHOR_MARKDOWN = "\u2758";
     protected final static String ANCHOR_MARKDOWN_HTML = "<span style='opacity:0'>" + ANCHOR_MARKDOWN + "</span>";
-
-    // Typogram support
-    protected final static String TYPOGRAM_OPEN_TAG = "<script type='text/typogram'>";
-    protected final static String TYPOGRAM_CLOSE_TAG = "</script>";
 
     // Time
     protected final static int ONE_SECOND = 1000;
