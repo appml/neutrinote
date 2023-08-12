@@ -1,0 +1,4 @@
+v4.4.2a
+- Added support for ASCII to SVG.
+- Updated Target SDK.
+- Gradle fixes.
