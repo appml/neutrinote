@@ -23,9 +23,6 @@ android {
         }
     }
 
-    dexOptions {
-        jumboMode = true
-    }
     namespace 'com.appmindlab.nano'
 }
 
