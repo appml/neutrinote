@@ -76,6 +76,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.Magnifier;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -194,6 +195,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private long mAnchorPos = -1;
     private boolean mChanged = false;
     private Uri mUri;
+    private Magnifier mMagnifier, mMarkdownMagnifier;
 
     // Status bar
     private TextView mStatusBar;
@@ -1228,6 +1230,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Set gesture detector
         mEditContentGestureDetector = new GestureDetectorCompat(this, new ContentGestureListener());
+
+        // Set magnifier
+        if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)) {
+            mMagnifier = new Magnifier.Builder(mContent).build();
+            mMagnifier.show(mContent.getWidth() / 2, mContent.getHeight() / 2);
+        }
+
         mContent.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
@@ -1241,6 +1250,26 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 // Show/hide tool bar
                 if ((!mShowToolBar) && (!mImmersiveMode)) {
                     mEditContentGestureDetector.onTouchEvent(motionEvent);
+                }
+
+                // Handle magnifier events
+                if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) && (mMagnifier != null)) {
+                    switch (motionEvent.getActionMasked()) {
+                        case MotionEvent.ACTION_DOWN:
+                            // Fall through.
+                        case MotionEvent.ACTION_MOVE: {
+                            final int[] viewPosition = new int[2];
+                            view.getLocationOnScreen(viewPosition);
+                            mMagnifier.show(motionEvent.getRawX() - viewPosition[0],
+                                    motionEvent.getRawY() - viewPosition[1]);
+                            break;
+                        }
+                        case MotionEvent.ACTION_CANCEL:
+                            // Fall through.
+                        case MotionEvent.ACTION_UP: {
+                            mMagnifier.dismiss();
+                        }
+                    }
                 }
 
                 return false;
@@ -1525,6 +1554,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }}
         );
 
+        // Set magnifier
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            mMarkdownMagnifier = new Magnifier.Builder(mMarkdownView).build();
+            mMarkdownMagnifier.show(mMarkdownView.getWidth() / 2, mMarkdownView.getHeight() / 2);
+        }
+
         // Show/hide toolbar
         mMarkdownView.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
@@ -1534,6 +1569,27 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 if ((!mShowToolBar) && (!mImmersiveMode)) {
                     mEditContentGestureDetector.onTouchEvent(motionEvent);
                 }
+
+                // Handle magnifier events
+                if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) && (mMarkdownMagnifier != null)) {
+                    switch (motionEvent.getActionMasked()) {
+                        case MotionEvent.ACTION_DOWN:
+                            // Fall through.
+                        case MotionEvent.ACTION_MOVE: {
+                            final int[] viewPosition = new int[2];
+                            view.getLocationOnScreen(viewPosition);
+                            mMarkdownMagnifier.show(motionEvent.getRawX() - viewPosition[0],
+                                    motionEvent.getRawY() - viewPosition[1]);
+                            break;
+                        }
+                        case MotionEvent.ACTION_CANCEL:
+                            // Fall through.
+                        case MotionEvent.ACTION_UP: {
+                            mMarkdownMagnifier.dismiss();
+                        }
+                    }
+                }
+
                 return false;
             }
         });

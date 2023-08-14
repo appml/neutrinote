@@ -93,6 +93,7 @@ public class Const {
     protected final static String PREF_PROCESS_TEXT_MODE = "com.appmindlab.nano.pref_process_text_mode";
     protected final static String PREF_WORKING_SET_SIZE = "com.appmindlab.nano.pref_working_set_size";
     protected final static String PREF_LAB_MODE = "com.appmindlab.nano.pref_lab_mode";
+
     protected final static String[] ALL_PREFS = {
             PREF_LOCAL_REPO_PATH,
             /* PREF_BACKUP_URI, */    // Excluded from preference backup
