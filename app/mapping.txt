@@ -3,8 +3,8 @@
 # min_api: 21
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: c50e4c0
-# pg_map_hash: SHA-256 c50e4c06865c0b1f503054ee9879395753ad026ca893bc590f93551862957d87
+# pg_map_id: cbed07e
+# pg_map_hash: SHA-256 cbed07ea99e779d05aed409927d9ff857ad8a05b0c70f6fb0c6f4ef2c7d34792
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -905,6 +905,22 @@ android.view.textclassifier.TextClassificationManager -> android.view.textclassi
 android.view.textclassifier.TextClassifier -> android.view.textclassifier.TextClassifier:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
+      # {"id":"com.android.tools.r8.synthesized"}
+android.widget.Magnifier -> android.widget.Magnifier:
+# {"id":"com.android.tools.r8.synthesized"}
+    void <clinit>() -> <clinit>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void dismiss() -> dismiss
+      # {"id":"com.android.tools.r8.synthesized"}
+    void show(float,float) -> show
+      # {"id":"com.android.tools.r8.synthesized"}
+android.widget.Magnifier$Builder -> android.widget.Magnifier$Builder:
+# {"id":"com.android.tools.r8.synthesized"}
+    void <clinit>() -> <clinit>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void <init>(android.view.View) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    android.widget.Magnifier build() -> build
       # {"id":"com.android.tools.r8.synthesized"}
 android.widget.ThemedSpinnerAdapter -> android.widget.ThemedSpinnerAdapter:
 # {"id":"com.android.tools.r8.synthesized"}
