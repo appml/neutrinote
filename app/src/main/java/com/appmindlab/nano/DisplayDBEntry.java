@@ -4626,8 +4626,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                         // Recreate activity to reload theme
                         // Note: recreate activity only when there is no unsaved changes or markdown magnifier is inactive
-                        if ((mChanged) || (mMarkdownMagnifier != null))
+                        if ((mChanged) || (mMarkdownMagnifier != null)) {
                             applyTheme();
+
+                            // Reset magnifier
+                            mMarkdownMagnifier = null;
+                        }
                         else {
                             doSavePos();
                             recreate();
