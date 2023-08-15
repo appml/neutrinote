@@ -1528,15 +1528,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }}
         );
 
-        // Set magnifier
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            if (mMarkdownMagnifier == null) {
-                mMarkdownMagnifier = new Magnifier.Builder(mMarkdownView).build();
-                mMarkdownMagnifier.show(mMarkdownView.getWidth() / 2, mMarkdownView.getHeight() / 2);
-            }
-        }
-
-        // Show/hide toolbar
         mMarkdownView.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
@@ -1547,7 +1538,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
 
                 // Handle magnifier events
-                if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) && (mMarkdownMagnifier != null)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    if (mMarkdownMagnifier == null) {
+                        mMarkdownMagnifier = new Magnifier.Builder(mMarkdownView).build();
+                        mMarkdownMagnifier.show(mMarkdownView.getWidth() / 2, mMarkdownView.getHeight() / 2);
+                    }
+
                     switch (motionEvent.getActionMasked()) {
                         case MotionEvent.ACTION_DOWN:
                             // Fall through.
@@ -4629,8 +4625,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                         mSharedPreferencesEditor.commit();
 
                         // Recreate activity to reload theme
-                        // Note: recreate activity only when there is no unsaved changes
-                        if (mChanged)
+                        // Note: recreate activity only when there is no unsaved changes or markdown magnifier is inactive
+                        if ((mChanged) || (mMarkdownMagnifier != null))
                             applyTheme();
                         else {
                             doSavePos();
