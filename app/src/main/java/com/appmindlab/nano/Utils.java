@@ -61,9 +61,12 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.documentfile.provider.DocumentFile;
+import androidx.javascriptengine.JavaScriptIsolate;
+import androidx.javascriptengine.JavaScriptSandbox;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.common.base.Joiner;
+import com.google.common.util.concurrent.ListenableFuture;
 
 import org.ocpsoft.prettytime.PrettyTime;
 
@@ -94,6 +97,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -119,6 +123,9 @@ public class Utils {
 
     // UI
     protected static float mLightLevel = Const.LIGHT_LEVEL_THRESHOLD_DIRECT_SUNLIGHT;
+
+    // JavaScript sandbox
+    protected static ListenableFuture<JavaScriptSandbox> mJSSandbox;
 
     ///////////////////////
     // String Manipulation
@@ -771,6 +778,36 @@ public class Utils {
             return Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY).toString();
         else
             return Html.fromHtml(html).toString();
+    }
+
+    // Evaluate JavaScript
+    protected static void cliEvalJS(Context context, AppCompatActivity activity, View view, EditText text, String code) {
+        Thread t = new Thread() {
+            public void run() {
+                try {
+                    if (mJSSandbox == null)
+                        mJSSandbox = JavaScriptSandbox.createConnectedInstanceAsync(context);
+
+                    JavaScriptIsolate isolate = mJSSandbox.get().createIsolate();
+                    String str;
+
+                    ListenableFuture<String> result = isolate.evaluateJavaScriptAsync(code);
+                    str = result.get(Const.CLI_EVAL_JS_TIMEOUT, TimeUnit.SECONDS);
+
+                    // Clean up
+                    mJSSandbox.get().close();
+                    mJSSandbox = null;
+
+                    Snackbar snackbar = makePasteSnackbar(activity, view, text, Const.SPACE_CHAR + str);
+                    anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        t.start();
     }
 
     // Extract head data

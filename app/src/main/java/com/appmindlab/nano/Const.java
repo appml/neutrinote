@@ -435,6 +435,8 @@ public class Const {
     protected final static String OVERRIDE_SYM = "neutriNote#override";
     protected final static String SYNC_SYM = "neutriNote#sync";
     protected final static String CREATE_NOTE_LINK_SYM = "neutriNote#createlink";
+
+    protected final static String CLI_EVAL_JS_SYM = "neutriNote#evalJS";
     protected final static String PARAMETER_SYM = "???";
     protected final static String COMMENT_SYM = "#";
     protected final static String EMPTY_SYM = " ";
@@ -499,6 +501,7 @@ public class Const {
     protected final static int SCROLL_DELAY = ONE_SECOND;
     protected final static int REFRESH_DELAY = 300 * MILISECOND;
     protected final static int IMMERSIVE_MODE_DELAY = 3000 * MILISECOND;
+    protected final static int CLI_EVAL_JS_TIMEOUT = 5 * ONE_SECOND;
     protected final static String DATE_STATUS_FORMAT = "EEE, MMM d, yyyy";
     protected final static String DATE_FORMAT = "EEE, MMM d, yyyy";
     protected final static String DATE_TIME_FORMAT = "EEEE, MMM dd, yyyy h:mm a";
