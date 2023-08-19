@@ -4,7 +4,7 @@
     </style>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="windowActionModeOverlay">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -24,7 +24,7 @@
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
 
-    <style name="AppThemeDay" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="AppThemeDay" parent="Theme.Material3.Light.NoActionBar">
         <item name="windowActionModeOverlay">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -43,9 +43,10 @@
         <item name="android:alertDialogTheme">@style/AlertDialogThemeDay</item>
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="switchStyle">@style/AppSwitchStyle</item>
     </style>
 
-    <style name="AppThemeLux" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="AppThemeLux" parent="Theme.Material3.Dark.NoActionBar">
         <item name="windowActionModeOverlay">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimaryLux</item>
@@ -65,9 +66,10 @@
         <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="switchStyle">@style/AppSwitchStyle</item>
     </style>
 
-    <style name="AppThemeOled" parent="Theme.MaterialComponents.NoActionBar">
+    <style name="AppThemeOled" parent="Theme.Material3.Dark.NoActionBar">
         <item name="windowActionModeOverlay">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimaryOled</item>
@@ -86,6 +88,7 @@
         <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="switchStyle">@style/AppSwitchStyle</item>
     </style>
 
     <style name="AppSettingsTheme" parent="Theme.MaterialComponents">
@@ -172,5 +175,9 @@
 
     <style name="AppTextInputStyle" parent="Base.Widget.MaterialComponents.TextInputLayout">
         <item name="hintTextColor">@color/text_input_hint</item>
+    </style>
+
+    <style name="AppSwitchStyle" parent="@style/Widget.AppCompat.CompoundButton.Switch">
+        <item name="colorControlActivated">@color/theme_control_activated</item>
     </style>
 </resources>
