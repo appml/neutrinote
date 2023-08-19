@@ -436,8 +436,11 @@ public class Const {
     protected final static String SYNC_SYM = "neutriNote#sync";
     protected final static String CREATE_NOTE_LINK_SYM = "neutriNote#createlink";
 
-    protected final static String CLI_EVAL_JS_SYM = "neutriNote#evalJS";
     protected final static String PARAMETER_SYM = "???";
+    protected final static String CLI_EVAL_JS_SYM = "neutriNote#evalJS";
+    protected final static String CLI_EVAL_JS_RAW_SYM = "neutriNote#evalJSRaw";
+    protected final static String CLI_EVAL_JS_TEMPLATE = "function nanofunc() { let val = " + PARAMETER_SYM + "; return val.toString(); }; nanofunc()";
+
     protected final static String COMMENT_SYM = "#";
     protected final static String EMPTY_SYM = " ";
     protected final static String SIZE_UP_SYM = "+ ";

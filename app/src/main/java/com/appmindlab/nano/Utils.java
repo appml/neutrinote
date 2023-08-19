@@ -781,7 +781,7 @@ public class Utils {
     }
 
     // Evaluate JavaScript
-    protected static void cliEvalJS(Context context, AppCompatActivity activity, View view, EditText text, String code) {
+    protected static void cliEvalJS(Context context, AppCompatActivity activity, View view, EditText text, String code, boolean raw) {
         Thread t = new Thread() {
             public void run() {
                 try {
@@ -789,16 +789,22 @@ public class Utils {
                         mJSSandbox = JavaScriptSandbox.createConnectedInstanceAsync(context);
 
                     JavaScriptIsolate isolate = mJSSandbox.get().createIsolate();
-                    String str;
+                    String str, snippet;
 
-                    ListenableFuture<String> result = isolate.evaluateJavaScriptAsync(code);
+                    // Prepare template only if raw mode is false
+                    if (raw)
+                        snippet = code;
+                    else
+                        snippet = Const.CLI_EVAL_JS_TEMPLATE.replace(Const.PARAMETER_SYM, code);
+
+                    ListenableFuture<String> result = isolate.evaluateJavaScriptAsync(snippet);
                     str = result.get(Const.CLI_EVAL_JS_TIMEOUT, TimeUnit.SECONDS);
 
                     // Clean up
                     mJSSandbox.get().close();
                     mJSSandbox = null;
 
-                    Snackbar snackbar = makePasteSnackbar(activity, view, text, Const.SPACE_CHAR + str);
+                    Snackbar snackbar = makePasteSnackbar(activity, view, text, Const.EQUAL_SYM + str);
                     anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
