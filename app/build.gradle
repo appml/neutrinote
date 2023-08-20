@@ -11,7 +11,7 @@ android {
         minSdkVersion 26
         targetSdkVersion 34
         multiDexEnabled true
-        versionCode 1297
+        versionCode 1298
         versionName "4.4.3b"
     }
 
