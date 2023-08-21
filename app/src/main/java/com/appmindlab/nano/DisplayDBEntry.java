@@ -2640,7 +2640,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 // Show confirmation
                 Toast.makeText(getApplicationContext(), Const.CLIPBOARD_SYM + Const.LINK_SYM + Const.SPACE_CHAR + link, Toast.LENGTH_SHORT).show();
             }
-            else if (expanded.startsWith(Const.CLI_EVAL_JS_RAW_SYM)) {    // Evaluate JavaScript as is (raw mode)
+            else if (expanded.startsWith(Const.CLI_EVAL_JS_SNIPPET_SYM)) {    // Evaluate JavaScript snippet
                 if (extra != null) {
                     try {
                         Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, extra, true);
@@ -2659,7 +2659,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     snackbar.show();
                 }
             }
-            else if (expanded.startsWith(Const.CLI_EVAL_JS_SYM)) {    // Evaluate JavaScript as a function call
+            else if (expanded.startsWith(Const.CLI_EVAL_JS_SINGLE_SYM)) {    // Evaluate a single JavaScript call
                 if (extra != null) {
                     try {
                         Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, extra, false);
@@ -2678,11 +2678,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     snackbar.show();
                 }
             }
-            else if (expanded.startsWith(Const.CLI_EVAL_JS_CALL_SYM)) {    // Evaluate JavaScript as a custom function call
+            else if (expanded.startsWith(Const.CLI_EVAL_JS_CUSTOM_SYM)) {    // Evaluate custom JavaScript call
                 if (extra != null) {
                     try {
                         // Retrieve function declaration
-                        expanded = expanded.substring(Const.CLI_EVAL_JS_CALL_SYM.length()).trim();
+                        expanded = expanded.substring(Const.CLI_EVAL_JS_CUSTOM_SYM.length()).trim();
                         Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, expanded + extra, true);
                     }
                     catch (Exception e) {
