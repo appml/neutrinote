@@ -439,9 +439,10 @@ public class Const {
     protected final static String PARAMETER_SYM = "???";
     protected final static String CLI_EVAL_JS_SINGLE_SYM = "neutriNote#singlejs";
     protected final static String CLI_EVAL_JS_SNIPPET_SYM = "neutriNote#snippetjs";
-    protected final static String CLI_EVAL_JS_CUSTOM_SYM = "neutriNote#customjs";
-    protected final static String CLI_EVAL_JS_TEMPLATE = "function nanofunc() { let val = " + PARAMETER_SYM + "; return val.toString(); }; nanofunc()";
+    protected final static String CLI_EVAL_JS_INLINE_SYM = "neutriNote#inlinejs";
     protected final static String CLI_EVAL_JS_FILE_SYM = "neutriNote#filejs";
+    protected final static String CLI_EVAL_JS_TEMPLATE = "function nanofunc() { let val = " + PARAMETER_SYM + "; return val.toString(); }; nanofunc()";
+
     protected final static String COMMENT_SYM = "#";
     protected final static String EMPTY_SYM = " ";
     protected final static String SIZE_UP_SYM = "+ ";
