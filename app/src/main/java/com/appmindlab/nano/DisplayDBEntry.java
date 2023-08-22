@@ -2643,7 +2643,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             else if (expanded.startsWith(Const.CLI_EVAL_JS_SNIPPET_SYM)) {    // Evaluate JavaScript snippet
                 if (extra != null) {
                     try {
-                        Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, extra, true);
+                        Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, extra, Const.CLI_EVAL_JS_TIMEOUT, true);
                     }
                     catch (Exception e) {
                         expanded = null;
@@ -2662,7 +2662,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             else if (expanded.startsWith(Const.CLI_EVAL_JS_SINGLE_SYM)) {    // Evaluate a single JavaScript call
                 if (extra != null) {
                     try {
-                        Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, extra, false);
+                        Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, extra, Const.CLI_EVAL_JS_TIMEOUT, false);
                     }
                     catch (Exception e) {
                         expanded = null;
@@ -2683,7 +2683,46 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     try {
                         // Retrieve function declaration
                         expanded = expanded.substring(Const.CLI_EVAL_JS_CUSTOM_SYM.length()).trim();
-                        Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, expanded + extra, true);
+                        Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, expanded + extra, Const.CLI_EVAL_JS_TIMEOUT, true);
+                    }
+                    catch (Exception e) {
+                        expanded = null;
+                        e.printStackTrace();
+                    }
+                }
+                else
+                    expanded = null;
+
+                if ((expanded == null) || (expanded.length() == 0)) {
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                }
+
+            }
+            else if (expanded.startsWith(Const.CLI_EVAL_JS_FILE_SYM)) {    // Evaluate custom JavaScript call
+                if (extra != null) {
+                    try {
+                        // Retrieve function declaration
+                        expanded = expanded.substring(Const.CLI_EVAL_JS_FILE_SYM.length()).trim();
+
+                        // Load Javascript
+                        List<DBEntry> results = mDatasource.getRecordByTitle(expanded);
+                        DBEntry entry;
+                        StringBuilder sb = new StringBuilder();
+
+                        if (results.size() == 1) {
+                            entry = results.get(0);
+                            sb.append(entry.getContent().trim());
+
+                            String script = sb.toString();
+                            if (!script.endsWith(";"))
+                                script += ";";
+
+                            Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, script + extra, Const.CLI_EVAL_JS_TIMEOUT*2, true);
+                        }
+                        else
+                            expanded = null;
                     }
                     catch (Exception e) {
                         expanded = null;

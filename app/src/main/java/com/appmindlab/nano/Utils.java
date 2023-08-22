@@ -781,7 +781,7 @@ public class Utils {
     }
 
     // Evaluate JavaScript
-    protected static void cliEvalJS(Context context, AppCompatActivity activity, View view, EditText text, String code, boolean raw) {
+    protected static void cliEvalJS(Context context, AppCompatActivity activity, View view, EditText text, String code, int timeout, boolean raw) {
         Thread t = new Thread() {
             public void run() {
                 try {
@@ -798,7 +798,7 @@ public class Utils {
                         snippet = Const.CLI_EVAL_JS_TEMPLATE.replace(Const.PARAMETER_SYM, code);
 
                     ListenableFuture<String> result = isolate.evaluateJavaScriptAsync(snippet);
-                    str = result.get(Const.CLI_EVAL_JS_TIMEOUT, TimeUnit.SECONDS);
+                    str = result.get(timeout, TimeUnit.SECONDS);
 
                     // Clean up
                     mJSSandbox.get().close();
