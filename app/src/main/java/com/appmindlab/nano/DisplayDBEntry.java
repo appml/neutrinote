@@ -2640,7 +2640,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 // Show confirmation
                 Toast.makeText(getApplicationContext(), Const.CLIPBOARD_SYM + Const.LINK_SYM + Const.SPACE_CHAR + link, Toast.LENGTH_SHORT).show();
             }
-            else if (expanded.startsWith(Const.CLI_EVAL_JS_SNIPPET_SYM)) {    // Evaluate JavaScript snippet
+            else if (expanded.startsWith(Const.CLI_EVAL_JS_SNIPPET_SYM)) {    // Evaluate a JavaScript snippet
                 if (extra != null) {
                     try {
                         Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, extra, Const.CLI_EVAL_JS_TIMEOUT, true);
@@ -2659,7 +2659,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     snackbar.show();
                 }
             }
-            else if (expanded.startsWith(Const.CLI_EVAL_JS_SINGLE_SYM)) {    // Evaluate a single JavaScript call
+            else if (expanded.startsWith(Const.CLI_EVAL_JS_INTERACTIVE_SYM)) {    // Evaluate JavaScript calls interactively
                 if (extra != null) {
                     try {
                         Utils.cliEvalJS(getApplicationContext(), this, getCoordinatorLayout(), mContent, extra, Const.CLI_EVAL_JS_TIMEOUT, false);
@@ -2678,7 +2678,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     snackbar.show();
                 }
             }
-            else if (expanded.startsWith(Const.CLI_EVAL_JS_INLINE_SYM)) {    // Evaluate inline JavaScript call
+            else if (expanded.startsWith(Const.CLI_EVAL_JS_INLINE_SYM)) {    // Evaluate inline based JavaScript
                 if (extra != null) {
                     try {
                         // Retrieve function declaration
@@ -2700,7 +2700,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
 
             }
-            else if (expanded.startsWith(Const.CLI_EVAL_JS_FILE_SYM)) {    // Evaluate custom JavaScript call
+            else if (expanded.startsWith(Const.CLI_EVAL_JS_FILE_SYM)) {    // Evaluate file based JavaScript
                 if (extra != null) {
                     try {
                         // Retrieve function declaration

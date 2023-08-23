@@ -437,7 +437,7 @@ public class Const {
     protected final static String CREATE_NOTE_LINK_SYM = "neutriNote#createlink";
 
     protected final static String PARAMETER_SYM = "???";
-    protected final static String CLI_EVAL_JS_SINGLE_SYM = "neutriNote#singlejs";
+    protected final static String CLI_EVAL_JS_INTERACTIVE_SYM = "neutriNote#interactivejs";
     protected final static String CLI_EVAL_JS_SNIPPET_SYM = "neutriNote#snippetjs";
     protected final static String CLI_EVAL_JS_INLINE_SYM = "neutriNote#inlinejs";
     protected final static String CLI_EVAL_JS_FILE_SYM = "neutriNote#filejs";
