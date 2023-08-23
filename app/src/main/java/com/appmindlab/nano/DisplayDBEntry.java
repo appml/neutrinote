@@ -4917,8 +4917,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (id == R.id.button_text_expand)
             handleShowShortcuts();
 
-        else
-            Toast.makeText(this, view.getContentDescription(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, view.getContentDescription(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
