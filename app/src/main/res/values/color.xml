@@ -168,7 +168,7 @@
     <color name="snackbar_foreground">#EC407A</color>
     <color name="snackbar_background">#212121</color>
 
-    <color name="high_contrast_snackbar_foreground">#76ff03</color>
+    <color name="high_contrast_snackbar_foreground">#5E35B1</color>
     <color name="high_contrast_snackbar_background">#212121</color>
 
     <color name="bottom_sheet_foreground">#212121</color>
