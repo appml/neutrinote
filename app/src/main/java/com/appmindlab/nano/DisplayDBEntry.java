@@ -195,7 +195,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private long mAnchorPos = -1;
     private boolean mChanged = false;
     private Uri mUri;
+    // Magnifier
     private Magnifier mMarkdownMagnifier;
+    private float[] mMarkdownMagnifierCoord = new float[2];
 
     // Status bar
     private TextView mStatusBar;
@@ -1548,10 +1550,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                         case MotionEvent.ACTION_DOWN:
                             // Fall through.
                         case MotionEvent.ACTION_MOVE: {
-                            final int[] viewPosition = new int[2];
-                            view.getLocationOnScreen(viewPosition);
-                            mMarkdownMagnifier.show(motionEvent.getRawX() - viewPosition[0],
-                                    motionEvent.getRawY() - viewPosition[1]);
+                            final int[] coord = new int[2];
+                            view.getLocationOnScreen(coord);
+                            mMarkdownMagnifier.show(motionEvent.getRawX() - coord[0],
+                                    motionEvent.getRawY() - coord[1]);
                             break;
                         }
                         case MotionEvent.ACTION_CANCEL:
