@@ -1,0 +1,8 @@
+v4.4.4a
+- Added support for ASCII to SVG.
+- Updated Target SDK.
+- Gradle fixes.
+- Better readability support for Markdown view.
+- Minor theme fixes.
+- Added JavaScript in-note REPL.
+- Various minor fixes.
