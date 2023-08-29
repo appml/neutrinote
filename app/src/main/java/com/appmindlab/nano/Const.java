@@ -639,6 +639,9 @@ public class Const {
     // Font
     protected final static String CUSTOM_FONTS_FILE = "~neutrinote_fonts";
     protected final static String CUSTOM_FONTS_PATH = "fonts";
+    protected final static String SYSTEM_FONT_NAME = "System";
+    protected final static String SYSTEM_FONT_FILE = "-";
+    protected final static String SYSTEM_FONT_PATH = "-";
 
     // Shortcuts
     protected final static String SHORTCUTS_FILE = "~neutrinote_shortcuts";

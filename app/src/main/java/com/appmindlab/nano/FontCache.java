@@ -14,6 +14,9 @@ public class FontCache {
 
     // Get from asset
     protected static Typeface getFromAsset(Context context, String ttf) {
+        // Sanity check
+        if (ttf.equals(Const.SYSTEM_FONT_FILE))
+            return null;
 
         Typeface typeface = mCache.get(ttf);
         if (typeface == null) {
@@ -26,6 +29,10 @@ public class FontCache {
 
     // Get from file
     protected static Typeface getFromFile(String path) {
+        // Sanity check
+        if (path.equals(Const.SYSTEM_FONT_PATH))
+            return null;
+
         Typeface typeface = mCache.get(path);
         if (typeface == null) {
             File file = new File(path);

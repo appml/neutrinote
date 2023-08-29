@@ -1593,8 +1593,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                         if (params.length != 4) continue;
 
                         // Verify file existence
-                        File file = new File(mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH + "/" + params[1]);
-                        if (!file.exists()) continue;
+                        if (!params[0].equals(Const.SYSTEM_FONT_NAME)) {
+                            File file = new File(mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH + "/" + params[1]);
+                            if (!file.exists()) continue;
+                        }
 
                         // Save the configuration
                         mCustomFonts.put(params[0], new CustomFont(params[0], params[1], params[2], params[3]));
@@ -2957,7 +2959,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     protected void setFontFamily(TextView view, String fontFamily) {
         boolean found = false;
 
-        if (fontFamily.equals("Monospace")) {
+        if (mFontFamily.equals("Default")) {
+            mContent.setTypeface(Typeface.DEFAULT);
+            mMarkdownFontFamily = Const.NULL_SYM;
+            found = true;
+        } else if (fontFamily.equals("Monospace")) {
             view.setTypeface(Typeface.MONOSPACE);
             found = true;
         } else if (fontFamily.equals("Sans Serif")) {
@@ -3017,7 +3023,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     protected void applyFontFamily() {
         boolean found = false;
 
-        if (mFontFamily.equals("Roboto Condensed Light")) {
+        if (mFontFamily.equals("Default")) {
+            mContent.setTypeface(Typeface.DEFAULT);
+            mMarkdownFontFamily = Const.NULL_SYM;
+            found = true;
+        } else if (mFontFamily.equals("Roboto Condensed Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoCondensed-Light.ttf"));
             mMarkdownFontFamily = "<style>@font-face { font-family: 'Roboto Condensed Light'; src: url('file:///android_asset/RobotoCondensed-Light.ttf') } div#content{font-family: 'Roboto Condensed Light'; font-weight: 300; font-size: " + mFontSize + "px}</style>";
             found = true;
