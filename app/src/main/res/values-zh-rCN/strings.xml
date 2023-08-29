@@ -645,13 +645,7 @@
     <string name="line_number">L</string>
 
     <string-array name="font_family_values">
-        <item>Monospace</item>
-        <item>Sans Serif</item>
-        <item>Serif</item>
-        <item>Roboto Light</item>
-        <item>Roboto Medium</item>
         <item>Roboto Condensed Light</item>
-        <item>Roboto Condensed Regular</item>
         <item>Roboto Mono Light</item>
         <item>Roboto Mono Regular</item>
         <item>Roboto Slab Light</item>
