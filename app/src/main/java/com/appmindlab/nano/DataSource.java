@@ -1183,7 +1183,7 @@ public class DataSource {
     // Get title for the next new note
     public String getNextNewNoteTitle(Context context) {
         String title = Utils.makeNextFileName(context, Utils.getNewNoteTitleTemplate(context));
-        int count;
+        int count, next = 0;
 
         Cursor cursor = mDatabase.query(DBHelper.TABLE,
                 contentlessColumns,
@@ -1200,10 +1200,10 @@ public class DataSource {
                 cursor.moveToFirst();
                 DBEntry entry = cursorToContentlessRecord(cursor);
                 String temp = entry.getTitle();
-                count = Integer.parseInt(temp.substring(temp.indexOf("(")+1, temp.indexOf(")")));
+                next = Integer.parseInt(temp.substring(temp.indexOf("(")+1, temp.indexOf(")")));
             }
 
-            title = title.replace("%", Integer.toString(count+1));
+            title = title.replace("%", Integer.toString(Math.max(count, next)+1));
         }
         finally {
             // Make sure to close the cursor
