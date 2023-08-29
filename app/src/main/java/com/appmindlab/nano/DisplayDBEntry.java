@@ -2959,7 +2959,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     protected void setFontFamily(TextView view, String fontFamily) {
         boolean found = false;
 
-        if (mFontFamily.equals("Default")) {
+        if (mFontFamily.equals(Const.SYSTEM_FONT_NAME)) {
             mContent.setTypeface(Typeface.DEFAULT);
             mMarkdownFontFamily = Const.NULL_SYM;
             found = true;
@@ -3023,7 +3023,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     protected void applyFontFamily() {
         boolean found = false;
 
-        if (mFontFamily.equals("Default")) {
+        if (mFontFamily.equals(Const.SYSTEM_FONT_NAME)) {
             mContent.setTypeface(Typeface.DEFAULT);
             mMarkdownFontFamily = Const.NULL_SYM;
             found = true;
