@@ -782,6 +782,52 @@ public class Utils {
             return Html.fromHtml(html).toString();
     }
 
+    protected static String tagExpand(String str) {
+        String output = Const.NULL_SYM;
+        String tag;
+        StringBuilder cur;
+
+        // testing
+        Log.d(Const.TAG, "nano - tagExpand, str: " + str);
+
+        // Split by tag delimiters
+        String[] items = str.trim().split(Const.TAG_DELIM);
+        for (int i=0; i < items.length; i++) {
+            // testing
+            Log.d(Const.TAG, "nano - tagExpand, items[i]: " + items[i]);
+
+            // Reset cur
+            cur = new StringBuilder(Const.NULL_SYM);
+
+            // Handle multiplier
+            if (items[i].contains(Const.TAG_MULTI_SYM)) {
+                String[] parts = items[i].split("\\" + Const.TAG_MULTI_SYM);
+
+                tag = parts[0];
+
+                for (int j=0; j < Integer.parseInt(parts[1]); j++) {
+                    cur.append("<").append(tag).append(">").append(Const.EMPTY_SYM).append("<").append(tag).append("/>");
+                }
+            }
+            else {
+                tag = items[i];
+                cur.append("<").append(tag).append(">").append(Const.EMPTY_SYM).append("<").append(tag).append("/>");
+            }
+
+            // Update output
+            if (output.equals(Const.NULL_SYM)) {
+                output = cur.toString();
+            } else {
+                output = output.replace(Const.EMPTY_SYM, cur.toString());
+            }
+
+            // testing
+            Log.d(Const.TAG, "nano - tagExpand, output: " + output);
+        }
+
+        return output;
+    }
+
     // Evaluate JavaScript
     protected static void cliEvalJS(Context context, AppCompatActivity activity, View view, EditText text, String code, int timeout, boolean raw) {
         Thread t = new Thread() {

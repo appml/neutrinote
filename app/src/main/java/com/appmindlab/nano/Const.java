@@ -429,6 +429,7 @@ public class Const {
     protected final static String SNAKE2CAMEL_SYM = "neutriNote#snake2camel";
     protected final static String CAMEL2SNAKE_SYM = "neutriNote#camel2snake";
     protected final static String STRIP_HTML_SYM = "neutriNote#stripHTML";
+    protected final static String TAG_EXPAND_SYM = "neutriNote#tagExpand";
     protected final static String LAUNCH_SYM = "neutriNote#launch";
     protected final static String FUNNEL_SYM = "neutriNote#funnel";
     protected final static String NEEDLE_SYM = "neutriNote#needle";
@@ -452,6 +453,10 @@ public class Const {
     protected final static String NULL_SYM = "";
     protected final static String CODE_FENCE_SYM = "```";
     protected final static String REVISION_DELIM = ", ";
+    protected final static String TAG_DELIM = ">";
+    protected final static String TAG_MULTI_SYM = "*";
+    protected final static String TAG_CLASS_SYM = ".";
+    protected final static String TAG_CLASS_EXPANDED_SYM = " class='?'";
     protected final static String NON_NUMBER_SYM = "NaN";
     protected final static String HTTP_SYM = "http://";
     protected final static String HTTPS_SYM = "https://";
