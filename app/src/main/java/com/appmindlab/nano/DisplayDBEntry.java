@@ -3025,7 +3025,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         if (mFontFamily.equals(Const.SYSTEM_FONT_NAME)) {
             mContent.setTypeface(Typeface.DEFAULT);
-            mMarkdownFontFamily = Const.NULL_SYM;
+            mMarkdownFontFamily = "<style>div#content{font-size: " + mFontSize + "px}</style>";
             found = true;
         } else if (mFontFamily.equals("Roboto Condensed Light")) {
             mContent.setTypeface(FontCache.getFromAsset(this, "RobotoCondensed-Light.ttf"));
