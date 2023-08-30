@@ -82,6 +82,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Field;
 import java.text.BreakIterator;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -96,6 +97,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -3214,6 +3216,24 @@ public class Utils {
             return activity.isInMultiWindowMode();
         else
             return false;
+    }
+
+    // Get system fonts
+    protected Map<String, Typeface> getSSystemFontMap() {
+        Map<String, Typeface> font_map = null;
+        try {
+            //Typeface typeface = Typeface.class.newInstance();
+            Typeface typeface = Typeface.create(Typeface.DEFAULT, Typeface.NORMAL);
+            Field field = Typeface.class.getDeclaredField("sSystemFontMap");
+            field.setAccessible(true);
+            font_map = (Map<String, Typeface>) field.get(typeface);
+            for (Map.Entry<String, Typeface> font : font_map.entrySet()) {
+                Log.d(Const.TAG, font.getKey() + ": " + font.getValue() + "\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return font_map;
     }
 
     // More readable criteria

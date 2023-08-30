@@ -1067,7 +1067,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         try {
             String font_family = mSharedPreferences.getString(Const.PREF_FONT_FAMILY, Const.DEFAULT_FONT_FAMILY);
 
-            if (font_family.equals("Monospace")) {
+            if (font_family.equals(Const.SYSTEM_FONT_NAME)) {
+                holder.mContent.setTypeface(Typeface.DEFAULT);
+            } else if (font_family.equals("Monospace")) {
                 holder.mContent.setTypeface(Typeface.MONOSPACE);
             } else if (font_family.equals("Serif")) {
                 holder.mContent.setTypeface(Typeface.SERIF);
