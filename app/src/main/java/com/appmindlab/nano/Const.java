@@ -454,6 +454,8 @@ public class Const {
     protected final static String CODE_FENCE_SYM = "```";
     protected final static String REVISION_DELIM = ", ";
     protected final static String TAG_DELIM = ">";
+    protected final static String TAG_CONTENT_OPEN_SYM = "{";
+    protected final static String TAG_CONTENT_CLOSE_SYM = "}";
     protected final static String TAG_MULTI_SYM = "*";
     protected final static String TAG_PLACEHOLDER_SYM = "???";
     protected final static String TAG_CLASS_SYM = ".";

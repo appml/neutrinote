@@ -782,11 +782,14 @@ public class Utils {
             return Html.fromHtml(html).toString();
     }
 
+    // Tag Expand
     protected static String tagExpand(String str) {
         String output = Const.NULL_SYM;
-        String tag, opening = "<";
+        String tag, opening_tag, closing_tag;
+        String opening_right = "<", closing_right = "</", content;
         String placeholder = Const.TAG_PLACEHOLDER_SYM;
         StringBuilder cur;
+        String[] parts;
 
         // testing
         Log.d(Const.TAG, "nano - tagExpand, str: " + str);
@@ -794,6 +797,9 @@ public class Utils {
         // Split by tag delimiters
         String[] items = str.trim().split(Const.TAG_DELIM);
         for (int i=0; i < items.length; i++) {
+            // Remove padding
+            items[i] = items[i].trim();
+
             // testing
             Log.d(Const.TAG, "nano - tagExpand, items[i]: " + items[i]);
 
@@ -801,21 +807,54 @@ public class Utils {
             cur = new StringBuilder(Const.NULL_SYM);
 
             // Build opening tag
-            opening = Const.INDENTATION + opening;
+            if (i > 0) {
+                opening_right = Const.INDENTATION + opening_right;
+                closing_right = Const.INDENTATION + closing_right;
+            }
 
+            // Extract content
+            if (items[i].startsWith(Const.TAG_CONTENT_OPEN_SYM) && (items[i].endsWith(Const.TAG_CONTENT_CLOSE_SYM))) {
+                content = items[i].substring(1, items[i].length()-1);
+                cur = new StringBuilder(content);
+            }
             // Handle multiplier
-            if (items[i].contains(Const.TAG_MULTI_SYM)) {
-                String[] parts = items[i].split("\\" + Const.TAG_MULTI_SYM);
-
+            else if (items[i].contains(Const.TAG_MULTI_SYM)) {
+                parts = items[i].split("\\" + Const.TAG_MULTI_SYM);
                 tag = parts[0];
 
+                // Handle class
+                opening_tag = tag;
+                closing_tag = tag;
+                if (tag.contains(Const.TAG_CLASS_SYM)) {
+                    parts = tag.split("\\" + Const.TAG_CLASS_SYM);
+                    if (parts.length > 1) {
+                        opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
+                        closing_tag = parts[0];
+                    }
+                }
+
                 for (int j=0; j < Integer.parseInt(parts[1]); j++) {
-                    cur.append(Const.NEWLINE).append(opening).append(tag).append(">").append(placeholder).append(Const.NEWLINE).append(opening).append(tag).append("/>");
+                    cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
                 }
             }
             else {
                 tag = items[i];
-                cur.append(Const.NEWLINE).append(opening).append(tag).append(">").append(placeholder).append(Const.NEWLINE).append(opening).append(tag).append("/>");
+
+                // Handle class
+                opening_tag = tag;
+                closing_tag = tag;
+                if (tag.contains(Const.TAG_CLASS_SYM)) {
+                    parts = tag.split("\\" + Const.TAG_CLASS_SYM);
+
+                    // testing
+                    Log.d(Const.TAG, "nano - tagExpand, parts.length: " + parts.length);
+                    if (parts.length > 1) {
+                        opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
+                        closing_tag = parts[0];
+                    }
+                }
+
+                cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
             }
 
             // Update output
