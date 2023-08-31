@@ -784,7 +784,8 @@ public class Utils {
 
     protected static String tagExpand(String str) {
         String output = Const.NULL_SYM;
-        String tag;
+        String tag, opening = "<";
+        String placeholder = Const.TAG_PLACEHOLDER_SYM;
         StringBuilder cur;
 
         // testing
@@ -799,6 +800,9 @@ public class Utils {
             // Reset cur
             cur = new StringBuilder(Const.NULL_SYM);
 
+            // Build opening tag
+            opening = Const.INDENTATION + opening;
+
             // Handle multiplier
             if (items[i].contains(Const.TAG_MULTI_SYM)) {
                 String[] parts = items[i].split("\\" + Const.TAG_MULTI_SYM);
@@ -806,24 +810,27 @@ public class Utils {
                 tag = parts[0];
 
                 for (int j=0; j < Integer.parseInt(parts[1]); j++) {
-                    cur.append("<").append(tag).append(">").append(Const.EMPTY_SYM).append("<").append(tag).append("/>");
+                    cur.append(Const.NEWLINE).append(opening).append(tag).append(">").append(placeholder).append(Const.NEWLINE).append(opening).append(tag).append("/>");
                 }
             }
             else {
                 tag = items[i];
-                cur.append("<").append(tag).append(">").append(Const.EMPTY_SYM).append("<").append(tag).append("/>");
+                cur.append(Const.NEWLINE).append(opening).append(tag).append(">").append(placeholder).append(Const.NEWLINE).append(opening).append(tag).append("/>");
             }
 
             // Update output
             if (output.equals(Const.NULL_SYM)) {
                 output = cur.toString();
             } else {
-                output = output.replace(Const.EMPTY_SYM, cur.toString());
+                output = output.replace(placeholder, cur.toString());
             }
 
             // testing
             Log.d(Const.TAG, "nano - tagExpand, output: " + output);
         }
+
+        // Clean up
+        output = output.replace(placeholder, Const.NULL_SYM);
 
         return output;
     }

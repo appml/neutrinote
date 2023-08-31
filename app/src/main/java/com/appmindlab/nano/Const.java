@@ -455,6 +455,7 @@ public class Const {
     protected final static String REVISION_DELIM = ", ";
     protected final static String TAG_DELIM = ">";
     protected final static String TAG_MULTI_SYM = "*";
+    protected final static String TAG_PLACEHOLDER_SYM = "???";
     protected final static String TAG_CLASS_SYM = ".";
     protected final static String TAG_CLASS_EXPANDED_SYM = " class='?'";
     protected final static String NON_NUMBER_SYM = "NaN";
