@@ -822,13 +822,20 @@ public class Utils {
                 parts = items[i].split("\\" + Const.TAG_MULTI_SYM);
                 tag = parts[0];
 
-                // Handle class
+                // Handle class or id
                 opening_tag = tag;
                 closing_tag = tag;
                 if (tag.contains(Const.TAG_CLASS_SYM)) {
                     parts = tag.split("\\" + Const.TAG_CLASS_SYM);
                     if (parts.length > 1) {
                         opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
+                        closing_tag = parts[0];
+                    }
+                }
+                else if (tag.contains(Const.TAG_ID_SYM)) {
+                    parts = tag.split(Const.TAG_ID_SYM);
+                    if (parts.length > 1) {
+                        opening_tag = parts[0] + " id=\"" + parts[1] + "\"";
                         closing_tag = parts[0];
                     }
                 }
@@ -840,16 +847,20 @@ public class Utils {
             else {
                 tag = items[i];
 
-                // Handle class
+                // Handle class or id
                 opening_tag = tag;
                 closing_tag = tag;
                 if (tag.contains(Const.TAG_CLASS_SYM)) {
                     parts = tag.split("\\" + Const.TAG_CLASS_SYM);
-
-                    // testing
-                    Log.d(Const.TAG, "nano - tagExpand, parts.length: " + parts.length);
                     if (parts.length > 1) {
                         opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
+                        closing_tag = parts[0];
+                    }
+                }
+                else if (tag.contains(Const.TAG_ID_SYM)) {
+                    parts = tag.split(Const.TAG_ID_SYM);
+                    if (parts.length > 1) {
+                        opening_tag = parts[0] + " id=\"" + parts[1] + "\"";
                         closing_tag = parts[0];
                     }
                 }

@@ -459,7 +459,7 @@ public class Const {
     protected final static String TAG_MULTI_SYM = "*";
     protected final static String TAG_PLACEHOLDER_SYM = "???";
     protected final static String TAG_CLASS_SYM = ".";
-    protected final static String TAG_CLASS_EXPANDED_SYM = " class='?'";
+    protected final static String TAG_ID_SYM = "#";
     protected final static String NON_NUMBER_SYM = "NaN";
     protected final static String HTTP_SYM = "http://";
     protected final static String HTTPS_SYM = "https://";
