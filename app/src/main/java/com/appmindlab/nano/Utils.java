@@ -3311,7 +3311,7 @@ public class Utils {
     }
 
     // Get system fonts
-    protected Map<String, Typeface> getSSystemFontMap() {
+    protected static Map<String, Typeface> getSSystemFontMap() {
         Map<String, Typeface> font_map = null;
         try {
             //Typeface typeface = Typeface.class.newInstance();
@@ -3320,7 +3320,7 @@ public class Utils {
             field.setAccessible(true);
             font_map = (Map<String, Typeface>) field.get(typeface);
             for (Map.Entry<String, Typeface> font : font_map.entrySet()) {
-                Log.d(Const.TAG, font.getKey() + ": " + font.getValue() + "\n");
+                Log.d(Const.TAG, "nano - getSSystemFontMap: " + font.getKey() + ", " + font.getValue() + "\n");
             }
         } catch (Exception e) {
             e.printStackTrace();
