@@ -845,7 +845,7 @@ public class Utils {
         String output = Const.NULL_SYM;
 
         String[] parts, peers, pairs;
-        int repeat_factor;
+        int repeat_factor, ptr;
 
         // testing
         Log.d(Const.TAG, "nano - tagExpand, str: " + str);
@@ -859,8 +859,9 @@ public class Utils {
             // testing
             Log.d(Const.TAG, "nano - tagExpand, items[i]: " + items[i]);
 
-            // Reset cur
+            // Reset
             cur = new StringBuilder(Const.NULL_SYM);
+            ptr = 0;
 
             // Build opening tag
             if (i > 0) {
@@ -875,8 +876,17 @@ public class Utils {
             }
             else {
                 // Handle peers
-                peers = items[i].split("\\" + Const.TAG_PEER_SYM);
+                peers = items[i].split(String.join("|", Const.TAG_PEER_UP_DELIM));
                 for (int j=0; j < peers.length; j++) {
+                    // testing
+                    Log.d(Const.TAG, "nano - tagExpand, items[i]: " + items[i] + ", ptr: " + ptr + ", char: " + items[i].charAt(ptr));
+
+                    // Climbing up check
+                    if ((ptr > 0) && (ptr < (items[i].length()-1)) && (Const.TAG_UP_SYM.equals(String.valueOf(items[i].charAt(ptr-1))))) {
+                        opening_right = opening_right.substring(Const.INDENTATION.length());
+                        closing_right = closing_right.substring(Const.INDENTATION.length());
+                    }
+
                     // Handle multiplier
                     if (peers[j].contains(Const.TAG_MULTI_SYM)) {
                         parts = peers[j].split("\\" + Const.TAG_MULTI_SYM);
@@ -902,6 +912,9 @@ public class Utils {
 
                         cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
                     }
+
+                    // Increment read pointer
+                    ptr += peers[j].length()+1;
                 }
             }
 

@@ -461,6 +461,8 @@ public class Const {
     protected final static String TAG_CLASS_SYM = ".";
     protected final static String TAG_ID_SYM = "#";
     protected final static String TAG_PEER_SYM = "+";
+    protected final static String TAG_UP_SYM = "^";
+    protected final static String[] TAG_PEER_UP_DELIM = {"\\" + TAG_PEER_SYM, "\\" + TAG_UP_SYM};
     protected final static String TAG_ATTR_OPEN_SYM = "[";
     protected final static String TAG_ATTR_CLOSE_SYM = "]";
     protected final static String NON_NUMBER_SYM = "NaN";
