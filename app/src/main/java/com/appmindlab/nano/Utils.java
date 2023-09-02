@@ -837,11 +837,13 @@ public class Utils {
 
     // Tag Expand (Single pass implementation)
     protected static String tagExpand(String str) {
-        String output = Const.NULL_SYM;
         String tag, opening_tag, closing_tag;
         String opening_right = "<", closing_right = "</", content;
+
         String placeholder = Const.TAG_PLACEHOLDER_SYM;
         StringBuilder cur;
+        String output = Const.NULL_SYM;
+
         String[] parts, peers, pairs;
         int repeat_factor;
 
