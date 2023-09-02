@@ -825,13 +825,17 @@ public class Utils {
             }
         }
 
+        // Handle attributes
+        opening_tag = opening_tag.replaceAll("\\" + Const.TAG_ATTR_OPEN_SYM, Const.EMPTY_SYM). replaceAll("\\" + Const.TAG_ATTR_CLOSE_SYM,Const.NULL_SYM);
+        closing_tag = closing_tag.replaceAll("\\[.*?\\]", "");
+
         pairs[0] = opening_tag;
         pairs[1] = closing_tag;
 
         return pairs;
     }
 
-    // Tag Expand (Poor man's implementation)
+    // Tag Expand (Single pass implementation)
     protected static String tagExpand(String str) {
         String output = Const.NULL_SYM;
         String tag, opening_tag, closing_tag;
