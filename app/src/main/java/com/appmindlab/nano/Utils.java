@@ -782,14 +782,14 @@ public class Utils {
             return Html.fromHtml(html).toString();
     }
 
-    // Tag Expand (Poor man's algorithm)
+    // Tag Expand (Poor man's implementation)
     protected static String tagExpand(String str) {
         String output = Const.NULL_SYM;
         String tag, opening_tag, closing_tag, tag_class, tag_id;
         String opening_right = "<", closing_right = "</", content;
         String placeholder = Const.TAG_PLACEHOLDER_SYM;
         StringBuilder cur;
-        String[] parts;
+        String[] parts, peers;
         int repeat_factor;
 
         // testing
@@ -818,94 +818,100 @@ public class Utils {
                 content = items[i].substring(1, items[i].length()-1);
                 cur = new StringBuilder(content);
             }
-            // Handle multiplier
-            else if (items[i].contains(Const.TAG_MULTI_SYM)) {
-                parts = items[i].split("\\" + Const.TAG_MULTI_SYM);
-                tag = parts[0];
-                repeat_factor = Integer.parseInt(parts[1]);
-
-                // Handle class and id
-                opening_tag = tag;
-                closing_tag = tag;
-                if (tag.contains(Const.TAG_CLASS_SYM)) {
-                    parts = tag.split("\\" + Const.TAG_CLASS_SYM);
-                    if (parts.length > 1) {
-                        // Check if id exists
-                        if (parts[0].contains(Const.TAG_ID_SYM)) {   // id attached to tag name, so separate it from tag name
-                            tag_class = parts[1];
-                            parts = parts[0].split(Const.TAG_ID_SYM);
-                            if (parts.length > 1) {
-                                opening_tag = parts[0] + " class=\"" + tag_class + "\"" + " id=\"" + parts[1] + "\"";
-                                closing_tag = parts[0];
-                            }
-                        } else if (parts[1].contains(Const.TAG_ID_SYM)) {  // id attached to class name, so separate it from class name
-                            closing_tag = parts[0];
-                            parts = parts[1].split(Const.TAG_ID_SYM);
-                            if (parts.length > 1) {
-                                opening_tag = closing_tag + " class=\"" + parts[0] + "\"" + " id=\"" + parts[1] + "\"";
-                            }
-                        } else {
-                            opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
-                            closing_tag = parts[0];
-                        }
-                    }
-
-                    // testing
-                    Log.d(Const.TAG, "nano - tagExpand, opening_tag: " + opening_tag + ", closing_tag: " + closing_tag);
-                }
-                else if (tag.contains(Const.TAG_ID_SYM)) {  // Only id, no class
-                    parts = tag.split(Const.TAG_ID_SYM);
-                    if (parts.length > 1) {
-                        opening_tag = parts[0] + " id=\"" + parts[1] + "\"";
-                        closing_tag = parts[0];
-                    }
-                }
-
-                for (int j=0; j < repeat_factor; j++) {
-                    cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
-                }
-            }
             else {
-                tag = items[i];
+                // Handle peers
+                peers = items[i].split("\\" + Const.TAG_PEER_SYM);
+                for (int j=0; j < peers.length; j++) {
+                    // Handle multiplier
+                    if (peers[j].contains(Const.TAG_MULTI_SYM)) {
+                        parts = peers[j].split("\\" + Const.TAG_MULTI_SYM);
+                        tag = parts[0];
+                        repeat_factor = Integer.parseInt(parts[1]);
 
-                // Handle class or id
-                opening_tag = tag;
-                closing_tag = tag;
-                if (tag.contains(Const.TAG_CLASS_SYM)) {
-                    parts = tag.split("\\" + Const.TAG_CLASS_SYM);
-                    if (parts.length > 1) {
-                        // Check if id exists
-                        if (parts[0].contains(Const.TAG_ID_SYM)) {   // id attached to tag name, so separate it from tag name
-                            tag_class = parts[1];
-                            parts = parts[0].split(Const.TAG_ID_SYM);
+                        // Handle class and id
+                        opening_tag = tag;
+                        closing_tag = tag;
+                        if (tag.contains(Const.TAG_CLASS_SYM)) {
+                            parts = tag.split("\\" + Const.TAG_CLASS_SYM);
                             if (parts.length > 1) {
-                                opening_tag = parts[0] + " class=\"" + tag_class + "\"" + " id=\"" + parts[1] + "\"";
+                                // Check if id exists
+                                if (parts[0].contains(Const.TAG_ID_SYM)) {   // id attached to tag name, so separate it from tag name
+                                    tag_class = parts[1];
+                                    parts = parts[0].split(Const.TAG_ID_SYM);
+                                    if (parts.length > 1) {
+                                        opening_tag = parts[0] + " class=\"" + tag_class + "\"" + " id=\"" + parts[1] + "\"";
+                                        closing_tag = parts[0];
+                                    }
+                                } else if (parts[1].contains(Const.TAG_ID_SYM)) {  // id attached to class name, so separate it from class name
+                                    closing_tag = parts[0];
+                                    parts = parts[1].split(Const.TAG_ID_SYM);
+                                    if (parts.length > 1) {
+                                        opening_tag = closing_tag + " class=\"" + parts[0] + "\"" + " id=\"" + parts[1] + "\"";
+                                    }
+                                } else {
+                                    opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
+                                    closing_tag = parts[0];
+                                }
+                            }
+
+                            // testing
+                            Log.d(Const.TAG, "nano - tagExpand, opening_tag: " + opening_tag + ", closing_tag: " + closing_tag);
+                        }
+                        else if (tag.contains(Const.TAG_ID_SYM)) {  // Only id, no class
+                            parts = tag.split(Const.TAG_ID_SYM);
+                            if (parts.length > 1) {
+                                opening_tag = parts[0] + " id=\"" + parts[1] + "\"";
                                 closing_tag = parts[0];
                             }
-                        } else if (parts[1].contains(Const.TAG_ID_SYM)) {  // id attached to class name, so separate it from class name
-                            closing_tag = parts[0];
-                            parts = parts[1].split(Const.TAG_ID_SYM);
-                            if (parts.length > 1) {
-                                opening_tag = closing_tag + " class=\"" + parts[0] + "\"" + " id=\"" + parts[1] + "\"";
-                            }
-                        } else {
-                            opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
-                            closing_tag = parts[0];
+                        }
+
+                        for (int k=0; k < repeat_factor; k++) {
+                            cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
                         }
                     }
+                    else {
+                        tag = peers[j];
 
-                    // testing
-                    Log.d(Const.TAG, "nano - tagExpand, opening_tag: " + opening_tag + ", closing_tag: " + closing_tag);
-                }
-                else if (tag.contains(Const.TAG_ID_SYM)) {  // Only id, no class
-                    parts = tag.split(Const.TAG_ID_SYM);
-                    if (parts.length > 1) {
-                        opening_tag = parts[0] + " id=\"" + parts[1] + "\"";
-                        closing_tag = parts[0];
+                        // Handle class or id
+                        opening_tag = tag;
+                        closing_tag = tag;
+                        if (tag.contains(Const.TAG_CLASS_SYM)) {
+                            parts = tag.split("\\" + Const.TAG_CLASS_SYM);
+                            if (parts.length > 1) {
+                                // Check if id exists
+                                if (parts[0].contains(Const.TAG_ID_SYM)) {   // id attached to tag name, so separate it from tag name
+                                    tag_class = parts[1];
+                                    parts = parts[0].split(Const.TAG_ID_SYM);
+                                    if (parts.length > 1) {
+                                        opening_tag = parts[0] + " class=\"" + tag_class + "\"" + " id=\"" + parts[1] + "\"";
+                                        closing_tag = parts[0];
+                                    }
+                                } else if (parts[1].contains(Const.TAG_ID_SYM)) {  // id attached to class name, so separate it from class name
+                                    closing_tag = parts[0];
+                                    parts = parts[1].split(Const.TAG_ID_SYM);
+                                    if (parts.length > 1) {
+                                        opening_tag = closing_tag + " class=\"" + parts[0] + "\"" + " id=\"" + parts[1] + "\"";
+                                    }
+                                } else {
+                                    opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
+                                    closing_tag = parts[0];
+                                }
+                            }
+
+                            // testing
+                            Log.d(Const.TAG, "nano - tagExpand, opening_tag: " + opening_tag + ", closing_tag: " + closing_tag);
+                        }
+                        else if (tag.contains(Const.TAG_ID_SYM)) {  // Only id, no class
+                            parts = tag.split(Const.TAG_ID_SYM);
+                            if (parts.length > 1) {
+                                opening_tag = parts[0] + " id=\"" + parts[1] + "\"";
+                                closing_tag = parts[0];
+                            }
+                        }
+
+                        cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
                     }
                 }
-
-                cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
             }
 
             // Update output
