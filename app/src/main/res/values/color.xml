@@ -34,6 +34,7 @@
     <color name="list_item_size_day">#1976D2</color>
     <color name="list_item_size_night">#2196F3</color>
     <color name="list_item_size_dark">#2196F3</color>
+    <color name="list_item_size_early_warn">#AFB42B</color>
     <color name="list_item_size_warn">#FDD835</color>
     <color name="list_item_size_critical">#FF9800</color>
     <color name="list_item_size_severe">#F44336</color>

@@ -559,6 +559,7 @@ public class Const {
     protected final static int ONE_KB = 1024;
     protected final static int BUFFER_SIZE = 100 * ONE_KB;               // 100 KB
     protected final static int MAX_FILE_SIZE = 1572864;                  // 1.5 MB
+    protected final static int EARLY_WARN_FILE_SIZE = 819200;            // 800 KB
     protected final static int WARN_FILE_SIZE = 921600;                  // 900 KB
     protected final static int CRITICAL_FILE_SIZE = 1258291;             // 1.2 MB
     protected final static int SEVERE_FILE_SIZE = 1468006;               // 1.4 MB
