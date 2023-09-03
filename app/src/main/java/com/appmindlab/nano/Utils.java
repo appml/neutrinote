@@ -837,7 +837,7 @@ public class Utils {
 
     // Tag Expand (Single pass implementation)
     protected static String tagExpand(String str) {
-        String tag, opening_tag, closing_tag;
+        String tag, opening_tag, opening_tag_temp, closing_tag;
         String opening_right = "<", closing_right = "</", content;
 
         String placeholder = Const.TAG_PLACEHOLDER_SYM;
@@ -899,7 +899,13 @@ public class Utils {
                         closing_tag = pairs[1];
 
                         for (int k=0; k < repeat_factor; k++) {
+                            // Handle number if available
+                            opening_tag_temp = opening_tag;  // Save a copy
+                            opening_tag = opening_tag.replaceAll("\\" + Const.TAG_NUM_SYM, Integer.toString(k+1));
+
                             cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
+
+                            opening_tag = opening_tag_temp;  // Restore
                         }
                     }
                     else {
