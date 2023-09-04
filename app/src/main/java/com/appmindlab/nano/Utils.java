@@ -863,18 +863,19 @@ public class Utils {
             cur = new StringBuilder(Const.NULL_SYM);
             ptr = 0;
 
-            // Build opening tag
-            if (i > 0) {
-                opening_right = Const.INDENTATION + opening_right;
-                closing_right = Const.INDENTATION + closing_right;
-            }
-
             // Extract content
             if (items[i].startsWith(Const.TAG_CONTENT_OPEN_SYM) && (items[i].endsWith(Const.TAG_CONTENT_CLOSE_SYM))) {
                 content = items[i].substring(1, items[i].length()-1);
                 cur = new StringBuilder(content);
+                cur = cur.append(placeholder);
             }
             else {
+                // Build opening tag
+                if (i > 0) {
+                    opening_right = Const.INDENTATION + opening_right;
+                    closing_right = Const.INDENTATION + closing_right;
+                }
+
                 // Handle peers
                 peers = items[i].split(String.join("|", Const.TAG_PEER_UP_DELIM));
                 for (int j=0; j < peers.length; j++) {
