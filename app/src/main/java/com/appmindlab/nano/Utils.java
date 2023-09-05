@@ -784,50 +784,64 @@ public class Utils {
 
     // Make opening and closing tags
     private static String[] makeTagPair(String tag) {
-        String opening_tag, closing_tag, tag_class, tag_id;
-        String[] parts, pairs = new String[2];
+        String opening_tag, closing_tag, tag_class;
+        String content;
+        String[] parts, pairs = new String[3];
+
+        // Handle content
+        pairs[2] = Const.TAG_PLACEHOLDER_SYM;
+        if (tag.contains(Const.TAG_CONTENT_OPEN_SYM) && tag.contains(Const.TAG_CONTENT_CLOSE_SYM)) {
+            // Extract content
+            content = tag.substring(tag.indexOf(Const.TAG_CONTENT_OPEN_SYM)+1, tag.indexOf(Const.TAG_CONTENT_CLOSE_SYM));
+            pairs[2] = content + Const.TAG_PLACEHOLDER_SYM;
+
+            // Remove the content
+            tag = tag.replace(Const.TAG_CONTENT_OPEN_SYM + content + Const.TAG_CONTENT_CLOSE_SYM, Const.NULL_SYM);
+        }
 
         // Handle class and id
         opening_tag = tag;
         closing_tag = tag;
 
-        if (tag.contains(Const.TAG_CLASS_SYM)) {
-            parts = tag.split("\\" + Const.TAG_CLASS_SYM);
-            if (parts.length > 1) {
-                // Check if id exists
-                if (parts[0].contains(Const.TAG_ID_SYM)) {   // id attached to tag name, so separate it from tag name
-                    tag_class = parts[1];
-                    parts = parts[0].split(Const.TAG_ID_SYM);
-                    if (parts.length > 1) {
-                        opening_tag = parts[0] + " class=\"" + tag_class + "\"" + " id=\"" + parts[1] + "\"";
+        if (tag.length() > 0) {
+            if (tag.contains(Const.TAG_CLASS_SYM)) {
+                parts = tag.split("\\" + Const.TAG_CLASS_SYM);
+                if (parts.length > 1) {
+                    // Check if id exists
+                    if (parts[0].contains(Const.TAG_ID_SYM)) {   // id attached to tag name, so separate it from tag name
+                        tag_class = parts[1];
+                        parts = parts[0].split(Const.TAG_ID_SYM);
+                        if (parts.length > 1) {
+                            opening_tag = parts[0] + " class=\"" + tag_class + "\"" + " id=\"" + parts[1] + "\"";
+                            closing_tag = parts[0];
+                        }
+                    } else if (parts[1].contains(Const.TAG_ID_SYM)) {  // id attached to class name, so separate it from class name
+                        closing_tag = parts[0];
+                        parts = parts[1].split(Const.TAG_ID_SYM);
+                        if (parts.length > 1) {
+                            opening_tag = closing_tag + " class=\"" + parts[0] + "\"" + " id=\"" + parts[1] + "\"";
+                        }
+                    } else {
+                        opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
                         closing_tag = parts[0];
                     }
-                } else if (parts[1].contains(Const.TAG_ID_SYM)) {  // id attached to class name, so separate it from class name
-                    closing_tag = parts[0];
-                    parts = parts[1].split(Const.TAG_ID_SYM);
-                    if (parts.length > 1) {
-                        opening_tag = closing_tag + " class=\"" + parts[0] + "\"" + " id=\"" + parts[1] + "\"";
-                    }
-                } else {
-                    opening_tag = parts[0] + " class=\"" + parts[1] + "\"";
+                }
+
+                // testing
+                Log.d(Const.TAG, "nano - tagExpand, opening_tag: " + opening_tag + ", closing_tag: " + closing_tag);
+            }
+            else if (tag.contains(Const.TAG_ID_SYM)) {  // Only id, no class
+                parts = tag.split(Const.TAG_ID_SYM);
+                if (parts.length > 1) {
+                    opening_tag = parts[0] + " id=\"" + parts[1] + "\"";
                     closing_tag = parts[0];
                 }
             }
 
-            // testing
-            Log.d(Const.TAG, "nano - tagExpand, opening_tag: " + opening_tag + ", closing_tag: " + closing_tag);
+            // Handle attributes
+            opening_tag = opening_tag.replaceAll("\\" + Const.TAG_ATTR_OPEN_SYM, Const.EMPTY_SYM). replaceAll("\\" + Const.TAG_ATTR_CLOSE_SYM,Const.NULL_SYM);
+            closing_tag = closing_tag.replaceAll("\\[.*?\\]", "");
         }
-        else if (tag.contains(Const.TAG_ID_SYM)) {  // Only id, no class
-            parts = tag.split(Const.TAG_ID_SYM);
-            if (parts.length > 1) {
-                opening_tag = parts[0] + " id=\"" + parts[1] + "\"";
-                closing_tag = parts[0];
-            }
-        }
-
-        // Handle attributes
-        opening_tag = opening_tag.replaceAll("\\" + Const.TAG_ATTR_OPEN_SYM, Const.EMPTY_SYM). replaceAll("\\" + Const.TAG_ATTR_CLOSE_SYM,Const.NULL_SYM);
-        closing_tag = closing_tag.replaceAll("\\[.*?\\]", "");
 
         pairs[0] = opening_tag;
         pairs[1] = closing_tag;
@@ -839,8 +853,8 @@ public class Utils {
     protected static String tagExpand(String str) {
         String tag, opening_tag, opening_tag_temp, closing_tag;
         String opening_right = "<", closing_right = "</", content;
-
         String placeholder = Const.TAG_PLACEHOLDER_SYM;
+
         StringBuilder cur;
         String output = Const.NULL_SYM;
 
@@ -898,13 +912,14 @@ public class Utils {
                         pairs = makeTagPair(tag);
                         opening_tag = pairs[0];
                         closing_tag = pairs[1];
+                        content = pairs[2];
 
                         for (int k=0; k < repeat_factor; k++) {
                             // Handle number if available
                             opening_tag_temp = opening_tag;  // Save a copy
                             opening_tag = opening_tag.replaceAll("\\" + Const.TAG_NUM_SYM, Integer.toString(k+1));
 
-                            cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
+                            cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(content).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
 
                             opening_tag = opening_tag_temp;  // Restore
                         }
@@ -916,8 +931,9 @@ public class Utils {
                         pairs = makeTagPair(tag);
                         opening_tag = pairs[0];
                         closing_tag = pairs[1];
+                        content = pairs[2];
 
-                        cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(placeholder).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
+                        cur.append(Const.NEWLINE).append(opening_right).append(opening_tag).append(">").append(content).append(Const.NEWLINE).append(closing_right).append(closing_tag).append(">");
                     }
 
                     // Increment read pointer
