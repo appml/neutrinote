@@ -1586,6 +1586,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     DBEntry entry = results.get(0);
                     String[] fonts = entry.getContent().split(Const.BLANK_LINE);
                     for (int i = 0; i < fonts.length; i++) {
+                        // Skip if commented out
+                        if (fonts[i].startsWith(Const.COMMENT_SYM))
+                            continue;
+
                         // Load parameters, each separated by a newline
                         String[] params = fonts[i].split(Const.NEWLINE);
 
