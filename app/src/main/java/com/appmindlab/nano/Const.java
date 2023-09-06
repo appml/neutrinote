@@ -458,6 +458,7 @@ public class Const {
     protected final static String TAG_CONTENT_CLOSE_SYM = "}";
     protected final static String TAG_MULTI_SYM = "*";
     protected final static String TAG_PLACEHOLDER_SYM = "???";
+    protected final static String TAG_CLASS_PLACEHOLDER_SYM = "---";
     protected final static String TAG_CLASS_SYM = ".";
     protected final static String TAG_ID_SYM = "#";
     protected final static String TAG_NUM_SYM = "$";

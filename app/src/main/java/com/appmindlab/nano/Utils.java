@@ -805,6 +805,18 @@ public class Utils {
 
         if (tag.length() > 0) {
             if (tag.contains(Const.TAG_CLASS_SYM)) {
+                // Prepare attributes containing dots
+                if (tag.contains(Const.TAG_ATTR_OPEN_SYM)) {
+                    parts = tag.split("\\" + Const.TAG_ATTR_OPEN_SYM);
+                    for (int i=0; i < parts.length; i++) {
+                        if (parts[i].indexOf(Const.TAG_CLASS_SYM) < parts[i].indexOf(Const.TAG_ATTR_CLOSE_SYM))
+                            parts[i] = parts[i].replace(Const.TAG_CLASS_SYM, Const.TAG_CLASS_PLACEHOLDER_SYM);
+                    }
+
+                    // Reconstruct the tag
+                    tag = String.join(Const.TAG_ATTR_OPEN_SYM, parts);
+                }
+
                 parts = tag.split("\\" + Const.TAG_CLASS_SYM);
                 if (parts.length > 1) {
                     // Check if id exists
@@ -840,6 +852,7 @@ public class Utils {
 
             // Handle attributes
             opening_tag = opening_tag.replaceAll("\\" + Const.TAG_ATTR_OPEN_SYM, Const.EMPTY_SYM). replaceAll("\\" + Const.TAG_ATTR_CLOSE_SYM,Const.NULL_SYM);
+            opening_tag = opening_tag.replace(Const.TAG_CLASS_PLACEHOLDER_SYM, Const.TAG_CLASS_SYM);
             closing_tag = closing_tag.replaceAll("\\[.*?\\]", "");
         }
 
