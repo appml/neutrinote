@@ -3,8 +3,8 @@
 # min_api: 26
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 34b6054
-# pg_map_hash: SHA-256 34b6054c77e1195ab8ec84dfd760fee3bef3dcfefb5d78e12f8f9ac75d6fde54
+# pg_map_id: 69cff24
+# pg_map_hash: SHA-256 69cff24c88cce37fc21276a5a819e4c3521c09cc62b1a67c79dd4badaddc66a9
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -1165,143 +1165,144 @@ androidx.appcompat.app.AppCompatDelegateImpl$3 -> androidx.appcompat.app.h:
     264:304:androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat):0 -> onApplyWindowInsets
     305:335:androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat):0:0 -> onApplyWindowInsets
 androidx.appcompat.app.AppCompatDelegateImpl$4 -> androidx.appcompat.app.i:
-    int[] com.google.android.material.R$styleable.MaterialButton -> V
+    int[] com.google.android.material.R$styleable.MaterialAutoCompleteTextView -> V
     int[] androidx.appcompat.R$styleable.TextAppearance -> w
-    int[] com.google.android.material.R$styleable.FloatingActionButton_Behavior_Layout -> R
-    int[] androidx.appcompat.R$styleable.RecycleListView -> s
-    int[] androidx.appcompat.R$styleable.ViewStubCompat -> A
-    java.lang.String[] com.appmindlab.nano.Const.UNCACHE_FILES -> F
-    int[] com.google.android.material.R$styleable.MaterialCheckBox -> Z
-    int[] androidx.core.R$styleable.FontFamilyFont -> Q0
+    int[] androidx.recyclerview.R$styleable.RecyclerView -> S0
+    int[] androidx.coordinatorlayout.R$styleable.CoordinatorLayout_Layout -> O0
     java.lang.String[] com.appmindlab.nano.Const.ALL_PREFS -> B
     int[] androidx.appcompat.R$styleable.AppCompatImageView -> f
-    int[] androidx.constraintlayout.widget.R$styleable.Transform -> K0
-    int[] androidx.coordinatorlayout.R$styleable.CoordinatorLayout -> M0
-    int[] com.google.android.material.R$styleable.AppBarLayout -> I
-    int[] androidx.appcompat.R$styleable.ActionBarLayout -> b
-    int[] androidx.constraintlayout.widget.R$styleable.Layout -> G0
-    int[] androidx.constraintlayout.widget.R$styleable.PropertySet -> I0
+    int[] androidx.constraintlayout.widget.R$styleable.State -> K0
+    int[] androidx.constraintlayout.widget.R$styleable.CustomAttribute -> G0
     int[] androidx.appcompat.R$styleable.ListPopupWindow -> n
-    int[] androidx.constraintlayout.widget.R$styleable.Constraint -> C0
-    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.TEXT_SHIFT2_SET_CHARS -> y0
-    int[] androidx.constraintlayout.widget.R$styleable.ConstraintSet -> E0
-    int[] com.google.android.material.R$styleable.FloatingActionButton -> Q
-    int[] androidx.appcompat.R$styleable.AppCompatTheme -> j
-    int[] androidx.fragment.R$styleable.Fragment -> A0
-    int[] com.google.android.material.R$styleable.ChipGroup -> M
+    int[] androidx.fragment.R$styleable.FragmentContainerView -> C0
+    int[] com.google.android.material.R$styleable.Chip -> M
     int[] androidx.appcompat.R$styleable.SwitchCompat -> v
-    char[] com.google.zxing.qrcode.decoder.DecodedBitStreamParser.ALPHANUMERIC_CHARS -> p0
-    int[] com.google.android.material.R$styleable.MaterialCalendarItem -> Y
-    int[][] com.google.zxing.maxicode.decoder.BitMatrixParser.BITNR -> O0
+    int[] com.google.android.material.R$styleable.ForegroundLinearLayout -> U
+    int[] com.google.zxing.client.android.R$styleable.zxing_finder -> t0
+    int[] com.google.android.material.R$styleable.ThemeEnforcement -> p0
+    java.lang.String[] com.appmindlab.nano.Const.BOOL_PREFS -> C
+    int[] com.google.android.material.R$styleable.SnackbarLayout -> l0
+    int[] com.google.android.material.R$styleable.RadialViewGroup -> h0
+    int[] androidx.appcompat.R$styleable.AlertDialog -> e
+    int[] com.google.android.material.R$styleable.MaterialTextAppearance -> d0
+    int[] com.google.android.material.R$styleable.BottomSheetBehavior_Layout -> L
+    int[] androidx.appcompat.R$styleable.LinearLayoutCompat -> m
+    int[] com.google.android.material.R$styleable.FlowLayout -> T
+    int[] androidx.appcompat.R$styleable.Spinner -> u
+    java.lang.String[] com.appmindlab.nano.Const.TAG_PEER_UP_DELIM -> D
+    int[] androidx.constraintlayout.widget.R$styleable.Transform -> L0
+    int[] androidx.constraintlayout.widget.R$styleable.Layout -> H0
+    int[] androidx.appcompat.R$styleable.ActionMode -> d
+    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.C40_SHIFT2_SET_CHARS -> x0
+    int[] androidx.constraintlayout.widget.R$styleable.Constraint -> D0
+    int[] com.google.android.material.R$styleable.AppBarLayout_Layout -> K
+    int[] androidx.appcompat.R$styleable.CompoundButton -> l
+    int[][] com.google.zxing.maxicode.decoder.BitMatrixParser.BITNR -> P0
+    int[] com.google.android.material.R$styleable.FloatingActionButton_Behavior_Layout -> S
+    int[] androidx.appcompat.R$styleable.SearchView -> t
+    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.C40_BASIC_SET_CHARS -> w0
+    java.lang.String[] com.appmindlab.nano.Const.INVALID_TITLE_CHARS -> E
+    int[] com.google.zxing.client.android.R$styleable.zxing_view -> u0
+    int[] com.google.android.material.R$styleable.TextAppearance -> m0
+    int[] androidx.appcompat.R$styleable.ActionMenuItemView -> c
+    int[] com.google.android.material.R$styleable.ScrimInsetsFrameLayout -> i0
+    int[] com.google.android.material.R$styleable.MaterialTextView -> e0
+    int[] com.google.android.material.R$styleable.AppBarLayout -> J
+    int[] androidx.appcompat.R$styleable.ButtonBarLayout -> k
+    int[] com.google.android.material.R$styleable.MaterialCheckBox -> a0
+    int[] com.google.android.material.R$styleable.FloatingActionButton -> R
+    int[] androidx.appcompat.R$styleable.RecycleListView -> s
+    int[] androidx.appcompat.R$styleable.ViewStubCompat -> A
+    java.lang.String[] com.appmindlab.nano.Const.EXPORT_TYPES -> F
+    int[] com.google.android.material.R$styleable.MaterialCalendarItem -> Z
+    int[] androidx.core.R$styleable.FontFamily -> Q0
+    int[] androidx.constraintlayout.widget.R$styleable.Variant -> M0
+    int[] com.appmindlab.nano.Const.IN_NOTE_PERCENT_VALUES -> I
+    int[] androidx.appcompat.R$styleable.ActionBarLayout -> b
+    int[] androidx.constraintlayout.widget.R$styleable.Motion -> I0
+    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.TEXT_BASIC_SET_CHARS -> y0
+    int[] androidx.constraintlayout.widget.R$styleable.ConstraintLayout_Layout -> E0
+    int[] com.google.android.material.R$styleable.ExtendedFloatingActionButton_Behavior_Layout -> Q
+    int[] androidx.appcompat.R$styleable.AppCompatTheme -> j
+    int[] com.google.android.material.R$styleable.MaterialCalendar -> Y
     int[] androidx.appcompat.R$styleable.PopupWindow -> r
-    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.C40_BASIC_SET_CHARS -> v0
-    int[] com.google.android.material.R$styleable.MaterialAutoCompleteTextView -> U
-    int[] com.google.zxing.client.android.R$styleable.zxing_view -> t0
-    java.lang.String[] com.appmindlab.nano.Const.RESERVED_FOLDER_NAMES -> G
+    java.lang.String[] com.appmindlab.nano.Const.UNCACHE_FILES -> G
+    int[] androidx.drawerlayout.R$styleable.DrawerLayout -> v0
     int[] androidx.appcompat.R$styleable.ActionBar -> a
     int[] androidx.appcompat.R$styleable.ViewBackgroundHelper -> z
-    java.lang.String[] com.appmindlab.nano.Const.BOOL_PREFS -> C
-    int[] com.google.zxing.client.android.R$styleable.zxing_camera_preview -> r0
-    int[] com.google.android.material.R$styleable.TextAppearance -> l0
-    int[] com.appmindlab.nano.Const.IN_NOTE_PERCENT_VALUES -> H
-    int[] com.google.android.material.R$styleable.TextInputLayout -> n0
+    int[] androidx.cardview.R$styleable.CardView -> r0
+    int[] com.google.android.material.R$styleable.TextInputEditText -> n0
     int[] androidx.appcompat.R$styleable.AppCompatTextView -> i
-    int[] com.google.android.material.R$styleable.ScrimInsetsFrameLayout -> h0
-    int[] androidx.appcompat.R$styleable.AlertDialog -> e
-    int[] com.google.android.material.R$styleable.ShapeAppearance -> j0
-    int[] com.google.android.material.R$styleable.MaterialTextView -> d0
-    int[] com.google.android.material.R$styleable.ExtendedFloatingActionButton_Behavior_Layout -> P
+    java.lang.String[] com.appmindlab.nano.Const.RESERVED_FOLDER_NAMES -> H
+    int[] com.google.android.material.R$styleable.ScrollingViewBehavior_Layout -> j0
+    int[] com.google.android.material.R$styleable.ClockHandView -> P
     int[] androidx.appcompat.R$styleable.MenuView -> q
-    int[] com.google.android.material.R$styleable.NavigationView -> f0
-    int[] com.google.android.material.R$styleable.Chip -> L
-    int[] androidx.appcompat.R$styleable.LinearLayoutCompat -> m
-    int[] com.google.android.material.R$styleable.MaterialShape -> b0
-    int[] com.google.android.material.R$styleable.MaterialCalendar -> X
+    int[] com.google.android.material.R$styleable.MaterialToolbar -> f0
+    int[] com.google.android.material.R$styleable.MaterialRadioButton -> b0
+    int[] com.google.android.material.R$styleable.MaterialButtonToggleGroup -> X
     int[] androidx.appcompat.R$styleable.View -> y
-    int[] com.google.android.material.R$styleable.ForegroundLinearLayout -> T
-    int[] androidx.appcompat.R$styleable.Spinner -> u
-    java.lang.String[] com.appmindlab.nano.Const.INVALID_TITLE_CHARS -> D
-    int[] androidx.core.R$styleable.FontFamily -> P0
-    int[] androidx.recyclerview.R$styleable.RecyclerView -> R0
-    int[] androidx.constraintlayout.widget.R$styleable.Variant -> L0
+    int[] androidx.core.R$styleable.FontFamilyFont -> R0
+    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.TEXT_SHIFT3_SET_CHARS -> A0
     int[] androidx.appcompat.R$styleable.AppCompatTextHelper -> h
-    int[] androidx.coordinatorlayout.R$styleable.CoordinatorLayout_Layout -> N0
-    int[] androidx.constraintlayout.widget.R$styleable.Motion -> H0
-    int[] androidx.appcompat.R$styleable.ActionMode -> d
-    int[] androidx.constraintlayout.widget.R$styleable.State -> J0
-    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.TEXT_BASIC_SET_CHARS -> x0
-    int[] com.google.android.material.R$styleable.ClockHandView -> O
-    int[] androidx.constraintlayout.widget.R$styleable.ConstraintLayout_Layout -> D0
+    int[] androidx.coordinatorlayout.R$styleable.CoordinatorLayout -> N0
+    int[] androidx.constraintlayout.widget.R$styleable.PropertySet -> J0
+    int[] com.google.android.material.R$styleable.ClockFaceView -> O
     int[] androidx.appcompat.R$styleable.MenuItem -> p
-    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.TEXT_SHIFT3_SET_CHARS -> z0
-    int[] androidx.constraintlayout.widget.R$styleable.CustomAttribute -> F0
-    int[] com.google.android.material.R$styleable.BottomSheetBehavior_Layout -> K
-    int[] androidx.appcompat.R$styleable.CompoundButton -> l
-    int[] androidx.fragment.R$styleable.FragmentContainerView -> B0
-    int[] com.google.android.material.R$styleable.MaterialButtonToggleGroup -> W
+    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.TEXT_SHIFT2_SET_CHARS -> z0
+    int[] androidx.constraintlayout.widget.R$styleable.ConstraintSet -> F0
+    int[] androidx.fragment.R$styleable.Fragment -> B0
+    int[] com.google.android.material.R$styleable.MaterialButton -> W
+    char[] com.google.zxing.qrcode.decoder.DecodedBitStreamParser.ALPHANUMERIC_CHARS -> q0
     int[] androidx.appcompat.R$styleable.Toolbar -> x
-    int[] com.google.android.material.R$styleable.FlowLayout -> S
-    int[] androidx.appcompat.R$styleable.SearchView -> t
-    char[] com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.C40_SHIFT2_SET_CHARS -> w0
-    java.lang.String[] com.appmindlab.nano.Const.EXPORT_TYPES -> E
-    int[] com.google.zxing.client.android.R$styleable.zxing_finder -> s0
-    int[] androidx.drawerlayout.R$styleable.DrawerLayout -> u0
-    int[] com.google.android.material.R$styleable.ThemeEnforcement -> o0
-    int[] androidx.cardview.R$styleable.CardView -> q0
-    int[] com.google.android.material.R$styleable.SnackbarLayout -> k0
+    int[] com.google.zxing.client.android.R$styleable.zxing_camera_preview -> s0
+    int[] com.google.android.material.R$styleable.TextInputLayout -> o0
+    int[] com.google.android.material.R$styleable.ShapeAppearance -> k0
     int[] androidx.appcompat.R$styleable.AppCompatSeekBar -> g
-    int[] com.google.android.material.R$styleable.TextInputEditText -> m0
-    int[] com.google.android.material.R$styleable.RadialViewGroup -> g0
-    int[] androidx.appcompat.R$styleable.ActionMenuItemView -> c
-    int[] com.google.android.material.R$styleable.ScrollingViewBehavior_Layout -> i0
-    int[] com.google.android.material.R$styleable.ClockFaceView -> N
-    int[] com.google.android.material.R$styleable.MaterialTextAppearance -> c0
+    int[] com.google.android.material.R$styleable.NavigationView -> g0
+    int[] com.google.android.material.R$styleable.ChipGroup -> N
+    int[] com.google.android.material.R$styleable.MaterialShape -> c0
     int[] androidx.appcompat.R$styleable.MenuGroup -> o
-    int[] com.google.android.material.R$styleable.MaterialToolbar -> e0
-    int[] com.google.android.material.R$styleable.AppBarLayout_Layout -> J
-    int[] androidx.appcompat.R$styleable.ButtonBarLayout -> k
-    int[] com.google.android.material.R$styleable.MaterialRadioButton -> a0
     4:336:void androidx.appcompat.R$styleable.<clinit>():0:0 -> <clinit>
     4:336:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    337:477:void com.appmindlab.nano.Const.<clinit>():0:0 -> <clinit>
-    337:477:void $r8$clinit$synthetic():0 -> <clinit>
+    337:487:void com.appmindlab.nano.Const.<clinit>():0:0 -> <clinit>
+    337:487:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    478:742:void com.google.android.material.R$styleable.<clinit>():0:0 -> <clinit>
-    478:742:void $r8$clinit$synthetic():0 -> <clinit>
+    488:752:void com.google.android.material.R$styleable.<clinit>():0:0 -> <clinit>
+    488:752:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    743:751:void com.google.zxing.qrcode.decoder.DecodedBitStreamParser.<clinit>():0:0 -> <clinit>
-    743:751:void $r8$clinit$synthetic():0 -> <clinit>
+    753:761:void com.google.zxing.qrcode.decoder.DecodedBitStreamParser.<clinit>():0:0 -> <clinit>
+    753:761:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    752:759:void androidx.cardview.R$styleable.<clinit>():0:0 -> <clinit>
-    752:759:void $r8$clinit$synthetic():0 -> <clinit>
+    762:769:void androidx.cardview.R$styleable.<clinit>():0:0 -> <clinit>
+    762:769:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    760:791:void com.google.zxing.client.android.R$styleable.<clinit>():0:0 -> <clinit>
-    760:791:void $r8$clinit$synthetic():0 -> <clinit>
+    770:801:void com.google.zxing.client.android.R$styleable.<clinit>():0:0 -> <clinit>
+    770:801:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    792:797:void androidx.drawerlayout.R$styleable.<clinit>():0:0 -> <clinit>
-    792:797:void $r8$clinit$synthetic():0 -> <clinit>
+    802:807:void androidx.drawerlayout.R$styleable.<clinit>():0:0 -> <clinit>
+    802:807:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    798:832:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.<clinit>():0:0 -> <clinit>
-    798:832:void $r8$clinit$synthetic():0 -> <clinit>
+    808:842:void com.google.zxing.datamatrix.decoder.DecodedBitStreamParser.<clinit>():0:0 -> <clinit>
+    808:842:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    833:849:void androidx.fragment.R$styleable.<clinit>():0:0 -> <clinit>
-    833:849:void $r8$clinit$synthetic():0 -> <clinit>
+    843:859:void androidx.fragment.R$styleable.<clinit>():0:0 -> <clinit>
+    843:859:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    850:933:void androidx.constraintlayout.widget.R$styleable.<clinit>():0:0 -> <clinit>
-    850:933:void $r8$clinit$synthetic():0 -> <clinit>
+    860:943:void androidx.constraintlayout.widget.R$styleable.<clinit>():0:0 -> <clinit>
+    860:943:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    934:954:void androidx.coordinatorlayout.R$styleable.<clinit>():0:0 -> <clinit>
-    934:954:void $r8$clinit$synthetic():0 -> <clinit>
+    944:964:void androidx.coordinatorlayout.R$styleable.<clinit>():0:0 -> <clinit>
+    944:964:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    955:1244:void com.google.zxing.maxicode.decoder.BitMatrixParser.<clinit>():0:0 -> <clinit>
-    955:1244:void $r8$clinit$synthetic():0 -> <clinit>
+    965:1254:void com.google.zxing.maxicode.decoder.BitMatrixParser.<clinit>():0:0 -> <clinit>
+    965:1254:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    1245:1262:void androidx.core.R$styleable.<clinit>():0:0 -> <clinit>
-    1245:1262:void $r8$clinit$synthetic():0 -> <clinit>
+    1255:1272:void androidx.core.R$styleable.<clinit>():0:0 -> <clinit>
+    1255:1272:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
-    1263:3027:void androidx.recyclerview.R$styleable.<clinit>():0:0 -> <clinit>
-    1263:3027:void $r8$clinit$synthetic():0 -> <clinit>
+    1273:3037:void androidx.recyclerview.R$styleable.<clinit>():0:0 -> <clinit>
+    1273:3037:void $r8$clinit$synthetic():0 -> <clinit>
       # {"id":"com.android.tools.r8.synthesized"}
     void com.google.zxing.qrcode.decoder.DecodedBitStreamParser.decodeAlphanumericSegment(com.google.zxing.common.BitSource,java.lang.StringBuilder,int,boolean) -> a
     void com.google.zxing.qrcode.decoder.DecodedBitStreamParser.decodeHanziSegment(com.google.zxing.common.BitSource,java.lang.StringBuilder,int) -> b
@@ -17189,9 +17190,9 @@ com.appmindlab.nano.CustomAdapter -> com.appmindlab.nano.i:
     30:38:void setupActionMode():0:0 -> <init>
     30:38:void <init>(android.database.Cursor,com.appmindlab.nano.MainActivity,com.appmindlab.nano.DataSource):0 -> <init>
     39:41:void <init>(android.database.Cursor,com.appmindlab.nano.MainActivity,com.appmindlab.nano.DataSource):0:0 -> <init>
-    42:127:void setupCustomFonts():0:0 -> <init>
-    42:127:void <init>(android.database.Cursor,com.appmindlab.nano.MainActivity,com.appmindlab.nano.DataSource):0 -> <init>
-    128:134:void <init>(android.database.Cursor,com.appmindlab.nano.MainActivity,com.appmindlab.nano.DataSource):0:0 -> <init>
+    42:138:void setupCustomFonts():0:0 -> <init>
+    42:138:void <init>(android.database.Cursor,com.appmindlab.nano.MainActivity,com.appmindlab.nano.DataSource):0 -> <init>
+    139:145:void <init>(android.database.Cursor,com.appmindlab.nano.MainActivity,com.appmindlab.nano.DataSource):0:0 -> <init>
     0:1:void undoDeletion():0:0 -> a
     0:1:void access$1400(com.appmindlab.nano.CustomAdapter):0 -> a
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
@@ -17346,37 +17347,40 @@ com.appmindlab.nano.CustomAdapter -> com.appmindlab.nano.i:
     39:49:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
     50:51:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
     50:51:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    52:63:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    64:67:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    64:67:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    68:80:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    81:84:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    81:84:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    85:97:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    98:99:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    98:99:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    100:118:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    119:122:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    119:122:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    123:135:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    136:137:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    136:137:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    138:154:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    155:156:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    155:156:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    157:176:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    177:178:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    177:178:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    179:198:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    199:200:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    199:200:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    201:220:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    221:222:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    221:222:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    223:285:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    286:287:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-    286:287:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
-    288:298:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    52:62:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    63:64:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    63:64:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    65:76:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    77:80:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    77:80:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    81:93:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    94:97:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    94:97:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    98:110:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    111:112:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    111:112:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    113:131:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    132:135:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    132:135:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    136:148:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    149:150:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    149:150:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    151:168:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    169:170:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    169:170:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    171:190:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    191:192:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    191:192:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    193:212:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    213:214:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    213:214:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    215:234:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    235:236:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    235:236:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    237:299:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    300:301:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
+    300:301:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
+    302:312:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
 com.appmindlab.nano.CustomAdapter$1 -> com.appmindlab.nano.b:
     com.appmindlab.nano.CustomAdapter this$0 -> c
     17:18:void com.appmindlab.nano.CustomAdapter.doShowMap():0:0 -> onActionItemClicked
@@ -18372,24 +18376,24 @@ com.appmindlab.nano.DirectoryChooserDialog$ChosenDirectoryListener -> com.appmin
 com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     void $r8$lambda$UZSPl3-vjGgbaubdxBXlY6-w9zU(com.appmindlab.nano.DisplayDBEntry) -> a
       # {"id":"com.android.tools.r8.synthesized"}
-    186:186:void applyFontFamily():0:0 -> applyFontFamily
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":322,"3":323,"6":324}}
-    322:322:void applyFontFamily():0:0 -> applyFontFamily
-    323:323:void applyFontFamily():0:0 -> applyFontFamily
-    324:324:void applyFontFamily():0:0 -> applyFontFamily
-    187:282:void applyFontFamily():0:0 -> applyFontFamily
-    283:283:void applyFontFamily():0:0 -> applyFontFamily
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":322,"3":323,"6":324}}
-    322:322:void applyFontFamily():0:0 -> applyFontFamily
-    323:323:void applyFontFamily():0:0 -> applyFontFamily
-    324:324:void applyFontFamily():0:0 -> applyFontFamily
-    284:311:void applyFontFamily():0:0 -> applyFontFamily
-    312:312:void applyFontFamily():0:0 -> applyFontFamily
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":322,"3":323,"6":324}}
-    322:322:void applyFontFamily():0:0 -> applyFontFamily
-    323:323:void applyFontFamily():0:0 -> applyFontFamily
-    324:324:void applyFontFamily():0:0 -> applyFontFamily
-    313:321:void applyFontFamily():0:0 -> applyFontFamily
+    212:212:void applyFontFamily():0:0 -> applyFontFamily
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":348,"3":349,"6":350}}
+    348:348:void applyFontFamily():0:0 -> applyFontFamily
+    349:349:void applyFontFamily():0:0 -> applyFontFamily
+    350:350:void applyFontFamily():0:0 -> applyFontFamily
+    213:308:void applyFontFamily():0:0 -> applyFontFamily
+    309:309:void applyFontFamily():0:0 -> applyFontFamily
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":348,"3":349,"6":350}}
+    348:348:void applyFontFamily():0:0 -> applyFontFamily
+    349:349:void applyFontFamily():0:0 -> applyFontFamily
+    350:350:void applyFontFamily():0:0 -> applyFontFamily
+    310:337:void applyFontFamily():0:0 -> applyFontFamily
+    338:338:void applyFontFamily():0:0 -> applyFontFamily
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":348,"3":349,"6":350}}
+    348:348:void applyFontFamily():0:0 -> applyFontFamily
+    349:349:void applyFontFamily():0:0 -> applyFontFamily
+    350:350:void applyFontFamily():0:0 -> applyFontFamily
+    339:347:void applyFontFamily():0:0 -> applyFontFamily
     39:39:void applyMargin():0:0 -> applyMargin
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":50,"3":51,"6":52}}
     50:50:void applyMargin():0:0 -> applyMargin
@@ -18681,39 +18685,39 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     140:140:void doWebSearch(boolean):0:0 -> doWebSearch
     77:135:void doWebSearch(boolean):0:0 -> doWebSearch
     358:358:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1915,"2":1916,"5":1917}}
-    1915:1915:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1916:1916:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1917:1917:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948}}
+    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     359:380:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     381:381:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1915,"2":1916,"5":1917,"8":1918,"11":1919}}
-    1915:1915:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1916:1916:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1917:1917:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1918:1918:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1919:1919:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948,"8":1949,"11":1950}}
+    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1949:1949:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1950:1950:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     382:535:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     536:536:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1915,"2":1916,"5":1917,"8":1918}}
-    1915:1915:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1916:1916:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1917:1917:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1918:1918:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    537:1397:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1398:1398:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1915,"2":1916,"5":1917,"8":1918}}
-    1915:1915:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1916:1916:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1917:1917:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1918:1918:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1399:1467:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1468:1468:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1915,"2":1916,"5":1917}}
-    1915:1915:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1916:1916:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1917:1917:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1469:1914:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948,"8":1949}}
+    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1949:1949:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    537:1428:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1429:1429:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948,"8":1949}}
+    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1949:1949:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1430:1498:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1499:1499:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948}}
+    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1500:1945:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     55:55:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":84,"2":85,"5":86,"8":87}}
     84:84:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
@@ -19873,6 +19877,45 @@ com.appmindlab.nano.Utils -> com.appmindlab.nano.k0:
     float mLightLevel -> c
     boolean mExternalStorageWriteable -> a
     boolean mWriteLock -> b
+    40:40:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":360,"2":361,"5":362,"8":363,"11":364}}
+    360:360:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    361:361:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    362:362:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    363:363:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    364:364:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    41:192:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    193:193:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":360,"3":361,"6":362}}
+    360:360:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    361:361:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    362:362:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    194:218:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    219:219:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":360,"2":361,"5":362,"8":363}}
+    360:360:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    361:361:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    362:362:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    363:363:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    220:232:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    233:233:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":360,"3":361,"6":362}}
+    360:360:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    361:361:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    362:362:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    234:253:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    254:254:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":360,"3":361,"6":362}}
+    360:360:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    361:361:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    362:362:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    255:322:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    323:323:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":360,"3":361,"6":362}}
+    360:360:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    361:361:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    362:362:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
+    324:359:java.lang.String[] makeTagPair(java.lang.String):0:0 -> a
     82:82:void appendSyncLogFile(android.content.Context,java.lang.String,java.lang.String,java.lang.String,long,int):0:0 -> appendSyncLogFile
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":150,"2":151,"5":152,"8":153}}
     150:150:void appendSyncLogFile(android.content.Context,java.lang.String,java.lang.String,java.lang.String,long,int):0:0 -> appendSyncLogFile
@@ -20019,6 +20062,26 @@ com.appmindlab.nano.Utils -> com.appmindlab.nano.k0:
     61:61:java.lang.String stripExtension(java.lang.String,java.lang.String):0:0 -> stripExtension
     62:62:java.lang.String stripExtension(java.lang.String,java.lang.String):0:0 -> stripExtension
     11:57:java.lang.String stripExtension(java.lang.String,java.lang.String):0:0 -> stripExtension
+    57:57:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":465,"2":466,"5":467}}
+    465:465:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    466:466:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    467:467:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    58:129:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    130:130:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":465,"2":466,"5":467,"8":468,"11":469}}
+    465:465:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    466:466:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    467:467:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    468:468:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    469:469:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    131:156:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    157:157:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":465,"2":466,"5":467}}
+    465:465:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    466:466:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    467:467:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
+    158:464:java.lang.String tagExpand(java.lang.String):0:0 -> tagExpand
     17:17:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":39,"2":40,"5":41}}
     39:39:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
