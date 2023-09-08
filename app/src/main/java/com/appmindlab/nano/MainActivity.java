@@ -3268,6 +3268,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Add an edit field for metadata search
         final AutoCompleteTextView search_str = new AutoCompleteTextView(this);
         search_str.setImeOptions(EditorInfo.IME_ACTION_SEARCH | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        search_str.setTextColor(ContextCompat.getColor(this, R.color.theme_control_activated));
         search_str.requestFocus();
 
         // Setup autocomlete
@@ -3416,6 +3417,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         search_str.setText(mShareToHistory);
 
         search_str.setHint(getResources().getString(R.string.hint_share_to));
+        search_str.setTextColor(ContextCompat.getColor(this, R.color.theme_control_activated));
         search_str.setSingleLine();
 
         // Select all for easy correction
@@ -3660,6 +3662,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         final EditText search_str = (EditText) layout.findViewById(R.id.input_str);
         search_str.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        search_str.setTextColor(ContextCompat.getColor(this, R.color.theme_control_activated));
         search_str.setSingleLine();
         search_str.requestFocus();
 

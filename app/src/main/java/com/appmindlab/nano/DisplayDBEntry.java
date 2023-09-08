@@ -1945,6 +1945,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         final EditText expanded_str = (EditText) view.findViewById(R.id.input_str);
         expanded_str.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        expanded_str.setTextColor(ContextCompat.getColor(this, R.color.theme_control_activated));
         expanded_str.setSingleLine();
 
         final String shortcuts_file;
@@ -7353,6 +7354,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         search_str.setText("");
 
         search_str.setHint(getResources().getString(R.string.hint_funnel));
+        search_str.setTextColor(ContextCompat.getColor(this, R.color.theme_control_activated));
         search_str.setSingleLine();
 
         // Select all for easy correction
@@ -7454,6 +7456,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         search_str.setText(mCriteria);
 
         search_str.setHint(getResources().getString(R.string.hint_chip_local_find));
+        search_str.setTextColor(ContextCompat.getColor(this, R.color.theme_control_activated));
         search_str.setSingleLine();
 
         // Select all for easy correction
