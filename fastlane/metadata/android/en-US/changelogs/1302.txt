@@ -1,4 +1,4 @@
-v4.4.5
+v4.4.5a
 - Added JavaScript in-note REPL (see documentation).
 - HTML/XML tag expansion support (see documentation).
 - Various UI fixes.
