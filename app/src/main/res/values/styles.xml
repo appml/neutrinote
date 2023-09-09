@@ -13,6 +13,7 @@
         <item name="colorControlNormal">@color/theme_control_normal</item>
         <item name="colorControlActivated">@color/theme_control_activated</item>
         <item name="colorControlHighlight">@color/theme_control_highlight</item>
+        <item name="actionModeStyle">@style/Widget.AppCompat.ActionMode</item>
         <item name="actionModeBackground">@color/colorPrimary</item>
         <item name="actionModeCloseDrawable">@drawable/ic_back_vector</item>
         <item name="drawerBackgroundColor">@color/drawer_background</item>
@@ -35,6 +36,7 @@
         <item name="colorControlNormal">@color/theme_control_normal</item>
         <item name="colorControlActivated">@color/theme_control_activated</item>
         <item name="colorControlHighlight">@color/theme_control_highlight</item>
+        <item name="actionModeStyle">@style/Widget.AppCompat.ActionMode</item>
         <item name="actionModeBackground">@color/colorPrimary</item>
         <item name="actionModeCloseDrawable">@drawable/ic_back_vector</item>
         <item name="android:textColorPrimary">@color/text_color_primary_day</item>
