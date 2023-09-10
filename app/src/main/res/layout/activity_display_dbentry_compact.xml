@@ -98,6 +98,10 @@
             android:layout_weight="90"
             android:padding="0dp"
             android:fillViewport="true"
+            android:scrollbars="vertical"
+            android:scrollbarSize="5dp"
+            android:background="@color/scroll_view_background"
+            android:scrollbarThumbVertical="@drawable/custom_scrollbar"
             >
 
             <ScrollView
@@ -107,11 +111,7 @@
                 android:layout_weight="90"
                 android:layout_below="@id/title_bar"
                 android:padding="0dp"
-                android:fillViewport="true"
-                android:scrollbars="vertical"
-                android:scrollbarSize="5dp"
-                android:background="@color/scroll_view_background"
-                android:scrollbarThumbVertical="@drawable/custom_scrollbar">
+                android:fillViewport="true">
 
                 <EditText
                     android:id="@+id/edit_content"
