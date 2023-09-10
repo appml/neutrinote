@@ -36,7 +36,7 @@ This edition is identical to [**Play Store Edition**](https://play.google.com/st
 neutriNote is designed to be ultra compact so as to operate smoothly on as many aging hardwares as possible.  Features and dependencies are carefully vetted to minimize impacts on search performance and to provide highly performant long note editing, with enough customization [options](https://appml.github.io/nano/) for users to build their own sustainable tools within the app.  Its versatile search mechanism is based upon a simple, non-hierarchical data structure that provides near instant access O(1) to any piece of text stored by the app.  Think of these as cognitive shortcuts to recall anything from your writings anytime with minimal lags.
 
 
-## Modern Note-taking Features
+## Modern Note-Taking Features
 
 - Everything stored in UTF8 plain text
 - Support rich markdown with math support (LaTeX)
