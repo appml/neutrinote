@@ -14,14 +14,18 @@ public class ContentScaleGestureListener extends ScaleGestureDetector.SimpleOnSc
     public void onScaleEnd(ScaleGestureDetector detector) {
         mScaleFactor *= detector.getScaleFactor();
 
+        // Sanity check
+        mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 5.0f));
+
         // testing
         Log.d(Const.TAG, "nano -- onScale, mScaleFactor: " + mScaleFactor);
 
-        // Sanity check
-        // mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 5.0f));
-
         // Perform text expansion
-        DisplayDBEntry.display_dbentry.doTextExpansion();
+        if (mScaleFactor > Const.SHORTCUTS_SCALE_FACTOR)
+            DisplayDBEntry.display_dbentry.doTextExpansion();
+
+        // Reset
+        mScaleFactor = 1;
     }
 }
 
