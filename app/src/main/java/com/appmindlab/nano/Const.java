@@ -664,7 +664,7 @@ public class Const {
     protected final static String SHORTCUTS_DELIMITER = "|";
     protected final static String SHORTCUTS_PARAMS_DELIMITER = " ,";
     protected final static String SHORTCUTS_PATTERN_DELIMITER = " ";
-    protected final static float SHORTCUTS_SCALE_FACTOR = 2.0f;
+    protected final static float SHORTCUTS_SCALE_FACTOR = 1.0f;
 
     // Colordict related
     protected final static int COLORDICT_POPUP_DIM_X = 600;
