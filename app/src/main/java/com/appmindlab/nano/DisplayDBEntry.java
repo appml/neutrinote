@@ -56,6 +56,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
@@ -203,6 +204,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private TextView mStatusBar;
     private GestureDetectorCompat mEditStatusGestureDetector, mEditContentGestureDetector;
     private List<String> mStatusQ = new ArrayList<String>();
+
+    // Content
+    private ScaleGestureDetector mScaleDetector;
 
     // Snack bar
     private View.OnClickListener mSnackbarOnClickListener;
@@ -1248,9 +1252,15 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     mEditContentGestureDetector.onTouchEvent(motionEvent);
                 }
 
+                // Pass event to scale detector
+                mScaleDetector.onTouchEvent(motionEvent);
+
                 return false;
             }
         });
+
+        // Set scale detector
+        mScaleDetector = new ScaleGestureDetector(getApplicationContext(), new ContentScaleGestureListener());
 
         // Existing record
         if (mId > 0) {
@@ -2799,7 +2809,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Do text expansion
-    private void doTextExpansion() {
+    protected void doTextExpansion() {
         final String shortcuts_file;
 
         if (Utils.fileNameAsTitle(this))
