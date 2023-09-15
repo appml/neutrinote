@@ -124,6 +124,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -3131,6 +3132,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Mark font scaled
         mFontScaled = true;
+
+        // Set status
+        updateStatus(new DecimalFormat("##.##").format(factor) + "x", mFadeIn);
 
         // Apply font size
         applyFontSize();
