@@ -315,6 +315,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         return mContent;
     }
 
+    // Get current position
+    protected int getContentPos() {
+        return mContent.getSelectionStart();
+    }
+
     // Get theme
     protected String getAppTheme() {
         return mTheme;
@@ -3127,7 +3132,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Scale font size
-    protected void scaleFontSize(float factor) {
+    // Scale font size
+    protected void scaleFontSize(float factor, int pos) {
         String font_size = String.valueOf(Math.round(Integer.parseInt(mFontSize) * factor));
 
         if (!mFontSize.equals(font_size)) {  // Only when size has changed
@@ -3142,6 +3148,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             // Apply font size
             applyFontSize();
             applyFontFamily();
+
+            // Resume content position
+            if (pos > 0) {
+                mAnchorPos = pos;
+                mContent.setSelection(pos);
+                mContent.requestFocus();
+            }
         }
     }
 
