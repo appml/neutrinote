@@ -8,10 +8,10 @@ import android.view.ScaleGestureDetector;
  */
 
 public class ContentScaleGestureListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
-    private float mScaleFactor;
+    private float mScaleFactor = 1;
 
     @Override
-    public void onScaleEnd(ScaleGestureDetector detector) {
+    public boolean onScale(ScaleGestureDetector detector) {
         mScaleFactor *= detector.getScaleFactor();
 
         // Sanity check
@@ -19,6 +19,14 @@ public class ContentScaleGestureListener extends ScaleGestureDetector.SimpleOnSc
 
         // testing
         Log.d(Const.TAG, "nano -- onScale, mScaleFactor: " + mScaleFactor);
+
+        return true;
+    }
+
+    @Override
+    public void onScaleEnd(ScaleGestureDetector detector) {
+        // testing
+        Log.d(Const.TAG, "nano -- onScaleEnd, mScaleFactor: " + mScaleFactor);
 
         // Perform text expansion
         if (mScaleFactor > Const.SHORTCUTS_SCALE_FACTOR)
@@ -28,4 +36,3 @@ public class ContentScaleGestureListener extends ScaleGestureDetector.SimpleOnSc
         mScaleFactor = 1;
     }
 }
-
