@@ -3128,16 +3128,20 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Scale font size
     protected void scaleFontSize(float factor) {
-        mFontSize = String.valueOf(Math.round(Integer.parseInt(mFontSize) * factor));
+        String font_size = String.valueOf(Math.round(Integer.parseInt(mFontSize) * factor));
 
-        // Mark font scaled
-        mFontScaled = true;
+        if (!mFontSize.equals(font_size)) {  // Only when size has changed
+            mFontSize = font_size;
 
-        // Set status
-        updateStatus(new DecimalFormat("##.##").format(factor) + "x", mFadeIn);
+            // Mark font scaled
+            mFontScaled = true;
 
-        // Apply font size
-        applyFontSize();
+            // Set status
+            updateStatus(new DecimalFormat("##.##").format(factor) + "x", mFadeIn);
+
+            // Apply font size
+            applyFontSize();
+        }
     }
 
     // Apply margin
