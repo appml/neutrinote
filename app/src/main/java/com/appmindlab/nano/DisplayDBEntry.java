@@ -234,6 +234,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private boolean mLux, mOled;
     private String mFontFamily = Const.DEFAULT_FONT_FAMILY, mFontSize = Const.DEFAULT_FONT_SIZE, mMargin = Const.DEFAULT_MARGIN;
     private String mFontSizeList = Const.DEFAULT_FONT_SIZE_LIST;
+    private boolean mFontScaled = false;
     private String mMarginList = Const.DEFAULT_MARGIN_LIST;
     private String mMathUrl;
     private boolean mParsePython;
@@ -420,6 +421,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (mAutoSaveHandler != null) {
             mAutoSaveHandler.removeCallbacksAndMessages(null);
             mAutoSaveHandler = null;
+        }
+
+        // Remember scaled font size
+        if (mFontScaled) {
+            mSharedPreferencesEditor.putString(Const.PREF_FONT_SIZE, mFontSize);
+            mSharedPreferencesEditor.commit();
         }
 
         // Reset auto theme application state
@@ -3121,6 +3128,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Scale font size
     protected void scaleFontSize(float factor) {
         mFontSize = String.valueOf(Math.round(Integer.parseInt(mFontSize) * factor));
+
+        // Mark font scaled
+        mFontScaled = true;
+
+        // Apply font size
         applyFontSize();
     }
 
