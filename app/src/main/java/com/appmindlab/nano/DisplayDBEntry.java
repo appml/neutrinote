@@ -2809,7 +2809,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Do text expansion
-    protected void doTextExpansion() {
+    private void doTextExpansion() {
         final String shortcuts_file;
 
         if (Utils.fileNameAsTitle(this))
@@ -3116,6 +3116,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             // Reset markdown render state
             setMarkdownRendered(false);
         }
+    }
+
+    // Scale font size
+    protected void scaleFontSize(float factor) {
+        mFontSize = String.valueOf(Math.round(Integer.parseInt(mFontSize) * factor));
+        applyFontSize();
     }
 
     // Apply margin

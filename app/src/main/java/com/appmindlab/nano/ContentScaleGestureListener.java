@@ -28,9 +28,8 @@ public class ContentScaleGestureListener extends ScaleGestureDetector.SimpleOnSc
         // testing
         Log.d(Const.TAG, "nano -- onScaleEnd, mScaleFactor: " + mScaleFactor);
 
-        // Perform text expansion
-        if (mScaleFactor > Const.SHORTCUTS_SCALE_FACTOR)
-            DisplayDBEntry.display_dbentry.doTextExpansion();
+        // Scale font size
+        DisplayDBEntry.display_dbentry.scaleFontSize(mScaleFactor);
 
         // Reset
         mScaleFactor = 1;
