@@ -3153,7 +3153,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             if (pos > 0) {
                 mAnchorPos = pos;
                 mContent.setSelection(pos);
-                mContent.requestFocus();
             }
         }
     }
