@@ -3143,7 +3143,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mFontScaled = true;
 
             // Set status
-            updateStatus(mFontSize + "pt", mFadeIn);
+            updateStatus(new DecimalFormat("##.##").format(factor) + "x / " + mFontSize + "pt", mFadeIn);
 
             // Apply font size
             applyFontSize();
