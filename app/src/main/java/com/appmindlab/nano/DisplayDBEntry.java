@@ -85,6 +85,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Keep;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
@@ -405,6 +406,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Setup shared content
         setupSharedContent();
+
+        // Setup back pressed callback
+        setupBackPressedCallback();
 
         // Apply hacks
         applyHacks();
@@ -1138,6 +1142,19 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if ((savedInstanceState != null) && (fromCompactToolBar != mCompactToolBar)) {
             savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
         }
+    }
+    
+    // Setup back pressed callback
+    protected void setupBackPressedCallback() {
+        // Back press callback
+        OnBackPressedCallback back_press_callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                // Handle the back button event
+                handleHome();
+            }
+        };
+        this.getOnBackPressedDispatcher().addCallback(this, back_press_callback);
     }
 
     // Setup editor
