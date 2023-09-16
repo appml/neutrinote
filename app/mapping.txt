@@ -3,8 +3,8 @@
 # min_api: 26
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 69cff24
-# pg_map_hash: SHA-256 69cff24c88cce37fc21276a5a819e4c3521c09cc62b1a67c79dd4badaddc66a9
+# pg_map_id: 47f1655
+# pg_map_hash: SHA-256 47f1655fb6b0aaba36607f16cce7375e4a5a408fac1c80b376aa4c2917ae821d
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -17174,7 +17174,21 @@ com.appmindlab.nano.BackupWorker$1 -> com.appmindlab.nano.BackupWorker$a:
 com.appmindlab.nano.BackupWorker$2 -> com.appmindlab.nano.BackupWorker$b:
 com.appmindlab.nano.BackupWorker$3 -> com.appmindlab.nano.BackupWorker$c:
 com.appmindlab.nano.ContentGestureListener -> com.appmindlab.nano.a:
-com.appmindlab.nano.CustomAdapter -> com.appmindlab.nano.i:
+com.appmindlab.nano.ContentScaleGestureListener -> com.appmindlab.nano.b:
+    float mScaleFactor -> a
+    26:26:boolean onScale(android.view.ScaleGestureDetector):0:0 -> onScale
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":46,"2":47,"5":48}}
+    46:46:boolean onScale(android.view.ScaleGestureDetector):0:0 -> onScale
+    47:47:boolean onScale(android.view.ScaleGestureDetector):0:0 -> onScale
+    48:48:boolean onScale(android.view.ScaleGestureDetector):0:0 -> onScale
+    27:45:boolean onScale(android.view.ScaleGestureDetector):0:0 -> onScale
+    2:2:void onScaleEnd(android.view.ScaleGestureDetector):0:0 -> onScaleEnd
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":36,"2":37,"5":38}}
+    36:36:void onScaleEnd(android.view.ScaleGestureDetector):0:0 -> onScaleEnd
+    37:37:void onScaleEnd(android.view.ScaleGestureDetector):0:0 -> onScaleEnd
+    38:38:void onScaleEnd(android.view.ScaleGestureDetector):0:0 -> onScaleEnd
+    3:35:void onScaleEnd(android.view.ScaleGestureDetector):0:0 -> onScaleEnd
+com.appmindlab.nano.CustomAdapter -> com.appmindlab.nano.j:
     com.appmindlab.nano.MainActivity mActivity -> f
     android.database.Cursor mCursor -> d
     int mLastPosition -> h
@@ -17381,7 +17395,7 @@ com.appmindlab.nano.CustomAdapter -> com.appmindlab.nano.i:
     300:301:android.widget.TextView com.appmindlab.nano.CustomAdapter$ViewHolder.access$800(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
     300:301:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0 -> setupPreview
     302:312:void setupPreview(com.appmindlab.nano.CustomAdapter$ViewHolder):0:0 -> setupPreview
-com.appmindlab.nano.CustomAdapter$1 -> com.appmindlab.nano.b:
+com.appmindlab.nano.CustomAdapter$1 -> com.appmindlab.nano.c:
     com.appmindlab.nano.CustomAdapter this$0 -> c
     17:18:void com.appmindlab.nano.CustomAdapter.doShowMap():0:0 -> onActionItemClicked
     17:18:void com.appmindlab.nano.CustomAdapter.access$1200(com.appmindlab.nano.CustomAdapter):0 -> onActionItemClicked
@@ -17439,9 +17453,9 @@ com.appmindlab.nano.CustomAdapter$1 -> com.appmindlab.nano.b:
     14:19:void onDestroyActionMode(androidx.appcompat.view.ActionMode):0:0 -> onDestroyActionMode
     20:22:boolean com.appmindlab.nano.CustomAdapter.access$1002(com.appmindlab.nano.CustomAdapter,boolean):0:0 -> onDestroyActionMode
     20:22:void onDestroyActionMode(androidx.appcompat.view.ActionMode):0 -> onDestroyActionMode
-com.appmindlab.nano.CustomAdapter$2 -> com.appmindlab.nano.c:
+com.appmindlab.nano.CustomAdapter$2 -> com.appmindlab.nano.d:
     com.appmindlab.nano.CustomAdapter this$0 -> b
-com.appmindlab.nano.CustomAdapter$3 -> com.appmindlab.nano.d:
+com.appmindlab.nano.CustomAdapter$3 -> com.appmindlab.nano.e:
     com.appmindlab.nano.CustomAdapter this$0 -> a
     10:13:void com.appmindlab.nano.CustomAdapter.doDeletion():0:0 -> onDismissed
     10:13:void com.appmindlab.nano.CustomAdapter.access$1500(com.appmindlab.nano.CustomAdapter):0 -> onDismissed
@@ -17451,14 +17465,14 @@ com.appmindlab.nano.CustomAdapter$3 -> com.appmindlab.nano.d:
     14:158:void com.appmindlab.nano.CustomAdapter.access$1500(com.appmindlab.nano.CustomAdapter):0 -> onDismissed
     14:158:void onDismissed(com.google.android.material.snackbar.Snackbar,int):0 -> onDismissed
     159:164:void onDismissed(com.google.android.material.snackbar.Snackbar,int):0:0 -> onDismissed
-com.appmindlab.nano.CustomAdapter$4 -> com.appmindlab.nano.e:
-com.appmindlab.nano.CustomAdapter$5 -> com.appmindlab.nano.f:
-com.appmindlab.nano.CustomAdapter$6 -> com.appmindlab.nano.g:
+com.appmindlab.nano.CustomAdapter$4 -> com.appmindlab.nano.f:
+com.appmindlab.nano.CustomAdapter$5 -> com.appmindlab.nano.g:
+com.appmindlab.nano.CustomAdapter$6 -> com.appmindlab.nano.h:
     android.widget.AutoCompleteTextView val$metadata_str -> b
     java.util.ArrayList val$ids -> c
     com.appmindlab.nano.CustomAdapter this$0 -> d
-com.appmindlab.nano.CustomAdapter$7 -> com.appmindlab.nano.h:
-com.appmindlab.nano.CustomAdapter$ViewHolder -> com.appmindlab.nano.i$a:
+com.appmindlab.nano.CustomAdapter$7 -> com.appmindlab.nano.i:
+com.appmindlab.nano.CustomAdapter$ViewHolder -> com.appmindlab.nano.j$a:
     long mId -> I
     android.widget.TextView mTitle -> A
     android.widget.ImageView mImage -> G
@@ -17496,7 +17510,7 @@ com.appmindlab.nano.CustomAdapter$ViewHolder -> com.appmindlab.nano.i$a:
     22:23:com.bignerdranch.android.multiselector.MultiSelector com.appmindlab.nano.CustomAdapter.access$000(com.appmindlab.nano.CustomAdapter):0:0 -> updateIcon
     22:23:void updateIcon():0 -> updateIcon
     24:188:void updateIcon():0:0 -> updateIcon
-com.appmindlab.nano.CustomAdapter$ViewHolder$1 -> com.appmindlab.nano.i$a$a:
+com.appmindlab.nano.CustomAdapter$ViewHolder$1 -> com.appmindlab.nano.j$a$a:
     com.appmindlab.nano.CustomAdapter$ViewHolder this$1 -> b
     4:7:com.appmindlab.nano.MainActivity com.appmindlab.nano.CustomAdapter.access$100(com.appmindlab.nano.CustomAdapter):0:0 -> onLongClick
     4:7:boolean onLongClick(android.view.View):0 -> onLongClick
@@ -17510,7 +17524,7 @@ com.appmindlab.nano.CustomAdapter$ViewHolder$1 -> com.appmindlab.nano.i$a$a:
     33:34:com.appmindlab.nano.MainActivity com.appmindlab.nano.CustomAdapter.access$100(com.appmindlab.nano.CustomAdapter):0:0 -> onLongClick
     33:34:boolean onLongClick(android.view.View):0 -> onLongClick
     35:39:boolean onLongClick(android.view.View):0:0 -> onLongClick
-com.appmindlab.nano.CustomAdapter$ViewHolder$2 -> com.appmindlab.nano.i$a$b:
+com.appmindlab.nano.CustomAdapter$ViewHolder$2 -> com.appmindlab.nano.j$a$b:
     com.appmindlab.nano.CustomAdapter$ViewHolder this$1 -> b
     4:5:com.appmindlab.nano.MainActivity com.appmindlab.nano.CustomAdapter.access$100(com.appmindlab.nano.CustomAdapter):0:0 -> onLongClick
     4:5:boolean onLongClick(android.view.View):0 -> onLongClick
@@ -17547,7 +17561,7 @@ com.appmindlab.nano.CustomAdapter$ViewHolder$2 -> com.appmindlab.nano.i$a$b:
     106:107:com.appmindlab.nano.MainActivity com.appmindlab.nano.CustomAdapter.access$100(com.appmindlab.nano.CustomAdapter):0:0 -> onLongClick
     106:107:boolean onLongClick(android.view.View):0 -> onLongClick
     108:112:boolean onLongClick(android.view.View):0:0 -> onLongClick
-com.appmindlab.nano.CustomAdapter$ViewHolder$3 -> com.appmindlab.nano.i$a$c:
+com.appmindlab.nano.CustomAdapter$ViewHolder$3 -> com.appmindlab.nano.j$a$c:
     com.appmindlab.nano.CustomAdapter$ViewHolder this$1 -> b
     4:5:com.appmindlab.nano.MainActivity com.appmindlab.nano.CustomAdapter.access$100(com.appmindlab.nano.CustomAdapter):0:0 -> onClick
     4:5:void onClick(android.view.View):0 -> onClick
@@ -17566,7 +17580,7 @@ com.appmindlab.nano.CustomAdapter$ViewHolder$3 -> com.appmindlab.nano.i$a$c:
     61:64:com.appmindlab.nano.MainActivity com.appmindlab.nano.CustomAdapter.access$100(com.appmindlab.nano.CustomAdapter):0:0 -> onClick
     61:64:void onClick(android.view.View):0 -> onClick
     65:68:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.CustomAsyncTask -> com.appmindlab.nano.j:
+com.appmindlab.nano.CustomAsyncTask -> com.appmindlab.nano.k:
     java.util.concurrent.Executor sDefaultExecutor -> k
     android.os.Handler mHandler -> f
     java.util.concurrent.LinkedBlockingQueue sBackupExecutorQueue -> i
@@ -17590,7 +17604,7 @@ com.appmindlab.nano.CustomAsyncTask -> com.appmindlab.nano.j:
     6:8:android.os.Handler getHandler():0:0 -> publishProgress
     6:8:void publishProgress(java.lang.Object[]):0 -> publishProgress
     9:21:void publishProgress(java.lang.Object[]):0:0 -> publishProgress
-com.appmindlab.nano.CustomAsyncTask$1 -> com.appmindlab.nano.j$a:
+com.appmindlab.nano.CustomAsyncTask$1 -> com.appmindlab.nano.k$a:
     java.util.concurrent.atomic.AtomicInteger mCount -> a
     4:4:java.lang.Thread newThread(java.lang.Runnable):0:0 -> newThread
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":25,"2":26,"5":27}}
@@ -17598,7 +17612,7 @@ com.appmindlab.nano.CustomAsyncTask$1 -> com.appmindlab.nano.j$a:
     26:26:java.lang.Thread newThread(java.lang.Runnable):0:0 -> newThread
     27:27:java.lang.Thread newThread(java.lang.Runnable):0:0 -> newThread
     5:24:java.lang.Thread newThread(java.lang.Runnable):0:0 -> newThread
-com.appmindlab.nano.CustomAsyncTask$2 -> com.appmindlab.nano.j$b:
+com.appmindlab.nano.CustomAsyncTask$2 -> com.appmindlab.nano.k$b:
     8:11:java.util.concurrent.ThreadPoolExecutor com.appmindlab.nano.CustomAsyncTask.access$000():0:0 -> rejectedExecution
     8:11:void rejectedExecution(java.lang.Runnable,java.util.concurrent.ThreadPoolExecutor):0 -> rejectedExecution
     12:16:void rejectedExecution(java.lang.Runnable,java.util.concurrent.ThreadPoolExecutor):0:0 -> rejectedExecution
@@ -17616,7 +17630,7 @@ com.appmindlab.nano.CustomAsyncTask$2 -> com.appmindlab.nano.j$b:
     42:43:java.util.concurrent.ThreadPoolExecutor com.appmindlab.nano.CustomAsyncTask.access$000():0:0 -> rejectedExecution
     42:43:void rejectedExecution(java.lang.Runnable,java.util.concurrent.ThreadPoolExecutor):0 -> rejectedExecution
     44:50:void rejectedExecution(java.lang.Runnable,java.util.concurrent.ThreadPoolExecutor):0:0 -> rejectedExecution
-com.appmindlab.nano.CustomAsyncTask$3 -> com.appmindlab.nano.j$c:
+com.appmindlab.nano.CustomAsyncTask$3 -> com.appmindlab.nano.k$c:
     com.appmindlab.nano.CustomAsyncTask this$0 -> b
     2:4:java.util.concurrent.atomic.AtomicBoolean com.appmindlab.nano.CustomAsyncTask.access$500(com.appmindlab.nano.CustomAsyncTask):0:0 -> call
     2:4:java.lang.Object call():0 -> call
@@ -17630,7 +17644,7 @@ com.appmindlab.nano.CustomAsyncTask$3 -> com.appmindlab.nano.j$c:
     43:45:java.lang.Object com.appmindlab.nano.CustomAsyncTask.access$700(com.appmindlab.nano.CustomAsyncTask,java.lang.Object):0:0 -> call
     43:45:java.lang.Object call():0 -> call
     46:46:java.lang.Object call():0:0 -> call
-com.appmindlab.nano.CustomAsyncTask$4 -> com.appmindlab.nano.j$d:
+com.appmindlab.nano.CustomAsyncTask$4 -> com.appmindlab.nano.k$d:
     com.appmindlab.nano.CustomAsyncTask this$0 -> b
     6:7:void com.appmindlab.nano.CustomAsyncTask.postResultIfNotInvoked(java.lang.Object):0:0 -> done
     6:7:void com.appmindlab.nano.CustomAsyncTask.access$800(com.appmindlab.nano.CustomAsyncTask,java.lang.Object):0 -> done
@@ -17648,10 +17662,10 @@ com.appmindlab.nano.CustomAsyncTask$4 -> com.appmindlab.nano.j$d:
     23:33:void com.appmindlab.nano.CustomAsyncTask.access$800(com.appmindlab.nano.CustomAsyncTask,java.lang.Object):0 -> done
     23:33:void done():0 -> done
     34:52:void done():0:0 -> done
-com.appmindlab.nano.CustomAsyncTask$CustomAsyncTaskResult -> com.appmindlab.nano.j$e:
+com.appmindlab.nano.CustomAsyncTask$CustomAsyncTaskResult -> com.appmindlab.nano.k$e:
     java.lang.Object[] mData -> b
     com.appmindlab.nano.CustomAsyncTask mTask -> a
-com.appmindlab.nano.CustomAsyncTask$InternalHandler -> com.appmindlab.nano.j$f:
+com.appmindlab.nano.CustomAsyncTask$InternalHandler -> com.appmindlab.nano.k$f:
     28:33:void com.appmindlab.nano.CustomAsyncTask.finish(java.lang.Object):0:0 -> handleMessage
     28:33:void com.appmindlab.nano.CustomAsyncTask.access$900(com.appmindlab.nano.CustomAsyncTask,java.lang.Object):0 -> handleMessage
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
@@ -17659,22 +17673,22 @@ com.appmindlab.nano.CustomAsyncTask$InternalHandler -> com.appmindlab.nano.j$f:
     34:44:void com.appmindlab.nano.CustomAsyncTask.finish(java.lang.Object):0:0 -> handleMessage
     34:44:void com.appmindlab.nano.CustomAsyncTask.access$900(com.appmindlab.nano.CustomAsyncTask,java.lang.Object):0 -> handleMessage
     34:44:void handleMessage(android.os.Message):0 -> handleMessage
-com.appmindlab.nano.CustomAsyncTask$SerialExecutor -> com.appmindlab.nano.j$g:
+com.appmindlab.nano.CustomAsyncTask$SerialExecutor -> com.appmindlab.nano.k$g:
     java.lang.Runnable mActive -> c
     java.util.ArrayDeque mTasks -> b
     0:10:void <init>():0:0 -> <init>
     0:10:void <init>(com.appmindlab.nano.CustomAsyncTask$1):0 -> <init>
-com.appmindlab.nano.CustomAsyncTask$SerialExecutor$1 -> com.appmindlab.nano.j$g$a:
+com.appmindlab.nano.CustomAsyncTask$SerialExecutor$1 -> com.appmindlab.nano.k$g$a:
     com.appmindlab.nano.CustomAsyncTask$SerialExecutor this$0 -> c
     java.lang.Runnable val$r -> b
-com.appmindlab.nano.CustomAsyncTask$WorkerRunnable -> com.appmindlab.nano.j$h:
+com.appmindlab.nano.CustomAsyncTask$WorkerRunnable -> com.appmindlab.nano.k$h:
     java.lang.Object[] mParams -> a
     0:3:void <init>():0:0 -> <init>
     0:3:void <init>(com.appmindlab.nano.CustomAsyncTask$1):0 -> <init>
-com.appmindlab.nano.CustomFileObserver -> com.appmindlab.nano.k:
+com.appmindlab.nano.CustomFileObserver -> com.appmindlab.nano.l:
     android.content.SharedPreferences mSharedPreferences -> b
     java.lang.String mAbsolutePath -> a
-com.appmindlab.nano.CustomFont -> com.appmindlab.nano.l:
+com.appmindlab.nano.CustomFont -> com.appmindlab.nano.m:
     java.lang.String mPath -> a
     java.lang.String mCSS -> c
     java.lang.String mUrl -> b
@@ -17710,7 +17724,7 @@ com.appmindlab.nano.DBApplication$1 -> com.appmindlab.nano.DBApplication$a:
     67:68:java.lang.Thread$UncaughtExceptionHandler com.appmindlab.nano.DBApplication.access$200(com.appmindlab.nano.DBApplication):0:0 -> uncaughtException
     67:68:void uncaughtException(java.lang.Thread,java.lang.Throwable):0 -> uncaughtException
     69:72:void uncaughtException(java.lang.Thread,java.lang.Throwable):0:0 -> uncaughtException
-com.appmindlab.nano.DBEntry -> com.appmindlab.nano.m:
+com.appmindlab.nano.DBEntry -> com.appmindlab.nano.n:
     java.util.Date mModified -> f
     double mLatitude -> j
     java.util.Date mCreated -> e
@@ -17723,9 +17737,9 @@ com.appmindlab.nano.DBEntry -> com.appmindlab.nano.m:
     java.lang.String mContent -> c
     java.lang.String mTitle -> b
     java.util.Date mAccessed -> g
-com.appmindlab.nano.DBHelper -> com.appmindlab.nano.n:
+com.appmindlab.nano.DBHelper -> com.appmindlab.nano.o:
     com.appmindlab.nano.DBHelper mInstance -> b
-com.appmindlab.nano.DataSource -> com.appmindlab.nano.o:
+com.appmindlab.nano.DataSource -> com.appmindlab.nano.p:
     android.database.sqlite.SQLiteDatabase mDatabase -> a
     com.appmindlab.nano.DBHelper mDbHelper -> b
     java.lang.String[] basicColumns -> i
@@ -18265,11 +18279,11 @@ com.appmindlab.nano.DataSource -> com.appmindlab.nano.o:
     2512:2512:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     2513:2513:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     2493:2507:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-com.appmindlab.nano.DatePickerAccessedFilterFragment -> com.appmindlab.nano.p:
-com.appmindlab.nano.DatePickerCalendarViewFragment -> com.appmindlab.nano.q:
+com.appmindlab.nano.DatePickerAccessedFilterFragment -> com.appmindlab.nano.q:
+com.appmindlab.nano.DatePickerCalendarViewFragment -> com.appmindlab.nano.r:
     int mCalled -> k0
-com.appmindlab.nano.DatePickerModifiedFilterFragment -> com.appmindlab.nano.r:
-com.appmindlab.nano.DirectoryChooserDialog -> com.appmindlab.nano.s:
+com.appmindlab.nano.DatePickerModifiedFilterFragment -> com.appmindlab.nano.s:
+com.appmindlab.nano.DirectoryChooserDialog -> com.appmindlab.nano.t:
     android.content.Context mContext -> c
     java.util.List mSubdirs -> f
     com.appmindlab.nano.DirectoryChooserDialog$ChosenDirectoryListener mChosenDirectoryListener -> g
@@ -18298,14 +18312,14 @@ com.appmindlab.nano.DirectoryChooserDialog -> com.appmindlab.nano.s:
     240:251:android.app.AlertDialog$Builder createDirectoryChooserDialog(java.lang.String,java.util.List,android.content.DialogInterface$OnClickListener):0:0 -> chooseDirectory
     240:251:void chooseDirectory(java.lang.String):0 -> chooseDirectory
     252:280:void chooseDirectory(java.lang.String):0:0 -> chooseDirectory
-com.appmindlab.nano.DirectoryChooserDialog$1 -> com.appmindlab.nano.s$a:
+com.appmindlab.nano.DirectoryChooserDialog$1 -> com.appmindlab.nano.t$a:
     com.appmindlab.nano.DirectoryChooserDialog this$0 -> b
     2:5:com.appmindlab.nano.DirectoryChooserDialog$ChosenDirectoryListener com.appmindlab.nano.DirectoryChooserDialog.access$200(com.appmindlab.nano.DirectoryChooserDialog):0:0 -> onClick
     2:5:void onClick(android.content.DialogInterface,int):0 -> onClick
     6:7:java.lang.String com.appmindlab.nano.DirectoryChooserDialog.access$000(com.appmindlab.nano.DirectoryChooserDialog):0:0 -> onClick
     6:7:void onClick(android.content.DialogInterface,int):0 -> onClick
     8:13:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DirectoryChooserDialog$1DirectoryOnClickListener -> com.appmindlab.nano.s$b:
+com.appmindlab.nano.DirectoryChooserDialog$1DirectoryOnClickListener -> com.appmindlab.nano.t$b:
     com.appmindlab.nano.DirectoryChooserDialog this$0 -> b
     2:2:void onClick(android.content.DialogInterface,int):0:0 -> onClick
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":102,"2":103,"5":104}}
@@ -18336,8 +18350,8 @@ com.appmindlab.nano.DirectoryChooserDialog$1DirectoryOnClickListener -> com.appm
     77:95:java.lang.String com.appmindlab.nano.DirectoryChooserDialog.access$084(com.appmindlab.nano.DirectoryChooserDialog,java.lang.Object):0:0 -> onClick
     77:95:void onClick(android.content.DialogInterface,int):0 -> onClick
     96:101:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DirectoryChooserDialog$2 -> com.appmindlab.nano.t:
-com.appmindlab.nano.DirectoryChooserDialog$3 -> com.appmindlab.nano.u:
+com.appmindlab.nano.DirectoryChooserDialog$2 -> com.appmindlab.nano.u:
+com.appmindlab.nano.DirectoryChooserDialog$3 -> com.appmindlab.nano.v:
     com.appmindlab.nano.DirectoryChooserDialog this$0 -> b
     4:5:android.content.Context com.appmindlab.nano.DirectoryChooserDialog.access$300(com.appmindlab.nano.DirectoryChooserDialog):0:0 -> onClick
     4:5:void onClick(android.view.View):0 -> onClick
@@ -18345,7 +18359,7 @@ com.appmindlab.nano.DirectoryChooserDialog$3 -> com.appmindlab.nano.u:
     16:17:android.content.Context com.appmindlab.nano.DirectoryChooserDialog.access$300(com.appmindlab.nano.DirectoryChooserDialog):0:0 -> onClick
     16:17:void onClick(android.view.View):0 -> onClick
     18:55:void onClick(android.view.View):0:0 -> onClick
-com.appmindlab.nano.DirectoryChooserDialog$3$1 -> com.appmindlab.nano.u$a:
+com.appmindlab.nano.DirectoryChooserDialog$3$1 -> com.appmindlab.nano.v$a:
     com.appmindlab.nano.DirectoryChooserDialog$3 this$1 -> c
     android.widget.EditText val$input -> b
     23:24:java.lang.String com.appmindlab.nano.DirectoryChooserDialog.access$000(com.appmindlab.nano.DirectoryChooserDialog):0:0 -> onClick
@@ -18371,8 +18385,8 @@ com.appmindlab.nano.DirectoryChooserDialog$3$1 -> com.appmindlab.nano.u$a:
     102:103:android.content.Context com.appmindlab.nano.DirectoryChooserDialog.access$300(com.appmindlab.nano.DirectoryChooserDialog):0:0 -> onClick
     102:103:void onClick(android.content.DialogInterface,int):0 -> onClick
     104:133:void onClick(android.content.DialogInterface,int):0:0 -> onClick
-com.appmindlab.nano.DirectoryChooserDialog$4 -> com.appmindlab.nano.v:
-com.appmindlab.nano.DirectoryChooserDialog$ChosenDirectoryListener -> com.appmindlab.nano.s$c:
+com.appmindlab.nano.DirectoryChooserDialog$4 -> com.appmindlab.nano.w:
+com.appmindlab.nano.DirectoryChooserDialog$ChosenDirectoryListener -> com.appmindlab.nano.t$c:
 com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     void $r8$lambda$UZSPl3-vjGgbaubdxBXlY6-w9zU(com.appmindlab.nano.DisplayDBEntry) -> a
       # {"id":"com.android.tools.r8.synthesized"}
@@ -18825,7 +18839,7 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     225:225:void toggleMarkdownView():0:0 -> toggleMarkdownView
     226:226:void toggleMarkdownView():0:0 -> toggleMarkdownView
     177:223:void toggleMarkdownView():0:0 -> toggleMarkdownView
-com.appmindlab.nano.DisplayDBEntry$$ExternalSyntheticLambda0 -> com.appmindlab.nano.w:
+com.appmindlab.nano.DisplayDBEntry$$ExternalSyntheticLambda0 -> com.appmindlab.nano.x:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
     com.appmindlab.nano.DisplayDBEntry com.appmindlab.nano.DisplayDBEntry$$InternalSyntheticLambda$1$04805033ccb9d0e27b8f68d4fc3283a71ea6486c7663b4e1ce27a7230d150396$0.f$0 -> b
@@ -19141,8 +19155,8 @@ com.appmindlab.nano.DisplayDBEntry$InsertLocationStampTask -> com.appmindlab.nan
     com.appmindlab.nano.DisplayDBEntry this$0 -> p
 com.appmindlab.nano.DisplayDBEntry$MarkdownViewJavaScriptInterface -> com.appmindlab.nano.DisplayDBEntry$MarkdownViewJavaScriptInterface:
     com.appmindlab.nano.DisplayDBEntry this$0 -> a
-com.appmindlab.nano.EditStatusGestureListener -> com.appmindlab.nano.x:
-com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.y:
+com.appmindlab.nano.EditStatusGestureListener -> com.appmindlab.nano.y:
+com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.z:
     com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener mCallback -> U
     92:92:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":654,"3":655,"6":656}}
@@ -19276,8 +19290,8 @@ com.appmindlab.nano.EditToolFragment -> com.appmindlab.nano.y:
     655:655:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     656:656:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     651:653:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
-com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener -> com.appmindlab.nano.y$a:
-com.appmindlab.nano.FontCache -> com.appmindlab.nano.z:
+com.appmindlab.nano.EditToolFragment$OnEditToolFragmentSelectedListener -> com.appmindlab.nano.z$a:
+com.appmindlab.nano.FontCache -> com.appmindlab.nano.a0:
     java.util.HashMap mCache -> a
 com.appmindlab.nano.HitParcelable -> com.appmindlab.nano.HitParcelable:
     int pos -> b
@@ -19286,22 +19300,22 @@ com.appmindlab.nano.HitParcelable -> com.appmindlab.nano.HitParcelable:
 com.appmindlab.nano.HitParcelable$1 -> com.appmindlab.nano.HitParcelable$a:
 com.appmindlab.nano.IntroActivity -> com.appmindlab.nano.IntroActivity:
     void launchMainActivity() -> d
-com.appmindlab.nano.LocalFindFragment -> com.appmindlab.nano.a0:
+com.appmindlab.nano.LocalFindFragment -> com.appmindlab.nano.b0:
     com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener mCallback -> U
-com.appmindlab.nano.LocalFindFragment$1 -> com.appmindlab.nano.a0$a:
+com.appmindlab.nano.LocalFindFragment$1 -> com.appmindlab.nano.b0$a:
     com.appmindlab.nano.LocalFindFragment this$0 -> a
-com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener -> com.appmindlab.nano.a0$b:
-com.appmindlab.nano.LocalFindHistory -> com.appmindlab.nano.b0:
+com.appmindlab.nano.LocalFindFragment$OnLocalFindSelectedListener -> com.appmindlab.nano.b0$b:
+com.appmindlab.nano.LocalFindHistory -> com.appmindlab.nano.c0:
     androidx.collection.LruCache mCache -> a
-com.appmindlab.nano.LocalFindHistory$1 -> com.appmindlab.nano.b0$a:
-com.appmindlab.nano.LocalReplaceFragment -> com.appmindlab.nano.c0:
+com.appmindlab.nano.LocalFindHistory$1 -> com.appmindlab.nano.c0$a:
+com.appmindlab.nano.LocalReplaceFragment -> com.appmindlab.nano.d0:
     com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener mCallback -> U
-com.appmindlab.nano.LocalReplaceFragment$1 -> com.appmindlab.nano.c0$a:
+com.appmindlab.nano.LocalReplaceFragment$1 -> com.appmindlab.nano.d0$a:
     com.appmindlab.nano.LocalReplaceFragment this$0 -> a
-com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener -> com.appmindlab.nano.c0$b:
-com.appmindlab.nano.LocalReplaceHistory -> com.appmindlab.nano.d0:
+com.appmindlab.nano.LocalReplaceFragment$OnLocalReplaceSelectedListener -> com.appmindlab.nano.d0$b:
+com.appmindlab.nano.LocalReplaceHistory -> com.appmindlab.nano.e0:
     androidx.collection.LruCache mCache -> a
-com.appmindlab.nano.LocalReplaceHistory$1 -> com.appmindlab.nano.d0$a:
+com.appmindlab.nano.LocalReplaceHistory$1 -> com.appmindlab.nano.e0$a:
 com.appmindlab.nano.MainActivity -> com.appmindlab.nano.MainActivity:
     329:329:void doVoiceMemo(android.content.Intent):0:0 -> doVoiceMemo
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":359,"2":360,"5":361}}
@@ -19604,8 +19618,8 @@ com.appmindlab.nano.MainActivity$SearchNearbyTask -> com.appmindlab.nano.MainAct
     com.appmindlab.nano.MainActivity this$0 -> n
     0:5:void <init>(com.appmindlab.nano.MainActivity):0:0 -> <init>
     0:5:void <init>(com.appmindlab.nano.MainActivity,com.appmindlab.nano.MainActivity$1):0 -> <init>
-com.appmindlab.nano.MainStatusGestureListener -> com.appmindlab.nano.e0:
-com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.f0:
+com.appmindlab.nano.MainStatusGestureListener -> com.appmindlab.nano.f0:
+com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.g0:
     com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener mCallback -> U
     76:76:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":299,"3":300,"6":301}}
@@ -19751,7 +19765,7 @@ com.appmindlab.nano.MarkdownSymbolFragment -> com.appmindlab.nano.f0:
     300:300:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     301:301:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
     284:298:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle):0:0 -> onCreateView
-com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener -> com.appmindlab.nano.f0$a:
+com.appmindlab.nano.MarkdownSymbolFragment$OnMarkdownSymbolSelectedListener -> com.appmindlab.nano.g0$a:
 com.appmindlab.nano.MirrorWorker -> com.appmindlab.nano.MirrorWorker:
     androidx.documentfile.provider.DocumentFile log_dir -> n
     androidx.documentfile.provider.DocumentFile font_dir -> m
@@ -19830,11 +19844,11 @@ com.appmindlab.nano.NotificationReceiver -> com.appmindlab.nano.NotificationRece
     469:482:void cancelScrapbookNotification(android.content.Context,android.content.Intent):0:0 -> onReceive
     469:482:void doAppendScrapbook(android.content.Context,android.content.Intent):0 -> onReceive
     469:482:void onReceive(android.content.Context,android.content.Intent):0 -> onReceive
-com.appmindlab.nano.PrefFragment -> com.appmindlab.nano.g0:
+com.appmindlab.nano.PrefFragment -> com.appmindlab.nano.h0:
     android.content.SharedPreferences mSharedPreferences -> b
     android.content.SharedPreferences$Editor mSharedPreferencesEditor -> c
     java.lang.String mLocalRepoPath -> d
-com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.g0$a:
+com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.h0$a:
     com.appmindlab.nano.PrefFragment this$0 -> a
     28:29:java.lang.String com.appmindlab.nano.PrefFragment.access$000(com.appmindlab.nano.PrefFragment):0:0 -> onPreferenceClick
     28:29:boolean onPreferenceClick(android.preference.Preference):0 -> onPreferenceClick
@@ -19842,7 +19856,7 @@ com.appmindlab.nano.PrefFragment$1 -> com.appmindlab.nano.g0$a:
     38:40:java.lang.String com.appmindlab.nano.PrefFragment.access$000(com.appmindlab.nano.PrefFragment):0:0 -> onPreferenceClick
     38:40:boolean onPreferenceClick(android.preference.Preference):0 -> onPreferenceClick
     41:48:boolean onPreferenceClick(android.preference.Preference):0:0 -> onPreferenceClick
-com.appmindlab.nano.PrefFragment$1$1 -> com.appmindlab.nano.g0$a$a:
+com.appmindlab.nano.PrefFragment$1$1 -> com.appmindlab.nano.h0$a$a:
     com.appmindlab.nano.PrefFragment$1 this$1 -> a
 com.appmindlab.nano.ScrollAwareFABBehavior$1 -> com.appmindlab.nano.ScrollAwareFABBehavior$a:
     com.appmindlab.nano.ScrollAwareFABBehavior this$0 -> a
@@ -19854,13 +19868,13 @@ com.appmindlab.nano.SetPreferenceActivity -> com.appmindlab.nano.SetPreferenceAc
     35:96:void setupTheme():0:0 -> onCreate
     35:96:void onCreate(android.os.Bundle):0 -> onCreate
     97:137:void onCreate(android.os.Bundle):0:0 -> onCreate
-com.appmindlab.nano.SetPreferenceActivity$1 -> com.appmindlab.nano.h0:
+com.appmindlab.nano.SetPreferenceActivity$1 -> com.appmindlab.nano.i0:
     com.appmindlab.nano.SetPreferenceActivity this$0 -> a
     16:17:java.lang.String com.appmindlab.nano.SetPreferenceActivity.access$002(com.appmindlab.nano.SetPreferenceActivity,java.lang.String):0:0 -> onSharedPreferenceChanged
     16:17:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String):0 -> onSharedPreferenceChanged
     18:23:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String):0:0 -> onSharedPreferenceChanged
-com.appmindlab.nano.ShellExecuter -> com.appmindlab.nano.i0:
-com.appmindlab.nano.Snapshot -> com.appmindlab.nano.j0:
+com.appmindlab.nano.ShellExecuter -> com.appmindlab.nano.j0:
+com.appmindlab.nano.Snapshot -> com.appmindlab.nano.k0:
     long mPos -> b
     java.lang.String mContent -> a
     long mTimestamp -> c
@@ -19872,7 +19886,7 @@ com.appmindlab.nano.SuggestionProvider -> com.appmindlab.nano.SuggestionProvider
     127:127:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
     128:128:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
     7:125:android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String):0:0 -> query
-com.appmindlab.nano.Utils -> com.appmindlab.nano.k0:
+com.appmindlab.nano.Utils -> com.appmindlab.nano.l0:
     com.google.common.util.concurrent.ListenableFuture mJSSandbox -> d
     float mLightLevel -> c
     boolean mExternalStorageWriteable -> a
@@ -20094,8 +20108,8 @@ com.appmindlab.nano.Utils -> com.appmindlab.nano.k0:
     40:40:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
     41:41:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
     28:38:java.lang.String toHTTPS(java.lang.String):0:0 -> toHTTPS
-com.appmindlab.nano.Utils$1 -> com.appmindlab.nano.k0$b:
-com.appmindlab.nano.Utils$10 -> com.appmindlab.nano.k0$a:
+com.appmindlab.nano.Utils$1 -> com.appmindlab.nano.l0$b:
+com.appmindlab.nano.Utils$10 -> com.appmindlab.nano.l0$a:
     int ch -> b
     java.lang.String val$str -> c
     int pos -> a
@@ -20104,7 +20118,7 @@ com.appmindlab.nano.Utils$10 -> com.appmindlab.nano.k0$a:
     double parseExpression() -> c
     double parseFactor() -> d
     double parseTerm() -> e
-com.appmindlab.nano.Utils$2 -> com.appmindlab.nano.k0$c:
+com.appmindlab.nano.Utils$2 -> com.appmindlab.nano.l0$c:
     android.content.Context val$context -> b
     android.widget.EditText val$text -> h
     androidx.appcompat.app.AppCompatActivity val$activity -> f
@@ -20112,19 +20126,19 @@ com.appmindlab.nano.Utils$2 -> com.appmindlab.nano.k0$c:
     boolean val$raw -> c
     android.view.View val$view -> g
     java.lang.String val$code -> d
-com.appmindlab.nano.Utils$3 -> com.appmindlab.nano.k0$d:
+com.appmindlab.nano.Utils$3 -> com.appmindlab.nano.l0$d:
     java.lang.String val$temp -> a
-com.appmindlab.nano.Utils$4 -> com.appmindlab.nano.k0$e:
-com.appmindlab.nano.Utils$5 -> com.appmindlab.nano.k0$f:
-com.appmindlab.nano.Utils$6 -> com.appmindlab.nano.k0$g:
-com.appmindlab.nano.Utils$7 -> com.appmindlab.nano.k0$h:
-com.appmindlab.nano.Utils$8 -> com.appmindlab.nano.k0$i:
+com.appmindlab.nano.Utils$4 -> com.appmindlab.nano.l0$e:
+com.appmindlab.nano.Utils$5 -> com.appmindlab.nano.l0$f:
+com.appmindlab.nano.Utils$6 -> com.appmindlab.nano.l0$g:
+com.appmindlab.nano.Utils$7 -> com.appmindlab.nano.l0$h:
+com.appmindlab.nano.Utils$8 -> com.appmindlab.nano.l0$i:
     android.widget.EditText val$content -> b
     java.lang.String val$result -> c
-com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.k0$j:
+com.appmindlab.nano.Utils$9 -> com.appmindlab.nano.l0$j:
     androidx.appcompat.app.AppCompatActivity val$activity -> b
     java.lang.String val$result -> c
-com.appmindlab.nano.WidgetItem -> com.appmindlab.nano.l0:
+com.appmindlab.nano.WidgetItem -> com.appmindlab.nano.m0:
     long id -> a
     java.lang.String content -> c
     java.lang.String title -> b
