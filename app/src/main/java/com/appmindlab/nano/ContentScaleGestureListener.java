@@ -24,7 +24,7 @@ public class ContentScaleGestureListener extends ScaleGestureDetector.SimpleOnSc
         mScaleFactor *= detector.getScaleFactor();
 
         // Sanity check
-        mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 5.0f));
+        mScaleFactor = Math.max(Const.SCALE_FACTOR_MIN, Math.min(mScaleFactor, Const.SCALE_FACTOR_MAX));
 
         // testing
         Log.d(Const.TAG, "nano -- onScale, mScaleFactor: " + mScaleFactor);

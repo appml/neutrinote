@@ -658,6 +658,10 @@ public class Const {
     protected final static String SYSTEM_FONT_NAME = "System-Default";
     protected final static String SYSTEM_FONT_FILE = "-";
     protected final static String SYSTEM_FONT_PATH = "-";
+    protected final static float SCALE_FACTOR_MIN = 0.1f;
+    protected final static float SCALE_FACTOR_MAX = 5.0f;
+    protected final static float SCALE_FACTOR_DECREMENT = 0.8f;
+    protected final static float SCALE_FACTOR_INCREMENT = 1.2f;
 
     // Shortcuts
     protected final static String SHORTCUTS_FILE = "~neutrinote_shortcuts";
