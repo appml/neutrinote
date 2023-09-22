@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.annotation.Keep;
 import androidx.fragment.app.Fragment;
 
 import java.util.Arrays;
@@ -20,6 +21,7 @@ import java.util.Locale;
  * Created by saelim on 7/31/2015.
  */
 
+@Keep
 public class EditToolFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener  {
     OnEditToolFragmentSelectedListener mCallback;
 

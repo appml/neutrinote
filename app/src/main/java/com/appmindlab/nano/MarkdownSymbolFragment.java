@@ -15,10 +15,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.annotation.Keep;
 import androidx.fragment.app.Fragment;
 
 import java.util.Locale;
 
+@Keep
 public class MarkdownSymbolFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener{
     OnMarkdownSymbolSelectedListener mCallback;
 
@@ -163,17 +165,19 @@ public class MarkdownSymbolFragment extends Fragment implements View.OnClickList
         button_close.setTypeface(font_awesome);
 
         // Quick access to common functions
-        if (lab_mode) {
-            button_undo = (Button) v.findViewById(R.id.button_undo);
-            button_undo.setOnClickListener(this);
-            button_undo.setOnLongClickListener(this);
-            button_undo.setTypeface(font_awesome);
+        button_undo = (Button) v.findViewById(R.id.button_undo);
+        button_undo.setOnClickListener(this);
+        button_undo.setOnLongClickListener(this);
+        button_undo.setTypeface(font_awesome);
+        if (!lab_mode)
+            button_undo.setVisibility(View.GONE);
 
-            button_text_expand = (Button) v.findViewById(R.id.button_text_expand);
-            button_text_expand.setOnClickListener(this);
-            button_text_expand.setOnLongClickListener(this);
-            button_text_expand.setTypeface(font_awesome);
-        }
+        button_text_expand = (Button) v.findViewById(R.id.button_text_expand);
+        button_text_expand.setOnClickListener(this);
+        button_text_expand.setOnLongClickListener(this);
+        button_text_expand.setTypeface(font_awesome);
+        if (!lab_mode)
+            button_text_expand.setVisibility(View.GONE);
 
         return v;
     }
