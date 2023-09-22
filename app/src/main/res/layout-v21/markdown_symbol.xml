@@ -5,16 +5,59 @@
     android:layout_height="fill_parent"
     android:orientation="horizontal" >
 
-    <Button android:id="@+id/button_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="@dimen/button_min_width"
-        android:text="@string/button_close"
-        android:textColor="@color/symbol_color"
-        android:textSize="@dimen/symbol_font_size"
-        android:background="@drawable/ripple"
-        android:contentDescription="@string/button_close_description"
-        style="@style/AppTextButtonStyle" />
+    <ScrollView
+        android:layout_width="48sp"
+        android:layout_height="48sp"
+        android:background="?attr/colorPrimaryDark"
+        android:scrollbarSize="0dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="vertical"
+            android:paddingTop="0.5dp">
+
+            <Button
+                android:id="@+id/button_close"
+                style="@style/AppTextButtonStyle"
+                android:layout_width="48sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:contentDescription="@string/button_close_description"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_close"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/symbol_font_size" />
+
+            <Button
+                android:id="@+id/button_undo"
+                style="@style/AppTextButtonStyle"
+                android:layout_width="48sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:contentDescription="@string/button_undo_description"
+                android:text="@string/button_undo"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/symbol_font_size" />
+
+            <Button
+                android:id="@+id/button_text_expand"
+                style="@style/AppTextButtonStyle"
+                android:layout_width="48sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:contentDescription="@string/button_text_expand_description"
+                android:text="@string/button_text_expand"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/symbol_font_size" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <HorizontalScrollView
         android:layout_width="wrap_content"

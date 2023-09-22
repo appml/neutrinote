@@ -5036,6 +5036,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     public void onMarkdownSymbolSelected(int id) {
         if (id == (R.id.button_close)) {
             closeTopFragment();
+        } else if (id == (R.id.button_undo)) {
+            doUndo();
+        } else if (id == (R.id.button_text_expand)) {
+            doTextExpansion();
         } else if (id == (R.id.button_indent)) {
             Utils.insertMarkdownSymbolAutoIndent(mCurrentEditText, mIndentChar, mIndentChar);
         } else if (id == (R.id.button_unindent)) {

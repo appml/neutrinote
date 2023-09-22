@@ -6,14 +6,18 @@ package com.appmindlab.nano;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
+
+import java.util.Locale;
 
 public class MarkdownSymbolFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener{
     OnMarkdownSymbolSelectedListener mCallback;
@@ -27,6 +31,9 @@ public class MarkdownSymbolFragment extends Fragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        boolean lab_mode = sharedPreferences.getBoolean(Const.PREF_LAB_MODE, false);
+
         // Inflate the layout for this fragment
         Button button_indent, button_unindent, button_hash, button_asterisk, button_grave_accent, button_quotation;
         Button button_plus, button_dash, button_equal, button_vertical, button_backslash, button_slash, button_colon, button_semicolon;
@@ -34,7 +41,8 @@ public class MarkdownSymbolFragment extends Fragment implements View.OnClickList
         Button button_square_bracket_left, button_square_bracket_right;
         Button button_curly_bracket_left, button_curly_bracket_right;
         Button button_bracket_less, button_bracket_greater;
-        Button button_underscore, button_dollar, button_bang, button_question, button_close;
+        Button button_underscore, button_dollar, button_bang, button_question;
+        Button button_close, button_undo, button_text_expand;
 
         Typeface font = FontCache.getFromAsset(getActivity(), "RobotoMono-Regular.ttf");
         Typeface font_awesome = FontCache.getFromAsset(getActivity(), "iconfonts.ttf");
@@ -153,6 +161,19 @@ public class MarkdownSymbolFragment extends Fragment implements View.OnClickList
         button_close.setOnClickListener(this);
         button_close.setOnLongClickListener(this);
         button_close.setTypeface(font_awesome);
+
+        // Quick access to common functions
+        if (lab_mode) {
+            button_undo = (Button) v.findViewById(R.id.button_undo);
+            button_undo.setOnClickListener(this);
+            button_undo.setOnLongClickListener(this);
+            button_undo.setTypeface(font_awesome);
+
+            button_text_expand = (Button) v.findViewById(R.id.button_text_expand);
+            button_text_expand.setOnClickListener(this);
+            button_text_expand.setOnLongClickListener(this);
+            button_text_expand.setTypeface(font_awesome);
+        }
 
         return v;
     }

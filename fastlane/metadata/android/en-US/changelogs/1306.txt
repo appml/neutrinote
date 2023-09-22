@@ -1,5 +1,5 @@
 v4.4.6a
-- Experimental editor text reflow.
+- Experimental editor text reflow keyboard support.
 - Added JavaScript in-note REPL (see documentation).
 - HTML/XML tag expansion support (see documentation).
 - Fixed back button data loss issues.
