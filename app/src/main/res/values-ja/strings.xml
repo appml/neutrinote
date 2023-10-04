@@ -493,6 +493,7 @@
     <string name="dialog_show_shortcuts_title">ショートカット</string>
     <string name="dialog_show_shortcuts_not_found">見つかりません</string>
     <string name="dialog_show_shortcuts_ok">Ok</string>
+    <string name="dialog_show_shortcuts_neutral">移動</string>
 
     <string name="dialog_revision_summary_ok">Ok</string>
 

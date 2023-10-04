@@ -1930,7 +1930,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         shortcuts_file = Utils.makeFileName(this, Const.SHORTCUTS_FILE);
 
         List<DBEntry> results = mDatasource.getRecordByTitle(shortcuts_file);
-        DBEntry entry;
+        DBEntry entry = null;
         StringBuilder sb = new StringBuilder();
         String message = getResources().getString(R.string.dialog_show_shortcuts_not_found);
 
@@ -1950,6 +1950,17 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 return;
             }
         });
+
+        // Allow jumping to the shortcut file
+        if ((mLabMode) && (entry != null)) {
+            final DBEntry temp_entry = entry;
+            builder.setNeutralButton(R.string.dialog_show_shortcuts_neutral, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    doLaunchNote(shortcuts_file, temp_entry.getId());
+                    return;
+                }
+            });
+        }
 
         // Get the AlertDialog from create()
         AlertDialog dialog = builder.show();

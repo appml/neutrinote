@@ -492,6 +492,7 @@
     <string name="dialog_show_shortcuts_title">快捷方式</string>
     <string name="dialog_show_shortcuts_not_found">没有找到</string>
     <string name="dialog_show_shortcuts_ok">确认</string>
+    <string name="dialog_show_shortcuts_neutral">跳转</string>
 
     <string name="dialog_revision_summary_ok">确认</string>
 

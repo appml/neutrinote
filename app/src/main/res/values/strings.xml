@@ -493,6 +493,7 @@
     <string name="dialog_show_shortcuts_title">Shortcuts</string>
     <string name="dialog_show_shortcuts_not_found">Not found</string>
     <string name="dialog_show_shortcuts_ok">Ok</string>
+    <string name="dialog_show_shortcuts_neutral">Go To</string>
 
     <string name="dialog_revision_summary_ok">Ok</string>
 

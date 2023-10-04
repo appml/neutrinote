@@ -645,6 +645,7 @@
     <string name="dialog_canvas_stroke_ok">Definir</string>
     <string name="dialog_show_shortcuts_not_found">Não encontrado</string>
     <string name="dialog_show_shortcuts_ok">OK</string>
+    <string name="dialog_show_shortcuts_neutral">Ir Para</string>
     <string name="dialog_show_shortcuts_title">Atalhos</string>
 
     <string name="dialog_revision_summary_ok">Ok</string>
