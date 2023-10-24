@@ -178,7 +178,7 @@
     <color name="shortcut_color">#EC407A</color>
 
     <color name="linkify_color">#0091EA</color>
-    <color name="snackbar_linkify_color">#FFFFFF</color>
+    <color name="snackbar_linkify_color">#3949AB</color>
 
     <color name="fab_foreground">@android:color/white</color>
     <color name="fab_background">@color/colorPrimary</color>
