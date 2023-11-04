@@ -1580,7 +1580,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
 
                 // Handle magnifier events
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) && (Integer.parseInt(mFontSize) < 12)) {
                     if (mMarkdownMagnifier == null) {
                         mMarkdownMagnifier = new Magnifier.Builder(mMarkdownView).build();
                         mMarkdownMagnifier.show(mMarkdownView.getWidth() / 2, mMarkdownView.getHeight() / 2);
