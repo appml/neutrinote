@@ -2371,7 +2371,23 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             else if (expanded.startsWith(Const.JOIN_SYM)) {    // Join command
                 if (extra != null) {
                     expanded = expanded.substring(Const.JOIN_SYM.length()).trim();
-                    expanded = extra.replaceAll(Const.NEWLINE, Const.EMPTY_SYM).trim();
+
+                    // Split the expanded string into 2 parts:
+                    // 1. Old pattern
+                    // 2. New pattern
+                    params = expanded.split(Const.SHORTCUTS_PATTERN_DELIMITER);
+                    params = Utils.cleanStringArray(params);
+
+                    if (params.length == 1) {
+                        if (params[0].equals(Const.SPACE_ENTITY))
+                            params[0] = Const.EMPTY_SYM;
+
+                        expanded = extra.replaceAll(Const.NEWLINE, params[0]).trim();
+                    }
+                    else if (params.length == 0)
+                        expanded = extra.replaceAll(Const.NEWLINE, Const.NULL_SYM).trim();
+                    else
+                        expanded = null;
                 }
                 else
                     expanded = null;

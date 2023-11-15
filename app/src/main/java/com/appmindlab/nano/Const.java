@@ -500,6 +500,7 @@ public class Const {
     protected final static String NEWLINE = "\n";
     protected final static char NEWLINE_CHAR = '\n';
     protected final static String NEWLINE_ENTITY = "<nano:br>";
+    protected final static String SPACE_ENTITY = "<nano:sp>";
     protected final static String BLANK_LINE = "\n\n";
     protected final static String ANCHOR_MARKDOWN = "\u2758";
     protected final static String ANCHOR_MARKDOWN_HTML = "<span style='opacity:0'>" + ANCHOR_MARKDOWN + "</span>";
