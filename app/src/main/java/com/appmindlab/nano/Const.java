@@ -417,6 +417,8 @@ public class Const {
     protected final static String WEBSERVICE_JSON_SYM = "neutriNote_json?";
     protected final static String REPLACE_SYM = "neutriNote#replace";
     protected final static String SPLIT_SYM = "neutriNote#split";
+
+    protected final static String JOIN_SYM = "neutriNote#join";
     protected final static String REMOVE_SYM = "neutriNote#remove";
     protected final static String LINEBREAK_SYM = "neutriNote#linebreak";
     protected final static String MORPH_SYM = "neutriNote#morph";

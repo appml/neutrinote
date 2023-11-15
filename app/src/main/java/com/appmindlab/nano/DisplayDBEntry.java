@@ -2368,6 +2368,22 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 else
                     Utils.insert(mContent, expanded);
             }
+            else if (expanded.startsWith(Const.JOIN_SYM)) {    // Join command
+                if (extra != null) {
+                    expanded = expanded.substring(Const.JOIN_SYM.length()).trim();
+                    expanded = extra.replaceAll(Const.NEWLINE, Const.EMPTY_SYM).trim();
+                }
+                else
+                    expanded = null;
+
+                if ((expanded == null) || (expanded.length() == 0)) {
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                }
+                else
+                    Utils.insert(mContent, expanded);
+            }
             else if (expanded.startsWith(Const.REMOVE_SYM)) {    // Remove command
                 if (extra != null) {
                     expanded = expanded.substring(Const.REMOVE_SYM.length()).trim();

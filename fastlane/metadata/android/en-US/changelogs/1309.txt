@@ -1,0 +1,2 @@
+v4.4.9
+- Text expander fixes.
