@@ -3,8 +3,8 @@
 # min_api: 26
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 4ba00bb
-# pg_map_hash: SHA-256 4ba00bb2b63961d98ac38928a0a8f38c9557719505d875f7d0503de67e4d5b85
+# pg_map_id: 374a376
+# pg_map_hash: SHA-256 374a376e94d1947c530a1c563f223ed4c4d2c7ffb84bd9f58cad5145fa90d9dd
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -18629,39 +18629,39 @@ com.appmindlab.nano.DisplayDBEntry -> com.appmindlab.nano.DisplayDBEntry:
     140:140:void doWebSearch(boolean):0:0 -> doWebSearch
     77:135:void doWebSearch(boolean):0:0 -> doWebSearch
     358:358:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948}}
-    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1985,"2":1986,"5":1987}}
+    1985:1985:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1986:1986:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1987:1987:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     359:380:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     381:381:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948,"8":1949,"11":1950}}
-    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1949:1949:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1950:1950:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1985,"2":1986,"5":1987,"8":1988,"11":1989}}
+    1985:1985:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1986:1986:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1987:1987:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1988:1988:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1989:1989:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     382:535:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     536:536:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948,"8":1949}}
-    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1949:1949:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    537:1428:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1429:1429:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948,"8":1949}}
-    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1949:1949:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1430:1498:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1499:1499:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1946,"2":1947,"5":1948}}
-    1946:1946:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1947:1947:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1948:1948:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
-    1500:1945:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1985,"2":1986,"5":1987,"8":1988}}
+    1985:1985:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1986:1986:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1987:1987:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1988:1988:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    537:1467:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1468:1468:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1985,"2":1986,"5":1987,"8":1988}}
+    1985:1985:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1986:1986:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1987:1987:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1988:1988:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1469:1537:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1538:1538:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1985,"2":1986,"5":1987}}
+    1985:1985:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1986:1986:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1987:1987:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
+    1539:1984:void expandShortcut(java.lang.String[]):0:0 -> expandShortcut
     55:55:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":84,"2":85,"5":86,"8":87}}
     84:84:void getCameraPermission(android.content.Context):0:0 -> getCameraPermission
