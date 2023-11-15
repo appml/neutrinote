@@ -2330,8 +2330,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     // 2. New pattern
                     params = expanded.split(Const.SHORTCUTS_PATTERN_DELIMITER);
                     params = Utils.cleanStringArray(params);
-                    if (params.length == 2)
+                    if (params.length == 2) {
+                        if (params[1].contains(Const.SPACE_ENTITY))
+                            params[1] = params[1].replaceAll(Const.SPACE_ENTITY, Const.EMPTY_SYM);
+
                         expanded = extra.replaceAll(params[0], params[1]).trim();
+                    }
                     else
                         expanded = null;
                 }
@@ -2379,8 +2383,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     params = Utils.cleanStringArray(params);
 
                     if (params.length == 1) {
-                        if (params[0].equals(Const.SPACE_ENTITY))
-                            params[0] = Const.EMPTY_SYM;
+                        if (params[0].contains(Const.SPACE_ENTITY))
+                            params[0] = params[0].replaceAll(Const.SPACE_ENTITY, Const.EMPTY_SYM);
 
                         expanded = extra.replaceAll(Const.NEWLINE, params[0]).trim();
                     }
