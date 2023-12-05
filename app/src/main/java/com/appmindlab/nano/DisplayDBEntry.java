@@ -3238,7 +3238,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Apply hacks
     private void applyHacks() {
         // Open in markdown view if so specified
-        if ((mOpenInMarkdown) || (mMarkdownTrigger.length() > 0) && (mMetadata.contains(mMarkdownTrigger)))
+        if ((mOpenInMarkdown) || ((mMarkdownTrigger.length() > 0) && (mMetadata.contains(mMarkdownTrigger))))
             toggleMarkdownView();
 
         // Linkify
@@ -6421,7 +6421,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     protected String buildScript(boolean toc) {
         String js = null, script;
 
-        script = makeFileName(getApplicationContext(), Const.CUSTOM_SCRIPT);
+        script = Utils.makeFileName(getApplicationContext(), Const.CUSTOM_SCRIPT);
         ArrayList<DBEntry> results = mDatasource.getRecordByTitle(script);
 
         // Load user defined script

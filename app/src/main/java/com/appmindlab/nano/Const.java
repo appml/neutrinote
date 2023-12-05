@@ -596,6 +596,9 @@ public class Const {
     protected final static String NEW_NOTE_TITLE_COUNT_SYM = "(%)";
     protected final static String NEW_NOTE_FILE_TYPE = ".txt";
 
+    protected final static String INTRO_NOTE_TITLE = "Getting Started";
+    protected final static String INTRO_NOTE_FILE = INTRO_NOTE_TITLE + ".txt";
+    protected final static String INTRO_NOTE_CONTENT = "Welcome. Stop by the Help documentation at the side to explore around.";
     protected final static String NOOP_FILE = "~neutrinote_noop.txt";
     protected final static String SYNC_LOG_FILE = "~neutrinote_sync.log";
     protected final static String SYNC_HISTORY_FILE = "~neutrinote_sync_history.txt";

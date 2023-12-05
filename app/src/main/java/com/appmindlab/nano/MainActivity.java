@@ -4864,6 +4864,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Enable multi-file types by default
             Utils.writeLocalRepoFileAndTitle(getApplicationContext(), Const.MULTI_TYPE, Const.NULL_SYM);
 
+            // Create intro note
+            Utils.writeLocalRepoFileAndTitle(getApplicationContext(), Const.INTRO_NOTE_FILE, Const.INTRO_NOTE_CONTENT);
+
             Toast.makeText(getApplicationContext(), path, Toast.LENGTH_LONG).show();
         }
         catch (Exception e) {
