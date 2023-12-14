@@ -338,6 +338,9 @@ public class Utils {
         else if (criteria.startsWith(Const.INQUERY))
             criteria = criteria.substring(Const.INQUERY.length()).trim();
 
+        else if (criteria.startsWith(Const.SCOPEQUERY))
+            criteria = criteria.substring(Const.SCOPEQUERY.length()).trim();
+
         else if (criteria.startsWith(Const.SIMILARQUERY))
             return criteria.substring(Const.SIMILARQUERY.length()).trim();
 
@@ -3521,6 +3524,14 @@ public class Utils {
             else
                 criteria = parts[0];
         }
+        else if (criteria.startsWith(Const.SCOPEQUERY)) {
+            criteria = criteria.substring(Const.SCOPEQUERY.length());
+            String[] parts = criteria.split(",");
+            if (parts.length > 1)
+                criteria = parts[1];
+            else
+                criteria = parts[0];
+        }
 
         return criteria.trim();
     }
@@ -4021,6 +4032,9 @@ public class Utils {
             return true;
 
         if (criteria.startsWith(Const.INQUERY))
+            return true;
+
+        if (criteria.startsWith(Const.SCOPEQUERY))
             return true;
 
         if (criteria.length() == 1)

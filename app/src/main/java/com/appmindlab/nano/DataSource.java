@@ -1672,6 +1672,47 @@ public class DataSource {
                     null,
                     orderBy + " " + orderDirection);
         }
+        else if (criteria.startsWith(Const.SCOPEQUERY)) {
+            criteria = Utils.cleanCriteria(criteria);
+
+            String[] parts = criteria.split(",");
+            String temp = "";
+            String qry;
+
+            // Build template
+            if (parts.length == 1) {  // Only search the metadata
+                qry = "(" + DBHelper.COLUMN_METADATA + " LIKE ?)";
+                parts[0] = "%" + parts[0].trim() + "%";
+            }
+
+            else {
+                for (int i=1; i < parts.length; i++) {  // The first must match metadata
+                    if (i == parts.length-1) {
+                        temp = temp + DBHelper.COLUMN_CONTENT + " LIKE ? ";
+                    }
+                    else {
+                        temp = temp + DBHelper.COLUMN_CONTENT + " LIKE ? OR ";
+                    }
+                }
+
+                // Query template
+                qry = "(" + DBHelper.COLUMN_METADATA + " LIKE ?) AND (" + temp + ")";
+
+                // Build criteria
+                parts[0] = "%" + parts[0].trim() + "%";
+                for (int i=1; i < parts.length; i++) {
+                    parts[i] = '%' + parts[i].trim() + '%';
+                }
+            }
+
+            cursor = mDatabase.query(DBHelper.TABLE,
+                    getSearchColumns(mode),
+                    qry,
+                    parts,
+                    null,
+                    null,
+                    orderBy + " " + orderDirection);
+        }
         else if (criteria.equals(Const.STARRED_SYM)) {
             cursor = mDatabase.query(DBHelper.TABLE,
                     columns,

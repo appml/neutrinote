@@ -636,6 +636,8 @@ public class Const {
     protected final static String ORGQUERY = "org:";
     protected final static String JOINQUERY = "join:";
     protected final static String INQUERY = "in:";
+
+    protected final static String SCOPEQUERY = "scope:";
     protected final static String SHOW_PATTERN = "/%";
     protected final static String HIDE_PATTERN = "~%";
     protected final static String HIDE_PATTERN_PREFIX = "~";
