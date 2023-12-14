@@ -1650,7 +1650,7 @@ public class DataSource {
                         temp = temp + DBHelper.COLUMN_CONTENT + " LIKE ? ";
                     }
                     else {
-                        temp = temp + DBHelper.COLUMN_CONTENT + " LIKE ? OR ";
+                        temp = temp + DBHelper.COLUMN_CONTENT + " LIKE ? AND ";
                     }
                 }
 
@@ -1691,7 +1691,7 @@ public class DataSource {
                         temp = temp + DBHelper.COLUMN_CONTENT + " LIKE ? ";
                     }
                     else {
-                        temp = temp + DBHelper.COLUMN_CONTENT + " LIKE ? OR ";
+                        temp = temp + DBHelper.COLUMN_CONTENT + " LIKE ? AND ";
                     }
                 }
 

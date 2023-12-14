@@ -1,0 +1,2 @@
+v4.4.9b
+- Search in notes with matching title or metadata patterns.

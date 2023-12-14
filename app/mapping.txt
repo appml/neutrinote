@@ -3,8 +3,8 @@
 # min_api: 26
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: b48e842
-# pg_map_hash: SHA-256 b48e842e77a262529d980d506d6b35f9eb2f10b4d8933ccf460cec85d115cc6f
+# pg_map_id: 34d5015
+# pg_map_hash: SHA-256 34d5015f4d3631d472ef6ffb1419ebcd21abc16ad62866301734c0a890dfe2f8
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -17873,354 +17873,384 @@ com.appmindlab.nano.DataSource -> com.appmindlab.nano.p:
     84:84:java.util.ArrayList getWorkingSet(int):0:0 -> getWorkingSet
     15:81:java.util.ArrayList getWorkingSet(int):0:0 -> getWorkingSet
     56:56:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     57:69:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     70:70:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     71:116:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     117:117:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     118:159:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     160:160:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     161:173:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     174:174:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     175:206:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     207:207:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     208:252:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     253:253:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     254:288:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     289:289:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     290:302:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     303:303:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     304:392:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     393:393:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     394:415:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     416:416:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     417:580:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     581:581:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     582:652:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     653:653:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     654:675:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     676:676:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     677:844:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     845:845:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     846:1045:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1046:1046:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1047:1089:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1090:1090:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1091:1136:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1137:1137:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1138:1194:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1195:1195:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1196:1306:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1307:1307:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1308:1366:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1367:1367:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1368:1420:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1421:1421:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1422:1445:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     1446:1446:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1447:1614:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1615:1615:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1616:1681:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1682:1682:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1683:1706:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1707:1707:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1708:1876:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1877:1877:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1878:1930:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1931:1931:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    1932:2106:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2107:2107:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2108:2150:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2151:2151:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2152:2234:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2235:2235:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2236:2238:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2239:2239:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2240:2306:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2307:2307:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2308:2346:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1447:1615:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1616:1616:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1617:1682:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1683:1683:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1684:1707:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1708:1708:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1709:1877:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1878:1878:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1879:1932:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1933:1933:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    1934:2108:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2109:2109:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2110:2152:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2153:2153:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2154:2236:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2237:2237:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2238:2240:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2241:2241:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2242:2308:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2309:2309:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2310:2346:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     2347:2347:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2348:2379:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2380:2380:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2381:2421:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2422:2422:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2423:2429:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2348:2425:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2426:2426:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2427:2429:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
     2430:2430:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2431:2471:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2472:2472:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2473:2499:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2500:2500:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2501:2533:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2534:2534:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2550,"2":2551,"5":2552,"8":2553,"11":2554,"14":2555}}
-    2550:2550:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2551:2551:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2552:2552:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2553:2553:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2554:2554:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2555:2555:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
-    2535:2549:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2431:2497:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2498:2498:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2499:2535:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2536:2536:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2537:2568:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2569:2569:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2570:2610:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2611:2611:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2612:2618:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2619:2619:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2620:2660:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2661:2661:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2662:2688:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2689:2689:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2690:2722:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2723:2723:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2740,"2":2741,"5":2742,"8":2743,"11":2744,"14":2745}}
+    2740:2740:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2741:2741:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2742:2742:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2743:2743:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2744:2744:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2745:2745:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
+    2724:2739:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
 com.appmindlab.nano.DatePickerAccessedFilterFragment -> com.appmindlab.nano.q:
 com.appmindlab.nano.DatePickerCalendarViewFragment -> com.appmindlab.nano.r:
     int mCalled -> r
