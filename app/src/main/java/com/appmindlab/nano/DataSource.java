@@ -1641,7 +1641,7 @@ public class DataSource {
             // Build template
             if (parts.length == 1) {  // Only search the title
                 qry = "(" + DBHelper.COLUMN_TITLE + " LIKE ?)";
-                parts[0] = parts[0].trim();
+                parts[0] = "%" + parts[0].trim() + "%";
             }
 
             else {
@@ -1658,7 +1658,7 @@ public class DataSource {
                 qry = "(" + DBHelper.COLUMN_TITLE + " LIKE ?) AND (" + temp + ")";
 
                 // Build criteria
-                parts[0] = parts[0].trim();
+                parts[0] = "%" + parts[0].trim() + "%";
                 for (int i=1; i < parts.length; i++) {
                     parts[i] = '%' + parts[i].trim() + '%';
                 }

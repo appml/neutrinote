@@ -11,8 +11,8 @@ android {
         minSdkVersion 26
         targetSdkVersion 34
         multiDexEnabled true
-        versionCode 1311
-        versionName "4.4.8c"
+        versionCode 1312
+        versionName "4.4.9"
     }
 
     buildTypes {
