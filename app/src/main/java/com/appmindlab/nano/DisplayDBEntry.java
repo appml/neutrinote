@@ -5612,7 +5612,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
             try {
                 // Do regex matching
-                Pattern pattern = Pattern.compile(Utils.regexCriteria(mCriteria), Pattern.CASE_INSENSITIVE);
+                Pattern pattern = Pattern.compile(Utils.regexCriteria(Utils.removeCriteriaContext(mCriteria)), Pattern.CASE_INSENSITIVE);
                 Matcher matcher = pattern.matcher(content);
 
                 mSpann = new SpannableStringBuilder(content);

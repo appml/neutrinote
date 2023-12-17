@@ -375,6 +375,20 @@ public class Utils {
         return Joiner.on(",").join(parts);
     }
 
+    // Strip context from criteria
+    protected static String removeCriteriaContext(String criteria) {
+        // testing
+        Log.d(Const.TAG, "nano - removeCriteriaContext, criteria: " + criteria);
+
+        if ((criteria.equals(Const.NULL_SYM)) || ((!criteria.startsWith(Const.INQUERY)) && (!criteria.startsWith(Const.SCOPEQUERY))))
+            return criteria;
+
+        if (criteria.contains(","))
+            return criteria.substring(criteria.indexOf(",") + 1);
+
+        return Const.NULL_SYM;
+    }
+
     // Convert criteria into Regex syntax
     protected static String regexCriteria(String criteria) {
         String regex = cleanCriteria(criteria);
