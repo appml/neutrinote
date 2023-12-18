@@ -1245,19 +1245,17 @@ public class DataSource {
     protected Cursor searchRecordsCursor(String criteria, String orderBy, String orderDirection, String mode) {
         Cursor cursor;
         String[] columns = getColumns(mode);
-        String ordering;
 
         // Apply order by prefix
-        orderBy = getOrderByPrefix() + orderBy;
+        if ((orderBy.endsWith(Const.SORT_BY_TITLE)) && (criteria.startsWith(Const.TITLEONLY)) || (criteria.startsWith(Const.TITLEREGONLY))) {
+            // Natural sorting
+            orderBy = getOrderByPrefix() + "LENGTH(" + DBHelper.COLUMN_TITLE + ") " + orderDirection + ", " + orderBy;
+        }
+        else
+            orderBy = getOrderByPrefix() + orderBy;
 
         if (criteria.startsWith(Const.TITLEONLY)) {
             criteria = Utils.cleanCriteria(criteria);
-
-            // Natural sorting
-            if (orderBy.endsWith(Const.SORT_BY_TITLE))
-                ordering = "LENGTH(" + DBHelper.COLUMN_TITLE + ") " + orderDirection + ", " + orderBy + " " + orderDirection;
-            else
-                ordering = orderBy + " " + orderDirection;
 
             cursor = mDatabase.query(DBHelper.TABLE,
                     columns,
@@ -1265,16 +1263,10 @@ public class DataSource {
                     new String[]{"%" + criteria + "%", getFilter()},
                     null,
                     null,
-                    ordering);
+                    orderBy + " " + orderDirection);
         }
         else if (criteria.startsWith(Const.TITLEREGONLY)) {
             criteria = Utils.cleanCriteria(criteria);
-
-            // Natural sorting
-            if (orderBy.endsWith(Const.SORT_BY_TITLE))
-                ordering = "LENGTH(" + DBHelper.COLUMN_TITLE + ") " + orderDirection + ", " + orderBy + " " + orderDirection;
-            else
-                ordering = orderBy + " " + orderDirection;
 
             cursor = mDatabase.query(DBHelper.TABLE,
                     columns,
@@ -1282,7 +1274,7 @@ public class DataSource {
                     new String[]{criteria, getFilter()},
                     null,
                     null,
-                    ordering);
+                    orderBy + " " + orderDirection);
         }
         else if (criteria.startsWith(Const.METADATAONLY)) {
             criteria = Utils.cleanCriteria(criteria);
@@ -1776,6 +1768,7 @@ public class DataSource {
         cursor.moveToFirst();
         return cursor;
     }
+
     // Get titles
     public String[] getAllActiveRecordsTitles(String orderBy, String orderDirection) {
         List<String> results = new ArrayList<String>();
