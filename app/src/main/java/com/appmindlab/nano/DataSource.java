@@ -1247,7 +1247,7 @@ public class DataSource {
         String[] columns = getColumns(mode);
 
         // Apply order by prefix
-        if ((orderBy.endsWith(Const.SORT_BY_TITLE)) && (criteria.startsWith(Const.TITLEONLY)) || (criteria.startsWith(Const.TITLEREGONLY))) {
+        if ((orderBy.endsWith(Const.SORT_BY_TITLE)) && (criteria.startsWith(Const.TITLEREGONLY))) {
             // Natural sorting
             orderBy = getOrderByPrefix() + "LENGTH(" + DBHelper.COLUMN_TITLE + ") " + orderDirection + ", " + orderBy;
         }
