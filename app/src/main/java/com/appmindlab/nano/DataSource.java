@@ -1241,14 +1241,18 @@ public class DataSource {
         return results;
     }
 
+    // Check whether natural sort can be applied
+    protected boolean naturalSortSafe(String criteria, String orderBy) {
+        return ((orderBy.endsWith(Const.SORT_BY_TITLE)) && (criteria.startsWith(Const.TITLEREGONLY)) && (!criteria.contains(":*") && (!criteria.contains(":?"))));
+    }
+
     // Search records
     protected Cursor searchRecordsCursor(String criteria, String orderBy, String orderDirection, String mode) {
         Cursor cursor;
         String[] columns = getColumns(mode);
 
         // Apply order by prefix
-        if ((orderBy.endsWith(Const.SORT_BY_TITLE)) && (criteria.startsWith(Const.TITLEREGONLY)) && (!criteria.contains(":*") && (!criteria.contains(":?")))) {
-            // Natural sorting
+        if (naturalSortSafe(criteria, orderBy)) {
             orderBy = getOrderByPrefix() + "LENGTH(" + DBHelper.COLUMN_TITLE + ") " + orderDirection + ", " + orderBy;
         }
         else
