@@ -844,8 +844,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBackupManager = new BackupManager(this);
     }
 
-    // Perform database optimization
-    protected void optimizeDatabase() {
+    // Verify databas
+    protected void verifyDatabase() {
         try {
             Thread t = new Thread() {
                 public void run() {
@@ -879,8 +879,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mAdapter != null)
             mAdapter.setDatasource(mDatasource);
 
-        // Perform database optimization
-        optimizeDatabase();
+        // Verify database
+        verifyDatabase();
     }
 
     // Resume database
@@ -1981,7 +1981,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mDatasource.deleteRecordById(id);
 
                     // Delete file
-                    Utils.deleteFile(getApplicationContext(), mLocalRepoPath, title);
+                    if (mDatasource.getBasicRecordByTitle(title).size() == 0) {
+                        Utils.deleteFile(getApplicationContext(), mLocalRepoPath, title);
+                    }
 
                     if (hasMirror())
                         Utils.deleteSAFSubDirFile(getApplicationContext(), mBackupUri, Const.MIRROR_PATH, title);
