@@ -1,0 +1,4 @@
+v4.4.9c
+- Added database self-repair logic.
+- Fixed the flow of note deletion.
+- Improved title search using regular expression.
