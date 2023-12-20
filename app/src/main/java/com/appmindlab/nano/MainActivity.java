@@ -844,6 +844,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBackupManager = new BackupManager(this);
     }
 
+    // Perform database optimization
+    protected void optimizeDatabase() {
+        try {
+            Thread t = new Thread() {
+                public void run() {
+                    mDatasource.removeDuplicateRecords();
+                }
+            };
+            t.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     // Setup database
     private void setupDatabase() {
         // Get all entries from the database
@@ -863,6 +878,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Set adapter's datasource
         if (mAdapter != null)
             mAdapter.setDatasource(mDatasource);
+
+        // Perform database optimization
+        optimizeDatabase();
     }
 
     // Resume database

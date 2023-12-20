@@ -11,6 +11,7 @@ import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Base64;
+import android.util.Log;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -1239,6 +1240,26 @@ public class DataSource {
         }
 
         return results;
+    }
+
+    // Remove duplicates
+    protected void removeDuplicateRecords() {
+        Cursor cursor;
+        String qry;
+
+        qry = "DELETE FROM " + DBHelper.TABLE;
+        qry += " WHERE " + DBHelper.COLUMN_ID + " NOT IN ";
+        qry += " (";
+        qry += "   SELECT min(" + DBHelper.COLUMN_ID + ") ";
+        qry += "   FROM " + DBHelper.TABLE;
+        qry += "   GROUP BY " + DBHelper.COLUMN_TITLE + ", " + DBHelper.COLUMN_CONTENT;
+        qry += " )";
+
+        cursor = mDatabase.rawQuery(qry, null);
+
+        Log.d(Const.TAG, "nano - removeDuplicateRecords, qry: " + qry + ", cursor: " + cursor.getCount());
+
+        cursor.close();
     }
 
     // Check whether natural sort can be applied
