@@ -105,13 +105,18 @@ public class BackupWorker extends Worker {
                 mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
 
                 try {
+                    /////////////////////////
+                    // 1. Clean up database
+                    /////////////////////////
+                    mDatasource.removeDuplicateRecords();
+
                     ///////////////////////
-                    // 1. Backup app data
+                    // 2. Backup app data
                     ///////////////////////
                     backupAppData(getApplicationContext());
 
                     ////////////////////
-                    // 2. Backup files
+                    // 3. Backup files
                     ////////////////////
 
                     Log.d(Const.TAG, "nano - BackupWorker: purging old backups... ");
