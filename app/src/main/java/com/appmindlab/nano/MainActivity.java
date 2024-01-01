@@ -4669,7 +4669,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String content = "", app_data_file, app_settings_file;
             int count;
 
-            // 1. Backup metadata
+            // 1. Remove app data conflicts
+            mDatasource.removeAppDataConflicts();
+
+            // 2. Backup metadata
             results = mDatasource.getAllActiveContentlessRecords(mOrderBy, mOrderDirection);
             count = results.size();
 
@@ -4698,7 +4701,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mDatasource.createRecord(app_data_file, content, 0, null, true);
             }
 
-            // 2. Backup settings
+            // 3. Backup settings
             Map<String, ?> prefs = new TreeMap<>(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getAll());
             String key, value;
             content = "";

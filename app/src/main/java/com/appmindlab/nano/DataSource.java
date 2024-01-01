@@ -1262,6 +1262,26 @@ public class DataSource {
         cursor.close();
     }
 
+    // Remove app data conflicts
+    protected void removeAppDataConflicts() {
+        Cursor cursor;
+        String qry;
+
+        qry = "DELETE FROM " + DBHelper.TABLE;
+        qry += " WHERE " + DBHelper.COLUMN_ID + " IN ";
+        qry += " (";
+        qry += "   SELECT " + DBHelper.COLUMN_ID + " ";
+        qry += "   FROM " + DBHelper.TABLE;
+        qry += "   WHERE " + DBHelper.COLUMN_TITLE + " LIKE '" + Const.APP_DATA_CONFLICT_PATTERN + "'";
+        qry += " )";
+
+        cursor = mDatabase.rawQuery(qry, null);
+
+        Log.d(Const.TAG, "nano - removeAppDataConflicts, qry: " + qry + ", cursor: " + cursor.getCount());
+
+        cursor.close();
+    }
+
     // Check whether natural sort can be applied
     protected boolean naturalSortSafe(String criteria, String orderBy) {
         return ((orderBy.endsWith(Const.SORT_BY_TITLE)) && (criteria.startsWith(Const.TITLEREGONLY)) && (!criteria.contains(":*") && (!criteria.contains(":?"))));

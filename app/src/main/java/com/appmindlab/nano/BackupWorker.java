@@ -209,7 +209,10 @@ public class BackupWorker extends Worker {
         app_data_file = Utils.makeFileName(context, Const.APP_DATA_FILE);
         app_settings_file = Utils.makeFileName(context, Const.APP_SETTINGS_FILE);
 
-        // 1. Backup app data
+        // 1. Remove app data conflicts
+        mDatasource.removeAppDataConflicts();
+
+        // 2. Backup app data
         results = mDatasource.getAllActiveContentlessRecords("title", "ASC");
         count = results.size();
 
@@ -230,7 +233,7 @@ public class BackupWorker extends Worker {
             mDatasource.createRecord(app_data_file, content, 0, null, true);
         }
 
-        // 2. Backup settings
+        // 3. Backup settings
         Map<String, ?> prefs = new TreeMap<>(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getAll());
         String key, value;
         content = "";
