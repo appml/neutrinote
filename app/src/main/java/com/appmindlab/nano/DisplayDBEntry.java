@@ -3785,6 +3785,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // In case of direct uri edit, skip database update
         if (mUri != null) {
             Utils.writeContentToUri(getApplicationContext(), mUri, content);
+            if (exit)
+                leave();
             return;
         }
 
