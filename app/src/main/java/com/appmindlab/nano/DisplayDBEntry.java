@@ -3784,7 +3784,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // In case of direct uri edit, skip database update
         if (mUri != null) {
-            Utils.writeContentToUri(getApplicationContext(), mUri, content);
+            if (!Utils.writeContentToUri(getApplicationContext(), mUri, content)) {
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_unexpected), Toast.LENGTH_SHORT).show();
+            }
+
             if (exit)
                 leave();
             return;

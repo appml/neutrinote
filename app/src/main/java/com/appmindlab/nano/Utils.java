@@ -3304,15 +3304,17 @@ public class Utils {
     }
 
     // Write to Uri
-    protected static void writeContentToUri(Context context, Uri uri, String content) {
+    protected static boolean writeContentToUri(Context context, Uri uri, String content) {
         try {
             OutputStream out = context.getContentResolver().openOutputStream(uri);
             OutputStreamWriter writer = new OutputStreamWriter(out);
             writer.write(content);
             writer.close();
+            return true;
         }
         catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 
