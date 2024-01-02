@@ -3800,15 +3800,28 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
 
         if (mId > 0) {
-            mId = mDatasource.updateRecord(mId, title, content, mStar, null, true, mTitleSaved);
-            // Purge old title from mirror in the event of a title change, updated title will be added by next mirroring
-            if ((!title.equals(mTitleSaved)) && (hasMirror())) {
-                Thread t = new Thread() {
-                    public void run() {
-                        Utils.deleteSAFSubDirFile(getApplicationContext(), mBackupUri, Const.MIRROR_PATH, mTitleSaved);
+            // Duplicate title check
+            ArrayList<DBEntry> results = mDatasource.getRecordByTitle(title);
+            if (results.size() > 0) {
+                entry = results.get(0);
+                if (mId != entry.getId()) {
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.dialog_duplicates_title), Snackbar.LENGTH_SHORT);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                    return;
+                }
+                else {
+                    mId = mDatasource.updateRecord(mId, title, content, mStar, null, true, mTitleSaved);
+                    // Purge old title from mirror in the event of a title change, updated title will be added by next mirroring
+                    if ((!title.equals(mTitleSaved)) && (hasMirror())) {
+                        Thread t = new Thread() {
+                            public void run() {
+                                Utils.deleteSAFSubDirFile(getApplicationContext(), mBackupUri, Const.MIRROR_PATH, mTitleSaved);
+                            }
+                        };
+                        t.start();
                     }
-                };
-                t.start();
+                }
             }
         }
         else {
