@@ -1267,7 +1267,8 @@ public class DataSource {
         Cursor cursor;
         String qry;
 
-        qry = "DELETE FROM " + DBHelper.TABLE;
+        qry =  "UPDATE " + DBHelper.TABLE;
+        qry += " SET " + DBHelper.COLUMN_DELETED + " = 1";
         qry += " WHERE " + DBHelper.COLUMN_ID + " IN ";
         qry += " (";
         qry += "   SELECT " + DBHelper.COLUMN_ID + " ";
