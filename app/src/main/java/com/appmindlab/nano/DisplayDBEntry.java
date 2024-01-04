@@ -3815,18 +3815,17 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     snackbar.show();
                     return;
                 }
-                else {
-                    mId = mDatasource.updateRecord(mId, title, content, mStar, null, true, mTitleSaved);
-                    // Purge old title from mirror in the event of a title change, updated title will be added by next mirroring
-                    if ((!title.equals(mTitleSaved)) && (hasMirror())) {
-                        Thread t = new Thread() {
-                            public void run() {
-                                Utils.deleteSAFSubDirFile(getApplicationContext(), mBackupUri, Const.MIRROR_PATH, mTitleSaved);
-                            }
-                        };
-                        t.start();
+            }
+
+            mId = mDatasource.updateRecord(mId, title, content, mStar, null, true, mTitleSaved);
+            // Purge old title from mirror in the event of a title change, updated title will be added by next mirroring
+            if ((!title.equals(mTitleSaved)) && (hasMirror())) {
+                Thread t = new Thread() {
+                    public void run() {
+                        Utils.deleteSAFSubDirFile(getApplicationContext(), mBackupUri, Const.MIRROR_PATH, mTitleSaved);
                     }
-                }
+                };
+                t.start();
             }
         }
         else {
