@@ -108,7 +108,7 @@ public class BackupWorker extends Worker {
                     /////////////////////////
                     // 1. Clean up database
                     /////////////////////////
-                    mDatasource.removeDuplicateRecords();
+                    mDatasource.removeDuplicateRecords(Utils.fileNameAsTitle(getApplicationContext()));
 
                     ///////////////////////
                     // 2. Backup app data

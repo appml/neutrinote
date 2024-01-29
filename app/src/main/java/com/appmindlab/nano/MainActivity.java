@@ -849,7 +849,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             Thread t = new Thread() {
                 public void run() {
-                    mDatasource.removeDuplicateRecords();
+                    mDatasource.removeDuplicateRecords(Utils.fileNameAsTitle(getApplicationContext()));
                 }
             };
             t.run();

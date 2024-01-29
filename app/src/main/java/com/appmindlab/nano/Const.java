@@ -643,6 +643,7 @@ public class Const {
     protected final static String HIDE_PATTERN_PREFIX = "~";
 
     protected final static String APP_DATA_CONFLICT_PATTERN = "~neutrinote_%conflict%";
+    protected final static String SCOPE_STORAGE_DUPLICATES_PATTERN = "%.% (%)";
     protected final static String WEB_DEFINE_PATTERN_PREFIX = "define ";
     protected final static String EXCLUDE_LARGE_FILES = " LENGTH(" + DBHelper.COLUMN_CONTENT + ") < " + MAX_FILE_SIZE;    // Exclude large files
     protected final static String SEARCH_HISTORY_FILE = "~neutrinote_search_history";

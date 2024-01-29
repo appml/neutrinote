@@ -1243,7 +1243,7 @@ public class DataSource {
     }
 
     // Remove duplicates
-    protected void removeDuplicateRecords() {
+    protected void removeDuplicateRecords(boolean fileNameAsTitle) {
         Cursor cursor;
         String qry;
 
@@ -1259,7 +1259,23 @@ public class DataSource {
 
         Log.d(Const.TAG, "nano - removeDuplicateRecords, qry: " + qry + ", cursor: " + cursor.getCount());
 
-        cursor.close();
+        if (fileNameAsTitle) {
+            qry = "UPDATE " + DBHelper.TABLE;
+            qry += " SET " + DBHelper.COLUMN_DELETED + " = 1";
+            qry += " WHERE " + DBHelper.COLUMN_ID + " IN ";
+            qry += " (";
+
+            qry += "   SELECT " + DBHelper.COLUMN_ID + " ";
+            qry += "   FROM " + DBHelper.TABLE;
+            qry += "   WHERE " + DBHelper.COLUMN_TITLE + " LIKE '" + Const.SCOPE_STORAGE_DUPLICATES_PATTERN + "'";
+            qry += " )";
+
+            cursor = mDatabase.rawQuery(qry, null);
+
+            Log.d(Const.TAG, "nano - removeDuplicateRecords, qry: " + qry + ", cursor: " + cursor.getCount());
+
+            cursor.close();
+        }
     }
 
     // Remove app data conflicts
