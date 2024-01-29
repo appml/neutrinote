@@ -1247,6 +1247,7 @@ public class DataSource {
         Cursor cursor;
         String qry;
 
+        // Handle simple duplicates
         qry = "DELETE FROM " + DBHelper.TABLE;
         qry += " WHERE " + DBHelper.COLUMN_ID + " NOT IN ";
         qry += " (";
@@ -1259,6 +1260,7 @@ public class DataSource {
 
         Log.d(Const.TAG, "nano - removeDuplicateRecords, qry: " + qry + ", cursor: " + cursor.getCount());
 
+        // Handle system generated duplicates
         if (fileNameAsTitle) {
             qry = "UPDATE " + DBHelper.TABLE;
             qry += " SET " + DBHelper.COLUMN_DELETED + " = 1";

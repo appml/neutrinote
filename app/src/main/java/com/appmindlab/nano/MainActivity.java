@@ -4410,7 +4410,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                             // Remove previous appearance of search term to keep it recent
                             if (content.contains(Const.DELIMITER + search_term))
-                                content = content.replaceAll(Const.DELIMITER + search_term, Const.DELIMITER);
+                                content = content.replaceAll(Const.DELIMITER + Pattern.quote(search_term), Const.DELIMITER);
 
                             content = content + search_term;
                         } else
