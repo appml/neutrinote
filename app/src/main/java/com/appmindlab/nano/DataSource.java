@@ -1269,7 +1269,7 @@ public class DataSource {
 
             qry += "   SELECT " + DBHelper.COLUMN_ID + " ";
             qry += "   FROM " + DBHelper.TABLE;
-            qry += "   WHERE " + DBHelper.COLUMN_TITLE + " LIKE '" + Const.SCOPE_STORAGE_DUPLICATES_PATTERN + "'";
+            qry += "   WHERE " + DBHelper.COLUMN_TITLE + " LIKE '" + Const.FILE_DUPLICATES_PATTERN + "'";
             qry += " )";
 
             cursor = mDatabase.rawQuery(qry, null);
