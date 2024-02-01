@@ -1269,7 +1269,7 @@ public class DataSource {
 
             qry += "   SELECT " + DBHelper.COLUMN_ID + " ";
             qry += "   FROM " + DBHelper.TABLE;
-            qry += "   WHERE " + DBHelper.COLUMN_TITLE + " LIKE '" + Const.FILE_DUPLICATES_PATTERN + "'";
+            qry += "   WHERE " + DBHelper.COLUMN_TITLE + " GLOB '" + Const.FILE_DUPLICATES_PATTERN + "'";
             qry += " )";
 
             cursor = mDatabase.rawQuery(qry, null);
@@ -1291,7 +1291,7 @@ public class DataSource {
         qry += " (";
         qry += "   SELECT " + DBHelper.COLUMN_ID + " ";
         qry += "   FROM " + DBHelper.TABLE;
-        qry += "   WHERE " + DBHelper.COLUMN_TITLE + " LIKE '" + Const.APP_DATA_CONFLICT_PATTERN + "'";
+        qry += "   WHERE " + DBHelper.COLUMN_TITLE + " GLOB '" + Const.APP_DATA_CONFLICT_PATTERN + "'";
         qry += " )";
 
         cursor = mDatabase.rawQuery(qry, null);
