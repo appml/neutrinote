@@ -196,9 +196,8 @@ public class MirrorWorker extends Worker {
                         // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
                         List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
                         DBEntry entry;
-                        count = items.size();
 
-                        for (int i = 0; i < count; i++) {
+                        for (int i = 0; i < items.size(); i++) {
                             entry = items.get(i);
                             if (dest_dir.findFile(Utils.getFileNameFromTitle(getApplicationContext(), entry.getTitle())) == null) {
                                 mDatasource.markRecordDeletedById(entry.getId(), 1);
