@@ -1946,6 +1946,38 @@ public class DataSource {
         return results;
     }
 
+    // Get titles based on last modified time
+    // Note: include hidden files
+    public ArrayList<DBEntry> getAllActiveRecordsTitlesByLastModified(String orderBy, String orderDirection, long filter, String op) {
+        ArrayList<DBEntry> results = new ArrayList<>();
+
+        // Apply order by prefix
+        orderBy = getOrderByPrefix() + orderBy;
+
+        Cursor cursor = mDatabase.query(DBHelper.TABLE,
+                minimalColumns,
+                "( " + DBHelper.COLUMN_MODIFIED + op + filter + ") AND (" + DBHelper.COLUMN_DELETED + " = 0) AND " + Const.EXCLUDE_LARGE_FILES,
+                null,
+                null,
+                null,
+                orderBy + " " + orderDirection);
+
+        try {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                DBEntry entry = cursorToMinimalRecord(cursor);
+                results.add(entry);
+                cursor.moveToNext();
+            }
+        }
+        finally {
+            // Make sure to close the cursor
+            cursor.close();
+        }
+
+        return results;
+    }
+
     // Get working set of a specific size
     public ArrayList<DBEntry> getWorkingSet(int limit) {
         ArrayList<DBEntry> results = new ArrayList<DBEntry>();

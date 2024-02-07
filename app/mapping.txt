@@ -3,8 +3,8 @@
 # min_api: 26
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: b94e1e4
-# pg_map_hash: SHA-256 b94e1e4d76aee7270a411429b6417fb144674943bc71a8b4215cf0c2425cfe00
+# pg_map_id: 026fe20
+# pg_map_hash: SHA-256 026fe206acdc833b24c054f11ec7b4d34b170129b1caf9b839edf41ea176d402
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -17111,13 +17111,13 @@ com.appmindlab.nano.BackupWorker$1 -> com.appmindlab.nano.BackupWorker$a:
     95:160:void run():0:0 -> run
     161:162:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupWorker.access$100(com.appmindlab.nano.BackupWorker):0:0 -> run
     161:162:void run():0 -> run
-    163:215:void run():0:0 -> run
-    216:217:java.lang.String com.appmindlab.nano.BackupWorker.access$302(com.appmindlab.nano.BackupWorker,java.lang.String):0:0 -> run
-    216:217:void run():0 -> run
-    218:317:void run():0:0 -> run
-    318:319:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupWorker.access$100(com.appmindlab.nano.BackupWorker):0:0 -> run
-    318:319:void run():0 -> run
-    320:328:void run():0:0 -> run
+    163:223:void run():0:0 -> run
+    224:225:java.lang.String com.appmindlab.nano.BackupWorker.access$302(com.appmindlab.nano.BackupWorker,java.lang.String):0:0 -> run
+    224:225:void run():0 -> run
+    226:325:void run():0:0 -> run
+    326:327:com.appmindlab.nano.DataSource com.appmindlab.nano.BackupWorker.access$100(com.appmindlab.nano.BackupWorker):0:0 -> run
+    326:327:void run():0 -> run
+    328:336:void run():0:0 -> run
 com.appmindlab.nano.BackupWorker$2 -> com.appmindlab.nano.BackupWorker$b:
 com.appmindlab.nano.BackupWorker$3 -> com.appmindlab.nano.BackupWorker$c:
 com.appmindlab.nano.ContentGestureListener -> com.appmindlab.nano.a:
@@ -17898,14 +17898,22 @@ com.appmindlab.nano.DataSource -> com.appmindlab.nano.p:
     86:86:void removeAppDataConflicts():0:0 -> removeAppDataConflicts
     87:87:void removeAppDataConflicts():0:0 -> removeAppDataConflicts
     5:82:void removeAppDataConflicts():0:0 -> removeAppDataConflicts
-    4:4:void removeDuplicateRecords():0:0 -> removeDuplicateRecords
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":77,"2":78,"5":79,"8":80,"11":81}}
-    77:77:void removeDuplicateRecords():0:0 -> removeDuplicateRecords
-    78:78:void removeDuplicateRecords():0:0 -> removeDuplicateRecords
-    79:79:void removeDuplicateRecords():0:0 -> removeDuplicateRecords
-    80:80:void removeDuplicateRecords():0:0 -> removeDuplicateRecords
-    81:81:void removeDuplicateRecords():0:0 -> removeDuplicateRecords
-    5:76:void removeDuplicateRecords():0:0 -> removeDuplicateRecords
+    4:4:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":145,"2":146,"5":147,"8":148,"11":149}}
+    145:145:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    146:146:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    147:147:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    148:148:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    149:149:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    5:78:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    79:79:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":145,"2":146,"5":147,"8":148,"11":149}}
+    145:145:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    146:146:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    147:147:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    148:148:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    149:149:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
+    80:144:void removeDuplicateRecords(boolean):0:0 -> removeDuplicateRecords
     62:62:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":2746,"3":2747,"6":2748}}
     2746:2746:android.database.Cursor searchRecordsCursor(java.lang.String,java.lang.String,java.lang.String,java.lang.String):0:0 -> searchRecordsCursor
@@ -19686,6 +19694,12 @@ com.appmindlab.nano.MainActivity$47 -> com.appmindlab.nano.MainActivity$o0:
 com.appmindlab.nano.MainActivity$48 -> com.appmindlab.nano.MainActivity$p0:
     boolean val$append_mode -> b
     com.appmindlab.nano.MainActivity this$0 -> c
+    110:110:void run():0:0 -> run
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":185,"2":186,"5":187}}
+    185:185:void run():0:0 -> run
+    186:186:void run():0:0 -> run
+    187:187:void run():0:0 -> run
+    111:128:void run():0:0 -> run
     129:129:void run():0:0 -> run
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":185,"2":186,"5":187,"8":188,"11":189}}
     185:185:void run():0:0 -> run
