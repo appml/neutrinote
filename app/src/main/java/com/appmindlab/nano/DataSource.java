@@ -1921,7 +1921,7 @@ public class DataSource {
 
         Cursor cursor = mDatabase.query(DBHelper.TABLE,
                 new String[] {DBHelper.COLUMN_ID},
-                "( " + DBHelper.COLUMN_MODIFIED + op + filter + ") AND (" + DBHelper.COLUMN_DELETED + " = 0) AND " + Const.EXCLUDE_LARGE_FILES,
+                "( " + DBHelper.COLUMN_MODIFIED + op + filter + ") AND (" + DBHelper.COLUMN_DELETED + " = 0)",
                 null,
                 null,
                 null,
@@ -1956,7 +1956,7 @@ public class DataSource {
 
         Cursor cursor = mDatabase.query(DBHelper.TABLE,
                 minimalColumns,
-                "( " + DBHelper.COLUMN_MODIFIED + op + filter + ") AND (" + DBHelper.COLUMN_DELETED + " = 0) AND " + Const.EXCLUDE_LARGE_FILES,
+                "( " + DBHelper.COLUMN_MODIFIED + op + filter + ") AND (" + DBHelper.COLUMN_DELETED + " = 0)",
                 null,
                 null,
                 null,
