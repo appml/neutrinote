@@ -191,17 +191,19 @@ public class MirrorWorker extends Worker {
                         // Restore fonts
                         font_dir = dest_dir.findFile(Const.CUSTOM_FONTS_PATH);
                         Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
+                    }
 
-                        // Purge from local repo notes removed from mirror
-                        // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
-                        List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
-                        DBEntry entry;
+                    Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
 
-                        for (int i = 0; i < items.size(); i++) {
-                            entry = items.get(i);
-                            if (dest_dir.findFile(Utils.getFileNameFromTitle(getApplicationContext(), entry.getTitle())) == null) {
-                                mDatasource.markRecordDeletedById(entry.getId(), 1);
-                            }
+                    // Purge from local repo notes removed from mirror
+                    // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
+                    List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
+                    DBEntry entry;
+
+                    for (int i = 0; i < items.size(); i++) {
+                        entry = items.get(i);
+                        if (dest_dir.findFile(Utils.getFileNameFromTitle(getApplicationContext(), entry.getTitle())) == null) {
+                            mDatasource.deleteRecordById(entry.getId());  // Purge right away to prevent unexpected restore
                         }
                     }
 
