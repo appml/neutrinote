@@ -463,6 +463,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStop();
         Log.d(Const.TAG, "nano - onStop");
 
+        // Verify database
+        verifyDatabase();
+
         // Mirror if applicable
         if (hasMirror()) {
             // Any change since last mirroring?
@@ -849,6 +852,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             Thread t = new Thread() {
                 public void run() {
+                    resumeDatabase();
                     mDatasource.removeDuplicateRecords(Utils.fileNameAsTitle(getApplicationContext()));
                 }
             };
@@ -880,7 +884,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mAdapter.setDatasource(mDatasource);
 
         // Verify database
-        verifyDatabase();
+        // testing: verifyDatabase();
     }
 
     // Resume database
