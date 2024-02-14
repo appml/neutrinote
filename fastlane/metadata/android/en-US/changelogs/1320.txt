@@ -1,0 +1,3 @@
+v4.5.0
+- Faster startup time.
+- Added deletion detection to mirror algorithm.
