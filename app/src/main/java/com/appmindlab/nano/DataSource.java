@@ -1275,9 +1275,9 @@ public class DataSource {
             cursor = mDatabase.rawQuery(qry, null);
 
             Log.d(Const.TAG, "nano - removeDuplicateRecords, qry: " + qry + ", cursor: " + cursor.getCount());
-
-            cursor.close();
         }
+
+        cursor.close();
     }
 
     // Remove app data conflicts
