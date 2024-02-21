@@ -3,8 +3,8 @@
 # min_api: 26
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 026fe20
-# pg_map_hash: SHA-256 026fe206acdc833b24c054f11ec7b4d34b170129b1caf9b839edf41ea176d402
+# pg_map_id: 62d0cf7
+# pg_map_hash: SHA-256 62d0cf7fb5850a453c6f466c6af90fe43794982b6a04130f8c63f68c4d12a3ec
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -17797,15 +17797,21 @@ com.appmindlab.nano.DataSource -> com.appmindlab.nano.p:
     97:97:java.util.ArrayList getAllActiveRecordsIDs(java.lang.String,java.lang.String):0:0 -> getAllActiveRecordsIDs
     98:98:java.util.ArrayList getAllActiveRecordsIDs(java.lang.String,java.lang.String):0:0 -> getAllActiveRecordsIDs
     35:92:java.util.ArrayList getAllActiveRecordsIDs(java.lang.String,java.lang.String):0:0 -> getAllActiveRecordsIDs
-    74:74:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":131,"2":132,"5":133,"8":134,"11":135,"14":136}}
-    131:131:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
-    132:132:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
-    133:133:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
-    134:134:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
-    135:135:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
-    136:136:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
-    75:130:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    57:57:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":120,"3":121,"6":122}}
+    120:120:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    121:121:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    122:122:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    58:62:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    63:63:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":120,"2":121,"5":122,"8":123,"11":124,"14":125}}
+    120:120:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    121:121:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    122:122:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    123:123:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    124:124:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    125:125:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
+    64:119:java.util.ArrayList getAllActiveRecordsIDsByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsIDsByLastModified
     84:84:android.database.Cursor getAllActiveRecordsModifiedNearbyCursor(java.lang.String,java.lang.String,double,java.lang.String):0:0 -> getAllActiveRecordsModifiedNearbyCursor
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":100,"2":101,"5":102,"8":103,"11":104,"14":105}}
     100:100:android.database.Cursor getAllActiveRecordsModifiedNearbyCursor(java.lang.String,java.lang.String,double,java.lang.String):0:0 -> getAllActiveRecordsModifiedNearbyCursor
@@ -17824,6 +17830,21 @@ com.appmindlab.nano.DataSource -> com.appmindlab.nano.p:
     119:119:java.lang.String[] getAllActiveRecordsTitles(java.lang.String,java.lang.String):0:0 -> getAllActiveRecordsTitles
     120:120:java.lang.String[] getAllActiveRecordsTitles(java.lang.String,java.lang.String):0:0 -> getAllActiveRecordsTitles
     45:114:java.lang.String[] getAllActiveRecordsTitles(java.lang.String,java.lang.String):0:0 -> getAllActiveRecordsTitles
+    53:53:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":101,"3":102,"6":103}}
+    101:101:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    102:102:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    103:103:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    54:58:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    59:59:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":101,"2":102,"5":103,"8":104,"11":105,"14":106}}
+    101:101:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    102:102:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    103:103:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    104:104:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    105:105:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    106:106:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
+    60:100:java.util.ArrayList getAllActiveRecordsTitlesByLastModified(java.lang.String,java.lang.String,long,java.lang.String):0:0 -> getAllActiveRecordsTitlesByLastModified
     30:30:java.util.ArrayList getAllActiveStarredRecords(java.lang.String,java.lang.String):0:0 -> getAllActiveStarredRecords
       # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":74,"2":75,"5":76,"8":77,"11":78,"14":79}}
     74:74:java.util.ArrayList getAllActiveStarredRecords(java.lang.String,java.lang.String):0:0 -> getAllActiveStarredRecords
@@ -20017,11 +20038,11 @@ com.appmindlab.nano.MirrorWorker -> com.appmindlab.nano.MirrorWorker:
 com.appmindlab.nano.MirrorWorker$1 -> com.appmindlab.nano.MirrorWorker$a:
     com.appmindlab.nano.MirrorWorker this$0 -> b
     32:32:void run():0:0 -> run
-      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1099,"2":1100,"5":1101}}
-    1099:1099:void run():0:0 -> run
-    1100:1100:void run():0:0 -> run
-    1101:1101:void run():0:0 -> run
-    33:1098:void run():0:0 -> run
+      # {"id":"com.android.tools.r8.outlineCallsite","positions":{"0":1181,"2":1182,"5":1183}}
+    1181:1181:void run():0:0 -> run
+    1182:1182:void run():0:0 -> run
+    1183:1183:void run():0:0 -> run
+    33:1180:void run():0:0 -> run
 com.appmindlab.nano.NotificationReceiver -> com.appmindlab.nano.NotificationReceiver:
     android.content.SharedPreferences mSharedPreferences -> b
     com.appmindlab.nano.DataSource mDatasource -> a

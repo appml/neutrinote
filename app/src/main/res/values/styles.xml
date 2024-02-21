@@ -20,7 +20,7 @@
         <item name="drawerTextColor">@color/drawer_text</item>
         <item name="fabBackgroundColor">@color/fab_background</item>
         <item name="android:dropDownListViewStyle">@style/DropDownTheme</item>
-        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogThemeDay</item>
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="switchStyle">@style/AppSwitchStyle</item>
