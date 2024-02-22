@@ -4,6 +4,8 @@ package com.appmindlab.nano;
  * Created by saelim on 6/30/2015.
  */
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import android.app.AlarmManager;
 import android.app.Application;
 import android.app.PendingIntent;
@@ -33,7 +35,7 @@ public class DBApplication extends Application {
                     Date launch_time = cal.getTime();
 
                     if (mLastLaunchTime.before(launch_time)) {
-                        PendingIntent activity = PendingIntent.getActivity(mContext, 0, new Intent(mContext, MainActivity.class), PendingIntent.FLAG_ONE_SHOT);
+                        PendingIntent activity = PendingIntent.getActivity(mContext, 0, new Intent(mContext, MainActivity.class), PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE);
 
                         // Auto restart activity
                         AlarmManager alarm_manager;
