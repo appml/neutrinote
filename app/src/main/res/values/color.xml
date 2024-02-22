@@ -161,7 +161,7 @@
     <color name="color_accent_lux">@color/colorPrimaryLux</color>
     <color name="color_accent_night">@color/colorPrimaryOled</color>
 
-    <color name="theme_control_activated">#EA80FC</color>
+    <color name="theme_control_activated">#00897B</color>
     <color name="theme_control_highlight">#FF8F00</color>
     <color name="theme_control_highlight_settings">#00FFF9C4</color>
     <color name="theme_control_normal">#FFFFFF</color>
