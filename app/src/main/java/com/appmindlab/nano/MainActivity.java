@@ -571,14 +571,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 showHideNavigationIcon(true);
 
                 // Safe to refresh list
-                mRefreshListSafe = true;
+                // testing: mRefreshListSafe = true;
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
                 // Unsafe to refresh list
-                mRefreshListSafe = false;
+                // testing: mRefreshListSafe = false;
                 return false;
             }
         });
