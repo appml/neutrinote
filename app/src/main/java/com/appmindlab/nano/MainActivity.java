@@ -571,14 +571,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 showHideNavigationIcon(true);
 
                 // Safe to refresh list
-                // testing: mRefreshListSafe = true;
+                mRefreshListSafe = true;
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
                 // Unsafe to refresh list
-                // testing: mRefreshListSafe = false;
+                mRefreshListSafe = false;
                 return false;
             }
         });
@@ -1611,7 +1611,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Refresh list
-    protected synchronized void refreshList() {
+    // testing: protected synchronized void refreshList() {
+    protected void refreshList() {
         // Sanity check
         if (!mRefreshListSafe) return;
 
@@ -1656,7 +1657,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
             } catch (Exception e) {
-                Log.d(Const.TAG, "nano - RescanLocalRepoTask: caught an exception");
+                Log.d(Const.TAG, "nano - RefreshListTask: caught an exception");
                 e.printStackTrace();
             }
             return totalSize;
