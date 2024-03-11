@@ -572,6 +572,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 // Safe to refresh list
                 mRefreshListSafe = true;
+
+                // Issue immediately
+                refreshList();
+
                 return false;
             }
 
@@ -621,6 +625,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 // Safe to refresh list
                 mRefreshListSafe = true;
+
+                // Issue immediately
+                refreshList();
 
                 return false;
             }
@@ -1611,8 +1618,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Refresh list
-    // testing: protected synchronized void refreshList() {
-    protected void refreshList() {
+    protected synchronized void refreshList() {
         // Sanity check
         if (!mRefreshListSafe) return;
 
