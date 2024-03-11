@@ -1618,7 +1618,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Refresh list
-    protected synchronized void refreshList() {
+    protected /* synchronized */ void refreshList() {
         // Sanity check
         if (!mRefreshListSafe) return;
 
