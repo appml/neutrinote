@@ -31,8 +31,14 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_LONGITUDE = "longitude";
     public static final String COLUMN_DISTANCE = "distance";
 
+    // Indices
+    public static final String INDEX_TITLE = COLUMN_TITLE + "_idx";
+    public static final String INDEX_METADATA = COLUMN_METADATA + "_idx";
+    public static final String INDEX_STAR = COLUMN_STAR + "_idx";
+    public static final String INDEX_DELETED = COLUMN_DELETED + "_idx";
+
     private static final String DATABASE_NAME = "app_db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
@@ -81,5 +87,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // db.execSQL("DROP TABLE IF EXISTS " + TABLE);
         // onCreate(db);
+
+        if (oldVersion == 1) {
+            db.execSQL("CREATE INDEX " + INDEX_TITLE + " ON " + TABLE + " (" + COLUMN_TITLE + ")");
+            db.execSQL("CREATE INDEX " + INDEX_METADATA + " ON " + TABLE + " (" + COLUMN_METADATA + ")");
+            db.execSQL("CREATE INDEX " + INDEX_STAR + " ON " + TABLE + " (" + COLUMN_STAR + ")");
+            db.execSQL("CREATE INDEX " + INDEX_DELETED + " ON " + TABLE + " (" + COLUMN_DELETED + ")");
+        }
     }
 }
