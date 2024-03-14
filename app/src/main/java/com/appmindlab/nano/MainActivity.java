@@ -463,9 +463,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStop();
         Log.d(Const.TAG, "nano - onStop");
 
-        // Verify database
-        verifyDatabase();
-
         // Mirror if applicable
         if (hasMirror()) {
             // Any change since last mirroring?
@@ -889,9 +886,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Set adapter's datasource
         if (mAdapter != null)
             mAdapter.setDatasource(mDatasource);
-
-        // Verify database
-        // testing: verifyDatabase();
     }
 
     // Resume database

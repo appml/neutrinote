@@ -103,7 +103,6 @@ public class MirrorWorker extends Worker {
                 mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
 
                 try {
-
                     ///////////////////////
                     // TO MIRROR (NOTES) //
                     ///////////////////////
@@ -191,6 +190,13 @@ public class MirrorWorker extends Worker {
                         // Restore fonts
                         font_dir = dest_dir.findFile(Const.CUSTOM_FONTS_PATH);
                         Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
+
+                        /////////////////
+                        // Maintenance //
+                        /////////////////
+
+                        // Clean up database
+                        mDatasource.removeDuplicateRecords(Utils.fileNameAsTitle(getApplicationContext()));
                     }
 
                     Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
