@@ -201,13 +201,6 @@ public class MirrorWorker extends Worker {
                         // Restore fonts
                         font_dir = dest_dir.findFile(Const.CUSTOM_FONTS_PATH);
                         Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
-
-                        /////////////////
-                        // Maintenance //
-                        /////////////////
-
-                        // Clean up database
-                        mDatasource.removeDuplicateRecords(Utils.fileNameAsTitle(getApplicationContext()));
                     }
 
                     Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
@@ -316,6 +309,12 @@ public class MirrorWorker extends Worker {
                 // Sanity check
                 if (Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(title)) {
                     // Notes with reserved folder names need to be removed
+                    mDatasource.markRecordDeletedById(entry.getId(), 1);
+                    return;
+                }
+
+                if (title.endsWith(")")) {
+                    // Notes with duplicate names need to be removed
                     mDatasource.markRecordDeletedById(entry.getId(), 1);
                     return;
                 }
