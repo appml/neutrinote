@@ -1,0 +1,3 @@
+v4.5.1b
+- Search performance improvements.
+- More scalable sanity check.

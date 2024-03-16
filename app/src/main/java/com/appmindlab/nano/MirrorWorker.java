@@ -313,7 +313,7 @@ public class MirrorWorker extends Worker {
                     return;
                 }
 
-                if (title.endsWith(")")) {
+                if ((Utils.fileNameAsTitle(getApplicationContext())) && (title.endsWith(")"))) {
                     // Notes with duplicate names need to be removed
                     mDatasource.markRecordDeletedById(entry.getId(), 1);
                     return;
