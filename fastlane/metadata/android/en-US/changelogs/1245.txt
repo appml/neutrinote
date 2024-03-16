@@ -1,2 +1,0 @@
-v4.1.0
-- Support calls that behave like console.log()

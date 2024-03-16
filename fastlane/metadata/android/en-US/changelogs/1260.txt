@@ -1,3 +1,0 @@
-v4.2.4a
-- Fixed add note widget for Android 12+
-- Fixed direct file opening from 3rd party apps

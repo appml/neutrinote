@@ -1,3 +1,0 @@
-v4.4.1a
-- Minor UI improvements.
-- Stability improvements.

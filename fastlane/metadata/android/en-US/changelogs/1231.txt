@@ -1,3 +1,0 @@
-v3.9.8
-- Improved efficiency in the auto mirror algorithm.
-- Fixed title change bug when mirror is enabled.

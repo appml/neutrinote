@@ -1,3 +1,0 @@
-v4.4.2
-- Added support for ASCII to SVG.
-- Updated Target SDK.

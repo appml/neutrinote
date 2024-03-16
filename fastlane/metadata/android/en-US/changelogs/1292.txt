@@ -1,2 +1,0 @@
-v4.4.1c
-- Bug fixes in deletion involving mirror.

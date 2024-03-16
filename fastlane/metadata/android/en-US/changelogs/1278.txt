@@ -1,3 +1,0 @@
-v4.3.4
-- Added QuickDic support
-- Fixed frozen screen in Android 13

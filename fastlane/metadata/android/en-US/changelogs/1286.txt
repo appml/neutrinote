@@ -1,3 +1,0 @@
-v4.3.5d
-- Faster app resume from background
-- Minor updates

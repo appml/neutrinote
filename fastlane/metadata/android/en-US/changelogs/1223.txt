@@ -1,2 +1,0 @@
-v3.9.1
-Ambient glow now supports virtual light sensor.

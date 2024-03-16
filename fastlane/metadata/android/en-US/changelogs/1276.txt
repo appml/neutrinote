@@ -1,3 +1,0 @@
-v4.3.2.a
-- Allow linking directly from editor.
-- Bug fixes

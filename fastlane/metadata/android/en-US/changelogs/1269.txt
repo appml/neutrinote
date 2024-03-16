@@ -1,3 +1,0 @@
-v4.3.0.a
-- Maximum no. of backup copies can now be specified
-- Minor screen rotation bug

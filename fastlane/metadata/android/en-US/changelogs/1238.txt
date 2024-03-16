@@ -1,2 +1,0 @@
-v4.0.5
-- Fixed widget update issues

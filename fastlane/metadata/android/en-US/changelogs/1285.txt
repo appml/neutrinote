@@ -1,2 +1,0 @@
-v4.3.5c
-- Better compatibility with Samsung custom fonts

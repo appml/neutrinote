@@ -1,3 +1,0 @@
-v3.9.5
-- Support long-running backup jobs with a better UI.
-- Auto dismiss notification for daily auto mirroring.

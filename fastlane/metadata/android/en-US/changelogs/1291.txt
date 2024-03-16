@@ -1,2 +1,0 @@
-v4.4.1b
-- Bug fixes in shortcut logic.

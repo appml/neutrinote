@@ -1,2 +1,0 @@
-v3.8.7
-Fixed scope storage bug.

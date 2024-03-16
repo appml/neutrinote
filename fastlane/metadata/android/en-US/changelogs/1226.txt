@@ -1,2 +1,0 @@
-v3.9.4
-Support long-running backup jobs with a better UI.

@@ -1,3 +1,0 @@
-v4.4.5
-- Added JavaScript in-note REPL (see documentation).
-- HTML/XML tag expansion support (see documentation).

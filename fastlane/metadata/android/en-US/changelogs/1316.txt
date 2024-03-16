@@ -1,4 +1,0 @@
-v4.4.9d
-- Purged app data conflicts automatically
-- Fixed bugs in text editor mode
-- Better handling of duplicate note titles

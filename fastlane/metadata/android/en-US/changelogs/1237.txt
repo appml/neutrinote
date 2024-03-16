@@ -1,3 +1,0 @@
-v4.0.4
-- Hide hidden notes from widget
-- Removed obsolete settings
