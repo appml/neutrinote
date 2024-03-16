@@ -127,11 +127,22 @@ public class MirrorWorker extends Worker {
 
                     Log.d(Const.TAG, "nano - MirrorWorker: From Mirror ");
 
+                    String file_name;
                     for (DocumentFile file : dest_dir.listFiles()) {
                         // Sanity check
                         if (file.isDirectory())  continue;
-                        if (Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(file.getName())) {
+
+                        file_name = file.getName();
+                        if (file_name == null)   continue;
+
+                        if (Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(file_name)) {
                             // Notes with reserved folder names need to be removed
+                            file.delete();
+                            continue;
+                        }
+
+                        if (file_name.endsWith(")")) {
+                            // Notes with duplicate names need to be removed
                             file.delete();
                             continue;
                         }
