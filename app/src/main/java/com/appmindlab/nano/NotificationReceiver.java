@@ -34,7 +34,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             }
 
             // Setup preferences
-            mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+            mSharedPreferences = context.getSharedPreferences(Const.PACKAGE, Context.MODE_PRIVATE);
 
             // Append to scrapbook
             doAppendScrapbook(context, intent);
