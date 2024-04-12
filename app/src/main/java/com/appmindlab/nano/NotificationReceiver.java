@@ -15,7 +15,11 @@ import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.RemoteInput;
 
+import org.ocpsoft.prettytime.PrettyTime;
+
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class NotificationReceiver extends BroadcastReceiver {
     // SQLite related
@@ -107,6 +111,10 @@ public class NotificationReceiver extends BroadcastReceiver {
         Intent paste_intent, goto_intent;
         PendingIntent paste_pending_intent, goto_pending_intent;
 
+        // Preview
+        PrettyTime pretty_time = new PrettyTime(Locale.getDefault());
+        Date timestamp = entry.getModified();
+
         // Clear existing notification
         manager.cancel(notification_id);
 
@@ -114,7 +122,8 @@ public class NotificationReceiver extends BroadcastReceiver {
         builder = new NotificationCompat.Builder(context, Const.SCRAPBOOK_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_mode_edit_vector)
                 .setOngoing(true)
-                .setContentTitle(title + " (" + Utils.readableFileSize(entry.getSize()) + ")");
+                .setContentTitle(title)
+                .setContentText(Utils.readableFileSize(entry.getSize()) + " | " + pretty_time.format(timestamp));
 
         // Remote input
         remote_input = new RemoteInput.Builder(Const.SCRAPBOOK_NOTIFICATION_KEY)
