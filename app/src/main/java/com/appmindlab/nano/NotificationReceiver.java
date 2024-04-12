@@ -114,7 +114,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         builder = new NotificationCompat.Builder(context, Const.SCRAPBOOK_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_mode_edit_vector)
                 .setOngoing(true)
-                .setContentTitle(title);
+                .setContentTitle(title + " (" + Utils.readableFileSize(entry.getSize()) + ")");
 
         // Remote input
         remote_input = new RemoteInput.Builder(Const.SCRAPBOOK_NOTIFICATION_KEY)
