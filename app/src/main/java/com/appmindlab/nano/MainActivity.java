@@ -1886,7 +1886,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             // Do nothing
                         } else {
                             // Keep deleted copies
-                            if ((mKeepDeletedCopies) && (title != null) && (title.length() > 0) && (!title.contains(Const.CONFLICT_LABEL))) {
+                            if ((mKeepDeletedCopies) && (title != null) && (title.length() > 0) && (!title.contains(Const.CONFLICT_PATTERN_1) && (!title.contains(Const.CONFLICT_PATTERN_2)))) {
                                 results_temp = mDatasource.getRecordById(id);
                                 if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0)) {
                                     if (mMirrorUri != null)
@@ -1973,7 +1973,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
 
                     // Keep deleted copies
-                    if ((mKeepDeletedCopies) && (!title.contains(Const.CONFLICT_LABEL))) {
+                    if ((mKeepDeletedCopies) && (!title.contains(Const.CONFLICT_PATTERN_1) && (!title.contains(Const.CONFLICT_PATTERN_2)))) {
                         results_temp = mDatasource.getRecordById(id);
                         if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0)) {
                             if (mMirrorUri != null)
@@ -2111,7 +2111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         id = entry.getId();
 
                         // Keep deleted copies
-                        if ((mKeepDeletedCopies) && (!title.contains(Const.CONFLICT_LABEL))) {
+                        if ((mKeepDeletedCopies) && (!title.contains(Const.CONFLICT_PATTERN_1) && (!title.contains(Const.CONFLICT_PATTERN_2)))) {
                             results_temp = mDatasource.getRecordById(id);
                             if ((results_temp.size() > 0) && (results_temp.get(0).getSize() > 0)) {
                                 if (mMirrorUri != null)

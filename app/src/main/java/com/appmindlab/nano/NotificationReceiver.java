@@ -123,7 +123,7 @@ public class NotificationReceiver extends BroadcastReceiver {
                 .setSmallIcon(R.drawable.ic_mode_edit_vector)
                 .setOngoing(true)
                 .setContentTitle(title)
-                .setContentText(Utils.readableFileSize(entry.getSize()) + " | " + pretty_time.format(timestamp));
+                .setContentText(Utils.readableFileSize(entry.getSize()) + " / " + pretty_time.format(timestamp));
 
         // Remote input
         remote_input = new RemoteInput.Builder(Const.SCRAPBOOK_NOTIFICATION_KEY)

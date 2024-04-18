@@ -576,7 +576,8 @@ public class Const {
     protected final static int MAX_SEARCH_HISTORY_SIZE = 5 * 1024;       // 5 KB
 
     protected final static String TRASH_PATH = "trash_bin";
-    protected final static String CONFLICT_LABEL = "-conflict-";
+    protected final static String CONFLICT_PATTERN_1 = "-conflict-";
+    protected final static String CONFLICT_PATTERN_2 = "(conflict";
 
     protected final static String IMPORT_ERROR_PATH = "import_errors";
 
