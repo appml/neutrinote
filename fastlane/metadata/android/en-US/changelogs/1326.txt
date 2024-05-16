@@ -1,2 +1,2 @@
-v4.5.1c
-- Various UI fixes.
+v4.5.1d
+- Minor search UI fixes.
