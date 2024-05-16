@@ -3173,14 +3173,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         picker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
         final String[] items = filters.split(";");
-        int idx = Arrays.asList(items).indexOf(mCriteria);
+        int idx;
+
+        if (mCriteria == null)
+            idx = Arrays.asList(items).indexOf(Const.ALL_SYM);
+        else
+            idx = Arrays.asList(items).indexOf(mCriteria);
 
         if (items.length > 0) {
             picker.setMinValue(0);
             picker.setMaxValue(items.length - 1);
             picker.setDisplayedValues(items);
 
-            if (idx > 0)
+            if (idx >= 0)
                 picker.setValue(idx);
 
             picker.setWrapSelectorWheel(true);  // Wrap around
