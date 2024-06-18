@@ -796,6 +796,63 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
     }
 
+    // Insert attachment link
+    protected void insertAttachmentLink(Uri uri, String label) {
+        try {
+            String link, file_name, path;
+            InputStream in;
+            DocumentFile file;
+
+            // Convert uri to path
+            path = Utils.uri2Path(getApplicationContext(), uri);
+
+            // Add to repo
+            if ((mCopyAttachmentsToRepo) && (!path.startsWith(mLocalRepoPath + "/"))) {
+                // Obtain input stream
+                in = getContentResolver().openInputStream(uri);
+
+                // Get file name
+                file = DocumentFile.fromSingleUri(getApplicationContext(), uri);
+                file_name = file.getName();
+
+                // Validate the name for cloud sync
+                if (!Utils.validateTitle(file_name)) {
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_invalid_title), Snackbar.LENGTH_SHORT);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.show();
+                    return;
+                }
+
+                // Write to file
+                if (Utils.writeFile(this, in, mLocalRepoPath + "/" + Const.ATTACHMENT_PATH + "/", file_name))
+                    path = Const.ATTACHMENT_PATH + "/" + file_name;
+
+                // Update mirror if applicable
+                if (hasMirror()) {
+                    updateMirror(Const.ATTACHMENT_PATH, file_name);
+                }
+            }
+
+            // Uri-encode the last portion of the path
+            path = Utils.encodePathFileName(path);
+
+            // Build the link
+            if (path.length() > 0) {
+                link = "[" + label + "](" + path + ")" + Const.NEWLINE + Const.NEWLINE;
+                Utils.insert(mContent, link);
+            } else {
+                Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_invalid_local_storage_path), Snackbar.LENGTH_LONG).setAction(getResources().getString(R.string.snack_bar_button_done), mSnackbarOnClickListener);
+                Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                snackbar.show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_LONG).setAction(getResources().getString(R.string.snack_bar_button_done), mSnackbarOnClickListener);
+            Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+            snackbar.show();
+        }
+    }
+
     // Process activity result
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -858,6 +915,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_LONG).setAction(getResources().getString(R.string.snack_bar_button_done), mSnackbarOnClickListener);
                 Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                 snackbar.show();
+            }
+        } else if (requestCode == Const.REQUEST_CODE_ATTACH_FILE && resultCode == RESULT_OK) {
+            Uri uri;
+            String label = Utils.getCurrentSelection(mContent);
+
+            if (data != null) {
+                uri = data.getData();
+                insertAttachmentLink(uri, label);
             }
         } else {
             // Barcode scanner (default)
@@ -5205,6 +5270,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             handleInsertBarcode();
         } else if (id == R.id.button_image) {
             handleInsertImage();
+        } else if (id == R.id.button_attach) {
+            handleAttachFile();
         } else if (id == R.id.button_ocr) {
             doOCR();
         } else if (id == R.id.button_define) {
@@ -7469,6 +7536,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 return;
             }
         }
+    }
+
+    // Handle attach file
+    protected void handleAttachFile() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("*/*");
+        startActivityForResult(intent, Const.REQUEST_CODE_ATTACH_FILE);
     }
 
     // Handle funnel

@@ -733,7 +733,8 @@ public class Const {
     protected final static int REQUEST_CODE_GET_IMAGE = 10;
     protected final static int REQUEST_CODE_INSERT_GALLERY_IMAGE = 11;
     protected final static int REQUEST_CODE_INSERT_CAMERA_IMAGE = 12;
-    protected final static int REQUEST_CODE_SCRAPBOOK_PASTE = 13;
+    protected final static int REQUEST_CODE_ATTACH_FILE = 13;
+    protected final static int REQUEST_CODE_SCRAPBOOK_PASTE = 14;
 
     // Voice memo
     protected final static String VOICE_MEMO_TITLE = "neutriNote memo";
