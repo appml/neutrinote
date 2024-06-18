@@ -592,6 +592,9 @@
     <string name="button_ocr">\uF140</string>
     <string name="button_ocr_description">OCR</string>
 
+    <string name="button_attach">\uF0C6</string>
+    <string name="button_attach_description">附加文件</string>
+
     <string name="button_define">\uF02D</string>
     <string name="button_define_description">定义</string>
     <string name="button_calculate">\uF1EC</string>

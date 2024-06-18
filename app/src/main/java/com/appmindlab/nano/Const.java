@@ -323,6 +323,7 @@ public class Const {
     protected final static String BUTTON_BARCODE = "barcode";
     protected final static String BUTTON_IMAGE = "image";
     protected final static String BUTTON_OCR = "ocr";
+    protected final static String BUTTON_ATTACH = "attach";
     protected final static String BUTTON_DEFINE = "define";
     protected final static String BUTTON_CALCULATE = "calculate";
     protected final static String BUTTON_WEB_SEARCH = "search";

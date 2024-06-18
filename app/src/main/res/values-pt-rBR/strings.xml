@@ -563,6 +563,9 @@
     <string name="button_ocr">\uF140</string>
     <string name="button_ocr_description">OCR</string>
 
+    <string name="button_attach">\uF0C6</string>
+    <string name="button_attach_description">Anexar Arquivo</string>
+
     <string name="button_define">\uF02D</string>
     <string name="button_define_description">Explicar</string>
     <string name="button_calculate">\uF1EC</string>

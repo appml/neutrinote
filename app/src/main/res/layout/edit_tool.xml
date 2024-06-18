@@ -198,6 +198,17 @@
                 android:contentDescription="@string/button_ocr_description"
                 style="@style/AppTextButtonStyle" />
 
+            <Button android:id="@+id/button_attach"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="@dimen/button_min_width"
+                android:text="@string/button_attach"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/button_font_size"
+                android:contentDescription="@string/button_attach_description"
+                style="@style/AppTextButtonStyle" />
+
             <Button android:id="@+id/button_define"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
