@@ -807,7 +807,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             path = Utils.uri2Path(getApplicationContext(), uri);
 
             // Add to repo
-            if ((mCopyAttachmentsToRepo) && (!path.startsWith(mLocalRepoPath + "/"))) {
+            if (!path.startsWith(mLocalRepoPath + "/")) {
                 // Obtain input stream
                 in = getContentResolver().openInputStream(uri);
 
