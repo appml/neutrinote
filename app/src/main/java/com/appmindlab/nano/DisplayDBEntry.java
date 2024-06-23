@@ -3395,34 +3395,40 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         Thread t = new Thread() {
             public void run() {
-                // Provide basic statistics
-                String content;
+                try {
+                    // Provide basic statistics
+                    String content;
 
-                // Get selection
-                content = Utils.getCurrentSelection(mContent);
-                if (content.length() == 0)
-                    content = mContent.getText().toString();    // Otherwise whole content
+                    // Get selection
+                    content = Utils.getCurrentSelection(mContent);
+                    if (content.length() == 0)
+                        content = mContent.getText().toString();    // Otherwise whole content
 
-                long cur_line = Utils.getCurrentCursorLine(mContent);
-                long word_count = Utils.countWords(content);
-                String file_size = Utils.readableFileSize((long) content.length());
+                    long cur_line = Utils.getCurrentCursorLine(mContent);
+                    long word_count = Utils.countWords(content);
+                    String file_size = Utils.readableFileSize((long) content.length());
 
-                String status = getResources().getString(R.string.word_count) + ": " + Utils.injectComma(word_count) + "  ";
-                status += getResources().getString(R.string.file_size) + ": " + file_size + "  ";
+                    String status = getResources().getString(R.string.word_count) + ": " + Utils.injectComma(word_count) + "  ";
+                    status += getResources().getString(R.string.file_size) + ": " + file_size + "  ";
 
-                if (cur_line > 0)
-                    status += getResources().getString(R.string.line_number) + ": " + Utils.injectComma(cur_line);
+                    if (cur_line > 0)
+                        status += getResources().getString(R.string.line_number) + ": " + Utils.injectComma(cur_line);
 
-                // Show statistics
-                Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), status, Snackbar.LENGTH_LONG);
-                Utils.anchorSnackbar(snackbar, R.id.fragment_content);
-                snackbar.setAction(getResources().getString(R.string.snack_bar_button_done), mSnackbarOnClickListener).show();
+                    // Show statistics
+                    Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), status, Snackbar.LENGTH_LONG);
+                    Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+                    snackbar.setAction(getResources().getString(R.string.snack_bar_button_done), mSnackbarOnClickListener).show();
 
-                // Show clipboard
-                updateStatus(null, mSlideDown);
-
-                // Update busy status
-                mStatusBarBusy = false;
+                    // Show clipboard
+                    updateStatus(null, mSlideDown);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    // Update busy status
+                    mStatusBarBusy = false;
+                }
             }
         };
         t.start();
