@@ -206,6 +206,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private TextView mStatusBar;
     private GestureDetectorCompat mEditStatusGestureDetector, mEditContentGestureDetector;
     private List<String> mStatusQ = new ArrayList<String>();
+    private boolean mStatusBarBusy = false;
 
     // Content
     private ScaleGestureDetector mScaleDetector;
@@ -3386,6 +3387,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Show statistics
     protected void showStat() {
+        // Sanity check
+        if (mStatusBarBusy)
+            return;
+
+        mStatusBarBusy = true;
+
         Thread t = new Thread() {
             public void run() {
                 // Provide basic statistics
@@ -3413,6 +3420,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 // Show clipboard
                 updateStatus(null, mSlideDown);
+
+                // Update busy status
+                mStatusBarBusy = false;
             }
         };
         t.start();
