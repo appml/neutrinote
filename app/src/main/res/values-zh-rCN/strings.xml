@@ -505,9 +505,9 @@
     <string name="button_ok">确认</string>
     <string name="button_cancel">取消</string>
 
-    <string name="button_indent">\u2192</string>
+    <string name="button_indent">\u21FE</string>
     <string name="button_indent_description">缩进</string>
-    <string name="button_unindent">\u2190</string>
+    <string name="button_unindent">\u21FD</string>
     <string name="button_unindent_description">取消缩进</string>
     <string name="button_hash">\u0023</string>
     <string name="button_asterisk">\u002A</string>

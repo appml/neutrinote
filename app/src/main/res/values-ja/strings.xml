@@ -506,9 +506,9 @@
     <string name="button_ok">OK</string>
     <string name="button_cancel">キャンセル</string>
 
-    <string name="button_indent">\u2192</string>
+    <string name="button_indent">\u21FE</string>
     <string name="button_indent_description">インデント</string>
-    <string name="button_unindent">\u2190</string>
+    <string name="button_unindent">\u21FD</string>
     <string name="button_unindent_description">インデントを解除</string>
     <string name="button_hash">\u0023</string>
     <string name="button_asterisk">\u002A</string>
