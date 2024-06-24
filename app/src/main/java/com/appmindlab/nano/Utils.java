@@ -280,15 +280,7 @@ public class Utils {
     // Count words
     protected static int countWords(final String phrase) {
         try {
-            String temp;
-            String[] items;
-
-            temp = phrase.replaceAll("[^\\p{Alpha}]+", " ");
-            temp = temp.trim();
-
-            items = temp.split(" ");
-
-            return items.length;
+            return phrase.split("\\s").length;
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
