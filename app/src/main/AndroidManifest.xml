@@ -169,7 +169,7 @@
             android:name=".DisplayDBEntry"
             android:label=""
             android:configChanges="orientation"
-            android:hardwareAccelerated="true"
+            android:hardwareAccelerated="false"
             android:windowSoftInputMode="stateHidden"
             android:parentActivityName=".MainActivity"
             android:launchMode="singleTop"
