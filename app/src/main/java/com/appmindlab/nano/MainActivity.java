@@ -1236,7 +1236,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBackupContraints = new Constraints.Builder()
                 .setRequiresBatteryNotLow(true)
                 .setRequiresStorageNotLow(true)
-                .setRequiresDeviceIdle(true)
                 .build();
 
         // Build request
