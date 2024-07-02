@@ -75,186 +75,181 @@ public class MirrorWorker extends Worker {
         if (DisplayDBEntry.display_dbentry != null)
             return null;
 
-        // Run outside of the UI thread
-        Thread t = new Thread() {
-            public void run() {
-                // Basics
-                String status = "";
-                int count;
+        // Basics
+        String status = "";
+        int count;
 
-                // Preference editor
-                SharedPreferences.Editor editor = mSharedPreferences.edit();
+        // Preference editor
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
 
-                // Misc
-                Intent newIntent;
+        // Misc
+        Intent newIntent;
 
-                Log.d(Const.TAG, "nano - Mirror worker started [ last mirrored time: " + mLastMirrored + " ]");
+        Log.d(Const.TAG, "nano - Mirror worker started [ last mirrored time: " + mLastMirrored + " ]");
 
-                // Open the database
-                mDatasource = new DataSource();
-                mDatasource.open();
+        // Open the database
+        mDatasource = new DataSource();
+        mDatasource.open();
 
-                // Setup notification
-                setForegroundAsync(createForegroundInfo(Const.MIRROR_CHANNEL_DESC));
-                mNotifyManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
-                mBuilder = new NotificationCompat.Builder(getApplicationContext(), Const.MIRROR_CHANNEL_ID);
-                newIntent = new Intent(getApplicationContext(), MainActivity.class);
-                newIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
+        // Setup notification
+        setForegroundAsync(createForegroundInfo(Const.MIRROR_CHANNEL_DESC));
+        mNotifyManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
+        mBuilder = new NotificationCompat.Builder(getApplicationContext(), Const.MIRROR_CHANNEL_ID);
+        newIntent = new Intent(getApplicationContext(), MainActivity.class);
+        newIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
 
-                try {
-                    ///////////////////////
-                    // TO MIRROR (NOTES) //
-                    ///////////////////////
+        try {
 
-                    Log.d(Const.TAG, "nano - MirrorWorker: To Mirror ");
+            ///////////////////////
+            // TO MIRROR (NOTES) //
+            ///////////////////////
 
-                    // Retrieve records modified after last mirror
-                    List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
-                    count = results.size();
+            Log.d(Const.TAG, "nano - MirrorWorker: To Mirror ");
 
-                    dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
-                    dest_dir = Utils.getSAFSubDir(getApplicationContext(), dir, Const.MIRROR_PATH);
-                    mMirrorUri = dest_dir.getUri();
+            // Retrieve records modified after last mirror
+            List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
+            count = results.size();
 
-                    for (int i = 0; i < count; i++) {
-                        exportSAFFile(dest_dir, results.get(i));
-                    }
+            dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
+            dest_dir = Utils.getSAFSubDir(getApplicationContext(), dir, Const.MIRROR_PATH);
+            mMirrorUri = dest_dir.getUri();
 
-                    /////////////////////////
-                    // FROM MIRROR (NOTES) //
-                    /////////////////////////
+            for (int i = 0; i < count; i++) {
+                exportSAFFile(dest_dir, results.get(i));
+            }
 
-                    Log.d(Const.TAG, "nano - MirrorWorker: From Mirror ");
+            /////////////////////////
+            // FROM MIRROR (NOTES) //
+            /////////////////////////
 
-                    String file_name;
-                    for (DocumentFile file : dest_dir.listFiles()) {
-                        // Sanity check
-                        if (file.isDirectory())  continue;
+            Log.d(Const.TAG, "nano - MirrorWorker: From Mirror ");
 
-                        file_name = file.getName();
-                        if (file_name == null)   continue;
+            String file_name;
+            for (DocumentFile file : dest_dir.listFiles()) {
+                // Sanity check
+                if (file.isDirectory())  continue;
 
-                        if (Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(file_name)) {
-                            // Notes with reserved folder names need to be removed
-                            file.delete();
-                            continue;
-                        }
+                file_name = file.getName();
+                if (file_name == null)   continue;
 
-                        if (file_name.endsWith(")")) {
-                            // Notes with duplicate names need to be removed
-                            file.delete();
-                            continue;
-                        }
-
-                        importSAFFile(file, false);
-                    }
-
-                    // Do below if not an instant operation
-                    if (!mWorkerParameters.getTags().contains(Const.MIRROR_INSTANT_WORK_TAG)) {
-                        ////////////////////////
-                        // TO MIRROR (OTHERS) //
-                        ////////////////////////
-
-                        Log.d(Const.TAG, "nano - MirrorWorker: 'attachments' to mirror ");
-
-                        // Backup attachments
-                        attachment_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.ATTACHMENT_PATH);
-                        Utils.exportToSAFFolderByLastModified(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.ATTACHMENT_PATH), attachment_dir, mLastMirrored, false);
-
-                        Log.d(Const.TAG, "nano - MirrorWorker: 'fonts' to mirror ");
-
-                        // Backup fonts
-                        font_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.CUSTOM_FONTS_PATH);
-                        Utils.exportToSAFFolderByLastModified(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH), font_dir, mLastMirrored,false);
-
-                        // Backup multitype file
-                        if (Utils.fileExists(getApplicationContext(), mLocalRepoPath, Const.MULTI_TYPE))
-                            Utils.exportToSAFFile(getApplicationContext(), mLocalRepoPath + "/", Const.MULTI_TYPE, dest_dir);
-
-                        // Backup sync log
-                        if (Utils.fileExists(getApplicationContext(), mLocalRepoPath, Const.SYNC_LOG_FILE)) {
-                            Utils.exportToSAFFile(getApplicationContext(), mLocalRepoPath + "/", Const.SYNC_LOG_FILE, dest_dir);
-
-                            // Move log folder to backup
-                            // Note: no need to delete source copy as that's managed by purging; destination copy can be manually removed by user
-                            log_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.LOG_PATH);
-                            Utils.moveToSAFFolder(getApplicationContext(), mMirrorUri, new File(mLocalRepoPath + "/" + Const.LOG_PATH), log_dir, false, false, false);
-                        }
-
-                        // Backup import errors by moving import error folder to backup
-                        // Note: need to remove source copy as its content will keep growing; destination copy can be manually removed by user
-                        Utils.moveToSAFFolder(getApplicationContext(), mMirrorUri, new File(mLocalRepoPath + "/" + Const.IMPORT_ERROR_PATH), dest_dir,true, false, false);
-
-                        //////////////////////////
-                        // FROM MIRROR (OTHERS) //
-                        //////////////////////////
-
-                        Log.d(Const.TAG, "nano - MirrorWorker: 'attachments' from mirror ");
-
-                        // Restore attachments
-                        attachment_dir = dest_dir.findFile(Const.ATTACHMENT_PATH);
-                        Utils.importFromSAFFolder(getApplicationContext(), attachment_dir, mLocalRepoPath + "/" + Const.ATTACHMENT_PATH, false);
-
-                        Log.d(Const.TAG, "nano - MirrorWorker: 'fonts' from mirror ");
-
-                        // Restore fonts
-                        font_dir = dest_dir.findFile(Const.CUSTOM_FONTS_PATH);
-                        Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
-                    }
-
-                    Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
-
-                    // Purge from local repo notes removed from mirror
-                    // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
-                    List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
-                    DBEntry entry;
-
-                    for (int i = 0; i < items.size(); i++) {
-                        entry = items.get(i);
-                        if (dest_dir.findFile(Utils.getFileNameFromTitle(getApplicationContext(), entry.getTitle())) == null) {
-                            mDatasource.deleteRecordById(entry.getId());  // Purge right away to prevent unexpected restore
-                        }
-                    }
-
-                    Log.d(Const.TAG, "nano - Mirror worker: Finishing Up");
-
-                    // Update status
-                    Date now = new Date();
-                    status += Utils.getSystemDateFormat(getApplicationContext(), Locale.getDefault()).format(now) + Utils.getSystemTimeFormat(getApplicationContext(), Locale.getDefault()).format(now);
-
-                    // Save the log status
-                    if (!mWorkerParameters.getTags().contains(Const.MIRROR_INSTANT_WORK_TAG)) {
-                        mLastMirrored = now.getTime();
-                        editor.putString(Const.AUTO_MIRROR_LOG, status);
-                        editor.putLong(Const.MIRROR_TIMESTAMP, mLastMirrored);
-                        editor.apply();
-                    }
-
-                    // Update notification
-                    mBigTextStyle.bigText(getApplicationContext().getResources().getString(R.string.message_auto_mirror_log) + status);
-                    mBuilder.setStyle(mBigTextStyle);
-                    mBuilder.setContentText(status).setProgress(0, 0, false);
-
-                    // Removes the progress bar
-                    mNotifyManager.notify(Const.MIRROR_NOTIFICATION_ID, mBuilder.build());
-                    mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
-
-                    // Update widget
-                    Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
-                    getApplicationContext().sendBroadcast(intent);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
-                } finally {
-                    Log.d(Const.TAG, "nano - Mirror worker finished");
+                if (Arrays.asList(Const.RESERVED_FOLDER_NAMES).contains(file_name)) {
+                    // Notes with reserved folder names need to be removed
+                    file.delete();
+                    continue;
                 }
 
-                // Clean up
-                mDatasource.close();
+                if (file_name.endsWith(")")) {
+                    // Notes with duplicate names need to be removed
+                    file.delete();
+                    continue;
+                }
+
+                importSAFFile(file, false);
             }
-        };
-        t.start();
+
+            // Do below if not an instant operation
+            if (!mWorkerParameters.getTags().contains(Const.MIRROR_INSTANT_WORK_TAG)) {
+                ////////////////////////
+                // TO MIRROR (OTHERS) //
+                ////////////////////////
+
+                Log.d(Const.TAG, "nano - MirrorWorker: 'attachments' to mirror ");
+
+                // Backup attachments
+                attachment_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.ATTACHMENT_PATH);
+                Utils.exportToSAFFolderByLastModified(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.ATTACHMENT_PATH), attachment_dir, mLastMirrored, false);
+
+                Log.d(Const.TAG, "nano - MirrorWorker: 'fonts' to mirror ");
+
+                // Backup fonts
+                font_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.CUSTOM_FONTS_PATH);
+                Utils.exportToSAFFolderByLastModified(getApplicationContext(), new File(mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH), font_dir, mLastMirrored,false);
+
+                // Backup multitype file
+                if (Utils.fileExists(getApplicationContext(), mLocalRepoPath, Const.MULTI_TYPE))
+                    Utils.exportToSAFFile(getApplicationContext(), mLocalRepoPath + "/", Const.MULTI_TYPE, dest_dir);
+
+                // Backup sync log
+                if (Utils.fileExists(getApplicationContext(), mLocalRepoPath, Const.SYNC_LOG_FILE)) {
+                    Utils.exportToSAFFile(getApplicationContext(), mLocalRepoPath + "/", Const.SYNC_LOG_FILE, dest_dir);
+
+                    // Move log folder to backup
+                    // Note: no need to delete source copy as that's managed by purging; destination copy can be manually removed by user
+                    log_dir = Utils.getSAFSubDir(getApplicationContext(), dest_dir, Const.LOG_PATH);
+                    Utils.moveToSAFFolder(getApplicationContext(), mMirrorUri, new File(mLocalRepoPath + "/" + Const.LOG_PATH), log_dir, false, false, false);
+                }
+
+                // Backup import errors by moving import error folder to backup
+                // Note: need to remove source copy as its content will keep growing; destination copy can be manually removed by user
+                Utils.moveToSAFFolder(getApplicationContext(), mMirrorUri, new File(mLocalRepoPath + "/" + Const.IMPORT_ERROR_PATH), dest_dir,true, false, false);
+
+                //////////////////////////
+                // FROM MIRROR (OTHERS) //
+                //////////////////////////
+
+                Log.d(Const.TAG, "nano - MirrorWorker: 'attachments' from mirror ");
+
+                // Restore attachments
+                attachment_dir = dest_dir.findFile(Const.ATTACHMENT_PATH);
+                Utils.importFromSAFFolder(getApplicationContext(), attachment_dir, mLocalRepoPath + "/" + Const.ATTACHMENT_PATH, false);
+
+                Log.d(Const.TAG, "nano - MirrorWorker: 'fonts' from mirror ");
+
+                // Restore fonts
+                font_dir = dest_dir.findFile(Const.CUSTOM_FONTS_PATH);
+                Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
+            }
+
+            Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
+
+            // Purge from local repo notes removed from mirror
+            // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
+            List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
+            DBEntry entry;
+
+            for (int i = 0; i < items.size(); i++) {
+                entry = items.get(i);
+                if (dest_dir.findFile(Utils.getFileNameFromTitle(getApplicationContext(), entry.getTitle())) == null) {
+                    mDatasource.deleteRecordById(entry.getId());  // Purge right away to prevent unexpected restore
+                }
+            }
+
+            Log.d(Const.TAG, "nano - Mirror worker: Finishing Up");
+
+            // Update status
+            Date now = new Date();
+            status += Utils.getSystemDateFormat(getApplicationContext(), Locale.getDefault()).format(now) + Utils.getSystemTimeFormat(getApplicationContext(), Locale.getDefault()).format(now);
+
+            // Save the log status
+            if (!mWorkerParameters.getTags().contains(Const.MIRROR_INSTANT_WORK_TAG)) {
+                mLastMirrored = now.getTime();
+                editor.putString(Const.AUTO_MIRROR_LOG, status);
+                editor.putLong(Const.MIRROR_TIMESTAMP, mLastMirrored);
+                editor.apply();
+            }
+
+            // Update notification
+            mBigTextStyle.bigText(getApplicationContext().getResources().getString(R.string.message_auto_mirror_log) + status);
+            mBuilder.setStyle(mBigTextStyle);
+            mBuilder.setContentText(status).setProgress(0, 0, false);
+
+            // Removes the progress bar
+            mNotifyManager.notify(Const.MIRROR_NOTIFICATION_ID, mBuilder.build());
+            mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
+
+            // Update widget
+            Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
+            getApplicationContext().sendBroadcast(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
+        } finally {
+            Log.d(Const.TAG, "nano - Mirror worker finished");
+        }
+
+        // Clean up
+        mDatasource.close();
 
         return Result.success();
     }

@@ -78,89 +78,83 @@ public class BackupWorker extends Worker {
         if (DisplayDBEntry.display_dbentry != null)
             return null;
 
-        // Run outside of the UI thread
-        Thread t = new Thread() {
-            public void run() {
-                // Basics
-                String status = Const.NULL_SYM;
+        // Basics
+        String status = Const.NULL_SYM;
 
-                // Preference editor
-                SharedPreferences.Editor editor = mSharedPreferences.edit();
+        // Preference editor
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
 
-                // Misc
-                Intent newIntent;
+        // Misc
+        Intent newIntent;
 
-                Log.d(Const.TAG, "nano - BackupWorker started");
+        Log.d(Const.TAG, "nano - BackupWorker started");
 
-                // Open the database
-                mDatasource = new DataSource();
-                mDatasource.open();
+        // Open the database
+        mDatasource = new DataSource();
+        mDatasource.open();
 
-                // Setup notification
-                setForegroundAsync(createForegroundInfo(Const.BACKUP_CHANNEL_DESC));
-                mNotifyManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
-                mBuilder = new NotificationCompat.Builder(getApplicationContext(), Const.BACKUP_CHANNEL_ID);
-                newIntent = new Intent(getApplicationContext(), MainActivity.class);
-                newIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
+        // Setup notification
+        setForegroundAsync(createForegroundInfo(Const.BACKUP_CHANNEL_DESC));
+        mNotifyManager = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
+        mBuilder = new NotificationCompat.Builder(getApplicationContext(), Const.BACKUP_CHANNEL_ID);
+        newIntent = new Intent(getApplicationContext(), MainActivity.class);
+        newIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        mIntent = PendingIntent.getActivity(getApplicationContext(), 0, newIntent, PendingIntent.FLAG_IMMUTABLE);
 
-                try {
-                    /////////////////////////
-                    // 1. Clean up database
-                    /////////////////////////
-                    mDatasource.removeDuplicateRecords(Utils.fileNameAsTitle(getApplicationContext()));
+        try {
+            /////////////////////////
+            // 1. Clean up database
+            /////////////////////////
+            mDatasource.removeDuplicateRecords(Utils.fileNameAsTitle(getApplicationContext()));
 
-                    ///////////////////////
-                    // 2. Backup app data
-                    ///////////////////////
-                    backupAppData(getApplicationContext());
+            ///////////////////////
+            // 2. Backup app data
+            ///////////////////////
+            backupAppData(getApplicationContext());
 
-                    ////////////////////
-                    // 3. Backup files
-                    ////////////////////
+            ////////////////////
+            // 3. Backup files
+            ////////////////////
 
-                    Log.d(Const.TAG, "nano - BackupWorker: purging old backups... ");
+            Log.d(Const.TAG, "nano - BackupWorker: purging old backups... ");
 
-                    if (mMaxBackupCount > 0) {
-                        // Purge old backups
-                        purgeBackups();
+            if (mMaxBackupCount > 0) {
+                // Purge old backups
+                purgeBackups();
 
-                        Log.d(Const.TAG, "nano - BackupWorker: backing up time-stamped folder... ");
+                Log.d(Const.TAG, "nano - BackupWorker: backing up time-stamped folder... ");
 
-                        // Time-stamped folder
-                        SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
-                        mSubDirPath = sdf.format(new Date());
-                        status = backupFiles(getApplicationContext(), true);
-                    }
-
-                    // Purge deleted copies
-                    purgeDeletedCopies();
-
-                    Log.d(Const.TAG, "nano - BackupWorker: updating log status... ");
-
-                    // Save the log status
-                    editor.putString(Const.AUTO_BACKUP_LOG, status);
-                    editor.apply();
-
-                    // Update notification
-                    mBigTextStyle.bigText(status);
-                    mBuilder.setStyle(mBigTextStyle);
-                    mBuilder.setContentText(status).setProgress(0, 0, false);
-
-                    // Removes the progress bar
-                    mNotifyManager.notify(Const.BACKUP_NOTIFICATION_ID, mBuilder.build());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    mBuilder.setContentText(getApplicationContext().getResources().getString(R.string.error_backup));
-                }
-
-                // Clean up
-                mDatasource.close();
-
-                Log.d(Const.TAG, "nano - BackupWorker finished");
+                // Time-stamped folder
+                SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
+                mSubDirPath = sdf.format(new Date());
+                status = backupFiles(getApplicationContext(), true);
             }
-        };
-        t.start();
+
+            // Purge deleted copies
+            purgeDeletedCopies();
+
+            Log.d(Const.TAG, "nano - BackupWorker: updating log status... ");
+
+            // Save the log status
+            editor.putString(Const.AUTO_BACKUP_LOG, status);
+            editor.apply();
+
+            // Update notification
+            mBigTextStyle.bigText(status);
+            mBuilder.setStyle(mBigTextStyle);
+            mBuilder.setContentText(status).setProgress(0, 0, false);
+
+            // Removes the progress bar
+            mNotifyManager.notify(Const.BACKUP_NOTIFICATION_ID, mBuilder.build());
+        } catch (Exception e) {
+            e.printStackTrace();
+            mBuilder.setContentText(getApplicationContext().getResources().getString(R.string.error_backup));
+        }
+
+        // Clean up
+        mDatasource.close();
+
+        Log.d(Const.TAG, "nano - BackupWorker finished");
 
         return Result.success();
     }
