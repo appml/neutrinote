@@ -1234,6 +1234,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Build constraints
         mBackupContraints = new Constraints.Builder()
+                .setRequiresDeviceIdle(true)
                 .setRequiresBatteryNotLow(true)
                 .setRequiresStorageNotLow(true)
                 .build();
@@ -1250,7 +1251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Note: if a worker already exists, do nothing
         mBackupWorkManager.getInstance(getApplicationContext()).enqueueUniquePeriodicWork(
                 Const.BACKUP_WORK_NAME,
-                ExistingPeriodicWorkPolicy.KEEP,
+                ExistingPeriodicWorkPolicy.CANCEL_AND_REENQUEUE,
                 mBackupWorkRequest);
 
         Log.d(Const.TAG, "nano - Backup job scheduled");
