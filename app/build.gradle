@@ -12,7 +12,7 @@ android {
         targetSdkVersion 34
         multiDexEnabled true
         versionCode 1330
-        versionName "4.5.3"
+        versionName "4.5.2c"
     }
 
     buildTypes {
