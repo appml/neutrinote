@@ -1,0 +1,2 @@
+v4.5.2d
+- Automation bug fixes.
