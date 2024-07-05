@@ -115,11 +115,10 @@ public class BackupWorker extends Worker {
             ////////////////////
             // 3. Backup files
             ////////////////////
-
-            Log.d(Const.TAG, "nano - BackupWorker: purging old backups... ");
-
             if (mMaxBackupCount > 0) {
                 // Purge old backups
+                Log.d(Const.TAG, "nano - BackupWorker: purging old backups... ");
+
                 purgeBackups();
 
                 Log.d(Const.TAG, "nano - BackupWorker: backing up time-stamped folder... ");

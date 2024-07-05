@@ -823,6 +823,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Setup mirror
             setupMirror();
+
+            // Schedule backup
+            scheduleBackup();
         } else if ((resultCode == Activity.RESULT_OK) && (requestCode == Const.REQUEST_CODE_PICK_RESTORE_URI)) {
             // Set restore uri and launch import
             mRestoreUri = intent.getData();
@@ -1234,7 +1237,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Build constraints
         mBackupContraints = new Constraints.Builder()
-                .setRequiresDeviceIdle(true)
                 .setRequiresBatteryNotLow(true)
                 .setRequiresStorageNotLow(true)
                 .build();
@@ -1248,7 +1250,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .build();
 
         // Add to the queue
-        // Note: if a worker already exists, do nothing
+        // Note: if an incomplete job exists, cancel and reenqueue
         mBackupWorkManager.getInstance(getApplicationContext()).enqueueUniquePeriodicWork(
                 Const.BACKUP_WORK_NAME,
                 ExistingPeriodicWorkPolicy.CANCEL_AND_REENQUEUE,
@@ -4965,8 +4967,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     // Schedule / cancel backup
                     if (mIncrementalBackup) {
-                        scheduleBackup();
-
                         // Request permission of backup uri
                         openDocumentTree(Const.REQUEST_CODE_PICK_BACKUP_URI);
                     } else {
