@@ -1293,7 +1293,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Note: if a worker already exists, do nothing
         mMirrorWorkManager.getInstance(getApplicationContext()).enqueueUniquePeriodicWork(
                 Const.MIRROR_WORK_NAME,
-                ExistingPeriodicWorkPolicy.KEEP,
+                ExistingPeriodicWorkPolicy.CANCEL_AND_REENQUEUE,
                 mMirrorWorkRequest);
 
         Log.d(Const.TAG, "nano - Mirror job scheduled");

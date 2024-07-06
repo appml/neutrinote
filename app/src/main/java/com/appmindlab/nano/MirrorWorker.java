@@ -68,8 +68,12 @@ public class MirrorWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
+        Log.d(Const.TAG, "nano - MirrorWorker loading preference...");
+
         // Get preferences
         loadPref();
+
+        Log.d(Const.TAG, "nano - MirrorWorker sanity checking...");
 
         // Sanity check
         if (DisplayDBEntry.display_dbentry != null)
@@ -85,7 +89,7 @@ public class MirrorWorker extends Worker {
         // Misc
         Intent newIntent;
 
-        Log.d(Const.TAG, "nano - Mirror worker started [ last mirrored time: " + mLastMirrored + " ]");
+        Log.d(Const.TAG, "nano - MirrorWorker started [ last mirrored time: " + mLastMirrored + " ]");
 
         // Open the database
         mDatasource = new DataSource();
