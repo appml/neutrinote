@@ -415,7 +415,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Mirror if applicable
         if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter())))    // Conditions added to conserve battery
-            doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG);
+            doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
     }
 
     @Override
@@ -469,7 +469,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Any change since last mirroring?
             List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
             if (results.size() > 0)
-                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG);
+                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
         }
     }
 
@@ -1061,7 +1061,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 // Mirror if applicable
-                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG);
+                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
                 mSwipeRefreshLayout.setRefreshing(false);
                 refreshList();
@@ -1152,7 +1152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             scheduleMirror();
 
             // Do a quick mirroring
-            doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG);
+            doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE);
         }
         else {
             // Cancel mirror
@@ -2515,7 +2515,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         builder.setNeutralButton(R.string.dialog_mirror_neutral, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 resetLastMirrored();
-                doSAFMirrorSync(Const.MIRROR_ONETIME_WORK_TAG);
+                doSAFMirrorSync(Const.MIRROR_ONETIME_WORK_TAG, ExistingWorkPolicy.REPLACE);
                 return;
             }
         });
@@ -2615,7 +2615,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Do SAF mirror sync
-    private void doSAFMirrorSync(String tag) {
+    private void doSAFMirrorSync(String tag, ExistingWorkPolicy policy) {
         // Sanity check
         if (!hasMirror()) return;
 
@@ -2638,7 +2638,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mMirrorWorkManager.enqueueUniqueWork(
                 Const.MIRROR_ONETIME_WORK_NAME,
-                ExistingWorkPolicy.KEEP,
+                policy,
                 request);
 
         // Update widget
