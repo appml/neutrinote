@@ -1149,7 +1149,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mMirrorUri = dest_dir.getUri();
 
             // Schedule mirror
-            scheduleMirror();
+            // Note: self-reschedule if needed
+            if ((mLastMirrored == 0L) || ((Calendar.getInstance().getTimeInMillis() - mLastMirrored) > Const.AUTO_MIRROR_BACKOFF)) {
+                scheduleMirror();
+            }
 
             // Do a quick mirroring
             doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE);
