@@ -356,11 +356,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ///////////////////////
         setupFileObserver();
 
-        ////////////////
-        // Setup mirror
-        ////////////////
-        setupMirror();
-
         ///////////////////////
         // Setup light sensor
         ///////////////////////
