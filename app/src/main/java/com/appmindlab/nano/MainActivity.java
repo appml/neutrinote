@@ -359,7 +359,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ////////////////
         // Setup mirror
         ////////////////
-        setupMirror();
+        setupMirror(ExistingPeriodicWorkPolicy.KEEP);
 
         ///////////////////////
         // Setup light sensor
@@ -822,7 +822,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mSharedPreferencesEditor.commit();
 
             // Setup mirror
-            setupMirror();
+            setupMirror(ExistingPeriodicWorkPolicy.CANCEL_AND_REENQUEUE);
 
             // Schedule backup
             scheduleBackup();
@@ -1141,7 +1141,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Setup mirror
-    protected void setupMirror() {
+    protected void setupMirror(ExistingPeriodicWorkPolicy policy) {
         if (hasMirror()) {
             // Setup uri
             DocumentFile dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
@@ -1149,10 +1149,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mMirrorUri = dest_dir.getUri();
 
             // Schedule mirror
-            // Note: self-reschedule if needed
-            if ((mLastMirrored == 0L) || ((Calendar.getInstance().getTimeInMillis() - mLastMirrored) > Const.AUTO_MIRROR_BACKOFF)) {
-                scheduleMirror();
-            }
+            scheduleMirror(policy);
 
             // Do a quick mirroring
             doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE);
@@ -1271,7 +1268,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Schedule mirror
-    protected void scheduleMirror() {
+    protected void scheduleMirror(ExistingPeriodicWorkPolicy policy) {
         // Sanity check
         if (!hasMirror()) return;
 
@@ -1293,10 +1290,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .build();
 
         // Add to the queue
-        // Note: if a worker already exists, do nothing
         mMirrorWorkManager.getInstance(getApplicationContext()).enqueueUniquePeriodicWork(
                 Const.MIRROR_WORK_NAME,
-                ExistingPeriodicWorkPolicy.CANCEL_AND_REENQUEUE,
+                policy,
                 mMirrorWorkRequest);
 
         Log.d(Const.TAG, "nano - Mirror job scheduled");
