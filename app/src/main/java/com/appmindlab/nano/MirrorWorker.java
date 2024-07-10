@@ -92,8 +92,7 @@ public class MirrorWorker extends Worker {
         Log.d(Const.TAG, "nano - MirrorWorker started [ last mirrored time: " + mLastMirrored + " ]");
 
         // Open the database
-        mDatasource = new DataSource();
-        mDatasource.open();
+        acquireDataSource();
 
         // Setup notification
         setForegroundAsync(createForegroundInfo(Const.MIRROR_CHANNEL_DESC));
@@ -112,6 +111,7 @@ public class MirrorWorker extends Worker {
             Log.d(Const.TAG, "nano - MirrorWorker: To Mirror ");
 
             // Retrieve records modified after last mirror
+            acquireDataSource();
             List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
             count = results.size();
 
@@ -209,6 +209,7 @@ public class MirrorWorker extends Worker {
 
             // Purge from local repo notes removed from mirror
             // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
+            acquireDataSource();
             List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
             DBEntry entry;
 
@@ -380,6 +381,15 @@ public class MirrorWorker extends Worker {
         } catch (Exception e) {
             Log.i(Const.TAG, "importSAFFile: failed");
             e.printStackTrace();
+        }
+    }
+
+    // Acquire data source
+    protected void acquireDataSource() {
+        // Sanity check
+        if ((mDatasource == null) || (!mDatasource.isOpen())) {
+            mDatasource = new DataSource();
+            mDatasource.open();
         }
     }
 
