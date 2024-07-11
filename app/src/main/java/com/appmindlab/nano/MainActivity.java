@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(Const.TAG, "nano - onRestart");
 
         // Mirror if applicable
-        if ((hasMirror()) && (!isPowerSaveMode())) {
+        if ((hasMirror()) && (!isPowerSaveMode())) {  // Only when power saver mode is off
             if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
                 doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
             }
