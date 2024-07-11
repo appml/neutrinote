@@ -360,11 +360,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ///////////////////////
         setupFileObserver();
 
-        ///////////////////////
-        // Setup power manager
-        ///////////////////////
-        setupPowerManager();
-
         ////////////////
         // Setup mirror
         ////////////////
@@ -423,8 +418,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(Const.TAG, "nano - onRestart");
 
         // Mirror if applicable
-        if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
-            if ((mPowerManager == null) || ((mPowerManager != null) && (!mPowerManager.isPowerSaveMode()))) {
+        if ((hasMirror()) && (!isPowerSaveMode())) {
+            if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
                 doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
             }
         }
@@ -1073,7 +1068,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 // Mirror if applicable
-                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                if (hasMirror())
+                    doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
                 mSwipeRefreshLayout.setRefreshing(false);
                 refreshList();
@@ -1150,19 +1146,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mObserver = new CustomFileObserver(mLocalRepoPath);
         mObserver.startWatching();
-    }
-
-    // Setup power manager
-    protected void setupPowerManager() {
-        Log.d(Const.TAG, "nano - setupPowerManager");
-
-        try {
-            mPowerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
-        } catch (Exception e) {
-            e.printStackTrace();
-            mPowerManager = null;
-        }
-
     }
 
     // Setup mirror
@@ -1583,6 +1566,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
 
         return (activeNetwork != null && activeNetwork.isConnectedOrConnecting());
+    }
+
+    // Check power saving mode
+    protected boolean isPowerSaveMode() {
+        try {
+            if (mPowerManager == null)
+                mPowerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+
+            return mPowerManager.isPowerSaveMode();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
     // Reset criteria
