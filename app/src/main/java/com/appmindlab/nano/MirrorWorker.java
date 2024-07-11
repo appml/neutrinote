@@ -252,7 +252,7 @@ public class MirrorWorker extends Worker {
             e.printStackTrace();
             mNotifyManager.cancel(Const.MIRROR_NOTIFICATION_ID);
         } finally {
-            Log.d(Const.TAG, "nano - Mirror worker finished");
+            Log.d(Const.TAG, "nano - MirrorWorker finished");
         }
 
         // Clean up
