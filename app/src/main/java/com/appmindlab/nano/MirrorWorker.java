@@ -348,7 +348,6 @@ public class MirrorWorker extends Worker {
             List<DBEntry> records = mDatasource.getRecordByTitle(title);
 
             // Get data from the file
-            content = Utils.readFromSAFFile(getApplicationContext(), file);
             modified = new Date(file.lastModified());
 
             if (records.size() > 0) {
@@ -361,6 +360,7 @@ public class MirrorWorker extends Worker {
                     if ((entry.getModified().after(modified)) || (entry.getModified().equals(modified)))  return;
                 }
 
+                content = Utils.readFromSAFFile(getApplicationContext(), file);
                 mDatasource.updateRecord(entry.getId(), entry.getTitle(), content, entry.getStar(), modified, true, entry.getTitle());
 
                 // Update status
@@ -374,6 +374,7 @@ public class MirrorWorker extends Worker {
                 Utils.appendSyncLogFile(getApplicationContext(), mLocalRepoPath, title, Utils.getRevisionSummaryStr(getApplicationContext(), entry.getContent(), content), mMaxSyncLogFileSize, mMaxSyncLogFileAge);
             } else {
                 // Create new
+                content = Utils.readFromSAFFile(getApplicationContext(), file);
                 mDatasource.createRecord(title, content, 0, modified, true);
             }
 
