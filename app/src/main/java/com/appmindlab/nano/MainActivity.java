@@ -29,6 +29,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.provider.SearchRecentSuggestions;
 import android.text.InputType;
@@ -220,6 +221,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Show hidden
     private boolean mShowHidden = false;
 
+    // Power management
+    private PowerManager mPowerManager = null;
+
     // Hacks
     private boolean mKeepDeletedCopies = false;
     private int mMaxSyncLogFileSize = Const.MAX_SYNC_LOG_FILE_SIZE * Const.ONE_KB;
@@ -356,6 +360,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ///////////////////////
         setupFileObserver();
 
+        ///////////////////////
+        // Setup power manager
+        ///////////////////////
+        setupPowerManager();
+
         ////////////////
         // Setup mirror
         ////////////////
@@ -414,8 +423,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(Const.TAG, "nano - onRestart");
 
         // Mirror if applicable
-        if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter())))    // Conditions added to conserve battery
-            doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+        if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
+            if ((mPowerManager == null) || ((mPowerManager != null) && (!mPowerManager.isPowerSaveMode()))) {
+                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+            }
+        }
     }
 
     @Override
@@ -1138,6 +1150,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mObserver = new CustomFileObserver(mLocalRepoPath);
         mObserver.startWatching();
+    }
+
+    // Setup power manager
+    protected void setupPowerManager() {
+        Log.d(Const.TAG, "nano - setupPowerManager");
+
+        try {
+            mPowerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        } catch (Exception e) {
+            e.printStackTrace();
+            mPowerManager = null;
+        }
+
     }
 
     // Setup mirror

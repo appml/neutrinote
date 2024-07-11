@@ -90,8 +90,7 @@ public class BackupWorker extends Worker {
         Log.d(Const.TAG, "nano - BackupWorker started");
 
         // Open the database
-        mDatasource = new DataSource();
-        mDatasource.open();
+        acquireDataSource();
 
         // Setup notification
         setForegroundAsync(createForegroundInfo(Const.BACKUP_CHANNEL_DESC));
@@ -397,6 +396,15 @@ public class BackupWorker extends Worker {
                 if ((mMaxDeletedCopiesAge > 0) && (cal.getTime().after(new Date(file.lastModified()))))
                     file.delete();
             }
+        }
+    }
+
+    // Acquire data source
+    protected void acquireDataSource() {
+        // Sanity check
+        if ((mDatasource == null) || (!mDatasource.isOpen())) {
+            mDatasource = new DataSource();
+            mDatasource.open();
         }
     }
 
