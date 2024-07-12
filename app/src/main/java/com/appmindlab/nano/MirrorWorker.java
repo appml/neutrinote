@@ -47,7 +47,7 @@ public class MirrorWorker extends Worker {
     private Uri mBackupUri, mMirrorUri;
     private int mMaxSyncLogFileSize = Const.MAX_SYNC_LOG_FILE_SIZE * Const.ONE_KB;
     private int mMaxSyncLogFileAge = Const.MAX_SYNC_LOG_FILE_AGE;
-    private boolean mFileNameAsTitle, mKeepDeletedCopies;
+    private boolean mFileNameAsTitle;
 
     // Last mirror time
     private long mLastMirrored = 0;
@@ -206,21 +206,19 @@ public class MirrorWorker extends Worker {
 
                 // Purge from local repo notes removed from mirror
                 // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
-                if (mKeepDeletedCopies) {  // Only allowed when there will be backups of deleted copies
-                    Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
+                Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
 
-                    acquireDataSource();
-                    List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
-                    DBEntry entry;
+                acquireDataSource();
+                List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
+                DBEntry entry;
 
-                    for (int i = 0; i < items.size(); i++) {
-                        entry = items.get(i);
-                        Log.d(Const.TAG, "nano - MirrorWorker: checking remote deletion for " + entry.getTitle());
+                for (int i = 0; i < items.size(); i++) {
+                    entry = items.get(i);
+                    Log.d(Const.TAG, "nano - MirrorWorker: checking remote deletion for " + entry.getTitle());
 
-                        if (dest_dir.findFile(Utils.getFileNameFromTitle(getApplicationContext(), entry.getTitle())) == null) {
-                            Log.d(Const.TAG, "nano - MirrorWorker: purging remotely deleted: " + entry.getTitle());
-                            mDatasource.markRecordDeletedById(entry.getId(), 1);
-                        }
+                    if (dest_dir.findFile(Utils.getFileNameFromTitle(getApplicationContext(), entry.getTitle())) == null) {
+                        Log.d(Const.TAG, "nano - MirrorWorker: purging remotely deleted: " + entry.getTitle());
+                        mDatasource.markRecordDeletedById(entry.getId(), 1);
                     }
                 }
             }
@@ -407,7 +405,6 @@ public class MirrorWorker extends Worker {
             mFileNameAsTitle = Utils.fileNameAsTitle(getApplicationContext());
 
             // Hacks
-            mKeepDeletedCopies = mSharedPreferences.getBoolean(Const.PREF_KEEP_DELETED_COPIES, false);
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
 

@@ -7377,7 +7377,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mMathUrl = getResources().getString(R.string.pref_math_url_default);
 
             // Hacks
-            mKeepDeletedCopies = mSharedPreferences.getBoolean(Const.PREF_KEEP_DELETED_COPIES, false);
+            mKeepDeletedCopies = mSharedPreferences.getBoolean(Const.PREF_KEEP_DELETED_COPIES, true);
             mShowToolBar = mSharedPreferences.getBoolean(Const.PREF_SHOW_TOOLBAR, true);
             mOpenInMarkdown = mSharedPreferences.getBoolean(Const.PREF_OPEN_IN_MARKDOWN, false);
             mNewNoteFileType = mSharedPreferences.getString(Const.PREF_NEW_NOTE_FILE_TYPE, Const.NEW_NOTE_FILE_TYPE);

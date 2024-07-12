@@ -4963,7 +4963,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mRemotePriorityTag = mSharedPreferences.getString(Const.PREF_REMOTE_PRIORITY_TAG, "");
             mPreviewMode = mSharedPreferences.getString(Const.PREF_PREVIEW_MODE, Const.PREVIEW_AT_END);
             mCustomDateFormat = mSharedPreferences.getString(Const.PREF_CUSTOM_DATE_FORMAT, "");
-            mKeepDeletedCopies = mSharedPreferences.getBoolean(Const.PREF_KEEP_DELETED_COPIES, false);
+            mKeepDeletedCopies = mSharedPreferences.getBoolean(Const.PREF_KEEP_DELETED_COPIES, true);
             mProcessTextMode = Integer.valueOf(mSharedPreferences.getString(Const.PREF_PROCESS_TEXT_MODE, String.valueOf(Const.PROCESS_TEXT_DISABLED)));
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
