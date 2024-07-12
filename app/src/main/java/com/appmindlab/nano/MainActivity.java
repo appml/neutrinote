@@ -1577,9 +1577,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return mPowerManager.isPowerSaveMode();
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
-
-        return false;
     }
 
     // Reset criteria
