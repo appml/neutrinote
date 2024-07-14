@@ -8,6 +8,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,6 +33,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.preference.PreferenceManager;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.text.Html;
@@ -95,6 +97,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -2728,6 +2731,30 @@ public class Utils {
         }
 
         return status;
+    }
+
+    // List files
+    protected static HashSet<String> listFileNames(Context context, Uri uri) {
+        final ContentResolver resolver = context.getContentResolver();
+        final Uri childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(uri, DocumentsContract.getDocumentId(uri));
+        final HashSet<String> results = new HashSet<>();
+        Cursor cursor = null;
+        String file_name;
+
+        try {
+            cursor = resolver.query(childrenUri, new String[] {
+                    DocumentsContract.Document.COLUMN_DOCUMENT_ID,
+                    DocumentsContract.Document.COLUMN_DISPLAY_NAME
+            }, null, null, null);
+            while (cursor.moveToNext()) {
+                file_name = new String(cursor.getString(1));
+                results.add(file_name);
+            }
+        } catch (Exception e) {
+            Log.d(Const.TAG, "nano - listFileNames, failed query: " + e);
+        }
+
+        return results;
     }
 
     // Get clipboard text

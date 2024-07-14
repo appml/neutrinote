@@ -26,6 +26,7 @@ import java.io.FileInputStream;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
@@ -203,23 +204,25 @@ public class MirrorWorker extends Worker {
                 // Restore fonts
                 font_dir = dest_dir.findFile(Const.CUSTOM_FONTS_PATH);
                 Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
+            }
 
-                // Purge from local repo notes removed from mirror
-                // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
-                Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
+            // Purge from local repo notes removed from mirror
+            // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
+            Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
+            Utils.listFileNames(getApplicationContext(), mMirrorUri);
 
-                acquireDataSource();
-                List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
-                DBEntry entry;
+            acquireDataSource();
+            List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
+            HashSet<String> file_names = Utils.listFileNames(getApplicationContext(), mMirrorUri);
+            DBEntry entry;
 
-                for (int i = 0; i < items.size(); i++) {
-                    entry = items.get(i);
-                    Log.d(Const.TAG, "nano - MirrorWorker: checking remote deletion for " + entry.getTitle());
+            for (int i = 0; i < items.size(); i++) {
+                entry = items.get(i);
+                Log.d(Const.TAG, "nano - MirrorWorker: checking remote deletion for " + entry.getTitle());
 
-                    if (dest_dir.findFile(Utils.getFileNameFromTitle(getApplicationContext(), entry.getTitle())) == null) {
-                        Log.d(Const.TAG, "nano - MirrorWorker: purging remotely deleted: " + entry.getTitle());
-                        mDatasource.markRecordDeletedById(entry.getId(), 1);
-                    }
+                if (!file_names.contains(entry.getTitle())) {
+                    Log.d(Const.TAG, "nano - MirrorWorker: purging remotely deleted: " + entry.getTitle());
+                    mDatasource.markRecordDeletedById(entry.getId(), 1);
                 }
             }
 
