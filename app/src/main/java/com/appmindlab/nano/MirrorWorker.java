@@ -212,7 +212,7 @@ public class MirrorWorker extends Worker {
             Utils.listFileNames(getApplicationContext(), mMirrorUri);
 
             acquireDataSource();
-            List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
+            List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<g");
             HashSet<String> file_names = Utils.listFileNames(getApplicationContext(), mMirrorUri);
             DBEntry entry;
 
