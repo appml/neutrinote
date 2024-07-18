@@ -47,6 +47,7 @@ public class WidgetService extends RemoteViewsService {
 
         @Override
         public void onDestroy() {
+            Log.d(Const.TAG, "nano - WidgetService: onDestroy() ");
             mDatasource.close();
         }
 

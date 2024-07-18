@@ -49,6 +49,7 @@ public class MirrorWorker extends Worker {
     private int mMaxSyncLogFileSize = Const.MAX_SYNC_LOG_FILE_SIZE * Const.ONE_KB;
     private int mMaxSyncLogFileAge = Const.MAX_SYNC_LOG_FILE_AGE;
     private boolean mFileNameAsTitle;
+    private boolean mKeepDeletedCopies = false;
 
     // Last mirror time
     private long mLastMirrored = 0;
@@ -206,23 +207,25 @@ public class MirrorWorker extends Worker {
                 Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
             }
 
-            // Purge from local repo notes removed from mirror
-            // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
-            Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
-            Utils.listFileNames(getApplicationContext(), mMirrorUri);
+            if (mKeepDeletedCopies) {
+                // Purge from local repo notes removed from mirror
+                // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
+                Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
+                Utils.listFileNames(getApplicationContext(), mMirrorUri);
 
-            acquireDataSource();
-            List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
-            HashSet<String> file_names = Utils.listFileNames(getApplicationContext(), mMirrorUri);
-            DBEntry entry;
+                acquireDataSource();
+                List<DBEntry> items = mDatasource.getAllActiveRecordsTitlesByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, "<");
+                HashSet<String> file_names = Utils.listFileNames(getApplicationContext(), mMirrorUri);
+                DBEntry entry;
 
-            for (int i = 0; i < items.size(); i++) {
-                entry = items.get(i);
-                Log.d(Const.TAG, "nano - MirrorWorker: checking remote deletion for " + entry.getTitle());
+                for (int i = 0; i < items.size(); i++) {
+                    entry = items.get(i);
+                    Log.d(Const.TAG, "nano - MirrorWorker: checking remote deletion for " + entry.getTitle());
 
-                if (!file_names.contains(entry.getTitle())) {
-                    Log.d(Const.TAG, "nano - MirrorWorker: purging remotely deleted: " + entry.getTitle());
-                    mDatasource.markRecordDeletedById(entry.getId(), 1);
+                    if (!file_names.contains(entry.getTitle())) {
+                        Log.d(Const.TAG, "nano - MirrorWorker: purging remotely deleted: " + entry.getTitle());
+                        mDatasource.markRecordDeletedById(entry.getId(), 1);
+                    }
                 }
             }
 
@@ -410,6 +413,7 @@ public class MirrorWorker extends Worker {
             // Hacks
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
+            mKeepDeletedCopies = mSharedPreferences.getBoolean(Const.PREF_KEEP_DELETED_COPIES, true);
 
             // Last mirrored time
             mLastMirrored = mSharedPreferences.getLong(Const.MIRROR_TIMESTAMP, 0);
