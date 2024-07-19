@@ -17,6 +17,8 @@ public class WidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d(Const.TAG, "nano - WidgetProvider: onReceive() ");
+
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         int[] appWidgetIds;
 
@@ -24,13 +26,6 @@ public class WidgetProvider extends AppWidgetProvider {
 
         if (appWidgetIds.length > 0) {
             if (intent.getAction().equals(Const.ACTION_UPDATE_WIDGET)) {
-                Log.d(Const.TAG, "nano - WidgetProvider: onReceive(), calling notifyAppWidgetViewDataChanged()");
-                for (int i=0; i < appWidgetIds.length; ++i) {
-                    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds[i], R.id.stack_view);
-                }
-            }
-            else {
-                Log.d(Const.TAG, "nano - WidgetProvider: onReceive(), calling onUpdate()");
                 onUpdate(context, appWidgetManager, appWidgetIds);
             }
         }
