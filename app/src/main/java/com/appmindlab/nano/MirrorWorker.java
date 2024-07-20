@@ -49,7 +49,7 @@ public class MirrorWorker extends Worker {
     private int mMaxSyncLogFileSize = Const.MAX_SYNC_LOG_FILE_SIZE * Const.ONE_KB;
     private int mMaxSyncLogFileAge = Const.MAX_SYNC_LOG_FILE_AGE;
     private boolean mFileNameAsTitle;
-    private boolean mKeepDeletedCopies = false;
+    private boolean mKeepDeletedCopies = false, mSyncMirrorDeletion = false;
 
     // Last mirror time
     private long mLastMirrored = 0;
@@ -207,7 +207,7 @@ public class MirrorWorker extends Worker {
                 Utils.importFromSAFFolder(getApplicationContext(), font_dir, mLocalRepoPath + "/" + Const.CUSTOM_FONTS_PATH, false);
             }
 
-            if (mKeepDeletedCopies) {
+            if ((mKeepDeletedCopies) && (mSyncMirrorDeletion)) {
                 // Purge from local repo notes removed from mirror
                 // Basically purge any notes with modification already mirrored and were present at last mirroring but are now missing from the mirror
                 Log.d(Const.TAG, "nano - MirrorWorker: purge from local repo notes removed from mirror");
@@ -414,6 +414,7 @@ public class MirrorWorker extends Worker {
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
             mKeepDeletedCopies = mSharedPreferences.getBoolean(Const.PREF_KEEP_DELETED_COPIES, true);
+            mSyncMirrorDeletion = mSharedPreferences.getBoolean(Const.PREF_SYNC_MIRROR_DELETION, false);
 
             // Last mirrored time
             mLastMirrored = mSharedPreferences.getLong(Const.MIRROR_TIMESTAMP, 0);

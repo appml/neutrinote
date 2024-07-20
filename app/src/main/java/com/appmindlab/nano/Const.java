@@ -79,6 +79,7 @@ public class Const {
     protected final static String PREF_PREVIEW_MODE = "com.appmindlab.nano.pref_preview_mode";
     protected final static String PREF_CANVAS_STROKES = "com.appmindlab.nano.pref_canvas_strokes";
     protected final static String PREF_KEEP_DELETED_COPIES = "com.appmindlab.nano.pref_keep_deleted_copies";
+    protected final static String PREF_SYNC_MIRROR_DELETION = "com.appmindlab.nano.pref_sync_mirror_deletion";
     protected final static String PREF_MAX_DELETED_COPIES_AGE = "com.appmindlab.nano.pref_max_deleted_copies_age";
     protected final static String PREF_MAX_SYNC_LOG_FILE_SIZE = "com.appmindlab.nano.pref_max_sync_log_file_size";
     protected final static String PREF_MAX_SYNC_LOG_FILE_AGE = "com.appmindlab.nano.pref_max_sync_log_file_age";
@@ -140,6 +141,7 @@ public class Const {
             PREF_PREVIEW_MODE,
             PREF_CANVAS_STROKES,
             PREF_KEEP_DELETED_COPIES,
+            PREF_SYNC_MIRROR_DELETION,
             PREF_MAX_DELETED_COPIES_AGE,
             PREF_MAX_SYNC_LOG_FILE_SIZE,
             PREF_MAX_SYNC_LOG_FILE_AGE,
