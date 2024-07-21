@@ -26,8 +26,12 @@ public class WidgetProvider extends AppWidgetProvider {
 
         if (appWidgetIds.length > 0) {
             if (intent.getAction().equals(Const.ACTION_UPDATE_WIDGET)) {
-                onUpdate(context, appWidgetManager, appWidgetIds);
+                for (int i=0; i < appWidgetIds.length; ++i) {
+                    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds[i], R.id.stack_view);
+                }
             }
+
+            onUpdate(context, appWidgetManager, appWidgetIds);
         }
     }
 
