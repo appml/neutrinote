@@ -97,6 +97,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
@@ -2746,12 +2747,41 @@ public class Utils {
                     DocumentsContract.Document.COLUMN_DOCUMENT_ID,
                     DocumentsContract.Document.COLUMN_DISPLAY_NAME
             }, null, null, null);
+
             while (cursor.moveToNext()) {
                 file_name = new String(cursor.getString(1));
                 results.add(file_name);
             }
         } catch (Exception e) {
             Log.d(Const.TAG, "nano - listFileNames, failed query: " + e);
+        }
+
+        return results;
+    }
+
+    // List file info
+    protected static HashSet<HashMap> listFileInfo(Context context, Uri uri) {
+        final ContentResolver resolver = context.getContentResolver();
+        final Uri childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(uri, DocumentsContract.getDocumentId(uri));
+        final HashSet<HashMap> results = new HashSet<>();
+        Cursor cursor;
+
+        try {
+            cursor = resolver.query(childrenUri, new String[] {
+                    DocumentsContract.Document.COLUMN_DOCUMENT_ID,
+                    DocumentsContract.Document.COLUMN_DISPLAY_NAME,
+                    DocumentsContract.Document.COLUMN_LAST_MODIFIED
+            }, null, null, null);
+
+            while (cursor.moveToNext()) {
+                HashMap<String, String> info = new HashMap<>();
+                info.put("id", cursor.getString(0));
+                info.put("name", cursor.getString(1));
+                info.put("last_modified", cursor.getString(2));
+                results.add(info);
+            }
+        } catch (Exception e) {
+            Log.d(Const.TAG, "nano - listFileInfo, failed query: " + e);
         }
 
         return results;

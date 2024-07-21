@@ -174,6 +174,7 @@ public class Const {
             PREF_APPEND_CUSTOM_STYLE,
             PREF_MARKDOWN_LOCAL_CACHE,
             PREF_KEEP_DELETED_COPIES,
+            PREF_SYNC_MIRROR_DELETION,
             PREF_EVAL_BUILT_IN_VARIALBES,
             PREF_LOW_SPACE_MODE,
             PREF_PARSE_PYTHON,
@@ -720,6 +721,11 @@ public class Const {
     protected final static String IMAGE_JPEG_TYPE = "image/jpeg";
     protected final static String PREFIX_FILE = "file:///";
     protected final static String PREFIX_ASSET = "file:///android_asset/";
+
+    // Content resolver
+    protected final static String CONTENT_RESOLVER_COL_ID = "id";
+    protected final static String CONTENT_RESOLVER_COL_NAME = "name";
+    protected final static String CONTENT_RESOLVER_COL_LAST_MODIFIED = "last_modified";
 
     // File type
     protected final static String MULTI_TYPE = "~neutrinote_multitype.txt";

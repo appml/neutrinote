@@ -411,14 +411,14 @@ public class MirrorWorker extends Worker {
             mBackupUri = Uri.parse(mSharedPreferences.getString(Const.PREF_BACKUP_URI, ""));
             mFileNameAsTitle = Utils.fileNameAsTitle(getApplicationContext());
 
+            // Last mirrored time
+            mLastMirrored = mSharedPreferences.getLong(Const.MIRROR_TIMESTAMP, 0);
+
             // Hacks
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
             mKeepDeletedCopies = mSharedPreferences.getBoolean(Const.PREF_KEEP_DELETED_COPIES, true);
             mSyncMirrorDeletion = mSharedPreferences.getBoolean(Const.PREF_SYNC_MIRROR_DELETION, false);
-
-            // Last mirrored time
-            mLastMirrored = mSharedPreferences.getLong(Const.MIRROR_TIMESTAMP, 0);
         }
         catch (Exception e) {
             e.printStackTrace();
