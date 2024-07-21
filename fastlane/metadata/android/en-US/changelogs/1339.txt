@@ -1,0 +1,2 @@
+v4.5.2l
+- Bug fixes in widget and background mirroring

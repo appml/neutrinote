@@ -131,6 +131,7 @@ public class MirrorWorker extends Worker {
 
             Log.d(Const.TAG, "nano - MirrorWorker: From Mirror ");
 
+            acquireDataSource();
             String file_name;
             for (DocumentFile file : dest_dir.listFiles()) {
                 // Sanity check
