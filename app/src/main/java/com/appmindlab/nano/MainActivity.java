@@ -2488,6 +2488,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         builder.setPositiveButton(R.string.dialog_sd_backup_ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 doSAFBackupRequest(Const.BACKUP_INSTANT_WORK_TAG);
+                scheduleBackup();
                 return;
             }
         });
