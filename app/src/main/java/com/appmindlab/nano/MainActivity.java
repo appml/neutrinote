@@ -73,6 +73,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.RemoteInput;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.pm.ShortcutInfoCompat;
+import androidx.core.content.pm.ShortcutManagerCompat;
+import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.core.view.GravityCompat;
 import androidx.documentfile.provider.DocumentFile;
@@ -235,6 +238,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String mPreviewMode = Const.PREVIEW_AT_END;
     private String mCustomDateFormat = "";
     private int mProcessTextMode = Const.PROCESS_TEXT_DISABLED;
+    private int mWorkingSetSize = Const.WORKING_SET_SIZE;
+    private boolean mLabMode = false;
 
     // Animation
     private Animation mFadeIn, mFadeOut, mSlideUp, mSlideDown, mPushDownIn, mPushLeftIn, mPushLeftOut, mPushRightIn, mZoomIn, mBounce, mGrowFromMiddle;
@@ -394,6 +399,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Setup process text
         /////////////////////////
         setupProcessText();
+
+        ///////////////////////////
+        // Setup dynamic shortcuts
+        ///////////////////////////
+        if (mLabMode)
+            setupDynamicShortcut();
 
         ///////////////////
         // Handle intent
@@ -1373,6 +1384,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     comp,
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                     PackageManager.DONT_KILL_APP);
+        }
+    }
+
+    // Setup dynamic shortcut
+    protected void setupDynamicShortcut() {
+        List<DBEntry> results = mDatasource.getWorkingSet(mWorkingSetSize+1);
+        int count = results.size();
+
+        // Record
+        DBEntry entry;
+
+        Intent intent;
+        ShortcutInfoCompat shortcut;
+        String title;
+
+        for (int i=0; i < count; i++) {
+            entry = results.get(i);
+            title = entry.getTitle();
+
+            intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.setAction(Intent.ACTION_SEARCH);
+            intent.putExtra(SearchManager.QUERY, Const.TITLEREGONLY + title);
+            startActivity(intent);
+
+            shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), title)
+                    .setShortLabel(title)
+                    .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
+                    .setIntent(intent)
+                    .build();
+
+            ShortcutManagerCompat.pushDynamicShortcut(getApplicationContext(), shortcut);
         }
     }
 
@@ -4968,6 +5010,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mProcessTextMode = Integer.valueOf(mSharedPreferences.getString(Const.PREF_PROCESS_TEXT_MODE, String.valueOf(Const.PROCESS_TEXT_DISABLED)));
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
+            mWorkingSetSize= Integer.parseInt(mSharedPreferences.getString(Const.PREF_WORKING_SET_SIZE, String.valueOf(Const.WORKING_SET_SIZE)));
+            mLabMode = mSharedPreferences.getBoolean(Const.PREF_LAB_MODE, false);
         } catch (Exception e) {
             e.printStackTrace();
         }
