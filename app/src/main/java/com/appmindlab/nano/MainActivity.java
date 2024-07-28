@@ -1388,7 +1388,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void setupDynamicShortcuts() {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.setAction(Intent.ACTION_SEARCH);
-        intent.putExtra(SearchManager.QUERY, Const.METADATAONLY + Const.LAUNCHER_SHORTCUT_SYM);
+        intent.putExtra(SearchManager.QUERY, Const.METADATAREGONLY + "*" + Const.LAUNCHER_SHORTCUT_SYM + "*");
 
         ShortcutInfoCompat  shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), Const.LAUNCHER_SHORTCUT_SYM)
                 .setShortLabel(Const.LAUNCHER_SHORTCUT_SYM)
