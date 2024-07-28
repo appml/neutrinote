@@ -478,6 +478,8 @@ public class Const {
     protected final static String HTTPS_SYM = "https://";
     protected final static String FILE_SCHEMA_PREFIX_SHORTCUT_SYM = "file://.";
 
+    protected final static String LAUNCHER_SHORTCUT_SYM = "#launcher";
+
     // Built-in variables
     protected final static String TITLE_VAR = "@title";
     protected final static String CREATED_VAR = "@created";

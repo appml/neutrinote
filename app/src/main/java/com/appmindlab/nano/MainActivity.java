@@ -238,8 +238,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String mPreviewMode = Const.PREVIEW_AT_END;
     private String mCustomDateFormat = "";
     private int mProcessTextMode = Const.PROCESS_TEXT_DISABLED;
-    private int mWorkingSetSize = Const.WORKING_SET_SIZE;
-    private boolean mLabMode = false;
 
     // Animation
     private Animation mFadeIn, mFadeOut, mSlideUp, mSlideDown, mPushDownIn, mPushLeftIn, mPushLeftOut, mPushRightIn, mZoomIn, mBounce, mGrowFromMiddle;
@@ -403,8 +401,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ///////////////////////////
         // Setup dynamic shortcuts
         ///////////////////////////
-        if (mLabMode)
-            setupDynamicShortcut();
+        setupDynamicShortcuts();
 
         ///////////////////
         // Handle intent
@@ -1387,35 +1384,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    // Setup dynamic shortcut
-    protected void setupDynamicShortcut() {
-        List<DBEntry> results = mDatasource.getAllActiveStarredRecords(Const.SORT_BY_TITLE, Const.SORT_ASC);
-        int count = results.size();
+    // Setup dynamic shortcuts
+    protected void setupDynamicShortcuts() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setAction(Intent.ACTION_SEARCH);
+        intent.putExtra(SearchManager.QUERY, Const.METADATAONLY + Const.LAUNCHER_SHORTCUT_SYM);
 
-        // Record
-        DBEntry entry;
+        ShortcutInfoCompat  shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), Const.LAUNCHER_SHORTCUT_SYM)
+                .setShortLabel(Const.LAUNCHER_SHORTCUT_SYM)
+                .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
+                .setIntent(intent)
+                .build();
 
-        Intent intent;
-        ShortcutInfoCompat shortcut;
-        String title;
-
-        for (int i=0; i < count; i++) {
-            entry = results.get(i);
-            title = entry.getTitle();
-
-            intent = new Intent(getApplicationContext(), MainActivity.class);
-            intent.setAction(Intent.ACTION_SEARCH);
-            intent.putExtra(SearchManager.QUERY, Const.TITLEREGONLY + title);
-            startActivity(intent);
-
-            shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), title)
-                    .setShortLabel(title)
-                    .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
-                    .setIntent(intent)
-                    .build();
-
-            ShortcutManagerCompat.pushDynamicShortcut(getApplicationContext(), shortcut);
-        }
+        ShortcutManagerCompat.pushDynamicShortcut(getApplicationContext(), shortcut);
     }
 
     // Setup scrapbook
@@ -5010,8 +4991,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mProcessTextMode = Integer.valueOf(mSharedPreferences.getString(Const.PREF_PROCESS_TEXT_MODE, String.valueOf(Const.PROCESS_TEXT_DISABLED)));
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
-            mWorkingSetSize= Integer.parseInt(mSharedPreferences.getString(Const.PREF_WORKING_SET_SIZE, String.valueOf(Const.WORKING_SET_SIZE)));
-            mLabMode = mSharedPreferences.getBoolean(Const.PREF_LAB_MODE, false);
         } catch (Exception e) {
             e.printStackTrace();
         }
