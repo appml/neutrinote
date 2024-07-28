@@ -94,6 +94,7 @@ public class Const {
     protected final static String PREF_PROCESS_TEXT_MODE = "com.appmindlab.nano.pref_process_text_mode";
     protected final static String PREF_WORKING_SET_SIZE = "com.appmindlab.nano.pref_working_set_size";
     protected final static String PREF_LAB_MODE = "com.appmindlab.nano.pref_lab_mode";
+    protected final static String PREF_LAUNCHER_TAG = "com.appmindlab.nano.pref_launcher_tag";
 
     protected final static String[] ALL_PREFS = {
             PREF_LOCAL_REPO_PATH,
@@ -154,7 +155,8 @@ public class Const {
             PREF_PARSE_TYPOGRAMS,
             PREF_PROCESS_TEXT_MODE,
             PREF_WORKING_SET_SIZE,
-            PREF_LAB_MODE
+            PREF_LAB_MODE,
+            PREF_LAUNCHER_TAG
     };
 
     // Boolean preferences
@@ -477,8 +479,6 @@ public class Const {
     protected final static String HTTP_SYM = "http://";
     protected final static String HTTPS_SYM = "https://";
     protected final static String FILE_SCHEMA_PREFIX_SHORTCUT_SYM = "file://.";
-
-    protected final static String LAUNCHER_SHORTCUT_SYM = "#launcher";
 
     // Built-in variables
     protected final static String TITLE_VAR = "@title";

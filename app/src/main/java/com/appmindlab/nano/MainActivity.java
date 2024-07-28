@@ -238,6 +238,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String mPreviewMode = Const.PREVIEW_AT_END;
     private String mCustomDateFormat = "";
     private int mProcessTextMode = Const.PROCESS_TEXT_DISABLED;
+    private String mLauncherTag = "";
 
     // Animation
     private Animation mFadeIn, mFadeOut, mSlideUp, mSlideDown, mPushDownIn, mPushLeftIn, mPushLeftOut, mPushRightIn, mZoomIn, mBounce, mGrowFromMiddle;
@@ -1386,12 +1387,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Setup dynamic shortcuts
     protected void setupDynamicShortcuts() {
+        // Reset
+        if (mLauncherTag.length() == 0) {
+            ShortcutManagerCompat.removeAllDynamicShortcuts(getApplicationContext());
+            return;
+        }
+
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.setAction(Intent.ACTION_SEARCH);
-        intent.putExtra(SearchManager.QUERY, Const.METADATAREGONLY + "*" + Const.LAUNCHER_SHORTCUT_SYM + "*");
+        intent.putExtra(SearchManager.QUERY, Const.METADATAREGONLY + "*" + mLauncherTag + "*");
 
-        ShortcutInfoCompat  shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), Const.LAUNCHER_SHORTCUT_SYM)
-                .setShortLabel(Const.LAUNCHER_SHORTCUT_SYM)
+        ShortcutInfoCompat  shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), mLauncherTag)
+                .setShortLabel(mLauncherTag)
                 .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
                 .setIntent(intent)
                 .build();
@@ -4991,6 +4998,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mProcessTextMode = Integer.valueOf(mSharedPreferences.getString(Const.PREF_PROCESS_TEXT_MODE, String.valueOf(Const.PROCESS_TEXT_DISABLED)));
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
+            mLauncherTag = mSharedPreferences.getString(Const.PREF_LAUNCHER_TAG, "");
         } catch (Exception e) {
             e.printStackTrace();
         }
