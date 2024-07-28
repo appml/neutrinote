@@ -1389,7 +1389,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Setup dynamic shortcut
     protected void setupDynamicShortcut() {
-        List<DBEntry> results = mDatasource.getWorkingSet(mWorkingSetSize+1);
+        List<DBEntry> results = mDatasource.getAllActiveStarredRecords(Const.SORT_BY_TITLE, Const.SORT_ASC);
         int count = results.size();
 
         // Record
