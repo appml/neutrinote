@@ -399,11 +399,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         /////////////////////////
         setupProcessText();
 
-        ///////////////////////////
-        // Setup dynamic shortcuts
-        ///////////////////////////
-        setupDynamicShortcuts();
-
         ///////////////////
         // Handle intent
         ///////////////////
@@ -1383,27 +1378,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
                     PackageManager.DONT_KILL_APP);
         }
-    }
-
-    // Setup dynamic shortcuts
-    protected void setupDynamicShortcuts() {
-        // Reset
-        if (mLauncherTag.length() == 0) {
-            ShortcutManagerCompat.removeAllDynamicShortcuts(getApplicationContext());
-            return;
-        }
-
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.setAction(Intent.ACTION_SEARCH);
-        intent.putExtra(SearchManager.QUERY, Const.METADATAREGONLY + "*" + mLauncherTag + "*");
-
-        ShortcutInfoCompat  shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), mLauncherTag)
-                .setShortLabel(mLauncherTag)
-                .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
-                .setIntent(intent)
-                .build();
-
-        ShortcutManagerCompat.pushDynamicShortcut(getApplicationContext(), shortcut);
     }
 
     // Setup scrapbook
@@ -4528,6 +4502,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
+    // Refresh dynamic shortcuts
+    protected void refreshDynamicShortcuts() {
+        // Reset shortcuts
+        ShortcutManagerCompat.removeAllDynamicShortcuts(getApplicationContext());
+
+        // Sanity check
+        if (mLauncherTag.length() == 0)
+            return;
+
+        // Create shortcuts
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setAction(Intent.ACTION_SEARCH);
+        intent.putExtra(SearchManager.QUERY, mLauncherTag);
+
+        ShortcutInfoCompat  shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), mLauncherTag)
+                .setShortLabel(mLauncherTag)
+                .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
+                .setIntent(intent)
+                .build();
+
+        ShortcutManagerCompat.pushDynamicShortcut(getApplicationContext(), shortcut);
+    }
+
     // Do app data restore
     protected void doAppDataRestore() {
         try {
@@ -4654,6 +4652,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 // 3. Restore search history if available
                 restoreSearchHistory();
+
+                // 4. Restore dynamic shortcuts
+                refreshDynamicShortcuts();
 
                 status = getResources().getString(R.string.status_app_data_restored);
             } else
