@@ -170,7 +170,7 @@
     <string name="widget_empty_view_text">Nenhum registro</string>
     <string name="status_empty_clipboard">A área de transferência está vazia.</string>
 
-    <string name="scrapbook_paste">Escrever</string>
+    <string name="scrapbook_write">Escrever</string>
     <string name="scrapbook_goto">Ir Para</string>
     <string name="scrapbook_cancel">Cancelar</string>
     <string name="status_scrapbook_updated">\u0020atualizado.</string>

@@ -139,7 +139,7 @@ public class NotificationReceiver extends BroadcastReceiver {
                 PendingIntent.FLAG_MUTABLE);
 
         paste_action = new NotificationCompat.Action.Builder(
-                android.R.drawable.sym_action_chat, context.getResources().getString(R.string.scrapbook_paste), paste_pending_intent)
+                android.R.drawable.sym_action_chat, context.getResources().getString(R.string.scrapbook_write), paste_pending_intent)
                 .addRemoteInput(remote_input)
                 .setAllowGeneratedReplies(false)
                 .build();
