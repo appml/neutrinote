@@ -4502,7 +4502,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
     // Refresh dynamic shortcuts
     protected void refreshDynamicShortcuts() {
         // Reset shortcuts
@@ -4512,18 +4511,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mLauncherTag.length() == 0)
             return;
 
-        // Create shortcuts
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.setAction(Intent.ACTION_SEARCH);
-        intent.putExtra(SearchManager.QUERY, mLauncherTag);
+        String parts[] = mLauncherTag.split(Const.LAUNCHER_TAG_DELIM);
+        Intent intent;
+        ShortcutInfoCompat shortcut;
 
-        ShortcutInfoCompat  shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), mLauncherTag)
-                .setShortLabel(mLauncherTag)
-                .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
-                .setIntent(intent)
-                .build();
+        for (int i = 0; i < parts.length; i++) {
+            // Create shortcuts
+            intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.setAction(Intent.ACTION_SEARCH);
+            intent.putExtra(SearchManager.QUERY, parts[i]);
 
-        ShortcutManagerCompat.pushDynamicShortcut(getApplicationContext(), shortcut);
+            shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), parts[i])
+                    .setShortLabel(parts[i])
+                    .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
+                    .setIntent(intent)
+                    .build();
+
+            ShortcutManagerCompat.pushDynamicShortcut(getApplicationContext(), shortcut);
+        }
     }
 
     // Do app data restore
