@@ -94,7 +94,7 @@ public class Const {
     protected final static String PREF_PROCESS_TEXT_MODE = "com.appmindlab.nano.pref_process_text_mode";
     protected final static String PREF_WORKING_SET_SIZE = "com.appmindlab.nano.pref_working_set_size";
     protected final static String PREF_LAB_MODE = "com.appmindlab.nano.pref_lab_mode";
-    protected final static String PREF_LAUNCHER_TAG = "com.appmindlab.nano.pref_launcher_tag";
+    protected final static String PREF_LAUNCHER_TAGS = "com.appmindlab.nano.pref_launcher_tags";
 
     protected final static String[] ALL_PREFS = {
             PREF_LOCAL_REPO_PATH,
@@ -156,7 +156,7 @@ public class Const {
             PREF_PROCESS_TEXT_MODE,
             PREF_WORKING_SET_SIZE,
             PREF_LAB_MODE,
-            PREF_LAUNCHER_TAG
+            PREF_LAUNCHER_TAGS
     };
 
     // Boolean preferences

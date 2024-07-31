@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String mPreviewMode = Const.PREVIEW_AT_END;
     private String mCustomDateFormat = "";
     private int mProcessTextMode = Const.PROCESS_TEXT_DISABLED;
-    private String mLauncherTag = "";
+    private String mLauncherTags = "";
 
     // Animation
     private Animation mFadeIn, mFadeOut, mSlideUp, mSlideDown, mPushDownIn, mPushLeftIn, mPushLeftOut, mPushRightIn, mZoomIn, mBounce, mGrowFromMiddle;
@@ -4508,10 +4508,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ShortcutManagerCompat.removeAllDynamicShortcuts(getApplicationContext());
 
         // Sanity check
-        if (mLauncherTag.length() == 0)
+        if (mLauncherTags.length() == 0)
             return;
 
-        String parts[] = mLauncherTag.split(Const.LAUNCHER_TAG_DELIM);
+        String parts[] = mLauncherTags.split(Const.LAUNCHER_TAG_DELIM);
         Intent intent;
         ShortcutInfoCompat shortcut;
 
@@ -5004,7 +5004,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mProcessTextMode = Integer.valueOf(mSharedPreferences.getString(Const.PREF_PROCESS_TEXT_MODE, String.valueOf(Const.PROCESS_TEXT_DISABLED)));
             mMaxSyncLogFileSize = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_SIZE, String.valueOf(Const.MAX_SYNC_LOG_FILE_SIZE))) * Const.ONE_KB;
             mMaxSyncLogFileAge = Integer.valueOf(mSharedPreferences.getString(Const.PREF_MAX_SYNC_LOG_FILE_AGE, String.valueOf(Const.MAX_SYNC_LOG_FILE_AGE)));
-            mLauncherTag = mSharedPreferences.getString(Const.PREF_LAUNCHER_TAG, "");
+            mLauncherTags = mSharedPreferences.getString(Const.PREF_LAUNCHER_TAGS, "");
         } catch (Exception e) {
             e.printStackTrace();
         }

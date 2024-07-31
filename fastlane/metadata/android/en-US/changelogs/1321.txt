@@ -1,4 +1,0 @@
-v4.5.0a
-- Theme fixes.
-- Better use of memory.
-- Even faster startup time.

@@ -1,0 +1,2 @@
+v4.5.3
+- Allows launcher shortcuts to be created for custom search filters.
