@@ -3615,7 +3615,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCursor = mDatasource.getAllActiveRecordsByLastAccessedCursor(mOrderBy, mOrderDirection, mDateFilter, ">", mPreviewMode);
 
         mAdapter.changeCursor(mCursor);
-        mAdapter.changeCursor(mCursor);
         mAdapter.notifyDataSetChanged();
 
         showHideRecyclerView();
