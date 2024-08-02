@@ -1403,9 +1403,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(launchIntent);
         } else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             setCriteria(intent.getStringExtra(SearchManager.QUERY).trim());
-            SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this,
-                    SuggestionProvider.AUTHORITY, SuggestionProvider.MODE);
-            suggestions.saveRecentQuery(mCriteria, null);
 
             // Update search history on file if available
             updateSearchHistory(true);
@@ -1435,9 +1432,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else if (mProcessTextMode == Const.PROCESS_TEXT_SEARCH) {
                 String str = intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString();
                 setCriteria(str.trim());
-                SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this,
-                        SuggestionProvider.AUTHORITY, SuggestionProvider.MODE);
-                suggestions.saveRecentQuery(mCriteria, null);
 
                 // Update search history on file if available
                 updateSearchHistory(true);
