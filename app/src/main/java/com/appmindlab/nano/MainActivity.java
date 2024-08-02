@@ -4501,7 +4501,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ShortcutManagerCompat.removeAllDynamicShortcuts(getApplicationContext());
 
         // Sanity check
-        if (mLauncherTags.length() == 0)
+        if (mLauncherTags.isEmpty())
             return;
 
         String parts[] = mLauncherTags.split(Const.LAUNCHER_TAG_DELIM);
@@ -4516,7 +4516,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             shortcut = new ShortcutInfoCompat.Builder(getApplicationContext(), parts[i])
                     .setShortLabel(parts[i])
-                    .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_launcher))
+                    .setIcon(IconCompat.createWithResource(getApplicationContext(), R.drawable.ic_bookmark))
                     .setIntent(intent)
                     .build();
 
