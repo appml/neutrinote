@@ -4987,7 +4987,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Hacks
             mOled = mSharedPreferences.getBoolean(Const.PREF_OLED, false);
-            mEvalBuiltInVariables = mSharedPreferences.getBoolean(Const.PREF_EVAL_BUILT_IN_VARIALBES, false);
+            mEvalBuiltInVariables = mSharedPreferences.getBoolean(Const.PREF_EVAL_BUILT_IN_VARIABLES, false);
             mLowSpaceMode = mSharedPreferences.getBoolean(Const.PREF_LOW_SPACE_MODE, false);
             mLocalPriorityTag = mSharedPreferences.getString(Const.PREF_LOCAL_PRIORITY_TAG, "");
             mRemotePriorityTag = mSharedPreferences.getString(Const.PREF_REMOTE_PRIORITY_TAG, "");

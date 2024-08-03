@@ -10,6 +10,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
@@ -17,6 +18,7 @@ import androidx.core.app.RemoteInput;
 
 import org.ocpsoft.prettytime.PrettyTime;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
@@ -27,6 +29,7 @@ public class NotificationReceiver extends BroadcastReceiver {
 
     // Settings related
     private SharedPreferences mSharedPreferences;
+    private boolean mEvalBuiltInVariables = false;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -38,7 +41,8 @@ public class NotificationReceiver extends BroadcastReceiver {
             }
 
             // Setup preferences
-            mSharedPreferences = context.getSharedPreferences(Const.PACKAGE, Context.MODE_PRIVATE);
+            mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);;
+            mEvalBuiltInVariables = mSharedPreferences.getBoolean(Const.PREF_EVAL_BUILT_IN_VARIABLES, false);
 
             // Append to scrapbook
             doAppendScrapbook(context, intent);
@@ -56,8 +60,7 @@ public class NotificationReceiver extends BroadcastReceiver {
                 String input = bundle.getCharSequence(Const.SCRAPBOOK_NOTIFICATION_KEY).toString();
 
                 // Evaluate built-in variables
-                boolean eval_built_in_variables = mSharedPreferences.getBoolean(Const.PREF_EVAL_BUILT_IN_VARIALBES, false);
-                if (eval_built_in_variables) {
+                if (mEvalBuiltInVariables) {
                     String custom_date_format = mSharedPreferences.getString(Const.PREF_CUSTOM_DATE_FORMAT, "");
                     String custom_time_format = mSharedPreferences.getString(Const.PREF_CUSTOM_TIME_FORMAT, "");
 
@@ -123,7 +126,7 @@ public class NotificationReceiver extends BroadcastReceiver {
                 .setSmallIcon(R.drawable.ic_mode_edit_vector)
                 .setOngoing(true)
                 .setContentTitle(title)
-                .setContentText(Utils.readableFileSize(entry.getSize()) + " / " + pretty_time.format(timestamp));
+                .setContentText(Utils.readableFileSize(entry.getSize()) + " / "  + pretty_time.format(timestamp));
 
         // Remote input
         remote_input = new RemoteInput.Builder(Const.SCRAPBOOK_NOTIFICATION_KEY)

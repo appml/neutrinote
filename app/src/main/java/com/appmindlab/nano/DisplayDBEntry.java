@@ -7401,7 +7401,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mCanvasStrokes = mSharedPreferences.getString(Const.PREF_CANVAS_STROKES, Const.DEFAULT_CANVAS_STROKES);
             mFontSizeList = mSharedPreferences.getString(Const.PREF_FONT_SIZE_LIST, Const.DEFAULT_FONT_SIZE_LIST);
             mMarginList = mSharedPreferences.getString(Const.PREF_MARGIN_LIST, Const.DEFAULT_MARGIN_LIST);
-            mEvalBuiltInVariables = mSharedPreferences.getBoolean(Const.PREF_EVAL_BUILT_IN_VARIALBES, false);
+            mEvalBuiltInVariables = mSharedPreferences.getBoolean(Const.PREF_EVAL_BUILT_IN_VARIABLES, false);
             mOled = mSharedPreferences.getBoolean(Const.PREF_OLED, false);
             mWorkingSetSize= Integer.parseInt(mSharedPreferences.getString(Const.PREF_WORKING_SET_SIZE, String.valueOf(Const.WORKING_SET_SIZE)));
             mLabMode = mSharedPreferences.getBoolean(Const.PREF_LAB_MODE, false);

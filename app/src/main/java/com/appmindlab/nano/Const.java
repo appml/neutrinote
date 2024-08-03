@@ -83,7 +83,7 @@ public class Const {
     protected final static String PREF_MAX_DELETED_COPIES_AGE = "com.appmindlab.nano.pref_max_deleted_copies_age";
     protected final static String PREF_MAX_SYNC_LOG_FILE_SIZE = "com.appmindlab.nano.pref_max_sync_log_file_size";
     protected final static String PREF_MAX_SYNC_LOG_FILE_AGE = "com.appmindlab.nano.pref_max_sync_log_file_age";
-    protected final static String PREF_EVAL_BUILT_IN_VARIALBES = "com.appmindlab.nano.pref_eval_built_in_variables";
+    protected final static String PREF_EVAL_BUILT_IN_VARIABLES = "com.appmindlab.nano.pref_eval_built_in_variables";
     protected final static String PREF_LOW_SPACE_MODE = "com.appmindlab.nano.pref_low_space_mode";
     protected final static String PREF_PARSE_PYTHON = "com.appmindlab.nano.pref_parse_python";
     protected final static String PREF_PARSE_VUE = "com.appmindlab.nano.pref_parse_vue";
@@ -146,7 +146,7 @@ public class Const {
             PREF_MAX_DELETED_COPIES_AGE,
             PREF_MAX_SYNC_LOG_FILE_SIZE,
             PREF_MAX_SYNC_LOG_FILE_AGE,
-            PREF_EVAL_BUILT_IN_VARIALBES,
+            PREF_EVAL_BUILT_IN_VARIABLES,
             PREF_LOW_SPACE_MODE,
             PREF_PARSE_PYTHON,
             PREF_PARSE_VUE,
@@ -177,7 +177,7 @@ public class Const {
             PREF_MARKDOWN_LOCAL_CACHE,
             PREF_KEEP_DELETED_COPIES,
             PREF_SYNC_MIRROR_DELETION,
-            PREF_EVAL_BUILT_IN_VARIALBES,
+            PREF_EVAL_BUILT_IN_VARIABLES,
             PREF_LOW_SPACE_MODE,
             PREF_PARSE_PYTHON,
             PREF_PARSE_VUE,
