@@ -1259,7 +1259,7 @@ public class Utils {
 
     // Check whether to use file name as note title
     protected static boolean fileNameAsTitle(Context context) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String local_repo_path = shared_preferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
@@ -1272,7 +1272,7 @@ public class Utils {
 
     // Get note title template
     protected static String getNewNoteTitleTemplate(Context context) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String template = shared_preferences.getString(Const.PREF_NEW_NOTE_TITLE_TEMPLATE, Const.NEW_NOTE_TITLE_TEMPLATE);
@@ -1293,7 +1293,7 @@ public class Utils {
 
     // Make next file name
     protected static String makeNextFileName(Context context, String path) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String file_type = shared_preferences.getString(Const.PREF_NEW_NOTE_FILE_TYPE, Const.NEW_NOTE_FILE_TYPE);
@@ -1467,7 +1467,7 @@ public class Utils {
 
     // Write to local repo file
     protected static void writeLocalRepoFile(Context context, String title, String content) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String local_repo_path = shared_preferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
@@ -1497,7 +1497,7 @@ public class Utils {
 
     // Write to local repo file without adjusting title
     protected static void writeLocalRepoFileAndTitle(Context context, String title, String content) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String local_repo_path = shared_preferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
@@ -1523,7 +1523,7 @@ public class Utils {
 
     // Write to local repo file
     protected static void writeLocalRepoFile(Context context, String path, String title, String content) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String local_repo_path = shared_preferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
@@ -1558,7 +1558,7 @@ public class Utils {
 
     // Append to local repo file
     protected static void appendLocalRepoFile(Context context, String title, String content, long maxSize) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String local_repo_path = shared_preferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
@@ -1594,7 +1594,7 @@ public class Utils {
 
     // Append to local repo file
     protected static void appendLocalRepoFile(Context context, String path, String title, String content, long maxSize) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String local_repo_path = shared_preferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
@@ -1735,7 +1735,7 @@ public class Utils {
 
     // Write to local repo file
     protected static void deleteLocalRepoFile(Context context, String title) {
-        final SharedPreferences shared_preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences shared_preferences = context.getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
 
         // Retrieve preference values
         String local_repo_path = shared_preferences.getString(Const.PREF_LOCAL_REPO_PATH, "");

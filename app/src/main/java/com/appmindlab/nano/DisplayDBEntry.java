@@ -7358,7 +7358,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Load preferences
     protected void loadPref() {
         try {
-            mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            mSharedPreferences = getApplicationContext().getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
             mSharedPreferencesEditor = mSharedPreferences.edit();
 
             mLocalRepoPath = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");

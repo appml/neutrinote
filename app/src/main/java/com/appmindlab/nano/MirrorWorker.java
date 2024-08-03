@@ -406,7 +406,7 @@ public class MirrorWorker extends Worker {
     // Load preferences
     protected void loadPref() {
         try {
-            mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            mSharedPreferences = getApplicationContext().getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
             mLocalRepoPath = mSharedPreferences.getString(Const.PREF_LOCAL_REPO_PATH, "");
             mBackupUri = Uri.parse(mSharedPreferences.getString(Const.PREF_BACKUP_URI, ""));
             mFileNameAsTitle = Utils.fileNameAsTitle(getApplicationContext());

@@ -4963,7 +4963,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Load preferences
     private void loadPref() {
         try {
-            mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            mSharedPreferences = getApplicationContext().getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
             mSharedPreferencesEditor = mSharedPreferences.edit();
 
             // Retrieve preference values
