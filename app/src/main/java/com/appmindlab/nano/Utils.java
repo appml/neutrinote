@@ -648,20 +648,24 @@ public class Utils {
 
     // Insert a pair of markdown symbols
     protected static synchronized void insertMarkdownSymbolPair(EditText text, String leftSymbol, String rightSymbol, String defaultSymbol, String indentChar) {
-        int start = Math.min(text.getSelectionStart(), text.getSelectionEnd());
-        int end = Math.max(text.getSelectionStart(), text.getSelectionEnd());
+        try {
+            int start = Math.min(text.getSelectionStart(), text.getSelectionEnd());
+            int end = Math.max(text.getSelectionStart(), text.getSelectionEnd());
 
-        if ((start >= 0) && (end >= 0)) {
-            if (start == end) {
-                if (indentChar != null)
-                    insertMarkdownSymbolAutoIndent(text, defaultSymbol, indentChar);
-                else
-                    text.getText().insert(start, defaultSymbol);
+            if ((start >= 0) && (end >= 0)) {
+                if (start == end) {
+                    if (indentChar != null)
+                        insertMarkdownSymbolAutoIndent(text, defaultSymbol, indentChar);
+                    else
+                        text.getText().insert(start, defaultSymbol);
+                }
+                else {
+                    text.getText().insert(start, leftSymbol);
+                    text.getText().insert(end + 1, rightSymbol);
+                }
             }
-            else {
-                text.getText().insert(start, leftSymbol);
-                text.getText().insert(end + 1, rightSymbol);
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -675,22 +679,27 @@ public class Utils {
     }
 
     // Fill blank spaces with markdown symbols
+    // Fill blank spaces with markdown symbols
     protected static synchronized void fillMarkdownSymbol(EditText text, String symbol, String indentChar) {
-        int start = Math.min(text.getSelectionStart(), text.getSelectionEnd());
-        int end = Math.max(text.getSelectionStart(), text.getSelectionEnd());
-        String source, target;
+        try {
+            int start = Math.min(text.getSelectionStart(), text.getSelectionEnd());
+            int end = Math.max(text.getSelectionStart(), text.getSelectionEnd());
+            String source, target;
 
-        if ((start >= 0) && (end >= 0)) {
-            if (start == end)
-                if (indentChar != null)
-                    insertMarkdownSymbolAutoIndent(text, symbol, indentChar);
-                else
-                    text.getText().insert(start, symbol);
-            else {
-                source = text.getText().toString().substring(start, end);
-                target = source.replaceAll(" ", symbol);
-                text.getText().replace(start, end, target);
+            if ((start >= 0) && (end >= 0)) {
+                if (start == end)
+                    if (indentChar != null)
+                        insertMarkdownSymbolAutoIndent(text, symbol, indentChar);
+                    else
+                        text.getText().insert(start, symbol);
+                else {
+                    source = text.getText().toString().substring(start, end);
+                    target = source.replaceAll(" ", symbol);
+                    text.getText().replace(start, end, target);
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
