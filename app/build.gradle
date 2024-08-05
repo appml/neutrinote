@@ -43,7 +43,7 @@ dependencies {
     implementation 'com.bignerdranch.android:recyclerview-multiselect:0.2'
     implementation 'com.simplecityapps:recyclerview-fastscroll:1.0.6'
     implementation 'com.android.volley:volley:1.2.1@aar'
-    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    implementation 'com.github.amulyakhare:TextDrawable:558677ea31'
     implementation 'org.ocpsoft.prettytime:prettytime:2.1.1.Final@jar'
     implementation 'com.github.paolorotolo:appintro:4.0.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
