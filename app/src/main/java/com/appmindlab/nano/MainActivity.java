@@ -89,6 +89,7 @@ import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.ExistingWorkPolicy;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -111,6 +112,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -1269,6 +1272,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mBackupWorkRequest);
 
         Log.d(Const.TAG, "nano - Backup job scheduled");
+    }
+
+    // Reschedule backup
+    protected void rescheduleBackup() {
+        // Sanity check
+        if (!mIncrementalBackup) return;
+
+        mBackupWorkManager = WorkManager.getInstance(getApplicationContext());
+
+        // Get the id of the existing backup worker
+        List<WorkInfo> workinfo_list;
+        try {
+            workinfo_list = mBackupWorkManager.getWorkInfosForUniqueWork(Const.BACKUP_WORK_NAME).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        UUID worker_id = workinfo_list.isEmpty() ? null : workinfo_list.get(0).getId();
+        if (worker_id == null) return;
+
+        // Build constraints
+        mBackupContraints = new Constraints.Builder()
+                .setRequiresDeviceIdle(true)
+                .setRequiresBatteryNotLow(true)
+                .setRequiresStorageNotLow(true)
+                .build();
+
+        // Build request
+        mBackupWorkRequest = new PeriodicWorkRequest.Builder(
+                BackupWorker.class,
+                Const.AUTO_BACKUP_FREQ,
+                TimeUnit.HOURS)
+                .setConstraints(mBackupContraints)
+                .setId(worker_id)
+                .build();
+
+        // Update backup worker
+        mBackupWorkManager.updateWork(mBackupWorkRequest);
+
+        Log.d(Const.TAG, "nano - Backup job rescheduled");
     }
 
     // Cancel backup
@@ -2486,6 +2530,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         builder.setPositiveButton(R.string.dialog_sd_backup_ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 doSAFBackupRequest(Const.BACKUP_INSTANT_WORK_TAG);
+                rescheduleBackup();
                 return;
             }
         });
