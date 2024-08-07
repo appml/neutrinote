@@ -1294,11 +1294,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (worker_id == null) return;
 
         // Build constraints
-        mBackupContraints = new Constraints.Builder()
-                .setRequiresDeviceIdle(true)
-                .setRequiresBatteryNotLow(true)
-                .setRequiresStorageNotLow(true)
-                .build();
+        if (isPowerSaveMode()) {
+            mBackupContraints = new Constraints.Builder()
+                    .setRequiresDeviceIdle(true)
+                    .setRequiresBatteryNotLow(true)
+                    .setRequiresStorageNotLow(true)
+                    .build();
+        }
+        else {
+            mBackupContraints = new Constraints.Builder()
+                    .setRequiresBatteryNotLow(true)
+                    .setRequiresStorageNotLow(true)
+                    .build();
+        }
 
         // Build request
         mBackupWorkRequest = new PeriodicWorkRequest.Builder(
