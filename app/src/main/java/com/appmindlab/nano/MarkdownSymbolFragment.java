@@ -33,7 +33,7 @@ public class MarkdownSymbolFragment extends Fragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(Const.PACKAGE + "_preferences", Context.MODE_PRIVATE);
         boolean lab_mode = sharedPreferences.getBoolean(Const.PREF_LAB_MODE, false);
 
         // Inflate the layout for this fragment
