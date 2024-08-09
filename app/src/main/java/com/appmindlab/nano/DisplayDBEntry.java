@@ -5195,6 +5195,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             doUndo();
         } else if (id == (R.id.button_text_expand)) {
             doTextExpansion();
+        } else if (id == (R.id.button_save)) {
+            if ((mAutoSave) && (mAutoSaveSafe))
+                doSave(false, false);
+            else
+                handleSave();
         } else if (id == (R.id.button_indent)) {
             Utils.insertMarkdownSymbolAutoIndent(mCurrentEditText, mIndentChar, mIndentChar);
         } else if (id == (R.id.button_unindent)) {

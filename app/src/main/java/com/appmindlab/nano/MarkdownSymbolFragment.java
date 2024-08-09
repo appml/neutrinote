@@ -44,7 +44,7 @@ public class MarkdownSymbolFragment extends Fragment implements View.OnClickList
         Button button_curly_bracket_left, button_curly_bracket_right;
         Button button_bracket_less, button_bracket_greater;
         Button button_underscore, button_dollar, button_bang, button_question;
-        Button button_close, button_undo, button_text_expand;
+        Button button_close, button_undo, button_text_expand, button_save;
 
         Typeface font = FontCache.getFromAsset(getActivity(), "RobotoMono-Regular.ttf");
         Typeface font_awesome = FontCache.getFromAsset(getActivity(), "iconfonts.ttf");
@@ -178,6 +178,13 @@ public class MarkdownSymbolFragment extends Fragment implements View.OnClickList
         button_text_expand.setTypeface(font_awesome);
         if (!lab_mode)
             button_text_expand.setVisibility(View.GONE);
+
+        button_save = (Button) v.findViewById(R.id.button_save);
+        button_save.setOnClickListener(this);
+        button_save.setOnLongClickListener(this);
+        button_save.setTypeface(font_awesome);
+        if (!lab_mode)
+            button_save.setVisibility(View.GONE);
 
         return v;
     }
