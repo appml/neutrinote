@@ -221,6 +221,7 @@
                 android:text="@string/button_attach"
                 android:textColor="@color/symbol_color"
                 android:textSize="@dimen/button_font_size"
+                android:background="@drawable/ripple"
                 android:contentDescription="@string/button_attach_description"
                 style="@style/AppTextButtonStyle" />
 
