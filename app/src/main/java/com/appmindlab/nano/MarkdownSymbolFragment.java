@@ -163,6 +163,9 @@ public class MarkdownSymbolFragment extends Fragment implements View.OnClickList
         button_close.setOnClickListener(this);
         button_close.setOnLongClickListener(this);
         button_close.setTypeface(font_awesome);
+        if (lab_mode) {
+            button_close.getParent().requestChildFocus(button_close, button_close);
+        }
 
         // Quick access to common functions
         button_undo = (Button) v.findViewById(R.id.button_undo);

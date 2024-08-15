@@ -19,6 +19,18 @@
             android:paddingTop="0.5dp">
 
             <Button
+                android:id="@+id/button_save"
+                style="@style/AppTextButtonStyle"
+                android:layout_width="48sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ripple"
+                android:contentDescription="@string/button_save_description"
+                android:text="@string/button_save"
+                android:textColor="@color/symbol_color"
+                android:textSize="@dimen/symbol_font_size" />
+
+            <Button
                 android:id="@+id/button_close"
                 style="@style/AppTextButtonStyle"
                 android:layout_width="48sp"
@@ -52,18 +64,6 @@
                 android:background="@drawable/ripple"
                 android:contentDescription="@string/button_text_expand_description"
                 android:text="@string/button_text_expand"
-                android:textColor="@color/symbol_color"
-                android:textSize="@dimen/symbol_font_size" />
-
-            <Button
-                android:id="@+id/button_save"
-                style="@style/AppTextButtonStyle"
-                android:layout_width="48sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/ripple"
-                android:contentDescription="@string/button_save_description"
-                android:text="@string/button_save"
                 android:textColor="@color/symbol_color"
                 android:textSize="@dimen/symbol_font_size" />
 
