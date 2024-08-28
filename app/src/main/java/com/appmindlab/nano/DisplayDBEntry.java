@@ -5981,6 +5981,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             if ((!found) && (cur_percent <= Const.IN_NOTE_PERCENT_VALUES[idx])) {
                 found = true;
                 chip.setChecked(true);
+                chip.setTag(Const.SELECTED_IN_NOTE_NAVIGATION_TAG);
             }
 
             chip.setOnClickListener(new View.OnClickListener() {
@@ -6061,6 +6062,17 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         dialog.setContentView(chips.getRootView());
         dialog.show();
+
+        if (found) {
+            view.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    HorizontalScrollView scrollview = view.findViewById(R.id.in_note_navigation_scrollview);
+                    Chip chip_selected = chips.findViewWithTag(Const.SELECTED_IN_NOTE_NAVIGATION_TAG);
+                    scrollview.smoothScrollTo(chip_selected.getLeft() - chip_selected.getPaddingLeft(), 0);
+                }
+            }, Const.SHORT_SCROLL_DELAY);
+        }
     }
 
     // Handle working set
@@ -7142,7 +7154,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Chip chip_selected = chips.findViewWithTag(Const.SELECTED_CANVAS_STROKE_TAG);
                     scrollview.smoothScrollTo(chip_selected.getLeft() - chip_selected.getPaddingLeft(), 0);
                 }
-            }, Const.SCROLL_DELAY);
+            }, Const.SHORT_SCROLL_DELAY);
         }
     }
 

@@ -386,6 +386,7 @@ public class Const {
     protected final static String DATE_PICKER_MODIFIED_FILTER_FRAGMENT_TAG = "date_picker_modified_filter_fragment";
     protected final static String DATE_PICKER_ACCESSED_FILTER_FRAGMENT_TAG = "date_picker_accessed_filter_fragment";
     protected final static String SELECTED_CANVAS_STROKE_TAG = "selected_canvas_stroke";
+    protected final static String SELECTED_IN_NOTE_NAVIGATION_TAG = "selected_in_note_navigation";
 
     // Symbols
     protected final static String ALL_SYM = "all";
@@ -531,6 +532,7 @@ public class Const {
     protected final static int SYNC_TILE_REFRESH_DELAY = 1 * QUARTER_SECOND;
     protected final static int MIN_RELAUNCH_INTERVAL = 1;    // Minimum buffer between launch (in minute)
     protected final static int SCROLL_DELAY = ONE_SECOND;
+    protected final static int SHORT_SCROLL_DELAY = 10 * MILISECOND;
     protected final static int REFRESH_DELAY = 300 * MILISECOND;
     protected final static int IMMERSIVE_MODE_DELAY = 3000 * MILISECOND;
     protected final static int CLI_EVAL_JS_TIMEOUT = 5 * ONE_SECOND;
