@@ -385,6 +385,7 @@ public class Const {
     protected final static String DATE_PICKER_CALENDAR_VIEW_FRAGMENT_TAG = "date_picker_calendar_view_fragment";
     protected final static String DATE_PICKER_MODIFIED_FILTER_FRAGMENT_TAG = "date_picker_modified_filter_fragment";
     protected final static String DATE_PICKER_ACCESSED_FILTER_FRAGMENT_TAG = "date_picker_accessed_filter_fragment";
+    protected final static String SELECTED_CANVAS_STROKE_TAG = "selected_canvas_stroke";
 
     // Symbols
     protected final static String ALL_SYM = "all";

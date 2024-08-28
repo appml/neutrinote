@@ -76,6 +76,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.Magnifier;
 import android.widget.NumberPicker;
@@ -7073,55 +7074,76 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Handle canvas stroke
     private void handleCanvasStroke() {
-        // Instantiate an AlertDialog.Builder with its constructor
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.bottom_sheet_canvas_strokes_dialog, null);
+        final BottomSheetDialog dialog = new BottomSheetDialog(this);
 
-        builder.setMessage("");
+        // Set dialog dim level
+        Utils.setDialogDimLevel(dialog, Const.DIALOG_DIM_LEVEL);
 
-        // Set view
-        View view = getLayoutInflater().inflate(R.layout.number_picker, null);
-        builder.setView(view);
-
-        // Setup values
-        final NumberPicker picker = (NumberPicker) view.findViewById(R.id.numbers);
-        picker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+        // Setup percentages
+        ChipGroup chips = (ChipGroup) view.findViewById(R.id.canvas_strokes_chip_group);
 
         final String[] items = mCanvasStrokes.split(";");
-        int pos = Arrays.asList(items).indexOf(String.valueOf(mCanvasStroke));
+        int count = items.length;
+        boolean selected = false;
 
-        if (items.length > 0) {
-            picker.setMinValue(0);
-            picker.setMaxValue(items.length - 1);
-            picker.setDisplayedValues(items);
+        for (int i=0; i < count; i++) {
+            final String stroke = items[i];
 
-            if (pos > 0)
-                picker.setValue(pos);
+            // Sanity check
+            if (stroke.isEmpty()) {
+                continue;
+            }
 
-            picker.setWrapSelectorWheel(true);  // Wrap around
-            picker.startAnimation(mSlideDown);
+            // Setup choices
+            Chip chip = new Chip(chips.getContext());
+            chip.setId(i);
+            chip.setText(items[i]);
+            chip.setCheckable(true);
+
+            chips.addView(chip);
+
+            // Set currently selected stroke
+            if (mCanvasStroke == stroke.charAt(0)) {
+                chip.setChecked(true);
+                chip.setTag(Const.SELECTED_CANVAS_STROKE_TAG);
+                selected = true;
+            }
+
+            chip.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        // Clear dialog dim
+                        Utils.clearDialogDimLevel(dialog);
+
+                        // Dismiss before activity goes away
+                        dialog.dismiss();
+
+                        // Make selection
+                        mCanvasStroke = stroke.charAt(0);
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
 
-        // 2. Chain together various setter methods to set the dialog characteristics
-        builder.setPositiveButton(R.string.dialog_canvas_stroke_ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // User clicked OK button
-                mCanvasStroke = items[picker.getValue()].charAt(0);
-                return;
-            }
-        });
-
-        builder.setNegativeButton(R.string.dialog_canvas_stroke_cancel, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // Do nothing
-                return;
-            }
-        });
-
-        // 3. Get the AlertDialog from create()
-        AlertDialog dialog = builder.show();
-
-        // 4. Show the dialog
+        dialog.setContentView(chips.getRootView());
         dialog.show();
+
+        // Scroll to selected item
+        if (selected) {
+            view.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    HorizontalScrollView scrollview = view.findViewById(R.id.canvas_strokes_scrollview);
+                    Chip chip_selected = chips.findViewWithTag(Const.SELECTED_CANVAS_STROKE_TAG);
+                    scrollview.smoothScrollTo(chip_selected.getLeft() - chip_selected.getPaddingLeft(), 0);
+                }
+            }, Const.SCROLL_DELAY);
+        }
     }
 
     // Handle drawing
