@@ -1218,6 +1218,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             @Override
             public void handleOnBackPressed() {
                 // Handle the back button event
+
+                // Close the top fragment if more than 1 fragment active
+                if ((getSupportFragmentManager().getBackStackEntryCount() > 1)) {
+                    closeTopFragment();
+                    mContent.requestFocus();
+                    return;
+                }
+
                 handleHome();
             }
         };
@@ -3481,8 +3489,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 exitImmersiveMode();
                 return false;
             }
-
-            handleHome();
         }
         return super.onKeyDown(keyCode, event);
     }
