@@ -3579,12 +3579,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 if (event.isCtrlPressed())
                     scaleFontSize(Const.SCALE_FACTOR_DECREMENT, mContent.getSelectionStart());
                 return true;
-            case KeyEvent.KEYCODE_MOVE_END:
+            case KeyEvent.KEYCODE_DPAD_LEFT:
                 // Close the top fragment if more than 1 fragment active
-                if ((getSupportFragmentManager().getBackStackEntryCount() > 1)) {
-                    closeTopFragment();
-                    mContent.requestFocus();
-                    return false;
+                if (event.isCtrlPressed()) {
+                    if ((getSupportFragmentManager().getBackStackEntryCount() > 1)) {
+                        closeTopFragment();
+                        mContent.requestFocus();
+                    }
                 }
                 return true;
             default:
