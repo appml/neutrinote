@@ -3491,7 +3491,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     exitImmersiveMode();
                     return false;
                 }
-                return true;
             default:
                 return super.onKeyDown(keyCode, event);
         }
@@ -3579,16 +3578,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             case KeyEvent.KEYCODE_MINUS:
                 if (event.isCtrlPressed())
                     scaleFontSize(Const.SCALE_FACTOR_DECREMENT, mContent.getSelectionStart());
-                return true;
-            case KeyEvent.KEYCODE_DEL:
-                // Close the top fragment if more than 1 fragment active
-                if (event.isCtrlPressed()) {
-                    if ((getSupportFragmentManager().getBackStackEntryCount() > 1)) {
-                        closeTopFragment();
-                        mContent.requestFocus();
-                        return false;
-                    }
-                }
                 return true;
             default:
                 return super.onKeyUp(keyCode, event);
