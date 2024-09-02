@@ -1,4 +1,0 @@
-v4.5.2j
-- Keep deleted copies flag is required before mirror initiated deletion is allowed
-- Added new mirror flags
-- Fixed widget related bugs

@@ -1,2 +1,0 @@
-v4.5.2h
-- Keep deleted copies flag is required before mirror initiated deletion is allowed
