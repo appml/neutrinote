@@ -2215,7 +2215,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     }
 
     // Expand the shortcut
-    // Expand the shortcut
     private void expandShortcut(String[] shortcuts) {
         int start = Math.min(mContent.getSelectionStart(), mContent.getSelectionEnd());
         int end = Math.max(mContent.getSelectionStart(), mContent.getSelectionEnd());
@@ -2394,10 +2393,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.insert(mContent, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.REPLACE_SYM)) {    // Replace command
                 if (extra != null) {
@@ -2408,7 +2405,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     // 2. New pattern
                     params = expanded.split(Const.SHORTCUTS_PATTERN_DELIMITER);
                     params = Utils.cleanStringArray(params);
-
                     if (params.length == 2) {
                         if (params[1].contains(Const.SPACE_ENTITY))
                             params[1] = params[1].replaceAll(Const.SPACE_ENTITY, Const.EMPTY_SYM);
@@ -2426,10 +2422,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.insert(mContent, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.SPLIT_SYM)) {    // Split command
                 if (extra != null) {
@@ -2450,10 +2444,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.insert(mContent, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.JOIN_SYM)) {    // Join command
                 if (extra != null) {
@@ -2484,10 +2476,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.insert(mContent, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.REMOVE_SYM)) {    // Remove command
                 if (extra != null) {
@@ -2506,10 +2496,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.insert(mContent, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.LINEBREAK_SYM)) {    // Insert line break command
                 if (extra != null) {
@@ -2531,10 +2519,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.insert(mContent, expanded);
-                    mContent.requestFocus();
-                }
             } else if (expanded.startsWith(Const.TRIM_SYM)) {    // Trim command
                 if (extra != null)
                     expanded = extra.trim();
@@ -2546,10 +2532,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.REMOVE_ZERO_WIDTH_SPACE_SYM)) {    // Trim command
                 if (extra != null)
@@ -2568,10 +2552,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.SORT_SYM)) {    // Sort command
                 if (extra != null) {
@@ -2591,10 +2573,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.REVERSE_SORT_SYM)) {    // Reverse sort command
                 if (extra != null) {
@@ -2612,10 +2592,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.ENCODE_SYM)) {    // Encode command
                 if (extra != null) {
@@ -2635,10 +2613,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.DECODE_SYM)) {    // Decode command
                 if (extra != null)
@@ -2651,10 +2627,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.CAMEL2SNAKE_SYM)) {    // Camel to snake command
                 if (extra != null)
@@ -2667,10 +2641,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.SNAKE2CAMEL_SYM)) {    // Snake to camel command
                 if (extra != null)
@@ -2683,10 +2655,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.STRIP_HTML_SYM)) {    // Strip HTML command
                 if (extra != null) {
@@ -2706,10 +2676,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.TAG_EXPAND_SYM)) {    // Tag expand command
                 if (extra != null) {
@@ -2729,10 +2697,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.replaceString(mContent, start, end, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.MORPH_SYM)) {    // Morph command
                 if ((extra != null) && (extra.length() <= Const.MAX_EXTRA_LEN)) {
@@ -2769,10 +2735,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
-                else {
+                else
                     Utils.insert(mContent, expanded);
-                    mContent.requestFocus();
-                }
             }
             else if (expanded.startsWith(Const.LAUNCH_SYM)) {    // Launch command
                 // Retrieve package name
@@ -2850,7 +2814,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 // "Consume" the command
                 Utils.insert(mContent, Const.NULL_SYM);
-                mContent.requestFocus();
             }
             else if (expanded.startsWith(Const.CREATE_NOTE_LINK_SYM)) {
                 String title = mTitle.getText().toString();
@@ -2865,7 +2828,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 // Restore the parameter
                 Utils.insert(mContent, extra.trim());
-                mContent.requestFocus();
 
                 // Show confirmation
                 Toast.makeText(getApplicationContext(), Const.CLIPBOARD_SYM + Const.LINK_SYM + Const.SPACE_CHAR + link, Toast.LENGTH_SHORT).show();
@@ -2928,6 +2890,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
+
             }
             else if (expanded.startsWith(Const.CLI_EVAL_JS_FILE_SYM)) {    // Evaluate file based JavaScript
                 if (extra != null) {
@@ -2966,6 +2929,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
+
             }
             else {
                 // Apply newlines
@@ -2987,7 +2951,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     expanded = evalVariables(expanded, false);
 
                 Utils.insert(mContent, expanded);
-                mContent.requestFocus();
             }
         }
         else {

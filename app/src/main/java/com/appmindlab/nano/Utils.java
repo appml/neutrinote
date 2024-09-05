@@ -234,8 +234,10 @@ public class Utils {
     // Replace string
     protected static synchronized void replaceString(EditText text, int start, int end, String replacement) {
         // Skip if identical
-        if ((start >= 0) && (end >= 0) && (start < end))
+        if ((start >= 0) && (end >= 0) && (start < end)) {
             text.getText().replace(start, end, replacement);
+            text.requestFocus();
+        }
     }
 
     // Remove zero width spaces
@@ -739,6 +741,7 @@ public class Utils {
             if ((start >= 0) && (end >= 0)) {
                 text.getText().replace(start, end, str, 0, str.length());
                 text.setSelection(start + str.length());
+                text.requestFocus();
             }
         }
     }
