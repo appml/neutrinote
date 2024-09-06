@@ -1152,7 +1152,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 closeAllFragments();
 
                 // Hack: avoid getting focus
-                mTitle.requestFocus();
+                if (!Utils.checkMultiWindowMode(this))
+                    mTitle.requestFocus(); .
             } catch (Exception e) {
                 e.printStackTrace();
             }
