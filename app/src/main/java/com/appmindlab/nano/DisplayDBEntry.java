@@ -525,6 +525,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     protected void onDestroy() {
         super.onDestroy();
 
+        // Save changes if auto save is on
+        if (mChanged) {
+            if ((mAutoSave) && (mAutoSaveSafe))
+                doSave(false, false);
+        }
+
         // Stop auto save
         if (mAutoSaveHandler != null) {
             mAutoSaveHandler.removeCallbacksAndMessages(null);
@@ -1153,7 +1159,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 // Hack: avoid getting focus
                 if (!Utils.checkMultiWindowMode(this))
-                    mTitle.requestFocus(); .
+                    mTitle.requestFocus();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -3139,6 +3145,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
             // Reset markdown render state
             setMarkdownRendered(false);
+
+            // Navigate to cursor
+            mContent.requestFocus();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -3259,6 +3268,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Reset markdown render state
         setMarkdownRendered(false);
+
+        // Navigate to cursor
+        mContent.requestFocus();
     }
 
     // Apply font size
@@ -3268,10 +3280,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
             // Reset markdown render state
             setMarkdownRendered(false);
+
+            // Navigate to cursor
+            mContent.requestFocus();
         }
     }
 
-    // Scale font size
     // Scale font size
     protected void scaleFontSize(float factor, int pos) {
         String font_size = String.valueOf(Math.round(Integer.parseInt(mFontSize) * factor));
@@ -3309,6 +3323,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Reset markdown render state
         setMarkdownRendered(false);
+
+        // Navigate to cursor
+        mContent.requestFocus();
     }
 
     // Apply hacks
