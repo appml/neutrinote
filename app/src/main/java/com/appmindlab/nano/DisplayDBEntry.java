@@ -525,7 +525,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     protected void onDestroy() {
         super.onDestroy();
 
-        // Save changes if auto save is on
+        // Last ditch to save changes if auto save is on
         if (mChanged) {
             if ((mAutoSave) && (mAutoSaveSafe))
                 doSave(false, false);
