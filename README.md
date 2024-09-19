@@ -75,6 +75,17 @@ Simply fork and import into Android Studio.  That's it!
 Contributions are welcome, as long as they are able to maintain a low level of impacts on battery / memory consumption.
 
 
+## Star History
+
+<a href="https://star-history.com/#appml/neutrinote&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=appml/neutrinote&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=appml/neutrinote&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=appml/neutrinote&type=Date" />
+ </picture>
+</a>
+
+
 ## Licensing
 
 The project is licensed under the [GNU General Public License version 3 or later](https://github.com/appml/neutrinote/blob/master/LICENSE).  Please attribute to [this repo](https://github.com/appml/neutrinote).
@@ -94,7 +105,5 @@ The project is licensed under the [GNU General Public License version 3 or later
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-
 
 
