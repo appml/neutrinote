@@ -31,6 +31,7 @@
         <package android:name="org.kiwix.kiwixmobile" />
         <package android:name="org.mozilla.firefox" />
         <package android:name="org.sufficientlysecure.keychain" />
+        <package android:name="ws.xsoh.etar" />
         <intent>
             <action android:name="colordict.intent.action.SEARCH" />
             <data android:mimeType="text/plain" />
