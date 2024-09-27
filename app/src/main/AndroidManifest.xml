@@ -27,10 +27,12 @@
         <package android:name="com.socialnmobile.colordict" />
         <package android:name="de.reimardoeffinger.quickdic" />
         <package android:name="io.github.subhamtyagi.ocr" />
+        <package android:name="org.fossify.calendar" />
         <package android:name="itkach.aard2" />
         <package android:name="org.kiwix.kiwixmobile" />
         <package android:name="org.mozilla.firefox" />
         <package android:name="org.sufficientlysecure.keychain" />
+        <package android:name="ws.xsoh.etar" />
         <intent>
             <action android:name="colordict.intent.action.SEARCH" />
             <data android:mimeType="text/plain" />
