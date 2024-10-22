@@ -103,7 +103,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             if ((criteria != null) && (criteria.length() == 1) && (Character.isLetter(criteria.charAt(0))))
                 len = 2;
 
-            return entry.getTitle().substring(0, len).toUpperCase(Locale.getDefault());
+            return Utils.getFirstSymbol(entry.getTitle(), len);
         }
         else {
             if (criteria.equals(Const.ACCESSED_AFTER_FILTER))
@@ -260,7 +260,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 if ((metadata == null) || (metadata.length() == 0)) {
                     color = ContextCompat.getColor(DBApplication.getAppContext(), R.color.no_metadata_icon_background);
                     try {
-                        drawable = TextDrawable.builder().buildRound(String.valueOf(title.charAt(0)).toUpperCase(Locale.getDefault()), color);
+                        drawable = TextDrawable.builder().buildRound(Utils.getFirstSymbol(title, 1), color);
                     }
                     catch (Exception e) {
                         e.printStackTrace();
@@ -272,7 +272,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                     ColorGenerator generator = ColorGenerator.MATERIAL;
                     color = generator.getColor(metadata.toLowerCase(Locale.getDefault()));
                     mMetadata.setVisibility(View.VISIBLE);
-                    drawable = TextDrawable.builder().buildRound(String.valueOf(title.charAt(0)).toUpperCase(Locale.getDefault()), color);
+                    drawable = TextDrawable.builder().buildRound(Utils.getFirstSymbol(title, 1), color);
                 }
 
                 mImage.setImageDrawable(drawable);

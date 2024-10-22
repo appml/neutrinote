@@ -302,6 +302,23 @@ public class Utils {
         }
     }
 
+    // Get first symbol
+    protected static String getFirstSymbol(String text, int len) {
+        // Regular expression to match emoji characters
+        String emoji_pattern = "^[\\p{So}\\p{Cn}]";  // Match only if it starts with an emoji
+
+        // Create a pattern and matcher
+        Pattern pattern = Pattern.compile(emoji_pattern);
+        Matcher matcher = pattern.matcher(text);
+
+        // Check if string starts with emoji
+        if (matcher.find()) {
+            return matcher.group(); // Extract the emoji
+        } else {
+            return text.substring(0, len).toUpperCase(Locale.getDefault());
+        }
+    }
+
     // Check preset criteria
     protected static boolean isPreset(String criteria) {
         return (criteria.equals(Const.ALL_SYM) || criteria.equals(Const.NUM_SYM) || criteria.equals(Const.STARRED_SYM) || criteria.equals(Const.MODIFIED_AFTER_FILTER) || criteria.equals(Const.ACCESSED_AFTER_FILTER) || criteria.equals(Const.MODIFIED_NEARBY_FILTER) || (criteria.length() == 1 && Character.isLetter(criteria.charAt(0))));
