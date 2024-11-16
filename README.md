@@ -4,11 +4,11 @@
 [Official](https://appml.gitbook.io/nano/) | [FAQ](https://appml.gitbook.io/nano/readme/how-do-i...) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
 
 <div style="display:flex" >
-<!-- a href="https://play.google.com/store/apps/details?id=com.appmindlab.nano">
+<a href="https://play.google.com/store/apps/details?id=com.appmindlab.nano">
     <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
          alt="Get it on Google Play" 
          height="64" />
-</a -->
+</a>
 <a href="https://f-droid.org/packages/com.appmindlab.nano">
     <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
          alt="Get it on F-Droid"
