@@ -863,6 +863,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         // Multi-window mode
         boolean multiWindowMode = Utils.checkMultiWindowMode(mActivity);
+        String delim = multiWindowMode ? Const.EMPTY_SYM : Const.NEWLINE;
 
         // Chain together various setter methods to set the dialog characteristics
         String msg = DBApplication.getAppContext().getResources().getString(R.string.dialog_metadata_message);
@@ -880,13 +881,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         // Remember the selected items at this point before they go away
         final ArrayList<Long> ids = new ArrayList<Long>();
-        String titles = Const.NEWLINE;
+        String titles = delim;
         for (int i=0, j=-1; i < getItemCount(); i++) {
             if (mMultiSelector.isSelected(i, 0)) {
                 ids.add(getItem(i).getId());
 
                 // Selected titles
-                titles = titles + Const.BULLET_SYM + getItem(i).getTitle() + Const.NEWLINE;
+                titles = titles + Const.BULLET_SYM + getItem(i).getTitle() + delim;
 
                 // Set default metadata
                 if (j == -1) {
@@ -896,13 +897,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             }
         }
 
+        // Truncate in multiwindow mode
         if (multiWindowMode) {
-            builder.setTitle(R.string.dialog_metadata_title);
+            if (titles.length() > Const.DIALOG_PREVIEW_LEN)
+                titles = Utils.subStringWordBoundary(titles, 0, Const.DIALOG_PREVIEW_LEN - 1) + Const.DIALOG_PREVIEW_MORE_SYM;
         }
-        else {
-            msg = titles + Const.NEWLINE + msg;
-            builder.setMessage(msg).setTitle(R.string.dialog_metadata_title);
-        }
+
+        msg = titles + Const.NEWLINE + msg;
+        builder.setMessage(msg).setTitle(R.string.dialog_metadata_title);
 
         builder.setPositiveButton(R.string.dialog_metadata_ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -927,7 +929,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         // Show keyboard
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
-
 
     // Set metadata
     protected void doSetMetadata(ArrayList<Long> ids, String metadata) {
