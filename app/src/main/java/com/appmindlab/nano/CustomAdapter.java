@@ -861,6 +861,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         // Instantiate an AlertDialog.Builder with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
 
+        // Multi-window mode
+        boolean multiWindowMode = Utils.checkMultiWindowMode(mActivity);
+
         // Chain together various setter methods to set the dialog characteristics
         String msg = DBApplication.getAppContext().getResources().getString(R.string.dialog_metadata_message);
 
@@ -893,8 +896,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             }
         }
 
-        msg = titles + Const.NEWLINE + msg;
-        builder.setMessage(msg).setTitle(R.string.dialog_metadata_title);
+        if (multiWindowMode) {
+            builder.setTitle(R.string.dialog_metadata_title);
+        }
+        else {
+            msg = titles + Const.NEWLINE + msg;
+            builder.setMessage(msg).setTitle(R.string.dialog_metadata_title);
+        }
 
         builder.setPositiveButton(R.string.dialog_metadata_ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -919,6 +927,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         // Show keyboard
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
+
 
     // Set metadata
     protected void doSetMetadata(ArrayList<Long> ids, String metadata) {
