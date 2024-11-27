@@ -313,7 +313,7 @@ public class Const {
     protected static final String TOOLBOX_MODE_STATEFUL = "stateful";
     protected static final String TOOLBOX_MODE_STATELESS = "stateless";
     protected static final String TOOLBOX_MODE_PIN_SAVE = "pin_save";
-    protected static final int DIALOG_PREVIEW_LEN = 80;
+    protected static final int DIALOG_PREVIEW_LEN = 160;
     protected static final String DIALOG_PREVIEW_MORE_SYM = " ...";
 
     // Buttons
