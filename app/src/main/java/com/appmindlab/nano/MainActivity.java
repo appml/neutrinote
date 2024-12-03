@@ -195,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Constraints mMirrorConstraints;
     private boolean mMirrorSafe = true;
     private long mLastMirrored = 0;  // Last mirror time
+    private static boolean mRepoMirrorSync = true;
 
     // External storage
     private String mCurrentStoragePath = null;
@@ -256,6 +257,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected String getAppTheme() {
         return mTheme;
     }
+
+    // Get repo mirror status
+    protected static boolean getRepoMirrorSync() { return mRepoMirrorSync; };
+
+    // Set repo mirror status
+    protected static void setRepoMirrorSync(boolean state) { mRepoMirrorSync = state; };
 
     // Check mirror existence
     protected boolean hasMirror() {
@@ -425,9 +432,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(Const.TAG, "nano - onRestart");
 
         // Mirror if applicable
-        if ((hasMirror()) && (!isPowerSaveMode())) {  // Only when power saver mode is off
-            if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
-                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+        if (hasMirror()) {
+            // Update mirror status
+            toggleMirrorStatus();
+
+            if (!isPowerSaveMode()) {  // Only when power saver mode is off
+                if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
+                    doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+
+                    // Update mirror status
+                    setRepoMirrorSync(true);
+                    toggleMirrorStatus();
+                }
             }
         }
     }
@@ -1075,8 +1091,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 // Mirror if applicable
-                if (hasMirror())
+                if (hasMirror()) {
                     doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+
+                    // Update mirror status
+                    setRepoMirrorSync(true);
+                    toggleMirrorStatus();
+                }
 
                 mSwipeRefreshLayout.setRefreshing(false);
                 refreshList();
@@ -1852,6 +1873,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStatusMsg.setText(status);
     }
 
+    // Toggle mirror status
+    private void toggleMirrorStatus() {
+        if (mRepoMirrorSync)
+            mStatusMsg.setTypeface(null, Typeface.NORMAL);
+        else
+            mStatusMsg.setTypeface(null, Typeface.ITALIC);
+    }
+
     // Get order by
     protected String getOrderBy() {
         return mOrderBy;
@@ -2587,6 +2616,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(DialogInterface dialog, int id) {
                 resetLastMirrored();
                 doSAFMirrorSync(Const.MIRROR_ONETIME_WORK_TAG, ExistingWorkPolicy.REPLACE);
+
+                // Update mirror status
+                setRepoMirrorSync(true);
+                toggleMirrorStatus();
                 return;
             }
         });

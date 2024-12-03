@@ -3991,6 +3991,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (!mTitleSaved.equals(title))
             mActivity.doBasicAppDataBackup();
 
+        // Update repo mirror sync flag
+        MainActivity.setRepoMirrorSync(false);
+
         // Handle exit
         if (exit)
             leave();
