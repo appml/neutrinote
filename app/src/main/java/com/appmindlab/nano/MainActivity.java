@@ -258,10 +258,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return mTheme;
     }
 
-    // Get repo mirror status
-    protected static boolean getPendingRefresh() { return mPendingRefresh; };
+    // Get pending status
+    protected static boolean getPendingStatus() { return mPendingRefresh; };
 
-    // Set repo mirror status
+    // Set pending status
     protected static void setPendingStatus(boolean state) { mPendingRefresh = state; };
 
     // Check mirror existence
@@ -1875,7 +1875,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Toggle pending status
     private void togglePendingStatus() {
-        if (getPendingRefresh())
+        if (getPendingStatus())
             mStatusMsg.setTypeface(null, Typeface.ITALIC);
         else
             mStatusMsg.setTypeface(null, Typeface.NORMAL);
