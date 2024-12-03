@@ -169,6 +169,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private List<String> mStatusQ = new ArrayList<String>();
     private GestureDetectorCompat mGestureDetector;
     private boolean mRefreshListSafe = true;
+    private static boolean mPendingRefresh = false;
 
     // Settings related
     private SharedPreferences mSharedPreferences;
@@ -195,7 +196,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Constraints mMirrorConstraints;
     private boolean mMirrorSafe = true;
     private long mLastMirrored = 0;  // Last mirror time
-    private static boolean mRepoMirrorSync = true;
 
     // External storage
     private String mCurrentStoragePath = null;
@@ -259,10 +259,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Get repo mirror status
-    protected static boolean getRepoMirrorSync() { return mRepoMirrorSync; };
+    protected static boolean getPendingRefresh() { return mPendingRefresh; };
 
     // Set repo mirror status
-    protected static void setRepoMirrorSync(boolean state) { mRepoMirrorSync = state; };
+    protected static void setPendingStatus(boolean state) { mPendingRefresh = state; };
 
     // Check mirror existence
     protected boolean hasMirror() {
@@ -433,16 +433,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Mirror if applicable
         if (hasMirror()) {
-            // Update mirror status
-            toggleMirrorStatus();
+            // Update pending status
+            togglePendingStatus();
 
             if (!isPowerSaveMode()) {  // Only when power saver mode is off
                 if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
                     doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
-                    // Update mirror status
-                    setRepoMirrorSync(true);
-                    toggleMirrorStatus();
+                    // Update pending refresh flag
+                    setPendingStatus(false);
+                    togglePendingStatus();
                 }
             }
         }
@@ -1094,9 +1094,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (hasMirror()) {
                     doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
-                    // Update mirror status
-                    setRepoMirrorSync(true);
-                    toggleMirrorStatus();
+                    // Update pending refresh flag
+                    setPendingStatus(false);
+                    togglePendingStatus();
                 }
 
                 mSwipeRefreshLayout.setRefreshing(false);
@@ -1873,12 +1873,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mStatusMsg.setText(status);
     }
 
-    // Toggle mirror status
-    private void toggleMirrorStatus() {
-        if (mRepoMirrorSync)
-            mStatusMsg.setTypeface(null, Typeface.NORMAL);
-        else
+    // Toggle pending status
+    private void togglePendingStatus() {
+        if (getPendingRefresh())
             mStatusMsg.setTypeface(null, Typeface.ITALIC);
+        else
+            mStatusMsg.setTypeface(null, Typeface.NORMAL);
     }
 
     // Get order by
@@ -2617,9 +2617,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 resetLastMirrored();
                 doSAFMirrorSync(Const.MIRROR_ONETIME_WORK_TAG, ExistingWorkPolicy.REPLACE);
 
-                // Update mirror status
-                setRepoMirrorSync(true);
-                toggleMirrorStatus();
+                // Update pending refresh flag
+                setPendingStatus(false);
+                togglePendingStatus();
                 return;
             }
         });
