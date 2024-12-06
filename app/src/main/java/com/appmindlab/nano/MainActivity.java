@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private List<String> mStatusQ = new ArrayList<String>();
     private GestureDetectorCompat mGestureDetector;
     private boolean mRefreshListSafe = true;
-    private static boolean mPendingRefresh = false;
+    private static boolean mPendingStatus = false;
 
     // Settings related
     private SharedPreferences mSharedPreferences;
@@ -259,10 +259,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Get pending status
-    protected static boolean getPendingStatus() { return mPendingRefresh; };
+    protected static boolean getPendingStatus() { return mPendingStatus; };
 
     // Set pending status
-    protected static void setPendingStatus(boolean state) { mPendingRefresh = state; };
+    protected static void setPendingStatus(boolean state) { mPendingStatus = state; };
 
     // Check mirror existence
     protected boolean hasMirror() {
@@ -544,8 +544,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         savedInstanceState.putString(Const.STATE_SUB_DIR_PATH, mSubDirPath);
 
         savedInstanceState.putBoolean(Const.STATE_AUTO_THEME_APPLIED, mAutoThemeApplied);
-
         savedInstanceState.putBoolean(Const.STATE_MIRROR_SAFE, mMirrorSafe);
+        savedInstanceState.putBoolean(Const.STATE_PENDING_STATUS, mPendingStatus);
     }
 
     @Override
@@ -564,8 +564,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSubDirPath = savedInstanceState.getString(Const.STATE_SUB_DIR_PATH);
 
         mAutoThemeApplied = savedInstanceState.getBoolean(Const.STATE_AUTO_THEME_APPLIED);
-
         mMirrorSafe = savedInstanceState.getBoolean(Const.STATE_MIRROR_SAFE);
+        mPendingStatus = savedInstanceState.getBoolean(Const.STATE_PENDING_STATUS);
     }
 
     @Override

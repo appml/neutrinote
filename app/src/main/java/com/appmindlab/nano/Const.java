@@ -261,6 +261,7 @@ public class Const {
     protected final static String STATE_MIRROR_SAFE = "mMirrorSafe";
     protected final static String STATE_CANVAS_STROKE = "mCanvasStroke";
     protected final static String STATE_AUTO_THEME_APPLIED = "mAutoThemeApplied";
+    protected final static String STATE_PENDING_STATUS = "mPendingStatus";
 
     // UI
     protected final static int PREVIEW_LEN = 80;
