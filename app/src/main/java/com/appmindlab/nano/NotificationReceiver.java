@@ -90,6 +90,9 @@ public class NotificationReceiver extends BroadcastReceiver {
                 if ((store_location) && (location != null))
                     mDatasource.updateRecordCoordinates(entry.getId(), location.getLatitude(), location.getLongitude());
 
+                // Set pending fresh flag
+                MainActivity.setPendingStatus(true);
+
                 Toast.makeText(context, scrapbook_file + context.getResources().getString(R.string.status_scrapbook_updated), Toast.LENGTH_LONG).show();
             }
 

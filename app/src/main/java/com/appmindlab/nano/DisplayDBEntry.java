@@ -6316,6 +6316,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     mDatasource.updateRecordCoordinates(entry.getId(), location.getLatitude(), location.getLongitude());
             }
 
+            // Set pending fresh flag
+            MainActivity.setPendingStatus(true);
+
             Toast.makeText(DBApplication.getAppContext(), title + Const.SPACE_CHAR + DBApplication.getAppContext().getResources().getString(R.string.status_updated_remotely), Toast.LENGTH_SHORT).show();
         }
     }
