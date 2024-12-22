@@ -5904,7 +5904,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                                            // Show snippet and position in lab mode
                                            if ((mLabMode) && ((scrollState == NumberPicker.OnScrollListener.SCROLL_STATE_IDLE))) {
                                                int pos = mHits.get(picker.getValue()).val();
-                                               String snippet = Utils.getCurrentSurroundingText(mContentSaved, mCriteria, pos, Const.HIT_PREVIEW_LEN, true, true);
+                                               String snippet = Utils.getCurrentSurroundingText(mContent.getText().toString(), mCriteria, pos, Const.HIT_PREVIEW_LEN, true, true);
 
                                                if (snippet.length() > 0) {
                                                    // Add position
