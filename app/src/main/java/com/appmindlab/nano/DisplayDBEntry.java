@@ -1780,6 +1780,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                             mSharedPreferencesEditor.commit();
                         }
                     }
+                    else if (light_level > Const.LIGHT_LEVEL_THRESHOLD_LIVING_ROOM) {
+                        if (mTheme.equals(Const.DAY_THEME)) {
+                            mSharedPreferencesEditor.putString(Const.PREF_THEME, Const.DARK_THEME);
+                            mSharedPreferencesEditor.commit();
+                        }
+                    }
                     else {
                         if (mTheme.equals(Const.DAY_THEME)) {
                             mSharedPreferencesEditor.putString(Const.PREF_THEME, Const.NIGHT_THEME);
