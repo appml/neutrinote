@@ -1239,12 +1239,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             mSharedPreferencesEditor.commit();
                         }
                     }
+                    else if (light_level > Const.LIGHT_LEVEL_THRESHOLD_LIVING_ROOM) {
+                        if (!mTheme.equals(Const.DARK_THEME)) {
+                            mSharedPreferencesEditor.putString(Const.PREF_THEME, Const.DARK_THEME);
+                            mSharedPreferencesEditor.commit();
+                        }
+                    }
                     else {
-                        if (mTheme.equals(Const.DAY_THEME)) {
-                            if ((!mOled) && (light_level > Const.LIGHT_LEVEL_THRESHOLD_LIVING_ROOM))
-                                mSharedPreferencesEditor.putString(Const.PREF_THEME, Const.DARK_THEME);
-                            else
-                                mSharedPreferencesEditor.putString(Const.PREF_THEME, Const.NIGHT_THEME);
+                        if (!mTheme.equals(Const.NIGHT_THEME)) {
+                            mSharedPreferencesEditor.putString(Const.PREF_THEME, Const.NIGHT_THEME);
                             mSharedPreferencesEditor.commit();
                         }
                     }
