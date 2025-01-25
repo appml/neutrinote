@@ -292,8 +292,10 @@ public class Const {
     protected final static String NIGHT_THEME = "night";
     protected final static String DARK_THEME = "dark";
     protected final static String SYSTEM_THEME = "system";
-    protected final static int LIGHT_LEVEL_THRESHOLD_STARLIGHT = 10;
+    protected final static int LIGHT_LEVEL_THRESHOLD_STARLIGHT = 5;
+    protected final static int LIGHT_LEVEL_THRESHOLD_CANDLE = 10;
     protected final static int LIGHT_LEVEL_THRESHOLD_LIVING_ROOM = 25;
+    protected final static int LIGHT_LEVEL_THRESHOLD_COFFEE_SHOP = 50;
     protected final static int LIGHT_LEVEL_THRESHOLD_OFFICE = 80;
     protected final static int LIGHT_LEVEL_THRESHOLD_NATURAL_LIGHT = 100;
     protected final static int LIGHT_LEVEL_THRESHOLD_DIRECT_SUNLIGHT = 1000;

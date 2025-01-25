@@ -3935,13 +3935,19 @@ public class Utils {
             if (light_level > Const.LIGHT_LEVEL_THRESHOLD_OFFICE)
                 color = ContextCompat.getColor(context, R.color.white_daylight);
 
-            else if ((light_level > Const.LIGHT_LEVEL_THRESHOLD_LIVING_ROOM) && (light_level <= Const.LIGHT_LEVEL_THRESHOLD_OFFICE))
+            else if (light_level > Const.LIGHT_LEVEL_THRESHOLD_COFFEE_SHOP)
                 color = ContextCompat.getColor(context, R.color.white_office);
 
-            else if ((light_level > Const.LIGHT_LEVEL_THRESHOLD_STARLIGHT) && (light_level <= Const.LIGHT_LEVEL_THRESHOLD_LIVING_ROOM))
+            else if (light_level > Const.LIGHT_LEVEL_THRESHOLD_LIVING_ROOM)
+                color = ContextCompat.getColor(context, R.color.white_coffee_shop);
+
+            else if (light_level > Const.LIGHT_LEVEL_THRESHOLD_CANDLE)
                 color = ContextCompat.getColor(context, R.color.white_living_room);
 
-            else if (light_level <= Const.LIGHT_LEVEL_THRESHOLD_STARLIGHT)
+            else if (light_level > Const.LIGHT_LEVEL_THRESHOLD_STARLIGHT)
+                color = ContextCompat.getColor(context, R.color.white_candle);
+
+            else
                 color = ContextCompat.getColor(context, R.color.white_starlight);
         }
 

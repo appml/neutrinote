@@ -16,8 +16,10 @@
     <!-- Reference: https://en.m.wikipedia.org/wiki/Color_temperature#Categorizing_different_lighting -->
     <color name="white_daylight">#FFFFFF</color>
     <color name="white_office">#CCFFE5CE</color>
-    <color name="white_living_room">#E6FFD3A7</color>
-    <color name="white_starlight">#E6FFB569</color>
+    <color name="white_coffee_shop">#E6FFD3A7</color>
+    <color name="white_living_room">#E6FFB569</color>
+    <color name="white_candle">#FFAB00</color>
+    <color name="white_starlight">#FB8C00</color>
 
     <color name="list_item_title_day">#000000</color>
     <color name="list_item_content_day">#546E7A</color>
