@@ -291,6 +291,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 mSize.setTextColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.list_item_size_warn));
             else if (size > Const.EARLY_WARN_FILE_SIZE)
                 mSize.setTextColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.list_item_size_early_warn));
+            else if (size > Const.LARGE_FILE_SIZE)
+                mSize.setTextColor(ContextCompat.getColor(DBApplication.getAppContext(), R.color.list_item_size_large));
         }
 
         // Minify
