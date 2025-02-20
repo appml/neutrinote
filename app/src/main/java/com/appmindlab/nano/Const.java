@@ -805,17 +805,17 @@ public class Const {
     protected final static String BACKUP_CHANNEL_NAME = "Backup";
     protected final static String BACKUP_CHANNEL_DESC = "Backup Notification";
     protected final static int BACKUP_CHANNEL_LEVEL = NotificationManager.IMPORTANCE_DEFAULT;
-    protected final static int BACKUP_NOTIFICATION_ID = 0;
+    protected final static int BACKUP_NOTIFICATION_ID = 1;
     protected final static String MIRROR_CHANNEL_ID = "mirror";
     protected final static String MIRROR_CHANNEL_NAME = "Mirror";
     protected final static String MIRROR_CHANNEL_DESC = "Mirror Notification";
     protected final static int MIRROR_CHANNEL_LEVEL = NotificationManager.IMPORTANCE_DEFAULT;
-    protected final static int MIRROR_NOTIFICATION_ID = 0;
+    protected final static int MIRROR_NOTIFICATION_ID = 2;
     protected final static String SCRAPBOOK_CHANNEL_ID = "scrapbook";
     protected final static String SCRAPBOOK_CHANNEL_NAME = "Scrapbook";
     protected final static String SCRAPBOOK_CHANNEL_DESC = "Scrapbook Notification";
     protected final static int SCRAPBOOK_CHANNEL_LEVEL = NotificationManager.IMPORTANCE_LOW;
-    protected final static int SCRAPBOOK_NOTIFICATION_ID = 0;
+    protected final static int SCRAPBOOK_NOTIFICATION_ID = 3;
     protected final static String SCRAPBOOK_NOTIFICATION_KEY = "scrapbook_key";
 
     // Error
