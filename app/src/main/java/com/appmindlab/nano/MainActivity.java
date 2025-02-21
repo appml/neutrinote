@@ -2781,6 +2781,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else {
                     dest_dir = DocumentFile.fromTreeUri(getApplicationContext(), mRestoreUri);
+
+                    // Restore from a new install / re-install
+                    if (mBackupUri == null)
+                        overwrite = false;
                 }
 
                 for (DocumentFile file : dest_dir.listFiles()) {

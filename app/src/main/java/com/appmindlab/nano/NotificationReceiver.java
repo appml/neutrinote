@@ -128,6 +128,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         builder = new NotificationCompat.Builder(context, Const.SCRAPBOOK_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_mode_edit_vector)
                 .setOngoing(true)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setContentTitle(title)
                 .setContentText(Utils.readableFileSize(entry.getSize()) + " / "  + pretty_time.format(timestamp));
 
