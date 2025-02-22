@@ -501,6 +501,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (results.size() > 0)
                 doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
         }
+
+        // Issue a delayed backup
+        if (mBackupUri != null)
+            doSAFDelayedBackupRequest(Const.BACKUP_DELAYED_WORK_TAG);
     }
 
     @Override
@@ -2693,7 +2697,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .build();
 
             mBackupWorkManager.enqueueUniqueWork(
-                    Const.BACKUP_ONETIME_WORK_NAME,
+                    Const.BACKUP_INSTANT_WORK_NAME,
                     ExistingWorkPolicy.KEEP,
                     request);
 
@@ -2701,6 +2705,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
             updateStatus(getResources().getString(R.string.error_no_writable_external_storage), mBounce);
+    }
+
+    // Do SAF delayed backup request
+    private void doSAFDelayedBackupRequest(String tag) {
+        mBackupWorkManager = WorkManager.getInstance(getApplicationContext());
+
+        if (mBackupUri != null) {
+            // Build constraints
+            Constraints constraints = new Constraints.Builder()
+                    .setRequiresDeviceIdle(true)
+                    .setRequiresBatteryNotLow(true)
+                    .setRequiresStorageNotLow(true)
+                    .build();
+
+            OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
+                    (BackupWorker.class)
+                    .setInitialDelay(Const.BACKUP_DELAY, TimeUnit.HOURS)
+                    .setConstraints(constraints)
+                    .addTag(tag)
+                    .build();
+
+            mBackupWorkManager.enqueueUniqueWork(
+                    Const.BACKUP_DELAYED_WORK_NAME,
+                    ExistingWorkPolicy.KEEP,
+                    request);
+
+            Log.d(Const.TAG, "nano - Backup job requested");
+        }
     }
 
     // Do SAF mirror to

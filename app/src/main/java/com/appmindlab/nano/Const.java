@@ -533,6 +533,7 @@ public class Const {
     protected final static int AUTO_BACKUP_FREQ = 24;    // Daily
     protected final static int AUTO_MIRROR_FREQ = 8;     // Every 8 hours
     protected final static int AUTO_RELAUNCH_DELAY = 2 * ONE_SECOND;
+    protected final static int BACKUP_DELAY = 8;
     protected final static int SYNC_TILE_REFRESH_PERIOD = 3 * ONE_SECOND + QUARTER_SECOND;
     protected final static int SYNC_TILE_REFRESH_DELAY = 1 * QUARTER_SECOND;
     protected final static int MIN_RELAUNCH_INTERVAL = 1;    // Minimum buffer between launch (in minute)
@@ -568,8 +569,8 @@ public class Const {
     protected final static String BACKUP_WORK_NAME = "NANO_BACKUP_WORK";
     protected final static String BACKUP_INSTANT_WORK_NAME = "NANO_INSTANT_BACKUP_WORK";
     protected final static String BACKUP_INSTANT_WORK_TAG = "NANO_INSTANT_BACKUP_TAG";
-    protected final static String BACKUP_ONETIME_WORK_NAME = "NANO_ONETIME_BACKUP_WORK";
-    protected final static String BACKUP_ONETIME_WORK_TAG = "NANO_ONETIME_BACKUP_TAG";
+    protected final static String BACKUP_DELAYED_WORK_NAME = "NANO_DELAYED_BACKUP_WORK";
+    protected final static String BACKUP_DELAYED_WORK_TAG = "NANO_DELAYED_BACKUP_TAG";
     protected final static String MIRROR_WORK_NAME = "NANO_MIRROR_WORK";
     protected final static String MIRROR_WORK_TAG = "NANO_MIRROR_TAG";
     protected final static String MIRROR_ONETIME_WORK_NAME = "NANO_ONETIME_MIRROR_WORK";
