@@ -3473,14 +3473,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         DBEntry entry;
 
         String title, preview;
-        String status = mStatusBar.getText().toString();
-        int end;
+        String status = mStatusBar.getText().toString().trim();
 
         // Show more details for remote updates
-        if (status.endsWith(getResources().getString(R.string.status_updated_remotely))) {
+        if (status.contains(getResources().getString(R.string.status_updated_remotely))) {
             // Extract title
-            end = status.length() - getResources().getString(R.string.status_updated_remotely).length();
-            title = status.substring(0, end).trim();
+            String[] items = status.split(getResources().getString(R.string.status_updated_remotely));
+            title = items[0].trim();
 
             // Sanity check
             if (title.equals(mTitleSaved)) return;
