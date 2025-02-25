@@ -502,7 +502,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
         }
 
-        // Issue a delayed backup
+        // Trigger backup proactively
         if (mBackupUri != null)
             doSAFDelayedBackupRequest(Const.BACKUP_DELAYED_WORK_TAG);
     }
@@ -889,7 +889,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBackupManager = new BackupManager(this);
     }
 
-    // Verify databas
+    // Verify database
     protected void verifyDatabase() {
         try {
             Thread t = new Thread() {
