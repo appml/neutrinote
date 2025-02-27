@@ -502,7 +502,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
         }
 
-        // Trigger backup proactively
+        // Trigger snapshot
         if (mBackupUri != null)
             doSAFDelayedBackupRequest(Const.BACKUP_DELAYED_WORK_TAG);
     }
@@ -1359,6 +1359,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void cancelBackup() {
         if (mBackupWorkManager != null) {
             mBackupWorkManager.cancelUniqueWork(Const.BACKUP_WORK_NAME);
+            mBackupWorkManager.cancelUniqueWork(Const.BACKUP_DELAYED_WORK_NAME);  // Also cancel snapshot
             Log.d(Const.TAG, "nano - Backup job cancelled");
         }
     }
