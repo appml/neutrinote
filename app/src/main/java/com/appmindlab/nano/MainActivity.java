@@ -502,7 +502,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
         }
 
-        // Trigger snapshot
+        // Register the need for a subsequent backup
         if (mBackupUri != null)
             doSAFDelayedBackupRequest(Const.BACKUP_DELAYED_WORK_TAG);
     }
