@@ -3495,6 +3495,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 Utils.anchorSnackbar(snackbar, R.id.fragment_content);
                 snackbar.show();
             }
+            else {
+                // Show working set as a fallback
+                handleWorkingSet();
+            }
         }
 
         // Show more details of clipboard contents
