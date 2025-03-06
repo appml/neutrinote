@@ -816,7 +816,7 @@ public class Const {
     protected final static String SCRAPBOOK_CHANNEL_NAME = "Scrapbook";
     protected final static String SCRAPBOOK_CHANNEL_DESC = "Scrapbook Notification";
     protected final static int SCRAPBOOK_CHANNEL_LEVEL = NotificationManager.IMPORTANCE_DEFAULT;
-    protected final static int SCRAPBOOK_NOTIFICATION_ID = 0;
+    protected final static int SCRAPBOOK_NOTIFICATION_ID = 1;
     protected final static String SCRAPBOOK_NOTIFICATION_KEY = "scrapbook_key";
 
     // Error
