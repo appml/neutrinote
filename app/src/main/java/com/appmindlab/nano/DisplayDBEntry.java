@@ -3475,11 +3475,17 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         String title, preview;
         String status = mStatusBar.getText().toString().trim();
 
+        // testing
+        Log.d(Const.TAG, "nano -- showDetails, status: " + status);
+
         // Show more details for remote updates
         if (status.contains(getResources().getString(R.string.status_updated_remotely))) {
             // Extract title
             String[] items = status.split(getResources().getString(R.string.status_updated_remotely));
             title = items[0].trim();
+
+            // testing
+            Log.d(Const.TAG, "nano -- showDetails, title: " + title);
 
             // Sanity check
             if (title.equals(mTitleSaved)) return;
