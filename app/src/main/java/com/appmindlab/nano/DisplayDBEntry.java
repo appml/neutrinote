@@ -3590,11 +3590,17 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 return true;
             case KeyEvent.KEYCODE_DPAD_UP:
                 if (event.isCtrlPressed())
-                    doGoTo(true);
+                    if (hasHits())
+                        doGotoMatch(-1, true);
+                    else
+                        doGoTo(true);
                 return true;
             case KeyEvent.KEYCODE_DPAD_DOWN:
                 if (event.isCtrlPressed())
-                    doGoTo(false);
+                    if (hasHits())
+                        doGotoMatch(1, true);
+                    else
+                        doGoTo(false);
                 return true;
             case KeyEvent.KEYCODE_EQUALS:
                 if (event.isCtrlPressed())
@@ -5345,9 +5351,15 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         } else if (id == R.id.button_draw) {
             handleDraw();
         } else if (id == R.id.button_top) {
-            doGoTo(true);
+            if (hasHits())
+                doGotoMatch(-1, true);
+            else
+                doGoTo(true);
         } else if (id == R.id.button_bottom) {
-            doGoTo(false);
+            if (hasHits())
+                doGotoMatch(1, true);
+            else
+                doGoTo(false);
         } else if (id == R.id.button_local_replace) {
             showLocalReplaceFragment();
         } else if (id == R.id.button_barcode) {
