@@ -4748,7 +4748,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 String[] parts = rows[i].split(Pattern.quote(Const.SETTINGS_DELIMITER));
 
                                 // Skip log
-                                if ((parts[0].equals(Const.AUTO_BACKUP_LOG)) || (parts[0].equals(Const.SYNC_LOG)))
+                                if ((parts[0].equals(Const.AUTO_BACKUP_LOG)) || (parts[0].equals(Const.AUTO_MIRROR_LOG)) || (parts[0].equals(Const.BACKGROUND_LOG)) || (parts[0].equals(Const.MIRROR_TIMESTAMP)) || (parts[0].equals(Const.SYNC_LOG)) || (!parts[0].startsWith(Const.PACKAGE)))
                                     continue;
 
                                 // Skip local repository path (should only be set via UI)
@@ -4902,7 +4902,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 value = pref.getValue().toString();
 
                 // Skip log
-                if ((key.equals(Const.AUTO_BACKUP_LOG)) || (key.equals(Const.SYNC_LOG)) || (!key.startsWith(Const.PACKAGE)))
+                if ((key.equals(Const.AUTO_BACKUP_LOG)) || (key.equals(Const.AUTO_MIRROR_LOG)) || (key.equals(Const.BACKGROUND_LOG)) || (key.equals(Const.MIRROR_TIMESTAMP)) || (key.equals(Const.SYNC_LOG)) || (!key.startsWith(Const.PACKAGE)))
                     continue;
 
                 // Skip local repository path (should only be saved via UI)

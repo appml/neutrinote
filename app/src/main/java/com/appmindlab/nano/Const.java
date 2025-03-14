@@ -191,6 +191,7 @@ public class Const {
     protected final static String AUTO_MIRROR_LOG = "com.appmindlab.nano.auto_mirror_log";
     protected final static String MIRROR_TIMESTAMP = "com.appmindlab.nano.mirror_timestamp";
     protected final static String SYNC_LOG = "com.appmindlab.nano.sync_log";
+    protected final static String BACKGROUND_LOG = "com.appmindlab.nano.background_log";
     protected static final String TILE_SERVICE_STATE = "com.appmindlab.nano.tile_service_state";
 
     // Backup related

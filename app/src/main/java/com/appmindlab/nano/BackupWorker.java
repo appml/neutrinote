@@ -135,6 +135,7 @@ public class BackupWorker extends Worker {
 
             // Save the log status
             editor.putString(Const.AUTO_BACKUP_LOG, status);
+            editor.putString(Const.BACKGROUND_LOG, status);
             editor.apply();
 
             // Update notification
@@ -234,7 +235,7 @@ public class BackupWorker extends Worker {
             value = pref.getValue().toString();
 
             // Skip log
-            if ((key.equals(Const.AUTO_BACKUP_LOG)) || (key.equals(Const.SYNC_LOG)) || (!key.startsWith(Const.PACKAGE)))
+            if ((key.equals(Const.AUTO_BACKUP_LOG)) || (key.equals(Const.AUTO_MIRROR_LOG)) || (key.equals(Const.BACKGROUND_LOG)) || (key.equals(Const.MIRROR_TIMESTAMP)) || (key.equals(Const.SYNC_LOG)) || (!key.startsWith(Const.PACKAGE)))
                 continue;
 
             // Skip local repository path (should only be saved via UI)
