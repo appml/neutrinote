@@ -472,6 +472,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Setup scrapbook
         setupScrapbook();
 
+        // Setup background log
+        setupBackgroundLog();
+
         // Hide I/O progress bar
         hideIOProgressBar();
     }
@@ -1470,6 +1473,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
         intent.setAction(Const.ACTION_UPDATE_SCRAPBOOK);
         sendBroadcast(intent);
+    }
+
+    // Setup background log
+    protected void setupBackgroundLog() {
+        String background_log = mSharedPreferences.getString(Const.BACKGROUND_LOG, Const.NULL_SYM);
+
+        if (background_log.length() > 0) {
+            Toast.makeText(getApplicationContext(), background_log, Toast.LENGTH_LONG).show();
+
+            // Preference editor
+            SharedPreferences.Editor editor = mSharedPreferences.edit();
+            editor.putString(Const.BACKGROUND_LOG, Const.NULL_SYM);  // Reset background log
+            editor.apply();
+        }
     }
 
     // Handle intent
