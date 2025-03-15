@@ -1479,7 +1479,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void showBackgroundLog() {
         String background_log = mSharedPreferences.getString(Const.BACKGROUND_LOG, Const.NULL_SYM);
 
-        if (background_log.length() > 0) {
+        if (!background_log.isEmpty()) {
             Toast.makeText(getApplicationContext(), background_log, Toast.LENGTH_LONG).show();
 
             // Reset the log
@@ -1858,7 +1858,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String count_status;
         int count = 0;
 
-        if (mStatusQ.size() > 0) {
+        if (!mStatusQ.isEmpty()) {
             StringBuilder sb = new StringBuilder();
             for (String s : mStatusQ) {
                 sb.append(s);
@@ -1871,7 +1871,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Add animated effect
             animation = mPushDownIn;
-        } else if ((status == null) || (status.length() == 0)) {
+        } else if ((status == null) || (status.isEmpty())) {
             // Default status
             if (mCursor != null)
                 count = mCursor.getCount();
@@ -1882,7 +1882,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             else
                 count_status = Integer.toString(count) + getResources().getString(R.string.status_count);
 
-            if ((mCriteria != null) && (mCriteria.length() > 0))
+            if ((mCriteria != null) && (!mCriteria.isEmpty()))
                 if ((mCriteria.equals(Const.MODIFIED_AFTER_FILTER)) || (mCriteria.equals(Const.ACCESSED_AFTER_FILTER)))
                     status = Utils.convertCriteriaToStatus(getApplicationContext(), mCriteria, mDateFilter) + ": " + count_status;
 
