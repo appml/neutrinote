@@ -1880,7 +1880,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 count_status = getResources().getString(R.string.status_no_note);
 
             else
-                count_status = Integer.toString(count) + getResources().getString(R.string.status_count);
+                count_status = count + getResources().getString(R.string.status_count);
 
             if ((mCriteria != null) && (!mCriteria.isEmpty()))
                 if ((mCriteria.equals(Const.MODIFIED_AFTER_FILTER)) || (mCriteria.equals(Const.ACCESSED_AFTER_FILTER)))
