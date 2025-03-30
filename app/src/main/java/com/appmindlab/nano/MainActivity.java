@@ -463,6 +463,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Reapply theme
         applyTheme();
 
+        // Show background log
+        showBackgroundLog();
+
         // Sync automatically
         doSync();
 
@@ -471,9 +474,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Setup scrapbook
         setupScrapbook();
-
-        // Show background log
-        showBackgroundLog();
 
         // Hide I/O progress bar
         hideIOProgressBar();
@@ -1481,6 +1481,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (!background_log.isEmpty()) {
             Toast.makeText(getApplicationContext(), background_log, Toast.LENGTH_LONG).show();
+            updateStatus(background_log, null);
 
             // Reset the log
             SharedPreferences.Editor editor = mSharedPreferences.edit();
