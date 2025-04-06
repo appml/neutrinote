@@ -5351,12 +5351,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         } else if (id == R.id.button_draw) {
             handleDraw();
         } else if (id == R.id.button_top) {
-            if (hasHits())
+            if ((hasHits()) && ((Utils.getCurrentSelection(mContent)).isEmpty()))
                 doGotoMatch(-1, true);
             else
                 doGoTo(true);
         } else if (id == R.id.button_bottom) {
-            if (hasHits())
+            if ((hasHits()) && ((Utils.getCurrentSelection(mContent)).isEmpty()))
                 doGotoMatch(1, true);
             else
                 doGoTo(false);
