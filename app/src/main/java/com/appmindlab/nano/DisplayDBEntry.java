@@ -5247,7 +5247,20 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         if (id == R.id.button_text_expand)
             handleShowShortcuts();
+        else if (id == R.id.button_top) {
+            if ((hasHits()) && ((Utils.getCurrentSelection(mContent)).isEmpty())) {
+                doGotoMatch(-1, true);
+                return;
+            }
+        }
+        else if (id == R.id.button_bottom) {
+            if ((hasHits()) && ((Utils.getCurrentSelection(mContent)).isEmpty())) {
+                doGotoMatch(1, true);
+                return;
+            }
+        }
 
+        // Otherwise show help
         Toast.makeText(this, view.getContentDescription(), Toast.LENGTH_SHORT).show();
     }
 
@@ -5351,15 +5364,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         } else if (id == R.id.button_draw) {
             handleDraw();
         } else if (id == R.id.button_top) {
-            if ((hasHits()) && ((Utils.getCurrentSelection(mContent)).isEmpty()))
-                doGotoMatch(-1, true);
-            else
-                doGoTo(true);
+            doGoTo(true);
         } else if (id == R.id.button_bottom) {
-            if ((hasHits()) && ((Utils.getCurrentSelection(mContent)).isEmpty()))
-                doGotoMatch(1, true);
-            else
-                doGoTo(false);
+            doGoTo(false);
         } else if (id == R.id.button_local_replace) {
             showLocalReplaceFragment();
         } else if (id == R.id.button_barcode) {
