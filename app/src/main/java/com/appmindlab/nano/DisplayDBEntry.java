@@ -5245,6 +5245,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     public void showHelp(View view) {
         int id = view.getId();
 
+        // Handle special cases
         if (id == R.id.button_text_expand)
             handleShowShortcuts();
         else if (id == R.id.button_top) {
@@ -5260,7 +5261,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
         }
 
-        // Otherwise show help
+        // Show help
         Toast.makeText(this, view.getContentDescription(), Toast.LENGTH_SHORT).show();
     }
 

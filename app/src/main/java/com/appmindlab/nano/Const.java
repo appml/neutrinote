@@ -496,6 +496,7 @@ public class Const {
     protected final static String MODIFIED_VAR = "@modified";
     protected final static String ACCESSED_VAR = "@accessed";
     protected final static String CLIPBOARD_VAR = "@clipboard";
+    protected final static String LOCATION_VAR = "@location";
     protected final static String YESTERDAY_VAR = "@yesterday";
     protected final static String TODAY_VAR = "@today";
     protected final static String TOMORROW_VAR = "@tomorrow";

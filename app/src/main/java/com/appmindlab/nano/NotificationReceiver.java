@@ -92,8 +92,11 @@ public class NotificationReceiver extends BroadcastReceiver {
 
                 // Set pending fresh flag
                 MainActivity.setPendingStatus(true);
-
                 Toast.makeText(context, scrapbook_file + context.getResources().getString(R.string.status_scrapbook_updated), Toast.LENGTH_LONG).show();
+
+                // Notify editor
+                if (DisplayDBEntry.display_dbentry != null)
+                    DisplayDBEntry.display_dbentry.notifyChange(scrapbook_file);
             }
 
             // Reset notification

@@ -513,6 +513,11 @@ public class Utils {
             if (escape) str = escapeRegexSym(str);
         }
 
+        if (str.contains(Const.LOCATION_VAR)) {
+            str = str.replaceAll(Const.LOCATION_VAR, Utils.getAddress(context));
+            if (escape) str = escapeRegexSym(str);
+        }
+
         return str;
     }
 
