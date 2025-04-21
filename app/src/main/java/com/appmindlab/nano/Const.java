@@ -50,6 +50,8 @@ public class Const {
     protected final static String PREF_SHOW_HIDDEN = "com.appmindlab.nano.pref_show_hidden";
     protected final static String PREF_ORDER_BY = "com.appmindlab.nano.pref_order_by";
     protected final static String PREF_ORDER_BY_DIRECTION = "com.appmindlab.nano.pref_order_by_direction";
+    protected final static String PREF_WIDGET_ORDER_BY = "com.appmindlab.nano.pref_widget_order_by";
+    protected final static String PREF_WIDGET_ORDER_BY_DIRECTION = "com.appmindlab.nano.pref_widget_order_by_direction";
     protected final static String PREF_STAR_AT_TOP = "com.appmindlab.nano.pref_star_at_top";
     protected final static String PREF_THEME = "com.appmindlab.nano.pref_theme";
     protected final static String PREF_LUX = "com.appmindlab.nano.pref_lux";
@@ -113,6 +115,8 @@ public class Const {
             PREF_SHOW_HIDDEN,
             PREF_ORDER_BY,
             PREF_ORDER_BY_DIRECTION,
+            PREF_WIDGET_ORDER_BY,
+            PREF_WIDGET_ORDER_BY_DIRECTION,
             PREF_STAR_AT_TOP,
             PREF_THEME,
             PREF_LUX,

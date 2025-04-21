@@ -105,6 +105,8 @@ public class WidgetService extends RemoteViewsService {
                 WidgetItem item;
                 String title, content;
                 String preview_mode = mSharedPreferences.getString(Const.PREF_PREVIEW_MODE, Const.PREVIEW_AT_END);
+                String order_by = mSharedPreferences.getString(Const.PREF_WIDGET_ORDER_BY, Const.SORT_BY_TITLE);
+                String order_direction = mSharedPreferences.getString(Const.PREF_WIDGET_ORDER_BY_DIRECTION, Const.SORT_ASC);
 
                 Log.d(Const.TAG, "nano - WidgetService: update() ");
 
@@ -114,11 +116,11 @@ public class WidgetService extends RemoteViewsService {
                 mWidgetItems.clear();
 
                 // Starred items by default
-                List<DBEntry> results = mDatasource.getAllActiveStarredRecords(Const.SORT_BY_TITLE, "ASC");
+                List<DBEntry> results = mDatasource.getAllActiveStarredRecords(order_by, order_direction);
 
                 // Fall back to default
                 if ((results == null) || (results.size() == 0)) {
-                    results = mDatasource.getAllActiveRecords(Const.SORT_BY_TITLE, "ASC");
+                    results = mDatasource.getAllActiveRecords(order_by, order_direction);
                 }
 
                 for (int i = 0; i < results.size(); i++) {
