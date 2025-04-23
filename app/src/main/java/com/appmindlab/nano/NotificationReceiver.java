@@ -97,6 +97,10 @@ public class NotificationReceiver extends BroadcastReceiver {
                 // Notify editor
                 if (DisplayDBEntry.display_dbentry != null)
                     DisplayDBEntry.display_dbentry.notifyChange(scrapbook_file);
+
+                // Update widget
+                intent = new Intent(Const.ACTION_UPDATE_WIDGET);
+                context.sendBroadcast(intent);
             }
 
             // Reset notification
