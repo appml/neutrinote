@@ -276,7 +276,7 @@ public class Const {
     protected final static int IN_NOTE_PREVIEW_FONT_SIZE = 14;
     protected final static int WORKING_SET_PREVIEW_LEN = 80;
     protected final static int WORKING_SET_PREVIEW_FONT_SIZE = 14;
-    protected final static int WIDGET_LEN = 140;
+    protected final static int WIDGET_LEN = 130;
     protected final static int FASTSCROLL_TAB_LEN = 4;
     protected final static String PREVIEW_AT_START = "start";
     protected final static String PREVIEW_AT_END = "end";
