@@ -4,7 +4,7 @@
     android:id="@+id/widget_item_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="12dp"
+    android:padding="6dp"
     android:background="@color/widget_background"
     >
 
