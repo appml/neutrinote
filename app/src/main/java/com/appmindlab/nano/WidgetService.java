@@ -103,18 +103,19 @@ public class WidgetService extends RemoteViewsService {
             try {
                 DBEntry entry;
                 WidgetItem item;
-                long id = -1L;
                 String title, content;
                 String preview_mode = mSharedPreferences.getString(Const.PREF_PREVIEW_MODE, Const.PREVIEW_AT_END);
                 String order_by = mSharedPreferences.getString(Const.PREF_WIDGET_ORDER_BY, Const.SORT_BY_TITLE);
                 String order_direction = mSharedPreferences.getString(Const.PREF_WIDGET_ORDER_BY_DIRECTION, Const.SORT_ASC);
                 int idx = 0;
+                boolean found = false;
+                String cur_title = Const.NULL_SYM;
 
                 Log.d(Const.TAG, "nano - WidgetService: update() ");
 
                 // Save the id of the first widget item
                 if (!mWidgetItems.isEmpty()) {
-                    id = mWidgetItems.get(0).id;
+                    cur_title = mWidgetItems.get(0).title;
                 }
 
                 // Make sure the database is open
@@ -140,8 +141,10 @@ public class WidgetService extends RemoteViewsService {
                         continue;
 
                     // Remember the position of the first widget item
-                    if (id == entry.getId())
+                    if ((!found) && (cur_title.equals(title))) {
                         idx = i;
+                        found = true;
+                    }
 
                     // Extract content
                     if (content.length() > Const.WIDGET_LEN) {
@@ -163,7 +166,7 @@ public class WidgetService extends RemoteViewsService {
                 }
 
                 // Restore widget sequence
-                if (idx > 0)
+                if ((order_by.equals(Const.SORT_BY_TITLE)) && (idx > 0))
                     restoreSequence(idx);
             }
             catch (Exception e) {
