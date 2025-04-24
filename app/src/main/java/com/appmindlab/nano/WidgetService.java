@@ -109,13 +109,13 @@ public class WidgetService extends RemoteViewsService {
                 String order_direction = mSharedPreferences.getString(Const.PREF_WIDGET_ORDER_BY_DIRECTION, Const.SORT_ASC);
                 int idx = 0;
                 boolean found = false;
-                String cur_title = Const.NULL_SYM;
+                long cur_id = -1L;
 
                 Log.d(Const.TAG, "nano - WidgetService: update() ");
 
                 // Save the id of the first widget item
                 if (!mWidgetItems.isEmpty()) {
-                    cur_title = mWidgetItems.get(0).title;
+                    cur_id = mWidgetItems.get(0).id;
                 }
 
                 // Make sure the database is open
@@ -141,7 +141,7 @@ public class WidgetService extends RemoteViewsService {
                         continue;
 
                     // Remember the position of the first widget item
-                    if ((!found) && (cur_title.equals(title))) {
+                    if ((!found) && (cur_id == entry.getId())) {
                         idx = i;
                         found = true;
                     }
@@ -166,6 +166,7 @@ public class WidgetService extends RemoteViewsService {
                 }
 
                 // Restore widget sequence
+                // Note: only applies when title is used for sorting
                 if ((order_by.equals(Const.SORT_BY_TITLE)) && (idx > 0))
                     restoreSequence(idx);
             }
