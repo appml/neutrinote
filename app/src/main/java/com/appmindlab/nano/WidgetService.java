@@ -127,7 +127,7 @@ public class WidgetService extends RemoteViewsService {
                 List<DBEntry> results = mDatasource.getAllActiveStarredRecords(order_by, order_direction);
 
                 // Fall back to default
-                if ((results == null) || (results.size() == 0)) {
+                if ((results == null) || (results.isEmpty())) {
                     results = mDatasource.getAllActiveRecords(order_by, order_direction);
                 }
 
@@ -153,7 +153,7 @@ public class WidgetService extends RemoteViewsService {
                             content = Utils.subStringWordBoundary(content, 0, Const.WIDGET_LEN-1);
                         }
                         else {
-                            content = content.substring(content.length() - Const.WIDGET_LEN, content.length());
+                            content = content.substring(content.length() - Const.WIDGET_LEN);
                             content = Utils.subStringWordBoundary(content, 1, Const.WIDGET_LEN);
                         }
                     }
