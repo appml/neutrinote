@@ -1820,6 +1820,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     // Return if no undo allowed
                     if (Const.MAX_SNAPSHOTS == 0) return;
 
+                    // Best effort synchronization
+                    mSnapshotSafe = false;
+
                     // Recreate a snapshot list if needed
                     if (mUndo == null)
                         mUndo = new LinkedList();
@@ -1831,6 +1834,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     mUndo.add(new Snapshot(mContent.getText().toString(), (int) mContent.getSelectionStart()));
                 } catch (Exception e) {
                     e.printStackTrace();
+                } finally {
+                    mSnapshotSafe = true;
                 }
             };
         };
@@ -1846,6 +1851,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     // Return if no undo allowed
                     if (Const.MAX_SNAPSHOTS == 0) return;
 
+                    // Best effort synchronization
+                    mSnapshotSafe = false;
+
                     // Recreate a snapshot list if needed
                     if (mRedo == null)
                         mRedo = new LinkedList();
@@ -1858,6 +1866,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     mRedo.add(new Snapshot(mContent.getText().toString(), mContent.getSelectionStart()));
                 } catch (Exception e) {
                     e.printStackTrace();
+                } finally {
+                    mSnapshotSafe = true;
                 }
             };
         };
