@@ -508,6 +508,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Resume change detection
         toggleChanges();
 
+        // Resume snapshot
+        mSnapshotSafe = true;
+
         // Setup autosave
         setupAutoSave();
 
