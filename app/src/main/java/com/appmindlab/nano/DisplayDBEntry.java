@@ -180,7 +180,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Content
     private EditText mTitle, mContent, mCurrentEditText;
-    private String mTitleSaved, mContentSaved, mTitleAtOpen, mContentAtOpen;
+    private String mTitleSaved, mContentSaved, mTitleAtOpen, mContentAtOpen, mContentCurrent;
     private long mPosAtOpen, mPosAtClear = -1;
     private RelativeLayout mTitleBar;
     private boolean mTitleBarVisible = true;
@@ -1346,6 +1346,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mContentCurrent = s.toString(); // No need to call getText() repeatedly
             }
         });
 
@@ -1834,7 +1835,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     while (mUndo.size() > Const.MAX_SNAPSHOTS)
                         mUndo.removeFirst();
 
-                    mUndo.add(new Snapshot(mContent.getText().toString(), (int) mContent.getSelectionStart()));
+                    mUndo.add(new Snapshot(mContentCurrent, (int) mContent.getSelectionStart()));
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
@@ -1866,7 +1867,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                         mRedo.removeFirst();
 
                     // Add new snapshot
-                    mRedo.add(new Snapshot(mContent.getText().toString(), mContent.getSelectionStart()));
+                    mRedo.add(new Snapshot(mContentCurrent, mContent.getSelectionStart()));
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
