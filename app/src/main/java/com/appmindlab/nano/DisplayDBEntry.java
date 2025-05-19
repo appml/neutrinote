@@ -128,6 +128,7 @@ import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -295,7 +296,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private boolean mLocationAware = false;
 
     // Snapshots
-    private LinkedList mUndo, mRedo;
+    private ArrayDeque<Snapshot> mUndo, mRedo;
     private boolean mSnapshotSafe = true;
 
     // Animation
@@ -1747,8 +1748,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     if (Const.MAX_SNAPSHOTS == 0)
                         return;
 
-                    mUndo = new LinkedList();
-                    mRedo = new LinkedList();
+                    mUndo = new ArrayDeque<Snapshot>();
+                    mRedo = new ArrayDeque<Snapshot>();
 
                     // Save version 0
                     mUndo.add(new Snapshot(mContent.getText().toString(), (int) mContent.getSelectionStart()));
@@ -1829,7 +1830,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                     // Recreate a snapshot list if needed
                     if (mUndo == null)
-                        mUndo = new LinkedList();
+                        mUndo = new ArrayDeque<Snapshot>();
 
                     // Truncate the set of snapshots
                     while (mUndo.size() > Const.MAX_SNAPSHOTS)
@@ -1860,7 +1861,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                     // Recreate a snapshot list if needed
                     if (mRedo == null)
-                        mRedo = new LinkedList();
+                        mRedo = new ArrayDeque<Snapshot>();
 
                     // Truncate the set of snapshots
                     while (mRedo.size() > Const.MAX_SNAPSHOTS)
