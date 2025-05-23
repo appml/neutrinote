@@ -1523,6 +1523,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if ((Intent.ACTION_SEND.equals(intent.getAction())) && (intent.getType() != null)) {
             if (Const.PLAIN_TEXT_TYPE.equals(intent.getType())) {
                 String str = intent.getStringExtra(Intent.EXTRA_TEXT);
+
+                if (intent.getStringExtra(Intent.EXTRA_SUBJECT) != null)
+                    str += Const.DELIMITER + intent.getStringExtra(Intent.EXTRA_SUBJECT);
+
                 if (!TextUtils.isEmpty(str))
                     handleShareTo(str);
             }
