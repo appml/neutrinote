@@ -16,10 +16,12 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.Point;
 import android.graphics.Typeface;
 import android.location.Address;
 import android.location.Geocoder;
@@ -44,6 +46,7 @@ import android.text.TextUtils;
 import android.text.method.KeyListener;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -3501,12 +3504,36 @@ public class Utils {
         return -1;
     }
 
+    // Check landscape mode
+    protected static boolean isLandscapeMode(Context context) {
+        return (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE);
+    }
+
+    // Check portrait mode
+    protected static boolean isPortraitMode(Context context) {
+        return (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT);
+    }
+
     // Check multi window mode
     protected static boolean checkMultiWindowMode(AppCompatActivity activity) {
         if (Build.VERSION.SDK_INT >= 24)
             return activity.isInMultiWindowMode();
         else
             return false;
+    }
+
+    // Check popup window mode
+    protected static boolean checkPopupWindowMode(AppCompatActivity activity) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+
+        Point screenSize = new Point();
+        activity.getWindowManager().getDefaultDisplay().getRealSize(screenSize);
+
+        return (width < screenSize.x && height < screenSize.y) && (checkMultiWindowMode(activity));
     }
 
     // Get system fonts

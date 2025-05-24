@@ -1193,7 +1193,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Show hide tool bar
         // Three cases:
         // I. If auto save is on and it is safe to do so, free to switch toolbar view.
-        // II. If auto save is not or it is not safe to do so, plus already in compact toolbar view, retain compact toolbar view.
+        // II. If auto save is not on or it is not safe to do so, plus already in compact toolbar view, retain compact toolbar view.
         // III. Non-compact toolbar is the default.
         boolean allowToolBarSwitch = mAutoSave;
         boolean fromCompactToolBar = false;
@@ -1205,9 +1205,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
 
         // Alter state
-        if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) && ((allowToolBarSwitch) || (fromCompactToolBar)))
+        if (Utils.isLandscapeMode(this) && ((allowToolBarSwitch) || (fromCompactToolBar)))
             mCompactToolBar = true;
-        else if ((getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) && (!allowToolBarSwitch) && (fromCompactToolBar))
+        else if (Utils.isPortraitMode(this) && (!allowToolBarSwitch) && (fromCompactToolBar))
             mCompactToolBar = true;
 
         // Render
