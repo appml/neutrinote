@@ -32,6 +32,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.preference.PreferenceManager;
@@ -1187,6 +1188,21 @@ public class Utils {
             e.printStackTrace();
             return context.getResources().getString(R.string.status_no_change);
         }
+    }
+
+    // Stringtify an intent
+    protected static String intentToStr(Intent intent) {
+        StringBuilder sb = new StringBuilder();
+
+        Bundle extras = intent.getExtras();
+        if (extras != null) {
+            for (String key : extras.keySet()) {
+                sb.append(extras.get(key));
+                sb.append(Const.SPACE_CHAR);
+            }
+        }
+
+        return sb.toString();
     }
 
     ///////////////////

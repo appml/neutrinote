@@ -1522,7 +1522,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 viewLink(intent);
         } else if ((Intent.ACTION_SEND.equals(intent.getAction())) && (intent.getType() != null)) {
             if (Const.PLAIN_TEXT_TYPE.equals(intent.getType())) {
-                String str = String.format("%s %s", intent.getStringExtra(Intent.EXTRA_SUBJECT) == null ? "" : intent.getStringExtra(Intent.EXTRA_SUBJECT), intent.getStringExtra(Intent.EXTRA_TEXT));
+                String str = Utils.intentToStr(intent);
                 if (!TextUtils.isEmpty(str))
                     handleShareTo(str);
             }
