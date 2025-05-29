@@ -285,6 +285,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private ArrayList<HitParcelable> mHits = new ArrayList<HitParcelable>();
     private int mHitIdx = -1;
     private long mCurPos = -1, mNextPos = 0;
+    private Toast mHitMsg;
 
     // Auto save
     private int mAutoSaveInterval = Const.AUTO_SAVE_INTERVAL;
@@ -5957,9 +5958,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                                                String snippet = Utils.getCurrentSurroundingText(mContent.getText().toString(), mCriteria, pos, Const.HIT_PREVIEW_LEN, true, true);
 
                                                if (snippet.length() > 0) {
+                                                   // Cancel existing message
+                                                   if (mHitMsg != null)
+                                                       mHitMsg.cancel();
+
                                                    // Add position
                                                    snippet = "<b>" + pos + "</b>" + Const.RIGHT_ARROW_SYM + "  " + snippet;
-                                                   Toast.makeText(getApplicationContext(), Html.fromHtml(snippet), Toast.LENGTH_SHORT).show();
+                                                   mHitMsg = Toast.makeText(getApplicationContext(), Html.fromHtml(snippet), Toast.LENGTH_SHORT);
+                                                   mHitMsg.show();
                                                }
                                            }
                                        }
@@ -5986,17 +5992,26 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             public void onClick(DialogInterface dialog, int id) {
                 mHitIdx = picker.getValue();
                 doGotoMatch(0, false);
+
+                // Cancel existing message
+                if (mHitMsg != null)
+                    mHitMsg.cancel();
             }
         });
         builder.setNegativeButton(R.string.dialog_hits_navigation_cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                return;
+                // Cancel existing message
+                if (mHitMsg != null)
+                    mHitMsg.cancel();
             }
         });
         builder.setNeutralButton(R.string.dialog_hits_navigation_neutral, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 doClearSearch();
-                return;
+
+                // Cancel existing message
+                if (mHitMsg != null)
+                    mHitMsg.cancel();
             }
         });
 
