@@ -3057,6 +3057,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private void showMarkdownSymbolFragment() {
         MarkdownSymbolFragment fragment = new MarkdownSymbolFragment();
 
+        // Save selection
+        int start = Math.min(mCurrentEditText.getSelectionStart(), mCurrentEditText.getSelectionEnd());
+        int end = Math.max(mCurrentEditText.getSelectionStart(), mCurrentEditText.getSelectionEnd());
+
         // No argument for now
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -3071,9 +3075,16 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         transaction.commit();
 
         // Set focus
-        mCurrentEditText.requestFocus();
-    }
+        mCurrentEditText.post(() -> {
+            mCurrentEditText.clearFocus();
+            mCurrentEditText.requestFocus();
 
+            // Restore selection
+            if (end > start) {
+                mCurrentEditText.setSelection(start, end);
+            }
+        });
+    }
 
     // Show edit tool fragment
     private void showEditToolFragment() {
