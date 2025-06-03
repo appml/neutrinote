@@ -1349,6 +1349,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mContentCurrent = s.toString(); // No need to call getText() repeatedly
+
+                // Rate limiting
+                mSnapshotSafe = count > Const.SNAPSHOT_THROTTLE_LEN;
             }
         });
 
