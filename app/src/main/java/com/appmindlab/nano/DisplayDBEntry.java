@@ -513,6 +513,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Resume snapshot
         mSnapshotSafe = true;
+        mSnapshotDeltaLen = 0;
 
         // Setup autosave
         setupAutoSave();
