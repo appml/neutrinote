@@ -299,6 +299,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Snapshots
     private ArrayDeque<Snapshot> mUndo, mRedo;
     private boolean mSnapshotSafe = true;
+    private int mSnapshotDeltaLen = 0;
 
     // Animation
     private Animation mFadeIn, mFadeOut, mSlideUp, mSlideDown, mPushDownIn, mPushUpIn, mPushLeftIn, mPushLeftOut, mPushRightIn, mPushRightOut, mZoomIn, mBounce, mRotateCenter;
@@ -1351,7 +1352,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mContentCurrent = s.toString(); // No need to call getText() repeatedly
 
                 // Rate limiting
-                mSnapshotSafe = count > Const.SNAPSHOT_THROTTLE_LEN;
+                mSnapshotDeltaLen += count;
+                mSnapshotSafe = mSnapshotDeltaLen > Const.SNAPSHOT_DELTA_THRESHOLD;
+                if (mSnapshotSafe) mSnapshotDeltaLen = 0;    // Reset delta
             }
         });
 
