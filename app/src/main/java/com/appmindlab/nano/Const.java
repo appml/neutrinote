@@ -680,7 +680,7 @@ public class Const {
 
     // Undo/redo
     protected final static int MAX_SNAPSHOTS = 25;
-    protected final static int SNAPSHOT_THROTTLE_LEN = 3;
+    protected final static int SNAPSHOT_THROTTLE_LEN = 4;
 
     // Import/export
     protected final static String DELIMITER = "\n";
