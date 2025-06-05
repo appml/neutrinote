@@ -1263,10 +1263,76 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         mTitleBar = findViewById(R.id.title_bar);
         mTitle = findViewById(R.id.edit_title);
+        mTitle.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    mCurrentEditText = mTitle;
+                }
+            }
+        });
+
+        mTitle.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                // Handle done event
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    mContent.requestFocus();
+                }
+                return false;
+            }
+        });
+
+        mTitle.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                // Reset auto save timer
+                if (mAutoSaveHandler != null) {
+                    mAutoSaveHandler.removeCallbacks(mAutoSaveRunnable);
+                    mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_BACKOFF * Const.ONE_SECOND);
+                }
+
+                return false;
+            }
+        });
+
         mContent = findViewById(R.id.edit_content);
 
         // Note: call here since XML does not work
         mContent.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_MULTI_LINE | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+
+        mContent.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    updateStatus(mMetadata, mFadeIn);
+                    mCurrentEditText = mContent;
+                }
+            }
+        });
+
+        // Set gesture detector
+        mEditContentGestureDetector = new GestureDetectorCompat(this, new ContentGestureListener());
+
+        mContent.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                // Reset auto save timer
+                if (mAutoSaveHandler != null) {
+                    mAutoSaveHandler.removeCallbacks(mAutoSaveRunnable);
+                    mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_BACKOFF * Const.ONE_SECOND);
+                }
+
+                // Show/hide tool bar
+                if ((!mShowToolBar) && (!mImmersiveMode)) {
+                    mEditContentGestureDetector.onTouchEvent(motionEvent);
+                }
+
+                // Pass event to scale detector
+                mScaleDetector.onTouchEvent(motionEvent);
+
+                return false;
+            }
+        });
 
         // Set scale detector
         mScaleDetector = new ScaleGestureDetector(getApplicationContext(), new ContentScaleGestureListener());
@@ -1364,26 +1430,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
         }
 
-        // Setup handlers
-        mTitle.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    mCurrentEditText = mTitle;
-                }
-            }
-        });
-
-        mTitle.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                // Handle done event
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    mContent.requestFocus();
-                }
-                return false;
-            }
-        });
-
+        // Set text changed listeners
         mTitle.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
                 if (!mChanged) {
@@ -1405,29 +1452,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             public void onTextChanged(CharSequence s, int start, int before, int count) {
             }
         });
-
-        mTitle.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                // Reset auto save timer
-                if (mAutoSaveHandler != null) {
-                    mAutoSaveHandler.removeCallbacks(mAutoSaveRunnable);
-                    mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_BACKOFF * Const.ONE_SECOND);
-                }
-
-                return false;
-            }
-        });
-
-        mContent.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    updateStatus(mMetadata, mFadeIn);
-                    mCurrentEditText = mContent;
-                }
-            }
-        });
-
         mContent.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {
                 if (!mChanged) {
@@ -1455,31 +1479,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 if (mSnapshotSafe) mSnapshotDeltaLen = 0;    // Reset delta
             }
         });
-
-        mContent.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                // Reset auto save timer
-                if (mAutoSaveHandler != null) {
-                    mAutoSaveHandler.removeCallbacks(mAutoSaveRunnable);
-                    mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_BACKOFF * Const.ONE_SECOND);
-                }
-
-                // Show/hide tool bar
-                if ((!mShowToolBar) && (!mImmersiveMode)) {
-                    mEditContentGestureDetector.onTouchEvent(motionEvent);
-                }
-
-                // Pass event to scale detector
-                mScaleDetector.onTouchEvent(motionEvent);
-
-                return false;
-            }
-        });
-
-        // Set gesture detector
-        mEditContentGestureDetector = new GestureDetectorCompat(this, new ContentGestureListener());
 
         // Initialize change detection
         mChanged = false;
