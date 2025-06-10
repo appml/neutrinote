@@ -534,8 +534,15 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Last ditch to save changes if auto save is on
         if (mChanged) {
-            if ((mAutoSave) && (mAutoSaveSafe))
-                doSave(false, false);
+            if (mAutoSave) {
+                if (mAutoSaveSafe)    // Safe to save
+                    doSave(false, false);
+                else {                // When condition to save is uncertain, keep a copy in trash can
+                    if (mBackupUri != null) {
+                        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Utils.makeSwapTitle(mTitle.getText().toString()), mContent.getText().toString());
+                    }
+                }
+            }
         }
 
         // Stop auto save

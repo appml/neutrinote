@@ -602,6 +602,7 @@ public class Const {
 
     protected final static String TRASH_PATH = "trash_bin";
     protected final static String CONFLICT_PATTERN = "(.*)conflict(.*)";
+    protected final static String SWAP_FILE_PATTERN = ".swp.";
 
     protected final static String IMPORT_ERROR_PATH = "import_errors";
 
