@@ -539,7 +539,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     doSave(false, false);
                 else {                // When condition to save is uncertain, keep a copy in trash can
                     if (mBackupUri != null) {
-                        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Utils.makeSwapTitle(mTitle.getText().toString()), mContent.getText().toString());
+                        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Utils.makeSwapTitle(Utils.getFileNameFromTitle(getApplicationContext(), mTitle.getText().toString())), mContent.getText().toString());
                     }
                 }
             }
