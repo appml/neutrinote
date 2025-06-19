@@ -537,11 +537,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             if (mAutoSave) {
                 if (mAutoSaveSafe)    // Safe to save
                     doSave(false, false);
-                else {                // When condition to save is uncertain, keep a copy in trash can
-                    if (mBackupUri != null) {
-                        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Utils.makeSwapTitle(Utils.getFileNameFromTitle(getApplicationContext(), mTitle.getText().toString())), mContent.getText().toString());
-                    }
-                }
             }
         }
 
@@ -565,12 +560,28 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             super.onSaveInstanceState(savedInstanceState);
 
             // Auto save if so needed
-            if ((mChanged) && (mAutoSave) && (mAutoSaveSafe))
-                doSave(false, false);
+            if ((mChanged) && (mAutoSave)) {
+                if (mAutoSaveSafe) {
+                    doSave(false, false);
+                }
+                else {   // When condition to save is uncertain, keep a copy in trash can
+                    if (mBackupUri != null) {
+                        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Const.SWAP_FILE, mContent.getText().toString());                    }
+                }
+            }
+
         }
         else if (mChanged) {    // Otherwise save any changes (the state that we most care)
-            if ((mAutoSave) && (mAutoSaveSafe))
-                doSave(false, false);
+            if (mAutoSave) {
+                if (mAutoSaveSafe) {
+                    doSave(false, false);
+                }
+                else {    // When condition to save is uncertain, keep a copy in trash can
+                    if (mBackupUri != null) {
+                        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Const.SWAP_FILE, mContent.getText().toString());
+                    }
+                }
+            }
             else
                 handleSave();
         }
