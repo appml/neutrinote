@@ -602,7 +602,6 @@ public class Const {
 
     protected final static String TRASH_PATH = "trash_bin";
     protected final static String CONFLICT_PATTERN = "(.*)conflict(.*)";
-    protected final static String SWAP_FILE_PATTERN = ".swp.";
 
     protected final static String IMPORT_ERROR_PATH = "import_errors";
 
@@ -628,7 +627,7 @@ public class Const {
     protected final static String NOOP_FILE = "~neutrinote_noop.txt";
     protected final static String SYNC_LOG_FILE = "~neutrinote_sync.log";
     protected final static String SYNC_HISTORY_FILE = "~neutrinote_sync_history.txt";
-    protected final static String SWAP_FILE = "~neutrinote_swapfile.txt";
+    protected final static String SESSION_FILE = "~neutrinote_session.txt";
 
     protected final static String SCRAPBOOK_TITLE = "neutriNote Scrapbook";
 

@@ -1365,14 +1365,6 @@ public class Utils {
         return prefix + "." + title;
     }
 
-    // Make swap file title
-    protected static String makeSwapTitle(String title) {
-        SimpleDateFormat sdf = new SimpleDateFormat(Const.DIRPATH_DATE_FORMAT, Locale.getDefault());
-        String prefix = sdf.format(new Date());
-
-        return prefix + Const.SWAP_FILE_PATTERN + title;
-    }
-
     // Get title from file name
     protected static String getTitleFromFileName(Context context, File file) {
         if (Utils.fileNameAsTitle(context))

@@ -566,7 +566,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
                 else {   // When condition to save is uncertain, keep a copy in trash can
                     if (mBackupUri != null) {
-                        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Const.SWAP_FILE, mContent.getText().toString());
+                        doSaveSession();
                     }
                 }
             }
@@ -578,7 +578,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
                 else {    // When condition to save is uncertain, keep a copy in trash can
                     if (mBackupUri != null) {
-                        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Const.SWAP_FILE, mContent.getText().toString());
+                        doSaveSession();
                     }
                 }
             }
@@ -4097,6 +4097,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private void doSaveAccessTime() {
         if (mId > 0)
             mDatasource.updateRecordAccessTime(mId);
+    }
+
+    // Save session
+    private void doSaveSession() {
+        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Const.SESSION_FILE, mContent.getText().toString());
     }
 
     // Do revert
