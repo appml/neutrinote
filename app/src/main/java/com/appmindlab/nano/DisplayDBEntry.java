@@ -4101,7 +4101,17 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Save session
     private void doSaveSession() {
-        Utils.writeSpecialSAFFile(getApplicationContext(), mBackupUri, Const.TRASH_PATH, Const.SESSION_FILE, mContent.getText().toString());
+        try {
+            Utils.writeSpecialSAFFile(
+                    getApplicationContext(),
+                    mBackupUri,
+                    Const.TRASH_PATH,
+                    Const.SESSION_FILE,
+                    Base64.encodeToString(mContent.getText().toString().getBytes("UTF-8"), Base64.DEFAULT));
+        } catch (UnsupportedEncodingException e) {
+            Log.d(Const.TAG, "nano - doSaveSession: caught an exception");
+            e.printStackTrace();
+        }
     }
 
     // Do revert
