@@ -3603,9 +3603,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         search_str.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
 
         // Setup autocomlete
-        String[] tags = mDatasource.getAllActiveRecordsTitles(mOrderBy, mOrderDirection);
+        String[] titles = mDatasource.getAllActiveRecordsNaturalTitles(mOrderDirection);
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<String>(this, R.layout.dropdown_list_item, tags);
+                new ArrayAdapter<String>(this, R.layout.dropdown_list_item, titles);
         search_str.setAdapter(adapter);
         search_str.requestFocus();
 

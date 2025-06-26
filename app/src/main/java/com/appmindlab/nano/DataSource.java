@@ -1867,8 +1867,48 @@ public class DataSource {
             cursor.close();
         }
 
-        // Sort the list
-        Collections.sort(results);
+        // Prepare the results
+        titles = new String[results.size()];
+        results.toArray(titles);
+        return titles;
+    }
+
+    // Get natural titles
+    public String[] getAllActiveRecordsNaturalTitles(String orderDirection) {
+        List<String> results = new ArrayList<String>();
+        String[] titles;
+        String title;
+        String orderBy;
+
+        // Set sort orders
+        orderBy = "LENGTH(" + DBHelper.COLUMN_TITLE + ") " + orderDirection + ", " + Const.SORT_BY_TITLE + " COLLATE NOCASE";
+
+        Cursor cursor = mDatabase.query(DBHelper.TABLE,
+                new String[] {DBHelper.COLUMN_TITLE},
+                "(" + DBHelper.COLUMN_DELETED + " = 0) AND (" + DBHelper.COLUMN_TITLE + " NOT LIKE ?)" + " AND " + Const.EXCLUDE_LARGE_FILES,
+                new String[] {getFilter()},
+                null,
+                null,
+                orderBy + " " + orderDirection);
+
+        try {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                title = cursor.getString(0).trim();
+
+                if (title.length() > 0) {
+                    if (!(results.contains(title)))
+                        results.add(title);
+                }
+                cursor.moveToNext();
+            }
+        }
+        finally {
+            // Make sure to close the cursor
+            cursor.close();
+        }
+
+        // Prepare the results
         titles = new String[results.size()];
         results.toArray(titles);
         return titles;
