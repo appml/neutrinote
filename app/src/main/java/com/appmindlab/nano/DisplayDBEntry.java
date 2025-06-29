@@ -4106,7 +4106,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     getApplicationContext(),
                     mBackupUri,
                     Const.TRASH_PATH,
-                    Const.SESSION_FILE,
+                    Const.SESSION_LOG_FILE,
                     Base64.encodeToString(mContent.getText().toString().getBytes("UTF-8"), Base64.DEFAULT));
         } catch (UnsupportedEncodingException e) {
             Log.d(Const.TAG, "nano - doSaveSession: caught an exception");
