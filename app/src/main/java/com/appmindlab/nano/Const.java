@@ -627,7 +627,7 @@ public class Const {
     protected final static String NOOP_FILE = "~neutrinote_noop.txt";
     protected final static String SYNC_LOG_FILE = "~neutrinote_sync.log";
     protected final static String SYNC_HISTORY_FILE = "~neutrinote_sync_history.txt";
-    protected final static String SESSION_FILE = ".saved_session.txt";
+    protected final static String SESSION_FILE = "~neutrinote_session.txt";
 
     protected final static String SCRAPBOOK_TITLE = "neutriNote Scrapbook";
 
