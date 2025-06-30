@@ -61,6 +61,14 @@ public class WidgetProvider extends AppWidgetProvider {
 			 */
             rv.setEmptyView(R.id.stack_view, R.id.empty_view);
 
+            /*
+             * Click empty view to refresh
+             */
+            intent = new Intent(Const.ACTION_UPDATE_WIDGET);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                    context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+            rv.setOnClickPendingIntent(R.id.empty_view, pendingIntent);
+
 			/*
 			 * Here we setup the a pending intent template. Individuals items of
 			 * a collection cannot setup their own pending intents, instead, the
