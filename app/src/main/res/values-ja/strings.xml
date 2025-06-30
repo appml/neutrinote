@@ -167,7 +167,7 @@
 
     <string name="status_restart_app">neutriNoteを再起動してください</string>
 
-    <string name="widget_empty_view_text">記録がありません</string>
+    <string name="widget_empty_view_text">\u21BB記録がありません</string>
     <string name="status_empty_clipboard">クリップボードは空です</string>
 
     <string name="scrapbook_write">書く</string>

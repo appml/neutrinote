@@ -167,7 +167,7 @@
 
     <string name="status_restart_app">Please restart neutriNote.</string>
 
-    <string name="widget_empty_view_text">No record</string>
+    <string name="widget_empty_view_text">\u21BBNo record</string>
     <string name="status_empty_clipboard">Clipboard is empty.</string>
 
     <string name="scrapbook_write">Write</string>
