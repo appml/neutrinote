@@ -4062,6 +4062,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (!mTitleSaved.equals(title))
             mActivity.doBasicAppDataBackup();
 
+        // Update dynamic shortcuts
+        DirectShareHelper.updateRecentNoteShortcut(getApplicationContext(), mId, title);
+
         // Set pending fresh flag
         MainActivity.setPendingStatus(true);
 

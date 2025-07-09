@@ -18,4 +18,8 @@
         <category android:name="android.intent.category.LAUNCHER" />
     </shortcut>
     <!-- Specify more shortcuts here. -->
+    <share-target android:targetClass="com.appmindlab.nano.DisplayDBEntry">
+        <data android:mimeType="text/*" />
+        <category android:name="android.intent.category.DEFAULT" />
+    </share-target>
 </shortcuts>

@@ -708,6 +708,9 @@ public class Const {
     protected final static String SHORTCUTS_PATTERN_DELIMITER = " ";
     protected final static float SHORTCUTS_SCALE_FACTOR = 1.0f;
 
+    // Dynamic Shortcuts
+    protected final static String DYNAMIC_SHORTCUT_PREFIX = "neutrinote_recent_note_";
+
     // Colordict related
     protected final static int COLORDICT_POPUP_DIM_X = 600;
     protected final static String COLORDICT_SEARCH_ACTION = "colordict.intent.action.SEARCH";
