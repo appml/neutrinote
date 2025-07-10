@@ -3638,6 +3638,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (results.size() == 1) {
                     temp_id = results.get(0).getId();
                     mShareToHistory = title;    // Update history
+                    DirectShareHelper.updateDirectShareShortcut(getApplicationContext(), results.get(0).getId(), results.get(0).getTitle());    // Update direct share
                 } else
                     title = Utils.makeFileName(getApplicationContext(), title);
 

@@ -706,7 +706,11 @@ public class Const {
     protected final static String SHORTCUTS_DELIMITER = "|";
     protected final static String SHORTCUTS_PARAMS_DELIMITER = " ,";
     protected final static String SHORTCUTS_PATTERN_DELIMITER = " ";
-    protected final static float SHORTCUTS_SCALE_FACTOR = 1.0f;
+
+    // Direct Share
+    protected final static String DIRECT_SHARE_ID = "neutrinote_direct_share";
+    protected final static String DIRECT_SHARE_CATEGORY = "com.appmindlab.nano.DIRECT_SHARE_CATEGORY";
+    protected final static int DIRECT_SHARE_LABEL_LEN = 20;
 
     // Colordict related
     protected final static int COLORDICT_POPUP_DIM_X = 600;
