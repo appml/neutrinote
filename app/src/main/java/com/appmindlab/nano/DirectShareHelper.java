@@ -29,7 +29,7 @@ public class DirectShareHelper {
 
         // Build the shortcut
         ShortcutInfoCompat shortcut = new ShortcutInfoCompat.Builder(context, Const.DIRECT_SHARE_ID)
-                .setShortLabel(title.length() > Const.DIRECT_SHARE_LABEL_LEN ? title.substring(0, Const.DIRECT_SHARE_LABEL_LEN) : title)
+                .setShortLabel(title.length() > Const.DIRECT_SHARE_LABEL_LEN ? title.substring(0, Const.DIRECT_SHARE_LABEL_LEN)  + "..." : title)
                 .setIcon(IconCompat.createWithResource(context, R.drawable.ic_launcher))
                 .setIntent(intent)
                 .setCategories(categories)
