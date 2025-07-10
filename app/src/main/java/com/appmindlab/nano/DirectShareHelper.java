@@ -3,6 +3,7 @@ package com.appmindlab.nano;
 import android.content.Context;
 import android.content.Intent;
 
+import androidx.core.app.Person;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.content.pm.ShortcutManagerCompat;
 import androidx.core.graphics.drawable.IconCompat;
@@ -33,6 +34,12 @@ public class DirectShareHelper {
                 .setIntent(intent)
                 .setCategories(categories)
                 .setLongLived(true)
+                .setPerson(
+                        new Person
+                                .Builder()
+                                .setName(title)
+                                .build()
+                )
                 .build();
 
         shortcuts.add(shortcut);
