@@ -29,7 +29,7 @@ public class DynamicShortcutHelper {
         // Build the shortcut
         ShortcutInfoCompat shortcut = new ShortcutInfoCompat.Builder(context, shortcutId)
                 .setShortLabel(title.length() > Const.DYNAMIC_SHORTCUT_LABEL_LEN ? title.substring(0, Const.DYNAMIC_SHORTCUT_LABEL_LEN) + "..." : title)
-                .setIcon(IconCompat.createWithResource(context, R.drawable.ic_launcher))
+                .setIcon(IconCompat.createWithResource(context, R.drawable.ic_pencil))
                 .setIntent(intent)
                 .setCategories(categories)
                 .setLongLived(true)

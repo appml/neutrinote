@@ -103,9 +103,11 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -1195,9 +1197,14 @@ public class Utils {
         StringBuilder sb = new StringBuilder();
 
         Bundle extras = intent.getExtras();
+        Set<String> items = new LinkedHashSet<>();  // Ensure unique values
+
         if (extras != null) {
-            for (String key : extras.keySet()) {
-                sb.append(extras.get(key));
+            for (String key : extras.keySet())
+                items.add((String) extras.get(key));
+
+            for (String item : items) {
+                sb.append(item);
                 sb.append(Const.SPACE_CHAR);
             }
         }
