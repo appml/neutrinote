@@ -3,7 +3,6 @@ package com.appmindlab.nano;
 import android.content.Context;
 import android.content.Intent;
 
-import androidx.core.app.Person;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.content.pm.ShortcutManagerCompat;
 import androidx.core.graphics.drawable.IconCompat;
@@ -13,14 +12,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class DirectShareHelper {
+public class DynamicShortcutHelper {
 
-    public static void updateDirectShareShortcut(Context context, Long id, String title) {
+    public static void updateDynamicShortcut(Context context, Long id, String title, String shortcutId) {
         List<ShortcutInfoCompat> shortcuts = new ArrayList<>();
         Set<String> categories = new HashSet<>();
 
-        // Category for direct share
-        categories.add(Const.DIRECT_SHARE_CATEGORY);
+        // Category for dynamic shortcut
+        categories.add(Const.DYNAMIC_SHORTCUT_CATEGORY);
 
         // View note intent
         Intent intent = new Intent(context, DisplayDBEntry.class);
@@ -28,18 +27,12 @@ public class DirectShareHelper {
         intent.putExtra(Const.EXTRA_ID, id);
 
         // Build the shortcut
-        ShortcutInfoCompat shortcut = new ShortcutInfoCompat.Builder(context, Const.DIRECT_SHARE_ID)
-                .setShortLabel(title.length() > Const.DIRECT_SHARE_LABEL_LEN ? title.substring(0, Const.DIRECT_SHARE_LABEL_LEN)  + "..." : title)
+        ShortcutInfoCompat shortcut = new ShortcutInfoCompat.Builder(context, shortcutId)
+                .setShortLabel(title.length() > Const.DYNAMIC_SHORTCUT_LABEL_LEN ? title.substring(0, Const.DYNAMIC_SHORTCUT_LABEL_LEN) + "..." : title)
                 .setIcon(IconCompat.createWithResource(context, R.drawable.ic_launcher))
                 .setIntent(intent)
                 .setCategories(categories)
                 .setLongLived(true)
-                .setPerson(
-                        new Person
-                                .Builder()
-                                .setName(title)
-                                .build()
-                )
                 .build();
 
         shortcuts.add(shortcut);
