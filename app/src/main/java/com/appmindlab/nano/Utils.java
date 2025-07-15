@@ -103,11 +103,9 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -1195,17 +1193,16 @@ public class Utils {
     // Stringtify an intent
     protected static String intentToStr(Intent intent) {
         StringBuilder sb = new StringBuilder();
+        String str;
 
         Bundle extras = intent.getExtras();
-        Set<String> items = new LinkedHashSet<>();  // Ensure unique values
-
         if (extras != null) {
-            for (String key : extras.keySet())
-                items.add((String) extras.get(key));
-
-            for (String item : items) {
-                sb.append(item);
-                sb.append(Const.SPACE_CHAR);
+            for (String key : extras.keySet()) {
+                str = (String) extras.get(key);
+                if (!sb.toString().contains(str)) {
+                    sb.append(str);
+                    sb.append(Const.SPACE_CHAR);
+                }
             }
         }
 
