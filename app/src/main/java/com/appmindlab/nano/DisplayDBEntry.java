@@ -140,6 +140,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -1460,12 +1461,16 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mContentCurrent = s.toString(); // No need to call getText() repeatedly
+                try {
+                    mContentCurrent = s.toString(); // No need to call getText() repeatedly
 
-                // Rate limiting
-                mSnapshotDeltaLen += count;
-                mSnapshotSafe = mSnapshotDeltaLen >= Const.SNAPSHOT_DELTA_THRESHOLD;
-                if (mSnapshotSafe) mSnapshotDeltaLen = 0;    // Reset delta
+                    // Rate limiting
+                    mSnapshotDeltaLen += count;
+                    mSnapshotSafe = mSnapshotDeltaLen >= Const.SNAPSHOT_DELTA_THRESHOLD;
+                    if (mSnapshotSafe) mSnapshotDeltaLen = 0;    // Reset delta
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         mContent.setOnTouchListener(new View.OnTouchListener() {
@@ -3797,7 +3802,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         dialog.show();
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 
     // Reload the record
@@ -3946,7 +3951,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         dialog.show();
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 
     // Save the record
@@ -4198,7 +4203,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         dialog.show();
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
 
     // Set metadata
@@ -4302,7 +4307,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         dialog.show();
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 
     // Handle duplicates
@@ -4360,7 +4365,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         dialog.show();
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 
     // Handle home button
@@ -4477,7 +4482,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         dialog.show();
 
         // 5. Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 
     // Handle export
@@ -5512,7 +5517,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         dialog.show();
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
 
     // Replace all
@@ -7481,7 +7486,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         canvas_mode.startAnimation(mFadeIn);
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
     // Handle show clipboard
@@ -7871,7 +7876,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         search_str.startAnimation(mZoomIn);
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
 
     // Handle markdown local search
@@ -7962,7 +7967,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         search_str.startAnimation(mZoomIn);
 
         // Show keyboard
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
     }
 
     // Get date format (wrapper)
