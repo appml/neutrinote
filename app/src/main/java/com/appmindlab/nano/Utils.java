@@ -1198,7 +1198,7 @@ public class Utils {
         Bundle extras = intent.getExtras();
         if (extras != null) {
             for (String key : extras.keySet()) {
-                str = (String) extras.get(key);
+                str = extras.get(key).toString();
                 if (!sb.toString().contains(str)) {
                     sb.append(str);
                     sb.append(Const.SPACE_CHAR);
