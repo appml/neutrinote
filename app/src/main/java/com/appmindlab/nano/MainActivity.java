@@ -3608,21 +3608,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ArrayAdapter<String> adapter =
                 new ArrayAdapter<String>(this, R.layout.dropdown_list_item, titles);
         search_str.setAdapter(adapter);
-        search_str.requestFocus();
 
         layout.addView(search_str);
 
         builder.setView(layout);
 
         // Set default value
-        search_str.setText(mShareToHistory);
+        ShortcutInfoCompat shortcut = DynamicShortcutHelper.getDynamicShortcutById(getApplicationContext(), Const.DYNAMIC_SHORTCUT_ID);
+        if (shortcut != null)
+            search_str.setText(shortcut.getLongLabel());
+        else
+            search_str.setText(Const.NULL_SYM);
 
         search_str.setHint(getResources().getString(R.string.hint_share_to));
-        search_str.setTextColor(ContextCompat.getColor(this, R.color.theme_control_activated));
+        search_str.setTextColor(ContextCompat.getColor(this, R.color.theme_control_highlight));
         search_str.setSingleLine();
 
         // Select all for easy correction
         search_str.setSelectAllOnFocus(true);
+        search_str.requestFocus();
 
         // Shared content
         final String shared_content = str;
@@ -3638,7 +3642,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 ArrayList<DBEntry> results = mDatasource.getRecordByTitle(title);
                 if (results.size() == 1) {
                     temp_id = results.get(0).getId();
-                    mShareToHistory = title;    // Update history
                     DynamicShortcutHelper.updateDynamicShortcut(getApplicationContext(), results.get(0).getId(), results.get(0).getTitle(), Const.DYNAMIC_SHORTCUT_ID);    // Update direct share
                 } else
                     title = Utils.makeFileName(getApplicationContext(), title);
