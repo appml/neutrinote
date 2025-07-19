@@ -3626,7 +3626,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Select all for easy correction
         search_str.setSelectAllOnFocus(true);
-        search_str.requestFocus();
+        // search_str.requestFocus();
 
         // Shared content
         final String shared_content = str;
