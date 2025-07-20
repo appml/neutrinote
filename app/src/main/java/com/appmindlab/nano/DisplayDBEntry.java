@@ -4733,8 +4733,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             e.printStackTrace();
         }
 
-        // Disable auto save
-        mAutoSaveSafe = false;
+        // Enable auto save
+        mAutoSaveSafe = true;
 
         // Show toolbar always to avoid data corruption from accidental taps
         mShowToolBar = true;
