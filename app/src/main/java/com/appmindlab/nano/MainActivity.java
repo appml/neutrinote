@@ -1524,15 +1524,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if ((Intent.ACTION_SEND.equals(intent.getAction())) && (intent.getType() != null)) {
             if (Const.PLAIN_TEXT_TYPE.equals(intent.getType())) {
                 String str = Utils.intentToStr(intent);
-                intent.setType(Const.NULL_SYM);  // Note: mark processed by resetting the intent
-                if (!TextUtils.isEmpty(str))
+                if (!TextUtils.isEmpty(str)) {
                     handleShareTo(str);
+                    intent.setType(Const.NULL_SYM);  // Note: mark processed by resetting the intent
+                }
             }
         } else if (Intent.ACTION_PROCESS_TEXT.equals(intent.getAction())) {
             if (mProcessTextMode == Const.PROCESS_TEXT_PASTE) {
                 String str = intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString();
-                if (!TextUtils.isEmpty(str))
+                if (!TextUtils.isEmpty(str)) {
                     handleShareTo(str);
+                    intent.setType(Const.NULL_SYM);  // Note: mark processed by resetting the intent
+                }
             }
             else if (mProcessTextMode == Const.PROCESS_TEXT_SEARCH) {
                 String str = intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString();
