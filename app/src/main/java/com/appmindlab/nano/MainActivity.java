@@ -1500,12 +1500,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             launchIntent.putExtra(Const.EXTRA_ID, id);
 
             startActivity(launchIntent);
-        } else if (Const.ACTION_ADD_ENTRY.equals(intent.getAction())) {
+        }
+        else if (Const.ACTION_ADD_ENTRY.equals(intent.getAction())) {
             Intent launchIntent = new Intent(this, DisplayDBEntry.class);
             launchIntent.putExtra(Const.EXTRA_ID, -1);
 
             startActivity(launchIntent);
-        } else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+        }
+        else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             setCriteria(intent.getStringExtra(SearchManager.QUERY).trim());
 
             // Update search history on file if available
@@ -1516,25 +1518,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mAdapter.changeCursor(mCursor);
                 mAdapter.notifyDataSetChanged();
             }
-        } else if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+        }
+        else if (Intent.ACTION_VIEW.equals(intent.getAction())) {
             if (intent.getType() != null)
                 viewFile(intent);
             else
                 viewLink(intent);
-        } else if ((Intent.ACTION_SEND.equals(intent.getAction())) && (intent.getType() != null)) {
+        }
+        else if ((Intent.ACTION_SEND.equals(intent.getAction())) && (intent.getType() != null) && (intent.getStringExtra(SearchManager.QUERY) == null)) {
             if (Const.PLAIN_TEXT_TYPE.equals(intent.getType())) {
                 String str = Utils.intentToStr(intent);
                 if (!TextUtils.isEmpty(str)) {
                     handleShareTo(str);
-                    intent.setType(Const.NULL_SYM);  // Note: mark processed by resetting the intent
                 }
             }
-        } else if (Intent.ACTION_PROCESS_TEXT.equals(intent.getAction())) {
+        }
+        else if (Intent.ACTION_PROCESS_TEXT.equals(intent.getAction())) {
             if (mProcessTextMode == Const.PROCESS_TEXT_PASTE) {
                 String str = intent.getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT).toString();
                 if (!TextUtils.isEmpty(str)) {
                     handleShareTo(str);
-                    intent.setType(Const.NULL_SYM);  // Note: mark processed by resetting the intent
                 }
             }
             else if (mProcessTextMode == Const.PROCESS_TEXT_SEARCH) {
@@ -1550,11 +1553,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mAdapter.notifyDataSetChanged();
                 }
             }
-        } else if ((Const.ACTION_AUTO_SEND.equals(intent.getAction())) && (intent.getType() != null)) {
+        }
+        else if ((Const.ACTION_AUTO_SEND.equals(intent.getAction())) && (intent.getType() != null)) {
             if (Const.PLAIN_TEXT_TYPE.equals(intent.getType())) {
                 doVoiceMemo(intent);
             }
-        } else
+        }
+        else
             refreshList();
     }
 
