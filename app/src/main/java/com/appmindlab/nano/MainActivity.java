@@ -3655,6 +3655,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else
                     title = Utils.makeFileName(getApplicationContext(), title);
 
+                // Show progress bar
+                showIOProgressBar(getResources().getString(R.string.status_opening) + "\"" + title + "\" " + Const.ELLIPSIS_SYM);
+
                 // Launch editor
                 Intent intent = new Intent(main_activity, DisplayDBEntry.class);
                 intent.putExtra(Const.EXTRA_ID, temp_id);
