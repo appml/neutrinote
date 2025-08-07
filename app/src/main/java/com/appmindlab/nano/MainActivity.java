@@ -1530,9 +1530,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String str = Utils.intentToStr(intent);
                 if (!TextUtils.isEmpty(str)) {
                     handleShareTo(str);
-
-                    // Reset intent
-                    intent.setType(Const.NULL_SYM);
                 }
             }
         }
