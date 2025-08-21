@@ -4318,6 +4318,11 @@ public class Utils {
         }.parse();
     }
 
+    // Check math expression
+    protected static boolean isMathExpression(String str) {
+        return str.matches("[0-9+\\-*/().\\s]+");
+    }
+
     /////////////////
     // Notification
     ////////////////

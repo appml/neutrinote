@@ -58,6 +58,7 @@ public class NotificationReceiver extends BroadcastReceiver {
             Bundle bundle = RemoteInput.getResultsFromIntent(intent);
             if (bundle != null) {
                 String input = bundle.getCharSequence(Const.SCRAPBOOK_NOTIFICATION_KEY).toString();
+                String expr = input;
 
                 // Evaluate built-in variables
                 if (mEvalBuiltInVariables) {
@@ -92,7 +93,18 @@ public class NotificationReceiver extends BroadcastReceiver {
 
                 // Set pending fresh flag
                 MainActivity.setPendingStatus(true);
-                Toast.makeText(context, scrapbook_file + context.getResources().getString(R.string.status_scrapbook_updated), Toast.LENGTH_LONG).show();
+
+                // Evaluate math
+                if (Utils.isMathExpression(expr)) {
+                    try {
+                        String result = Double.toString(Utils.eval(expr.toLowerCase()));
+                        Toast.makeText(context, expr + Const.EQUAL_SYM + result, Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                else
+                    Toast.makeText(context, scrapbook_file + context.getResources().getString(R.string.status_scrapbook_updated), Toast.LENGTH_LONG).show();
 
                 // Notify editor
                 if (DisplayDBEntry.display_dbentry != null)
