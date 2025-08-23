@@ -4320,7 +4320,7 @@ public class Utils {
 
     // Check math expression
     protected static boolean isMathExpression(String str) {
-        return str.matches("[0-9+\\-*/().\\s]+");
+        return str.matches("\\s*\\d+(?:[+\\-*/%^]\\d+)*\\s*");
     }
 
     /////////////////
