@@ -584,7 +584,7 @@ public class Const {
     protected final static String MIRROR_INSTANT_WORK_NAME = "NANO_INSTANT_MIRROR_WORK";
     protected final static String MIRROR_INSTANT_WORK_TAG = "NANO_INSTANT_MIRROR_TAG";
     protected final static int ONE_KB = 1024;
-    protected final static int BUFFER_SIZE = 100 * ONE_KB;               // 100 KB
+    protected final static int BUFFER_SIZE = 128 * ONE_KB;               // 128 KB (Align with default page size 16 KB)
     protected final static int MAX_FILE_SIZE = 1572864;                  // 1.5 MB
     protected final static int MEDIUM_FILE_SIZE = 614400;                // 600 KB
     protected final static int EARLY_WARN_FILE_SIZE = 819200;            // 800 KB
