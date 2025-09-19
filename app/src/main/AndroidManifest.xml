@@ -203,7 +203,7 @@
             android:exported="true">
         </activity>
 
-        <receiver
+        <!-- receiver
             android:name="BackupScheduleReceiver"
             android:exported="true">
             <intent-filter>
@@ -212,8 +212,7 @@
             <intent-filter>
                 <action android:name="com.appmindlab.nano.ACTION_SCHEDULE_BACKUP" />
             </intent-filter>
-        </receiver>
-
+        </receiver -->
 
         <receiver
             android:name="BackupServiceReceiver"
