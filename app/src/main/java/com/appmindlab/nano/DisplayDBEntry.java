@@ -48,6 +48,7 @@ import android.text.style.BackgroundColorSpan;
 import android.text.util.Linkify;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Patterns;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -6630,7 +6631,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             intent.setAction(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(criteria));
         }
-        else if (criteria.startsWith(Const.HTTP_SYM) || criteria.startsWith(Const.HTTPS_SYM)) {
+        else if (Patterns.WEB_URL.matcher(criteria).matches()) {
             intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(criteria));
