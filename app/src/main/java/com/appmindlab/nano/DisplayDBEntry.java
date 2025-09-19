@@ -6630,6 +6630,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             intent.setAction(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(criteria));
         }
+        else if (criteria.startsWith(Const.HTTP_SYM) || criteria.startsWith(Const.HTTPS_SYM)) {
+            intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(criteria));
+        }
         else {
             intent = new Intent(Intent.ACTION_WEB_SEARCH);
             Bundle bundle = new Bundle();
