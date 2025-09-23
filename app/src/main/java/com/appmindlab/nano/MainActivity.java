@@ -439,7 +439,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if (!isPowerSaveMode()) {  // Only when power saver mode is off
                 if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
-                    doSAFDelayedMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                    doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
                     // Update pending refresh flag
                     setPendingStatus(false);
@@ -503,7 +503,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Any change since last mirroring?
             List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
             if (results.size() > 0)
-                doSAFDelayedMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
         }
 
         // Register the need for a subsequent backup
@@ -2804,41 +2804,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
                 (MirrorWorker.class)
-                .setConstraints(constraints)
-                .addTag(tag)
-                .build();
-
-        mMirrorWorkManager.enqueueUniqueWork(
-                Const.MIRROR_ONETIME_WORK_NAME,
-                policy,
-                request);
-
-        // Update widget
-        Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
-        getApplicationContext().sendBroadcast(intent);
-
-        Log.d(Const.TAG, "nano - Mirror job requested");
-    }
-
-    // Do SAF delayed mirror sync
-    private void doSAFDelayedMirrorSync(String tag, ExistingWorkPolicy policy) {
-        // Sanity check
-        if (!hasMirror()) return;
-
-        // Show progress
-        showIOProgressBar(null);
-
-        mMirrorWorkManager = WorkManager.getInstance(getApplicationContext());
-
-        // Build constraints
-        Constraints constraints = new Constraints.Builder()
-                .setRequiresBatteryNotLow(true)
-                .setRequiresStorageNotLow(true)
-                .build();
-
-        OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
-                (MirrorWorker.class)
-                .setInitialDelay(Const.MIRROR_DELAY, TimeUnit.MINUTES)
                 .setConstraints(constraints)
                 .addTag(tag)
                 .build();
