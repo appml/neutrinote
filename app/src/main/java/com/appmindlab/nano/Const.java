@@ -539,6 +539,7 @@ public class Const {
     protected final static int AUTO_BACKUP_FREQ = 24;    // Daily
     protected final static int AUTO_MIRROR_FREQ = 8;     // Every 8 hours
     protected final static int AUTO_RELAUNCH_DELAY = 2 * ONE_SECOND;
+    protected final static int MIRROR_DELAY = 5;
     protected final static int BACKUP_DELAY = 12;
     protected final static int SYNC_TILE_REFRESH_PERIOD = 3 * ONE_SECOND + QUARTER_SECOND;
     protected final static int SYNC_TILE_REFRESH_DELAY = 1 * QUARTER_SECOND;
@@ -584,7 +585,7 @@ public class Const {
     protected final static String MIRROR_INSTANT_WORK_NAME = "NANO_INSTANT_MIRROR_WORK";
     protected final static String MIRROR_INSTANT_WORK_TAG = "NANO_INSTANT_MIRROR_TAG";
     protected final static int ONE_KB = 1024;
-    protected final static int BUFFER_SIZE = 128 * ONE_KB;               // 128 KB (Align with default page size 16 KB)
+    protected final static int BUFFER_SIZE = 256 * ONE_KB;               // 256 KB (Align with default page size 16 KB)
     protected final static int MAX_FILE_SIZE = 1572864;                  // 1.5 MB
     protected final static int MEDIUM_FILE_SIZE = 614400;                // 600 KB
     protected final static int EARLY_WARN_FILE_SIZE = 819200;            // 800 KB
