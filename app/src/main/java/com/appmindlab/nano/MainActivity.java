@@ -437,14 +437,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Update pending status
             togglePendingStatus();
 
-            if (!isPowerSaveMode()) {  // Only when power saver mode is off
-                if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
+            if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {
+                // Conditions added to conserve battery
+                if (isPowerSaveMode())
                     doSAFDelayedMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                else
+                    doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
-                    // Update pending refresh flag
-                    setPendingStatus(false);
-                    togglePendingStatus();
-                }
+                // Update pending refresh flag
+                setPendingStatus(false);
+                togglePendingStatus();
             }
         }
     }
@@ -502,8 +504,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (hasMirror()) {
             // Any change since last mirroring?
             List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
-            if (results.size() > 0)
-                doSAFDelayedMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+            if (results.size() > 0) {
+                // Conditions added to conserve battery
+                if (isPowerSaveMode())
+                    doSAFDelayedMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                else
+                    doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+            }
         }
 
         // Register the need for a subsequent backup
@@ -2832,7 +2839,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Build constraints
         Constraints constraints = new Constraints.Builder()
-                .setRequiresDeviceIdle(true)
                 .setRequiresBatteryNotLow(true)
                 .setRequiresStorageNotLow(true)
                 .build();
