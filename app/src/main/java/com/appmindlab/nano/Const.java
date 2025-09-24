@@ -539,6 +539,7 @@ public class Const {
     protected final static int AUTO_BACKUP_FREQ = 24;    // Daily
     protected final static int AUTO_MIRROR_FREQ = 8;     // Every 8 hours
     protected final static int AUTO_RELAUNCH_DELAY = 2 * ONE_SECOND;
+    protected final static int MIRROR_DELAY = 5;
     protected final static int BACKUP_DELAY = 12;
     protected final static int SYNC_TILE_REFRESH_PERIOD = 3 * ONE_SECOND + QUARTER_SECOND;
     protected final static int SYNC_TILE_REFRESH_DELAY = 1 * QUARTER_SECOND;
