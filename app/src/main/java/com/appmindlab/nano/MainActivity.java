@@ -500,10 +500,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Mirror if applicable
         if (hasMirror()) {
-            // Any change since last mirroring?
-            List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
-            if (results.size() > 0)
+            // Any pending change?
+            if (getPendingStatus()) {
                 doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+
+                // Update pending refresh flag
+                setPendingStatus(false);
+                togglePendingStatus();
+            }
         }
 
         // Register the need for a subsequent backup
