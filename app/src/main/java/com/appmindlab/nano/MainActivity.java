@@ -503,7 +503,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Any change since last mirroring?
             List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
             if (results.size() > 0)
-                doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                doSAFMirrorFlush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
         }
 
         // Register the need for a subsequent backup
@@ -2818,6 +2818,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getApplicationContext().sendBroadcast(intent);
 
         Log.d(Const.TAG, "nano - Mirror job requested");
+    }
+
+    // Do SAF mirror flush
+    private void doSAFMirrorFlush(String tag, ExistingWorkPolicy policy) {
+        // Sanity check
+        if (!hasMirror()) return;
+
+        // Show progress
+        showIOProgressBar(null);
+
+        mMirrorWorkManager = WorkManager.getInstance(getApplicationContext());
+
+        // Build constraints
+        Constraints constraints = new Constraints.Builder()
+                .setRequiresBatteryNotLow(true)
+                .setRequiresStorageNotLow(true)
+                .build();
+
+        OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
+                (MirrorWorker.class)
+                .setConstraints(constraints)
+                .addTag(tag)
+                .addTag(Const.TO_MIRROR_ONLY_TAG)
+                .build();
+
+        mMirrorWorkManager.enqueueUniqueWork(
+                Const.MIRROR_ONETIME_WORK_NAME,
+                policy,
+                request);
+
+        // Update widget
+        Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
+        getApplicationContext().sendBroadcast(intent);
+
+        Log.d(Const.TAG, "nano - Mirror flush job requested");
     }
 
     // SAF Import task
