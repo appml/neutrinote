@@ -808,7 +808,9 @@ public class Const {
     protected final static String TMP_IMAGE = "neutrinote_tmp.jpg";    // Temporary image
 
     // OCR
+    protected final static String GOOGLE_LENS_PACKAGE_NAME = "com.google.ar.lens";
     protected final static String OCR_PACKAGE_NAME = "io.github.subhamtyagi.ocr";
+
 
     // Process text modes
     protected final static int PROCESS_TEXT_DISABLED = 0;

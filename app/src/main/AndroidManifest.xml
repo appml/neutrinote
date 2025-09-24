@@ -24,6 +24,7 @@
         <package android:name="com.diotek.sec.lookup.dictionary" />
         <package android:name="com.google.android.apps.translate" />
         <package android:name="com.google.android.calendar" />
+        <package android:name="com.google.ar.lens" />
         <package android:name="com.socialnmobile.colordict" />
         <package android:name="com.xtreak.notificationdictionary" />
         <package android:name="de.reimardoeffinger.quickdic" />

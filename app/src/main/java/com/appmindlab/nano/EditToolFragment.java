@@ -176,7 +176,7 @@ public class EditToolFragment extends Fragment implements View.OnClickListener, 
         button_ocr.setOnLongClickListener(this);
         button_ocr.setTypeface(font_awesome);
 
-        if ((Arrays.asList(excluded).contains(Const.BUTTON_OCR)) || (!Utils.hasPackage(getActivity(), Const.OCR_PACKAGE_NAME)))
+        if ((Arrays.asList(excluded).contains(Const.BUTTON_OCR)) || ((!Utils.hasPackage(getActivity(), Const.GOOGLE_LENS_PACKAGE_NAME) && (!Utils.hasPackage(getActivity(), Const.OCR_PACKAGE_NAME)))))
             button_ocr.setVisibility(View.GONE);
 
         button_attach = (Button) v.findViewById(R.id.button_attach);
