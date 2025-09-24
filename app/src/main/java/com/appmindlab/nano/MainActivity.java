@@ -2832,6 +2832,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Build constraints
         Constraints constraints = new Constraints.Builder()
+                .setRequiresDeviceIdle(true)
                 .setRequiresBatteryNotLow(true)
                 .setRequiresStorageNotLow(true)
                 .build();
