@@ -503,7 +503,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Any change since last mirroring?
             List<Long> results = mDatasource.getAllActiveRecordsIDsByLastModified(Const.SORT_BY_TITLE, Const.SORT_ASC, mLastMirrored, ">");
             if (results.size() > 0)
-                doSAFMirrorFlush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
         }
 
         // Register the need for a subsequent backup
@@ -2820,8 +2820,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(Const.TAG, "nano - Mirror job requested");
     }
 
-    // Do SAF mirror flush
-    private void doSAFMirrorFlush(String tag, ExistingWorkPolicy policy) {
+    // Do SAF mirror push
+    private void doSAFMirrorPush(String tag, ExistingWorkPolicy policy) {
         // Sanity check
         if (!hasMirror()) return;
 
@@ -2840,7 +2840,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 (MirrorWorker.class)
                 .setConstraints(constraints)
                 .addTag(tag)
-                .addTag(Const.TO_MIRROR_ONLY_TAG)
+                .addTag(Const.MIRROR_PUSH_TAG)
                 .build();
 
         mMirrorWorkManager.enqueueUniqueWork(

@@ -128,7 +128,7 @@ public class MirrorWorker extends Worker {
             /////////////////////////
             // FROM MIRROR (NOTES) //
             /////////////////////////
-            if (!mWorkerParameters.getTags().contains(Const.TO_MIRROR_ONLY_TAG)) {
+            if (!mWorkerParameters.getTags().contains(Const.MIRROR_PUSH_TAG)) {
                 Log.d(Const.TAG, "nano - MirrorWorker: From Mirror ");
 
                 acquireDataSource();
