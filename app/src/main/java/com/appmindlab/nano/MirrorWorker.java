@@ -238,11 +238,11 @@ public class MirrorWorker extends Worker {
             status += Utils.getSystemDateFormat(getApplicationContext(), Locale.getDefault()).format(now) + Utils.getSystemTimeFormat(getApplicationContext(), Locale.getDefault()).format(now);
 
             // Save the log status
+            if (!mWorkerParameters.getTags().contains(Const.MIRROR_INSTANT_WORK_TAG))
+                editor.putString(Const.AUTO_MIRROR_LOG, status);
+
             mLastMirrored = now.getTime();
             editor.putLong(Const.MIRROR_TIMESTAMP, mLastMirrored);
-            if (!mWorkerParameters.getTags().contains(Const.MIRROR_INSTANT_WORK_TAG)) {
-                editor.putString(Const.AUTO_MIRROR_LOG, status);
-            }
             editor.apply();
 
             // Update notification
