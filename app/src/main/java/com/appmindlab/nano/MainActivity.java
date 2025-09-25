@@ -432,7 +432,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Log.d(Const.TAG, "nano - onRestart");
 
-        // Mirror if applicable
+        /////////////////////////////////////////////////////////////////////////////////
+        // 2-way mirror if not in power saving mode and when returned to home note list
+        // Note: could be power intensive thus additional conditions are imposed
+        ////////////////////////////////////////////////////////////////////////////////
         if (hasMirror()) {
             // Update pending status
             togglePendingStatus();
@@ -498,7 +501,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStop();
         Log.d(Const.TAG, "nano - onStop");
 
-        // Mirror if applicable
+        ///////////////////////////////////////////////////////
+        // Commit changes to mirror before going to background
+        ///////////////////////////////////////////////////////
         if (hasMirror()) {
             // Any pending change?
             if (getPendingStatus()) {
@@ -1102,7 +1107,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Utils.exportToSAFFile(getApplicationContext(), mLocalRepoPath + "/", Const.NOOP_FILE, dir);
                 }
 
-                // Mirror if applicable
+                //////////////////////////////////////////////
+                // 2-way mirror in response to manual refresh
+                // Note: could be power intensive
+                //////////////////////////////////////////////
                 if (hasMirror()) {
                     doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
