@@ -505,11 +505,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Commit changes to mirror before going to background
         ///////////////////////////////////////////////////////
         if (hasMirror()) {
-            doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+            if (getPendingStatus()) {
+                doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
-            // Update pending refresh flag
-            setPendingStatus(false);
-            togglePendingStatus();
+                // Update pending refresh flag
+                setPendingStatus(false);
+                togglePendingStatus();
+            }
         }
 
         // Register the need for a subsequent backup
