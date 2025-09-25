@@ -506,7 +506,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ///////////////////////////////////////////////////////
         if (hasMirror()) {
             if (getPendingStatus()) {
-                doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                if (isPowerSaveMode())    // Batch process when in power saving mode to reduce battery consumption
+                    doSAFDelayedMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE);
+                else
+                    doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
                 // Update pending refresh flag
                 setPendingStatus(false);
@@ -2849,6 +2852,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
                 (MirrorWorker.class)
+                .setConstraints(constraints)
+                .addTag(tag)
+                .addTag(Const.MIRROR_PUSH_TAG)
+                .build();
+
+        mMirrorWorkManager.enqueueUniqueWork(
+                Const.MIRROR_ONETIME_WORK_NAME,
+                policy,
+                request);
+
+        // Update widget
+        Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
+        getApplicationContext().sendBroadcast(intent);
+
+        Log.d(Const.TAG, "nano - Mirror flush job requested");
+    }
+
+    // Do SAF delayed mirror push
+    private void doSAFDelayedMirrorPush(String tag, ExistingWorkPolicy policy) {
+        // Sanity check
+        if (!hasMirror()) return;
+
+        // Show progress
+        showIOProgressBar(null);
+
+        mMirrorWorkManager = WorkManager.getInstance(getApplicationContext());
+
+        // Build constraints
+        Constraints constraints = new Constraints.Builder()
+                .setRequiresBatteryNotLow(true)
+                .setRequiresStorageNotLow(true)
+                .build();
+
+        OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
+                (MirrorWorker.class)
+                .setInitialDelay(Const.MIRROR_DELAY, TimeUnit.MINUTES)
                 .setConstraints(constraints)
                 .addTag(tag)
                 .addTag(Const.MIRROR_PUSH_TAG)
