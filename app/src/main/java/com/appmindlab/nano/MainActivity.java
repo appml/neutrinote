@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private List<String> mStatusQ = new ArrayList<String>();
     private GestureDetectorCompat mGestureDetector;
     private boolean mRefreshListSafe = true;
-    private static boolean mPendingStatus = false;
+    private boolean mPendingStatus = false;
 
     // Settings related
     private SharedPreferences mSharedPreferences;
@@ -260,10 +260,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Get pending status
-    protected static boolean getPendingStatus() { return mPendingStatus; };
+    protected boolean getPendingStatus() { return mPendingStatus; };
 
     // Set pending status
-    protected static void setPendingStatus(boolean state) { mPendingStatus = state; };
+    protected void setPendingStatus(boolean state) { mPendingStatus = state; };
 
     // Check mirror existence
     protected boolean hasMirror() {
@@ -505,14 +505,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Commit changes to mirror before going to background
         ///////////////////////////////////////////////////////
         if (hasMirror()) {
-            if (isPowerSaveMode())    // Batch process when in power saving mode to reduce battery consumption
-                doSAFDelayedMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE);
-            else
-                doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+            if (getPendingStatus()) {
+                if (isPowerSaveMode())    // Batch process when in power saving mode to reduce battery consumption
+                    doSAFDelayedMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE);
+                else
+                    doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
 
-            // Update pending refresh flag
-            setPendingStatus(false);
-            togglePendingStatus();
+                // Update pending refresh flag
+                setPendingStatus(false);
+                togglePendingStatus();
+            }
         }
 
         // Register the need for a subsequent backup

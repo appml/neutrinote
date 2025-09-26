@@ -92,7 +92,8 @@ public class NotificationReceiver extends BroadcastReceiver {
                     mDatasource.updateRecordCoordinates(entry.getId(), location.getLatitude(), location.getLongitude());
 
                 // Set pending fresh flag
-                MainActivity.setPendingStatus(true);
+                if (MainActivity.main_activity != null)
+                    MainActivity.main_activity.setPendingStatus(true);
 
                 // Evaluate math
                 if (Utils.isMathExpression(expr)) {

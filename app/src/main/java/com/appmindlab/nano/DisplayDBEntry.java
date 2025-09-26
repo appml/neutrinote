@@ -4069,7 +4069,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mActivity.doBasicAppDataBackup();
 
         // Set pending fresh flag
-        MainActivity.setPendingStatus(true);
+        mActivity.setPendingStatus(true);
 
         // Handle exit
         if (exit)
@@ -6441,7 +6441,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
 
             // Set pending fresh flag
-            MainActivity.setPendingStatus(true);
+            mActivity.setPendingStatus(true);
 
             Toast.makeText(DBApplication.getAppContext(), title + Const.SPACE_CHAR + DBApplication.getAppContext().getResources().getString(R.string.status_updated_remotely), Toast.LENGTH_SHORT).show();
         }
