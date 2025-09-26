@@ -432,22 +432,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Log.d(Const.TAG, "nano - onRestart");
 
-        /////////////////////////////////////////////////////////////////////////////////
-        // 2-way mirror if not in power saving mode and when returned to home note list
-        // Note: could be power intensive thus additional conditions are imposed
-        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////
+        // Schedule a mirror commit before resuming
+        ////////////////////////////////////////////
         if (hasMirror()) {
-            // Update pending status
-            togglePendingStatus();
+            if (isPowerSaveMode()) {    // Push out further in power saving mode
+                // Update pending status
+                togglePendingStatus();
 
-            if (!isPowerSaveMode()) {  // Only when power saver mode is off
-                if ((!isSearchActive()) || (mCriteria.equals(getDefaultCustomFilter()))) {   // Conditions added to conserve battery
-                    doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE, Const.MIRROR_DELAY);
 
-                    // Update pending refresh flag
-                    setPendingStatus(false);
-                    togglePendingStatus();
-                }
+                // Update pending refresh flag
+                setPendingStatus(false);
+                togglePendingStatus();
             }
         }
     }
@@ -502,14 +499,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(Const.TAG, "nano - onStop");
 
         ///////////////////////////////////////////////////////
-        // Commit changes to mirror before going to background
+        // Schedule a mirror commit before going to background
         ///////////////////////////////////////////////////////
         if (hasMirror()) {
             if (getPendingStatus()) {
-                if (isPowerSaveMode())    // Batch process when in power saving mode to reduce battery consumption
-                    doSAFDelayedMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE);
-                else
-                    doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                doSAFMirrorPush(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE, Const.MIRROR_DELAY);
 
                 // Update pending refresh flag
                 setPendingStatus(false);
@@ -2835,7 +2829,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     // Do SAF mirror push
-    private void doSAFMirrorPush(String tag, ExistingWorkPolicy policy) {
+    private void doSAFMirrorPush(String tag, ExistingWorkPolicy policy, int delay) {
         // Sanity check
         if (!hasMirror()) return;
 
@@ -2852,42 +2846,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
                 (MirrorWorker.class)
-                .setConstraints(constraints)
-                .addTag(tag)
-                .addTag(Const.MIRROR_PUSH_TAG)
-                .build();
-
-        mMirrorWorkManager.enqueueUniqueWork(
-                Const.MIRROR_ONETIME_WORK_NAME,
-                policy,
-                request);
-
-        // Update widget
-        Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
-        getApplicationContext().sendBroadcast(intent);
-
-        Log.d(Const.TAG, "nano - Mirror flush job requested");
-    }
-
-    // Do SAF delayed mirror push
-    private void doSAFDelayedMirrorPush(String tag, ExistingWorkPolicy policy) {
-        // Sanity check
-        if (!hasMirror()) return;
-
-        // Show progress
-        showIOProgressBar(null);
-
-        mMirrorWorkManager = WorkManager.getInstance(getApplicationContext());
-
-        // Build constraints
-        Constraints constraints = new Constraints.Builder()
-                .setRequiresBatteryNotLow(true)
-                .setRequiresStorageNotLow(true)
-                .build();
-
-        OneTimeWorkRequest request = new OneTimeWorkRequest.Builder
-                (MirrorWorker.class)
-                .setInitialDelay(Const.MIRROR_DELAY, TimeUnit.MINUTES)
+                .setInitialDelay(delay, TimeUnit.MINUTES)
                 .setConstraints(constraints)
                 .addTag(tag)
                 .addTag(Const.MIRROR_PUSH_TAG)
