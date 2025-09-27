@@ -999,7 +999,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         if (count > 0) {
             // Set pending fresh flag
-            MainActivity.setPendingStatus(true);
+            try {
+                MainActivity.setPendingStatus(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             Toast.makeText(DBApplication.getAppContext(), count + DBApplication.getAppContext().getResources().getString(R.string.status_items_updated), Toast.LENGTH_SHORT).show();
         }
         else

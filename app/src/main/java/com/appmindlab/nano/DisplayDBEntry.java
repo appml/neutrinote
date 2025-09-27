@@ -4069,7 +4069,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             mActivity.doBasicAppDataBackup();
 
         // Set pending fresh flag
-        MainActivity.setPendingStatus(true);
+        try {
+            MainActivity.setPendingStatus(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // Handle exit
         if (exit)
@@ -6441,7 +6445,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
 
             // Set pending fresh flag
-            MainActivity.setPendingStatus(true);
+            try {
+                MainActivity.setPendingStatus(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             Toast.makeText(DBApplication.getAppContext(), title + Const.SPACE_CHAR + DBApplication.getAppContext().getResources().getString(R.string.status_updated_remotely), Toast.LENGTH_SHORT).show();
         }
