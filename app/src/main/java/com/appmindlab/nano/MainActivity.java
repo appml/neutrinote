@@ -1109,7 +1109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Note: could be power intensive
                 //////////////////////////////////////////////
                 if (hasMirror()) {
-                    doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.KEEP);
+                    doSAFMirrorSync(Const.MIRROR_INSTANT_WORK_TAG, ExistingWorkPolicy.REPLACE);
 
                     // Update pending refresh flag
                     setPendingStatus(false);
