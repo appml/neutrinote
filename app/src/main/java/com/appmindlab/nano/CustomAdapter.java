@@ -1000,7 +1000,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         if (count > 0) {
             // Set pending fresh flag
             try {
-                MainActivity.setPendingStatus(true);
+                if (mActivity != null)
+                    mActivity.setPendingStatus(true);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -4070,7 +4070,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Set pending fresh flag
         try {
-            MainActivity.setPendingStatus(true);
+            if (mActivity != null)
+                mActivity.setPendingStatus(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -6446,7 +6447,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
             // Set pending fresh flag
             try {
-                MainActivity.setPendingStatus(true);
+                if (mActivity != null)
+                    mActivity.setPendingStatus(true);
             } catch (Exception e) {
                 e.printStackTrace();
             }
