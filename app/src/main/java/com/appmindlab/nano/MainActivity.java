@@ -436,6 +436,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 2-way mirror if not in power saving mode and when returned to home note list
         // Note: could be power intensive thus additional conditions are imposed
         ////////////////////////////////////////////////////////////////////////////////
+        /*
         if (hasMirror()) {
             // Update pending status
             togglePendingStatus();
@@ -450,6 +451,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         }
+        */
     }
 
     @Override
