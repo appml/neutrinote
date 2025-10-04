@@ -2367,7 +2367,7 @@ public class Utils {
     protected static String readFromSAFFile(Context context, DocumentFile src) {
         try {
             InputStream in = context.getContentResolver().openInputStream(src.getUri());
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in), Const.BUFFER_SIZE);
             StringBuilder sb = new StringBuilder();
             String line;
 
