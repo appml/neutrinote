@@ -110,6 +110,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Stack;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -2368,32 +2369,33 @@ public class Utils {
     }
 
     // Read from SAF file
+    // Read from SAF file
     protected static String readFromSAFFile(Context context, DocumentFile src) {
-        ParcelFileDescriptor pfd = null;
-        FileChannel file_channel = null;
+        ParcelFileDescriptor fd = null;
+        FileChannel channel = null;
         StringBuilder sb = new StringBuilder(); // Using StringBuilder for efficiency
 
         try {
             // 1. Get the ParcelFileDescriptor (file descriptor wrapper) from the Uri.
-            pfd = context.getContentResolver().openFileDescriptor(src.getUri(), "r");
+            fd = context.getContentResolver().openFileDescriptor(src.getUri(), "r");
 
-            if (pfd != null) {
-                FileInputStream in = new FileInputStream(pfd.getFileDescriptor());
-                file_channel = in.getChannel();
+            if (fd != null) {
+                FileInputStream in = new FileInputStream(fd.getFileDescriptor());
+                channel = in.getChannel();
 
                 // 2. Define a buffer size for reading in chunks (e.g., 4KB)
                 ByteBuffer buffer = ByteBuffer.allocateDirect(Const.BUFFER_SIZE);
 
-                int bytes_read;
+                int num_read;
 
                 // 3. Loop to read data in chunks until the end of the file (-1)
-                while ((bytes_read = file_channel.read(buffer)) != -1) {
+                while ((num_read = channel.read(buffer)) != -1) {
                     // Prepare the buffer for reading (set limit, reset position)
                     buffer.flip();
 
                     // 4. Decode the bytes read into a String and append to StringBuilder
                     // Create a temporary byte array for the read data
-                    byte[] data = new byte[bytes_read];
+                    byte[] data = new byte[num_read];
                     buffer.get(data);
 
                     // Decode bytes using a specific charset (e.g., UTF-8)
@@ -2405,25 +2407,23 @@ public class Utils {
                 }
             }
         } catch (Exception e) {
-            Log.e(Const.TAG, e.getMessage());
-            return Const.NULL_SYM;
+            Log.e(Const.TAG, Objects.requireNonNull(e.getMessage()));
         } finally {
             // 5. Close the resources
             try {
-                if (file_channel != null) {
-                    file_channel.close();
+                if (channel != null) {
+                    channel.close();
                 }
-                if (pfd != null) {
-                    pfd.close();
+                if (fd != null) {
+                    fd.close();
                 }
-
-                // 6. Return file content
-                return sb.toString();
             } catch (IOException e) {
-                Log.e(Const.TAG, e.getMessage());
-                return Const.NULL_SYM;
+                Log.e(Const.TAG, Objects.requireNonNull(e.getMessage()));
             }
         }
+
+        // 6. Return file content
+        return sb.toString();
     }
 
     // Export to SAF file
