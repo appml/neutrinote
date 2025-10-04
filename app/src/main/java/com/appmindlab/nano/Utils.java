@@ -84,11 +84,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Field;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.charset.StandardCharsets;
 import java.text.BreakIterator;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -2365,24 +2369,60 @@ public class Utils {
 
     // Read from SAF file
     protected static String readFromSAFFile(Context context, DocumentFile src) {
+        ParcelFileDescriptor pfd = null;
+        FileChannel file_channel = null;
+        StringBuilder sb = new StringBuilder(); // Using StringBuilder for efficiency
+
         try {
-            InputStream in = context.getContentResolver().openInputStream(src.getUri());
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in), Const.BUFFER_SIZE);
-            StringBuilder sb = new StringBuilder();
-            String line;
+            // 1. Get the ParcelFileDescriptor (file descriptor wrapper) from the Uri.
+            pfd = context.getContentResolver().openFileDescriptor(src.getUri(), "r");
 
-            while ((line = reader.readLine()) != null) {
-                sb.append(line);
-                sb.append(Const.NEWLINE);
+            if (pfd != null) {
+                FileInputStream in = new FileInputStream(pfd.getFileDescriptor());
+                file_channel = in.getChannel();
+
+                // 2. Define a buffer size for reading in chunks (e.g., 4KB)
+                ByteBuffer buffer = ByteBuffer.allocateDirect(Const.BUFFER_SIZE);
+
+                int bytes_read;
+
+                // 3. Loop to read data in chunks until the end of the file (-1)
+                while ((bytes_read = file_channel.read(buffer)) != -1) {
+                    // Prepare the buffer for reading (set limit, reset position)
+                    buffer.flip();
+
+                    // 4. Decode the bytes read into a String and append to StringBuilder
+                    // Create a temporary byte array for the read data
+                    byte[] data = new byte[bytes_read];
+                    buffer.get(data);
+
+                    // Decode bytes using a specific charset (e.g., UTF-8)
+                    String chunk = new String(data, StandardCharsets.UTF_8);
+                    sb.append(chunk);
+
+                    // Clear the buffer to prepare for the next read
+                    buffer.clear();
+                }
             }
-
-            in.close();
-
-            return sb.toString();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Log.e(Const.TAG, e.getMessage());
             return Const.NULL_SYM;
+        } finally {
+            // 5. Close the resources
+            try {
+                if (file_channel != null) {
+                    file_channel.close();
+                }
+                if (pfd != null) {
+                    pfd.close();
+                }
+
+                // 6. Return file content
+                return sb.toString();
+            } catch (IOException e) {
+                Log.e(Const.TAG, e.getMessage());
+                return Const.NULL_SYM;
+            }
         }
     }
 
