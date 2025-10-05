@@ -3098,6 +3098,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DBEntry entry;
             BufferedReader reader;
             FileInputStream in;
+            boolean sync = !hasMirror();
 
             title = Utils.getTitleFromDocumentFileName(getApplicationContext(), file);
 
@@ -3119,10 +3120,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if ((entry.getModified().after(modified)) || (entry.getModified().equals(modified)))  return;
                 }
 
-                mDatasource.updateRecord(entry.getId(), entry.getTitle(), content, entry.getStar(), modified, true, entry.getTitle());
+                mDatasource.updateRecord(entry.getId(), entry.getTitle(), content, entry.getStar(), modified, sync, entry.getTitle());
             } else {
                 // Create new
-                mDatasource.createRecord(title, content, 0, modified, true);
+                mDatasource.createRecord(title, content, 0, modified, sync);
             }
 
             Log.d(Const.TAG, "nano - importSAFFile: " + title + " processed.");
@@ -4572,6 +4573,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String title = Utils.makeFileName(getApplicationContext(), Const.VOICE_MEMO_TITLE);
         String content = intent.getStringExtra(Intent.EXTRA_TEXT);
 
+        boolean sync = !hasMirror();
+
         if ((title != null) && (content != null)) {
             try {
                 // Add/update record
@@ -4591,10 +4594,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     sb.append(entry.getContent());
                     sb.append(content);
 
-                    mDatasource.updateRecord(entry.getId(), entry.getTitle(), sb.toString(), entry.getStar(), now, true, entry.getTitle());
+                    mDatasource.updateRecord(entry.getId(), entry.getTitle(), sb.toString(), entry.getStar(), now, sync, entry.getTitle());
                     Toast.makeText(getApplicationContext(), title + getResources().getString(R.string.status_updated_remotely), Toast.LENGTH_SHORT).show();
                 } else {
-                    entry = mDatasource.createRecord(title, content, 0, now, true);
+                    entry = mDatasource.createRecord(title, content, 0, now, sync);
                     Toast.makeText(getApplicationContext(), title + getResources().getString(R.string.status_added_remotely), Toast.LENGTH_SHORT).show();
                 }
 
@@ -4737,6 +4740,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     List<DBEntry> results;
                     String content, search_term, search_history_file;
                     int overflow;
+                    boolean sync = !hasMirror();
 
                     // Determine search history file name
                     search_history_file = Utils.makeFileName(getApplicationContext(), Const.SEARCH_HISTORY_FILE);
@@ -4763,7 +4767,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         } else
                             content = "";
 
-                        mDatasource.updateRecord(entry.getId(), search_history_file, content, entry.getStar(), new Date(), true, search_history_file);
+                        mDatasource.updateRecord(entry.getId(), search_history_file, content, entry.getStar(), new Date(), sync, search_history_file);
                     }
 
                     // Update recent suggestions
@@ -5047,6 +5051,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DBEntry entry;
             String content = "", app_data_file, app_settings_file;
             int count;
+            boolean sync = !hasMirror();
 
             // 1. Remove app data conflicts
             mDatasource.removeAppDataConflicts();
@@ -5075,7 +5080,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if (results.size() == 1) {
                 entry = results.get(0);
-                mDatasource.updateRecord(entry.getId(), app_data_file, content, entry.getStar(), null, true, app_data_file);
+                mDatasource.updateRecord(entry.getId(), app_data_file, content, entry.getStar(), null, sync, app_data_file);
             } else if (results.size() == 0) {
                 mDatasource.createRecord(app_data_file, content, 0, null, true);
             }
@@ -5104,9 +5109,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             results = mDatasource.getRecordByTitle(app_settings_file);
             if (results.size() == 1) {
                 entry = results.get(0);
-                mDatasource.updateRecord(entry.getId(), app_settings_file, content, entry.getStar(), null, true, app_settings_file);
+                mDatasource.updateRecord(entry.getId(), app_settings_file, content, entry.getStar(), null, sync, app_settings_file);
             } else if (results.size() == 0) {
-                mDatasource.createRecord(app_settings_file, content, 0, null, true);
+                mDatasource.createRecord(app_settings_file, content, 0, null, sync);
             }
 
             return totalSize;
@@ -5172,6 +5177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DBEntry entry;
             String content = "", app_data_file;
             int count;
+            boolean sync = !hasMirror();
 
             // Backup metadata
             results = mDatasource.getAllActiveContentlessRecords(mOrderBy, mOrderDirection);
@@ -5194,9 +5200,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             results = mDatasource.getRecordByTitle(app_data_file);
             if (results.size() == 1) {
                 entry = results.get(0);
-                mDatasource.updateRecord(entry.getId(), app_data_file, content, entry.getStar(), null, true, app_data_file);
+                mDatasource.updateRecord(entry.getId(), app_data_file, content, entry.getStar(), null, sync, app_data_file);
             } else if (results.size() == 0) {
-                mDatasource.createRecord(app_data_file, content, 0, null, true);
+                mDatasource.createRecord(app_data_file, content, 0, null, sync);
             }
 
             return totalSize;

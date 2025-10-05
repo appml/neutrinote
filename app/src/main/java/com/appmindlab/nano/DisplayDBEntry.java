@@ -3960,6 +3960,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         String title = mTitle.getText().toString();
         String content = mContent.getText().toString();
         DBEntry entry;
+        boolean sync = !hasMirror();
 
         // Title is missing
         if (title.length() == 0) {
@@ -4020,7 +4021,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
             }
 
-            mId = mDatasource.updateRecord(mId, title, content, mStar, null, true, mTitleSaved);
+            mId = mDatasource.updateRecord(mId, title, content, mStar, null, sync, mTitleSaved);
             // Purge old title from mirror in the event of a title change, updated title will be added by next mirroring
             if ((!title.equals(mTitleSaved)) && (hasMirror())) {
                 Thread t = new Thread() {
@@ -4040,14 +4041,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     return;
                 } else {
                     mId = entry.getId();
-                    mId = mDatasource.updateRecord(mId, title, content, mStar, null, true, mTitleSaved);
+                    mId = mDatasource.updateRecord(mId, title, content, mStar, null, sync, mTitleSaved);
                 }
             } else {
                 // Append default file extension if one is not specified
                 if ((Utils.fileNameAsTitle(this)) && (!title.contains(".")))
                     title += mNewNoteFileType;
 
-                entry = mDatasource.createRecord(title, content, 0, null, true);
+                entry = mDatasource.createRecord(title, content, 0, null, sync);
                 mId = entry.getId();
 
                 // Update that intent that started this activity

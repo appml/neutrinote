@@ -37,7 +37,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String INDEX_STAR = COLUMN_STAR + "_idx";
     public static final String INDEX_DELETED = COLUMN_DELETED + "_idx";
 
-    private static final String DATABASE_NAME = "app_db";
+    protected static final String DATABASE_NAME = "app_db";
     private static final int DATABASE_VERSION = 2;
 
     // Database creation sql statement
