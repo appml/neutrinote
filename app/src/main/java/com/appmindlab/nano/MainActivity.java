@@ -2007,6 +2007,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void doSync() {
         if (syncLocalRepo())
             doRescanLocalRepo();
+        else
+            refreshList();
     }
 
     // Do rescan local repo
