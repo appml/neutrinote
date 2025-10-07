@@ -265,6 +265,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Set pending status
     protected static void setPendingStatus(boolean state) { mPendingStatus = state; };
 
+    // Sync local repo
+    protected boolean syncLocalRepo() {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.TIRAMISU) {
+            return true;
+        }
+
+        return false;
+    }
+
     // Check mirror existence
     protected boolean hasMirror() {
         boolean status;
@@ -1990,7 +1999,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // Sync database
     private void doSync() {
-        doRescanLocalRepo();
+        if (syncLocalRepo())
+            doRescanLocalRepo();
     }
 
     // Do rescan local repo
@@ -3098,7 +3108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DBEntry entry;
             BufferedReader reader;
             FileInputStream in;
-            boolean sync = !hasMirror();
+            boolean sync = syncLocalRepo();
 
             title = Utils.getTitleFromDocumentFileName(getApplicationContext(), file);
 
@@ -4573,7 +4583,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String title = Utils.makeFileName(getApplicationContext(), Const.VOICE_MEMO_TITLE);
         String content = intent.getStringExtra(Intent.EXTRA_TEXT);
 
-        boolean sync = !hasMirror();
+        boolean sync = syncLocalRepo();
 
         if ((title != null) && (content != null)) {
             try {
@@ -4740,7 +4750,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     List<DBEntry> results;
                     String content, search_term, search_history_file;
                     int overflow;
-                    boolean sync = !hasMirror();
+                    boolean sync = syncLocalRepo();
 
                     // Determine search history file name
                     search_history_file = Utils.makeFileName(getApplicationContext(), Const.SEARCH_HISTORY_FILE);
@@ -5051,7 +5061,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DBEntry entry;
             String content = "", app_data_file, app_settings_file;
             int count;
-            boolean sync = !hasMirror();
+            boolean sync = syncLocalRepo();
 
             // 1. Remove app data conflicts
             mDatasource.removeAppDataConflicts();
@@ -5177,7 +5187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DBEntry entry;
             String content = "", app_data_file;
             int count;
-            boolean sync = !hasMirror();
+            boolean sync = syncLocalRepo();
 
             // Backup metadata
             results = mDatasource.getAllActiveContentlessRecords(mOrderBy, mOrderDirection);

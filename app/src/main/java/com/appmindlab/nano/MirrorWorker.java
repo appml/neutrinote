@@ -349,6 +349,7 @@ public class MirrorWorker extends Worker {
             DBEntry entry;
             BufferedReader reader;
             FileInputStream in;
+            boolean sync = syncLocalRepo();
 
             title = Utils.getTitleFromDocumentFileName(getApplicationContext(), file);
 
@@ -371,7 +372,7 @@ public class MirrorWorker extends Worker {
                 }
 
                 content = Utils.readFromSAFFile(getApplicationContext(), file);
-                mDatasource.updateRecord(entry.getId(), entry.getTitle(), content, entry.getStar(), modified, true, entry.getTitle());
+                mDatasource.updateRecord(entry.getId(), entry.getTitle(), content, entry.getStar(), modified, sync, entry.getTitle());
 
                 // Update status
                 if ((MainActivity.main_activity != null) && (!Utils.isHiddenFile(entry.getTitle())))
@@ -385,7 +386,7 @@ public class MirrorWorker extends Worker {
             } else {
                 // Create new
                 content = Utils.readFromSAFFile(getApplicationContext(), file);
-                mDatasource.createRecord(title, content, 0, modified, true);
+                mDatasource.createRecord(title, content, 0, modified, sync);
             }
 
             Log.d(Const.TAG, "nano - importSAFFile: " + title + " processed.");
@@ -424,6 +425,15 @@ public class MirrorWorker extends Worker {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // Sync local repo
+    protected boolean syncLocalRepo() {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.TIRAMISU) {
+            return true;
+        }
+
+        return false;
     }
 }
 

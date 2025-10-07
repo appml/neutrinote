@@ -197,6 +197,7 @@ public class BackupWorker extends Worker {
         DBEntry entry;
         String content = "", app_data_file, app_settings_file;
         int count;
+        boolean sync = syncLocalRepo();
 
         // Set up file names
         app_data_file = Utils.makeFileName(context, Const.APP_DATA_FILE);
@@ -221,9 +222,9 @@ public class BackupWorker extends Worker {
         results = mDatasource.getRecordByTitle(app_data_file);
         if (results.size() == 1) {
             entry = results.get(0);
-            mDatasource.updateRecord(entry.getId(), app_data_file, content, 0, null, true, app_data_file);
+            mDatasource.updateRecord(entry.getId(), app_data_file, content, 0, null, sync, app_data_file);
         } else if (results.size() == 0) {
-            mDatasource.createRecord(app_data_file, content, 0, null, true);
+            mDatasource.createRecord(app_data_file, content, 0, null, sync);
         }
 
         // 3. Backup settings
@@ -423,5 +424,14 @@ public class BackupWorker extends Worker {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // Sync local repo
+    protected boolean syncLocalRepo() {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.TIRAMISU) {
+            return true;
+        }
+
+        return false;
     }
 }
