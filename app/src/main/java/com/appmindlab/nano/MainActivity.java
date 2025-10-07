@@ -915,15 +915,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             Thread t = new Thread() {
                 public void run() {
-                    resumeDatabase();
-                    mDatasource.removeDuplicateRecords(Utils.fileNameAsTitle(getApplicationContext()));
+                    List<Long> results;
+
+                    results = mDatasource.getAllActiveRecordsIDs(DBHelper.COLUMN_MODIFIED, Const.SORT_DESC);
+                    if (results.size() == 0) {
+                        mDatasource.createRecord(Const.INTRO_NOTE_TITLE, Const.INTRO_NOTE_CONTENT, 0, new Date(), false);
+                    }
                 }
             };
             t.run();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     // Setup database
@@ -945,6 +948,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Set adapter's datasource
         if (mAdapter != null)
             mAdapter.setDatasource(mDatasource);
+
+        // Verify database
+        verifyDatabase();
     }
 
     // Resume database
@@ -5281,9 +5287,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Enable multi-file types by default
             Utils.writeLocalRepoFileAndTitle(getApplicationContext(), Const.MULTI_TYPE, Const.NULL_SYM);
-
-            // Create intro note
-            Utils.writeLocalRepoFileAndTitle(getApplicationContext(), Const.INTRO_NOTE_FILE, Const.INTRO_NOTE_CONTENT);
 
             Toast.makeText(getApplicationContext(), path, Toast.LENGTH_LONG).show();
         }
