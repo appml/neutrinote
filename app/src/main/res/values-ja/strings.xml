@@ -103,7 +103,7 @@
     <string name="status_no_location_data">位置データが見つかりませんでした</string>
     <string name="status_no_status">ステータスが確認できません</string>
     <string name="status_no_change">変更なし</string>
-    <string name="status_no_note">ノートが見つかりません</string>
+    <string name="status_no_note">≧(◕_◕)≦\u0020ノートが見つかりません</string>
     <string name="status_empty">¯\\_(ツ)_/¯\u000Aファイルがありません</string>
 
     <string name="status_more_items">さらに表示...</string>
