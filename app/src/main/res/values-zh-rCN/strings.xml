@@ -103,7 +103,7 @@
     <string name="status_no_location_data">没有位置信息。</string>
     <string name="status_no_status">没有状态。</string>
     <string name="status_no_change">没有改变。</string>
-    <string name="status_no_note">≧(◕_◕)≦\u0020没有找到笔记。</string>
+    <string name="status_no_note">没有找到笔记。\u0020≧(◕_◕)≦</string>
     <string name="status_empty">¯\\_(ツ)_/¯\u000A没有数据。</string>
 
     <string name="status_more_items">更多...</string>

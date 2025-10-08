@@ -103,7 +103,7 @@
     <string name="status_no_location_data">No location data.</string>
     <string name="status_no_status">No status.</string>
     <string name="status_no_change">No change.</string>
-    <string name="status_no_note">≧(◕_◕)≦\u0020No note found.</string>
+    <string name="status_no_note">No note found.\u0020≧(◕_◕)≦</string>
     <string name="status_empty">¯\\_(ツ)_/¯\u000ANo data.</string>
 
     <string name="status_more_items">and more...</string>
