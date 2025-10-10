@@ -1,2 +1,0 @@
-v4.5.5
-- Improved Ambient Glow.

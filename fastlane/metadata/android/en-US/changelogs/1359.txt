@@ -1,3 +1,0 @@
-v4.5.7
-- Optimization for low end devices
-- UI adaptive to smaller screens

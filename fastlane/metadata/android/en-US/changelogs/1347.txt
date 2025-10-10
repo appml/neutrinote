@@ -1,3 +1,0 @@
-v4.5.3f
-- Minor UI fixes.
-- Improved data loss prevention.

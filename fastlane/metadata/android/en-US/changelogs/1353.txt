@@ -1,3 +1,0 @@
-v4.5.5a
-- Improved Ambient Glow.
-- Various dependencies fixes.

@@ -1,2 +1,0 @@
-v4.5.4
-- Android 15 compatibility fixes.

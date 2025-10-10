@@ -1,4 +1,0 @@
-v4.5.3b
-- Allows launcher shortcuts to be created for custom search filters.
-- Assortment of bug fixes.
-- Various build fixes.
