@@ -109,6 +109,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -157,6 +158,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Linear layout
     private LinearLayout mEditor;
     private CoordinatorLayout mEditorCompact;
+    private AppBarLayout mAppBar;
 
     // Immersive mode
     private View mDecorView;
@@ -1228,7 +1230,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
 
         // Alter state
-        if ((Utils.isLandscapeMode(this) || (Utils.checkPopupWindowMode(this))) && ((allowToolBarSwitch) || (fromCompactToolBar)))
+        if ((Utils.isLandscapeMode(this) || (Utils.checkMultiWindowMode(this)) || (Utils.checkPopupWindowMode(this))) && ((allowToolBarSwitch) || (fromCompactToolBar)))
             mCompactToolBar = true;
         else if (Utils.isPortraitMode(this) && (!allowToolBarSwitch) && (fromCompactToolBar))
             mCompactToolBar = true;
@@ -1275,8 +1277,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         mCriteria = intent.getStringExtra(Const.EXTRA_CRITERIA);
 
         // Setup editor
-        if (mCompactToolBar)
+        if (mCompactToolBar) {
             mEditorCompact = findViewById(R.id.editor);
+            mAppBar = findViewById(R.id.entry_appbar);
+        }
         else
             mEditor = findViewById(R.id.editor);
 
@@ -3170,8 +3174,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mContent.setTextColor(Utils.getWhiteColor(this, R.color.edit_content_night, mLux));
                 mContent.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_content_background_night));
 
-                if (mCompactToolBar)
+                if (mCompactToolBar) {
                     mEditorCompact.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_night));
+                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_night));
+                }
                 else
                     mEditor.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_night));
 
@@ -3183,8 +3189,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mContent.setTextColor(Utils.getWhiteColor(this, R.color.edit_content_night, mLux));
                 mContent.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_content_background_dark));
 
-                if (mCompactToolBar)
+                if (mCompactToolBar) {
                     mEditorCompact.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
+                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
+                }
                 else
                     mEditor.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
 
@@ -3196,8 +3204,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mContent.setTextColor(ContextCompat.getColor(this, R.color.edit_content_day));
                 mContent.setBackgroundColor(Utils.getWhiteColor(this, R.color.edit_content_background_day, mLux));
 
-                if (mCompactToolBar)
+                if (mCompactToolBar) {
                     mEditorCompact.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
+                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
+                }
                 else
                     mEditor.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
 
@@ -3568,6 +3578,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             handleShowClipboard();
     }
 
+    @SuppressLint("GestureBackNavigation")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // testing
