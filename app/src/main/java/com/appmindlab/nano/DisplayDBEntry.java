@@ -3179,7 +3179,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 if (mCompactToolBar) {
                     mEditorCompact.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_night));
-                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_night));
+                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimaryOled));
                 }
                 else
                     mEditor.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_night));
@@ -3197,7 +3197,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 if (mCompactToolBar) {
                     mEditorCompact.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
-                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
+                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimaryLux));
                 }
                 else
                     mEditor.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
@@ -3215,7 +3215,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 if (mCompactToolBar) {
                     mEditorCompact.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
-                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
+                    mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
                 }
                 else
                     mEditor.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
