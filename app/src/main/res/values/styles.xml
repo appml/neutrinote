@@ -113,7 +113,7 @@
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:background">@color/colorPrimaryOled</item>
+        <item name="android:background">@color/settings_background_night</item>
     </style>
 
     <style name="AppSettingsThemeDay" parent="Theme.Material3.Light">
@@ -127,7 +127,7 @@
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:background">@color/theme_control_normal</item>
+        <item name="android:background">@color/settings_background_day</item>
     </style>
 
     <style name="DropDownTheme" parent="Widget.AppCompat.ListView.DropDown">
