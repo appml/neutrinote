@@ -25,6 +25,8 @@
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="switchStyle">@style/AppSwitchStyle</item>
         <item name="checkboxStyle">@style/AppCheckboxStyle</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppThemeDay" parent="Theme.Material3.Light.NoActionBar">
@@ -49,6 +51,8 @@
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="switchStyle">@style/AppSwitchStyle</item>
         <item name="checkboxStyle">@style/AppCheckboxStyle</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppThemeLux" parent="Theme.Material3.Dark.NoActionBar">
@@ -73,6 +77,8 @@
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="switchStyle">@style/AppSwitchStyle</item>
         <item name="checkboxStyle">@style/AppCheckboxStyle</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppThemeOled" parent="Theme.Material3.Dark.NoActionBar">
@@ -96,6 +102,8 @@
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="switchStyle">@style/AppSwitchStyle</item>
         <item name="checkboxStyle">@style/AppCheckboxStyle</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppSettingsTheme" parent="Theme.MaterialComponents">
@@ -108,6 +116,8 @@
         <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppSettingsThemeDay" parent="Theme.MaterialComponents.Light">
@@ -120,6 +130,8 @@
         <item name="android:alertDialogTheme">@style/AlertDialogThemeDay</item>
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="DropDownTheme" parent="Widget.AppCompat.ListView.DropDown">
