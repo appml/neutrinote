@@ -115,7 +115,7 @@
         <item name="android:windowTranslucentStatus">false</item>
     </style>
 
-    <style name="AppSettingsThemeDay" parent="Theme.MaterialComponents.Light">
+    <style name="AppSettingsThemeDay" parent="Theme.MaterialComponents">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

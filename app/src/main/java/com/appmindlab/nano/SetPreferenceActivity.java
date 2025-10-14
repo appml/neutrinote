@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 /**
  * Created by saelim on 6/26/2015.
@@ -62,6 +63,7 @@ public class SetPreferenceActivity extends AppCompatActivity {
 
         if ((mTheme.equals(Const.DAY_THEME)) || (mode.equals(Const.DAY_THEME))) {
             setTheme(R.style.AppSettingsThemeDay);
+            Utils.setStatusBarColor(getWindow(), ContextCompat.getColor(this, R.color.colorPrimary));
         }
         else {
             setTheme(R.style.AppSettingsTheme);

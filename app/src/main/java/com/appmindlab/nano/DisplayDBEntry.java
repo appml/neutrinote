@@ -3188,7 +3188,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mCanvasBackground = ContextCompat.getDrawable(this, R.drawable.canvas_night);
 
                 // Set status bar color
-                Utils.setStatusBarColor(getWindow(), R.color.colorPrimaryOled);
+                Utils.setStatusBarColor(getWindow(), ContextCompat.getColor(this, R.color.colorPrimaryOled));
             } else if ((mTheme.equals(Const.DARK_THEME)) || (mode.equals(Const.DARK_THEME))) {
                 mTitle.setTextColor(ContextCompat.getColor(this, R.color.edit_title_bar_text_dark));
                 mTitle.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
@@ -3206,7 +3206,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mCanvasBackground = ContextCompat.getDrawable(this, R.drawable.canvas_dark);
 
                 // Set status bar color
-                Utils.setStatusBarColor(getWindow(), R.color.colorPrimaryDarkLux);
+                Utils.setStatusBarColor(getWindow(), ContextCompat.getColor(this, R.color.colorPrimaryDarkLux));
             } else {
                 mTitle.setTextColor(ContextCompat.getColor(this, R.color.edit_title_bar_text_day));
                 mTitle.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
@@ -3224,7 +3224,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mCanvasBackground = ContextCompat.getDrawable(this, R.drawable.canvas_day);
 
                 // Set status bar color
-                Utils.setStatusBarColor(getWindow(), R.color.colorPrimary);
+                Utils.setStatusBarColor(getWindow(), ContextCompat.getColor(this, R.color.colorPrimary));
             }
 
             // Reset markdown render state
