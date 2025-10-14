@@ -102,7 +102,7 @@
         <item name="android:windowTranslucentStatus">false</item>
     </style>
 
-    <style name="AppSettingsTheme" parent="Theme.MaterialComponents">
+    <style name="AppSettingsTheme" parent="Theme.Material3.Dark">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -113,9 +113,10 @@
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:background">@color/colorPrimaryOled</item>
     </style>
 
-    <style name="AppSettingsThemeDay" parent="Theme.MaterialComponents">
+    <style name="AppSettingsThemeDay" parent="Theme.Material3.Light">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -126,6 +127,7 @@
         <item name="materialButtonStyle">@style/AppButtonStyle</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
         <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:background">@color/theme_control_normal</item>
     </style>
 
     <style name="DropDownTheme" parent="Widget.AppCompat.ListView.DropDown">
