@@ -53,6 +53,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
@@ -3939,6 +3940,28 @@ public class Utils {
 
         if(window != null){
             dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        }
+    }
+
+    // Set status bar color
+    protected static void setStatusBarColor(Window window, int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) { // Android 15+
+            window.getDecorView().setOnApplyWindowInsetsListener((view, insets) -> {
+                // Get insets for the status bar
+                android.graphics.Insets statusBarInsets = insets.getInsets(WindowInsets.Type.statusBars());
+
+                // Set the background color
+                view.setBackgroundColor(color);
+
+                // Add top padding so content doesn’t overlap the status bar
+                view.setPadding(0, 0, 0, 0);
+
+                // Return the same insets object (no consumption)
+                return insets;
+            });
+        } else {
+            // For Android 14 and below
+            window.setStatusBarColor(color);
         }
     }
 

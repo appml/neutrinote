@@ -60,10 +60,12 @@ public class SetPreferenceActivity extends AppCompatActivity {
             }
         }
 
-        if ((mTheme.equals(Const.DAY_THEME)) || (mode.equals(Const.DAY_THEME)))
+        if ((mTheme.equals(Const.DAY_THEME)) || (mode.equals(Const.DAY_THEME))) {
             setTheme(R.style.AppSettingsThemeDay);
-        else
+        }
+        else {
             setTheme(R.style.AppSettingsTheme);
+        }
     }
 
     // Load preferences

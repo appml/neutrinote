@@ -60,6 +60,8 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
@@ -3184,6 +3186,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 mCanvasForeground = ContextCompat.getColor(this, R.color.canvas_foreground_night);
                 mCanvasBackground = ContextCompat.getDrawable(this, R.drawable.canvas_night);
+
+                // Set status bar color
+                Utils.setStatusBarColor(getWindow(), R.color.colorPrimaryOled);
             } else if ((mTheme.equals(Const.DARK_THEME)) || (mode.equals(Const.DARK_THEME))) {
                 mTitle.setTextColor(ContextCompat.getColor(this, R.color.edit_title_bar_text_dark));
                 mTitle.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_dark));
@@ -3199,6 +3204,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 mCanvasForeground = ContextCompat.getColor(this, R.color.canvas_foreground_dark);
                 mCanvasBackground = ContextCompat.getDrawable(this, R.drawable.canvas_dark);
+
+                // Set status bar color
+                Utils.setStatusBarColor(getWindow(), R.color.colorPrimaryDarkLux);
             } else {
                 mTitle.setTextColor(ContextCompat.getColor(this, R.color.edit_title_bar_text_day));
                 mTitle.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
@@ -3214,6 +3222,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 mCanvasForeground = ContextCompat.getColor(this, R.color.canvas_foreground_day);
                 mCanvasBackground = ContextCompat.getDrawable(this, R.drawable.canvas_day);
+
+                // Set status bar color
+                Utils.setStatusBarColor(getWindow(), R.color.colorPrimary);
             }
 
             // Reset markdown render state
