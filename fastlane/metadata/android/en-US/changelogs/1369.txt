@@ -1,2 +1,2 @@
-v4.5.9a
-- UI fixes for Android 15+
+v4.5.9b
+- Various UI fixes for Android 15+
