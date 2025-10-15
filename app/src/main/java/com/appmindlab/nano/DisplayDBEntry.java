@@ -1233,7 +1233,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         }
 
         // Alter state
-        if ((Utils.isLandscapeMode(this) || (Utils.checkMultiWindowMode(this)) || (Utils.checkPopupWindowMode(this))) && ((allowToolBarSwitch) || (fromCompactToolBar)))
+        if ((Utils.isLandscapeMode(this) || (Utils.checkPopupWindowMode(this))) && ((allowToolBarSwitch) || (fromCompactToolBar)))
             mCompactToolBar = true;
         else if (Utils.isPortraitMode(this) && (!allowToolBarSwitch) && (fromCompactToolBar))
             mCompactToolBar = true;
