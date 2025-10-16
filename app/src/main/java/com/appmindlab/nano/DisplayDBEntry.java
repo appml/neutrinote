@@ -6672,7 +6672,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         else if (Patterns.WEB_URL.matcher(criteria).matches()) {
             intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(criteria));
+            intent.setData(Uri.parse(Utils.lowercaseFirstChar(criteria)));
         }
         else {
             intent = new Intent(Intent.ACTION_WEB_SEARCH);

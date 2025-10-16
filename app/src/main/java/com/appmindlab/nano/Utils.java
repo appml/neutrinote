@@ -194,6 +194,20 @@ public class Utils {
         return str.indexOf(".") != -1;
     }
 
+    // Lowercase the first character of a string
+    public static String lowercaseFirstChar(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+
+        // 1. Get the first char as a primitive type and convert it
+        char firstChar = str.charAt(0);
+        char lowercasedFirstChar = Character.toLowerCase(firstChar);
+
+        // 2. Return the new string
+        return lowercasedFirstChar + str.substring(1);
+    }
+
     // Seek to next space
     protected static int seekToNextSpace(EditText text, int start) {
         Spannable temp = text.getText();
