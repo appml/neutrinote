@@ -3213,7 +3213,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mContent.setTextColor(ContextCompat.getColor(this, R.color.edit_content_day));
                 mContent.setBackgroundColor(Utils.getWhiteColor(this, R.color.edit_content_background_day, mLux));
 
-                if (mCompactToolBar) {
+                if (mCompactToolBar) {git
                     mEditorCompact.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
                     mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
                 }
@@ -3224,7 +3224,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mCanvasBackground = ContextCompat.getDrawable(this, R.drawable.canvas_day);
 
                 // Set status bar color
-                Utils.setStatusBarColor(getWindow(), ContextCompat.getColor(this, R.color.colorPrimary));
+                if (mLux)
+                    Utils.setStatusBarColor(getWindow(), ContextCompat.getColor(this, R.color.colorPrimaryDarkLux));
+                else
+                    Utils.setStatusBarColor(getWindow(), ContextCompat.getColor(this, R.color.colorPrimary));
             }
 
             // Reset markdown render state
