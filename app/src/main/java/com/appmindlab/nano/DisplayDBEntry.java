@@ -3213,7 +3213,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mContent.setTextColor(ContextCompat.getColor(this, R.color.edit_content_day));
                 mContent.setBackgroundColor(Utils.getWhiteColor(this, R.color.edit_content_background_day, mLux));
 
-                if (mCompactToolBar) {git
+                if (mCompactToolBar) {
                     mEditorCompact.setBackgroundColor(ContextCompat.getColor(this, R.color.edit_title_bar_day));
                     mAppBar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
                 }
