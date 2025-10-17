@@ -208,6 +208,31 @@ public class Utils {
         return lowercasedFirstChar + str.substring(1);
     }
 
+    // Lowercase url protocol
+    protected static String lowercaseProtocol(String url) {
+        // Regular expression to match the protocol part (e.g., "HTTP://" or "FTP:")
+        // It captures one or more word characters (the protocol name) followed by "://" or ":"
+        String regex = "^([a-zA-Z]+)(://|:)";
+
+        // Replace the matched protocol part using a lambda expression or a Matcher
+        // We use a Matcher in this case to easily convert the captured group to lowercase
+        java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(regex);
+        java.util.regex.Matcher matcher = pattern.matcher(url);
+
+        if (matcher.find()) {
+            // Group 1 is the protocol name (e.g., "HTTP", "HTTPS", "FTP")
+            String protocol = Objects.requireNonNull(matcher.group(1)).toLowerCase();
+            // Group 2 is the separator (e.g., "://" or ":")
+            String separator = matcher.group(2);
+
+            // Reconstruct the string with the lowercase protocol
+            return protocol + separator + url.substring(matcher.end());
+        }
+
+        // If no match is found (it's not a URL with a protocol), return the original string
+        return url;
+    }
+
     // Seek to next space
     protected static int seekToNextSpace(EditText text, int start) {
         Spannable temp = text.getText();
