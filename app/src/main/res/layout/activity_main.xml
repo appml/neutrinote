@@ -102,7 +102,8 @@
                 android:fontFamily="sans-serif-smallcaps"
                 android:clickable="true"
                 android:textSize="28dp"
-                android:text="@string/status_empty" />
+                android:text="@string/status_empty"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
