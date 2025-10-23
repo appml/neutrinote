@@ -104,7 +104,7 @@
     <string name="status_no_status">No status.</string>
     <string name="status_no_change">No change.</string>
     <string name="status_no_note">No note found.\u0020≧(◕_◕)≦</string>
-    <string name="status_empty">¯\\_(ツ)_/¯\u000ANo data.</string>
+    <string name="status_empty">¯\\_(ツ)_/¯\u000ANo data.\u0020<font color="#00FF00">\u21BB</font></string>
 
     <string name="status_more_items">and more...</string>
     <string name="status_imported_count">\u0020item(s) imported from\u0020</string>

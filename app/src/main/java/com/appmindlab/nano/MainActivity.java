@@ -3,8 +3,6 @@ package com.appmindlab.nano;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.SearchManager;
 import android.app.backup.BackupManager;
 import android.content.ComponentName;
@@ -70,8 +68,6 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.RemoteInput;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.content.pm.ShortcutManagerCompat;
@@ -116,7 +112,6 @@ import java.util.TreeMap;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.appmindlab.nano.R.id.fab;
@@ -1745,11 +1740,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mCursor.getCount() == 0) {
             mSwipeRefreshLayout.setVisibility(View.GONE);
             mEmptyView.setVisibility(View.VISIBLE);
-            mEmptyView.setOnClickListener(new View.OnClickListener() {
+            mEmptyView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
-                public void onClick(View v) {
+                public boolean onLongClick(View v) {
                     clearSearch();
                     refreshList();
+                    return false;
                 }
             });
 
