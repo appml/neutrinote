@@ -1,0 +1,3 @@
+v4.5.9d
+- Various UI fixes for Android 15+
+- Empty note list UI fixes.
