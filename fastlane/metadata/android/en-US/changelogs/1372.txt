@@ -1,0 +1,4 @@
+v4.5.9e
+- Various UI fixes for Android 15+
+- Empty note list UI fixes.
+- Easier to restore notes to new devices.

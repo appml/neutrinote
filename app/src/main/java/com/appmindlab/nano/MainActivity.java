@@ -29,6 +29,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.provider.DocumentsContract;
 import android.provider.SearchRecentSuggestions;
 import android.text.InputType;
 import android.text.SpannableString;
@@ -5375,7 +5376,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Schedule / cancel backup
                     if (mIncrementalBackup) {
                         // Request permission of backup uri
-                        openDocumentTree(Const.REQUEST_CODE_PICK_BACKUP_URI);
+                        // Ignore if issued from a restore
+                        if (mRestoreUri != null)
+                            mRestoreUri = null;
+                        else
+                            openDocumentTree(Const.REQUEST_CODE_PICK_BACKUP_URI);
                     } else {
                         cancelBackup();
 
