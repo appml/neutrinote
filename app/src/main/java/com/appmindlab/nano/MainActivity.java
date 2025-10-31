@@ -924,6 +924,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // Check new database
+    private boolean isNewDatabase() {
+        String[] results;
+
+        results = mDatasource.getAllActiveRecordsTitles(DBHelper.COLUMN_MODIFIED, Const.SORT_DESC);
+        if (results.length == 0)
+            return true;
+        else if ((results.length == 1) && (results[0].equals(Const.INTRO_NOTE_TITLE)))
+            return true;
+
+        return false;
+    }
+
     // Setup database
     private void setupDatabase() {
         // Get all entries from the database
@@ -2995,6 +3008,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         private int i = 0, count = 0;
         private int incr;
         private DocumentFile dir, dest_dir, attachment_dir, font_dir, log_dir;
+        private boolean is_new_db = false;
 
         @Override
         protected Long doInBackground(Void... params) {
@@ -3059,6 +3073,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Set mirror status
             mMirrorSafe = false;
 
+            // Set database status
+            is_new_db = isNewDatabase();
+
             progressBar = (ProgressBar) findViewById(R.id.progress_bar);
             progressBar.setVisibility(View.VISIBLE);
         }
@@ -3085,6 +3102,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Set mirror status
             mMirrorSafe = true;
+
+            // Restore app data for new database
+            if (is_new_db)
+                doAppDataRestore();
         }
 
         @Override
