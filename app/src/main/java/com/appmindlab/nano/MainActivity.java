@@ -5376,7 +5376,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Schedule / cancel backup
                     if (mIncrementalBackup) {
                         // Request permission of backup uri
-                        // Ignore if issued from a restore
+                        // Ignore if triggered by a restore, clear the status instead
                         if (mRestoreUri != null)
                             mRestoreUri = null;
                         else
