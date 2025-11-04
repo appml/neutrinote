@@ -68,6 +68,7 @@
     <string name="menu_save">Save</string>
     <string name="menu_revert">Revert</string>
     <string name="menu_share">Share</string>
+    <string name="menu_mirror_pull">Pull From Mirror</string>
 
     <string name="menu_edit_tools">Toolbox</string>
     <string name="menu_markdown_symbols">Markdown Symbols</string>

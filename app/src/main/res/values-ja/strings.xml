@@ -68,6 +68,7 @@
     <string name="menu_save">保存</string>
     <string name="menu_revert">変更を破棄</string>
     <string name="menu_share">共有</string>
+    <string name="menu_mirror_pull">ミラーから読み込み</string>
 
     <string name="menu_edit_tools">ツールボックス</string>
     <string name="menu_markdown_symbols">マークダウンの記号</string>

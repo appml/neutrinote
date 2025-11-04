@@ -68,6 +68,7 @@
     <string name="menu_save">保存</string>
     <string name="menu_revert">撤销</string>
     <string name="menu_share">分享</string>
+    <string name="menu_mirror_pull">拉入</string>
 
     <string name="menu_edit_tools">工具箱</string>
     <string name="menu_markdown_symbols">Markdown符号</string>
