@@ -4183,29 +4183,58 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Do mirror pull
     private void doMirrorPull() {
-        DocumentFile parent_dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
-        DocumentFile child_dir = parent_dir.findFile(Const.MIRROR_PATH);
+        // Show progress
+        updateStatus(Const.HOURGLASS_SYM, mPushDownIn);
 
-        // Locate the file
-        if (child_dir == null) {
-            Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
-            Utils.anchorSnackbar(snackbar, R.id.fragment_content);
-            snackbar.show();
-            return;
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DocumentFile parent_dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
+                DocumentFile child_dir = parent_dir.findFile(Const.MIRROR_PATH);
+                DocumentFile file;
+                String file_name, content;
+                boolean loaded = false;
 
-        String file_name = Utils.getFileNameFromTitle(getApplicationContext(), mTitle.getText().toString());
-        DocumentFile file = child_dir.findFile(file_name);
+                content = mContent.getText().toString();
 
-        if (file == null) {
-            Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
-            Utils.anchorSnackbar(snackbar, R.id.fragment_content);
-            snackbar.show();
-            return;
-        }
+                // Locate the file
+                if (child_dir != null) {
+                    file_name = Utils.getFileNameFromTitle(getApplicationContext(), mTitle.getText().toString());
+                    file = child_dir.findFile(file_name);
 
-        String content = Utils.readFromSAFFile(getApplicationContext(), file);
-        mContent.setText(content);
+                    if (file != null) {
+                        content = Utils.readFromSAFFile(getApplicationContext(), file);
+                        loaded = true;
+                    }
+                }
+
+                final boolean final_loaded = loaded;
+                final String final_content = content;
+
+                DisplayDBEntry.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (final_loaded) {
+                            mContent.setText(final_content);
+
+                            // Reset criteria
+                            mCriteria = null;
+                            mHitIdx = -1;
+                            mHits.clear();
+
+                            // Reset markdown render state
+                            setMarkdownRendered(false);
+
+                            // Set status
+                            updateStatus(mMetadata, mPushDownIn);
+                        }
+                        else {
+                            updateStatus(getResources().getString(R.string.error_unexpected), mBounce);
+                        }
+                    }
+                });
+            }
+        }).start();
     }
 
     // Handle metadata
