@@ -672,14 +672,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (mImmersiveMode)
             enterImmersiveMode();
 
-        // Show hide mirror pull
-        item = menu.findItem(R.id.menu_mirror_pull);
-        if ((mId == -1) || (!hasMirror())) {
-            item.setVisible(false);
-        } else {
-            item.setVisible(true);
-        }
-
         // Show hide metadata
         item = menu.findItem(R.id.menu_metadata);
         if (mId == -1) {
@@ -7105,6 +7097,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Revert
         item = menu.findItem(R.id.menu_revert);
+        item.setVisible((visible) && (mId != -1) && (hasMirror()));
+
+        // Pull from mirror
+        item = menu.findItem(R.id.menu_mirror_pull);
         item.setVisible(visible);
 
         // Edit tool
