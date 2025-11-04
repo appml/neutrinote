@@ -672,6 +672,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (mImmersiveMode)
             enterImmersiveMode();
 
+        // Show hide mirror pull
+        item = menu.findItem(R.id.menu_mirror_pull);
+        if ((mId == -1) || (!hasMirror())) {
+            item.setVisible(false);
+        } else {
+            item.setVisible(true);
+        }
+
         // Show hide metadata
         item = menu.findItem(R.id.menu_metadata);
         if (mId == -1) {
@@ -715,6 +723,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             return true;
         } else if (itemId == R.id.menu_revert) {
             handleRevert();
+            return true;
+        } else if (itemId == R.id.menu_mirror_pull) {
+            doMirrorPull();
             return true;
         } else if (itemId == R.id.menu_metadata) {
             handleMetadata();
@@ -4168,6 +4179,33 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Update status
         updateStatus(mTitleAtOpen + getResources().getString(R.string.status_reverted), mZoomIn);
+    }
+
+    // Do mirror pull
+    private void doMirrorPull() {
+        DocumentFile parent_dir = DocumentFile.fromTreeUri(getApplicationContext(), mBackupUri);
+        DocumentFile child_dir = parent_dir.findFile(Const.MIRROR_PATH);
+
+        // Locate the file
+        if (child_dir == null) {
+            Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+            Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+            snackbar.show();
+            return;
+        }
+
+        String file_name = Utils.getFileNameFromTitle(getApplicationContext(), mTitle.getText().toString());
+        DocumentFile file = child_dir.findFile(file_name);
+
+        if (file == null) {
+            Snackbar snackbar = Snackbar.make(getCoordinatorLayout(), getResources().getString(R.string.error_unexpected), Snackbar.LENGTH_SHORT).setAction(getResources().getString(R.string.button_ok), mSnackbarOnClickListener);
+            Utils.anchorSnackbar(snackbar, R.id.fragment_content);
+            snackbar.show();
+            return;
+        }
+
+        String content = Utils.readFromSAFFile(getApplicationContext(), file);
+        mContent.setText(content);
     }
 
     // Handle metadata
