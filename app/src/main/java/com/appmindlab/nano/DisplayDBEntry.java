@@ -4157,6 +4157,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Do revert
     private void doRevert() {
+        // Safe for undo
+        if (mSnapshotSafe)
+            updateUndo();
+
         mTitle.setText(mTitleAtOpen);
         mContent.setText(mContentAtOpen);
         mContent.setSelection((int) mPosAtOpen);
@@ -4177,6 +4181,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private void doMirrorPull() {
         // Show progress
         updateStatus(Const.HOURGLASS_SYM, mPushDownIn);
+
+        // Safe for undo
+        if (mSnapshotSafe)
+            updateUndo();
 
         new Thread(new Runnable() {
             @Override
