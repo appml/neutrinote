@@ -420,6 +420,7 @@ public class Const {
     protected final static String DELIM_SYM = "\u0020\u2014\u0020";
     protected final static String ELLIPSIS_SYM = "\u0020\u2026\u0020";
     protected final static String REVERT_SYM = "\u0020\u21e0\u0020";
+    protected final static String PULL_SYM = "\u0020\u21e2\u0020";
     protected final static String READ_SYM = "\u0020\u2014\u0020";
     protected final static String UNREAD_SYM = "\u0020\u22ef\u0020";
     protected final static String LEFT_QUOTE_SYM = "\u201c";

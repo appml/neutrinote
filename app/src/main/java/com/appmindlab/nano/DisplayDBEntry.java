@@ -4215,6 +4215,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                     @Override
                     public void run() {
                         if (final_loaded) {
+                            // Replace with mirrored version
                             mContent.setText(final_content);
 
                             // Reset criteria
@@ -4226,7 +4227,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                             setMarkdownRendered(false);
 
                             // Set status
-                            updateStatus(mMetadata, mPushDownIn);
+                            String msg = Utils.countWords(mContentAtOpen) + getResources().getString(R.string.status_word_count);
+                            msg += Const.PULL_SYM;
+                            msg += Utils.countWords(final_content) + getResources().getString(R.string.status_word_count);
+                            updateStatus(msg, mPushDownIn);
                         }
                         else {
                             updateStatus(getResources().getString(R.string.error_unexpected), mBounce);
