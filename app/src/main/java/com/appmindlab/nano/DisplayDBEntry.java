@@ -4227,9 +4227,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                             setMarkdownRendered(false);
 
                             // Set status
-                            String msg = Utils.countWords(mContentAtOpen) + getResources().getString(R.string.status_word_count);
-                            msg += Const.PULL_SYM;
-                            msg += Utils.countWords(final_content) + getResources().getString(R.string.status_word_count);
+                            int delta = Utils.countWords(final_content) - Utils.countWords(mContentSaved);
+                            String msg = delta + getResources().getString(R.string.status_word_count);
+                            if (delta >= 0)
+                                msg = "+" + msg;
                             updateStatus(msg, mPushDownIn);
                         }
                         else {
