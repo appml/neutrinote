@@ -716,9 +716,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         } else if (itemId == R.id.menu_revert) {
             handleRevert();
             return true;
-        } else if (itemId == R.id.menu_mirror_pull) {
-            handleMirrorPull();
-            return true;
         } else if (itemId == R.id.menu_metadata) {
             handleMetadata();
             return true;
@@ -4392,6 +4389,15 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mAutoSaveSafe = true;
             }
         });
+        if ((mId != -1) && (hasMirror())) {
+            builder.setNeutralButton(R.string.dialog_revert_neutral, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // Pull mirror
+                    handleMirrorPull();
+                    mAutoSaveSafe = true;
+                }
+            });
+        }
 
         // 3. Get the AlertDialog from create()
         AlertDialog dialog = builder.create();
@@ -7163,10 +7169,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Revert
         item = menu.findItem(R.id.menu_revert);
         item.setVisible((visible) && (mId != -1) && (hasMirror()));
-
-        // Pull from mirror
-        item = menu.findItem(R.id.menu_mirror_pull);
-        item.setVisible(visible);
 
         // Edit tool
         item = menu.findItem(R.id.menu_edit_tools);

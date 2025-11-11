@@ -335,6 +335,7 @@
     <string name="dialog_revert_message">确认还原到上一个版本?</string>
     <string name="dialog_revert_ok">还原</string>
     <string name="dialog_revert_cancel">不要还原</string>
+    <string name="dialog_revert_neutral">拉入</string>
 
     <string name="dialog_mirror_pull_message">拉入?</string>
     <string name="dialog_mirror_pull_ok">确认</string>

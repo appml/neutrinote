@@ -333,6 +333,7 @@
     <string name="dialog_revert_message">Reverter à última versão?</string>
     <string name="dialog_revert_ok">Reverter</string>
     <string name="dialog_revert_cancel">Não reverter</string>
+    <string name="dialog_revert_neutral">Puxar do espelho</string>
 
     <string name="dialog_mirror_pull_message">Puxar do espelho?</string>
     <string name="dialog_mirror_pull_ok">Ok</string>

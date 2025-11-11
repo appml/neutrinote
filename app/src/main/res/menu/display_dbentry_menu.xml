@@ -31,10 +31,6 @@
         android:title="@string/menu_revert"
         yourapp:showAsAction="collapseActionView" />
 
-    <item android:id="@+id/menu_mirror_pull"
-        android:title="@string/menu_mirror_pull"
-        yourapp:showAsAction="collapseActionView" />
-
     <item android:id="@+id/menu_metadata"
         android:title="@string/menu_metadata"
         yourapp:showAsAction="collapseActionView" />

@@ -335,6 +335,7 @@
     <string name="dialog_revert_message">Revert to the last version?</string>
     <string name="dialog_revert_ok">Revert</string>
     <string name="dialog_revert_cancel">Do not revert</string>
+    <string name="dialog_revert_neutral">Pull from mirror</string>
 
     <string name="dialog_mirror_pull_message">Pull from mirror?</string>
     <string name="dialog_mirror_pull_ok">Ok</string>
