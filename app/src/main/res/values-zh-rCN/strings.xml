@@ -336,6 +336,10 @@
     <string name="dialog_revert_ok">还原</string>
     <string name="dialog_revert_cancel">不要还原</string>
 
+    <string name="dialog_mirror_pull_message">拉入?</string>
+    <string name="dialog_mirror_pull_ok">确认</string>
+    <string name="dialog_mirror_pull_cancel">取消</string>
+
     <string name="dialog_reload_title">检查到远程修改</string>
     <string name="dialog_reload_message">你想重新加载吗?</string>
     <string name="dialog_reload_ok">是</string>

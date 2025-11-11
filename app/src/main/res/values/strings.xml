@@ -336,6 +336,10 @@
     <string name="dialog_revert_ok">Revert</string>
     <string name="dialog_revert_cancel">Do not revert</string>
 
+    <string name="dialog_mirror_pull_message">Pull from mirror?</string>
+    <string name="dialog_mirror_pull_ok">Ok</string>
+    <string name="dialog_mirror_pull_cancel">Cancel</string>
+
     <string name="dialog_reload_title">Remote Change Detected</string>
     <string name="dialog_reload_message">Would you like to reload?</string>
     <string name="dialog_reload_ok">Yes</string>

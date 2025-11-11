@@ -334,6 +334,10 @@
     <string name="dialog_revert_ok">Reverter</string>
     <string name="dialog_revert_cancel">Não reverter</string>
 
+    <string name="dialog_mirror_pull_message">Puxar do espelho?</string>
+    <string name="dialog_mirror_pull_ok">Ok</string>
+    <string name="dialog_mirror_pull_cancel">Cancelar</string>
+
     <string name="dialog_reload_title">Alteração Remota Detectada</string>
     <string name="dialog_reload_message">Você gostaria de recarregar?</string>
     <string name="dialog_reload_ok">Sim</string>

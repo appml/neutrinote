@@ -717,7 +717,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             handleRevert();
             return true;
         } else if (itemId == R.id.menu_mirror_pull) {
-            doMirrorPull();
+            handleMirrorPull();
             return true;
         } else if (itemId == R.id.menu_metadata) {
             handleMetadata();
@@ -4196,6 +4196,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 boolean loaded = false;
 
                 content = mContent.getText().toString();
+                final String cur_content = content;
 
                 // Locate the file
                 if (child_dir != null) {
@@ -4217,6 +4218,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                         if (final_loaded) {
                             // Replace with mirrored version
                             mContent.setText(final_content);
+                            mContent.setSelection(final_content.length());
+                            mContent.requestFocus();
 
                             // Reset criteria
                             mCriteria = null;
@@ -4227,7 +4230,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                             setMarkdownRendered(false);
 
                             // Set status
-                            int delta = Utils.countWords(final_content) - Utils.countWords(mContentSaved);
+                            int delta = Utils.countWords(final_content) - Utils.countWords(cur_content);
                             String msg = delta + getResources().getString(R.string.status_word_count);
                             if (delta >= 0)
                                 msg = "+" + msg;
@@ -4384,6 +4387,55 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }
         });
         builder.setNegativeButton(R.string.dialog_revert_cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // Allow auto save
+                mAutoSaveSafe = true;
+            }
+        });
+
+        // 3. Get the AlertDialog from create()
+        AlertDialog dialog = builder.create();
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            public void onDismiss(DialogInterface dialog) {
+                mAutoSaveSafe = true;
+            }
+        });
+
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            public void onCancel(DialogInterface dialog) {
+                // Allow auto save
+                mAutoSaveSafe = true;
+            }
+        });
+
+        // Disallow auto save
+        mAutoSaveSafe = false;
+
+        // Show the dialog
+        dialog.show();
+
+        // Show keyboard
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+    }
+
+    // Handle mirror pull
+    private void handleMirrorPull() {
+        // Instantiate an AlertDialog.Builder with its constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        // Chain together various setter methods to set the dialog characteristics
+        String msg = getResources().getString(R.string.dialog_mirror_pull_message);
+
+        builder.setMessage(msg);
+
+        builder.setPositiveButton(R.string.dialog_mirror_pull_ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // Pull mirror
+                doMirrorPull();
+                mAutoSaveSafe = true;
+            }
+        });
+        builder.setNegativeButton(R.string.dialog_mirror_pull_cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // Allow auto save
                 mAutoSaveSafe = true;
