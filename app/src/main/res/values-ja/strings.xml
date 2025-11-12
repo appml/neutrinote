@@ -337,7 +337,7 @@
     <string name="dialog_revert_cancel">破棄を中止</string>
     <string name="dialog_revert_neutral">ミラーから読み込み</string>
 
-    <string name="dialog_mirror_pull_message">ミラーから読み込み?</string>
+    <string name="dialog_mirror_pull_message">ミラーからのプルは試験的な機能です。続行しますか?</string>
     <string name="dialog_mirror_pull_ok">Ok</string>
     <string name="dialog_mirror_pull_cancel">キャンセル</string>
 
