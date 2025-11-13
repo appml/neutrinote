@@ -4178,6 +4178,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private void doMirrorPull() {
         // Show progress
         updateStatus(Const.HOURGLASS_SYM, mPushDownIn);
+        Toast toast = Toast.makeText(getApplicationContext(), Const.HOURGLASS_SYM, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
 
         // Safe for undo
         if (mSnapshotSafe)
@@ -4192,6 +4195,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 String file_name, content;
                 boolean loaded = false;
 
+                // Keep current copy
                 content = mContent.getText().toString();
                 final String cur_content = content;
 

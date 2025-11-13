@@ -337,7 +337,7 @@
     <string name="dialog_revert_cancel">不要还原</string>
     <string name="dialog_revert_neutral">拉入</string>
 
-    <string name="dialog_mirror_pull_message">拉入是一个实验性功能。是否继续？</string>
+    <string name="dialog_mirror_pull_message">加载镜像版本？</string>
     <string name="dialog_mirror_pull_ok">确认</string>
     <string name="dialog_mirror_pull_cancel">取消</string>
 
