@@ -1345,8 +1345,15 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
                 // Best effort
                 try {
-                    mContent.setSelection((int) pos);
-                    mContent.requestFocus();
+                    long final_pos = pos;
+                    mContent.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            // These will now run on the main thread after the text has been rendered
+                            mContent.setSelection((int) final_pos);
+                            mContent.requestFocus();
+                        }
+                    });
                 }
                 catch (Exception e) {
                     Log.d(Const.TAG, "nano - setupEditor: caught an exception");
