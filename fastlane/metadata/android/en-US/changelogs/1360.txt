@@ -1,2 +1,0 @@
-v4.5.7a
-- Various UI bug fixes

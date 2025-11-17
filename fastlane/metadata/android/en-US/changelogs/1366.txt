@@ -1,3 +1,0 @@
-v4.5.8c
-- Fixed startup delays
-- Enhanced web search button

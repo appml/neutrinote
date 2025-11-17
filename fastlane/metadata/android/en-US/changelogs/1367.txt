@@ -1,2 +1,0 @@
-v4.5.9
-- Reduce battery use especially when power saver is on

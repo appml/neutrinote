@@ -1,0 +1,3 @@
+v4.6.0
+- Faster note opening speed especially on low-end devices.
+- Mirror pull support for individual notes.
