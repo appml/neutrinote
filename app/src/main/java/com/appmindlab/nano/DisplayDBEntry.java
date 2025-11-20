@@ -4069,6 +4069,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             ArrayList<DBEntry> results = mDatasource.getRecordByTitle(title);
             if (results.size() > 0) {
                 entry = results.get(0);
+
+                // If the record has been marked for deletion, unmark it for re-use
+                if (entry.getDeleted() == 1) {
+                    mDatasource.markRecordDeletedById(entry.getId(), 0);
+                    overwrite = true;
+                }
+
                 if (!overwrite) {
                     handleDuplicates(exit);
                     return;
