@@ -1,0 +1,2 @@
+v4.6.0a
+- Streamlined the adding of new notes.
