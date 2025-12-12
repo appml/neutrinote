@@ -730,14 +730,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Preserve across rotation
             if ((mCriteriaInProgress != null) && (!mCriteriaInProgress.isEmpty())) {
+                // Restore search view
                 item.expandActionView();
-
                 mSearchView.clearFocus();
                 mSearchView.setIconified(false);
 
-                text_view.setText(mCriteriaInProgress);
-                text_view.setSelection(text_view.getText().length());
-                text_view.requestFocus();
+                // Restore autocomplete
+                text_view.post(() -> {
+                    text_view.setText(mCriteriaInProgress);
+                    text_view.setSelection(text_view.getText().length());
+                    text_view.requestFocus();
+                });
             }
         }
 
