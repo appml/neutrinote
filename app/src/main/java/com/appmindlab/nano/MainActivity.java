@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String mCustomFilters;
     private String mOrderBy = Const.SORT_BY_TITLE, mOrderDirection = Const.SORT_ASC;
     private boolean mStarAtTop = false;
-    private String mCriteria = null, mCriteriaIO = null;
+    private String mCriteria = null, mCriteriaIO = null, mCriteriaInProgress = null;
     private long mDateFilter = -1L;
 
     // Status bar
@@ -556,6 +556,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         savedInstanceState.putString(Const.STATE_ORDER_BY, mOrderBy);
         savedInstanceState.putString(Const.STATE_ORDER_DIRECTION, mOrderDirection);
         savedInstanceState.putString(Const.STATE_CRITERIA, mCriteria);
+        savedInstanceState.putString(Const.STATE_CRITERIA_IN_PROGRESS, mCriteriaInProgress);
         savedInstanceState.putLong(Const.STATE_DATE_FILTER, mDateFilter);
         savedInstanceState.putBundle(Const.STATE_SELECTION_STATE, mAdapter.getSelectionStates());
         savedInstanceState.putInt(Const.STATE_NAVIGATION_POSITION, mCurrentSelectedPosition);
@@ -576,6 +577,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mOrderBy = savedInstanceState.getString(Const.STATE_ORDER_BY);
         mOrderDirection = savedInstanceState.getString(Const.STATE_ORDER_DIRECTION);
         setCriteria(savedInstanceState.getString(Const.STATE_CRITERIA));
+        mCriteriaInProgress = savedInstanceState.getString(Const.STATE_CRITERIA_IN_PROGRESS);
         mDateFilter = savedInstanceState.getLong(Const.STATE_DATE_FILTER);
         mAdapter.setSelectionStates(savedInstanceState.getBundle(Const.STATE_SELECTION_STATE));
         mCurrentSelectedPosition = savedInstanceState.getInt(Const.STATE_NAVIGATION_POSITION);
@@ -622,6 +624,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Safe to refresh list
                 mRefreshListSafe = true;
 
+                // Reset query
+                mCriteriaInProgress = null;
+
                 // Issue immediately
                 refreshList();
 
@@ -632,6 +637,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public boolean onQueryTextChange(String newText) {
                 // Unsafe to refresh list
                 mRefreshListSafe = false;
+
+                // Set query
+                mCriteriaInProgress = newText;
+
                 return false;
             }
         });
@@ -644,6 +653,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 // Safe to refresh list
                 mRefreshListSafe = true;
+
+                // Reset query
+                mCriteriaInProgress = null;
+
                 return false;
             }
         });
@@ -656,6 +669,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 // Safe to refresh list
                 mRefreshListSafe = true;
+
+                // Reset query
+                mCriteriaInProgress = null;
+
                 return false;
             }
 
@@ -675,12 +692,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Safe to refresh list
                 mRefreshListSafe = true;
 
+                // Reset query
+                mCriteriaInProgress = null;
+
                 // Issue immediately
                 refreshList();
 
                 return false;
             }
         });
+
+        // testing
+        Log.d(Const.TAG, "nano -- onCreateOptionsMenu, mCriteriaInProgress: " + mCriteriaInProgress);
 
         // Setup suggestions
         int id = R.id.search_src_text;
@@ -704,6 +727,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     text_view.setDropDownWidth(screen_width);
                 }
             });
+
+            // Preserve across rotation
+            if ((mCriteriaInProgress != null) && (!mCriteriaInProgress.isEmpty())) {
+                item.expandActionView();
+
+                mSearchView.clearFocus();
+                mSearchView.setIconified(false);
+
+                text_view.setText(mCriteriaInProgress);
+                text_view.setSelection(text_view.getText().length());
+                text_view.requestFocus();
+            }
         }
 
         // Setup mirror menu

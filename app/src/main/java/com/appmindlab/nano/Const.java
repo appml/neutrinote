@@ -248,6 +248,7 @@ public class Const {
     protected final static String STATE_MARKDOWN_MODE = "mMarkdownMode";
     protected final static String STATE_IMMERSIVE_MODE = "mImmersiveMode";
     protected final static String STATE_CRITERIA = "mCriteria";
+    protected final static String STATE_CRITERIA_IN_PROGRESS = "mCriteriaInProgress";
     protected final static String STATE_DATE_FILTER = "mDateFilter";
     protected final static String STATE_SELECTION_STATE = "selectionState";
     protected final static String STATE_NAVIGATION_POSITION = "navigationPosition";
