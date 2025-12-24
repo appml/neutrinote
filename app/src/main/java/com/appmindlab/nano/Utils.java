@@ -39,6 +39,7 @@ import android.preference.PreferenceManager;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.provider.Settings;
 import android.text.Html;
 import android.text.Layout;
 import android.text.Selection;
@@ -4063,6 +4064,26 @@ public class Utils {
             e.printStackTrace();
         } finally {
             return version;
+        }
+    }
+
+    // Detect Samsung devices
+    protected static boolean isOneUiInstalled(Context context) {
+        PackageManager pm = context.getPackageManager();
+        return pm.hasSystemFeature("com.samsung.feature.samsung_experience_mobile") ||
+                pm.hasSystemFeature("com.samsung.feature.samsung_experience_mobile_lite");
+    }
+
+    // Check if Samsung custom font is used
+    protected static boolean isSamsungCustomFontEnabled(Context context) {
+        try {
+            String font = Settings.System.getString(
+                    context.getContentResolver(),
+                    "font_family"
+            );
+            return font != null && !font.isEmpty() && !"default".equalsIgnoreCase(font);
+        } catch (Exception e) {
+            return false;
         }
     }
 

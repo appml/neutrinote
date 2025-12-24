@@ -178,7 +178,7 @@
         <activity
             android:name=".DisplayDBEntry"
             android:label=""
-            android:configChanges="orientation"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="stateHidden"
             android:parentActivityName=".MainActivity"

@@ -18,6 +18,9 @@ public class FontCache {
         if (ttf.equals(Const.SYSTEM_FONT_FILE))
             return null;
 
+        if (mCache == null)
+            mCache = new HashMap<String, Typeface>();
+
         Typeface typeface = mCache.get(ttf);
         if (typeface == null) {
             typeface = Typeface.createFromAsset(context.getAssets(), ttf);
@@ -32,6 +35,9 @@ public class FontCache {
         // Sanity check
         if (path.equals(Const.SYSTEM_FONT_PATH))
             return null;
+
+        if (mCache == null)
+            mCache = new HashMap<String, Typeface>();
 
         Typeface typeface = mCache.get(path);
         if (typeface == null) {

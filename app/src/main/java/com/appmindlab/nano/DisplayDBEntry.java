@@ -91,6 +91,7 @@ import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SwitchCompat;
@@ -556,6 +557,23 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Remove self reference
         if (display_dbentry == this)
             display_dbentry = null;
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        Log.d(Const.TAG, "nano - onConfigurationChanged");
+
+        super.onConfigurationChanged(newConfig);
+
+        // Check if the app is currently in multi-window mode
+        if ((isInMultiWindowMode()) && (!mMarkdownMode)) {
+            // Check Android version
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.BAKLAVA) {
+                // Check Samsung device
+                if (Utils.isOneUiInstalled(getApplicationContext()))
+                    showEditToolFragment();
+            }
+        }
     }
 
     @Override
