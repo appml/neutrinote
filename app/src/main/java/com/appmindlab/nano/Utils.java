@@ -4074,19 +4074,6 @@ public class Utils {
                 pm.hasSystemFeature("com.samsung.feature.samsung_experience_mobile_lite");
     }
 
-    // Check if Samsung custom font is used
-    protected static boolean isSamsungCustomFontEnabled(Context context) {
-        try {
-            String font = Settings.System.getString(
-                    context.getContentResolver(),
-                    "font_family"
-            );
-            return font != null && !font.isEmpty() && !"default".equalsIgnoreCase(font);
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
     // Set light level
     protected static void setLightLevel(float lightLevel) {
         mLightLevel = lightLevel;
