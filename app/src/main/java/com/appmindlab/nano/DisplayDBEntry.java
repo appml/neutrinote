@@ -565,6 +565,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         super.onConfigurationChanged(newConfig);
 
+        //////////////////////////////////////////////////////////////////////////////////////////
+        // A workaround to hide the side effects of Samsung custom font on toolbars in Android 16
+        //
+        // Note: No reliable way to directly detected Samsung custom fonts
+        //////////////////////////////////////////////////////////////////////////////////////////
+
         // Check if the app is currently in multi-window mode
         if ((isInMultiWindowMode()) && (!mMarkdownMode)) {
             // Check Android version
