@@ -107,16 +107,8 @@ public class WidgetService extends RemoteViewsService {
                 String preview_mode = mSharedPreferences.getString(Const.PREF_PREVIEW_MODE, Const.PREVIEW_AT_END);
                 String order_by = mSharedPreferences.getString(Const.PREF_WIDGET_ORDER_BY, Const.SORT_BY_TITLE);
                 String order_direction = mSharedPreferences.getString(Const.PREF_WIDGET_ORDER_BY_DIRECTION, Const.SORT_ASC);
-                int idx = 0;
-                boolean found = false;
-                long cur_id = -1L;
 
                 Log.d(Const.TAG, "nano - WidgetService: update() ");
-
-                // Save the id of the first widget item
-                if (!mWidgetItems.isEmpty()) {
-                    cur_id = mWidgetItems.get(0).id;
-                }
 
                 // Make sure the database is open
                 resumeDatabase();
@@ -140,12 +132,6 @@ public class WidgetService extends RemoteViewsService {
                     if (title.equals(Utils.makeFileName(getApplicationContext(), Const.APP_DATA_FILE)) || title.equals(Utils.makeFileName(getApplicationContext(), Const.APP_SETTINGS_FILE)))
                         continue;
 
-                    // Remember the position of the first widget item
-                    if ((!found) && (cur_id == entry.getId())) {
-                        idx = i;
-                        found = true;
-                    }
-
                     // Extract content
                     if (content.length() > Const.WIDGET_LEN) {
                         if (preview_mode.equals(Const.PREVIEW_AT_START)) {
@@ -164,11 +150,6 @@ public class WidgetService extends RemoteViewsService {
                     item =  new WidgetItem(entry.getId(), entry.getTitle(), content);
                     mWidgetItems.add(item);
                 }
-
-                // Restore widget sequence
-                // Note: only applies when title is used for sorting
-                if ((Const.SORT_BY_TITLE.startsWith(order_by)) && (idx > 0))
-                    restoreSequence(idx);
             }
             catch (Exception e) {
                 e.printStackTrace();
@@ -194,17 +175,6 @@ public class WidgetService extends RemoteViewsService {
             if ((mDatasource == null) || (!mDatasource.isOpen())) {
                 setupDatabase();
             }
-        }
-
-        // Restore widget sequence
-        private void restoreSequence(int idx) {
-            // Split into two parts
-            List<WidgetItem> part_1 = new ArrayList<>(mWidgetItems.subList(0, idx));
-            List<WidgetItem> part_2 = new ArrayList<>(mWidgetItems.subList(idx, mWidgetItems.size()));
-
-            // Swap and recombine
-            mWidgetItems = new ArrayList<>(part_2);
-            mWidgetItems.addAll(part_1);
         }
     }
 }
