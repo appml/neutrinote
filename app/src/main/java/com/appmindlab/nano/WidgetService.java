@@ -167,7 +167,7 @@ public class WidgetService extends RemoteViewsService {
 
                 // Restore widget sequence
                 // Note: only applies when title is used for sorting
-                if ((order_by.startsWith(Const.SORT_BY_TITLE)) && (idx > 0))
+                if ((Const.SORT_BY_TITLE.startsWith(order_by)) && (idx > 0))
                     restoreSequence(idx);
             }
             catch (Exception e) {
