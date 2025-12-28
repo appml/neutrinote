@@ -572,7 +572,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         //////////////////////////////////////////////////////////////////////////////////////////
 
         // Check if the app is currently in multi-window mode
-        if ((isInMultiWindowMode()) && (!mMarkdownMode)) {
+        if ((Utils.checkMultiWindowMode(this) || Utils.checkPopupWindowMode(this)) && (!mMarkdownMode)) {
             // Check Android version
             if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.BAKLAVA) {
                 // Check Samsung device
