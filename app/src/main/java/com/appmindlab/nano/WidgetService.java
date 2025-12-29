@@ -86,7 +86,7 @@ public class WidgetService extends RemoteViewsService {
             rv.setTextViewText(R.id.widget_item_content, entry.content);
 
             // Next, we set an intent so that clicking on this view will result
-            // in launching of the app with approproate record
+            // in launching of the app with appropriate record
             Bundle extras = new Bundle();
             extras.putInt(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
             extras.putLong(Const.EXTRA_ID, entry.id);
