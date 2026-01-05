@@ -4068,7 +4068,7 @@ public class Utils {
     }
 
     // Detect Samsung devices
-    protected static boolean isOneUiInstalled(Context context) {
+    protected static boolean isOneUIInstalled(Context context) {
         PackageManager pm = context.getPackageManager();
         return pm.hasSystemFeature("com.samsung.feature.samsung_experience_mobile") ||
                 pm.hasSystemFeature("com.samsung.feature.samsung_experience_mobile_lite");

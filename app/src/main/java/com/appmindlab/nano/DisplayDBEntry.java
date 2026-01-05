@@ -567,7 +567,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         //////////////////////////////////////////////////////////////////////////////////////////
         // A workaround to hide the side effects of Samsung custom font on toolbars in Android 16
-        //
+        // by reloading the button fonts
         // Note: No reliable way to directly detected Samsung custom fonts
         //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -576,8 +576,9 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             // Check Android version
             if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.BAKLAVA) {
                 // Check Samsung device
-                if (Utils.isOneUiInstalled(getApplicationContext()))
-                    showEditToolFragment();
+                if (Utils.isOneUIInstalled(getApplicationContext()))
+                    // Reload button fonts
+                    FontCache.getFromAsset(getApplicationContext(), "iconfonts.ttf");
             }
         }
     }
