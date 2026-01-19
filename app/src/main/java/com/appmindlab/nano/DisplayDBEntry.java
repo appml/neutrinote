@@ -1502,12 +1502,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
-                    mContentCurrent = s.toString(); // No need to call getText() repeatedly
-
                     // Rate limiting
                     mSnapshotDeltaLen += Math.max(Math.abs(before), Math.abs(count));
                     mSnapshotSafe = mSnapshotDeltaLen >= Const.SNAPSHOT_DELTA_THRESHOLD;
-                    if (mSnapshotSafe) mSnapshotDeltaLen = 0;    // Reset delta
+                    if (mSnapshotSafe) {
+                        mContentCurrent = s.toString(); // No need to call getText() repeatedly
+                        mSnapshotDeltaLen = 0;  // Reset delta
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
