@@ -196,7 +196,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private boolean mToolBarVisible = true;
     private boolean mEditToolFragmentVisible = true;
     private int mStar;
-    private Date mCreated, mModified, mAccessed;
+    private Date mCreated, mModified, mModifiedAtOpen, mAccessed;
     private String mMetadata = "";
     private ScrollView mScrollView;
     private WebView mMarkdownView;
@@ -1274,7 +1274,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
         }
     }
-    
+
     // Setup back pressed callback
     protected void setupBackPressedCallback() {
         // Back press callback
@@ -1348,6 +1348,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 mMetadata = results.get(0).getMetadata();
                 mCreated = results.get(0).getCreated();
                 mModified = results.get(0).getModified();
+                mModifiedAtOpen = mModified;
                 mAccessed = results.get(0).getAccessed();
 
                 mTitle.setText(mTitleSaved);
@@ -4019,7 +4020,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         String title = mTitle.getText().toString();
         String content = mContent.getText().toString();
         DBEntry entry;
-        boolean sync = !hasMirror();
+        boolean sync = syncLocalRepo();
 
         // Title is missing
         if (title.length() == 0) {
@@ -4194,6 +4195,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Do revert
     private void doRevert() {
+        boolean sync = syncLocalRepo();
+
         // Safe for undo
         if (mSnapshotSafe)
             updateUndo();
@@ -4201,6 +4204,14 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         mTitle.setText(mTitleAtOpen);
         mContent.setText(mContentAtOpen);
         mContent.setSelection((int) mPosAtOpen);
+
+        // Nullify autosaved changes if any
+        mDatasource.updateRecord(mId, mTitleAtOpen, mContentAtOpen, mStar, mModifiedAtOpen, sync, mTitleAtOpen);
+
+        // Simulate a note open event
+        mTitleSaved = mTitleAtOpen;
+        mContentSaved = mContentAtOpen;
+        mModified = mModifiedAtOpen;
 
         // Reset criteria
         mCriteria = null;
@@ -4211,6 +4222,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         setMarkdownRendered(false);
 
         // Update status
+        mChanged = false;
+        toggleChanges();
         updateStatus(mTitleAtOpen + getResources().getString(R.string.status_reverted), mZoomIn);
     }
 
@@ -8194,6 +8207,15 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     // Get date format (wrapper)
     protected SimpleDateFormat getDateFormat() {
         return Utils.getDateFormat(this, mCustomDateFormat);
+    }
+
+    // Sync local repo
+    protected boolean syncLocalRepo() {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.TIRAMISU) {
+            return true;
+        }
+
+        return false;
     }
 
     // Check mirror existence
