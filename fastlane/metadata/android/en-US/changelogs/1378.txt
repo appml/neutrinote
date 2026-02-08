@@ -1,0 +1,2 @@
+v4.6.0e
+- Preserve timestamp after revert.
