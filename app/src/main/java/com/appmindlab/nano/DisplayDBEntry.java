@@ -1588,8 +1588,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
             // Best effort
             try {
-                mContent.setSelection(pos);
-                mContent.requestFocus();
+                final int temp_pos = pos;
+                mContent.post(() -> {
+                    mContent.setSelection(temp_pos);
+                    mContent.requestFocus();
+                });
             }
             catch (Exception e) {
                 Log.d(Const.TAG, "nano - setupShareContent: caught an exception");
