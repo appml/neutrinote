@@ -1578,8 +1578,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 updateUndo();
 
             if ((content != null) && (content.length() > 0)) {
-                pos = content.length() + 2;
                 content = content + Const.NEWLINE + Const.NEWLINE + mSharedContent + Const.NEWLINE;
+                pos = content.length() - 1;
             }
             else
                 content = mSharedContent;
