@@ -3917,7 +3917,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         search_str.startAnimation(mZoomIn);
 
         // Show keyboard
-        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        Objects.requireNonNull(dialog.getWindow()).setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
         search_str.setOnEditorActionListener(new EditText.OnEditorActionListener() {
             @Override
