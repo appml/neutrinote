@@ -1731,6 +1731,32 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             }}
         );
 
+        mMarkdownView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                WebView.HitTestResult result = ((WebView) v).getHitTestResult();
+                if (result != null) {
+                    int type = result.getType();
+                    if (type == WebView.HitTestResult.SRC_ANCHOR_TYPE) {
+                        // This is a link or an image with a link
+                        String url = result.getExtra(); // The URL of the link
+
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_SEND);
+                        intent.putExtra(Intent.EXTRA_TEXT, url);
+                        intent.setType("text/plain");
+
+                        // Show the Android Share Sheet
+                        Intent shareIntent = Intent.createChooser(intent, Const.NULL_SYM);
+                        startActivity(shareIntent);
+                        return true;
+                    }
+                }
+                // Return false to allow other long click listeners to fire
+                return false;
+            }
+        });
+
         mMarkdownView.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
