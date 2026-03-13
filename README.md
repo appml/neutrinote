@@ -1,5 +1,5 @@
 [![GPL Licensed](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/github/downloads/appml/neutrinote/total.svg)]()
+![GitHub Downloads](https://img.shields.io/github/downloads/appml/neutrinote/total)
 
 [Official](https://appml.gitbook.io/nano/) | [FAQ](https://appml.gitbook.io/nano/readme/how-do-i...) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
 
