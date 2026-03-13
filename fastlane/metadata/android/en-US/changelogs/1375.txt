@@ -1,3 +1,0 @@
-v4.6.0b
-- Search UI ergonomic fix.
-- Minor dependencies update.
