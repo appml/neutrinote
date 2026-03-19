@@ -5618,7 +5618,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         } else if (id == (R.id.button_backslash)) {
             Utils.insertMarkdownSymbol(mCurrentEditText, "\\");
         } else if (id == (R.id.button_slash)) {
-            Utils.insertMarkdownSymbol(mCurrentEditText, "/");
+            Utils.fillMarkdownSymbolOrMultiLine(mCurrentEditText, "/", mIndentChar);
         } else if (id == (R.id.button_colon)) {
             Utils.insertMarkdownSymbol(mCurrentEditText, ":");
         } else if (id == (R.id.button_semicolon)) {
