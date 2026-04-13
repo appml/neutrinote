@@ -1078,6 +1078,7 @@ public class Utils {
 
                     JavaScriptIsolate isolate = mJSSandbox.get().createIsolate();
                     String str, snippet;
+                    Snackbar snackbar;
 
                     // Prepare template only if raw mode is false
                     if (raw)
@@ -1092,7 +1093,11 @@ public class Utils {
                     mJSSandbox.get().close();
                     mJSSandbox = null;
 
-                    Snackbar snackbar = makePasteSnackbar(activity, view, text, Const.EQUAL_SYM + str);
+                    if (str == null || str.trim().isEmpty())
+                        snackbar = makeSnackbar(activity, view, context.getResources().getString(R.string.error_unexpected), 12);
+                    else
+                        snackbar = makePasteSnackbar(activity, view, text, Const.EQUAL_SYM + str);
+
                     anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
