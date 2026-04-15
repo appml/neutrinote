@@ -1086,18 +1086,20 @@ public class Utils {
                     else
                         snippet = Const.CLI_EVAL_JS_TEMPLATE.replace(Const.PARAMETER_SYM, code);
 
-                    ListenableFuture<String> result = isolate.evaluateJavaScriptAsync(snippet);
-                    str = result.get(timeout, TimeUnit.SECONDS);
+                    try {
+                        ListenableFuture<String> result = isolate.evaluateJavaScriptAsync(snippet);
+                        str = Const.EQUAL_SYM + result.get(timeout, TimeUnit.SECONDS);
+                    }
+                    catch (Exception e) {
+                        str = e.getMessage();
+                        e.printStackTrace();
+                    }
 
                     // Clean up
                     mJSSandbox.get().close();
                     mJSSandbox = null;
 
-                    if (str == null || str.trim().isEmpty())
-                        snackbar = makeSnackbar(activity, view, context.getResources().getString(R.string.error_unexpected), 12);
-                    else
-                        snackbar = makePasteSnackbar(activity, view, text, Const.EQUAL_SYM + str);
-
+                    snackbar = makePasteSnackbar(activity, view, text, str);
                     anchorSnackbar(snackbar, R.id.fragment_content);
                     snackbar.show();
                 }
