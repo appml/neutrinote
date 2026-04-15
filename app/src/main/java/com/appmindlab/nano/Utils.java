@@ -1088,7 +1088,12 @@ public class Utils {
 
                     try {
                         ListenableFuture<String> result = isolate.evaluateJavaScriptAsync(snippet);
-                        str = Const.EQUAL_SYM + result.get(timeout, TimeUnit.SECONDS);
+                        str = result.get(timeout, TimeUnit.SECONDS);
+
+                        // Sanity check
+                        if ((str != null) && (!str.trim().isEmpty())) {
+                            str = Const.EQUAL_SYM + str;
+                        }
                     }
                     catch (Exception e) {
                         str = e.getMessage();
