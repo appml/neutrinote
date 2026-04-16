@@ -430,6 +430,7 @@ public class Const {
     protected final static String DRAWING_SEPARATOR_SYM = "---\n";
     protected final static String HORIZONTAL_LINE = "\n\n=^..^=\n\n";
     protected final static String BEAR_SYM = "ʕ´•㉨•`ʔ";
+    protected final static String UNDEF_SYM = "¯\\_(ツ)_/¯";
     protected final static String AT_SYM = "\u0040\u0020";
     protected final static String BULLET_SYM = "\u0020\u2022\u0020";
     protected final static String SHELL_SYM = "neutriNote$";

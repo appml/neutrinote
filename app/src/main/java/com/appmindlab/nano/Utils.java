@@ -1091,7 +1091,10 @@ public class Utils {
                         str = result.get(timeout, TimeUnit.SECONDS);
 
                         // Sanity check
-                        if ((str != null) && (!str.trim().isEmpty())) {
+                        if ((str == null) || (str.trim().isEmpty())) {
+                            str = Const.EQUAL_SYM + Const.UNDEF_SYM;
+                        }
+                        else {
                             str = Const.EQUAL_SYM + str;
                         }
                     }
