@@ -1,6 +1,8 @@
 [![GPL Licensed](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat-square)](LICENSE.md)
 ![GitHub Downloads](https://img.shields.io/github/downloads/appml/neutrinote/total)
 
+[![IzzyOnDroid Yearly Downloads](https://img.shields.io/badge/dynamic/json?url=https://dlstats.izzyondroid.org/iod-stats-collector/stats/basic/yearly/rolling.json&query=$.['com.appmindlab.nano']&label=IzzyOnDroid%20yearly%20downloads)](https://apt.izzysoft.de/packages/com.appmindlab.nano)
+
 [Official](https://appml.gitbook.io/nano/) | [FAQ](https://appml.gitbook.io/nano/readme/how-do-i...) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
 
 <div>
