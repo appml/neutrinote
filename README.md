@@ -13,6 +13,10 @@
     <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
          alt="Get it on F-Droid"
          height="64">
+<a href="https://apt.izzysoft.de/packages/com.appmindlab.nano">
+    <img src="https://codeberg.org/IzzyOnDroid/assets/media/branch/main/IzzyOnDroid2.png"
+         alt=Get it at IzzyOnDroid"
+         height="64">
 </a>
 </div><br/>
 
