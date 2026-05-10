@@ -14,11 +14,6 @@
          alt="Get it on F-Droid"
          height="64">
 </a>
-<a href="https://apt.izzysoft.de/packages/com.appmindlab.nano">
-   <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" 
-         alt="Get it on IzzyOnDroid"
-         height="64">
-</a>
 </div><br/>
 
 # neutriNote (Community Edition)
