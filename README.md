@@ -1,20 +1,30 @@
 [![GPL Licensed](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat-square)](LICENSE.md)
 ![GitHub Downloads](https://img.shields.io/github/downloads/appml/neutrinote/total)
 
+[![IzzyOnDroid Yearly Downloads](https://img.shields.io/badge/dynamic/json?url=https://dlstats.izzyondroid.org/iod-stats-collector/stats/basic/yearly/rolling.json&query=$.['com.appmindlab.nano']&label=IzzyOnDroid%20yearly%20downloads)](https://apt.izzysoft.de/packages/com.appmindlab.nano)
+
 [Official](https://appml.gitbook.io/nano/) | [FAQ](https://appml.gitbook.io/nano/readme/how-do-i...) | [Documentation](https://appml.github.io/nano/) | [Mastodon](https://mastodon.social/@neutrinote) | [XDA](https://forum.xda-developers.com/t/app-4-4-neutrinote-a-hub-of-written-thoughts-in-fast-searchable-plain-text.3182426)
 
-<div style="display:flex" >
+<div>
 <!-- a href="https://play.google.com/store/apps/details?id=com.appmindlab.nano">
     <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
          alt="Get it on Google Play" 
          height="64" />
 </a -->
-<a href="https://f-droid.org/packages/com.appmindlab.nano">
-    <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-         alt="Get it on F-Droid"
-         height="64">
-</a>
-</div><br/>
+    <a href="https://f-droid.org/packages/com.appmindlab.nano">
+        <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+             alt="Get it on F-Droid"
+             height="64">
+    </a>
+</div>
+
+<div>
+    <a href="https://apt.izzysoft.de/packages/com.appmindlab.nano">
+        <img src="https://codeberg.org/IzzyOnDroid/assets/media/branch/main/IzzyOnDroidButtonGreyBorder_nofont.png"
+         alt="Get it at IzzyOnDroid"
+         height="45">
+    </a>
+</div>
 
 # neutriNote (Community Edition)
 
