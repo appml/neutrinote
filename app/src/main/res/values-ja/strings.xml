@@ -197,6 +197,7 @@
     <string name="error_network">ネットワークエラー</string>
     <string name="error_json">JSONパースエラー</string>
     <string name="error_resource_not_found">要求されたリソースが見つかりません</string>
+    <string name="error_no_app_to_open">このファイルを開くためのアプリが見つかりませんでした。</string>
     <string name="error_unexpected">予期せぬエラー</string>
     <string name="error_login">ログインに失敗しました。 ステータス: </string>
     <string name="error_empty_title">タイトルを指定してください</string>

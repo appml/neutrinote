@@ -195,6 +195,7 @@
     <string name="error_network">Nenhuma conexão de rede.</string>
     <string name="error_json">Erro JSON.</string>
     <string name="error_resource_not_found">Recurso solicitado não encontrado.</string>
+    <string name="error_no_app_to_open">No app found to open this.</string>
     <string name="error_unexpected">Erro inesperado.</string>
     <string name="error_login">Login não conectado. Status é </string>
     <string name="error_empty_title">Inserir um título.</string>

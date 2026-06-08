@@ -197,6 +197,7 @@
     <string name="error_network">无网络。</string>
     <string name="error_json">JSON错误。</string>
     <string name="error_resource_not_found">请求的资源未找到。</string>
+    <string name="error_no_app_to_open">找不到可打开此的应用程序。</string>
     <string name="error_unexpected">意外错误。</string>
     <string name="error_login">登陆失败,状态: </string>
     <string name="error_empty_title">请输入一个标题。</string>
