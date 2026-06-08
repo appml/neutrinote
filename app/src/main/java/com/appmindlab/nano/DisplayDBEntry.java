@@ -1696,7 +1696,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                         intent.setData(Uri.parse(url));
                     }
 
-                    view.getContext().startActivity(intent);
+                    try {
+                        view.getContext().startActivity(intent);
+                    } catch (android.content.ActivityNotFoundException e) {
+                        Toast.makeText(view.getContext(), R.string.error_no_app_to_open, Toast.LENGTH_SHORT).show();
+                    }
                     return true;
                 } else {
                     return false;
