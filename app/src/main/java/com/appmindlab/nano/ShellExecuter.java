@@ -15,14 +15,16 @@ public class ShellExecuter {
 
         try {
             p = Runtime.getRuntime().exec(command);
-            p.waitFor();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
-            String line;
-            while ((line = reader.readLine())!= null) {
-                output.append(line + Const.NEWLINE);
+            // Drain the output before waiting for the process to finish
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    output.append(line + Const.NEWLINE);
+                }
             }
 
+            p.waitFor(); // safe after output is fully consumed
         } catch (Exception e) {
             e.printStackTrace();
         }
