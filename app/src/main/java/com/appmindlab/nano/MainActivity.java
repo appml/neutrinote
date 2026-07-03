@@ -533,6 +533,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mObserver != null)
             mObserver.stopWatching();
 
+        // Stop sensor
+        // Light sensor
+        if (mSensorManager != null && mLightSensor != null) {
+            mSensorManager.unregisterListener(mLightSensorEventListener, mLightSensor);
+        }
+
         main_activity = null;
 
         mDatasource.close();

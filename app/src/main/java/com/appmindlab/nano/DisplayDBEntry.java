@@ -557,6 +557,12 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Remove self reference
         if (display_dbentry == this)
             display_dbentry = null;
+
+        // Stop sensor
+        // Light sensor
+        if (mSensorManager != null && mLightSensor != null) {
+            mSensorManager.unregisterListener(mLightSensorEventListener, mLightSensor);
+        }
     }
 
     @Override
