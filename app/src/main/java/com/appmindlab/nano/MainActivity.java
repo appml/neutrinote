@@ -488,6 +488,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Hide I/O progress bar
         hideIOProgressBar();
+
+        // Restart light sensor
+        if (mLux) {
+            if (mLightSensor != null) {
+                mSensorManager.registerListener(
+                        mLightSensorEventListener,
+                        mLightSensor,
+                        SensorManager.SENSOR_DELAY_NORMAL);
+            }
+        }
     }
 
     @Override
@@ -501,6 +511,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Update widget
         Intent intent = new Intent(Const.ACTION_UPDATE_WIDGET);
         getApplicationContext().sendBroadcast(intent);
+
+        // Stop light sensor
+        if (mLux) {
+            if (mSensorManager != null && mLightSensor != null) {
+                mSensorManager.unregisterListener(mLightSensorEventListener, mLightSensor);
+            }
+        }
     }
 
     @Override
@@ -532,12 +549,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Stop observer
         if (mObserver != null)
             mObserver.stopWatching();
-
-        // Stop sensor
-        // Light sensor
-        if (mSensorManager != null && mLightSensor != null) {
-            mSensorManager.unregisterListener(mLightSensorEventListener, mLightSensor);
-        }
 
         main_activity = null;
 
@@ -1348,14 +1359,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onAccuracyChanged(Sensor sensor, int i) {
             }
         };
-
-        // Register event listener
-        if (mLightSensor != null) {
-            mSensorManager.registerListener(
-                    mLightSensorEventListener,
-                    mLightSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
-        }
     }
 
     // Schedule backup

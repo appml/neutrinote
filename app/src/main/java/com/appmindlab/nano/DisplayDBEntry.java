@@ -454,6 +454,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         // Reset auto theme application state
         mAutoThemeApplied = false;
+
+        // Stop light sensor
+        if (mLux) {
+            if (mSensorManager != null && mLightSensor != null) {
+                mSensorManager.unregisterListener(mLightSensorEventListener, mLightSensor);
+            }
+        }
     }
 
     @Override
@@ -534,6 +541,16 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             // Deactivate clipboard monitor
             mClipboardMonitor = false;
         }
+
+        // Restart light sensor
+        if (mLux) {
+            if (mLightSensor != null) {
+                mSensorManager.registerListener(
+                        mLightSensorEventListener,
+                        mLightSensor,
+                        SensorManager.SENSOR_DELAY_NORMAL);
+            }
+        }
     }
 
     @Override
@@ -557,12 +574,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Remove self reference
         if (display_dbentry == this)
             display_dbentry = null;
-
-        // Stop sensor
-        // Light sensor
-        if (mSensorManager != null && mLightSensor != null) {
-            mSensorManager.unregisterListener(mLightSensorEventListener, mLightSensor);
-        }
     }
 
     @Override
@@ -1911,14 +1922,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             public void onAccuracyChanged(Sensor sensor, int i) {
             }
         };
-
-        // Register event listener
-        if (mLightSensor != null){
-            mSensorManager.registerListener(
-                    mLightSensorEventListener,
-                    mLightSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
-        }
     }
 
     // Update undo
