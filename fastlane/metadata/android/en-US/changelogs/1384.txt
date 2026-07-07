@@ -1,0 +1,2 @@
+v4.6.4
+- Reduced battery use of Ambient Glow mode.
