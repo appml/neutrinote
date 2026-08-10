@@ -1532,24 +1532,32 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
             }
         });
+
         mContent.setOnTouchListener(new View.OnTouchListener() {
-            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+                // Handle accessibility click trigger on ACTION_UP
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    view.performClick();
+                }
+
                 // Reset auto save timer
                 if (mAutoSaveHandler != null) {
                     mAutoSaveHandler.removeCallbacks(mAutoSaveRunnable);
                     mAutoSaveHandler.postDelayed(mAutoSaveRunnable, Const.AUTO_SAVE_BACKOFF * Const.ONE_SECOND);
                 }
 
-                // Show/hide tool bar
-                if ((!mShowToolBar) && (!mImmersiveMode)) {
+                // Pass event to scale detector first
+                if (mScaleDetector != null) {
+                    mScaleDetector.onTouchEvent(motionEvent);
+                }
+
+                // Pass event to gesture detector if toolbar conditions are met
+                if (!mShowToolBar && !mImmersiveMode && mEditContentGestureDetector != null) {
                     mEditContentGestureDetector.onTouchEvent(motionEvent);
                 }
 
-                // Pass event to scale detector
-                mScaleDetector.onTouchEvent(motionEvent);
-
+                // Return false so default handling of the event may resume
                 return false;
             }
         });
