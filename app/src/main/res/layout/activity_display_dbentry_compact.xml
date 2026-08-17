@@ -125,7 +125,9 @@
                     android:fontFamily="sans-serif"
                     android:textSize="12sp"
                     android:importantForAutofill="no"
-                    android:imeOptions="actionDone|flagNoExtractUi" />
+                    android:imeOptions="actionDone|flagNoExtractUi"
+                    android:scrollbars="vertical"
+                    android:overScrollMode="always" />
 
             </ScrollView>
         </androidx.core.widget.NestedScrollView>
