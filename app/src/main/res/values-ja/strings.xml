@@ -187,6 +187,8 @@
 
     <string name="info_cache_cleared">キャッシュは消去されました.</string>
 
+    <string name="info_full_screen">タップ/ダブルタップで全画面表示</string>
+
     <string name="warn_markdown_cursor_position">適切なレンダリングのために、カーソルをMarkdownシンボルから離してください</string>
     <string name="warn_no_selected_word">いくつか単語を選択してください</string>
     <string name="warn_no_selected_expression">正規表現を選択してください</string>

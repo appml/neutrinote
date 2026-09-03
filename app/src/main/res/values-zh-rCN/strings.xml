@@ -187,6 +187,8 @@
 
     <string name="info_cache_cleared">缓存已清理。</string>
 
+    <string name="info_full_screen">轻触或双击切换全屏</string>
+
     <string name="warn_markdown_cursor_position">从Markdown符号上移开光标来正确渲染。</string>
     <string name="warn_no_selected_word">请选择一些文字。</string>
     <string name="warn_no_selected_expression">请选择一个表达式。</string>

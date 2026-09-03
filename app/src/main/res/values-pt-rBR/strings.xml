@@ -661,6 +661,9 @@
     <string name="dialog_revision_summary_ok">Ok</string>
 
     <string name="info_cache_cleared">Cache limpo.</string>
+
+    <string name="info_full_screen">Toque ou toque duplo para tela cheia</string>
+
     <string name="button_colon_description">Dois Pontos</string>
     <string name="button_curly_bracket_left">\u007B</string>
     <string name="button_curly_bracket_left_description">Parêntese Anelado Esquerdo</string>

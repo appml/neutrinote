@@ -1139,6 +1139,8 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
     private void enterImmersiveMode() {
         // Allow full screen gesture
         mShowToolBar = false;
+
+        Toast.makeText(DisplayDBEntry.this, this.getResources().getString(R.string.info_full_screen), Toast.LENGTH_SHORT).show();
     }
 
     // Setup view

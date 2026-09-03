@@ -187,6 +187,8 @@
 
     <string name="info_cache_cleared">Cache cleared.</string>
 
+    <string name="info_full_screen">Tap/Double Tap for full view</string>
+
     <string name="warn_markdown_cursor_position">Place cursor away from Markdown symbols for proper rendering.</string>
     <string name="warn_no_selected_word">Please select some words.</string>
     <string name="warn_no_selected_expression">Please select an expression.</string>
