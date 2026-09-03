@@ -62,6 +62,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
@@ -166,10 +167,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
     // Immersive mode
     private View mDecorView;
-    private boolean mImmersiveMode = false;
     private boolean mStopped = false;
-    private Handler mImmersiveModeHandler = null;
-    private Runnable mImmersiveModeRunnable = null;
 
     // Markdown view
     protected boolean mMarkdownAnchorActive = false;
@@ -397,9 +395,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         // Setup animation
         setupAnimation();
 
-        // Setup immersive mode
-        setupImmersiveMode();
-
         // Setup custom fonts
         setupCustomFonts();
 
@@ -507,16 +502,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         if (mShowToolBar)
             mShowToolBar = !((mAutoToolBarTag.length() > 0) && (mMetadata.contains(mAutoToolBarTag)));
 
-        if ((!mShowToolBar) && (!mImmersiveMode))
+        if (!mShowToolBar)
             showHideToolBar(mToolBarVisible);
 
         // Title toggle as default selected item
         mToolBarSelectedItemId = R.id.menu_toggle_title;
-
-        // Resume immersive mode if needed
-        if (mImmersiveMode) {
-            enterImmersiveMode();
-        }
 
         // Set up editor if needed
         if ((mTitle == null) || (mContent == null)) {
@@ -647,7 +637,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         savedInstanceState.putBoolean(Const.STATE_COMPACT_TOOLBAR, mCompactToolBar);
         savedInstanceState.putBoolean(Const.STATE_EDIT_TOOL_FRAGMENT_VISIBLE, mEditToolFragmentVisible);
         savedInstanceState.putBoolean(Const.STATE_MARKDOWN_MODE, mMarkdownMode);
-        savedInstanceState.putBoolean(Const.STATE_IMMERSIVE_MODE, mImmersiveMode);
         savedInstanceState.putBoolean(Const.STATE_CHANGED, mChanged);
         savedInstanceState.putBoolean(Const.STATE_AUTOSAVE_SAFE, mAutoSaveSafe);
         savedInstanceState.putBoolean(Const.STATE_SNAPSHOT_SAFE, mSnapshotSafe);
@@ -682,7 +671,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         mCompactToolBar = savedInstanceState.getBoolean(Const.STATE_COMPACT_TOOLBAR);
         mEditToolFragmentVisible = savedInstanceState.getBoolean(Const.STATE_EDIT_TOOL_FRAGMENT_VISIBLE);
         mMarkdownMode = savedInstanceState.getBoolean(Const.STATE_MARKDOWN_MODE);
-        mImmersiveMode = savedInstanceState.getBoolean(Const.STATE_IMMERSIVE_MODE);
         mChanged = savedInstanceState.getBoolean(Const.STATE_CHANGED);
         mAutoSaveSafe = savedInstanceState.getBoolean(Const.STATE_AUTOSAVE_SAFE);
         mSnapshotSafe = savedInstanceState.getBoolean(Const.STATE_SNAPSHOT_SAFE);
@@ -710,9 +698,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         } else {
             toggleMarkdownViewMenu(menu, true);
         }
-
-        if (mImmersiveMode)
-            enterImmersiveMode();
 
         // Show hide metadata
         item = menu.findItem(R.id.menu_metadata);
@@ -1145,117 +1130,10 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         });
     }
 
-    // Setup immersive mode
-    protected void setupImmersiveMode() {
-        mDecorView = getWindow().getDecorView();
-        mDecorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
-            @Override
-            public void onSystemUiVisibilityChange(int visibility) {
-                // Sanity check
-                if (!mImmersiveMode)
-                    return;
-
-                // Ignore if triggered by a turning off of the screen
-                if (mStopped)
-                    return;
-
-                if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == View.VISIBLE) {
-                    Log.d(Const.TAG, "nano - Exiting full screen");
-
-                    // Exit immersive mode
-                    exitImmersiveMode();
-                } else {
-                    Log.d(Const.TAG, "nano - Entering full screen");
-                }
-            }
-        });
-    }
-
-    // Exit immersive mode
-    private void exitImmersiveMode() {
-        // Handle system UI
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
-            mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-        else {
-            mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-
-        // Show title
-        showHideTitle(true);
-
-        // Handle edit view
-        if (!mMarkdownMode) {
-            try {
-                // Show edit tools
-                showEditToolFragment();
-
-                // Show keyboard
-                Utils.showKeyboardAfterImmersiveMode(getApplicationContext(), mTitle, mContent);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        // Show action bar
-        getSupportActionBar().show();
-
-        // Reset the state
-        mImmersiveMode = false;
-    }
-
     // Enter immersive mode
     private void enterImmersiveMode() {
-        // Handle system UI
-        int config = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
-                | View.SYSTEM_UI_FLAG_IMMERSIVE;
-
-        // Note: for older Android versions
-        if ((Build.VERSION.SDK_INT < Build.VERSION_CODES.R) || (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE))
-            config = config | View.SYSTEM_UI_FLAG_FULLSCREEN;
-
-        mDecorView.setSystemUiVisibility(config);
-
-        // Hide title
-        showHideTitle(false);
-
-        if (!mMarkdownMode) {
-            try {
-                // Hide keyboard
-                Utils.hideKeyboard(getApplicationContext(), mTitle, mContent);
-
-                // Close all fragments
-                closeAllFragments();
-
-                // Hack: avoid getting focus
-                if (!Utils.checkMultiWindowMode(this))
-                    mTitle.requestFocus();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        // Hide action bar
-        getSupportActionBar().hide();
-
-        // Remember the state
-        // Note: for older Android versions
-        if ((Build.VERSION.SDK_INT < Build.VERSION_CODES.R) || (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)) {
-            mImmersiveMode = true;
-        }
-        else {
-            mImmersiveModeHandler = new Handler();
-            mImmersiveModeRunnable = new Runnable() {
-                public void run() {
-                    mImmersiveMode = true;
-                }
-            };
-            mImmersiveModeHandler.postDelayed(mImmersiveModeRunnable, Const.IMMERSIVE_MODE_DELAY);
-        }
+        // Allow full screen gesture
+        mShowToolBar = false;
     }
 
     // Setup view
@@ -1553,7 +1431,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
                 }
 
                 // Pass event to gesture detector if toolbar conditions are met
-                if (!mShowToolBar && !mImmersiveMode && mEditContentGestureDetector != null) {
+                if (!mShowToolBar && mEditContentGestureDetector != null) {
                     mEditContentGestureDetector.onTouchEvent(motionEvent);
                 }
 
@@ -1785,7 +1663,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 // Show/hide tool bar
-                if ((!mShowToolBar) && (!mImmersiveMode)) {
+                if (!mShowToolBar) {
                     mEditContentGestureDetector.onTouchEvent(motionEvent);
                 }
 
@@ -3679,11 +3557,6 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
 
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK:
-                // Ignore if in immersive mode
-                if (mImmersiveMode) {
-                    exitImmersiveMode();
-                    return false;
-                }
             default:
                 return super.onKeyDown(keyCode, event);
         }
