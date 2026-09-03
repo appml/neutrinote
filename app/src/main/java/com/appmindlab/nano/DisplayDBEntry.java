@@ -332,6 +332,11 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         return mContent.getSelectionStart();
     }
 
+    // Return to current position
+    protected void restoreContentPos() {
+        mContent.requestFocus();
+    }
+
     // Get theme
     protected String getAppTheme() {
         return mTheme;

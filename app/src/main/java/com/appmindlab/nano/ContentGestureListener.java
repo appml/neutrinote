@@ -28,6 +28,7 @@ public class ContentGestureListener extends GestureDetector.SimpleOnGestureListe
         try {
             DisplayDBEntry.display_dbentry.setToolBarVisible(true);
             DisplayDBEntry.display_dbentry.showHideToolBar(true);
+            DisplayDBEntry.display_dbentry.restoreContentPos();
         }
         catch (Exception e) {
             e.printStackTrace();
