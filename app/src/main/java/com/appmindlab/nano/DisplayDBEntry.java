@@ -761,7 +761,7 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
             doPasteCalendar();
             return true;
         } else if (itemId == R.id.menu_full_screen) {
-            enterImmersiveMode();
+            toggleFullScreen();
             return true;
         } else if (itemId == R.id.menu_clear_cache) {
             doClearCache();
@@ -1135,12 +1135,13 @@ public class DisplayDBEntry extends AppCompatActivity implements PopupMenu.OnMen
         });
     }
 
-    // Enter immersive mode
-    private void enterImmersiveMode() {
+    // Toogle full screen
+    private void toggleFullScreen() {
         // Allow full screen gesture
-        mShowToolBar = false;
+        mShowToolBar = !mShowToolBar;
 
-        Toast.makeText(DisplayDBEntry.this, this.getResources().getString(R.string.info_full_screen), Toast.LENGTH_SHORT).show();
+        if (!mShowToolBar)
+            Toast.makeText(DisplayDBEntry.this, this.getResources().getString(R.string.info_full_screen), Toast.LENGTH_SHORT).show();
     }
 
     // Setup view
