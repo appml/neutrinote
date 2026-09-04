@@ -1,0 +1,2 @@
+v4.6.7
+- Refactor full screen mode
